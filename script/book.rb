@@ -374,7 +374,7 @@ class Section
   def save
     return if self.slug.nil?
 
-    path = self.absolute_path(self.slug)
+    path = self.absolute_path(self.slug.gsub(/[:?]/, ''))
     FileUtils.mkdir_p(File.dirname(path))
     File.open("#{path}.html", 'w') do |file|
       file.write(@chapter.wrap_front_matter(self.front_matter))
