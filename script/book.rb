@@ -134,11 +134,15 @@ class Book
     front_matter["aliases"] = [
       "/book/#{@language_code}/v#{@edition}/index.html",
       "/book/#{@language_code}/v1/index.html",
-      "/book/#{@language_code}/index.html"
+      "/book/#{@language_code}/v1.html",
+      "/book/#{@language_code}/index.html",
+      "/book/#{@language_code}.html"
     ]
     if @language_code == "en"
       front_matter["aliases"].push("/book/index.html")
+      front_matter["aliases"].push("/book.html")
       front_matter["aliases"].push("/book/v1/index.html")
+      front_matter["aliases"].push("/book/v1.html")
     end
     front_matter["book"]["front_page"] = true
     front_matter["book"]["repository_url"] = "https://github.com/#{@@all_books[@language_code]}"
