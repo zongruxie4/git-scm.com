@@ -27,6 +27,20 @@ $ git reset --hard
 ```
 
 > [!NOTE]
+> On Windows, if you cannot use [Windows Subsystem for Linux (WSL)](https://learn.microsoft.com/en-us/windows/wsl/) for some reason, you will be unable to build the site as-is. The reason is that some URLs of the git-scm.com site contain question marks, for historical reasons. These question marks are obviously encoded as `%3F` in the URLs, but the way Hugo works, they are literal question marks in the filenames of the corresponding files. Such filenames are accommodated easily by Linux filesystems, but on Windows, filenames containing question marks are forbidden. For that reason, to build the site on Windows, the following command needs to be run (assuming a Bash, as the rest of this document):
+>
+> ```sh
+> for file in $(find -name \*.html -exec grep -l '^url: .*?' {} \;)
+> do
+>   git update-index --assume-unchanged "$file" &&
+>   sed -i '/^url: /s/?//g' "$file" ||
+>   break
+> done
+> ```
+>
+> This edits the affected files' `url` front-matter attributes to avoid writing those files containing question marks. Obviously, the result does not support the backwards-compatible URLs that contain URL-encoded question marks.
+
+> [!NOTE]
 > If you _already_ have a full clone and wish to accelerate development by focusing only on a small subset of the pages, you may want to run the `git sparse-checkout set [...]` command mentioned above.
 
 Here is a detailed list of the relevant directories:
@@ -93,11 +107,65 @@ $ HUGO_UGLYURLS=false hugo
 $ npx -y pagefind --site public --serve
 ```
 
+If you want to make sure that the same Pagefind version is used as when the site is deployed, use this command:
+
+```console
+$ npx -y pagefind@$(sed -n 's/^ *pagefind_version: //p' <./hugo.yml) --site public
+```
+
 Note that running Pagefind will make the process about 7 times slower, and the site will not be re-rendered and live-reloaded in the browser when you change files in `content/` (unlike with `hugo serve -w`).
 
 ## Running the test suite
 
 Believe it or not, https://git-scm.com/ has its own test suite. It uses [Playwright](https://playwright.dev/) to perform a couple of tests that verify that the site "looks right". These tests live in `tests/` and are configured via `playwright.config.js`.
+
+> [!NOTE]
+> Building the site, letting Pagefind generate the search index, and then running the test suite can be quite time consuming. To accelerate the development cycle, it is _highly_ recommended to use a sparse checkout instead of a full clone. The minimal sparse checkout required to run the test suite can be configured like this:
+>
+> ```console
+> $ MSYS_NO_PATHCONV=1 git config set --worktree core.sparseCheckoutCone false
+> $ git config set --worktree core.sparseCheckout true
+> $ git sparse-checkout set \
+>     /README.md \
+>     /assets/ \
+>     /content/404.html \
+>     /content/_index.html \
+>     /content/about/small-and-fast.html \
+>     /content/downloads/guis/ \
+>     /content/search/ \
+>     /data/ \
+>     /external/book/content/book/_index.html \
+>     /external/book/content/book/az/v2/Başlanğıc-Git-Nədir.html \
+>     /external/book/content/book/en/v2/Getting-Started-About-Version-Control.html \
+>     /external/book/content/book/en/v2/_index.html \
+>     /external/book/content/book/fr/v2/Démarrage-rapide-À-propos-de-la-gestion-de-version.html \
+>     /external/book/data/ \
+>     /external/docs/content/docs/git-add/fr.html \
+>     /external/docs/content/docs/git-clone.html \
+>     /external/docs/content/docs/git-commit.html \
+>     /external/docs/content/docs/git-commit/fr.html \
+>     /external/docs/content/docs/git-config.html \
+>     /external/docs/content/docs/git-config/fr.html \
+>     /external/docs/content/docs/git-remote/fr.html \
+>     /external/docs/content/docs/gitrevisions.html \
+>     /external/docs/content/docs/gitrevisions/fr.html \
+>     /external/docs/data/ \
+>     /hugo.yml \
+>     /layouts/ \
+>     /playwright.config.js \
+>     /script/ \
+>     /static/ \
+>     /tests/git-scm.spec.js
+> ```
+>
+> On Windows, unless you're doing all this in WSL, do not forget to run the commands mentioned earlier to edit the `url` front-matter attributes that contain question marks!
+>
+> The site can then be built quickly via these commands:
+>
+> ```console
+> $ HUGO_MEMORYLIMIT=1 time hugo &&
+>   npx -y pagefind@$(sed -n 's/^ *pagefind_version: //p' <./hugo.yml) --site public
+> ```
 
 To run these tests in your local setup, you need a working node.js installation. After that, you need to install Playwright:
 
@@ -120,6 +188,9 @@ $ PLAYWRIGHT_TEST_URL='http://localhost:5000/' npx playwright test --project=fir
 ```
 
 For more fine-grained testing, you can pass `-g <regex>` to run only the matching test cases.
+
+> [!NOTE]
+> When running the test suite on platforms other than Linux, the first run will "fail" in the `dark mode` test case. That is expected! This test case relies on previously-generated screenshots that are stored in `tests/git-scm.spec.js-snapshots/`, and for bandwidth reasons only the Linux ones are committed in the Git repository (because they are required to run the PR/CI builds). The first run will store those screenshots so that subsequent runs of this test case will succeed, though.
 
 ## Update manual pages
 

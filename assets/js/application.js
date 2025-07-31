@@ -244,6 +244,8 @@ var Search = {
 
       if(term != Search.currentSearch) {
         Search.currentSearch = term;
+        const language = document.querySelector("html")?.getAttribute("lang");
+        const allResultsURL = `${baseURLPrefix}search/results?search=${term}${language && `&language=${language}`}`;
         $("#search-results").html(`
           <header> Search Results </header>
           <table>
@@ -253,7 +255,9 @@ var Search = {
                 <td class="matches">
                   <ul>
                     <li>
-                      <a class="highlight" id="show-results-label">Searching for <span id="search-term">&nbsp;</span>...</a>
+                      <a class="highlight" id="show-results-label" href="${allResultsURL}">
+                        Searching for <span id="search-term">&nbsp;</span>...
+                      </a>
                     </li>
                   </ul>
                 </td>
@@ -284,16 +288,12 @@ var Search = {
         $("#search-term").text(term);
         this.initializeSearchIndex(async () => {
           const results = await Search.pagefind.debouncedSearch(term);
-          if (results === null) return;
-          if (results.results.length === 0) {
+          if (results === null || results.results.length === 0) {
             $("#show-results-label").text("No matching pages found.");
             return;
           }
-
-          const language = document.querySelector("html")?.getAttribute("lang");
           $("#show-results-label")
             .text("Show all results...")
-            .attr('href', `${baseURLPrefix}search/results?search=${term}${language && `&language=${language}`}`);
 
           const loadButton = $("#load-more-results");
           loadButton.text(`Loading ${
@@ -371,6 +371,12 @@ var Search = {
   selectResultOption: function() {
     var link = $('#search-results a')[Search.selectedIndex];
     var url = $(link).attr('href');
+    if (!url) {
+      const term = $('#search-text').val();
+      if (!term) return;
+      const language = document.querySelector("html")?.getAttribute("lang");
+      url = `${baseURLPrefix}search/results?search=${term}${language && `&language=${language}`}`;
+    }
     window.location.href = url;
     selectedIndex = 0;
   },

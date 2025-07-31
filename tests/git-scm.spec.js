@@ -21,6 +21,8 @@ test.afterEach(async ({ page }, testInfo) => {
   }
 })
 
+if (process.platform === 'win32') test.setTimeout(60_000) // give it some time
+
 test('generator is Hugo', async ({page}) => {
   await page.goto(url)
   await expect(page.locator('meta[name="generator"]')).toHaveAttribute('content', /^Hugo /)
@@ -103,8 +105,16 @@ test.describe('Linux', () => {
 test('search', async ({ page }) => {
   await page.goto(url)
 
-  // Search for "commit"
+  // Full search for "commit"
   const searchBox = page.getByPlaceholder('Type / to search entire site…')
+  await searchBox.fill('commit')
+  await searchBox.press('Enter')
+
+  await expect(page).toHaveURL(/\/search\/results\?search=commit/)
+
+  await page.goto(url)
+
+  // Search for "commit"
   await searchBox.fill('commit')
   await searchBox.press('Shift')
 
@@ -250,7 +260,11 @@ test('book', async ({ page }) => {
 
   // Navigate to a page whose URL contains a question mark
   await page.goto(`${url}book/az/v2/Başlanğıc-Git-Nədir?`)
-  await expect(page).toHaveURL(/Ba%C5%9Flan%C4%9F%C4%B1c-Git-N%C9%99dir%3F/)
+  if (process.platform === 'win32' && process.env.PLAYWRIGHT_TEST_URL?.startsWith('http://localhost')) {
+    await expect(page).toHaveURL(/Ba%C5%9Flan%C4%9F%C4%B1c-Git-N%C9%99dir\?/)
+  } else {
+    await expect(page).toHaveURL(/Ba%C5%9Flan%C4%9F%C4%B1c-Git-N%C9%99dir%3F/)
+  }
   await expect(page.getByRole('document')).toHaveText(/Snapshot’lar, Fərqlər Yox/)
 
   // the repository URL now points to the Azerbaijani translation
