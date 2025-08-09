@@ -27,13 +27,17 @@ body {
 }
 
 aside {
-  float: left;
   width: 218px;
   margin-bottom: 35px;
+  position: sticky;
+  top: 0;
+  max-height: 100vh;
+  overflow-y: auto;
+  /* align with the top of the content */
+  padding-top: 46px;
 }
 
 #content {
-  float: right;
   width: 702px;
 }
 
@@ -435,6 +439,10 @@ table.benchmarks {
   &.scrollToTop {
     display: block;
   }
+}
+
+#content-wrapper {
+  display: flex;
 }
 
 // Breakpoint ----------------
