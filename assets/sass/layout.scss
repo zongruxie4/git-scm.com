@@ -45,6 +45,10 @@ aside {
   background: var(--sidebar-toc-bg-color);
 }
 
+#toc ul {
+  list-style-type: square;
+}
+
 #toc li {
   /* use margin instead of line height for spacing because sometimes the
      headings wrap onto multiple lines */
