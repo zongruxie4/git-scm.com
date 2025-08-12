@@ -37,6 +37,21 @@ aside {
   padding-top: 46px;
 }
 
+#toc {
+  border: 1px solid var(--main-border);
+  padding: .5em;
+  margin-top: 1rem;
+  border-top: 1px solid var(--main-border);
+  background: var(--sidebar-toc-bg-color);
+}
+
+#toc li {
+  /* use margin instead of line height for spacing because sometimes the
+     headings wrap onto multiple lines */
+  line-height: 1.2em;
+  margin: 6px 0;
+}
+
 #content {
   width: 702px;
 }

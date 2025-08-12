@@ -52,7 +52,7 @@
 
     {{ $headings := .Params.headings }}
     {{ if $headings }}
-    <ul>
+    <ul id="toc">
       <li> Table of Contents
         <ul class="expanded">
           {{ range $i, $item := $headings }}

@@ -22,6 +22,7 @@
     $main-border:             #e2e0d8;
     $bg-color:                #f0efe7 url($baseurl + "images/bg/body.jpg");
     $sidebar-bg-color:        #efefe7;
+    $sidebar-toc-bg-color:    lighten($sidebar-bg-color, 4%);
     $no-changes-bg-color:     #f5f5f3;
     $dropdown-active-bg-color: #fff;
     $versions-footer-bg-color: #eae9e0;
@@ -55,6 +56,7 @@
         $main-border:             #5e5e5a;
         $bg-color:                #2a2a2aff;
         $sidebar-bg-color:        #3d3d3a;
+        $sidebar-toc-bg-color:    #{$main-bg};
         $no-changes-bg-color:     #515150;
         $dropdown-active-bg-color: #515150;
         $versions-footer-bg-color: #1f1f1e;
@@ -185,6 +187,7 @@
         --main-bg:                      #{$main-bg};
         --main-border:                  #{$main-border};
         --sidebar-bg-color:             #{$sidebar-bg-color};
+        --sidebar-toc-bg-color:         #{$sidebar-toc-bg-color};
         --bg-color:                     #{$bg-color};
         --no-changes-bg-color:          #{$no-changes-bg-color};
         --dropdown-active-bg-color:     #{$dropdown-active-bg-color};
