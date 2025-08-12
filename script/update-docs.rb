@@ -81,6 +81,20 @@ def expand_l10n(path, content, get_f_content, categories, ext)
   content
 end
 
+def extract_headings(html)
+  doc = Nokogiri::HTML::DocumentFragment.parse(html)
+  headings = []
+
+  doc.css('h2').each do |heading|
+    headings << {
+      'text' => heading.text.strip,
+      'id' => heading['id']
+    }
+  end
+
+  headings
+end
+
 def index_l10n_doc(filter_tags, doc_list, get_content)
   rebuild = ENV.fetch("REBUILD_DOC", nil)
   rerun = ENV["RERUN"] || rebuild || false
@@ -219,6 +233,11 @@ def index_l10n_doc(filter_tags, doc_list, get_content)
         "lang" => lang,
         "aliases" => ["/docs/#{path}/#{lang}/index.html"]
       }
+
+      headings = extract_headings(html)
+      if headings.length > 0
+        front_matter['headings'] = headings
+      end
 
       FileUtils.mkdir_p(doc_path)
       File.open("#{doc_path}/#{lang}.html", "w") do |out|
@@ -524,6 +543,11 @@ def index_doc(filter_tags, doc_list, get_content)
           "docname" => docname,
           "version" => doc_versions[changed_in],
         }
+
+        headings = extract_headings(html)
+        if headings.length > 0
+          front_matter['headings'] = headings
+        end
 
         if changed_in != doc_version_index && File.exist?("#{doc_path}/#{version}.html")
           # remove obsolete file
