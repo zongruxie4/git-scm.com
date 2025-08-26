@@ -69,6 +69,7 @@
     (dict "name" "gitea" "url" "https://gitea.com")
     (dict "name" "tangled" "url" "https://tangled.sh")
     (dict "name" "radicle" "url" "https://radicle.xyz")
+    (dict "name" "gerrit" "url" "https://www.gerritcodereview.com")
     }}
     {{ range shuffle $m }}
     <li><a href="{{ .url }}">{{ partial "company-svg" (printf "company-project-logos/%s" .name) }}</a></li>
