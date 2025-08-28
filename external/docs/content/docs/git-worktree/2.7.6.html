@@ -44,7 +44,7 @@ aliases:
 <h2 id="_synopsis"><a class="anchor" href="#_synopsis"></a>SYNOPSIS</h2>
 <div class="sectionbody">
 <div class="verseblock">
-<pre class="content"><em>git worktree add</em> [-f] [--detach] [-b &lt;new-branch&gt;] &lt;path&gt; [&lt;branch&gt;]
+<pre class="content"><em>git worktree add</em> [-f] [--detach] [-b &lt;new-branch&gt;] &lt;path&gt; [<span class="hover-term" data-term="branch">&lt;branch&gt;</span>]
 <em>git worktree prune</em> [-n] [-v] [--expire &lt;expire&gt;]
 <em>git worktree list</em> [--porcelain]</pre>
 </div>
@@ -91,13 +91,13 @@ pruning should be suppressed. See section "DETAILS" for more information.</p>
 <div class="sectionbody">
 <div class="dlist">
 <dl>
-<dt class="hdlist1" id="Documentation/git-worktree.txt-addltpathgtltbranchgt"><a id="Documentation/git-worktree.txt-addpathbranch" class="anchor" href="#Documentation/git-worktree.txt-addpathbranch"></a>add &lt;path&gt; [&lt;branch&gt;] </dt>
+<dt class="hdlist1" id="Documentation/git-worktree.txt-addltpathgtltbranchgt"><a id="Documentation/git-worktree.txt-addpathbranch" class="anchor" href="#Documentation/git-worktree.txt-addpathbranch"></a>add &lt;path&gt; [<span class="hover-term" data-term="branch">&lt;branch&gt;</span>] </dt>
 <dd>
-<p>Create <span class='synopsis'><em>&lt;path&gt;</em></span> and checkout <span class='synopsis'><em>&lt;branch&gt;</em></span> into it. The new working directory
+<p>Create <span class='synopsis'><em>&lt;path&gt;</em></span> and checkout <span class='synopsis'><em><span class="hover-term" data-term="branch">&lt;branch&gt;</span></em></span> into it. The new working directory
 is linked to the current repository, sharing everything except working
 directory specific files such as HEAD, index, etc.</p>
 <div class="paragraph">
-<p>If <span class='synopsis'><em>&lt;branch&gt;</em></span> is omitted and neither <span class='synopsis'><code>-b</code></span> nor <span class='synopsis'><code>-B</code></span> nor <span class='synopsis'><code>--detached</code></span> used,
+<p>If <span class='synopsis'><em><span class="hover-term" data-term="branch">&lt;branch&gt;</span></em></span> is omitted and neither <span class='synopsis'><code>-b</code></span> nor <span class='synopsis'><code>-B</code></span> nor <span class='synopsis'><code>--detached</code></span> used,
 then, as a convenience, a new branch based at HEAD is created automatically,
 as if <span class='synopsis'><code>-b</code> <code>$</code>(<code>basename</code> <em>&lt;path&gt;</em>)</span> was specified.</p>
 </div>
@@ -125,7 +125,7 @@ bare, the revision currently checked out, and the branch currently checked out
 <dt class="hdlist1" id="Documentation/git-worktree.txt--f"><a class="anchor" href="#Documentation/git-worktree.txt--f"></a>-f </dt>
 <dt class="hdlist1" id="Documentation/git-worktree.txt---force"><a class="anchor" href="#Documentation/git-worktree.txt---force"></a>--force </dt>
 <dd>
-<p>By default, <span class='synopsis'><code>add</code></span> refuses to create a new working tree when <span class='synopsis'><em>&lt;branch&gt;</em></span>
+<p>By default, <span class='synopsis'><code>add</code></span> refuses to create a new working tree when <span class='synopsis'><em><span class="hover-term" data-term="branch">&lt;branch&gt;</span></em></span>
 is already checked out by another working tree. This option overrides
 that safeguard.</p>
 </dd>
@@ -133,11 +133,11 @@ that safeguard.</p>
 <dt class="hdlist1" id="Documentation/git-worktree.txt--Bltnew-branchgt"><a id="Documentation/git-worktree.txt--Bnew-branch" class="anchor" href="#Documentation/git-worktree.txt--Bnew-branch"></a>-B &lt;new-branch&gt; </dt>
 <dd>
 <p>With <span class='synopsis'><code>add</code></span>, create a new branch named <span class='synopsis'><em>&lt;new-branch&gt;</em></span> starting at
-<span class='synopsis'><em>&lt;branch&gt;</em></span>, and check out <span class='synopsis'><em>&lt;new-branch&gt;</em></span> into the new working tree.
-If <span class='synopsis'><em>&lt;branch&gt;</em></span> is omitted, it defaults to HEAD.
+<span class='synopsis'><em><span class="hover-term" data-term="branch">&lt;branch&gt;</span></em></span>, and check out <span class='synopsis'><em>&lt;new-branch&gt;</em></span> into the new working tree.
+If <span class='synopsis'><em><span class="hover-term" data-term="branch">&lt;branch&gt;</span></em></span> is omitted, it defaults to HEAD.
 By default, <span class='synopsis'><code>-b</code></span> refuses to create a new branch if it already
 exists. <span class='synopsis'><code>-B</code></span> overrides this safeguard, resetting <span class='synopsis'><em>&lt;new-branch&gt;</em></span> to
-<span class='synopsis'><em>&lt;branch&gt;</em></span>.</p>
+<span class='synopsis'><em><span class="hover-term" data-term="branch">&lt;branch&gt;</span></em></span>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-worktree.txt---detach"><a class="anchor" href="#Documentation/git-worktree.txt---detach"></a>--detach </dt>
 <dd>

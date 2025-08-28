@@ -44,11 +44,11 @@ aliases:
 <div class="sectionbody">
 <div class="verseblock">
 <pre class="content"><em>git remote</em> [-v | --verbose]
-<em>git remote add</em> [-t &lt;branch&gt;] [-m &lt;master&gt;] [-f] [--[no-]tags] [--mirror=&lt;fetch|push&gt;] &lt;name&gt; &lt;url&gt;
+<em>git remote add</em> [-t <span class="hover-term" data-term="branch">&lt;branch&gt;</span>] [-m <span class="hover-term" data-term="master">&lt;master&gt;</span>] [-f] [--[no-]tags] [--mirror=&lt;fetch|push&gt;] &lt;name&gt; &lt;url&gt;
 <em>git remote rename</em> &lt;old&gt; &lt;new&gt;
 <em>git remote remove</em> &lt;name&gt;
-<em>git remote set-head</em> &lt;name&gt; (-a | --auto | -d | --delete | &lt;branch&gt;)
-<em>git remote set-branches</em> [--add] &lt;name&gt; &lt;branch&gt;&#8230;&#8203;
+<em>git remote set-head</em> &lt;name&gt; (-a | --auto | -d | --delete | <span class="hover-term" data-term="branch">&lt;branch&gt;</span>)
+<em>git remote set-branches</em> [--add] &lt;name&gt; <span class="hover-term" data-term="branch">&lt;branch&gt;</span>&#8230;&#8203;
 <em>git remote set-url</em> [--push] &lt;name&gt; &lt;newurl&gt; [&lt;oldurl&gt;]
 <em>git remote set-url --add</em> [--push] &lt;name&gt; &lt;newurl&gt;
 <em>git remote set-url --delete</em> [--push] &lt;name&gt; &lt;url&gt;
@@ -94,7 +94,7 @@ subcommands are available to perform operations on the remotes.</p>
 <dd>
 <p>Adds a remote named &lt;name&gt; for the repository at
 &lt;url&gt;.  The command <span class='synopsis'><code>git</code> <code>fetch</code> <em>&lt;name&gt;</em></span> can then be used to create and
-update remote-tracking branches &lt;name&gt;/&lt;branch&gt;.</p>
+update remote-tracking branches &lt;name&gt;/<span class="hover-term" data-term="branch">&lt;branch&gt;</span>.</p>
 <div class="paragraph">
 <p>With <span class='synopsis'><code>-f</code></span> option, <span class='synopsis'><code>git</code> <code>fetch</code> <em>&lt;name&gt;</em></span> is run immediately after
 the remote information is set up.</p>
@@ -112,15 +112,15 @@ the remote repository.</p>
 (see <a href='{{< relurl "docs/git-fetch" >}}'>git-fetch[1]</a>).</p>
 </div>
 <div class="paragraph">
-<p>With <span class='synopsis'><code>-t</code> <em>&lt;branch&gt;</em></span> option, instead of the default glob
+<p>With <span class='synopsis'><code>-t</code> <em><span class="hover-term" data-term="branch">&lt;branch&gt;</span></em></span> option, instead of the default glob
 refspec for the remote to track all branches under
-the <span class='synopsis'><code>refs/remotes/</code><em>&lt;name&gt;</em><code>/</code></span> namespace, a refspec to track only <span class='synopsis'><em>&lt;branch&gt;</em></span>
-is created.  You can give more than one <span class='synopsis'><code>-t</code> <em>&lt;branch&gt;</em></span> to track
+the <span class='synopsis'><code>refs/remotes/</code><em>&lt;name&gt;</em><code>/</code></span> namespace, a refspec to track only <span class='synopsis'><em><span class="hover-term" data-term="branch">&lt;branch&gt;</span></em></span>
+is created.  You can give more than one <span class='synopsis'><code>-t</code> <em><span class="hover-term" data-term="branch">&lt;branch&gt;</span></em></span> to track
 multiple branches without grabbing all branches.</p>
 </div>
 <div class="paragraph">
-<p>With <span class='synopsis'><code>-m</code> <em>&lt;master&gt;</em></span> option, a symbolic-ref <span class='synopsis'><code>refs/remotes/</code><em>&lt;name&gt;</em><code>/HEAD</code></span> is set
-up to point at remote&#8217;s <span class='synopsis'><em>&lt;master&gt;</em></span> branch. See also the set-head command.</p>
+<p>With <span class='synopsis'><code>-m</code> <em><span class="hover-term" data-term="master">&lt;master&gt;</span></em></span> option, a symbolic-ref <span class='synopsis'><code>refs/remotes/</code><em>&lt;name&gt;</em><code>/HEAD</code></span> is set
+up to point at remote&#8217;s <span class='synopsis'><em><span class="hover-term" data-term="master">&lt;master&gt;</span></em></span> branch. See also the set-head command.</p>
 </div>
 <div class="paragraph">
 <p>When a fetch mirror is created with <span class='synopsis'><code>--mirror=fetch</code></span>, the refs will not
@@ -171,7 +171,7 @@ only work if <span class='synopsis'><code>refs/remotes/origin/next</code></span>
 fetched first.</p>
 </div>
 <div class="paragraph">
-<p>Use <span class='synopsis'><em>&lt;branch&gt;</em></span> to set the symbolic-ref <span class='synopsis'><code>refs/remotes/</code><em>&lt;name&gt;</em><code>/HEAD</code></span> explicitly. e.g., "git
+<p>Use <span class='synopsis'><em><span class="hover-term" data-term="branch">&lt;branch&gt;</span></em></span> to set the symbolic-ref <span class='synopsis'><code>refs/remotes/</code><em>&lt;name&gt;</em><code>/HEAD</code></span> explicitly. e.g., "git
 remote set-head origin master" will set the symbolic-ref <span class='synopsis'><code>refs/remotes/origin/HEAD</code></span> to
 <span class='synopsis'><code>refs/remotes/origin/master</code></span>. This will only work if
 <span class='synopsis'><code>refs/remotes/origin/master</code></span> already exists; if not it must be fetched first.</p>

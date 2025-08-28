@@ -101,22 +101,22 @@ is linked to the current repository, sharing everything except working
 directory specific files such as HEAD, index, etc. <span class='synopsis'><code>-</code></span> may also be
 specified as <span class='synopsis'><em>&lt;commit-ish&gt;</em></span>; it is synonymous with <span class='synopsis'><code>@{-1}</code></span>.</p>
 <div class="paragraph">
-<p>If &lt;commit-ish&gt; is a branch name (call it <span class='synopsis'><em>&lt;branch&gt;</em></span>) and is not found,
+<p>If &lt;commit-ish&gt; is a branch name (call it <span class='synopsis'><em><span class="hover-term" data-term="branch">&lt;branch&gt;</span></em></span>) and is not found,
 and neither <span class='synopsis'><code>-b</code></span> nor <span class='synopsis'><code>-B</code></span> nor <span class='synopsis'><code>--detach</code></span> are used, but there does
 exist a tracking branch in exactly one remote (call it <span class='synopsis'><em>&lt;remote&gt;</em></span>)
 with a matching name, treat as equivalent to:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>$ git worktree add --track -b &lt;branch&gt; &lt;path&gt; &lt;remote&gt;/&lt;branch&gt;</pre>
+<pre>$ git worktree add --track -b <span class="hover-term" data-term="branch">&lt;branch&gt;</span> &lt;path&gt; &lt;remote&gt;/<span class="hover-term" data-term="branch">&lt;branch&gt;</span></pre>
 </div>
 </div>
 <div class="paragraph">
 <p>If <span class='synopsis'><em>&lt;commit-ish&gt;</em></span> is omitted and neither <span class='synopsis'><code>-b</code></span> nor <span class='synopsis'><code>-B</code></span> nor <span class='synopsis'><code>--detach</code></span> used,
 then, as a convenience, the new worktree is associated with a branch
-(call it <span class='synopsis'><em>&lt;branch&gt;</em></span>) named after <span class='synopsis'><code>$</code>(<code>basename</code> <em>&lt;path&gt;</em>)</span>.  If <span class='synopsis'><em>&lt;branch&gt;</em></span>
+(call it <span class='synopsis'><em><span class="hover-term" data-term="branch">&lt;branch&gt;</span></em></span>) named after <span class='synopsis'><code>$</code>(<code>basename</code> <em>&lt;path&gt;</em>)</span>.  If <span class='synopsis'><em><span class="hover-term" data-term="branch">&lt;branch&gt;</span></em></span>
 doesn&#8217;t exist, a new branch based on HEAD is automatically created as
-if <span class='synopsis'><code>-b</code> <em>&lt;branch&gt;</em></span> was given.  If <span class='synopsis'><em>&lt;branch&gt;</em></span> does exist, it will be
+if <span class='synopsis'><code>-b</code> <em><span class="hover-term" data-term="branch">&lt;branch&gt;</span></em></span> was given.  If <span class='synopsis'><em><span class="hover-term" data-term="branch">&lt;branch&gt;</span></em></span> does exist, it will be
 checked out in the new worktree, if it&#8217;s not checked out anywhere
 else, otherwise the command will refuse to create the worktree (unless
 <span class='synopsis'><code>--force</code></span> is used).</p>

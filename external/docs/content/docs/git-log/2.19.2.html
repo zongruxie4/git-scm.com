@@ -362,33 +362,33 @@ for all following revision specifiers, up to the next <span class='synopsis'><co
 <dt class="hdlist1" id="Documentation/git-log.txt---all"><a class="anchor" href="#Documentation/git-log.txt---all"></a>--all </dt>
 <dd>
 <p>Pretend as if all the refs in <span class='synopsis'><code>refs/</code></span>, along with <span class='synopsis'><code>HEAD</code></span>, are
-listed on the command line as <em>&lt;commit&gt;</em>.</p>
+listed on the command line as <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-log.txt---branchesltpatterngt"><a id="Documentation/git-log.txt---branchespattern" class="anchor" href="#Documentation/git-log.txt---branchespattern"></a>--branches[=&lt;pattern&gt;] </dt>
 <dd>
 <p>Pretend as if all the refs in <span class='synopsis'><code>refs/heads</code></span> are listed
-on the command line as <em>&lt;commit&gt;</em>. If <em>&lt;pattern&gt;</em> is given, limit
+on the command line as <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>. If <em>&lt;pattern&gt;</em> is given, limit
 branches to ones matching given shell glob. If pattern lacks <em>?</em>,
 <em>*</em>, or <em>[</em>, <em>/*</em> at the end is implied.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-log.txt---tagsltpatterngt"><a id="Documentation/git-log.txt---tagspattern" class="anchor" href="#Documentation/git-log.txt---tagspattern"></a>--tags[=&lt;pattern&gt;] </dt>
 <dd>
 <p>Pretend as if all the refs in <span class='synopsis'><code>refs/tags</code></span> are listed
-on the command line as <em>&lt;commit&gt;</em>. If <em>&lt;pattern&gt;</em> is given, limit
+on the command line as <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>. If <em>&lt;pattern&gt;</em> is given, limit
 tags to ones matching given shell glob. If pattern lacks <em>?</em>, <em>*</em>,
 or <em>[</em>, <em>/*</em> at the end is implied.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-log.txt---remotesltpatterngt"><a id="Documentation/git-log.txt---remotespattern" class="anchor" href="#Documentation/git-log.txt---remotespattern"></a>--remotes[=&lt;pattern&gt;] </dt>
 <dd>
 <p>Pretend as if all the refs in <span class='synopsis'><code>refs/remotes</code></span> are listed
-on the command line as <em>&lt;commit&gt;</em>. If <em>&lt;pattern&gt;</em> is given, limit
+on the command line as <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>. If <em>&lt;pattern&gt;</em> is given, limit
 remote-tracking branches to ones matching given shell glob.
 If pattern lacks <em>?</em>, <em>*</em>, or <em>[</em>, <em>/*</em> at the end is implied.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-log.txt---globltglob-patterngt"><a id="Documentation/git-log.txt---globglob-pattern" class="anchor" href="#Documentation/git-log.txt---globglob-pattern"></a>--glob=&lt;glob-pattern&gt; </dt>
 <dd>
 <p>Pretend as if all the refs matching shell glob <em>&lt;glob-pattern&gt;</em>
-are listed on the command line as <em>&lt;commit&gt;</em>. Leading <em>refs/</em>,
+are listed on the command line as <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>. Leading <em>refs/</em>,
 is automatically prepended if missing. If pattern lacks <em>?</em>, <em>*</em>,
 or <em>[</em>, <em>/*</em> at the end is implied.</p>
 </dd>
@@ -411,7 +411,7 @@ explicitly.</p>
 <dt class="hdlist1" id="Documentation/git-log.txt---reflog"><a class="anchor" href="#Documentation/git-log.txt---reflog"></a>--reflog </dt>
 <dd>
 <p>Pretend as if all objects mentioned by reflogs are listed on the
-command line as <span class='synopsis'><em>&lt;commit&gt;</em></span>.</p>
+command line as <span class='synopsis'><em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em></span>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-log.txt---single-worktree"><a class="anchor" href="#Documentation/git-log.txt---single-worktree"></a>--single-worktree </dt>
 <dd>
@@ -436,7 +436,7 @@ line. Cannot be combined with --first-parent.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-log.txt---stdin"><a class="anchor" href="#Documentation/git-log.txt---stdin"></a>--stdin </dt>
 <dd>
-<p>In addition to the <em>&lt;commit&gt;</em> listed on the command
+<p>In addition to the <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em> listed on the command
 line, read them from the standard input. If a <span class='synopsis'><code>--</code></span> separator is
 seen, stop reading commits and start reading paths to limit the
 result.</p>
@@ -1062,7 +1062,7 @@ message by 4 spaces (i.e.  <em>medium</em>, which is the default, <em>full</em>,
 and <em>fuller</em>).</p>
 </div>
 </dd>
-<dt class="hdlist1" id="Documentation/git-log.txt---noteslttreeishgt"><a id="Documentation/git-log.txt---notestreeish" class="anchor" href="#Documentation/git-log.txt---notestreeish"></a>--notes[=&lt;treeish&gt;] </dt>
+<dt class="hdlist1" id="Documentation/git-log.txt---noteslttreeishgt"><a id="Documentation/git-log.txt---notestreeish" class="anchor" href="#Documentation/git-log.txt---notestreeish"></a>--notes[=<span class="hover-term" data-term="treeish">&lt;treeish&gt;</span>] </dt>
 <dd>
 <p>Show the notes (see <a href='{{< relurl "docs/git-notes" >}}'>git-notes[1]</a>) that annotate the
 commit, when showing the commit log message.  This is the default
@@ -1075,7 +1075,7 @@ on the command line.</p>
 environment overrides). See <a href='{{< relurl "docs/git-config" >}}'>git-config[1]</a> for more details.</p>
 </div>
 <div class="paragraph">
-<p>With an optional <em>&lt;treeish&gt;</em> argument, use the treeish to find the notes
+<p>With an optional <em><span class="hover-term" data-term="treeish">&lt;treeish&gt;</span></em> argument, use the treeish to find the notes
 to display.  The treeish can specify the full refname when it begins
 with <span class='synopsis'><code>refs/notes/</code></span>; when it begins with <span class='synopsis'><code>notes/</code></span>, <span class='synopsis'><code>refs/</code></span> and otherwise
 <span class='synopsis'><code>refs/notes/</code></span> is prefixed to form a full name of the ref.</p>
@@ -1095,7 +1095,7 @@ Options are parsed in the order given on the command line, so e.g.
 "--notes --notes=foo --no-notes --notes=bar" will only show notes
 from "refs/notes/bar".</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-log.txt---show-noteslttreeishgt"><a id="Documentation/git-log.txt---show-notestreeish" class="anchor" href="#Documentation/git-log.txt---show-notestreeish"></a>--show-notes[=&lt;treeish&gt;] </dt>
+<dt class="hdlist1" id="Documentation/git-log.txt---show-noteslttreeishgt"><a id="Documentation/git-log.txt---show-notestreeish" class="anchor" href="#Documentation/git-log.txt---show-notestreeish"></a>--show-notes[=<span class="hover-term" data-term="treeish">&lt;treeish&gt;</span>] </dt>
 <dt class="hdlist1" id="Documentation/git-log.txt---no-standard-notes"><a class="anchor" href="#Documentation/git-log.txt---no-standard-notes"></a>--[no-]standard-notes </dt>
 <dd>
 <p>These options are deprecated. Use the above --notes/--no-notes
@@ -2654,7 +2654,7 @@ rename from &lt;path&gt;
 rename to &lt;path&gt;
 similarity index &lt;number&gt;
 dissimilarity index &lt;number&gt;
-index &lt;hash&gt;..&lt;hash&gt; &lt;mode&gt;</pre>
+index <span class="hover-term" data-term="hash">&lt;hash&gt;</span>..<span class="hover-term" data-term="hash">&lt;hash&gt;</span> &lt;mode&gt;</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2772,7 +2772,7 @@ this (when <span class='synopsis'><code>-c</code></span> option is used):</p>
 (this example shows a merge with two parents):</p>
 <div class="literalblock">
 <div class="content">
-<pre>index &lt;hash&gt;,&lt;hash&gt;..&lt;hash&gt;
+<pre>index <span class="hover-term" data-term="hash">&lt;hash&gt;</span>,<span class="hover-term" data-term="hash">&lt;hash&gt;</span>..<span class="hover-term" data-term="hash">&lt;hash&gt;</span>
 mode &lt;mode&gt;,&lt;mode&gt;..&lt;mode&gt;
 new file mode &lt;mode&gt;
 deleted file mode &lt;mode&gt;,&lt;mode&gt;</pre>
@@ -2783,7 +2783,7 @@ deleted file mode &lt;mode&gt;,&lt;mode&gt;</pre>
 the &lt;mode&gt; is different from the rest. Extended headers with
 information about detected contents movement (renames and
 copying detection) are designed to work with diff of two
-&lt;tree-ish&gt; and are not used by combined diff format.</p>
+<span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span> and are not used by combined diff format.</p>
 </div>
 </li>
 <li>
@@ -3075,7 +3075,7 @@ but a glob that does not match any refs is silently ignored.</p>
 <div class="paragraph">
 <p>This setting can be disabled by the <span class='synopsis'><code>--no-notes</code></span> option,
 overridden by the <span class='synopsis'><code>GIT_NOTES_DISPLAY_REF</code></span> environment variable,
-and overridden by the <span class='synopsis'><code>--notes=</code><em>&lt;ref&gt;</em></span> option.</p>
+and overridden by the <span class='synopsis'><code>--notes=</code><em><span class="hover-term" data-term="ref">&lt;ref&gt;</span></em></span> option.</p>
 </div>
 </dd>
 </dl>

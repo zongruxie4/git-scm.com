@@ -55,10 +55,10 @@ aliases:
 <h2 id="_synopsis"><a class="anchor" href="#_synopsis"></a>SYNOPSIS</h2>
 <div class="sectionbody">
 <div class="verseblock">
-<pre class="content"><em>git replace</em> [-f] &lt;object&gt; &lt;replacement&gt;
-<em>git replace</em> [-f] --edit &lt;object&gt;
-<em>git replace</em> [-f] --graft &lt;commit&gt; [&lt;parent&gt;&#8230;&#8203;]
-<em>git replace</em> -d &lt;object&gt;&#8230;&#8203;
+<pre class="content"><em>git replace</em> [-f] <span class="hover-term" data-term="object">&lt;object&gt;</span> &lt;replacement&gt;
+<em>git replace</em> [-f] --edit <span class="hover-term" data-term="object">&lt;object&gt;</span>
+<em>git replace</em> [-f] --graft <span class="hover-term" data-term="commit">&lt;commit&gt;</span> [<span class="hover-term" data-term="parent">&lt;parent&gt;</span>&#8230;&#8203;]
+<em>git replace</em> -d <span class="hover-term" data-term="object">&lt;object&gt;</span>&#8230;&#8203;
 <em>git replace</em> [--format=&lt;format&gt;] [-l [&lt;pattern&gt;]]</pre>
 </div>
 </div>
@@ -135,13 +135,13 @@ be overwritten (instead of failing).</p>
 <dd>
 <p>Delete existing replace refs for the given objects.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-replace.txt---editltobjectgt"><a id="Documentation/git-replace.txt---editobject" class="anchor" href="#Documentation/git-replace.txt---editobject"></a>--edit &lt;object&gt; </dt>
+<dt class="hdlist1" id="Documentation/git-replace.txt---editltobjectgt"><a id="Documentation/git-replace.txt---editobject" class="anchor" href="#Documentation/git-replace.txt---editobject"></a>--edit <span class="hover-term" data-term="object">&lt;object&gt;</span> </dt>
 <dd>
 <p>Edit an object&#8217;s content interactively. The existing content
-for &lt;object&gt; is pretty-printed into a temporary file, an
+for <span class="hover-term" data-term="object">&lt;object&gt;</span> is pretty-printed into a temporary file, an
 editor is launched on the file, and the result is parsed to
-create a new object of the same type as &lt;object&gt;. A
-replacement ref is then created to replace &lt;object&gt; with the
+create a new object of the same type as <span class="hover-term" data-term="object">&lt;object&gt;</span>. A
+replacement ref is then created to replace <span class="hover-term" data-term="object">&lt;object&gt;</span> with the
 newly created object. See <a href='{{< relurl "docs/git-var" >}}'>git-var[1]</a> for details about
 how the editor will be chosen.</p>
 </dd>
@@ -154,12 +154,12 @@ but can help when repairing a tree that is so corrupted it
 cannot be pretty-printed. Note that you may need to configure
 your editor to cleanly read and write binary data.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-replace.txt---graftltcommitgtltparentgt82308203"><a id="Documentation/git-replace.txt---graftcommitparent" class="anchor" href="#Documentation/git-replace.txt---graftcommitparent"></a>--graft &lt;commit&gt; [&lt;parent&gt;&#8230;&#8203;] </dt>
+<dt class="hdlist1" id="Documentation/git-replace.txt---graftltcommitgtltparentgt82308203"><a id="Documentation/git-replace.txt---graftcommitparent" class="anchor" href="#Documentation/git-replace.txt---graftcommitparent"></a>--graft <span class="hover-term" data-term="commit">&lt;commit&gt;</span> [<span class="hover-term" data-term="parent">&lt;parent&gt;</span>&#8230;&#8203;] </dt>
 <dd>
 <p>Create a graft commit. A new commit is created with the same
-content as &lt;commit&gt; except that its parents will be
-[&lt;parent&gt;&#8230;&#8203;] instead of &lt;commit&gt;'s parents. A replacement ref
-is then created to replace &lt;commit&gt; with the newly created
+content as <span class="hover-term" data-term="commit">&lt;commit&gt;</span> except that its parents will be
+[<span class="hover-term" data-term="parent">&lt;parent&gt;</span>&#8230;&#8203;] instead of <span class="hover-term" data-term="commit">&lt;commit&gt;</span>'s parents. A replacement ref
+is then created to replace <span class="hover-term" data-term="commit">&lt;commit&gt;</span> with the newly created
 commit. See contrib/convert-grafts-to-replace-refs.sh for an
 example script based on this option that can convert grafts to
 replace refs.</p>

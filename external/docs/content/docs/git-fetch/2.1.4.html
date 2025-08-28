@@ -47,9 +47,9 @@ aliases:
 <h2 id="_synopsis"><a class="anchor" href="#_synopsis"></a>SYNOPSIS</h2>
 <div class="sectionbody">
 <div class="verseblock">
-<pre class="content"><em>git fetch</em> [&lt;options&gt;] [&lt;repository&gt; [&lt;refspec&gt;&#8230;&#8203;]]
+<pre class="content"><em>git fetch</em> [&lt;options&gt;] [<span class="hover-term" data-term="repository">&lt;repository&gt;</span> [<span class="hover-term" data-term="refspec">&lt;refspec&gt;</span>&#8230;&#8203;]]
 <em>git fetch</em> [&lt;options&gt;] &lt;group&gt;
-<em>git fetch</em> --multiple [&lt;options&gt;] [(&lt;repository&gt; | &lt;group&gt;)&#8230;&#8203;]
+<em>git fetch</em> --multiple [&lt;options&gt;] [(<span class="hover-term" data-term="repository">&lt;repository&gt;</span> | &lt;group&gt;)&#8230;&#8203;]
 <em>git fetch</em> --all [&lt;options&gt;]</pre>
 </div>
 </div>
@@ -61,7 +61,7 @@ aliases:
 <p>Fetch branches and/or tags (collectively, "refs") from one or more
 other repositories, along with the objects necessary to complete their
 histories.  Remote-tracking branches are updated (see the description
-of &lt;refspec&gt; below for ways to control this behavior).</p>
+of <span class="hover-term" data-term="refspec">&lt;refspec&gt;</span> below for ways to control this behavior).</p>
 </div>
 <div class="paragraph">
 <p>By default, any tag that points into the histories being fetched is
@@ -149,8 +149,8 @@ overrides that check.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-fetch.txt---multiple"><a class="anchor" href="#Documentation/git-fetch.txt---multiple"></a>--multiple </dt>
 <dd>
-<p>Allow several &lt;repository&gt; and &lt;group&gt; arguments to be
-specified. No &lt;refspec&gt;s may be specified.</p>
+<p>Allow several <span class="hover-term" data-term="repository">&lt;repository&gt;</span> and &lt;group&gt; arguments to be
+specified. No <span class="hover-term" data-term="refspec">&lt;refspec&gt;</span>s may be specified.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-fetch.txt--p"><a class="anchor" href="#Documentation/git-fetch.txt--p"></a>-p </dt>
 <dt class="hdlist1" id="Documentation/git-fetch.txt---prune"><a class="anchor" href="#Documentation/git-fetch.txt---prune"></a>--prune </dt>
@@ -173,7 +173,7 @@ This option disables this automatic tag following. The default
 behavior for a remote may be specified with the remote.&lt;name&gt;.tagopt
 setting. See <a href='{{< relurl "docs/git-config" >}}'>git-config[1]</a>.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-fetch.txt---refmapltrefspecgt"><a id="Documentation/git-fetch.txt---refmaprefspec" class="anchor" href="#Documentation/git-fetch.txt---refmaprefspec"></a>--refmap=&lt;refspec&gt; </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt---refmapltrefspecgt"><a id="Documentation/git-fetch.txt---refmaprefspec" class="anchor" href="#Documentation/git-fetch.txt---refmaprefspec"></a>--refmap=<span class="hover-term" data-term="refspec">&lt;refspec&gt;</span> </dt>
 <dd>
 <p>When fetching refs listed on the command line, use the
 specified refspec (can be given more than once) to map the
@@ -260,7 +260,7 @@ by default when it is attached to a terminal, unless -q
 is specified. This flag forces progress status even if the
 standard error stream is not directed to a terminal.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-fetch.txt-ltrepositorygt"><a id="Documentation/git-fetch.txt-repository" class="anchor" href="#Documentation/git-fetch.txt-repository"></a>&lt;repository&gt; </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt-ltrepositorygt"><a id="Documentation/git-fetch.txt-repository" class="anchor" href="#Documentation/git-fetch.txt-repository"></a><span class="hover-term" data-term="repository">&lt;repository&gt;</span> </dt>
 <dd>
 <p>The "remote" repository that is the source of a fetch
 or pull operation.  This parameter can be either a URL
@@ -273,20 +273,20 @@ of a remote (see the section <a href="#REMOTES">REMOTES</a> below).</p>
 of remotes.&lt;group&gt; in the configuration file.
 (See <a href='{{< relurl "docs/git-config" >}}'>git-config[1]</a>).</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-fetch.txt-ltrefspecgt"><a id="Documentation/git-fetch.txt-refspec" class="anchor" href="#Documentation/git-fetch.txt-refspec"></a>&lt;refspec&gt; </dt>
+<dt class="hdlist1" id="Documentation/git-fetch.txt-ltrefspecgt"><a id="Documentation/git-fetch.txt-refspec" class="anchor" href="#Documentation/git-fetch.txt-refspec"></a><span class="hover-term" data-term="refspec">&lt;refspec&gt;</span> </dt>
 <dd>
 <p>Specifies which refs to fetch and which local refs to update.
-When no &lt;refspec&gt;s appear on the command line, the refs to fetch
-are read from <span class='synopsis'><code>remote.</code><em>&lt;repository&gt;</em><code>.fetch</code></span> variables instead
+When no <span class="hover-term" data-term="refspec">&lt;refspec&gt;</span>s appear on the command line, the refs to fetch
+are read from <span class='synopsis'><code>remote.</code><em><span class="hover-term" data-term="repository">&lt;repository&gt;</span></em><code>.fetch</code></span> variables instead
 (see <a href="#CRTB">CONFIGURED REMOTE-TRACKING BRANCHES</a> below).</p>
 <div class="paragraph">
-<p>The format of a &lt;refspec&gt; parameter is an optional plus
+<p>The format of a <span class="hover-term" data-term="refspec">&lt;refspec&gt;</span> parameter is an optional plus
 <span class='synopsis'><code>+</code></span>, followed by the source ref &lt;src&gt;, followed
 by a colon <span class='synopsis'><code>:</code></span>, followed by the destination ref &lt;dst&gt;.
 The colon can be omitted when &lt;dst&gt; is empty.</p>
 </div>
 <div class="paragraph">
-<p><span class='synopsis'><code>tag</code> <em>&lt;tag&gt;</em></span> means the same as <span class='synopsis'><code>refs/tags/</code><em>&lt;tag&gt;</em><code>:refs/tags/</code><em>&lt;tag&gt;</em></span>;
+<p><span class='synopsis'><code>tag</code> <em><span class="hover-term" data-term="tag">&lt;tag&gt;</span></em></span> means the same as <span class='synopsis'><code>refs/tags/</code><em><span class="hover-term" data-term="tag">&lt;tag&gt;</span></em><code>:refs/tags/</code><em><span class="hover-term" data-term="tag">&lt;tag&gt;</span></em></span>;
 it requests fetching everything up to the given tag.</p>
 </div>
 <div class="paragraph">
@@ -491,7 +491,7 @@ use the original URL.</p>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The name of one of the following can be used instead
-of a URL as <span class='synopsis'><em>&lt;repository&gt;</em></span> argument:</p>
+of a URL as <span class='synopsis'><em><span class="hover-term" data-term="repository">&lt;repository&gt;</span></em></span> argument:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -526,8 +526,8 @@ config file would appear like this:</p>
 <pre>	[remote "&lt;name&gt;"]
 		url = &lt;url&gt;
 		pushurl = &lt;pushurl&gt;
-		push = &lt;refspec&gt;
-		fetch = &lt;refspec&gt;</pre>
+		push = <span class="hover-term" data-term="refspec">&lt;refspec&gt;</span>
+		fetch = <span class="hover-term" data-term="refspec">&lt;refspec&gt;</span></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -548,8 +548,8 @@ following format:</p>
 <div class="listingblock">
 <div class="content">
 <pre>	URL: one of the above URL format
-	Push: &lt;refspec&gt;
-	Pull: &lt;refspec&gt;</pre>
+	Push: <span class="hover-term" data-term="refspec">&lt;refspec&gt;</span>
+	Pull: <span class="hover-term" data-term="refspec">&lt;refspec&gt;</span></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -569,24 +569,24 @@ This file should have the following format:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>	&lt;url&gt;#&lt;head&gt;</pre>
+<pre>	&lt;url&gt;#<span class="hover-term" data-term="head">&lt;head&gt;</span></pre>
 </div>
 </div>
 <div class="paragraph">
-<p><span class='synopsis'><em>&lt;url&gt;</em></span> is required; <span class='synopsis'><code>#</code><em>&lt;head&gt;</em></span> is optional.</p>
+<p><span class='synopsis'><em>&lt;url&gt;</em></span> is required; <span class='synopsis'><code>#</code><em><span class="hover-term" data-term="head">&lt;head&gt;</span></em></span> is optional.</p>
 </div>
 <div class="paragraph">
 <p>Depending on the operation, git will use one of the following
 refspecs, if you don&#8217;t provide one on the command line.
-<span class='synopsis'><em>&lt;branch&gt;</em></span> is the name of this file in <span class='synopsis'><code>$GIT_DIR/branches</code></span> and
-<span class='synopsis'><em>&lt;head&gt;</em></span> defaults to <span class='synopsis'><code>master</code></span>.</p>
+<span class='synopsis'><em><span class="hover-term" data-term="branch">&lt;branch&gt;</span></em></span> is the name of this file in <span class='synopsis'><code>$GIT_DIR/branches</code></span> and
+<span class='synopsis'><em><span class="hover-term" data-term="head">&lt;head&gt;</span></em></span> defaults to <span class='synopsis'><code>master</code></span>.</p>
 </div>
 <div class="paragraph">
 <p>git fetch uses:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>	refs/heads/&lt;head&gt;:refs/heads/&lt;branch&gt;</pre>
+<pre>	refs/heads/<span class="hover-term" data-term="head">&lt;head&gt;</span>:refs/heads/<span class="hover-term" data-term="branch">&lt;branch&gt;</span></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -594,7 +594,7 @@ refspecs, if you don&#8217;t provide one on the command line.
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>	HEAD:refs/heads/&lt;head&gt;</pre>
+<pre>	HEAD:refs/heads/<span class="hover-term" data-term="head">&lt;head&gt;</span></pre>
 </div>
 </div>
 </div>
@@ -607,7 +607,7 @@ refspecs, if you don&#8217;t provide one on the command line.
 <p>You often interact with the same remote repository by
 regularly and repeatedly fetching from it.  In order to keep track
 of the progress of such a remote repository, <span class='synopsis'><code>git</code> <code>fetch</code></span> allows you
-to configure <span class='synopsis'><code>remote.</code><em>&lt;repository&gt;</em><code>.fetch</code></span> configuration variables.</p>
+to configure <span class='synopsis'><code>remote.</code><em><span class="hover-term" data-term="repository">&lt;repository&gt;</span></em><code>.fetch</code></span> configuration variables.</p>
 </div>
 <div class="paragraph">
 <p>Typically such a variable may look like this:</p>
@@ -626,7 +626,7 @@ to configure <span class='synopsis'><code>remote.</code><em>&lt;repository&gt;</
 <li>
 <p>When <span class='synopsis'><code>git</code> <code>fetch</code></span> is run without specifying what branches
 and/or tags to fetch on the command line, e.g. <span class='synopsis'><code>git</code> <code>fetch</code> <code>origin</code></span>
-or <span class='synopsis'><code>git</code> <code>fetch</code></span>, <span class='synopsis'><code>remote.</code><em>&lt;repository&gt;</em><code>.fetch</code></span> values are used as
+or <span class='synopsis'><code>git</code> <code>fetch</code></span>, <span class='synopsis'><code>remote.</code><em><span class="hover-term" data-term="repository">&lt;repository&gt;</span></em><code>.fetch</code></span> values are used as
 the refspecs---they specify which refs to fetch and which local refs
 to update.  The example above will fetch
 all branches that exist in the <span class='synopsis'><code>origin</code></span> (i.e. any ref that matches
@@ -637,16 +637,16 @@ hierarchy.</p>
 <li>
 <p>When <span class='synopsis'><code>git</code> <code>fetch</code></span> is run with explicit branches and/or tags
 to fetch on the command line, e.g. <span class='synopsis'><code>git</code> <code>fetch</code> <code>origin</code> <code>master</code></span>, the
-&lt;refspec&gt;s given on the command line determine what are to be
+<span class="hover-term" data-term="refspec">&lt;refspec&gt;</span>s given on the command line determine what are to be
 fetched (e.g. <span class='synopsis'><code>master</code></span> in the example,
 which is a short-hand for <span class='synopsis'><code>master:</code></span>, which in turn means
 "fetch the <em>master</em> branch but I do not explicitly say what
 remote-tracking branch to update with it from the command line"),
 and the example command will
-fetch <em>only</em> the <em>master</em> branch.  The <span class='synopsis'><code>remote.</code><em>&lt;repository&gt;</em><code>.fetch</code></span>
+fetch <em>only</em> the <em>master</em> branch.  The <span class='synopsis'><code>remote.</code><em><span class="hover-term" data-term="repository">&lt;repository&gt;</span></em><code>.fetch</code></span>
 values determine which
 remote-tracking branch, if any, is updated.  When used in this
-way, the <span class='synopsis'><code>remote.</code><em>&lt;repository&gt;</em><code>.fetch</code></span> values do not have any
+way, the <span class='synopsis'><code>remote.</code><em><span class="hover-term" data-term="repository">&lt;repository&gt;</span></em><code>.fetch</code></span> values do not have any
 effect in deciding <em>what</em> gets fetched (i.e. the values are not
 used as refspecs when the command-line lists refspecs); they are
 only used to decide <em>where</em> the refs that are fetched are stored
@@ -655,8 +655,8 @@ by acting as a mapping.</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>The latter use of the <span class='synopsis'><code>remote.</code><em>&lt;repository&gt;</em><code>.fetch</code></span> values can be
-overridden by giving the <span class='synopsis'><code>--refmap=</code><em>&lt;refspec&gt;</em></span> parameter(s) on the
+<p>The latter use of the <span class='synopsis'><code>remote.</code><em><span class="hover-term" data-term="repository">&lt;repository&gt;</span></em><code>.fetch</code></span> values can be
+overridden by giving the <span class='synopsis'><code>--refmap=</code><em><span class="hover-term" data-term="refspec">&lt;refspec&gt;</span></em></span> parameter(s) on the
 command line.</p>
 </div>
 </div>

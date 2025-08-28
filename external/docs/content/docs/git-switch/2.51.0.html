@@ -39,7 +39,7 @@ aliases:
 <h2 id="_synopsis"><a class="anchor" href="#_synopsis"></a>SYNOPSIS</h2>
 <div class="sectionbody">
 <div class="verseblock">
-<pre class="content"><span class='synopsis'><code>git</code></span> <span class='synopsis'><code>switch</code></span> [<em>&lt;options&gt;</em>] [<span class='synopsis'><code>--no-guess</code></span>] <em>&lt;branch&gt;</em>
+<pre class="content"><span class='synopsis'><code>git</code></span> <span class='synopsis'><code>switch</code></span> [<em>&lt;options&gt;</em>] [<span class='synopsis'><code>--no-guess</code></span>] <em><span class="hover-term" data-term="branch">&lt;branch&gt;</span></em>
 <span class='synopsis'><code>git</code></span> <span class='synopsis'><code>switch</code></span> [<em>&lt;options&gt;</em>] <span class='synopsis'><code>--detach</code></span> [<em>&lt;start-point&gt;</em>]
 <span class='synopsis'><code>git</code></span> <span class='synopsis'><code>switch</code></span> [<em>&lt;options&gt;</em>] (<span class='synopsis'><code>-c</code></span>|<span class='synopsis'><code>-C</code></span>) <em>&lt;new-branch&gt;</em> [<em>&lt;start-point&gt;</em>]
 <span class='synopsis'><code>git</code></span> <span class='synopsis'><code>switch</code></span> [<em>&lt;options&gt;</em>] <span class='synopsis'><code>--orphan</code></span> <em>&lt;new-branch&gt;</em></pre>
@@ -73,7 +73,7 @@ otherwise with <span class='synopsis'><code>--discard-changes</code></span> or <
 <div class="sectionbody">
 <div class="dlist">
 <dl>
-<dt class="hdlist1" id="Documentation/git-switch.txt-emltbranchgtem"><a id="Documentation/git-switch.txt-branch" class="anchor" href="#Documentation/git-switch.txt-branch"></a><em>&lt;branch&gt;</em> </dt>
+<dt class="hdlist1" id="Documentation/git-switch.txt-emltbranchgtem"><a id="Documentation/git-switch.txt-branch" class="anchor" href="#Documentation/git-switch.txt-branch"></a><em><span class="hover-term" data-term="branch">&lt;branch&gt;</span></em> </dt>
 <dd>
 <p>Branch to switch to.</p>
 </dd>
@@ -143,20 +143,20 @@ experiments. See the "DETACHED HEAD" section in
 <dt class="hdlist1" id="Documentation/git-switch.txt-spanclasssynopsiscode--guesscodespan"><a id="Documentation/git-switch.txt---guess" class="anchor" href="#Documentation/git-switch.txt---guess"></a><span class='synopsis'><code>--guess</code></span> </dt>
 <dt class="hdlist1" id="Documentation/git-switch.txt-spanclasssynopsiscode--no-guesscodespan"><a id="Documentation/git-switch.txt---no-guess" class="anchor" href="#Documentation/git-switch.txt---no-guess"></a><span class='synopsis'><code>--no-guess</code></span> </dt>
 <dd>
-<p>If <em>&lt;branch&gt;</em> is not found but there does exist a tracking
+<p>If <em><span class="hover-term" data-term="branch">&lt;branch&gt;</span></em> is not found but there does exist a tracking
 branch in exactly one remote (call it <em>&lt;remote&gt;</em>) with a
 matching name, treat as equivalent to</p>
 <div class="listingblock">
 <div class="content">
-<pre>$ git switch -c &lt;branch&gt; --track &lt;remote&gt;/&lt;branch&gt;</pre>
+<pre>$ git switch -c <span class="hover-term" data-term="branch">&lt;branch&gt;</span> --track &lt;remote&gt;/<span class="hover-term" data-term="branch">&lt;branch&gt;</span></pre>
 </div>
 </div>
 <div class="paragraph">
 <p>If the branch exists in multiple remotes and one of them is named by
 the <span class='synopsis'><code>checkout.defaultRemote</code></span> configuration variable, we&#8217;ll use that
-one for the purposes of disambiguation, even if the <em>&lt;branch&gt;</em> isn&#8217;t
+one for the purposes of disambiguation, even if the <em><span class="hover-term" data-term="branch">&lt;branch&gt;</span></em> isn&#8217;t
 unique across all remotes. Set it to e.g. <span class='synopsis'><code>checkout.defaultRemote=origin</code></span>
-to always checkout remote branches from there if <em>&lt;branch&gt;</em> is
+to always checkout remote branches from there if <em><span class="hover-term" data-term="branch">&lt;branch&gt;</span></em> is
 ambiguous but exists on the <em>origin</em> remote. See also
 <span class='synopsis'><code>checkout.defaultRemote</code></span> in <a href='{{< relurl "docs/git-config" >}}'>git-config[1]</a>.</p>
 </div>

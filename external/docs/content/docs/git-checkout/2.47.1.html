@@ -50,15 +50,15 @@ aliases:
 <h2 id="_synopsis"><a class="anchor" href="#_synopsis"></a>SYNOPSIS</h2>
 <div class="sectionbody">
 <div class="verseblock">
-<pre class="content"><em>git checkout</em> [-q] [-f] [-m] [&lt;branch&gt;]
-<em>git checkout</em> [-q] [-f] [-m] --detach [&lt;branch&gt;]
-<em>git checkout</em> [-q] [-f] [-m] [--detach] &lt;commit&gt;
+<pre class="content"><em>git checkout</em> [-q] [-f] [-m] [<span class="hover-term" data-term="branch">&lt;branch&gt;</span>]
+<em>git checkout</em> [-q] [-f] [-m] --detach [<span class="hover-term" data-term="branch">&lt;branch&gt;</span>]
+<em>git checkout</em> [-q] [-f] [-m] [--detach] <span class="hover-term" data-term="commit">&lt;commit&gt;</span>
 <em>git checkout</em> [-q] [-f] [-m] [[-b|-B|--orphan] &lt;new-branch&gt;] [&lt;start-point&gt;]
-<em>git checkout</em> [-f] &lt;tree-ish&gt; [--] &lt;pathspec&gt;&#8230;&#8203;
-<em>git checkout</em> [-f] &lt;tree-ish&gt; --pathspec-from-file=&lt;file&gt; [--pathspec-file-nul]
-<em>git checkout</em> [-f|--ours|--theirs|-m|--conflict=&lt;style&gt;] [--] &lt;pathspec&gt;&#8230;&#8203;
+<em>git checkout</em> [-f] <span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span> [--] <span class="hover-term" data-term="pathspec">&lt;pathspec&gt;</span>&#8230;&#8203;
+<em>git checkout</em> [-f] <span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span> --pathspec-from-file=&lt;file&gt; [--pathspec-file-nul]
+<em>git checkout</em> [-f|--ours|--theirs|-m|--conflict=&lt;style&gt;] [--] <span class="hover-term" data-term="pathspec">&lt;pathspec&gt;</span>&#8230;&#8203;
 <em>git checkout</em> [-f|--ours|--theirs|-m|--conflict=&lt;style&gt;] --pathspec-from-file=&lt;file&gt; [--pathspec-file-nul]
-<em>git checkout</em> (-p|--patch) [&lt;tree-ish&gt;] [--] [&lt;pathspec&gt;&#8230;&#8203;]</pre>
+<em>git checkout</em> (-p|--patch) [<span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span>] [--] [<span class="hover-term" data-term="pathspec">&lt;pathspec&gt;</span>&#8230;&#8203;]</pre>
 </div>
 </div>
 </div>
@@ -73,25 +73,25 @@ branch.</p>
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1" id="Documentation/git-checkout.txt-emgitcheckoutemltbranchgt"><a id="Documentation/git-checkout.txt-gitcheckoutbranch" class="anchor" href="#Documentation/git-checkout.txt-gitcheckoutbranch"></a><em>git checkout</em> [&lt;branch&gt;] </dt>
+<dt class="hdlist1" id="Documentation/git-checkout.txt-emgitcheckoutemltbranchgt"><a id="Documentation/git-checkout.txt-gitcheckoutbranch" class="anchor" href="#Documentation/git-checkout.txt-gitcheckoutbranch"></a><em>git checkout</em> [<span class="hover-term" data-term="branch">&lt;branch&gt;</span>] </dt>
 <dd>
-<p>To prepare for working on <span class='synopsis'><em>&lt;branch&gt;</em></span>, switch to it by updating
+<p>To prepare for working on <span class='synopsis'><em><span class="hover-term" data-term="branch">&lt;branch&gt;</span></em></span>, switch to it by updating
 the index and the files in the working tree, and by pointing
 <span class='synopsis'><code>HEAD</code></span> at the branch. Local modifications to the files in the
 working tree are kept, so that they can be committed to the
-<span class='synopsis'><em>&lt;branch&gt;</em></span>.</p>
+<span class='synopsis'><em><span class="hover-term" data-term="branch">&lt;branch&gt;</span></em></span>.</p>
 <div class="paragraph">
-<p>If <span class='synopsis'><em>&lt;branch&gt;</em></span> is not found but there does exist a tracking branch in
+<p>If <span class='synopsis'><em><span class="hover-term" data-term="branch">&lt;branch&gt;</span></em></span> is not found but there does exist a tracking branch in
 exactly one remote (call it <span class='synopsis'><em>&lt;remote&gt;</em></span>) with a matching name and
 <span class='synopsis'><code>--no-guess</code></span> is not specified, treat as equivalent to</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>$ git checkout -b &lt;branch&gt; --track &lt;remote&gt;/&lt;branch&gt;</pre>
+<pre>$ git checkout -b <span class="hover-term" data-term="branch">&lt;branch&gt;</span> --track &lt;remote&gt;/<span class="hover-term" data-term="branch">&lt;branch&gt;</span></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>You could omit <span class='synopsis'><em>&lt;branch&gt;</em></span>, in which case the command degenerates to
+<p>You could omit <span class='synopsis'><em><span class="hover-term" data-term="branch">&lt;branch&gt;</span></em></span>, in which case the command degenerates to
 "check out the current branch", which is a glorified no-op with
 rather expensive side-effects to show only the tracking information,
 if it exists, for the current branch.</p>
@@ -111,8 +111,8 @@ is reset. This is the transactional equivalent of</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>$ git branch -f &lt;branch&gt; [&lt;start-point&gt;]
-$ git checkout &lt;branch&gt;</pre>
+<pre>$ git branch -f <span class="hover-term" data-term="branch">&lt;branch&gt;</span> [&lt;start-point&gt;]
+$ git checkout <span class="hover-term" data-term="branch">&lt;branch&gt;</span></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -122,33 +122,33 @@ just the current branch stays the same, but the branch is not reset to
 the start-point, either).</p>
 </div>
 </dd>
-<dt class="hdlist1" id="Documentation/git-checkout.txt-emgitcheckoutem--detachltbranchgt"><a id="Documentation/git-checkout.txt-gitcheckout--detachbranch" class="anchor" href="#Documentation/git-checkout.txt-gitcheckout--detachbranch"></a><em>git checkout</em> --detach [&lt;branch&gt;] </dt>
-<dt class="hdlist1" id="Documentation/git-checkout.txt-emgitcheckoutem--detachltcommitgt"><a id="Documentation/git-checkout.txt-gitcheckout--detachcommit" class="anchor" href="#Documentation/git-checkout.txt-gitcheckout--detachcommit"></a><em>git checkout</em> [--detach] &lt;commit&gt; </dt>
+<dt class="hdlist1" id="Documentation/git-checkout.txt-emgitcheckoutem--detachltbranchgt"><a id="Documentation/git-checkout.txt-gitcheckout--detachbranch" class="anchor" href="#Documentation/git-checkout.txt-gitcheckout--detachbranch"></a><em>git checkout</em> --detach [<span class="hover-term" data-term="branch">&lt;branch&gt;</span>] </dt>
+<dt class="hdlist1" id="Documentation/git-checkout.txt-emgitcheckoutem--detachltcommitgt"><a id="Documentation/git-checkout.txt-gitcheckout--detachcommit" class="anchor" href="#Documentation/git-checkout.txt-gitcheckout--detachcommit"></a><em>git checkout</em> [--detach] <span class="hover-term" data-term="commit">&lt;commit&gt;</span> </dt>
 <dd>
-<p>Prepare to work on top of <span class='synopsis'><em>&lt;commit&gt;</em></span>, by detaching <span class='synopsis'><code>HEAD</code></span> at it
+<p>Prepare to work on top of <span class='synopsis'><em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em></span>, by detaching <span class='synopsis'><code>HEAD</code></span> at it
 (see "DETACHED HEAD" section), and updating the index and the
 files in the working tree.  Local modifications to the files
 in the working tree are kept, so that the resulting working
 tree will be the state recorded in the commit plus the local
 modifications.</p>
 <div class="paragraph">
-<p>When the <span class='synopsis'><em>&lt;commit&gt;</em></span> argument is a branch name, the <span class='synopsis'><code>--detach</code></span> option can
+<p>When the <span class='synopsis'><em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em></span> argument is a branch name, the <span class='synopsis'><code>--detach</code></span> option can
 be used to detach <span class='synopsis'><code>HEAD</code></span> at the tip of the branch (<span class='synopsis'><code>git</code> <code>checkout</code>
 
-<em>&lt;branch&gt;</em></span> would check out that branch without detaching <span class='synopsis'><code>HEAD</code></span>).</p>
+<em><span class="hover-term" data-term="branch">&lt;branch&gt;</span></em></span> would check out that branch without detaching <span class='synopsis'><code>HEAD</code></span>).</p>
 </div>
 <div class="paragraph">
-<p>Omitting <span class='synopsis'><em>&lt;branch&gt;</em></span> detaches <span class='synopsis'><code>HEAD</code></span> at the tip of the current branch.</p>
+<p>Omitting <span class='synopsis'><em><span class="hover-term" data-term="branch">&lt;branch&gt;</span></em></span> detaches <span class='synopsis'><code>HEAD</code></span> at the tip of the current branch.</p>
 </div>
 </dd>
-<dt class="hdlist1" id="Documentation/git-checkout.txt-emgitcheckoutem-f--ours--theirs-m--conflictltstylegtlttree-ishgt--ltpathspecgt82308203"><a id="Documentation/git-checkout.txt-gitcheckout-f--ours--theirs-m--conflictstyletree-ish--pathspec" class="anchor" href="#Documentation/git-checkout.txt-gitcheckout-f--ours--theirs-m--conflictstyletree-ish--pathspec"></a><em>git checkout</em> [-f|--ours|--theirs|-m|--conflict=&lt;style&gt;] [&lt;tree-ish&gt;] [--] &lt;pathspec&gt;&#8230;&#8203; </dt>
-<dt class="hdlist1" id="Documentation/git-checkout.txt-emgitcheckoutem-f--ours--theirs-m--conflictltstylegtlttree-ishgt--pathspec-from-fileltfilegt--pathspec-file-nul"><a id="Documentation/git-checkout.txt-gitcheckout-f--ours--theirs-m--conflictstyletree-ish--pathspec-from-filefile--pathspec-file-nul" class="anchor" href="#Documentation/git-checkout.txt-gitcheckout-f--ours--theirs-m--conflictstyletree-ish--pathspec-from-filefile--pathspec-file-nul"></a><em>git checkout</em> [-f|--ours|--theirs|-m|--conflict=&lt;style&gt;] [&lt;tree-ish&gt;] --pathspec-from-file=&lt;file&gt; [--pathspec-file-nul] </dt>
+<dt class="hdlist1" id="Documentation/git-checkout.txt-emgitcheckoutem-f--ours--theirs-m--conflictltstylegtlttree-ishgt--ltpathspecgt82308203"><a id="Documentation/git-checkout.txt-gitcheckout-f--ours--theirs-m--conflictstyletree-ish--pathspec" class="anchor" href="#Documentation/git-checkout.txt-gitcheckout-f--ours--theirs-m--conflictstyletree-ish--pathspec"></a><em>git checkout</em> [-f|--ours|--theirs|-m|--conflict=&lt;style&gt;] [<span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span>] [--] <span class="hover-term" data-term="pathspec">&lt;pathspec&gt;</span>&#8230;&#8203; </dt>
+<dt class="hdlist1" id="Documentation/git-checkout.txt-emgitcheckoutem-f--ours--theirs-m--conflictltstylegtlttree-ishgt--pathspec-from-fileltfilegt--pathspec-file-nul"><a id="Documentation/git-checkout.txt-gitcheckout-f--ours--theirs-m--conflictstyletree-ish--pathspec-from-filefile--pathspec-file-nul" class="anchor" href="#Documentation/git-checkout.txt-gitcheckout-f--ours--theirs-m--conflictstyletree-ish--pathspec-from-filefile--pathspec-file-nul"></a><em>git checkout</em> [-f|--ours|--theirs|-m|--conflict=&lt;style&gt;] [<span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span>] --pathspec-from-file=&lt;file&gt; [--pathspec-file-nul] </dt>
 <dd>
 <p>Overwrite the contents of the files that match the pathspec.
-When the <span class='synopsis'><em>&lt;tree-ish&gt;</em></span> (most often a commit) is not given,
+When the <span class='synopsis'><em><span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span></em></span> (most often a commit) is not given,
 overwrite working tree with the contents in the index.
-When the <span class='synopsis'><em>&lt;tree-ish&gt;</em></span> is given, overwrite both the index and
-the working tree with the contents at the <span class='synopsis'><em>&lt;tree-ish&gt;</em></span>.</p>
+When the <span class='synopsis'><em><span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span></em></span> is given, overwrite both the index and
+the working tree with the contents at the <span class='synopsis'><em><span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span></em></span>.</p>
 <div class="paragraph">
 <p>The index may contain unmerged entries because of a previous failed merge.
 By default, if you try to check out such an entry from the index, the
@@ -159,7 +159,7 @@ using <span class='synopsis'><code>--ours</code></span> or <span class='synopsis
 file can be discarded to re-create the original conflicted merge result.</p>
 </div>
 </dd>
-<dt class="hdlist1" id="Documentation/git-checkout.txt-emgitcheckoutem-p--patchlttree-ishgt--ltpathspecgt82308203"><a id="Documentation/git-checkout.txt-gitcheckout-p--patchtree-ish--pathspec" class="anchor" href="#Documentation/git-checkout.txt-gitcheckout-p--patchtree-ish--pathspec"></a><em>git checkout</em> (-p|--patch) [&lt;tree-ish&gt;] [--] [&lt;pathspec&gt;&#8230;&#8203;] </dt>
+<dt class="hdlist1" id="Documentation/git-checkout.txt-emgitcheckoutem-p--patchlttree-ishgt--ltpathspecgt82308203"><a id="Documentation/git-checkout.txt-gitcheckout-p--patchtree-ish--pathspec" class="anchor" href="#Documentation/git-checkout.txt-gitcheckout-p--patchtree-ish--pathspec"></a><em>git checkout</em> (-p|--patch) [<span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span>] [--] [<span class="hover-term" data-term="pathspec">&lt;pathspec&gt;</span>&#8230;&#8203;] </dt>
 <dd>
 <p>This is similar to the previous mode, but lets you use the
 interactive interface to show the "diff" output and choose which
@@ -262,21 +262,21 @@ explicitly give a name with <span class='synopsis'><code>-b</code></span> in suc
 <dt class="hdlist1" id="Documentation/git-checkout.txt---guess"><a class="anchor" href="#Documentation/git-checkout.txt---guess"></a>--guess </dt>
 <dt class="hdlist1" id="Documentation/git-checkout.txt---no-guess"><a class="anchor" href="#Documentation/git-checkout.txt---no-guess"></a>--no-guess </dt>
 <dd>
-<p>If <span class='synopsis'><em>&lt;branch&gt;</em></span> is not found but there does exist a tracking
+<p>If <span class='synopsis'><em><span class="hover-term" data-term="branch">&lt;branch&gt;</span></em></span> is not found but there does exist a tracking
 branch in exactly one remote (call it <span class='synopsis'><em>&lt;remote&gt;</em></span>) with a
 matching name, treat as equivalent to</p>
 <div class="listingblock">
 <div class="content">
-<pre>$ git checkout -b &lt;branch&gt; --track &lt;remote&gt;/&lt;branch&gt;</pre>
+<pre>$ git checkout -b <span class="hover-term" data-term="branch">&lt;branch&gt;</span> --track &lt;remote&gt;/<span class="hover-term" data-term="branch">&lt;branch&gt;</span></pre>
 </div>
 </div>
 <div class="paragraph">
 <p>If the branch exists in multiple remotes and one of them is named by
 the <span class='synopsis'><code>checkout.defaultRemote</code></span> configuration variable, we&#8217;ll use that
-one for the purposes of disambiguation, even if the <span class='synopsis'><em>&lt;branch&gt;</em></span> isn&#8217;t
+one for the purposes of disambiguation, even if the <span class='synopsis'><em><span class="hover-term" data-term="branch">&lt;branch&gt;</span></em></span> isn&#8217;t
 unique across all remotes. Set it to
 e.g. <span class='synopsis'><code>checkout.defaultRemote=origin</code></span> to always checkout remote
-branches from there if <span class='synopsis'><em>&lt;branch&gt;</em></span> is ambiguous but exists on the
+branches from there if <span class='synopsis'><em><span class="hover-term" data-term="branch">&lt;branch&gt;</span></em></span> is ambiguous but exists on the
 <em>origin</em> remote. See also <span class='synopsis'><code>checkout.defaultRemote</code></span> in
 <a href='{{< relurl "docs/git-config" >}}'>git-config[1]</a>.</p>
 </div>
@@ -298,8 +298,8 @@ details.</p>
 <dd>
 <p>Rather than checking out a branch to work on it, check out a
 commit for inspection and discardable experiments.
-This is the default behavior of <span class='synopsis'><code>git</code> <code>checkout</code> <em>&lt;commit&gt;</em></span> when
-<span class='synopsis'><em>&lt;commit&gt;</em></span> is not a branch name.  See the "DETACHED HEAD" section
+This is the default behavior of <span class='synopsis'><code>git</code> <code>checkout</code> <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em></span> when
+<span class='synopsis'><em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em></span> is not a branch name.  See the "DETACHED HEAD" section
 below for details.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-checkout.txt---orphanltnew-branchgt"><a id="Documentation/git-checkout.txt---orphannew-branch" class="anchor" href="#Documentation/git-checkout.txt---orphannew-branch"></a>--orphan &lt;new-branch&gt; </dt>
@@ -375,9 +375,9 @@ conflicting hunks are presented, overriding the
 <dt class="hdlist1" id="Documentation/git-checkout.txt---patch"><a class="anchor" href="#Documentation/git-checkout.txt---patch"></a>--patch </dt>
 <dd>
 <p>Interactively select hunks in the difference between the
-<span class='synopsis'><em>&lt;tree-ish&gt;</em></span> (or the index, if unspecified) and the working
+<span class='synopsis'><em><span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span></em></span> (or the index, if unspecified) and the working
 tree.  The chosen hunks are then applied in reverse to the
-working tree (and if a <span class='synopsis'><em>&lt;tree-ish&gt;</em></span> was specified, the index).</p>
+working tree (and if a <span class='synopsis'><em><span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span></em></span> was specified, the index).</p>
 <div class="paragraph">
 <p>This means that you can use <span class='synopsis'><code>git</code> <code>checkout</code> <code>-p</code></span> to selectively discard
 edits from your current working tree. See the &#8220;Interactive Mode&#8221;
@@ -419,8 +419,8 @@ submodule.</p>
 <p>In the default overlay mode, <span class='synopsis'><code>git</code> <code>checkout</code></span> never
 removes files from the index or the working tree.  When
 specifying <span class='synopsis'><code>--no-overlay</code></span>, files that appear in the index and
-working tree, but not in <span class='synopsis'><em>&lt;tree-ish&gt;</em></span> are removed, to make them
-match <span class='synopsis'><em>&lt;tree-ish&gt;</em></span> exactly.</p>
+working tree, but not in <span class='synopsis'><em><span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span></em></span> are removed, to make them
+match <span class='synopsis'><em><span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span></em></span> exactly.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-checkout.txt---pathspec-from-fileltfilegt"><a id="Documentation/git-checkout.txt---pathspec-from-filefile" class="anchor" href="#Documentation/git-checkout.txt---pathspec-from-filefile"></a>--pathspec-from-file=&lt;file&gt; </dt>
 <dd>
@@ -437,7 +437,7 @@ global <span class='synopsis'><code>--literal-pathspecs</code></span>.</p>
 separated with NUL character and all other characters are taken
 literally (including newlines and quotes).</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-checkout.txt-ltbranchgt"><a id="Documentation/git-checkout.txt-branch" class="anchor" href="#Documentation/git-checkout.txt-branch"></a>&lt;branch&gt; </dt>
+<dt class="hdlist1" id="Documentation/git-checkout.txt-ltbranchgt"><a id="Documentation/git-checkout.txt-branch" class="anchor" href="#Documentation/git-checkout.txt-branch"></a><span class="hover-term" data-term="branch">&lt;branch&gt;</span> </dt>
 <dd>
 <p>Branch to checkout; if it refers to a branch (i.e., a name that,
 when prepended with "refs/heads/", is a valid ref), then that
@@ -469,7 +469,7 @@ merge base of <span class='synopsis'><code>A</code></span> and <span class='syno
 leave out at most one of <span class='synopsis'><code>A</code></span> and <span class='synopsis'><code>B</code></span>, in which case it defaults to <span class='synopsis'><code>HEAD</code></span>.</p>
 </div>
 </dd>
-<dt class="hdlist1" id="Documentation/git-checkout.txt-lttree-ishgt"><a id="Documentation/git-checkout.txt-tree-ish" class="anchor" href="#Documentation/git-checkout.txt-tree-ish"></a>&lt;tree-ish&gt; </dt>
+<dt class="hdlist1" id="Documentation/git-checkout.txt-lttree-ishgt"><a id="Documentation/git-checkout.txt-tree-ish" class="anchor" href="#Documentation/git-checkout.txt-tree-ish"></a><span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span> </dt>
 <dd>
 <p>Tree to checkout from (when paths are given). If not specified,
 the index will be used.</p>
@@ -483,7 +483,7 @@ leave out at most one of <span class='synopsis'><code>A</code></span> and <span 
 <dd>
 <p>Do not interpret any more arguments as options.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-checkout.txt-ltpathspecgt82308203"><a id="Documentation/git-checkout.txt-pathspec" class="anchor" href="#Documentation/git-checkout.txt-pathspec"></a>&lt;pathspec&gt;&#8230;&#8203; </dt>
+<dt class="hdlist1" id="Documentation/git-checkout.txt-ltpathspecgt82308203"><a id="Documentation/git-checkout.txt-pathspec" class="anchor" href="#Documentation/git-checkout.txt-pathspec"></a><span class="hover-term" data-term="pathspec">&lt;pathspec&gt;</span>&#8230;&#8203; </dt>
 <dd>
 <p>Limits the paths affected by the operation.</p>
 <div class="paragraph">
@@ -661,12 +661,12 @@ $ git log -g -2 HEAD</pre>
 <div class="paragraph">
 <p>When there is only one argument given and it is not <span class='synopsis'><code>--</code></span> (e.g. <span class='synopsis'><code>git</code>
 
-<code>checkout</code> <code>abc</code></span>), and when the argument is both a valid <span class='synopsis'><em>&lt;tree-ish&gt;</em></span>
-(e.g. a branch <span class='synopsis'><code>abc</code></span> exists) and a valid <span class='synopsis'><em>&lt;pathspec&gt;</em></span> (e.g. a file
+<code>checkout</code> <code>abc</code></span>), and when the argument is both a valid <span class='synopsis'><em><span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span></em></span>
+(e.g. a branch <span class='synopsis'><code>abc</code></span> exists) and a valid <span class='synopsis'><em><span class="hover-term" data-term="pathspec">&lt;pathspec&gt;</span></em></span> (e.g. a file
 or a directory whose name is "abc" exists), Git would usually ask
 you to disambiguate.  Because checking out a branch is so common an
-operation, however, <span class='synopsis'><code>git</code> <code>checkout</code> <code>abc</code></span> takes "abc" as a <span class='synopsis'><em>&lt;tree-ish&gt;</em></span>
-in such a situation.  Use <span class='synopsis'><code>git</code> <code>checkout</code> <code>--</code> <em>&lt;pathspec&gt;</em></span> if you want
+operation, however, <span class='synopsis'><code>git</code> <code>checkout</code> <code>abc</code></span> takes "abc" as a <span class='synopsis'><em><span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span></em></span>
+in such a situation.  Use <span class='synopsis'><code>git</code> <code>checkout</code> <code>--</code> <em><span class="hover-term" data-term="pathspec">&lt;pathspec&gt;</span></em></span> if you want
 to checkout these paths out of the index.</p>
 </div>
 </div>

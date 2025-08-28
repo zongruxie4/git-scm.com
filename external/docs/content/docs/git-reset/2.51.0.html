@@ -37,10 +37,10 @@ aliases:
 <h2 id="_synopsis"><a class="anchor" href="#_synopsis"></a>SYNOPSIS</h2>
 <div class="sectionbody">
 <div class="verseblock">
-<pre class="content"><span class='synopsis'><code>git</code></span> <span class='synopsis'><code>reset</code></span> [<span class='synopsis'><code>-q</code></span>] [<em>&lt;tree-ish&gt;</em>] [<span class='synopsis'><code>--</code></span>] <em>&lt;pathspec&gt;</em>&#8230;&#8203;
-<span class='synopsis'><code>git</code></span> <span class='synopsis'><code>reset</code></span> [<span class='synopsis'><code>-q</code></span>] [<span class='synopsis'><code>--pathspec-from-file=</code></span><em>&lt;file&gt;</em> [<span class='synopsis'><code>--pathspec-file-nul</code></span>]] [<em>&lt;tree-ish&gt;</em>]
-<span class='synopsis'><code>git</code></span> <span class='synopsis'><code>reset</code></span> (<span class='synopsis'><code>--patch</code></span> | <span class='synopsis'><code>-p</code></span>) [<em>&lt;tree-ish&gt;</em>] [<span class='synopsis'><code>--</code></span>] [<em>&lt;pathspec&gt;</em>&#8230;&#8203;]
-<span class='synopsis'><code>git</code></span> <span class='synopsis'><code>reset</code></span> [<span class='synopsis'><code>--soft</code></span> | <span class='synopsis'><code>--mixed</code></span> [<span class='synopsis'><code>-N</code></span>] | <span class='synopsis'><code>--hard</code></span> | <span class='synopsis'><code>--merge</code></span> | <span class='synopsis'><code>--keep</code></span>] [<span class='synopsis'><code>-q</code></span>] [<em>&lt;commit&gt;</em>]</pre>
+<pre class="content"><span class='synopsis'><code>git</code></span> <span class='synopsis'><code>reset</code></span> [<span class='synopsis'><code>-q</code></span>] [<em><span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span></em>] [<span class='synopsis'><code>--</code></span>] <em><span class="hover-term" data-term="pathspec">&lt;pathspec&gt;</span></em>&#8230;&#8203;
+<span class='synopsis'><code>git</code></span> <span class='synopsis'><code>reset</code></span> [<span class='synopsis'><code>-q</code></span>] [<span class='synopsis'><code>--pathspec-from-file=</code></span><em>&lt;file&gt;</em> [<span class='synopsis'><code>--pathspec-file-nul</code></span>]] [<em><span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span></em>]
+<span class='synopsis'><code>git</code></span> <span class='synopsis'><code>reset</code></span> (<span class='synopsis'><code>--patch</code></span> | <span class='synopsis'><code>-p</code></span>) [<em><span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span></em>] [<span class='synopsis'><code>--</code></span>] [<em><span class="hover-term" data-term="pathspec">&lt;pathspec&gt;</span></em>&#8230;&#8203;]
+<span class='synopsis'><code>git</code></span> <span class='synopsis'><code>reset</code></span> [<span class='synopsis'><code>--soft</code></span> | <span class='synopsis'><code>--mixed</code></span> [<span class='synopsis'><code>-N</code></span>] | <span class='synopsis'><code>--hard</code></span> | <span class='synopsis'><code>--merge</code></span> | <span class='synopsis'><code>--keep</code></span>] [<span class='synopsis'><code>-q</code></span>] [<em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>]</pre>
 </div>
 </div>
 </div>
@@ -48,27 +48,27 @@ aliases:
 <h2 id="_description"><a class="anchor" href="#_description"></a>DESCRIPTION</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In the first three forms, copy entries from <em>&lt;tree-ish&gt;</em> to the index.
-In the last form, set the current branch head (<span class='synopsis'><code>HEAD</code></span>) to <em>&lt;commit&gt;</em>,
+<p>In the first three forms, copy entries from <em><span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span></em> to the index.
+In the last form, set the current branch head (<span class='synopsis'><code>HEAD</code></span>) to <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>,
 optionally modifying index and working tree to match.
-The <em>&lt;tree-ish&gt;</em>/<em>&lt;commit&gt;</em> defaults to <span class='synopsis'><code>HEAD</code></span> in all forms.</p>
+The <em><span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span></em>/<em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em> defaults to <span class='synopsis'><code>HEAD</code></span> in all forms.</p>
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1" id="Documentation/git-reset.txt-spanclasssynopsiscodegitcodecoderesetcodecode-qcodeemlttree-ishgtemcode--codeemltpathspecgtemspan"><a id="Documentation/git-reset.txt-gitreset-qtree-ish--pathspec" class="anchor" href="#Documentation/git-reset.txt-gitreset-qtree-ish--pathspec"></a><span class='synopsis'><code>git</code> <code>reset</code> [<code>-q</code>] [<em>&lt;tree-ish&gt;</em>] [<code>--</code>] <em>&lt;pathspec&gt;</em>...</span> </dt>
-<dt class="hdlist1" id="Documentation/git-reset.txt-spanclasssynopsiscodegitcodecoderesetcodecode-qcodecode--pathspec-from-filecodeemltfilegtemcode--pathspec-file-nulcodeemlttree-ishgtemspan"><a id="Documentation/git-reset.txt-gitreset-q--pathspec-from-filefile--pathspec-file-nultree-ish" class="anchor" href="#Documentation/git-reset.txt-gitreset-q--pathspec-from-filefile--pathspec-file-nultree-ish"></a><span class='synopsis'><code>git</code> <code>reset</code> [<code>-q</code>] [<code>--pathspec-from-file=</code><em>&lt;file&gt;</em> [<code>--pathspec-file-nul</code>]] [<em>&lt;tree-ish&gt;</em>]</span> </dt>
+<dt class="hdlist1" id="Documentation/git-reset.txt-spanclasssynopsiscodegitcodecoderesetcodecode-qcodeemlttree-ishgtemcode--codeemltpathspecgtemspan"><a id="Documentation/git-reset.txt-gitreset-qtree-ish--pathspec" class="anchor" href="#Documentation/git-reset.txt-gitreset-qtree-ish--pathspec"></a><span class='synopsis'><code>git</code> <code>reset</code> [<code>-q</code>] [<em><span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span></em>] [<code>--</code>] <em><span class="hover-term" data-term="pathspec">&lt;pathspec&gt;</span></em>...</span> </dt>
+<dt class="hdlist1" id="Documentation/git-reset.txt-spanclasssynopsiscodegitcodecoderesetcodecode-qcodecode--pathspec-from-filecodeemltfilegtemcode--pathspec-file-nulcodeemlttree-ishgtemspan"><a id="Documentation/git-reset.txt-gitreset-q--pathspec-from-filefile--pathspec-file-nultree-ish" class="anchor" href="#Documentation/git-reset.txt-gitreset-q--pathspec-from-filefile--pathspec-file-nultree-ish"></a><span class='synopsis'><code>git</code> <code>reset</code> [<code>-q</code>] [<code>--pathspec-from-file=</code><em>&lt;file&gt;</em> [<code>--pathspec-file-nul</code>]] [<em><span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span></em>]</span> </dt>
 <dd>
 <p>These forms reset the index entries for all paths that match the
-<em>&lt;pathspec&gt;</em> to their state at <em>&lt;tree-ish&gt;</em>.  (It does not affect
+<em><span class="hover-term" data-term="pathspec">&lt;pathspec&gt;</span></em> to their state at <em><span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span></em>.  (It does not affect
 the working tree or the current branch.)</p>
 <div class="paragraph">
-<p>This means that <span class='synopsis'><code>git</code> <code>reset</code> <em>&lt;pathspec&gt;</em></span> is the opposite of <span class='synopsis'><code>git</code> <code>add</code>
+<p>This means that <span class='synopsis'><code>git</code> <code>reset</code> <em><span class="hover-term" data-term="pathspec">&lt;pathspec&gt;</span></em></span> is the opposite of <span class='synopsis'><code>git</code> <code>add</code>
 
-<em>&lt;pathspec&gt;</em></span>. This command is equivalent to
-<span class='synopsis'><code>git</code> <code>restore</code> [<code>--source=</code><em>&lt;tree-ish&gt;</em>] <code>--staged</code> <em>&lt;pathspec&gt;</em>...</span>.</p>
+<em><span class="hover-term" data-term="pathspec">&lt;pathspec&gt;</span></em></span>. This command is equivalent to
+<span class='synopsis'><code>git</code> <code>restore</code> [<code>--source=</code><em><span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span></em>] <code>--staged</code> <em><span class="hover-term" data-term="pathspec">&lt;pathspec&gt;</span></em>...</span>.</p>
 </div>
 <div class="paragraph">
-<p>After running <span class='synopsis'><code>git</code> <code>reset</code> <em>&lt;pathspec&gt;</em></span> to update the index entry, you can
+<p>After running <span class='synopsis'><code>git</code> <code>reset</code> <em><span class="hover-term" data-term="pathspec">&lt;pathspec&gt;</span></em></span> to update the index entry, you can
 use <a href='{{< relurl "docs/git-restore" >}}'>git-restore[1]</a> to check the contents out of the index to
 the working tree. Alternatively, using <a href='{{< relurl "docs/git-restore" >}}'>git-restore[1]</a>
 and specifying a commit with <span class='synopsis'><code>--source</code></span>, you
@@ -76,10 +76,10 @@ can copy the contents of a path out of a commit to the index and to the
 working tree in one go.</p>
 </div>
 </dd>
-<dt class="hdlist1" id="Documentation/git-reset.txt-spanclasssynopsiscodegitcodecoderesetcodecode--patchcodecode-pcodeemlttree-ishgtemcode--codeemltpathspecgtemspan"><a id="Documentation/git-reset.txt-gitreset--patch-ptree-ish--pathspec" class="anchor" href="#Documentation/git-reset.txt-gitreset--patch-ptree-ish--pathspec"></a><span class='synopsis'><code>git</code> <code>reset</code> (<code>--patch</code> | <code>-p</code>) [<em>&lt;tree-ish&gt;</em>] [<code>--</code>] [<em>&lt;pathspec&gt;</em>...]</span> </dt>
+<dt class="hdlist1" id="Documentation/git-reset.txt-spanclasssynopsiscodegitcodecoderesetcodecode--patchcodecode-pcodeemlttree-ishgtemcode--codeemltpathspecgtemspan"><a id="Documentation/git-reset.txt-gitreset--patch-ptree-ish--pathspec" class="anchor" href="#Documentation/git-reset.txt-gitreset--patch-ptree-ish--pathspec"></a><span class='synopsis'><code>git</code> <code>reset</code> (<code>--patch</code> | <code>-p</code>) [<em><span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span></em>] [<code>--</code>] [<em><span class="hover-term" data-term="pathspec">&lt;pathspec&gt;</span></em>...]</span> </dt>
 <dd>
 <p>Interactively select hunks in the difference between the index
-and <em>&lt;tree-ish&gt;</em> (defaults to <span class='synopsis'><code>HEAD</code></span>).  The chosen hunks are applied
+and <em><span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span></em> (defaults to <span class='synopsis'><code>HEAD</code></span>).  The chosen hunks are applied
 in reverse to the index.</p>
 <div class="paragraph">
 <p>This means that <span class='synopsis'><code>git</code> <code>reset</code> <code>-p</code></span> is the opposite of <span class='synopsis'><code>git</code> <code>add</code> <code>-p</code></span>, i.e.
@@ -87,10 +87,10 @@ you can use it to selectively reset hunks. See the "Interactive Mode"
 section of <a href='{{< relurl "docs/git-add" >}}'>git-add[1]</a> to learn how to operate the <span class='synopsis'><code>--patch</code></span> mode.</p>
 </div>
 </dd>
-<dt class="hdlist1" id="Documentation/git-reset.txt-spanclasssynopsiscodegitcodecoderesetcodeemltmodegtememltcommitgtemspan"><a id="Documentation/git-reset.txt-gitresetmodecommit" class="anchor" href="#Documentation/git-reset.txt-gitresetmodecommit"></a><span class='synopsis'><code>git</code> <code>reset</code> [<em>&lt;mode&gt;</em>] [<em>&lt;commit&gt;</em>]</span> </dt>
+<dt class="hdlist1" id="Documentation/git-reset.txt-spanclasssynopsiscodegitcodecoderesetcodeemltmodegtememltcommitgtemspan"><a id="Documentation/git-reset.txt-gitresetmodecommit" class="anchor" href="#Documentation/git-reset.txt-gitresetmodecommit"></a><span class='synopsis'><code>git</code> <code>reset</code> [<em>&lt;mode&gt;</em>] [<em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>]</span> </dt>
 <dd>
-<p>This form resets the current branch head to <em>&lt;commit&gt;</em> and
-possibly updates the index (resetting it to the tree of <em>&lt;commit&gt;</em>) and
+<p>This form resets the current branch head to <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em> and
+possibly updates the index (resetting it to the tree of <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>) and
 the working tree depending on <em>&lt;mode&gt;</em>. Before the operation, <span class='synopsis'><code>ORIG_HEAD</code></span>
 is set to the tip of the current branch. If <em>&lt;mode&gt;</em> is omitted,
 defaults to <span class='synopsis'><code>--mixed</code></span>. The <em>&lt;mode&gt;</em> must be one of the following:</p>
@@ -101,7 +101,7 @@ defaults to <span class='synopsis'><code>--mixed</code></span>. The <em>&lt;mode
 <dt class="hdlist1" id="Documentation/git-reset.txt-spanclasssynopsiscode--softcodespan"><a id="Documentation/git-reset.txt---soft" class="anchor" href="#Documentation/git-reset.txt---soft"></a><span class='synopsis'><code>--soft</code></span> </dt>
 <dd>
 <p>Does not touch the index file or the working tree at all (but
-resets the head to <em>&lt;commit&gt;</em>, just like all modes do). This leaves
+resets the head to <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>, just like all modes do). This leaves
 all your changed files "Changes to be committed", as <span class='synopsis'><code>git</code> <code>status</code></span>
 would put it.</p>
 </dd>
@@ -118,27 +118,27 @@ been updated. This is the default action.</p>
 <dt class="hdlist1" id="Documentation/git-reset.txt-spanclasssynopsiscode--hardcodespan"><a id="Documentation/git-reset.txt---hard" class="anchor" href="#Documentation/git-reset.txt---hard"></a><span class='synopsis'><code>--hard</code></span> </dt>
 <dd>
 <p>Resets the index and working tree. Any changes to tracked files in the
-working tree since <em>&lt;commit&gt;</em> are discarded.  Any untracked files or
+working tree since <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em> are discarded.  Any untracked files or
 directories in the way of writing any tracked files are simply deleted.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-reset.txt-spanclasssynopsiscode--mergecodespan"><a id="Documentation/git-reset.txt---merge" class="anchor" href="#Documentation/git-reset.txt---merge"></a><span class='synopsis'><code>--merge</code></span> </dt>
 <dd>
 <p>Resets the index and updates the files in the working tree that are
-different between <em>&lt;commit&gt;</em> and <span class='synopsis'><code>HEAD</code></span>, but keeps those which are
+different between <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em> and <span class='synopsis'><code>HEAD</code></span>, but keeps those which are
 different between the index and working tree (i.e. which have changes
 which have not been added).
-If a file that is different between <em>&lt;commit&gt;</em> and the index has
+If a file that is different between <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em> and the index has
 unstaged changes, reset is aborted.</p>
 <div class="paragraph">
-<p>In other words, <span class='synopsis'><code>--merge</code></span> does something like a <span class='synopsis'><code>git</code> <code>read-tree</code> <code>-u</code> <code>-m</code> <em>&lt;commit&gt;</em></span>,
+<p>In other words, <span class='synopsis'><code>--merge</code></span> does something like a <span class='synopsis'><code>git</code> <code>read-tree</code> <code>-u</code> <code>-m</code> <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em></span>,
 but carries forward unmerged index entries.</p>
 </div>
 </dd>
 <dt class="hdlist1" id="Documentation/git-reset.txt-spanclasssynopsiscode--keepcodespan"><a id="Documentation/git-reset.txt---keep" class="anchor" href="#Documentation/git-reset.txt---keep"></a><span class='synopsis'><code>--keep</code></span> </dt>
 <dd>
 <p>Resets index entries and updates files in the working tree that are
-different between <em>&lt;commit&gt;</em> and <span class='synopsis'><code>HEAD</code></span>.
-If a file that is different between <em>&lt;commit&gt;</em> and <span class='synopsis'><code>HEAD</code></span> has local
+different between <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em> and <span class='synopsis'><code>HEAD</code></span>.
+If a file that is different between <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em> and <span class='synopsis'><code>HEAD</code></span> has local
 changes, reset is aborted.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-reset.txt-spanclasssynopsiscode--codecodeno-codecoderecurse-submodulescodespan"><a id="Documentation/git-reset.txt---no-recurse-submodules" class="anchor" href="#Documentation/git-reset.txt---no-recurse-submodules"></a><span class='synopsis'><code>--</code>[<code>no-</code>]<code>recurse-submodules</code></span> </dt>
@@ -208,7 +208,7 @@ is unset.</p>
 <dd>
 <p>Do not interpret any more arguments as options.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-reset.txt-spanclasssynopsisemltpathspecgtemspan"><a id="Documentation/git-reset.txt-pathspec" class="anchor" href="#Documentation/git-reset.txt-pathspec"></a><span class='synopsis'><em>&lt;pathspec&gt;</em>...</span> </dt>
+<dt class="hdlist1" id="Documentation/git-reset.txt-spanclasssynopsisemltpathspecgtemspan"><a id="Documentation/git-reset.txt-pathspec" class="anchor" href="#Documentation/git-reset.txt-pathspec"></a><span class='synopsis'><em><span class="hover-term" data-term="pathspec">&lt;pathspec&gt;</span></em>...</span> </dt>
 <dd>
 <p>Limits the paths affected by the operation.</p>
 <div class="paragraph">

@@ -38,13 +38,13 @@ aliases:
 <h2 id="_synopsis"><a class="anchor" href="#_synopsis"></a>SYNOPSIS</h2>
 <div class="sectionbody">
 <div class="verseblock">
-<pre class="content"><em>git submodule</em> [--quiet] add [-b &lt;branch&gt;] [-f|--force] [--name &lt;name&gt;]
-	      [--reference &lt;repository&gt;] [--depth &lt;depth&gt;] [--] &lt;repository&gt; [&lt;path&gt;]
+<pre class="content"><em>git submodule</em> [--quiet] add [-b <span class="hover-term" data-term="branch">&lt;branch&gt;</span>] [-f|--force] [--name &lt;name&gt;]
+	      [--reference <span class="hover-term" data-term="repository">&lt;repository&gt;</span>] [--depth &lt;depth&gt;] [--] <span class="hover-term" data-term="repository">&lt;repository&gt;</span> [&lt;path&gt;]
 <em>git submodule</em> [--quiet] status [--cached] [--recursive] [--] [&lt;path&gt;&#8230;&#8203;]
 <em>git submodule</em> [--quiet] init [--] [&lt;path&gt;&#8230;&#8203;]
 <em>git submodule</em> [--quiet] deinit [-f|--force] [--] &lt;path&gt;&#8230;&#8203;
 <em>git submodule</em> [--quiet] update [--init] [--remote] [-N|--no-fetch]
-	      [-f|--force] [--rebase|--merge] [--reference &lt;repository&gt;]
+	      [-f|--force] [--rebase|--merge] [--reference <span class="hover-term" data-term="repository">&lt;repository&gt;</span>]
 	      [--depth &lt;depth&gt;] [--recursive] [--] [&lt;path&gt;&#8230;&#8203;]
 <em>git submodule</em> [--quiet] summary [--cached|--files] [(-n|--summary-limit) &lt;n&gt;]
 	      [commit] [--] [&lt;path&gt;&#8230;&#8203;]
@@ -108,7 +108,7 @@ if you choose to go that route.</p>
 to the changeset to be committed next to the current
 project: the current project is termed the "superproject".</p>
 <div class="paragraph">
-<p>This requires at least one argument: &lt;repository&gt;. The optional
+<p>This requires at least one argument: <span class="hover-term" data-term="repository">&lt;repository&gt;</span>. The optional
 argument &lt;path&gt; is the relative location for the cloned submodule
 to exist in the superproject. If &lt;path&gt; is not given, the
 "humanish" part of the source repository is used ("repo" for
@@ -117,7 +117,7 @@ The &lt;path&gt; is also used as the submodule&#8217;s logical name in its
 configuration entries unless <span class='synopsis'><code>--name</code></span> is used to specify a logical name.</p>
 </div>
 <div class="paragraph">
-<p>&lt;repository&gt; is the URL of the new submodule&#8217;s origin repository.
+<p><span class="hover-term" data-term="repository">&lt;repository&gt;</span> is the URL of the new submodule&#8217;s origin repository.
 This may be either an absolute URL, or (if it begins with ./
 or ../), the location relative to the superproject&#8217;s origin
 repository (Please note that to specify a repository <em>foo.git</em>
@@ -460,7 +460,7 @@ called so far before updating.</p>
 name to the given string instead of defaulting to its path. The name
 must be valid as a directory name and may not end with a <em>/</em>.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-submodule.txt---referenceltrepositorygt"><a id="Documentation/git-submodule.txt---referencerepository" class="anchor" href="#Documentation/git-submodule.txt---referencerepository"></a>--reference &lt;repository&gt; </dt>
+<dt class="hdlist1" id="Documentation/git-submodule.txt---referenceltrepositorygt"><a id="Documentation/git-submodule.txt---referencerepository" class="anchor" href="#Documentation/git-submodule.txt---referencerepository"></a>--reference <span class="hover-term" data-term="repository">&lt;repository&gt;</span> </dt>
 <dd>
 <p>This option is only valid for add and update commands.  These
 commands sometimes need to clone a remote repository. In this case,

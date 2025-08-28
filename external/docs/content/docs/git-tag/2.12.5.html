@@ -42,11 +42,11 @@ aliases:
 <div class="sectionbody">
 <div class="verseblock">
 <pre class="content"><em>git tag</em> [-a | -s | -u &lt;keyid&gt;] [-f] [-m &lt;msg&gt; | -F &lt;file&gt;]
-	&lt;tagname&gt; [&lt;commit&gt; | &lt;object&gt;]
+	&lt;tagname&gt; [<span class="hover-term" data-term="commit">&lt;commit&gt;</span> | <span class="hover-term" data-term="object">&lt;object&gt;</span>]
 <em>git tag</em> -d &lt;tagname&gt;&#8230;&#8203;
-<em>git tag</em> [-n[&lt;num&gt;]] -l [--contains &lt;commit&gt;] [--points-at &lt;object&gt;]
+<em>git tag</em> [-n[&lt;num&gt;]] -l [--contains <span class="hover-term" data-term="commit">&lt;commit&gt;</span>] [--points-at <span class="hover-term" data-term="object">&lt;object&gt;</span>]
 	[--column[=&lt;options&gt;] | --no-column] [--create-reflog] [--sort=&lt;key&gt;]
-	[--format=&lt;format&gt;] [--[no-]merged [&lt;commit&gt;]] [&lt;pattern&gt;&#8230;&#8203;]
+	[--format=&lt;format&gt;] [--[no-]merged [<span class="hover-term" data-term="commit">&lt;commit&gt;</span>]] [&lt;pattern&gt;&#8230;&#8203;]
 <em>git tag</em> -v [--format=&lt;format&gt;] &lt;tagname&gt;&#8230;&#8203;</pre>
 </div>
 </div>
@@ -179,12 +179,12 @@ without options are equivalent to <em>always</em> and <em>never</em> respectivel
 <p>This option is only applicable when listing tags without annotation lines.</p>
 </div>
 </dd>
-<dt class="hdlist1" id="Documentation/git-tag.txt---containsltcommitgt"><a id="Documentation/git-tag.txt---containscommit" class="anchor" href="#Documentation/git-tag.txt---containscommit"></a>--contains [&lt;commit&gt;] </dt>
+<dt class="hdlist1" id="Documentation/git-tag.txt---containsltcommitgt"><a id="Documentation/git-tag.txt---containscommit" class="anchor" href="#Documentation/git-tag.txt---containscommit"></a>--contains [<span class="hover-term" data-term="commit">&lt;commit&gt;</span>] </dt>
 <dd>
 <p>Only list tags which contain the specified commit (HEAD if not
 specified).</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-tag.txt---points-atltobjectgt"><a id="Documentation/git-tag.txt---points-atobject" class="anchor" href="#Documentation/git-tag.txt---points-atobject"></a>--points-at &lt;object&gt; </dt>
+<dt class="hdlist1" id="Documentation/git-tag.txt---points-atltobjectgt"><a id="Documentation/git-tag.txt---points-atobject" class="anchor" href="#Documentation/git-tag.txt---points-atobject"></a>--points-at <span class="hover-term" data-term="object">&lt;object&gt;</span> </dt>
 <dd>
 <p>Only list tags of the given object.</p>
 </dd>
@@ -228,8 +228,8 @@ The new tag name must pass all checks defined by
 <a href='{{< relurl "docs/git-check-ref-format" >}}'>git-check-ref-format[1]</a>.  Some of these checks
 may restrict the characters allowed in a tag name.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-tag.txt-ltcommitgt"><a id="Documentation/git-tag.txt-commit" class="anchor" href="#Documentation/git-tag.txt-commit"></a>&lt;commit&gt; </dt>
-<dt class="hdlist1" id="Documentation/git-tag.txt-ltobjectgt"><a id="Documentation/git-tag.txt-object" class="anchor" href="#Documentation/git-tag.txt-object"></a>&lt;object&gt; </dt>
+<dt class="hdlist1" id="Documentation/git-tag.txt-ltcommitgt"><a id="Documentation/git-tag.txt-commit" class="anchor" href="#Documentation/git-tag.txt-commit"></a><span class="hover-term" data-term="commit">&lt;commit&gt;</span> </dt>
+<dt class="hdlist1" id="Documentation/git-tag.txt-ltobjectgt"><a id="Documentation/git-tag.txt-object" class="anchor" href="#Documentation/git-tag.txt-object"></a><span class="hover-term" data-term="object">&lt;object&gt;</span> </dt>
 <dd>
 <p>The object that the new tag will refer to, usually a commit.
 Defaults to HEAD.</p>
@@ -241,7 +241,7 @@ pointed at by a ref being shown.  The format is the same as
 that of <a href='{{< relurl "docs/git-for-each-ref" >}}'>git-for-each-ref[1]</a>.  When unspecified,
 defaults to <span class='synopsis'><code>%</code>(<code>refname:strip=2</code>)</span>.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-tag.txt---no-mergedltcommitgt"><a id="Documentation/git-tag.txt---no-mergedcommit" class="anchor" href="#Documentation/git-tag.txt---no-mergedcommit"></a>--[no-]merged [&lt;commit&gt;] </dt>
+<dt class="hdlist1" id="Documentation/git-tag.txt---no-mergedltcommitgt"><a id="Documentation/git-tag.txt---no-mergedcommit" class="anchor" href="#Documentation/git-tag.txt---no-mergedcommit"></a>--[no-]merged [<span class="hover-term" data-term="commit">&lt;commit&gt;</span>] </dt>
 <dd>
 <p>Only list tags whose tips are reachable, or not reachable
 if <span class='synopsis'><code>--no-merged</code></span> is used, from the specified commit (<span class='synopsis'><code>HEAD</code></span>

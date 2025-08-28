@@ -49,7 +49,7 @@ aliases:
 <h2 id="_synopsis"><a class="anchor" href="#_synopsis"></a>SYNOPSIS</h2>
 <div class="sectionbody">
 <div class="verseblock">
-<pre class="content"><em>git show</em> [&lt;options&gt;] [&lt;object&gt;&#8230;&#8203;]</pre>
+<pre class="content"><em>git show</em> [&lt;options&gt;] [<span class="hover-term" data-term="object">&lt;object&gt;</span>&#8230;&#8203;]</pre>
 </div>
 </div>
 </div>
@@ -88,7 +88,7 @@ control how the changes the commit introduces are shown.</p>
 <div class="sectionbody">
 <div class="dlist">
 <dl>
-<dt class="hdlist1" id="Documentation/git-show.txt-ltobjectgt82308203"><a id="Documentation/git-show.txt-object" class="anchor" href="#Documentation/git-show.txt-object"></a>&lt;object&gt;&#8230;&#8203; </dt>
+<dt class="hdlist1" id="Documentation/git-show.txt-ltobjectgt82308203"><a id="Documentation/git-show.txt-object" class="anchor" href="#Documentation/git-show.txt-object"></a><span class="hover-term" data-term="object">&lt;object&gt;</span>&#8230;&#8203; </dt>
 <dd>
 <p>The names of objects to show (defaults to <em>HEAD</em>).
 For a more complete list of ways to spell object names, see
@@ -163,7 +163,7 @@ message by 4 spaces (i.e.  <em>medium</em>, which is the default, <em>full</em>,
 and <em>fuller</em>).</p>
 </div>
 </dd>
-<dt class="hdlist1" id="Documentation/git-show.txt---notesltrefgt"><a id="Documentation/git-show.txt---notesref" class="anchor" href="#Documentation/git-show.txt---notesref"></a>--notes[=&lt;ref&gt;] </dt>
+<dt class="hdlist1" id="Documentation/git-show.txt---notesltrefgt"><a id="Documentation/git-show.txt---notesref" class="anchor" href="#Documentation/git-show.txt---notesref"></a>--notes[=<span class="hover-term" data-term="ref">&lt;ref&gt;</span>] </dt>
 <dd>
 <p>Show the notes (see <a href='{{< relurl "docs/git-notes" >}}'>git-notes[1]</a>) that annotate the
 commit, when showing the commit log message.  This is the default
@@ -176,7 +176,7 @@ on the command line.</p>
 environment overrides). See <a href='{{< relurl "docs/git-config" >}}'>git-config[1]</a> for more details.</p>
 </div>
 <div class="paragraph">
-<p>With an optional <em>&lt;ref&gt;</em> argument, use the ref to find the notes
+<p>With an optional <em><span class="hover-term" data-term="ref">&lt;ref&gt;</span></em> argument, use the ref to find the notes
 to display.  The ref can specify the full refname when it begins
 with <span class='synopsis'><code>refs/notes/</code></span>; when it begins with <span class='synopsis'><code>notes/</code></span>, <span class='synopsis'><code>refs/</code></span> and otherwise
 <span class='synopsis'><code>refs/notes/</code></span> is prefixed to form a full name of the ref.</p>
@@ -196,7 +196,7 @@ Options are parsed in the order given on the command line, so e.g.
 "--notes --notes=foo --no-notes --notes=bar" will only show notes
 from "refs/notes/bar".</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-show.txt---show-notesltrefgt"><a id="Documentation/git-show.txt---show-notesref" class="anchor" href="#Documentation/git-show.txt---show-notesref"></a>--show-notes[=&lt;ref&gt;] </dt>
+<dt class="hdlist1" id="Documentation/git-show.txt---show-notesltrefgt"><a id="Documentation/git-show.txt---show-notesref" class="anchor" href="#Documentation/git-show.txt---show-notesref"></a>--show-notes[=<span class="hover-term" data-term="ref">&lt;ref&gt;</span>] </dt>
 <dt class="hdlist1" id="Documentation/git-show.txt---no-standard-notes"><a class="anchor" href="#Documentation/git-show.txt---no-standard-notes"></a>--[no-]standard-notes </dt>
 <dd>
 <p>These options are deprecated. Use the above --notes/--no-notes
@@ -239,7 +239,7 @@ built-in formats:</p>
 <p><em>oneline</em></p>
 <div class="literalblock">
 <div class="content">
-<pre>&lt;hash&gt; &lt;title-line&gt;</pre>
+<pre><span class="hover-term" data-term="hash">&lt;hash&gt;</span> &lt;title-line&gt;</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -250,7 +250,7 @@ built-in formats:</p>
 <p><em>short</em></p>
 <div class="literalblock">
 <div class="content">
-<pre>commit &lt;hash&gt;
+<pre>commit <span class="hover-term" data-term="hash">&lt;hash&gt;</span>
 Author: &lt;author&gt;</pre>
 </div>
 </div>
@@ -264,7 +264,7 @@ Author: &lt;author&gt;</pre>
 <p><em>medium</em></p>
 <div class="literalblock">
 <div class="content">
-<pre>commit &lt;hash&gt;
+<pre>commit <span class="hover-term" data-term="hash">&lt;hash&gt;</span>
 Author: &lt;author&gt;
 Date:   &lt;author-date&gt;</pre>
 </div>
@@ -284,7 +284,7 @@ Date:   &lt;author-date&gt;</pre>
 <p><em>full</em></p>
 <div class="literalblock">
 <div class="content">
-<pre>commit &lt;hash&gt;
+<pre>commit <span class="hover-term" data-term="hash">&lt;hash&gt;</span>
 Author: &lt;author&gt;
 Commit: &lt;committer&gt;</pre>
 </div>
@@ -304,7 +304,7 @@ Commit: &lt;committer&gt;</pre>
 <p><em>fuller</em></p>
 <div class="literalblock">
 <div class="content">
-<pre>commit &lt;hash&gt;
+<pre>commit <span class="hover-term" data-term="hash">&lt;hash&gt;</span>
 Author:     &lt;author&gt;
 AuthorDate: &lt;author-date&gt;
 Commit:     &lt;committer&gt;
@@ -342,7 +342,7 @@ placeholders, its output is not affected by other options like
 <p><em>email</em></p>
 <div class="literalblock">
 <div class="content">
-<pre>From &lt;hash&gt; &lt;date&gt;
+<pre>From <span class="hover-term" data-term="hash">&lt;hash&gt;</span> &lt;date&gt;
 From: &lt;author&gt;
 Date: &lt;author-date&gt;
 Subject: [PATCH] &lt;title-line&gt;</pre>
@@ -1984,7 +1984,7 @@ rename from &lt;path&gt;
 rename to &lt;path&gt;
 similarity index &lt;number&gt;
 dissimilarity index &lt;number&gt;
-index &lt;hash&gt;..&lt;hash&gt; &lt;mode&gt;</pre>
+index <span class="hover-term" data-term="hash">&lt;hash&gt;</span>..<span class="hover-term" data-term="hash">&lt;hash&gt;</span> &lt;mode&gt;</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2108,7 +2108,7 @@ this (when the <span class='synopsis'><code>-c</code></span> option is used):</p
 (this example shows a merge with two parents):</p>
 <div class="literalblock">
 <div class="content">
-<pre>index &lt;hash&gt;,&lt;hash&gt;..&lt;hash&gt;
+<pre>index <span class="hover-term" data-term="hash">&lt;hash&gt;</span>,<span class="hover-term" data-term="hash">&lt;hash&gt;</span>..<span class="hover-term" data-term="hash">&lt;hash&gt;</span>
 mode &lt;mode&gt;,&lt;mode&gt;..&lt;mode&gt;
 new file mode &lt;mode&gt;
 deleted file mode &lt;mode&gt;,&lt;mode&gt;</pre>
@@ -2119,7 +2119,7 @@ deleted file mode &lt;mode&gt;,&lt;mode&gt;</pre>
 the &lt;mode&gt; is different from the rest. Extended headers with
 information about detected contents movement (renames and
 copying detection) are designed to work with diff of two
-&lt;tree-ish&gt; and are not used by combined diff format.</p>
+<span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span> and are not used by combined diff format.</p>
 </div>
 </li>
 <li>

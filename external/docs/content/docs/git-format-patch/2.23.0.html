@@ -63,7 +63,7 @@ aliases:
 		   [(--reroll-count|-v) &lt;n&gt;]
 		   [--to=&lt;email&gt;] [--cc=&lt;email&gt;]
 		   [--[no-]cover-letter] [--quiet]
-		   [--no-notes | --notes[=&lt;ref&gt;]]
+		   [--no-notes | --notes[=<span class="hover-term" data-term="ref">&lt;ref&gt;</span>]]
 		   [--interdiff=&lt;previous&gt;]
 		   [--range-diff=&lt;previous&gt; [--creation-factor=&lt;percent&gt;]]
 		   [--progress]
@@ -99,12 +99,12 @@ commits in the specified range.</p>
 </ol>
 </div>
 <div class="paragraph">
-<p>The first rule takes precedence in the case of a single &lt;commit&gt;.  To
+<p>The first rule takes precedence in the case of a single <span class="hover-term" data-term="commit">&lt;commit&gt;</span>.  To
 apply the second rule, i.e., format everything since the beginning of
-history up until &lt;commit&gt;, use the <span class='synopsis'><code>--root</code></span> option: <span class='synopsis'><code>git</code> <code>format-patch</code>
+history up until <span class="hover-term" data-term="commit">&lt;commit&gt;</span>, use the <span class='synopsis'><code>--root</code></span> option: <span class='synopsis'><code>git</code> <code>format-patch</code>
 
-<code>--root</code> <em>&lt;commit&gt;</em></span>.  If you want to format only &lt;commit&gt; itself, you
-can do this with <span class='synopsis'><code>git</code> <code>format-patch</code> <code>-1</code> <em>&lt;commit&gt;</em></span>.</p>
+<code>--root</code> <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em></span>.  If you want to format only <span class="hover-term" data-term="commit">&lt;commit&gt;</span> itself, you
+can do this with <span class='synopsis'><code>git</code> <code>format-patch</code> <code>-1</code> <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em></span>.</p>
 </div>
 <div class="paragraph">
 <p>By default, each output file is numbered sequentially from 1, and uses the
@@ -837,7 +837,7 @@ between the previous and current series of patches by adjusting the
 creation/deletion cost fudge factor. See <a href='{{< relurl "docs/git-range-diff" >}}'>git-range-diff[1]</a>)
 for details.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-format-patch.txt---notesltrefgt"><a id="Documentation/git-format-patch.txt---notesref" class="anchor" href="#Documentation/git-format-patch.txt---notesref"></a>--notes[=&lt;ref&gt;] </dt>
+<dt class="hdlist1" id="Documentation/git-format-patch.txt---notesltrefgt"><a id="Documentation/git-format-patch.txt---notesref" class="anchor" href="#Documentation/git-format-patch.txt---notesref"></a>--notes[=<span class="hover-term" data-term="ref">&lt;ref&gt;</span>] </dt>
 <dt class="hdlist1" id="Documentation/git-format-patch.txt---no-notes"><a class="anchor" href="#Documentation/git-format-patch.txt---no-notes"></a>--no-notes </dt>
 <dd>
 <p>Append the notes (see <a href='{{< relurl "docs/git-notes" >}}'>git-notes[1]</a>) for the commit
@@ -895,7 +895,7 @@ still useful for code review.</p>
 <p>Output an all-zero hash in each patch&#8217;s From header instead
 of the hash of the commit.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-format-patch.txt---baseltcommitgt"><a id="Documentation/git-format-patch.txt---basecommit" class="anchor" href="#Documentation/git-format-patch.txt---basecommit"></a>--base=&lt;commit&gt; </dt>
+<dt class="hdlist1" id="Documentation/git-format-patch.txt---baseltcommitgt"><a id="Documentation/git-format-patch.txt---basecommit" class="anchor" href="#Documentation/git-format-patch.txt---basecommit"></a>--base=<span class="hover-term" data-term="commit">&lt;commit&gt;</span> </dt>
 <dd>
 <p>Record the base tree information to identify the state the
 patch series applies to.  See the BASE TREE INFORMATION section

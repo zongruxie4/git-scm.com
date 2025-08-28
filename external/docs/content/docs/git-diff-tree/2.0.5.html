@@ -35,7 +35,7 @@ aliases:
 <div class="verseblock">
 <pre class="content"><em>git diff-tree</em> [--stdin] [-m] [-s] [-v] [--no-commit-id] [--pretty]
 	      [-t] [-r] [-c | --cc] [--root] [&lt;common diff options&gt;]
-	      &lt;tree-ish&gt; [&lt;tree-ish&gt;] [&lt;path&gt;&#8230;&#8203;]</pre>
+	      <span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span> [<span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span>] [&lt;path&gt;&#8230;&#8203;]</pre>
 </div>
 </div>
 </div>
@@ -46,7 +46,7 @@ aliases:
 <p>Compares the content and mode of the blobs found via two tree objects.</p>
 </div>
 <div class="paragraph">
-<p>If there is only one &lt;tree-ish&gt; given, the commit is compared with its parents
+<p>If there is only one <span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span> given, the commit is compared with its parents
 (see --stdin below).</p>
 </div>
 <div class="paragraph">
@@ -653,7 +653,7 @@ the behavior until 1.7.0). Using "all" hides all changes to submodules.</p>
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1" id="Documentation/git-diff-tree.txt-lttree-ishgt"><a id="Documentation/git-diff-tree.txt-tree-ish" class="anchor" href="#Documentation/git-diff-tree.txt-tree-ish"></a>&lt;tree-ish&gt; </dt>
+<dt class="hdlist1" id="Documentation/git-diff-tree.txt-lttree-ishgt"><a id="Documentation/git-diff-tree.txt-tree-ish" class="anchor" href="#Documentation/git-diff-tree.txt-tree-ish"></a><span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span> </dt>
 <dd>
 <p>The id of a tree object.</p>
 </dd>
@@ -681,9 +681,9 @@ creation event. This is equivalent to a diff against the NULL tree.</p>
 <dt class="hdlist1" id="Documentation/git-diff-tree.txt---stdin"><a class="anchor" href="#Documentation/git-diff-tree.txt---stdin"></a>--stdin </dt>
 <dd>
 <p>When <em>--stdin</em> is specified, the command does not take
-&lt;tree-ish&gt; arguments from the command line.  Instead, it
-reads lines containing either two &lt;tree&gt;, one &lt;commit&gt;, or a
-list of &lt;commit&gt; from its standard input.  (Use a single space
+<span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span> arguments from the command line.  Instead, it
+reads lines containing either two <span class="hover-term" data-term="tree">&lt;tree&gt;</span>, one <span class="hover-term" data-term="commit">&lt;commit&gt;</span>, or a
+list of <span class="hover-term" data-term="commit">&lt;commit&gt;</span> from its standard input.  (Use a single space
 as separator.)</p>
 <div class="paragraph">
 <p>When two trees are given, it compares the first tree with the second.
@@ -764,7 +764,7 @@ command to re-code the commit log message in the encoding
 preferred by the user.  For non plumbing commands this
 defaults to UTF-8.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-diff-tree.txt---notesltrefgt"><a id="Documentation/git-diff-tree.txt---notesref" class="anchor" href="#Documentation/git-diff-tree.txt---notesref"></a>--notes[=&lt;ref&gt;] </dt>
+<dt class="hdlist1" id="Documentation/git-diff-tree.txt---notesltrefgt"><a id="Documentation/git-diff-tree.txt---notesref" class="anchor" href="#Documentation/git-diff-tree.txt---notesref"></a>--notes[=<span class="hover-term" data-term="ref">&lt;ref&gt;</span>] </dt>
 <dd>
 <p>Show the notes (see <a href='{{< relurl "docs/git-notes" >}}'>git-notes[1]</a>) that annotate the
 commit, when showing the commit log message.  This is the default
@@ -777,7 +777,7 @@ on the command line.</p>
 environment overrides). See <a href='{{< relurl "docs/git-config" >}}'>git-config[1]</a> for more details.</p>
 </div>
 <div class="paragraph">
-<p>With an optional <em>&lt;ref&gt;</em> argument, show this notes ref instead of the
+<p>With an optional <em><span class="hover-term" data-term="ref">&lt;ref&gt;</span></em> argument, show this notes ref instead of the
 default notes ref(s). The ref is taken to be in <span class='synopsis'><code>refs/notes/</code></span> if it
 is not qualified.</p>
 </div>
@@ -796,7 +796,7 @@ Options are parsed in the order given on the command line, so e.g.
 "--notes --notes=foo --no-notes --notes=bar" will only show notes
 from "refs/notes/bar".</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-diff-tree.txt---show-notesltrefgt"><a id="Documentation/git-diff-tree.txt---show-notesref" class="anchor" href="#Documentation/git-diff-tree.txt---show-notesref"></a>--show-notes[=&lt;ref&gt;] </dt>
+<dt class="hdlist1" id="Documentation/git-diff-tree.txt---show-notesltrefgt"><a id="Documentation/git-diff-tree.txt---show-notesref" class="anchor" href="#Documentation/git-diff-tree.txt---show-notesref"></a>--show-notes[=<span class="hover-term" data-term="ref">&lt;ref&gt;</span>] </dt>
 <dt class="hdlist1" id="Documentation/git-diff-tree.txt---no-standard-notes"><a class="anchor" href="#Documentation/git-diff-tree.txt---no-standard-notes"></a>--[no-]standard-notes </dt>
 <dd>
 <p>These options are deprecated. Use the above --notes/--no-notes
@@ -816,7 +816,7 @@ applicable.  This flag suppressed the commit ID output.</p>
 <dd>
 <p>This flag changes the way a merge commit is displayed
 (which means it is useful only when the command is given
-one &lt;tree-ish&gt;, or <em>--stdin</em>).  It shows the differences
+one <span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span>, or <em>--stdin</em>).  It shows the differences
 from each of the parents to the merge result simultaneously
 instead of showing pairwise diff between a parent and the
 result one at a time (which is what the <em>-m</em> option does).
@@ -1138,13 +1138,13 @@ Limiting Output
 If you're only interested in differences in a subset of files, for
 example some architecture-specific files, you might do:
 
-	git diff-tree -r &lt;tree-ish&gt; &lt;tree-ish&gt; arch/ia64 include/asm-ia64
+	git diff-tree -r <span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span> <span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span> arch/ia64 include/asm-ia64
 
 and it will only show you what changed in those two directories.
 
 Or if you are searching for what changed in just `kernel/sched.c`, just do
 
-	git diff-tree -r &lt;tree-ish&gt; &lt;tree-ish&gt; kernel/sched.c
+	git diff-tree -r <span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span> <span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span> kernel/sched.c
 
 and it will ignore all differences to other files.
 
@@ -1186,11 +1186,11 @@ The raw output format from "git-diff-index", "git-diff-tree",
 These commands all compare two sets of things; what is
 compared differs:
 
-git-diff-index &lt;tree-ish&gt;::
-        compares the &lt;tree-ish&gt; and the files on the filesystem.
+git-diff-index <span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span>::
+        compares the <span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span> and the files on the filesystem.
 
-git-diff-index --cached &lt;tree-ish&gt;::
-        compares the &lt;tree-ish&gt; and the index.
+git-diff-index --cached <span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span>::
+        compares the <span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span> and the index.
 
 git-diff-tree [-r] &lt;tree-ish-1&gt; &lt;tree-ish-2&gt; [&lt;pattern&gt;...]::
         compares the trees named by the two arguments.
@@ -1321,7 +1321,7 @@ the file that rename/copy produces, respectively.
        rename to &lt;path&gt;
        similarity index &lt;number&gt;
        dissimilarity index &lt;number&gt;
-       index &lt;hash&gt;..&lt;hash&gt; &lt;mode&gt;
+       index <span class="hover-term" data-term="hash">&lt;hash&gt;</span>..<span class="hover-term" data-term="hash">&lt;hash&gt;</span> &lt;mode&gt;
 +
 File modes are printed as 6-digit octal numbers including the file type
 and file permission bits.
@@ -1411,7 +1411,7 @@ or like this (when '--cc' option is used):
 2.   It is followed by one or more extended header lines
      (this example shows a merge with two parents):
 
-       index &lt;hash&gt;,&lt;hash&gt;..&lt;hash&gt;
+       index <span class="hover-term" data-term="hash">&lt;hash&gt;</span>,<span class="hover-term" data-term="hash">&lt;hash&gt;</span>..<span class="hover-term" data-term="hash">&lt;hash&gt;</span>
        mode &lt;mode&gt;,&lt;mode&gt;..&lt;mode&gt;
        new file mode &lt;mode&gt;
        deleted file mode &lt;mode&gt;,&lt;mode&gt;
@@ -1420,7 +1420,7 @@ The `mode &lt;mode&gt;,&lt;mode&gt;..&lt;mode&gt;` line appears only if at least
 the &lt;mode&gt; is different from the rest. Extended headers with
 information about detected contents movement (renames and
 copying detection) are designed to work with diff of two
-&lt;tree-ish&gt; and are not used by combined diff format.
+<span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span> and are not used by combined diff format.
 
 3.   It is followed by two-line from-file/to-file header
 

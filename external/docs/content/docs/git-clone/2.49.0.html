@@ -45,13 +45,13 @@ aliases:
 <div class="verseblock">
 <pre class="content"><span class='synopsis'><code>git</code></span> <span class='synopsis'><code>clone</code></span> [<span class='synopsis'><code>--template=</code></span><em>&lt;template-directory&gt;</em>]
 	  [<span class='synopsis'><code>-l</code></span>] [<span class='synopsis'><code>-s</code></span>] [<span class='synopsis'><code>--no-hardlinks</code></span>] [<span class='synopsis'><code>-q</code></span>] [<span class='synopsis'><code>-n</code></span>] [<span class='synopsis'><code>--bare</code></span>] [<span class='synopsis'><code>--mirror</code></span>]
-	  [<span class='synopsis'><code>-o</code></span> <em>&lt;name&gt;</em>] [<span class='synopsis'><code>-b</code></span> <em>&lt;name&gt;</em>] [<span class='synopsis'><code>-u</code></span> <em>&lt;upload-pack&gt;</em>] [<span class='synopsis'><code>--reference</code></span> <em>&lt;repository&gt;</em>]
+	  [<span class='synopsis'><code>-o</code></span> <em>&lt;name&gt;</em>] [<span class='synopsis'><code>-b</code></span> <em>&lt;name&gt;</em>] [<span class='synopsis'><code>-u</code></span> <em>&lt;upload-pack&gt;</em>] [<span class='synopsis'><code>--reference</code></span> <em><span class="hover-term" data-term="repository">&lt;repository&gt;</span></em>]
 	  [<span class='synopsis'><code>--dissociate</code></span>] [<span class='synopsis'><code>--separate-git-dir</code></span> <em>&lt;git-dir&gt;</em>]
 	  [<span class='synopsis'><code>--depth</code></span> <em>&lt;depth&gt;</em>] [<span class='synopsis'><code>--</code></span>[<span class='synopsis'><code>no-</code></span>]<span class='synopsis'><code>single-branch</code></span>] [<span class='synopsis'><code>--</code></span>[<span class='synopsis'><code>no-</code></span>]<span class='synopsis'><code>tags</code></span>]
-	  [<span class='synopsis'><code>--recurse-submodules</code></span>[<span class='synopsis'><code>=</code></span><em>&lt;pathspec&gt;</em>]] [<span class='synopsis'><code>--</code></span>[<span class='synopsis'><code>no-</code></span>]<span class='synopsis'><code>shallow-submodules</code></span>]
+	  [<span class='synopsis'><code>--recurse-submodules</code></span>[<span class='synopsis'><code>=</code></span><em><span class="hover-term" data-term="pathspec">&lt;pathspec&gt;</span></em>]] [<span class='synopsis'><code>--</code></span>[<span class='synopsis'><code>no-</code></span>]<span class='synopsis'><code>shallow-submodules</code></span>]
 	  [<span class='synopsis'><code>--</code></span>[<span class='synopsis'><code>no-</code></span>]<span class='synopsis'><code>remote-submodules</code></span>] [<span class='synopsis'><code>--jobs</code></span> <em>&lt;n&gt;</em>] [<span class='synopsis'><code>--sparse</code></span>] [<span class='synopsis'><code>--</code></span>[<span class='synopsis'><code>no-</code></span>]<span class='synopsis'><code>reject-shallow</code></span>]
-	  [<span class='synopsis'><code>--filter=</code></span><em>&lt;filter-spec&gt;</em>] [<span class='synopsis'><code>--also-filter-submodules</code></span>]] [<span class='synopsis'><code>--</code></span>] <em>&lt;repository&gt;</em>
-	  [<em>&lt;directory&gt;</em>]</pre>
+	  [<span class='synopsis'><code>--filter=</code></span><em>&lt;filter-spec&gt;</em>] [<span class='synopsis'><code>--also-filter-submodules</code></span>]] [<span class='synopsis'><code>--</code></span>] <em><span class="hover-term" data-term="repository">&lt;repository&gt;</span></em>
+	  [<em><span class="hover-term" data-term="directory">&lt;directory&gt;</span></em>]</pre>
 </div>
 </div>
 </div>
@@ -157,11 +157,11 @@ its source repository, you can simply run <span class='synopsis'><code>git</code
 objects from the source repository into a pack in the cloned repository.</p>
 </div>
 </dd>
-<dt class="hdlist1" id="Documentation/git-clone.txt-spanclasssynopsiscode--referencecodecode-if-ablecodeemltrepositorygtemspan"><a id="Documentation/git-clone.txt---reference-if-ablerepository" class="anchor" href="#Documentation/git-clone.txt---reference-if-ablerepository"></a><span class='synopsis'><code>--reference</code>[<code>-if-able</code>] <em>&lt;repository&gt;</em></span> </dt>
+<dt class="hdlist1" id="Documentation/git-clone.txt-spanclasssynopsiscode--referencecodecode-if-ablecodeemltrepositorygtemspan"><a id="Documentation/git-clone.txt---reference-if-ablerepository" class="anchor" href="#Documentation/git-clone.txt---reference-if-ablerepository"></a><span class='synopsis'><code>--reference</code>[<code>-if-able</code>] <em><span class="hover-term" data-term="repository">&lt;repository&gt;</span></em></span> </dt>
 <dd>
-<p>If the reference <em>&lt;repository&gt;</em> is on the local machine,
+<p>If the reference <em><span class="hover-term" data-term="repository">&lt;repository&gt;</span></em> is on the local machine,
 automatically setup <span class='synopsis'><code>.git/objects/info/alternates</code></span> to
-obtain objects from the reference <em>&lt;repository&gt;</em>.  Using
+obtain objects from the reference <em><span class="hover-term" data-term="repository">&lt;repository&gt;</span></em>.  Using
 an already existing repository as an alternate will
 require fewer objects to be copied from the repository
 being cloned, reducing network and local storage costs.
@@ -230,8 +230,8 @@ specify the default.</p>
 <dt class="hdlist1" id="Documentation/git-clone.txt-spanclasssynopsiscode--barecodespan"><a id="Documentation/git-clone.txt---bare" class="anchor" href="#Documentation/git-clone.txt---bare"></a><span class='synopsis'><code>--bare</code></span> </dt>
 <dd>
 <p>Make a <em>bare</em> Git repository.  That is, instead of
-creating <em>&lt;directory&gt;</em> and placing the administrative
-files in <span class='synopsis'><em>&lt;directory&gt;</em><code>/.git</code></span>, make the <em>&lt;directory&gt;</em>
+creating <em><span class="hover-term" data-term="directory">&lt;directory&gt;</span></em> and placing the administrative
+files in <span class='synopsis'><em><span class="hover-term" data-term="directory">&lt;directory&gt;</span></em><code>/.git</code></span>, make the <em><span class="hover-term" data-term="directory">&lt;directory&gt;</span></em>
 itself the <span class='synopsis'><code>$GIT_DIR</code></span>. This obviously implies the <span class='synopsis'><code>--no-checkout</code></span>
 because there is nowhere to check out the working tree.
 Also the branch heads at the remote are copied directly
@@ -343,7 +343,7 @@ also pass <span class='synopsis'><code>--shallow-submodules</code></span>.</p>
 <dd>
 <p>Create a shallow clone with a history after the specified time.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-clone.txt-spanclasssynopsiscode--shallow-excludecodeemltrefgtemspan"><a id="Documentation/git-clone.txt---shallow-excluderef" class="anchor" href="#Documentation/git-clone.txt---shallow-excluderef"></a><span class='synopsis'><code>--shallow-exclude=</code><em>&lt;ref&gt;</em></span> </dt>
+<dt class="hdlist1" id="Documentation/git-clone.txt-spanclasssynopsiscode--shallow-excludecodeemltrefgtemspan"><a id="Documentation/git-clone.txt---shallow-excluderef" class="anchor" href="#Documentation/git-clone.txt---shallow-excluderef"></a><span class='synopsis'><code>--shallow-exclude=</code><em><span class="hover-term" data-term="ref">&lt;ref&gt;</span></em></span> </dt>
 <dd>
 <p>Create a shallow clone with a history, excluding commits
 reachable from a specified remote branch or tag.  This option
@@ -378,10 +378,10 @@ branch. This is useful e.g. to maintain minimal clones of the default
 branch of some repository for search indexing.</p>
 </div>
 </dd>
-<dt class="hdlist1" id="Documentation/git-clone.txt-spanclasssynopsiscode--recurse-submodulescodecodecodeemltpathspecgtemspan"><a id="Documentation/git-clone.txt---recurse-submodulespathspec" class="anchor" href="#Documentation/git-clone.txt---recurse-submodulespathspec"></a><span class='synopsis'><code>--recurse-submodules</code>[<code>=</code><em>&lt;pathspec&gt;</em>]</span> </dt>
+<dt class="hdlist1" id="Documentation/git-clone.txt-spanclasssynopsiscode--recurse-submodulescodecodecodeemltpathspecgtemspan"><a id="Documentation/git-clone.txt---recurse-submodulespathspec" class="anchor" href="#Documentation/git-clone.txt---recurse-submodulespathspec"></a><span class='synopsis'><code>--recurse-submodules</code>[<code>=</code><em><span class="hover-term" data-term="pathspec">&lt;pathspec&gt;</span></em>]</span> </dt>
 <dd>
 <p>After the clone is created, initialize and clone submodules
-within based on the provided <em>&lt;pathspec&gt;</em>.  If no <span class='synopsis'><code>=</code><em>&lt;pathspec&gt;</em></span> is
+within based on the provided <em><span class="hover-term" data-term="pathspec">&lt;pathspec&gt;</span></em>.  If no <span class='synopsis'><code>=</code><em><span class="hover-term" data-term="pathspec">&lt;pathspec&gt;</span></em></span> is
 provided, all submodules are initialized and cloned.
 This option can be given multiple times for pathspecs consisting
 of multiple entries.  The resulting clone has <span class='synopsis'><code>submodule.active</code></span> set to
@@ -390,7 +390,7 @@ pathspec is provided.</p>
 <div class="paragraph">
 <p>Submodules are initialized and cloned using their default settings. This is
 equivalent to running
-<span class='synopsis'><code>git</code> <code>submodule</code> <code>update</code> <code>--init</code> <code>--recursive</code> <em>&lt;pathspec&gt;</em></span> immediately after
+<span class='synopsis'><code>git</code> <code>submodule</code> <code>update</code> <code>--init</code> <code>--recursive</code> <em><span class="hover-term" data-term="pathspec">&lt;pathspec&gt;</span></em></span> immediately after
 the clone is finished. This option is ignored if the cloned repository does
 not have a worktree/checkout (i.e. if any of <span class='synopsis'><code>--no-checkout</code></span>/<span class='synopsis'><code>-n</code></span>, <span class='synopsis'><code>--bare</code></span>,
 or <span class='synopsis'><code>--mirror</code></span> is given)</p>
@@ -436,16 +436,16 @@ internals are subject to change.</p>
 <p>The number of submodules fetched at the same time.
 Defaults to the <span class='synopsis'><code>submodule.fetchJobs</code></span> option.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-clone.txt-emltrepositorygtem"><a id="Documentation/git-clone.txt-repository" class="anchor" href="#Documentation/git-clone.txt-repository"></a><em>&lt;repository&gt;</em> </dt>
+<dt class="hdlist1" id="Documentation/git-clone.txt-emltrepositorygtem"><a id="Documentation/git-clone.txt-repository" class="anchor" href="#Documentation/git-clone.txt-repository"></a><em><span class="hover-term" data-term="repository">&lt;repository&gt;</span></em> </dt>
 <dd>
-<p>The (possibly remote) <em>&lt;repository&gt;</em> to clone from.  See the
+<p>The (possibly remote) <em><span class="hover-term" data-term="repository">&lt;repository&gt;</span></em> to clone from.  See the
 <a href="#URLS">GIT URLS</a> section below for more information on specifying
 repositories.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-clone.txt-emltdirectorygtem"><a id="Documentation/git-clone.txt-directory" class="anchor" href="#Documentation/git-clone.txt-directory"></a><em>&lt;directory&gt;</em> </dt>
+<dt class="hdlist1" id="Documentation/git-clone.txt-emltdirectorygtem"><a id="Documentation/git-clone.txt-directory" class="anchor" href="#Documentation/git-clone.txt-directory"></a><em><span class="hover-term" data-term="directory">&lt;directory&gt;</span></em> </dt>
 <dd>
 <p>The name of a new directory to clone into.  The "humanish"
-part of the source repository is used if no <em>&lt;directory&gt;</em> is
+part of the source repository is used if no <em><span class="hover-term" data-term="directory">&lt;directory&gt;</span></em> is
 explicitly given (<span class='synopsis'><code>repo</code></span> for <span class='synopsis'><code>/path/to/repo.git</code></span> and <span class='synopsis'><code>foo</code></span>
 for <span class='synopsis'><code>host.xz:foo/.git</code></span>).  Cloning into an existing directory
 is only allowed if the directory is empty.</p>

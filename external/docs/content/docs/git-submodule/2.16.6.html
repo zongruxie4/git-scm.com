@@ -46,7 +46,7 @@ aliases:
 <h2 id="_synopsis"><a class="anchor" href="#_synopsis"></a>SYNOPSIS</h2>
 <div class="sectionbody">
 <div class="verseblock">
-<pre class="content"><em>git submodule</em> [--quiet] add [&lt;options&gt;] [--] &lt;repository&gt; [&lt;path&gt;]
+<pre class="content"><em>git submodule</em> [--quiet] add [&lt;options&gt;] [--] <span class="hover-term" data-term="repository">&lt;repository&gt;</span> [&lt;path&gt;]
 <em>git submodule</em> [--quiet] status [--cached] [--recursive] [--] [&lt;path&gt;&#8230;&#8203;]
 <em>git submodule</em> [--quiet] init [--] [&lt;path&gt;&#8230;&#8203;]
 <em>git submodule</em> [--quiet] deinit [-f|--force] (--all|[--] &lt;path&gt;&#8230;&#8203;)
@@ -74,13 +74,13 @@ aliases:
 <div class="sectionbody">
 <div class="dlist">
 <dl>
-<dt class="hdlist1" id="Documentation/git-submodule.txt-add-bltbranchgt-f--force--nameltnamegt--referenceltrepositorygt--depthltdepthgt--ltrepositorygtltpathgt"><a id="Documentation/git-submodule.txt-add-bbranch-f--force--namename--referencerepository--depthdepth--repositorypath" class="anchor" href="#Documentation/git-submodule.txt-add-bbranch-f--force--namename--referencerepository--depthdepth--repositorypath"></a>add [-b &lt;branch&gt;] [-f|--force] [--name &lt;name&gt;] [--reference &lt;repository&gt;] [--depth &lt;depth&gt;] [--] &lt;repository&gt; [&lt;path&gt;] </dt>
+<dt class="hdlist1" id="Documentation/git-submodule.txt-add-bltbranchgt-f--force--nameltnamegt--referenceltrepositorygt--depthltdepthgt--ltrepositorygtltpathgt"><a id="Documentation/git-submodule.txt-add-bbranch-f--force--namename--referencerepository--depthdepth--repositorypath" class="anchor" href="#Documentation/git-submodule.txt-add-bbranch-f--force--namename--referencerepository--depthdepth--repositorypath"></a>add [-b <span class="hover-term" data-term="branch">&lt;branch&gt;</span>] [-f|--force] [--name &lt;name&gt;] [--reference <span class="hover-term" data-term="repository">&lt;repository&gt;</span>] [--depth &lt;depth&gt;] [--] <span class="hover-term" data-term="repository">&lt;repository&gt;</span> [&lt;path&gt;] </dt>
 <dd>
 <p>Add the given repository as a submodule at the given path
 to the changeset to be committed next to the current
 project: the current project is termed the "superproject".</p>
 <div class="paragraph">
-<p>&lt;repository&gt; is the URL of the new submodule&#8217;s origin repository.
+<p><span class="hover-term" data-term="repository">&lt;repository&gt;</span> is the URL of the new submodule&#8217;s origin repository.
 This may be either an absolute URL, or (if it begins with ./
 or ../), the location relative to the superproject&#8217;s default remote
 repository (Please note that to specify a repository <em>foo.git</em>
@@ -186,7 +186,7 @@ that use <a href='{{< relurl "docs/git-rm" >}}'>git-rm[1]</a> instead. See <a hr
 options.</p>
 </div>
 </dd>
-<dt class="hdlist1" id="Documentation/git-submodule.txt-update--init--remote-N--no-fetch--no-recommend-shallow-f--force--checkout--rebase--merge--referenceltrepositorygt--depthltdepthgt--recursive--jobsltngt--ltpathgt82308203"><a id="Documentation/git-submodule.txt-update--init--remote-N--no-fetch--no-recommend-shallow-f--force--checkout--rebase--merge--referencerepository--depthdepth--recursive--jobsn--path" class="anchor" href="#Documentation/git-submodule.txt-update--init--remote-N--no-fetch--no-recommend-shallow-f--force--checkout--rebase--merge--referencerepository--depthdepth--recursive--jobsn--path"></a>update [--init] [--remote] [-N|--no-fetch] [--[no-]recommend-shallow] [-f|--force] [--checkout|--rebase|--merge] [--reference &lt;repository&gt;] [--depth &lt;depth&gt;] [--recursive] [--jobs &lt;n&gt;] [--] [&lt;path&gt;&#8230;&#8203;] </dt>
+<dt class="hdlist1" id="Documentation/git-submodule.txt-update--init--remote-N--no-fetch--no-recommend-shallow-f--force--checkout--rebase--merge--referenceltrepositorygt--depthltdepthgt--recursive--jobsltngt--ltpathgt82308203"><a id="Documentation/git-submodule.txt-update--init--remote-N--no-fetch--no-recommend-shallow-f--force--checkout--rebase--merge--referencerepository--depthdepth--recursive--jobsn--path" class="anchor" href="#Documentation/git-submodule.txt-update--init--remote-N--no-fetch--no-recommend-shallow-f--force--checkout--rebase--merge--referencerepository--depthdepth--recursive--jobsn--path"></a>update [--init] [--remote] [-N|--no-fetch] [--[no-]recommend-shallow] [-f|--force] [--checkout|--rebase|--merge] [--reference <span class="hover-term" data-term="repository">&lt;repository&gt;</span>] [--depth &lt;depth&gt;] [--recursive] [--jobs &lt;n&gt;] [--] [&lt;path&gt;&#8230;&#8203;] </dt>
 <dd>
 <div class="openblock">
 <div class="content">
@@ -482,7 +482,7 @@ called so far before updating.</p>
 name to the given string instead of defaulting to its path. The name
 must be valid as a directory name and may not end with a <em>/</em>.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-submodule.txt---referenceltrepositorygt"><a id="Documentation/git-submodule.txt---referencerepository" class="anchor" href="#Documentation/git-submodule.txt---referencerepository"></a>--reference &lt;repository&gt; </dt>
+<dt class="hdlist1" id="Documentation/git-submodule.txt---referenceltrepositorygt"><a id="Documentation/git-submodule.txt---referencerepository" class="anchor" href="#Documentation/git-submodule.txt---referencerepository"></a>--reference <span class="hover-term" data-term="repository">&lt;repository&gt;</span> </dt>
 <dd>
 <p>This option is only valid for add and update commands.  These
 commands sometimes need to clone a remote repository. In this case,

@@ -58,7 +58,7 @@ aliases:
 <pre class="content"><em>git update-index</em>
 	     [--add] [--remove | --force-remove] [--replace]
 	     [--refresh] [-q] [--unmerged] [--ignore-missing]
-	     [(--cacheinfo &lt;mode&gt;,&lt;object&gt;,&lt;file&gt;)&#8230;&#8203;]
+	     [(--cacheinfo &lt;mode&gt;,<span class="hover-term" data-term="object">&lt;object&gt;</span>,&lt;file&gt;)&#8230;&#8203;]
 	     [--chmod=(+|-)x]
 	     [--[no-]assume-unchanged]
 	     [--[no-]skip-worktree]
@@ -136,8 +136,8 @@ behavior is to error out.  This option makes <em>git update-index</em>
 <dd>
 <p>Ignores missing files during a --refresh</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-update-index.txt---cacheinfoltmodegtltobjectgtltpathgt"><a id="Documentation/git-update-index.txt---cacheinfomodeobjectpath" class="anchor" href="#Documentation/git-update-index.txt---cacheinfomodeobjectpath"></a>--cacheinfo &lt;mode&gt;,&lt;object&gt;,&lt;path&gt; </dt>
-<dt class="hdlist1" id="Documentation/git-update-index.txt---cacheinfoltmodegtltobjectgtltpathgt-1"><a id="Documentation/git-update-index.txt---cacheinfomodeobjectpath-1" class="anchor" href="#Documentation/git-update-index.txt---cacheinfomodeobjectpath-1"></a>--cacheinfo &lt;mode&gt; &lt;object&gt; &lt;path&gt; </dt>
+<dt class="hdlist1" id="Documentation/git-update-index.txt---cacheinfoltmodegtltobjectgtltpathgt"><a id="Documentation/git-update-index.txt---cacheinfomodeobjectpath" class="anchor" href="#Documentation/git-update-index.txt---cacheinfomodeobjectpath"></a>--cacheinfo &lt;mode&gt;,<span class="hover-term" data-term="object">&lt;object&gt;</span>,&lt;path&gt; </dt>
+<dt class="hdlist1" id="Documentation/git-update-index.txt---cacheinfoltmodegtltobjectgtltpathgt-1"><a id="Documentation/git-update-index.txt---cacheinfomodeobjectpath-1" class="anchor" href="#Documentation/git-update-index.txt---cacheinfomodeobjectpath-1"></a>--cacheinfo &lt;mode&gt; <span class="hover-term" data-term="object">&lt;object&gt;</span> &lt;path&gt; </dt>
 <dd>
 <p>Directly insert the specified info into the index.  For
 backward compatibility, you can also give these three
@@ -582,7 +582,7 @@ aims at reducing the time it takes to repeatedly write these indexes.</p>
 </div>
 <div class="paragraph">
 <p>In this mode, the index is split into two files, $GIT_DIR/index and
-$GIT_DIR/sharedindex.&lt;SHA-1&gt;. Changes are accumulated in
+$GIT_DIR/sharedindex.<span class="hover-term" data-term="SHA-1">&lt;SHA-1&gt;</span>. Changes are accumulated in
 $GIT_DIR/index, the split index, while the shared index file contains
 all index entries and stays unchanged.</p>
 </div>

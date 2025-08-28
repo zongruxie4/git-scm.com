@@ -34,13 +34,13 @@ compared differs:</p>
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1" id="Documentation/diff-format.txt-spanclasssynopsiscodegit-diff-indexcodeemlttree-ishgtemspan"><a id="Documentation/diff-format.txt-git-diff-indextree-ish" class="anchor" href="#Documentation/diff-format.txt-git-diff-indextree-ish"></a><span class='synopsis'><code>git-diff-index</code> <em>&lt;tree-ish&gt;</em></span> </dt>
+<dt class="hdlist1" id="Documentation/diff-format.txt-spanclasssynopsiscodegit-diff-indexcodeemlttree-ishgtemspan"><a id="Documentation/diff-format.txt-git-diff-indextree-ish" class="anchor" href="#Documentation/diff-format.txt-git-diff-indextree-ish"></a><span class='synopsis'><code>git-diff-index</code> <em><span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span></em></span> </dt>
 <dd>
-<p>compares the <em>&lt;tree-ish&gt;</em> and the files on the filesystem.</p>
+<p>compares the <em><span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span></em> and the files on the filesystem.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/diff-format.txt-spanclasssynopsiscodegit-diff-indexcodecode--cachedcodeemlttree-ishgtemspan"><a id="Documentation/diff-format.txt-git-diff-index--cachedtree-ish" class="anchor" href="#Documentation/diff-format.txt-git-diff-index--cachedtree-ish"></a><span class='synopsis'><code>git-diff-index</code> <code>--cached</code> <em>&lt;tree-ish&gt;</em></span> </dt>
+<dt class="hdlist1" id="Documentation/diff-format.txt-spanclasssynopsiscodegit-diff-indexcodecode--cachedcodeemlttree-ishgtemspan"><a id="Documentation/diff-format.txt-git-diff-index--cachedtree-ish" class="anchor" href="#Documentation/diff-format.txt-git-diff-index--cachedtree-ish"></a><span class='synopsis'><code>git-diff-index</code> <code>--cached</code> <em><span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span></em></span> </dt>
 <dd>
-<p>compares the <em>&lt;tree-ish&gt;</em> and the index.</p>
+<p>compares the <em><span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span></em> and the index.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/diff-format.txt-spanclasssynopsiscodegit-diff-treecodecode-rcodeemlttree-ish-1gtememlttree-ish-2gtememltpatterngtemspan"><a id="Documentation/diff-format.txt-git-diff-tree-rtree-ish-1tree-ish-2pattern" class="anchor" href="#Documentation/diff-format.txt-git-diff-tree-rtree-ish-1tree-ish-2pattern"></a><span class='synopsis'><code>git-diff-tree</code> [<code>-r</code>] <em>&lt;tree-ish-1&gt;</em> <em>&lt;tree-ish-2&gt;</em> [<em>&lt;pattern&gt;</em>...]</span> </dt>
 <dd>
@@ -293,7 +293,7 @@ the file that the rename/copy produces, respectively.</p>
 <span class='synopsis'><code>rename</code></span> <span class='synopsis'><code>to</code></span> <em>&lt;path&gt;</em>
 <span class='synopsis'><code>similarity</code></span> <span class='synopsis'><code>index</code></span> <em>&lt;number&gt;</em>
 <span class='synopsis'><code>dissimilarity</code></span> <span class='synopsis'><code>index</code></span> <em>&lt;number&gt;</em>
-<span class='synopsis'><code>index</code></span> <em>&lt;hash&gt;</em><span class='synopsis'><code>..</code></span><em>&lt;hash&gt;</em> <em>&lt;mode&gt;</em></pre>
+<span class='synopsis'><code>index</code></span> <em><span class="hover-term" data-term="hash">&lt;hash&gt;</span></em><span class='synopsis'><code>..</code></span><em><span class="hover-term" data-term="hash">&lt;hash&gt;</span></em> <em>&lt;mode&gt;</em></pre>
 </div>
 <div class="paragraph">
 <p>File modes <em>&lt;mode&gt;</em> are printed as 6-digit octal numbers including the file type
@@ -415,7 +415,7 @@ this (when the <span class='synopsis'><code>-c</code></span> option is used):</p
 <p>It is followed by one or more extended header lines
 (this example shows a merge with two parents):</p>
 <div class="verseblock">
-<pre class="content"><span class='synopsis'><code>index</code></span> <em>&lt;hash&gt;</em><span class='synopsis'><code>,</code></span><em>&lt;hash&gt;</em><span class='synopsis'><code>..</code></span><em>&lt;hash&gt;</em>
+<pre class="content"><span class='synopsis'><code>index</code></span> <em><span class="hover-term" data-term="hash">&lt;hash&gt;</span></em><span class='synopsis'><code>,</code></span><em><span class="hover-term" data-term="hash">&lt;hash&gt;</span></em><span class='synopsis'><code>..</code></span><em><span class="hover-term" data-term="hash">&lt;hash&gt;</span></em>
 <span class='synopsis'><code>mode</code></span> <em>&lt;mode&gt;</em><span class='synopsis'><code>,</code></span><em>&lt;mode&gt;</em><span class='synopsis'><code>..</code></span><em>&lt;mode&gt;</em>
 <span class='synopsis'><code>new</code></span> <span class='synopsis'><code>file</code></span> <span class='synopsis'><code>mode</code></span> <em>&lt;mode&gt;</em>
 <span class='synopsis'><code>deleted</code></span> <span class='synopsis'><code>file</code></span> <span class='synopsis'><code>mode</code></span> <em>&lt;mode&gt;</em><span class='synopsis'><code>,</code></span><em>&lt;mode&gt;</em></pre>
@@ -425,7 +425,7 @@ this (when the <span class='synopsis'><code>-c</code></span> option is used):</p
 the &lt;mode&gt; is different from the rest. Extended headers with
 information about detected content movement (renames and
 copying detection) are designed to work with the diff of two
-<em>&lt;tree-ish&gt;</em> and are not used by combined diff format.</p>
+<em><span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span></em> and are not used by combined diff format.</p>
 </div>
 </li>
 <li>

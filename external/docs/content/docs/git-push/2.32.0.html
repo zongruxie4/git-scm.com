@@ -53,11 +53,11 @@ aliases:
 <div class="sectionbody">
 <div class="verseblock">
 <pre class="content"><em>git push</em> [--all | --mirror | --tags] [--follow-tags] [--atomic] [-n | --dry-run] [--receive-pack=&lt;git-receive-pack&gt;]
-	   [--repo=&lt;repository&gt;] [-f | --force] [-d | --delete] [--prune] [-v | --verbose]
+	   [--repo=<span class="hover-term" data-term="repository">&lt;repository&gt;</span>] [-f | --force] [-d | --delete] [--prune] [-v | --verbose]
 	   [-u | --set-upstream] [-o &lt;string&gt; | --push-option=&lt;string&gt;]
 	   [--[no-]signed|--signed=(true|false|if-asked)]
 	   [--force-with-lease[=&lt;refname&gt;[:&lt;expect&gt;]] [--force-if-includes]]
-	   [--no-verify] [&lt;repository&gt; [&lt;refspec&gt;&#8230;&#8203;]]</pre>
+	   [--no-verify] [<span class="hover-term" data-term="repository">&lt;repository&gt;</span> [<span class="hover-term" data-term="refspec">&lt;refspec&gt;</span>&#8230;&#8203;]]</pre>
 </div>
 </div>
 </div>
@@ -75,14 +75,14 @@ documentation for <a href='{{< relurl "docs/git-receive-pack" >}}'>git-receive-p
 </div>
 <div class="paragraph">
 <p>When the command line does not specify where to push with the
-<span class='synopsis'><em>&lt;repository&gt;</em></span> argument, <span class='synopsis'><code>branch.*.remote</code></span> configuration for the
+<span class='synopsis'><em><span class="hover-term" data-term="repository">&lt;repository&gt;</span></em></span> argument, <span class='synopsis'><code>branch.*.remote</code></span> configuration for the
 current branch is consulted to determine where to push.  If the
 configuration is missing, it defaults to <em>origin</em>.</p>
 </div>
 <div class="paragraph">
-<p>When the command line does not specify what to push with <span class='synopsis'><em>&lt;refspec&gt;</em>...</span>
+<p>When the command line does not specify what to push with <span class='synopsis'><em><span class="hover-term" data-term="refspec">&lt;refspec&gt;</span></em>...</span>
 arguments or <span class='synopsis'><code>--all</code></span>, <span class='synopsis'><code>--mirror</code></span>, <span class='synopsis'><code>--tags</code></span> options, the command finds
-the default <span class='synopsis'><em>&lt;refspec&gt;</em></span> by consulting <span class='synopsis'><code>remote.*.push</code></span> configuration,
+the default <span class='synopsis'><em><span class="hover-term" data-term="refspec">&lt;refspec&gt;</span></em></span> by consulting <span class='synopsis'><code>remote.*.push</code></span> configuration,
 and if it is not found, honors <span class='synopsis'><code>push.default</code></span> configuration to decide
 what to push (See <a href='{{< relurl "docs/git-config" >}}'>git-config[1]</a> for the meaning of <span class='synopsis'><code>push.default</code></span>).</p>
 </div>
@@ -101,17 +101,17 @@ local one.</p>
 <div class="sectionbody">
 <div class="dlist">
 <dl>
-<dt class="hdlist1" id="Documentation/git-push.txt-ltrepositorygt"><a id="Documentation/git-push.txt-repository" class="anchor" href="#Documentation/git-push.txt-repository"></a>&lt;repository&gt; </dt>
+<dt class="hdlist1" id="Documentation/git-push.txt-ltrepositorygt"><a id="Documentation/git-push.txt-repository" class="anchor" href="#Documentation/git-push.txt-repository"></a><span class="hover-term" data-term="repository">&lt;repository&gt;</span> </dt>
 <dd>
 <p>The "remote" repository that is destination of a push
 operation.  This parameter can be either a URL
 (see the section <a href="#URLS">GIT URLS</a> below) or the name
 of a remote (see the section <a href="#REMOTES">REMOTES</a> below).</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-push.txt-ltrefspecgt82308203"><a id="Documentation/git-push.txt-refspec" class="anchor" href="#Documentation/git-push.txt-refspec"></a>&lt;refspec&gt;&#8230;&#8203; </dt>
+<dt class="hdlist1" id="Documentation/git-push.txt-ltrefspecgt82308203"><a id="Documentation/git-push.txt-refspec" class="anchor" href="#Documentation/git-push.txt-refspec"></a><span class="hover-term" data-term="refspec">&lt;refspec&gt;</span>&#8230;&#8203; </dt>
 <dd>
 <p>Specify what destination ref to update with what source object.
-The format of a &lt;refspec&gt; parameter is an optional plus
+The format of a <span class="hover-term" data-term="refspec">&lt;refspec&gt;</span> parameter is an optional plus
 <span class='synopsis'><code>+</code></span>, followed by the source object &lt;src&gt;, followed
 by a colon <span class='synopsis'><code>:</code></span>, followed by the destination ref &lt;dst&gt;.</p>
 <div class="paragraph">
@@ -123,16 +123,16 @@ it can be any arbitrary "SHA-1 expression", such as <span class='synopsis'><code
 <p>The &lt;dst&gt; tells which ref on the remote side is updated with this
 push. Arbitrary expressions cannot be used here, an actual ref must
 be named.
-If <span class='synopsis'><code>git</code> <code>push</code> [<em>&lt;repository&gt;</em>]</span> without any <span class='synopsis'><em>&lt;refspec&gt;</em></span> argument is set to
+If <span class='synopsis'><code>git</code> <code>push</code> [<em><span class="hover-term" data-term="repository">&lt;repository&gt;</span></em>]</span> without any <span class='synopsis'><em><span class="hover-term" data-term="refspec">&lt;refspec&gt;</span></em></span> argument is set to
 update some ref at the destination with <span class='synopsis'><em>&lt;src&gt;</em></span> with
-<span class='synopsis'><code>remote.</code><em>&lt;repository&gt;</em><code>.push</code></span> configuration variable, <span class='synopsis'><code>:</code><em>&lt;dst&gt;</em></span> part can
+<span class='synopsis'><code>remote.</code><em><span class="hover-term" data-term="repository">&lt;repository&gt;</span></em><code>.push</code></span> configuration variable, <span class='synopsis'><code>:</code><em>&lt;dst&gt;</em></span> part can
 be omitted&#8212;&#8203;such a push will update a ref that <span class='synopsis'><em>&lt;src&gt;</em></span> normally updates
-without any <span class='synopsis'><em>&lt;refspec&gt;</em></span> on the command line.  Otherwise, missing
+without any <span class='synopsis'><em><span class="hover-term" data-term="refspec">&lt;refspec&gt;</span></em></span> on the command line.  Otherwise, missing
 <span class='synopsis'><code>:</code><em>&lt;dst&gt;</em></span> means to update the same ref as the <span class='synopsis'><em>&lt;src&gt;</em></span>.</p>
 </div>
 <div class="paragraph">
 <p>If &lt;dst&gt; doesn&#8217;t start with <span class='synopsis'><code>refs/</code></span> (e.g. <span class='synopsis'><code>refs/heads/master</code></span>) we will
-try to infer where in <span class='synopsis'><code>refs/*</code></span> on the destination &lt;repository&gt; it
+try to infer where in <span class='synopsis'><code>refs/*</code></span> on the destination <span class="hover-term" data-term="repository">&lt;repository&gt;</span> it
 belongs based on the type of &lt;src&gt; being pushed and whether &lt;dst&gt;
 is ambiguous.</p>
 </div>
@@ -141,7 +141,7 @@ is ambiguous.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>If &lt;dst&gt; unambiguously refers to a ref on the &lt;repository&gt; remote,
+<p>If &lt;dst&gt; unambiguously refers to a ref on the <span class="hover-term" data-term="repository">&lt;repository&gt;</span> remote,
 then push to that ref.</p>
 </li>
 <li>
@@ -220,13 +220,13 @@ the local side, the remote side is updated if a branch of the same name
 already exists on the remote side.</p>
 </div>
 <div class="paragraph">
-<p><span class='synopsis'><code>tag</code> <em>&lt;tag&gt;</em></span> means the same as <span class='synopsis'><code>refs/tags/</code><em>&lt;tag&gt;</em><code>:refs/tags/</code><em>&lt;tag&gt;</em></span>.</p>
+<p><span class='synopsis'><code>tag</code> <em><span class="hover-term" data-term="tag">&lt;tag&gt;</span></em></span> means the same as <span class='synopsis'><code>refs/tags/</code><em><span class="hover-term" data-term="tag">&lt;tag&gt;</span></em><code>:refs/tags/</code><em><span class="hover-term" data-term="tag">&lt;tag&gt;</span></em></span>.</p>
 </div>
 </dd>
 <dt class="hdlist1" id="Documentation/git-push.txt---all"><a class="anchor" href="#Documentation/git-push.txt---all"></a>--all </dt>
 <dd>
 <p>Push all branches (i.e. refs under <span class='synopsis'><code>refs/heads/</code></span>); cannot be
-used with other &lt;refspec&gt;.</p>
+used with other <span class="hover-term" data-term="refspec">&lt;refspec&gt;</span>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-push.txt---prune"><a class="anchor" href="#Documentation/git-push.txt---prune"></a>--prune </dt>
 <dd>
@@ -465,7 +465,7 @@ strictly behind their remote counterpart).  To force a push to only
 one branch, use a <span class='synopsis'><code>+</code></span> in front of the refspec to push (e.g <span class='synopsis'><code>git</code> <code>push</code>
 
 <code>origin</code> <code>+master</code></span> to force a push to the <span class='synopsis'><code>master</code></span> branch). See the
-<span class='synopsis'><em>&lt;refspec&gt;</em>...</span> section above for details.</p>
+<span class='synopsis'><em><span class="hover-term" data-term="refspec">&lt;refspec&gt;</span></em>...</span> section above for details.</p>
 </div>
 </dd>
 <dt class="hdlist1" id="Documentation/git-push.txt---no-force-if-includes"><a class="anchor" href="#Documentation/git-push.txt---no-force-if-includes"></a>--[no-]force-if-includes </dt>
@@ -488,9 +488,9 @@ a "no-op".</p>
 <p>Specifying <span class='synopsis'><code>--no-force-if-includes</code></span> disables this behavior.</p>
 </div>
 </dd>
-<dt class="hdlist1" id="Documentation/git-push.txt---repoltrepositorygt"><a id="Documentation/git-push.txt---reporepository" class="anchor" href="#Documentation/git-push.txt---reporepository"></a>--repo=&lt;repository&gt; </dt>
+<dt class="hdlist1" id="Documentation/git-push.txt---repoltrepositorygt"><a id="Documentation/git-push.txt---reporepository" class="anchor" href="#Documentation/git-push.txt---reporepository"></a>--repo=<span class="hover-term" data-term="repository">&lt;repository&gt;</span> </dt>
 <dd>
-<p>This option is equivalent to the &lt;repository&gt; argument. If both
+<p>This option is equivalent to the <span class="hover-term" data-term="repository">&lt;repository&gt;</span> argument. If both
 are specified, the command-line argument takes precedence.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-push.txt--u"><a class="anchor" href="#Documentation/git-push.txt--u"></a>-u </dt>
@@ -732,7 +732,7 @@ use the original URL.</p>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The name of one of the following can be used instead
-of a URL as <span class='synopsis'><em>&lt;repository&gt;</em></span> argument:</p>
+of a URL as <span class='synopsis'><em><span class="hover-term" data-term="repository">&lt;repository&gt;</span></em></span> argument:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -767,8 +767,8 @@ config file would appear like this:</p>
 <pre>	[remote "&lt;name&gt;"]
 		url = &lt;url&gt;
 		pushurl = &lt;pushurl&gt;
-		push = &lt;refspec&gt;
-		fetch = &lt;refspec&gt;</pre>
+		push = <span class="hover-term" data-term="refspec">&lt;refspec&gt;</span>
+		fetch = <span class="hover-term" data-term="refspec">&lt;refspec&gt;</span></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -789,8 +789,8 @@ following format:</p>
 <div class="listingblock">
 <div class="content">
 <pre>	URL: one of the above URL format
-	Push: &lt;refspec&gt;
-	Pull: &lt;refspec&gt;</pre>
+	Push: <span class="hover-term" data-term="refspec">&lt;refspec&gt;</span>
+	Pull: <span class="hover-term" data-term="refspec">&lt;refspec&gt;</span></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -810,24 +810,24 @@ This file should have the following format:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>	&lt;url&gt;#&lt;head&gt;</pre>
+<pre>	&lt;url&gt;#<span class="hover-term" data-term="head">&lt;head&gt;</span></pre>
 </div>
 </div>
 <div class="paragraph">
-<p><span class='synopsis'><em>&lt;url&gt;</em></span> is required; <span class='synopsis'><code>#</code><em>&lt;head&gt;</em></span> is optional.</p>
+<p><span class='synopsis'><em>&lt;url&gt;</em></span> is required; <span class='synopsis'><code>#</code><em><span class="hover-term" data-term="head">&lt;head&gt;</span></em></span> is optional.</p>
 </div>
 <div class="paragraph">
 <p>Depending on the operation, git will use one of the following
 refspecs, if you don&#8217;t provide one on the command line.
-<span class='synopsis'><em>&lt;branch&gt;</em></span> is the name of this file in <span class='synopsis'><code>$GIT_DIR/branches</code></span> and
-<span class='synopsis'><em>&lt;head&gt;</em></span> defaults to <span class='synopsis'><code>master</code></span>.</p>
+<span class='synopsis'><em><span class="hover-term" data-term="branch">&lt;branch&gt;</span></em></span> is the name of this file in <span class='synopsis'><code>$GIT_DIR/branches</code></span> and
+<span class='synopsis'><em><span class="hover-term" data-term="head">&lt;head&gt;</span></em></span> defaults to <span class='synopsis'><code>master</code></span>.</p>
 </div>
 <div class="paragraph">
 <p>git fetch uses:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>	refs/heads/&lt;head&gt;:refs/heads/&lt;branch&gt;</pre>
+<pre>	refs/heads/<span class="hover-term" data-term="head">&lt;head&gt;</span>:refs/heads/<span class="hover-term" data-term="branch">&lt;branch&gt;</span></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -835,7 +835,7 @@ refspecs, if you don&#8217;t provide one on the command line.
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>	HEAD:refs/heads/&lt;head&gt;</pre>
+<pre>	HEAD:refs/heads/<span class="hover-term" data-term="head">&lt;head&gt;</span></pre>
 </div>
 </div>
 </div>
@@ -1080,13 +1080,13 @@ the configured upstream (<span class='synopsis'><code>branch.</code><em>&lt;name
 variable) if it has the same name as the current branch, and
 errors out without pushing otherwise.</p>
 <div class="paragraph">
-<p>The default behavior of this command when no &lt;refspec&gt; is given can be
+<p>The default behavior of this command when no <span class="hover-term" data-term="refspec">&lt;refspec&gt;</span> is given can be
 configured by setting the <span class='synopsis'><code>push</code></span> option of the remote, or the <span class='synopsis'><code>push.default</code></span>
 configuration variable.</p>
 </div>
 <div class="paragraph">
 <p>For example, to default to pushing only the current branch to <span class='synopsis'><code>origin</code></span>
-use <span class='synopsis'><code>git</code> <code>config</code> <code>remote.origin.push</code> <code>HEAD</code></span>.  Any valid &lt;refspec&gt; (like
+use <span class='synopsis'><code>git</code> <code>config</code> <code>remote.origin.push</code> <code>HEAD</code></span>.  Any valid <span class="hover-term" data-term="refspec">&lt;refspec&gt;</span> (like
 the ones in the examples below) can be configured as the default for
 <span class='synopsis'><code>git</code> <code>push</code> <code>origin</code></span>.</p>
 </div>
@@ -1094,7 +1094,7 @@ the ones in the examples below) can be configured as the default for
 <dt class="hdlist1" id="Documentation/git-push.txt-spanclasssynopsiscodegitcodecodepushcodecodeorigincodecodecodespan"><a id="Documentation/git-push.txt-gitpushorigin-1" class="anchor" href="#Documentation/git-push.txt-gitpushorigin-1"></a><span class='synopsis'><code>git</code> <code>push</code> <code>origin</code> <code>:</code></span> </dt>
 <dd>
 <p>Push "matching" branches to <span class='synopsis'><code>origin</code></span>. See
-&lt;refspec&gt; in the <a href="#OPTIONS">OPTIONS</a> section above for a
+<span class="hover-term" data-term="refspec">&lt;refspec&gt;</span> in the <a href="#OPTIONS">OPTIONS</a> section above for a
 description of "matching" branches.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-push.txt-spanclasssynopsiscodegitcodecodepushcodecodeorigincodecodemastercodespan"><a id="Documentation/git-push.txt-gitpushoriginmaster" class="anchor" href="#Documentation/git-push.txt-gitpushoriginmaster"></a><span class='synopsis'><code>git</code> <code>push</code> <code>origin</code> <code>master</code></span> </dt>
@@ -1117,7 +1117,7 @@ to update the ref that matches <span class='synopsis'><code>satellite/master</co
 <span class='synopsis'><code>refs/remotes/satellite/master</code></span>) in the <span class='synopsis'><code>mothership</code></span> repository;
 do the same for <span class='synopsis'><code>dev</code></span> and <span class='synopsis'><code>satellite/dev</code></span>.</p>
 <div class="paragraph">
-<p>See the section describing <span class='synopsis'><em>&lt;refspec&gt;</em>...</span> above for a discussion of
+<p>See the section describing <span class='synopsis'><em><span class="hover-term" data-term="refspec">&lt;refspec&gt;</span></em>...</span> above for a discussion of
 the matching semantics.</p>
 </div>
 <div class="paragraph">

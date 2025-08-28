@@ -469,7 +469,7 @@ H: flush-pkt</pre>
 <div class="literalblock">
 <div class="content">
 <pre># Send commands from server to the hook.
-S: PKT-LINE(&lt;old-oid&gt; &lt;new-oid&gt; &lt;ref&gt;)
+S: PKT-LINE(&lt;old-oid&gt; &lt;new-oid&gt; <span class="hover-term" data-term="ref">&lt;ref&gt;</span>)
 S: ... ...
 S: flush-pkt
 # Send push-options only if the 'push-options' feature is enabled.
@@ -482,15 +482,15 @@ S: flush-pkt</pre>
 <div class="content">
 <pre># Receive result from the hook.
 # OK, run this command successfully.
-H: PKT-LINE(ok &lt;ref&gt;)
+H: PKT-LINE(ok <span class="hover-term" data-term="ref">&lt;ref&gt;</span>)
 # NO, I reject it.
-H: PKT-LINE(ng &lt;ref&gt; &lt;reason&gt;)
+H: PKT-LINE(ng <span class="hover-term" data-term="ref">&lt;ref&gt;</span> &lt;reason&gt;)
 # Fall through, let 'receive-pack' to execute it.
-H: PKT-LINE(ok &lt;ref&gt;)
+H: PKT-LINE(ok <span class="hover-term" data-term="ref">&lt;ref&gt;</span>)
 H: PKT-LINE(option fall-through)
 # OK, but has an alternate reference.  The alternate reference name
 # and other status can be given in option directives.
-H: PKT-LINE(ok &lt;ref&gt;)
+H: PKT-LINE(ok <span class="hover-term" data-term="ref">&lt;ref&gt;</span>)
 H: PKT-LINE(option refname &lt;refname&gt;)
 H: PKT-LINE(option old-oid &lt;old-oid&gt;)
 H: PKT-LINE(option new-oid &lt;new-oid&gt;)

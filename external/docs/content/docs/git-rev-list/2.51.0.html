@@ -37,7 +37,7 @@ aliases:
 <h2 id="_synopsis"><a class="anchor" href="#_synopsis"></a>SYNOPSIS</h2>
 <div class="sectionbody">
 <div class="verseblock">
-<pre class="content"><em>git rev-list</em> [&lt;options&gt;] &lt;commit&gt;&#8230;&#8203; [--] [&lt;path&gt;&#8230;&#8203;]</pre>
+<pre class="content"><em>git rev-list</em> [&lt;options&gt;] <span class="hover-term" data-term="commit">&lt;commit&gt;</span>&#8230;&#8203; [--] [&lt;path&gt;&#8230;&#8203;]</pre>
 </div>
 </div>
 </div>
@@ -282,33 +282,33 @@ not be affected by it.</p>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt-spanclasssynopsiscode--allcodespan"><a id="Documentation/git-rev-list.txt---all" class="anchor" href="#Documentation/git-rev-list.txt---all"></a><span class='synopsis'><code>--all</code></span> </dt>
 <dd>
 <p>Pretend as if all the refs in <span class='synopsis'><code>refs/</code></span>, along with <span class='synopsis'><code>HEAD</code></span>, are
-listed on the command line as <em>&lt;commit&gt;</em>.</p>
+listed on the command line as <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt-spanclasssynopsiscode--branchescodecodecodeemltpatterngtemspan"><a id="Documentation/git-rev-list.txt---branchespattern" class="anchor" href="#Documentation/git-rev-list.txt---branchespattern"></a><span class='synopsis'><code>--branches</code>[<code>=</code><em>&lt;pattern&gt;</em>]</span> </dt>
 <dd>
 <p>Pretend as if all the refs in <span class='synopsis'><code>refs/heads</code></span> are listed
-on the command line as <em>&lt;commit&gt;</em>. If <em>&lt;pattern&gt;</em> is given, limit
+on the command line as <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>. If <em>&lt;pattern&gt;</em> is given, limit
 branches to ones matching given shell glob. If <em>&lt;pattern&gt;</em> lacks <em>?</em>,
 <em>*</em>, or <em>[</em>, <em>/*</em> at the end is implied.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt-spanclasssynopsiscode--tagscodecodecodeemltpatterngtemspan"><a id="Documentation/git-rev-list.txt---tagspattern" class="anchor" href="#Documentation/git-rev-list.txt---tagspattern"></a><span class='synopsis'><code>--tags</code>[<code>=</code><em>&lt;pattern&gt;</em>]</span> </dt>
 <dd>
 <p>Pretend as if all the refs in <span class='synopsis'><code>refs/tags</code></span> are listed
-on the command line as <em>&lt;commit&gt;</em>. If <em>&lt;pattern&gt;</em> is given, limit
+on the command line as <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>. If <em>&lt;pattern&gt;</em> is given, limit
 tags to ones matching given shell glob. If pattern lacks <em>?</em>, <em>*</em>,
 or <em>[</em>, <em>/*</em> at the end is implied.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt-spanclasssynopsiscode--remotescodecodecodeemltpatterngtemspan"><a id="Documentation/git-rev-list.txt---remotespattern" class="anchor" href="#Documentation/git-rev-list.txt---remotespattern"></a><span class='synopsis'><code>--remotes</code>[<code>=</code><em>&lt;pattern&gt;</em>]</span> </dt>
 <dd>
 <p>Pretend as if all the refs in <span class='synopsis'><code>refs/remotes</code></span> are listed
-on the command line as <em>&lt;commit&gt;</em>. If <em>&lt;pattern&gt;</em> is given, limit
+on the command line as <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>. If <em>&lt;pattern&gt;</em> is given, limit
 remote-tracking branches to ones matching given shell glob.
 If pattern lacks <em>?</em>, <em>*</em>, or <em>[</em>, <em>/*</em> at the end is implied.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt-spanclasssynopsiscode--globcodeemltglob-patterngtemspan"><a id="Documentation/git-rev-list.txt---globglob-pattern" class="anchor" href="#Documentation/git-rev-list.txt---globglob-pattern"></a><span class='synopsis'><code>--glob=</code><em>&lt;glob-pattern&gt;</em></span> </dt>
 <dd>
 <p>Pretend as if all the refs matching shell glob <em>&lt;glob-pattern&gt;</em>
-are listed on the command line as <em>&lt;commit&gt;</em>. Leading <em>refs/</em>,
+are listed on the command line as <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>. Leading <em>refs/</em>,
 is automatically prepended if missing. If pattern lacks <em>?</em>, <em>*</em>,
 or <em>[</em>, <em>/*</em> at the end is implied.</p>
 </dd>
@@ -340,7 +340,7 @@ configuration along with <span class='synopsis'><code>transfer.hideRefs</code></
 <dt class="hdlist1" id="Documentation/git-rev-list.txt-spanclasssynopsiscode--reflogcodespan"><a id="Documentation/git-rev-list.txt---reflog" class="anchor" href="#Documentation/git-rev-list.txt---reflog"></a><span class='synopsis'><code>--reflog</code></span> </dt>
 <dd>
 <p>Pretend as if all objects mentioned by reflogs are listed on the
-command line as <em>&lt;commit&gt;</em>.</p>
+command line as <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt-spanclasssynopsiscode--alternate-refscodespan"><a id="Documentation/git-rev-list.txt---alternate-refs" class="anchor" href="#Documentation/git-rev-list.txt---alternate-refs"></a><span class='synopsis'><code>--alternate-refs</code></span> </dt>
 <dd>
@@ -445,7 +445,7 @@ have been applied to the other side of a forked history with
 <p>Instead of walking the commit ancestry chain, walk
 reflog entries from the most recent one to older ones.
 When this option is used you cannot specify commits to
-exclude (that is, <span class='synopsis'><code>^</code><em>&lt;commit&gt;</em></span>, <span class='synopsis'><em>&lt;commit1&gt;</em><code>..</code><em>&lt;commit2&gt;</em></span>,
+exclude (that is, <span class='synopsis'><code>^</code><em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em></span>, <span class='synopsis'><em>&lt;commit1&gt;</em><code>..</code><em>&lt;commit2&gt;</em></span>,
 and <span class='synopsis'><em>&lt;commit1&gt;</em><code>...</code><em>&lt;commit2&gt;</em></span> notations cannot be used).</p>
 <div class="paragraph">
 <p>With <span class='synopsis'><code>--pretty</code></span> format other than <span class='synopsis'><code>oneline</code></span> and <span class='synopsis'><code>reference</code></span> (for obvious reasons),
@@ -608,14 +608,14 @@ meaningful history.</p>
 merges from the resulting history, as there are no selected
 commits contributing to this merge.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-rev-list.txt-spanclasssynopsiscode--ancestry-pathcodecodecodeemltcommitgtemspan"><a id="Documentation/git-rev-list.txt---ancestry-pathcommit" class="anchor" href="#Documentation/git-rev-list.txt---ancestry-pathcommit"></a><span class='synopsis'><code>--ancestry-path</code>[<code>=</code><em>&lt;commit&gt;</em>]</span> </dt>
+<dt class="hdlist1" id="Documentation/git-rev-list.txt-spanclasssynopsiscode--ancestry-pathcodecodecodeemltcommitgtemspan"><a id="Documentation/git-rev-list.txt---ancestry-pathcommit" class="anchor" href="#Documentation/git-rev-list.txt---ancestry-pathcommit"></a><span class='synopsis'><code>--ancestry-path</code>[<code>=</code><em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>]</span> </dt>
 <dd>
 <p>When given a range of commits to display (e.g. <span class='synopsis'><em>&lt;commit1&gt;</em><code>..</code><em>&lt;commit2&gt;</em></span>
-or <span class='synopsis'><em>&lt;commit2&gt;</em> <code>^</code><em>&lt;commit1&gt;</em></span>), and a commit <em>&lt;commit&gt;</em> in that range,
+or <span class='synopsis'><em>&lt;commit2&gt;</em> <code>^</code><em>&lt;commit1&gt;</em></span>), and a commit <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em> in that range,
 only display commits in that range
-that are ancestors of <em>&lt;commit&gt;</em>, descendants of <em>&lt;commit&gt;</em>, or
-<em>&lt;commit&gt;</em> itself.  If no commit is specified, use <em>&lt;commit1&gt;</em> (the
-excluded part of the range) as <em>&lt;commit&gt;</em>.  Can be passed multiple
+that are ancestors of <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>, descendants of <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>, or
+<em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em> itself.  If no commit is specified, use <em>&lt;commit1&gt;</em> (the
+excluded part of the range) as <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>.  Can be passed multiple
 times; if so, a commit is included if it is any of the commits
 given or if it is an ancestor or descendant of one of them.</p>
 </dd>
@@ -863,10 +863,10 @@ parent and is TREESAME.</p>
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1" id="Documentation/git-rev-list.txt-spanclasssynopsiscode--ancestry-pathcodecodecodeemltcommitgtemspan-1"><a id="Documentation/git-rev-list.txt---ancestry-pathcommit-1" class="anchor" href="#Documentation/git-rev-list.txt---ancestry-pathcommit-1"></a><span class='synopsis'><code>--ancestry-path</code>[<code>=</code><em>&lt;commit&gt;</em>]</span> </dt>
+<dt class="hdlist1" id="Documentation/git-rev-list.txt-spanclasssynopsiscode--ancestry-pathcodecodecodeemltcommitgtemspan-1"><a id="Documentation/git-rev-list.txt---ancestry-pathcommit-1" class="anchor" href="#Documentation/git-rev-list.txt---ancestry-pathcommit-1"></a><span class='synopsis'><code>--ancestry-path</code>[<code>=</code><em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>]</span> </dt>
 <dd>
 <p>Limit the displayed commits to those which are an ancestor of
-<em>&lt;commit&gt;</em>, or which are a descendant of <em>&lt;commit&gt;</em>, or are <em>&lt;commit&gt;</em>
+<em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>, or which are a descendant of <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>, or are <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>
 itself.</p>
 <div class="paragraph">
 <p>As an example use case, consider the following commit history:</p>
@@ -1313,7 +1313,7 @@ at multiple depths in the commits traversed). <em>&lt;depth&gt;</em>=0 will not 
 any trees or blobs unless included explicitly in the command-line (or
 standard input when <span class='synopsis'><code>--stdin</code></span> is used). <em>&lt;depth&gt;</em>=1 will include only the
 tree and blobs which are referenced directly by a commit reachable from
-<em>&lt;commit&gt;</em> or an explicitly-given object. <em>&lt;depth&gt;</em>=2 is like &lt;depth&gt;=1
+<em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em> or an explicitly-given object. <em>&lt;depth&gt;</em>=2 is like &lt;depth&gt;=1
 while also including trees and blobs one more level removed from an
 explicitly-given commit or tree.</p>
 </div>
@@ -1750,7 +1750,7 @@ built-in formats:</p>
 <p><span class='synopsis'><code>oneline</code></span></p>
 <div class="literalblock">
 <div class="content">
-<pre>&lt;hash&gt; &lt;title-line&gt;</pre>
+<pre><span class="hover-term" data-term="hash">&lt;hash&gt;</span> &lt;title-line&gt;</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1761,7 +1761,7 @@ built-in formats:</p>
 <p><span class='synopsis'><code>short</code></span></p>
 <div class="literalblock">
 <div class="content">
-<pre>commit &lt;hash&gt;
+<pre>commit <span class="hover-term" data-term="hash">&lt;hash&gt;</span>
 Author: &lt;author&gt;</pre>
 </div>
 </div>
@@ -1775,7 +1775,7 @@ Author: &lt;author&gt;</pre>
 <p><span class='synopsis'><code>medium</code></span></p>
 <div class="literalblock">
 <div class="content">
-<pre>commit &lt;hash&gt;
+<pre>commit <span class="hover-term" data-term="hash">&lt;hash&gt;</span>
 Author: &lt;author&gt;
 Date:   &lt;author-date&gt;</pre>
 </div>
@@ -1795,7 +1795,7 @@ Date:   &lt;author-date&gt;</pre>
 <p><span class='synopsis'><code>full</code></span></p>
 <div class="literalblock">
 <div class="content">
-<pre>commit &lt;hash&gt;
+<pre>commit <span class="hover-term" data-term="hash">&lt;hash&gt;</span>
 Author: &lt;author&gt;
 Commit: &lt;committer&gt;</pre>
 </div>
@@ -1815,7 +1815,7 @@ Commit: &lt;committer&gt;</pre>
 <p><span class='synopsis'><code>fuller</code></span></p>
 <div class="literalblock">
 <div class="content">
-<pre>commit &lt;hash&gt;
+<pre>commit <span class="hover-term" data-term="hash">&lt;hash&gt;</span>
 Author:     &lt;author&gt;
 AuthorDate: &lt;author-date&gt;
 Commit:     &lt;committer&gt;
@@ -1853,7 +1853,7 @@ placeholders, its output is not affected by other options like
 <p><span class='synopsis'><code>email</code></span></p>
 <div class="literalblock">
 <div class="content">
-<pre>From &lt;hash&gt; &lt;date&gt;
+<pre>From <span class="hover-term" data-term="hash">&lt;hash&gt;</span> &lt;date&gt;
 From: &lt;author&gt;
 Date: &lt;author-date&gt;
 Subject: [PATCH] &lt;title-line&gt;</pre>

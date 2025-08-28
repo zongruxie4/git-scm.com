@@ -46,16 +46,16 @@ aliases:
 <h2 id="_synopsis"><a class="anchor" href="#_synopsis"></a>SYNOPSIS</h2>
 <div class="sectionbody">
 <div class="verseblock">
-<pre class="content"><em>git notes</em> [list [&lt;object&gt;]]
-<em>git notes</em> add [-f] [--allow-empty] [-F &lt;file&gt; | -m &lt;msg&gt; | (-c | -C) &lt;object&gt;] [&lt;object&gt;]
+<pre class="content"><em>git notes</em> [list [<span class="hover-term" data-term="object">&lt;object&gt;</span>]]
+<em>git notes</em> add [-f] [--allow-empty] [-F &lt;file&gt; | -m &lt;msg&gt; | (-c | -C) <span class="hover-term" data-term="object">&lt;object&gt;</span>] [<span class="hover-term" data-term="object">&lt;object&gt;</span>]
 <em>git notes</em> copy [-f] ( --stdin | &lt;from-object&gt; &lt;to-object&gt; )
-<em>git notes</em> append [--allow-empty] [-F &lt;file&gt; | -m &lt;msg&gt; | (-c | -C) &lt;object&gt;] [&lt;object&gt;]
-<em>git notes</em> edit [--allow-empty] [&lt;object&gt;]
-<em>git notes</em> show [&lt;object&gt;]
+<em>git notes</em> append [--allow-empty] [-F &lt;file&gt; | -m &lt;msg&gt; | (-c | -C) <span class="hover-term" data-term="object">&lt;object&gt;</span>] [<span class="hover-term" data-term="object">&lt;object&gt;</span>]
+<em>git notes</em> edit [--allow-empty] [<span class="hover-term" data-term="object">&lt;object&gt;</span>]
+<em>git notes</em> show [<span class="hover-term" data-term="object">&lt;object&gt;</span>]
 <em>git notes</em> merge [-v | -q] [-s &lt;strategy&gt; ] &lt;notes-ref&gt;
 <em>git notes</em> merge --commit [-v | -q]
 <em>git notes</em> merge --abort [-v | -q]
-<em>git notes</em> remove [--ignore-missing] [--stdin] [&lt;object&gt;&#8230;&#8203;]
+<em>git notes</em> remove [--ignore-missing] [--stdin] [<span class="hover-term" data-term="object">&lt;object&gt;</span>&#8230;&#8203;]
 <em>git notes</em> prune [-n | -v]
 <em>git notes</em> get-ref</pre>
 </div>
@@ -217,15 +217,15 @@ read the note message from the standard input.
 Lines starting with <span class='synopsis'><code>#</code></span> and empty lines other than a
 single line between paragraphs will be stripped out.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-notes.txt--Cltobjectgt"><a id="Documentation/git-notes.txt--Cobject" class="anchor" href="#Documentation/git-notes.txt--Cobject"></a>-C &lt;object&gt; </dt>
-<dt class="hdlist1" id="Documentation/git-notes.txt---reuse-messageltobjectgt"><a id="Documentation/git-notes.txt---reuse-messageobject" class="anchor" href="#Documentation/git-notes.txt---reuse-messageobject"></a>--reuse-message=&lt;object&gt; </dt>
+<dt class="hdlist1" id="Documentation/git-notes.txt--Cltobjectgt"><a id="Documentation/git-notes.txt--Cobject" class="anchor" href="#Documentation/git-notes.txt--Cobject"></a>-C <span class="hover-term" data-term="object">&lt;object&gt;</span> </dt>
+<dt class="hdlist1" id="Documentation/git-notes.txt---reuse-messageltobjectgt"><a id="Documentation/git-notes.txt---reuse-messageobject" class="anchor" href="#Documentation/git-notes.txt---reuse-messageobject"></a>--reuse-message=<span class="hover-term" data-term="object">&lt;object&gt;</span> </dt>
 <dd>
 <p>Take the given blob object (for	example, another note) as the
-note message. (Use <span class='synopsis'><code>git</code> <code>notes</code> <code>copy</code> <em>&lt;object&gt;</em></span> instead to
+note message. (Use <span class='synopsis'><code>git</code> <code>notes</code> <code>copy</code> <em><span class="hover-term" data-term="object">&lt;object&gt;</span></em></span> instead to
 copy notes between objects.)</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-notes.txt--cltobjectgt"><a id="Documentation/git-notes.txt--cobject" class="anchor" href="#Documentation/git-notes.txt--cobject"></a>-c &lt;object&gt; </dt>
-<dt class="hdlist1" id="Documentation/git-notes.txt---reedit-messageltobjectgt"><a id="Documentation/git-notes.txt---reedit-messageobject" class="anchor" href="#Documentation/git-notes.txt---reedit-messageobject"></a>--reedit-message=&lt;object&gt; </dt>
+<dt class="hdlist1" id="Documentation/git-notes.txt--cltobjectgt"><a id="Documentation/git-notes.txt--cobject" class="anchor" href="#Documentation/git-notes.txt--cobject"></a>-c <span class="hover-term" data-term="object">&lt;object&gt;</span> </dt>
+<dt class="hdlist1" id="Documentation/git-notes.txt---reedit-messageltobjectgt"><a id="Documentation/git-notes.txt---reedit-messageobject" class="anchor" href="#Documentation/git-notes.txt---reedit-messageobject"></a>--reedit-message=<span class="hover-term" data-term="object">&lt;object&gt;</span> </dt>
 <dd>
 <p>Like <em>-C</em>, but with <span class='synopsis'><code>-c</code></span> the editor is invoked, so that
 the user can further edit the note message.</p>
@@ -235,9 +235,9 @@ the user can further edit the note message.</p>
 <p>Allow an empty note object to be stored. The default behavior is
 to automatically remove empty notes.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-notes.txt---refltrefgt"><a id="Documentation/git-notes.txt---refref" class="anchor" href="#Documentation/git-notes.txt---refref"></a>--ref &lt;ref&gt; </dt>
+<dt class="hdlist1" id="Documentation/git-notes.txt---refltrefgt"><a id="Documentation/git-notes.txt---refref" class="anchor" href="#Documentation/git-notes.txt---refref"></a>--ref <span class="hover-term" data-term="ref">&lt;ref&gt;</span> </dt>
 <dd>
-<p>Manipulate the notes tree in &lt;ref&gt;.  This overrides
+<p>Manipulate the notes tree in <span class="hover-term" data-term="ref">&lt;ref&gt;</span>.  This overrides
 <span class='synopsis'><code>GIT_NOTES_REF</code></span> and the "core.notesRef" configuration.  The ref
 specifies the full refname when it begins with <span class='synopsis'><code>refs/notes/</code></span>; when it
 begins with <span class='synopsis'><code>notes/</code></span>, <span class='synopsis'><code>refs/</code></span> and otherwise <span class='synopsis'><code>refs/notes/</code></span> is prefixed
