@@ -8,6 +8,7 @@ require "digest/sha1"
 require "set"
 require 'fileutils'
 require 'yaml'
+require 'json'
 require 'diffy'
 require_relative "version"
 require_relative 'asciidoctor-extensions'
@@ -95,6 +96,86 @@ def extract_headings(html)
   headings
 end
 
+def extract_glossary_from_html(content, lang = 'en')
+  # skip front matter
+  content = content.split(/^---$/)[2] || content
+
+  doc = Nokogiri::HTML::DocumentFragment.parse(content)
+
+  glossary = {}
+
+  doc.css('dt').each do |dt|
+    def_anchor = dt.css('a[id^="def_"]').first
+    next unless def_anchor
+
+    term_id = def_anchor['id']
+    next unless term_id&.start_with?('def_')
+
+    term_name = dt.text.strip
+    # hack to handle this one weird (also) thing
+    term_names = []
+    if term_name == 'tree-ish (also treeish)'
+      term_names = ['tree-ish', 'treeish']
+    elsif term_name == 'arbre-esque (aussi arbresque)'
+      term_names = ['arbre-esque', 'arbresque']
+    else
+      term_names = [term_name]
+    end
+    current_element = dt.next_element
+    raise 'Expected dd' unless current_element&.name == 'dd'
+
+    # Fix up the links because they'regoing to be on a different page
+    if lang == 'en'
+      glossary_url = '/docs/gitglossary'
+    else
+      glossary_url = "/docs/gitglossary/#{lang}"
+    end
+
+    definition_fragment = Nokogiri::HTML::DocumentFragment.parse(current_element.inner_html.strip)
+    definition_fragment.css('a[href^="#def_"]').each do |link|
+      href = link['href']
+      if href&.start_with?('#def_')
+        link['href'] = "#{glossary_url}#{href}"
+        link['target'] = '_blank'
+      end
+    end
+    definition = definition_fragment.to_html
+    
+    term_names.each do |term|
+      glossary[term] = definition
+    end
+  end
+
+  glossary
+end
+
+def save_glossary_files(glossary_data_by_lang)
+  return if glossary_data_by_lang.empty?
+
+  glossary_dir = "#{SITE_ROOT}static/js/glossary"
+  FileUtils.mkdir_p(glossary_dir)
+
+  glossary_data_by_lang.each do |lang, glossary_data|
+    output_file = "#{glossary_dir}/#{lang}.json"
+    puts "   saving glossary data to #{output_file} (#{glossary_data.size} terms)"
+    File.write(output_file, JSON.pretty_generate(glossary_data))
+  end
+end
+
+def mark_glossary_tooltips(html, glossary_data_by_lang, lang)
+  current_glossary = glossary_data_by_lang[lang] || {}
+
+  html.gsub(/&lt;([^&]+)&gt;/) do |match|
+    term = $1
+    # Only mark terms that exist in the glossary
+    if current_glossary.key?(term)
+      "<span class=\"hover-term\" data-term=\"#{term}\">&lt;#{term}&gt;</span>"
+    else
+      match
+    end
+  end
+end
+
 def index_l10n_doc(filter_tags, doc_list, get_content)
   rebuild = ENV.fetch("REBUILD_DOC", nil)
   rerun = ENV["RERUN"] || rebuild || false
@@ -139,8 +220,15 @@ def index_l10n_doc(filter_tags, doc_list, get_content)
     end
 
     check_paths = Set.new([])
+    glossary_data_by_lang = {}
 
-    doc_files.each do |entry|
+    # Process glossary docs first so that we can use the parsed glossary to mark
+    # tooltip items in the other documents
+    glossary_docs = doc_files.select { |entry| File.basename(entry[0], ".#{ext}") == 'gitglossary' }
+    other_docs = doc_files.reject { |entry| File.basename(entry[0], ".#{ext}") == 'gitglossary' }
+    ordered_docs = glossary_docs + other_docs
+
+    ordered_docs.each do |entry|
       full_path, sha = entry
       ids = Set.new([])
       lang = File.dirname(full_path)
@@ -177,6 +265,12 @@ def index_l10n_doc(filter_tags, doc_list, get_content)
       next if !rerun && lang_data[lang] == asciidoc_sha
 
       html = asciidoc.render
+
+      if path == 'gitglossary'
+        glossary_data_by_lang[lang] = extract_glossary_from_html(html, lang)
+        puts "   extracted #{glossary_data_by_lang[lang].size} glossary terms for #{lang}"
+      end
+
       html.gsub!(/linkgit:(\S+?)\[(\d+)\]/) do |line|
         x = /^linkgit:(\S+?)\[(\d+)\]/.match(line)
         relurl = "docs/#{x[1].gsub(/&#x2d;/, '-')}/#{lang}"
@@ -223,6 +317,8 @@ def index_l10n_doc(filter_tags, doc_list, get_content)
         "#{before}{{< relurl \"#{after}\" >}}"
       end
 
+      html = mark_glossary_tooltips(html, glossary_data_by_lang, lang)
+
       # Write <docname>/<lang>.html
       front_matter = {
         "category" => "manual",
@@ -247,6 +343,8 @@ def index_l10n_doc(filter_tags, doc_list, get_content)
 
       lang_data[lang] = asciidoc_sha
     end
+
+    save_glossary_files(glossary_data_by_lang)
 
     # In some cases, translations are not complete. As a consequence, some
     # translated manual pages may point to other translated manual pages that do
@@ -432,8 +530,15 @@ def index_doc(filter_tags, doc_list, get_content)
       end
 
       check_paths = Set.new([])
+      glossary_data_by_lang = {}
 
-      doc_files.each do |entry|
+      # Process glossary docs first so that we can use the parsed glossary to mark
+      # tooltip items in the other documents
+      glossary_docs = doc_files.select { |entry| File.basename(entry[0].sub(/\.adoc$/, '.txt'), '.txt') == 'gitglossary' }
+      other_docs = doc_files.reject { |entry| File.basename(entry[0].sub(/\.adoc$/, '.txt'), '.txt') == 'gitglossary' }
+      ordered_docs = glossary_docs + other_docs
+
+      ordered_docs.each do |entry|
         path, sha = entry
         txt_path = path.sub(/\.adoc$/, '.txt')
         ids = Set.new([])
@@ -482,6 +587,12 @@ def index_doc(filter_tags, doc_list, get_content)
 
         # Generate HTML
         html = asciidoc.render
+
+        if docname == 'gitglossary'
+          glossary_data_by_lang['en'] = extract_glossary_from_html(html, 'en')
+          puts "   extracted #{glossary_data_by_lang['en'].size} glossary terms for 'en'"
+        end
+
         html.gsub!(/linkgit:+(\S+?)\[(\d+)\]/) do |line|
           x = /^linkgit:+(\S+?)\[(\d+)\]/.match(line)
           if x[1] == "curl"
@@ -521,6 +632,8 @@ def index_doc(filter_tags, doc_list, get_content)
           check_paths.add(after.sub(/#.*/, ''))
           "#{before}{{< relurl \"#{after}\" >}}"
         end
+
+        html = mark_glossary_tooltips(html, glossary_data_by_lang, 'en')
 
         doc_versions = version_map.keys.sort{|a, b| Version.version_to_num(a) <=> Version.version_to_num(b)}
         doc_version_index = doc_versions.index(version)
@@ -640,6 +753,9 @@ def index_doc(filter_tags, doc_list, get_content)
         end
       end
     end
+
+    save_glossary_files(glossary_data_by_lang)
+
     data["latest-version"] = version if !data["latest-version"] || Version.version_to_num(data["latest-version"]) < Version.version_to_num(version)
   end
 
