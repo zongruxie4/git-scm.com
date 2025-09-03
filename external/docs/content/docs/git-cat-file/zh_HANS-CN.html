@@ -71,29 +71,29 @@ headings:
 <div class="sectionbody">
 <div class="dlist">
 <dl>
-<dt class="hdlist1" id="git-cat-file-ltgt"> <a class="anchor" href="#git-cat-file-"></a> <a class="anchor" href="#git-cat-file-ltgt"></a>&lt;对象&gt; </dt>
+<dt class="hdlist1" id="git-cat-file-ltgt"> <a class="anchor" href="#git-cat-file-"></a> <a class="anchor" href="#git-cat-file-ltgt"></a><span class="hover-term" data-term="对象">&lt;对象&gt;</span> </dt>
 <dd>
 <p>要显示的对象名称。 有关拼写对象名称的更完整列表，请参阅 <a href='{{< relurl "docs/gitrevisions/zh_HANS-CN" >}}'>gitrevisions[7]</a> 中的 “指定修订” 部分。</p>
 </dd>
 <dt class="hdlist1" id="git-cat-file--t"> <a class="anchor" href="#git-cat-file--t"></a>-t </dt>
 <dd>
-<p>不显示内容，而是显示由 <span class='synopsis'><em>&lt;对象&gt;</em></span> 标识的对象类型。</p>
+<p>不显示内容，而是显示由 <span class='synopsis'><em><span class="hover-term" data-term="对象">&lt;对象&gt;</span></em></span> 标识的对象类型。</p>
 </dd>
 <dt class="hdlist1" id="git-cat-file--s"> <a class="anchor" href="#git-cat-file--s"></a>-s </dt>
 <dd>
-<p>不显示内容，而是显示由 <span class='synopsis'><em>&lt;对象&gt;</em></span> 标识的对象大小。如果与 <span class='synopsis'><code>--use-mailmap</code></span> 选项一起使用，则会显示使用邮件映射机制替换标识符后更新对象的大小。</p>
+<p>不显示内容，而是显示由 <span class='synopsis'><em><span class="hover-term" data-term="对象">&lt;对象&gt;</span></em></span> 标识的对象大小。如果与 <span class='synopsis'><code>--use-mailmap</code></span> 选项一起使用，则会显示使用邮件映射机制替换标识符后更新对象的大小。</p>
 </dd>
 <dt class="hdlist1" id="git-cat-file--e"> <a class="anchor" href="#git-cat-file--e"></a>-e </dt>
 <dd>
-<p>如果 <span class='synopsis'><em>&lt;对象&gt;</em></span> 存在且是有效对象，则以零状态退出。如果 <span class='synopsis'><em>&lt;对象&gt;</em></span> 的格式无效，则以非零状态退出，并在标准错误流上显示错误信息。</p>
+<p>如果 <span class='synopsis'><em><span class="hover-term" data-term="对象">&lt;对象&gt;</span></em></span> 存在且是有效对象，则以零状态退出。如果 <span class='synopsis'><em><span class="hover-term" data-term="对象">&lt;对象&gt;</span></em></span> 的格式无效，则以非零状态退出，并在标准错误流上显示错误信息。</p>
 </dd>
 <dt class="hdlist1" id="git-cat-file--p"> <a class="anchor" href="#git-cat-file--p"></a>-p </dt>
 <dd>
-<p>根据 <span class='synopsis'><em>&lt;对象&gt;</em></span> 的类型漂亮地打印其内容。</p>
+<p>根据 <span class='synopsis'><em><span class="hover-term" data-term="对象">&lt;对象&gt;</span></em></span> 的类型漂亮地打印其内容。</p>
 </dd>
 <dt class="hdlist1" id="git-cat-file-ltgt-1"> <a class="anchor" href="#git-cat-file--1"></a> <a class="anchor" href="#git-cat-file-ltgt-1"></a>&lt;类型&gt; </dt>
 <dd>
-<p>通常情况下，这与 <span class='synopsis'><em>&lt;对象&gt;</em></span> 的真实类型相匹配，但也允许要求一个可以从给定的 <span class='synopsis'><em>&lt;对象&gt;</em></span> 中简单地反向引用的类型。 例如，要求输入 “目录树”，而 <span class='synopsis'><em>&lt;对象&gt;</em></span> 是包含它的提交对象，或者要求输入 "blob"，而 <span class='synopsis'><em>&lt;对象&gt;</em></span> 是指向它的标记对象。</p>
+<p>通常情况下，这与 <span class='synopsis'><em><span class="hover-term" data-term="对象">&lt;对象&gt;</span></em></span> 的真实类型相匹配，但也允许要求一个可以从给定的 <span class='synopsis'><em><span class="hover-term" data-term="对象">&lt;对象&gt;</span></em></span> 中简单地反向引用的类型。 例如，要求输入 “目录树”，而 <span class='synopsis'><em><span class="hover-term" data-term="对象">&lt;对象&gt;</span></em></span> 是包含它的提交对象，或者要求输入 "blob"，而 <span class='synopsis'><em><span class="hover-term" data-term="对象">&lt;对象&gt;</span></em></span> 是指向它的标记对象。</p>
 </dd>
 <dt class="hdlist1" id="git-cat-file---no-mailmap"> <a class="anchor" href="#git-cat-file---no-mailmap"></a>--[no-]mailmap </dt>
 <dt class="hdlist1" id="git-cat-file---no-use-mailmap"> <a class="anchor" href="#git-cat-file---no-use-mailmap"></a>--[no-]use-mailmap </dt>
@@ -102,11 +102,11 @@ headings:
 </dd>
 <dt class="hdlist1" id="git-cat-file---textconv"> <a class="anchor" href="#git-cat-file---textconv"></a>--textconv </dt>
 <dd>
-<p>显示经 textconv 过滤器转换的内容。在这种情况下，<span class='synopsis'><em>&lt;对象&gt;</em></span> 必须是 <span class='synopsis'><em>&lt;目录树对象&gt;</em><code>:</code><em>&lt;路径&gt;</em></span> 或 <span class='synopsis'><code>:</code><em>&lt;路径&gt;</em></span> 形式，以便将过滤器应用于 <span class='synopsis'><em>&lt;路径&gt;</em></span> 处索引中记录的内容。</p>
+<p>显示经 textconv 过滤器转换的内容。在这种情况下，<span class='synopsis'><em><span class="hover-term" data-term="对象">&lt;对象&gt;</span></em></span> 必须是 <span class='synopsis'><em>&lt;目录树对象&gt;</em><code>:</code><em>&lt;路径&gt;</em></span> 或 <span class='synopsis'><code>:</code><em>&lt;路径&gt;</em></span> 形式，以便将过滤器应用于 <span class='synopsis'><em>&lt;路径&gt;</em></span> 处索引中记录的内容。</p>
 </dd>
 <dt class="hdlist1" id="git-cat-file---filters"> <a class="anchor" href="#git-cat-file---filters"></a>--filters </dt>
 <dd>
-<p>显示经当前工作树中为给定的 <span class='synopsis'><em>&lt;路径&gt;</em></span> 配置的过滤器（即污点过滤器、行结束符转换等）转换后的内容。在这种情况下，<span class='synopsis'><em>&lt;对象&gt;</em></span> 的形式必须是`&lt;目录树对象&gt;:&lt;路径&gt;<span class='synopsis'><em>，或 `:&lt;路径&gt;</em></span>。</p>
+<p>显示经当前工作树中为给定的 <span class='synopsis'><em>&lt;路径&gt;</em></span> 配置的过滤器（即污点过滤器、行结束符转换等）转换后的内容。在这种情况下，<span class='synopsis'><em><span class="hover-term" data-term="对象">&lt;对象&gt;</span></em></span> 的形式必须是`&lt;目录树对象&gt;:&lt;路径&gt;<span class='synopsis'><em>，或 `:&lt;路径&gt;</em></span>。</p>
 </dd>
 <dt class="hdlist1" id="git-cat-file---filterltgt"> <a class="anchor" href="#git-cat-file---filter"></a> <a class="anchor" href="#git-cat-file---filterltgt"></a>--filter=&lt;过滤器定义&gt; </dt>
 <dt class="hdlist1" id="git-cat-file---no-filter"> <a class="anchor" href="#git-cat-file---no-filter"></a>--no-filter </dt>
@@ -191,13 +191,13 @@ headings:
 <div class="content">
 <div class="dlist">
 <dl>
-<dt class="hdlist1" id="git-cat-file-contentsltgt"> <a class="anchor" href="#git-cat-file-contents"></a> <a class="anchor" href="#git-cat-file-contentsltgt"></a>contents &lt;对象&gt; </dt>
+<dt class="hdlist1" id="git-cat-file-contentsltgt"> <a class="anchor" href="#git-cat-file-contents"></a> <a class="anchor" href="#git-cat-file-contentsltgt"></a>contents <span class="hover-term" data-term="对象">&lt;对象&gt;</span> </dt>
 <dd>
-<p>打印对象引用 <span class='synopsis'><em>&lt;对象&gt;</em></span> 的对象内容。这相当于 <span class='synopsis'><code>--batch</code></span> 的输出。</p>
+<p>打印对象引用 <span class='synopsis'><em><span class="hover-term" data-term="对象">&lt;对象&gt;</span></em></span> 的对象内容。这相当于 <span class='synopsis'><code>--batch</code></span> 的输出。</p>
 </dd>
-<dt class="hdlist1" id="git-cat-file-infoltgt"> <a class="anchor" href="#git-cat-file-info"></a> <a class="anchor" href="#git-cat-file-infoltgt"></a>info &lt;对象&gt; </dt>
+<dt class="hdlist1" id="git-cat-file-infoltgt"> <a class="anchor" href="#git-cat-file-info"></a> <a class="anchor" href="#git-cat-file-infoltgt"></a>info <span class="hover-term" data-term="对象">&lt;对象&gt;</span> </dt>
 <dd>
-<p>打印对象引用 <span class='synopsis'><em>&lt;对象&gt;</em></span> 的对象信息。这相当于 <span class='synopsis'><code>--batch-check</code></span> 的输出。</p>
+<p>打印对象引用 <span class='synopsis'><em><span class="hover-term" data-term="对象">&lt;对象&gt;</span></em></span> 的对象信息。这相当于 <span class='synopsis'><code>--batch-check</code></span> 的输出。</p>
 </dd>
 <dt class="hdlist1" id="git-cat-file-flush"> <a class="anchor" href="#git-cat-file-flush"></a>flush （刷新） </dt>
 <dd>
@@ -311,16 +311,16 @@ alink: 链接到 /etc/passwd 的符号链接</pre>
 <p>如果指定了 <span class='synopsis'><code>-t</code></span>，则是 <span class='synopsis'><em>&lt;类型&gt;</em></span> 中的一个。</p>
 </div>
 <div class="paragraph">
-<p>如果指定了 <span class='synopsis'><code>-s</code></span>，则是 <span class='synopsis'><em>&lt;对象&gt;</em></span> 的大小（以字节为单位）。</p>
+<p>如果指定了 <span class='synopsis'><code>-s</code></span>，则是 <span class='synopsis'><em><span class="hover-term" data-term="对象">&lt;对象&gt;</span></em></span> 的大小（以字节为单位）。</p>
 </div>
 <div class="paragraph">
-<p>如果指定了 <span class='synopsis'><code>-e</code></span>，则没有输出，除非 <span class='synopsis'><em>&lt;对象&gt;</em></span> 是畸形的。</p>
+<p>如果指定了 <span class='synopsis'><code>-e</code></span>，则没有输出，除非 <span class='synopsis'><em><span class="hover-term" data-term="对象">&lt;对象&gt;</span></em></span> 是畸形的。</p>
 </div>
 <div class="paragraph">
-<p>如果指定了 <span class='synopsis'><code>-p</code></span>，则会对 <span class='synopsis'><em>&lt;对象&gt;</em></span> 的内容进行漂亮打印。</p>
+<p>如果指定了 <span class='synopsis'><code>-p</code></span>，则会对 <span class='synopsis'><em><span class="hover-term" data-term="对象">&lt;对象&gt;</span></em></span> 的内容进行漂亮打印。</p>
 </div>
 <div class="paragraph">
-<p>如果指定了 <span class='synopsis'><em>&lt;类型&gt;</em></span>，则将返回 <span class='synopsis'><em>&lt;对象&gt;</em></span> 的原始内容（尽管未压缩）。</p>
+<p>如果指定了 <span class='synopsis'><em>&lt;类型&gt;</em></span>，则将返回 <span class='synopsis'><em><span class="hover-term" data-term="对象">&lt;对象&gt;</span></em></span> 的原始内容（尽管未压缩）。</p>
 </div>
 </div>
 </div>
@@ -392,7 +392,7 @@ alink: 链接到 /etc/passwd 的符号链接</pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>&lt;对象&gt; SP 丢失 LF</pre>
+<pre><span class="hover-term" data-term="对象">&lt;对象&gt;</span> SP 丢失 LF</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -408,7 +408,7 @@ alink: 链接到 /etc/passwd 的符号链接</pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>&lt;对象&gt; SP ambiguous LF</pre>
+<pre><span class="hover-term" data-term="对象">&lt;对象&gt;</span> SP ambiguous LF</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -428,7 +428,7 @@ alink: 链接到 /etc/passwd 的符号链接</pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>&lt;对象&gt; SP 丢失 LF</pre>
+<pre><span class="hover-term" data-term="对象">&lt;对象&gt;</span> SP 丢失 LF</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -437,7 +437,7 @@ alink: 链接到 /etc/passwd 的符号链接</pre>
 <div class="listingblock">
 <div class="content">
 <pre>dangling SP &lt;尺寸&gt; LF
-&lt;对象&gt; LF</pre>
+<span class="hover-term" data-term="对象">&lt;对象&gt;</span> LF</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -446,7 +446,7 @@ alink: 链接到 /etc/passwd 的符号链接</pre>
 <div class="listingblock">
 <div class="content">
 <pre>loop SP &lt;尺寸&gt; LF
-&lt;对象&gt; LF</pre>
+<span class="hover-term" data-term="对象">&lt;对象&gt;</span> LF</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -455,7 +455,7 @@ alink: 链接到 /etc/passwd 的符号链接</pre>
 <div class="listingblock">
 <div class="content">
 <pre>notdir SP &lt;尺寸&gt; LF
-&lt;对象&gt; LF</pre>
+<span class="hover-term" data-term="对象">&lt;对象&gt;</span> LF</pre>
 </div>
 </div>
 <div class="paragraph">

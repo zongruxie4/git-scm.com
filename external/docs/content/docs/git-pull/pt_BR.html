@@ -47,7 +47,7 @@ headings:
 <h2 id="_resumo"><a class="anchor" href="#_resumo"></a>RESUMO</h2>
 <div class="sectionbody">
 <div class="verseblock">
-<pre class="content"><em>git pull</em> [&lt;opções&gt;] [&lt;repositório&gt; [&lt;refspec&gt;&#8230;&#8203;]]</pre>
+<pre class="content"><em>git pull</em> [&lt;opções&gt;] [&lt;repositório&gt; [<span class="hover-term" data-term="refspec">&lt;refspec&gt;</span>&#8230;&#8203;]]</pre>
 </div>
 </div>
 </div>
@@ -61,7 +61,7 @@ headings:
 <p>Mais precisamente, o comando <span class='synopsis'><code>git</code> <code>pull</code></span> executa <span class='synopsis'><code>git</code> <code>fetch</code></span> com os parâmetros determinados e em seguida, dependendo das opções de configuração ou das sinalizações da linha de comando, invocará o comando <span class='synopsis'><code>git</code> <code>rebase</code></span> ou <span class='synopsis'><code>git</code> <code>merge</code></span> para conciliar os ramos divergentes.</p>
 </div>
 <div class="paragraph">
-<p>O &lt;repositório&gt; deve ser o nome de um repositório remoto conforme é repassado para <a href='{{< relurl "docs/git-fetch/pt_BR" >}}'>git-fetch[1]</a>. O &lt;refspec&gt; pode nomear uma referência remota arbitrária (o nome de uma etiqueta por exemplo) ou até mesmo uma coleção de referências com ramificações correspondentes rastreadas remotamente (refs/heads/*:refs/remotes/origin/* por exemplo), mas geralmente é o nome de uma ramificação no repositório remoto.</p>
+<p>O &lt;repositório&gt; deve ser o nome de um repositório remoto conforme é repassado para <a href='{{< relurl "docs/git-fetch/pt_BR" >}}'>git-fetch[1]</a>. O <span class="hover-term" data-term="refspec">&lt;refspec&gt;</span> pode nomear uma referência remota arbitrária (o nome de uma etiqueta por exemplo) ou até mesmo uma coleção de referências com ramificações correspondentes rastreadas remotamente (refs/heads/*:refs/remotes/origin/* por exemplo), mas geralmente é o nome de uma ramificação no repositório remoto.</p>
 </div>
 <div class="paragraph">
 <p>Os valores predefinidos para o &lt;repositório&gt; e o &lt;ramo&gt; eles são lidos na configuração "remote" e "merge" do ramo atual, conforme for definido pelo <a href='{{< relurl "docs/git-branch/pt_BR" >}}'>git-branch[1]</a> <span class='synopsis'><code>--track</code></span>.</p>
@@ -379,7 +379,7 @@ Este é um modo de operação potencialmente <em>perigoso</em>. Ele reescreve o 
 <dt class="hdlist1" id="git-pull---force"> <a class="anchor" href="#git-pull---force"></a>--force </dt>
 <dd>
 <p>Quando <em>git fetch</em> é utilizado com <span class='synopsis'><em>&lt;src&gt;</em><code>:</code><em>&lt;dst&gt;</em></span> "refspec", ele pode se recusar a atualizar o ramo local como discutido
-na parte <span class='synopsis'><em>&lt;refspec&gt;</em></span> da documentação do
+na parte <span class='synopsis'><em><span class="hover-term" data-term="refspec">&lt;refspec&gt;</span></em></span> da documentação do
 <a href='{{< relurl "docs/git-fetch/pt_BR" >}}'>git-fetch[1]</a>.
 Esta opção sobrescreve esta verificação.</p>
 </dd>
@@ -401,9 +401,9 @@ Esta opção sobrescreve esta verificação.</p>
 <dd>
 <p>É predefinido que as tags que apontam para objetos que são baixados do repositório remoto são obtidas e armazenadas localmente. Essa opção desativa o acompanhamento automático de tags. O comportamento padrão de um ramo remoto pode ser especificado com a configuração remote.&lt;nome&gt;.tagOpt. Consulte <a href='{{< relurl "docs/git-config/pt_BR" >}}'>git-config[1]</a>.</p>
 </dd>
-<dt class="hdlist1" id="git-pull---refmapltrefspecgt"> <a class="anchor" href="#git-pull---refmaprefspec"></a> <a class="anchor" href="#git-pull---refmapltrefspecgt"></a>--refmap=&lt;refspec&gt; </dt>
+<dt class="hdlist1" id="git-pull---refmapltrefspecgt"> <a class="anchor" href="#git-pull---refmaprefspec"></a> <a class="anchor" href="#git-pull---refmapltrefspecgt"></a>--refmap=<span class="hover-term" data-term="refspec">&lt;refspec&gt;</span> </dt>
 <dd>
-<p>Ao obter as refs listadas na linha de comando, use o refspec especificado (pode ser usado mais de uma vez) para mapear as refs nas ramificações de rastreamento remoto, em vez dos valores das variáveis de configuração <span class='synopsis'><code>remote.*.fetch</code></span> do repositório remoto. Fornecer um <span class='synopsis'><em>&lt;refspec&gt;</em></span> vazio para a opção <span class='synopsis'><code>--refmap</code></span> faz com que o Git ignore os refspecs configurados e confie inteiramente nos refspecs fornecidos como argumentos da linha de comando. Consulte a seção "Configurações dos Ramos Monitorados Remotamente" para obter detalhes.</p>
+<p>Ao obter as refs listadas na linha de comando, use o refspec especificado (pode ser usado mais de uma vez) para mapear as refs nas ramificações de rastreamento remoto, em vez dos valores das variáveis de configuração <span class='synopsis'><code>remote.*.fetch</code></span> do repositório remoto. Fornecer um <span class='synopsis'><em><span class="hover-term" data-term="refspec">&lt;refspec&gt;</span></em></span> vazio para a opção <span class='synopsis'><code>--refmap</code></span> faz com que o Git ignore os refspecs configurados e confie inteiramente nos refspecs fornecidos como argumentos da linha de comando. Consulte a seção "Configurações dos Ramos Monitorados Remotamente" para obter detalhes.</p>
 </dd>
 <dt class="hdlist1" id="git-pull--t"> <a class="anchor" href="#git-pull--t"></a>-t </dt>
 <dt class="hdlist1" id="git-pull---tags"> <a class="anchor" href="#git-pull---tags"></a>--tags </dt>
@@ -464,16 +464,16 @@ Esta opção sobrescreve esta verificação.</p>
 <dd>
 <p>O repositório "remote" é a fonte de uma operação <em>fetch</em> ou <em>pull</em>. Este parâmetro pode ser uma URL (consulte a seção <a href="#URLS">GIT URLS</a> abaixo) ou o nome de um controle remoto (consulte a seção <a href="#REMOTES">RAMOS REMOTOS</a> abaixo).</p>
 </dd>
-<dt class="hdlist1" id="git-pull-ltrefspecgt"> <a class="anchor" href="#git-pull-refspec"></a> <a class="anchor" href="#git-pull-ltrefspecgt"></a>&lt;refspec&gt; </dt>
+<dt class="hdlist1" id="git-pull-ltrefspecgt"> <a class="anchor" href="#git-pull-refspec"></a> <a class="anchor" href="#git-pull-ltrefspecgt"></a><span class="hover-term" data-term="refspec">&lt;refspec&gt;</span> </dt>
 <dd>
-<p>Especifica quais as refs que devem ser obtidas via <em>fetch</em> e quais as refs locais devem ser atualizadas. Quando não houver um <span class='synopsis'><em>&lt;refspec&gt;</em></span> na linha de comando, as refs que serão obtidas com <em>fetch</em> serão lidas a partir das variáveis <span class='synopsis'><code>remote.</code><em>&lt;repositório&gt;</em><code>.fetch</code></span>
+<p>Especifica quais as refs que devem ser obtidas via <em>fetch</em> e quais as refs locais devem ser atualizadas. Quando não houver um <span class='synopsis'><em><span class="hover-term" data-term="refspec">&lt;refspec&gt;</span></em></span> na linha de comando, as refs que serão obtidas com <em>fetch</em> serão lidas a partir das variáveis <span class='synopsis'><code>remote.</code><em>&lt;repositório&gt;</em><code>.fetch</code></span>
 (consulte a seção "CONFIGURAÇÕES DOS RAMOS MONITORADOS REMOTAMENTE"
 in <a href='{{< relurl "docs/git-fetch/pt_BR" >}}'>git-fetch[1]</a>).</p>
 <div class="paragraph">
-<p>The format of a &lt;refspec&gt; parameter is an optional plus <span class='synopsis'><code>+</code></span>, followed by the source &lt;src&gt;, followed by a colon <span class='synopsis'><code>:</code></span>, followed by the destination &lt;dst&gt;. The colon can be omitted when &lt;dst&gt; is empty. &lt;src&gt; is typically a ref, or a glob pattern with a single <span class='synopsis'><code>*</code></span> that is used to match a set of refs, but it can also be a fully spelled hex object name.</p>
+<p>The format of a <span class="hover-term" data-term="refspec">&lt;refspec&gt;</span> parameter is an optional plus <span class='synopsis'><code>+</code></span>, followed by the source &lt;src&gt;, followed by a colon <span class='synopsis'><code>:</code></span>, followed by the destination &lt;dst&gt;. The colon can be omitted when &lt;dst&gt; is empty. &lt;src&gt; is typically a ref, or a glob pattern with a single <span class='synopsis'><code>*</code></span> that is used to match a set of refs, but it can also be a fully spelled hex object name.</p>
 </div>
 <div class="paragraph">
-<p>A &lt;refspec&gt; may contain a <span class='synopsis'><code>*</code></span> in its &lt;src&gt; to indicate a simple pattern match. Such a refspec functions like a glob that matches any ref with the pattern. A pattern &lt;refspec&gt; must have one and only one <span class='synopsis'><code>*</code></span> in both the &lt;src&gt; and &lt;dst&gt;. It will map refs to the destination by replacing the <span class='synopsis'><code>*</code></span> with the contents matched from the source.</p>
+<p>A <span class="hover-term" data-term="refspec">&lt;refspec&gt;</span> may contain a <span class='synopsis'><code>*</code></span> in its &lt;src&gt; to indicate a simple pattern match. Such a refspec functions like a glob that matches any ref with the pattern. A pattern <span class="hover-term" data-term="refspec">&lt;refspec&gt;</span> must have one and only one <span class='synopsis'><code>*</code></span> in both the &lt;src&gt; and &lt;dst&gt;. It will map refs to the destination by replacing the <span class='synopsis'><code>*</code></span> with the contents matched from the source.</p>
 </div>
 <div class="paragraph">
 <p>Se um <em>refspec</em> for prefixado por <span class='synopsis'><code>^</code></span>, ele será interpretado como um refspec negativo. Em vez de especificar quais as <em>refs</em> devem ser obtidas com <em>fetch</em> ou quais as refs locais devem ser atualizadas, esta refspec especificará as refs que serão excluídas. Uma ref será considerada compatível se corresponder a pelo menos uma refspec positiva e não corresponder a nenhuma refspec negativa. As refspecs negativas podem ser úteis para restringir o escopo de um padrão refspec para que não inclua refs específicas. As refspecs negativas podem ser refspecs de padrão. No entanto, eles podem conter apenas um <span class='synopsis'><em>&lt;src&gt;</em></span> e não especificar um <span class='synopsis'><em>&lt;dst&gt;</em></span>. Também não há suporte para nomes de objetos hexadecimais totalmente mencionados.</p>
@@ -485,7 +485,7 @@ in <a href='{{< relurl "docs/git-fetch/pt_BR" >}}'>git-fetch[1]</a>).</p>
 <p>A "ref" remota que coincida com &lt;src&gt; é buscada e se &lt;dst&gt; não seja uma sequência vazia, é feita uma tentativa de atualizar a referência local que coincida com ela.</p>
 </div>
 <div class="paragraph">
-<p>Caso a atualização seja permitida sem a opção <span class='synopsis'><code>--force</code></span> depende do espaço de nomes da ref onde está sendo buscada, do tipo do objeto que está sendo buscado e se a atualização é considerada um avanço rápido. Geralmente, as mesmas regras se aplicam à busca e ao impulsionar, consulte a seção <span class='synopsis'><em>&lt;refspec&gt;</em>...</span> do <a href='{{< relurl "docs/git-push/pt_BR" >}}'>git-push[1]</a> para saber o que são. As exceções para estas regras específicas para o comando <em>git fetch</em> são anotadas abaixo.</p>
+<p>Caso a atualização seja permitida sem a opção <span class='synopsis'><code>--force</code></span> depende do espaço de nomes da ref onde está sendo buscada, do tipo do objeto que está sendo buscado e se a atualização é considerada um avanço rápido. Geralmente, as mesmas regras se aplicam à busca e ao impulsionar, consulte a seção <span class='synopsis'><em><span class="hover-term" data-term="refspec">&lt;refspec&gt;</span></em>...</span> do <a href='{{< relurl "docs/git-push/pt_BR" >}}'>git-push[1]</a> para saber o que são. As exceções para estas regras específicas para o comando <em>git fetch</em> são anotadas abaixo.</p>
 </div>
 <div class="paragraph">
 <p>Até a versão 2.20 do Git, e ao contrário do que ocorre quando se faz um push com <a href='{{< relurl "docs/git-push/pt_BR" >}}'>git-push[1]</a>, quaisquer atualizações para <span class='synopsis'><code>refs/tags/*</code></span> seriam aceitas sem <span class='synopsis'><code>+</code></span> no refspec (ou a opção <span class='synopsis'><code>--force</code></span>). Ao fazer a obtenção com <em>fetch</em>, consideramos promiscuamente todas as atualizações das etiquetas de um ramo remoto como sendo um <em>fetch</em> forçado. Desde a versão 2.20 do Git, a busca para atualizar <span class='synopsis'><code>refs/tags/*</code></span> funciona da mesma forma que o push. Ou seja, todas as atualizações serão rejeitadas sem <span class='synopsis'><code>+</code></span> no refspec (ou <span class='synopsis'><code>--force</code></span>).</p>
@@ -518,7 +518,7 @@ Quando o ramo remoto que você deseja obter com <em>fetch</em> for conhecido por
 <div class="title">Note</div>
 </td>
 <td class="content">
-Há uma diferença entre listar os vários <span class='synopsis'><em>&lt;refspec&gt;</em></span> diretamente na linha de comando com <em>git pull</em> e ter várias entradas <span class='synopsis'><code>remote.</code><em>&lt;repositório&gt;</em><code>.fetch</code></span> em sua configuração para um <span class='synopsis'><em>&lt;repositório&gt;</em></span> e executar um comando <em>git pull</em> sem nenhum parâmetro <span class='synopsis'><em>&lt;refspec&gt;</em></span> explícito. Os <span class='synopsis'><em>&lt;refspec&gt;</em></span> listados explicitamente na linha de comando são sempre mesclados no ramo atual após um <em>fetch</em>. Em outras palavras, se você listar mais de uma referência remota, o comando "git pull" criará uma mesclagem Octopus. Por outro lado, se você não listar nenhum parâmetro <span class='synopsis'><em>&lt;refspec&gt;</em></span> explícito na linha de comando, o <em>git pull</em> buscará todos os <span class='synopsis'><em>&lt;refspec&gt;</em></span> encontrados na configuração <span class='synopsis'><code>remote.</code><em>&lt;repository&gt;</em><code>.fetch</code></span> e mesclará apenas o primeiro <span class='synopsis'><em>&lt;refspec&gt;</em></span> encontrado no ramo atual. Isso ocorre porque a criação de um "Octopus" a partir de refs remotos raramente é feito, ao passo que manter o controle de vários cabeçalhos remotos de uma só vez, ao obter mais de um com o <em>fetch</em>, isso costuma ser útil.
+Há uma diferença entre listar os vários <span class='synopsis'><em><span class="hover-term" data-term="refspec">&lt;refspec&gt;</span></em></span> diretamente na linha de comando com <em>git pull</em> e ter várias entradas <span class='synopsis'><code>remote.</code><em>&lt;repositório&gt;</em><code>.fetch</code></span> em sua configuração para um <span class='synopsis'><em>&lt;repositório&gt;</em></span> e executar um comando <em>git pull</em> sem nenhum parâmetro <span class='synopsis'><em><span class="hover-term" data-term="refspec">&lt;refspec&gt;</span></em></span> explícito. Os <span class='synopsis'><em><span class="hover-term" data-term="refspec">&lt;refspec&gt;</span></em></span> listados explicitamente na linha de comando são sempre mesclados no ramo atual após um <em>fetch</em>. Em outras palavras, se você listar mais de uma referência remota, o comando "git pull" criará uma mesclagem Octopus. Por outro lado, se você não listar nenhum parâmetro <span class='synopsis'><em><span class="hover-term" data-term="refspec">&lt;refspec&gt;</span></em></span> explícito na linha de comando, o <em>git pull</em> buscará todos os <span class='synopsis'><em><span class="hover-term" data-term="refspec">&lt;refspec&gt;</span></em></span> encontrados na configuração <span class='synopsis'><code>remote.</code><em>&lt;repository&gt;</em><code>.fetch</code></span> e mesclará apenas o primeiro <span class='synopsis'><em><span class="hover-term" data-term="refspec">&lt;refspec&gt;</span></em></span> encontrado no ramo atual. Isso ocorre porque a criação de um "Octopus" a partir de refs remotos raramente é feito, ao passo que manter o controle de vários cabeçalhos remotos de uma só vez, ao obter mais de um com o <em>fetch</em>, isso costuma ser útil.
 </td>
 </tr>
 </table>
@@ -578,8 +578,8 @@ Há uma diferença entre listar os vários <span class='synopsis'><em>&lt;refspe
 <pre>	[remote "&lt;nome&gt;"]
 		url = &lt;URL&gt;
 		pushurl = &lt;pushurl&gt;
-		push = &lt;refspec&gt;
-		fetch = &lt;refspec&gt;</pre>
+		push = <span class="hover-term" data-term="refspec">&lt;refspec&gt;</span>
+		fetch = <span class="hover-term" data-term="refspec">&lt;refspec&gt;</span></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -594,8 +594,8 @@ Há uma diferença entre listar os vários <span class='synopsis'><em>&lt;refspe
 <div class="listingblock">
 <div class="content">
 <pre>	URL: um dos formatos da URL acima
-	Push: &lt;refspec&gt;
-	Pull: &lt;refspec&gt;</pre>
+	Push: <span class="hover-term" data-term="refspec">&lt;refspec&gt;</span>
+	Pull: <span class="hover-term" data-term="refspec">&lt;refspec&gt;</span></pre>
 </div>
 </div>
 <div class="paragraph">

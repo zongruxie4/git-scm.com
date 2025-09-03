@@ -50,13 +50,13 @@ aliases:
 <div class="sectionbody">
 <div class="verseblock">
 <pre class="content"><span class='synopsis'><code>git</code></span> <span class='synopsis'><code>commit</code></span> [<span class='synopsis'><code>-a</code></span> | <span class='synopsis'><code>--interactive</code></span> | <span class='synopsis'><code>--patch</code></span>] [<span class='synopsis'><code>-s</code></span>] [<span class='synopsis'><code>-v</code></span>] [<span class='synopsis'><code>-u</code></span>[<em>&lt;mode&gt;</em>]] [<span class='synopsis'><code>--amend</code></span>]
-	   [<span class='synopsis'><code>--dry-run</code></span>] <em class="(<span class='synopsis'><code>-c</code></span> | <span class='synopsis'><code>-C</code></span> | <span class='synopsis'><code>--squash</code></span>) <em>_&lt;commit&gt;_</em> | <span class='synopsis'><code>--fixup</code></span> [(<span class='synopsis'><code>amend</code></span>|<span class='synopsis'><code>reword</code></span>)<span class='synopsis'><code>:</code></span>">&lt;commit&gt;</em>]
+	   [<span class='synopsis'><code>--dry-run</code></span>] <em class="(<span class='synopsis'><code>-c</code></span> | <span class='synopsis'><code>-C</code></span> | <span class='synopsis'><code>--squash</code></span>) <em>_<span class="hover-term" data-term="commit">&lt;commit&gt;</span>_</em> | <span class='synopsis'><code>--fixup</code></span> [(<span class='synopsis'><code>amend</code></span>|<span class='synopsis'><code>reword</code></span>)<span class='synopsis'><code>:</code></span>"><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>]
 	   [<span class='synopsis'><code>-F</code></span> <em>&lt;file&gt;</em> | <span class='synopsis'><code>-m</code></span> <em>&lt;msg&gt;</em>] [<span class='synopsis'><code>--reset-author</code></span>] [<span class='synopsis'><code>--allow-empty</code></span>]
 	   [<span class='synopsis'><code>--allow-empty-message</code></span>] [<span class='synopsis'><code>--no-verify</code></span>] [<span class='synopsis'><code>-e</code></span>] [<span class='synopsis'><code>--author=</code></span><em>&lt;author&gt;</em>]
 	   [<span class='synopsis'><code>--date=</code></span><em>&lt;date&gt;</em>] [<span class='synopsis'><code>--cleanup=</code></span><em>&lt;mode&gt;</em>] [<span class='synopsis'><code>--</code></span>[<span class='synopsis'><code>no-</code></span>]<span class='synopsis'><code>status</code></span>]
 	   [<span class='synopsis'><code>-i</code></span> | <span class='synopsis'><code>-o</code></span>] [<span class='synopsis'><code>--pathspec-from-file=</code></span><em>&lt;file&gt;</em> [<span class='synopsis'><code>--pathspec-file-nul</code></span>]]
 	   [(<span class='synopsis'><code>--trailer</code></span> <em>&lt;token&gt;</em>[(<span class='synopsis'><code>=</code></span>|<span class='synopsis'><code>:</code></span>)<em>&lt;value&gt;</em>])&#8230;&#8203;] [<span class='synopsis'><code>-S</code></span>[<em>&lt;keyid&gt;</em>]]
-	   [<span class='synopsis'><code>--</code></span>] [<em>&lt;pathspec&gt;</em>&#8230;&#8203;]</pre>
+	   [<span class='synopsis'><code>--</code></span>] [<em><span class="hover-term" data-term="pathspec">&lt;pathspec&gt;</span></em>&#8230;&#8203;]</pre>
 </div>
 </div>
 </div>
@@ -151,67 +151,67 @@ of lines, thereby fusing hunks that are close to each other.
 Defaults to <span class='synopsis'><code>diff.interHunkContext</code></span> or 0 if the config option
 is unset.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-commit.txt-spanclasssynopsiscode-Ccodeemltcommitgtemspan"><a id="Documentation/git-commit.txt--Ccommit" class="anchor" href="#Documentation/git-commit.txt--Ccommit"></a><span class='synopsis'><code>-C</code> <em>&lt;commit&gt;</em></span> </dt>
-<dt class="hdlist1" id="Documentation/git-commit.txt-spanclasssynopsiscode--reuse-messagecodeemltcommitgtemspan"><a id="Documentation/git-commit.txt---reuse-messagecommit" class="anchor" href="#Documentation/git-commit.txt---reuse-messagecommit"></a><span class='synopsis'><code>--reuse-message=</code><em>&lt;commit&gt;</em></span> </dt>
+<dt class="hdlist1" id="Documentation/git-commit.txt-spanclasssynopsiscode-Ccodeemltcommitgtemspan"><a id="Documentation/git-commit.txt--Ccommit" class="anchor" href="#Documentation/git-commit.txt--Ccommit"></a><span class='synopsis'><code>-C</code> <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em></span> </dt>
+<dt class="hdlist1" id="Documentation/git-commit.txt-spanclasssynopsiscode--reuse-messagecodeemltcommitgtemspan"><a id="Documentation/git-commit.txt---reuse-messagecommit" class="anchor" href="#Documentation/git-commit.txt---reuse-messagecommit"></a><span class='synopsis'><code>--reuse-message=</code><em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em></span> </dt>
 <dd>
-<p>Take an existing <em>&lt;commit&gt;</em> object, and reuse the log message
+<p>Take an existing <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em> object, and reuse the log message
 and the authorship information (including the timestamp)
 when creating the commit.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-commit.txt-spanclasssynopsiscode-ccodeemltcommitgtemspan"><a id="Documentation/git-commit.txt--ccommit" class="anchor" href="#Documentation/git-commit.txt--ccommit"></a><span class='synopsis'><code>-c</code> <em>&lt;commit&gt;</em></span> </dt>
-<dt class="hdlist1" id="Documentation/git-commit.txt-spanclasssynopsiscode--reedit-messagecodeemltcommitgtemspan"><a id="Documentation/git-commit.txt---reedit-messagecommit" class="anchor" href="#Documentation/git-commit.txt---reedit-messagecommit"></a><span class='synopsis'><code>--reedit-message=</code><em>&lt;commit&gt;</em></span> </dt>
+<dt class="hdlist1" id="Documentation/git-commit.txt-spanclasssynopsiscode-ccodeemltcommitgtemspan"><a id="Documentation/git-commit.txt--ccommit" class="anchor" href="#Documentation/git-commit.txt--ccommit"></a><span class='synopsis'><code>-c</code> <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em></span> </dt>
+<dt class="hdlist1" id="Documentation/git-commit.txt-spanclasssynopsiscode--reedit-messagecodeemltcommitgtemspan"><a id="Documentation/git-commit.txt---reedit-messagecommit" class="anchor" href="#Documentation/git-commit.txt---reedit-messagecommit"></a><span class='synopsis'><code>--reedit-message=</code><em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em></span> </dt>
 <dd>
 <p>Like <span class='synopsis'><code>-C</code></span>, but with <span class='synopsis'><code>-c</code></span> the editor is invoked, so that
 the user can further edit the commit message.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-commit.txt-spanclasssynopsiscode--fixupcodecodeamendcodecoderewordcodecodecodeemltcommitgtemspan"><a id="Documentation/git-commit.txt---fixupamendrewordcommit" class="anchor" href="#Documentation/git-commit.txt---fixupamendrewordcommit"></a><span class='synopsis'><code>--fixup=</code>[(<code>amend</code>|<code>reword</code>)<code>:</code>]<em>&lt;commit&gt;</em></span> </dt>
+<dt class="hdlist1" id="Documentation/git-commit.txt-spanclasssynopsiscode--fixupcodecodeamendcodecoderewordcodecodecodeemltcommitgtemspan"><a id="Documentation/git-commit.txt---fixupamendrewordcommit" class="anchor" href="#Documentation/git-commit.txt---fixupamendrewordcommit"></a><span class='synopsis'><code>--fixup=</code>[(<code>amend</code>|<code>reword</code>)<code>:</code>]<em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em></span> </dt>
 <dd>
-<p>Create a new commit which "fixes up" <em>&lt;commit&gt;</em> when applied with
-<span class='synopsis'><code>git</code> <code>rebase</code> <code>--autosquash</code></span>. Plain <span class='synopsis'><code>--fixup=</code><em>&lt;commit&gt;</em></span> creates a
-"fixup!" commit which changes the content of <em>&lt;commit&gt;</em> but leaves
-its log message untouched. <span class='synopsis'><code>--fixup=amend:</code><em>&lt;commit&gt;</em></span> is similar but
+<p>Create a new commit which "fixes up" <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em> when applied with
+<span class='synopsis'><code>git</code> <code>rebase</code> <code>--autosquash</code></span>. Plain <span class='synopsis'><code>--fixup=</code><em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em></span> creates a
+"fixup!" commit which changes the content of <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em> but leaves
+its log message untouched. <span class='synopsis'><code>--fixup=amend:</code><em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em></span> is similar but
 creates an "amend!" commit which also replaces the log message of
-<em>&lt;commit&gt;</em> with the log message of the "amend!" commit.
-<span class='synopsis'><code>--fixup=reword:</code><em>&lt;commit&gt;</em></span> creates an "amend!" commit which
-replaces the log message of <em>&lt;commit&gt;</em> with its own log message
-but makes no changes to the content of <em>&lt;commit&gt;</em>.</p>
+<em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em> with the log message of the "amend!" commit.
+<span class='synopsis'><code>--fixup=reword:</code><em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em></span> creates an "amend!" commit which
+replaces the log message of <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em> with its own log message
+but makes no changes to the content of <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>.</p>
 <div class="paragraph">
-<p>The commit created by plain <span class='synopsis'><code>--fixup=</code><em>&lt;commit&gt;</em></span> has a title
-composed of "fixup!" followed by the title of <em>&lt;commit&gt;</em>,
+<p>The commit created by plain <span class='synopsis'><code>--fixup=</code><em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em></span> has a title
+composed of "fixup!" followed by the title of <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>,
 and is recognized specially by <span class='synopsis'><code>git</code> <code>rebase</code> <code>--autosquash</code></span>. The <span class='synopsis'><code>-m</code></span>
 option may be used to supplement the log message of the created
 commit, but the additional commentary will be thrown away once the
-"fixup!" commit is squashed into <em>&lt;commit&gt;</em> by
+"fixup!" commit is squashed into <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em> by
 <span class='synopsis'><code>git</code> <code>rebase</code> <code>--autosquash</code></span>.</p>
 </div>
 <div class="paragraph">
-<p>The commit created by <span class='synopsis'><code>--fixup=amend:</code><em>&lt;commit&gt;</em></span> is similar but its
+<p>The commit created by <span class='synopsis'><code>--fixup=amend:</code><em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em></span> is similar but its
 title is instead prefixed with "amend!". The log message of
-<em>&lt;commit&gt;</em> is copied into the log message of the "amend!" commit and
+<em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em> is copied into the log message of the "amend!" commit and
 opened in an editor so it can be refined. When <span class='synopsis'><code>git</code> <code>rebase</code>
 
-<code>--autosquash</code></span> squashes the "amend!" commit into <em>&lt;commit&gt;</em>, the
-log message of <em>&lt;commit&gt;</em> is replaced by the refined log message
+<code>--autosquash</code></span> squashes the "amend!" commit into <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>, the
+log message of <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em> is replaced by the refined log message
 from the "amend!" commit. It is an error for the "amend!" commit&#8217;s
 log message to be empty unless <span class='synopsis'><code>--allow-empty-message</code></span> is
 specified.</p>
 </div>
 <div class="paragraph">
-<p><span class='synopsis'><code>--fixup=reword:</code><em>&lt;commit&gt;</em></span> is shorthand for <span class='synopsis'><code>--fixup=amend:</code><em>&lt;commit&gt;</em>
+<p><span class='synopsis'><code>--fixup=reword:</code><em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em></span> is shorthand for <span class='synopsis'><code>--fixup=amend:</code><em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>
 
  <code>--only</code></span>. It creates an "amend!" commit with only a log message
 (ignoring any changes staged in the index). When squashed by <span class='synopsis'><code>git</code>
 
-<code>rebase</code> <code>--autosquash</code></span>, it replaces the log message of <em>&lt;commit&gt;</em>
+<code>rebase</code> <code>--autosquash</code></span>, it replaces the log message of <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>
 without making any other changes.</p>
 </div>
 <div class="paragraph">
 <p>Neither "fixup!" nor "amend!" commits change authorship of
-<em>&lt;commit&gt;</em> when applied by <span class='synopsis'><code>git</code> <code>rebase</code> <code>--autosquash</code></span>.
+<em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em> when applied by <span class='synopsis'><code>git</code> <code>rebase</code> <code>--autosquash</code></span>.
 See <a href='{{< relurl "docs/git-rebase" >}}'>git-rebase[1]</a> for details.</p>
 </div>
 </dd>
-<dt class="hdlist1" id="Documentation/git-commit.txt-spanclasssynopsiscode--squashcodeemltcommitgtemspan"><a id="Documentation/git-commit.txt---squashcommit" class="anchor" href="#Documentation/git-commit.txt---squashcommit"></a><span class='synopsis'><code>--squash=</code><em>&lt;commit&gt;</em></span> </dt>
+<dt class="hdlist1" id="Documentation/git-commit.txt-spanclasssynopsiscode--squashcodeemltcommitgtemspan"><a id="Documentation/git-commit.txt---squashcommit" class="anchor" href="#Documentation/git-commit.txt---squashcommit"></a><span class='synopsis'><code>--squash=</code><em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em></span> </dt>
 <dd>
 <p>Construct a commit message for use with <span class='synopsis'><code>git</code> <code>rebase</code> <code>--autosquash</code></span>.
 The commit message title is taken from the specified
@@ -400,7 +400,7 @@ variable (see <a href='{{< relurl "docs/git-config" >}}'>git-config[1]</a>).</p>
 <dd>
 <p>Let the user further edit the message taken from <em>&lt;file&gt;</em>
 with <span class='synopsis'><code>-F</code> <em>&lt;file&gt;</em></span>, command line with <span class='synopsis'><code>-m</code> <em>&lt;message&gt;</em></span>, and
-from <em>&lt;commit&gt;</em> with <span class='synopsis'><code>-C</code> <em>&lt;commit&gt;</em></span>.</p>
+from <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em> with <span class='synopsis'><code>-C</code> <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em></span>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-commit.txt-spanclasssynopsiscode--no-editcodespan"><a id="Documentation/git-commit.txt---no-edit" class="anchor" href="#Documentation/git-commit.txt---no-edit"></a><span class='synopsis'><code>--no-edit</code></span> </dt>
 <dd>
@@ -578,9 +578,9 @@ earlier <span class='synopsis'><code>--gpg-sign</code></span>.</p>
 <dd>
 <p>Do not interpret any more arguments as options.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-commit.txt-spanclasssynopsisemltpathspecgtemspan"><a id="Documentation/git-commit.txt-pathspec" class="anchor" href="#Documentation/git-commit.txt-pathspec"></a><span class='synopsis'><em>&lt;pathspec&gt;</em>...</span> </dt>
+<dt class="hdlist1" id="Documentation/git-commit.txt-spanclasssynopsisemltpathspecgtemspan"><a id="Documentation/git-commit.txt-pathspec" class="anchor" href="#Documentation/git-commit.txt-pathspec"></a><span class='synopsis'><em><span class="hover-term" data-term="pathspec">&lt;pathspec&gt;</span></em>...</span> </dt>
 <dd>
-<p>When <em>&lt;pathspec&gt;</em> is given on the command line, commit the contents of
+<p>When <em><span class="hover-term" data-term="pathspec">&lt;pathspec&gt;</span></em> is given on the command line, commit the contents of
 the files that match the pathspec without recording the changes
 already added to the index. The contents of these files are also
 staged for the next commit on top of what have been staged before.</p>

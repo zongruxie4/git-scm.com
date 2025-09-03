@@ -36,7 +36,7 @@ aliases:
 <h2 id="_synopsis"><a class="anchor" href="#_synopsis"></a>SYNOPSIS</h2>
 <div class="sectionbody">
 <div class="verseblock">
-<pre class="content"><em>git send-pack</em> [--all] [--dry-run] [--force] [--receive-pack=&lt;git-receive-pack&gt;] [--verbose] [--thin] [--atomic] [&lt;host&gt;:]&lt;directory&gt; [&lt;ref&gt;&#8230;&#8203;]</pre>
+<pre class="content"><em>git send-pack</em> [--all] [--dry-run] [--force] [--receive-pack=&lt;git-receive-pack&gt;] [--verbose] [--thin] [--atomic] [&lt;host&gt;:]<span class="hover-term" data-term="directory">&lt;directory&gt;</span> [<span class="hover-term" data-term="ref">&lt;ref&gt;</span>&#8230;&#8203;]</pre>
 </div>
 </div>
 </div>
@@ -119,11 +119,11 @@ refs.</p>
 part is specified, <em>git-receive-pack</em> is invoked via
 ssh.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-send-pack.txt-ltdirectorygt"><a id="Documentation/git-send-pack.txt-directory" class="anchor" href="#Documentation/git-send-pack.txt-directory"></a>&lt;directory&gt; </dt>
+<dt class="hdlist1" id="Documentation/git-send-pack.txt-ltdirectorygt"><a id="Documentation/git-send-pack.txt-directory" class="anchor" href="#Documentation/git-send-pack.txt-directory"></a><span class="hover-term" data-term="directory">&lt;directory&gt;</span> </dt>
 <dd>
 <p>The repository to update.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-send-pack.txt-ltrefgt82308203"><a id="Documentation/git-send-pack.txt-ref" class="anchor" href="#Documentation/git-send-pack.txt-ref"></a>&lt;ref&gt;&#8230;&#8203; </dt>
+<dt class="hdlist1" id="Documentation/git-send-pack.txt-ltrefgt82308203"><a id="Documentation/git-send-pack.txt-ref" class="anchor" href="#Documentation/git-send-pack.txt-ref"></a><span class="hover-term" data-term="ref">&lt;ref&gt;</span>&#8230;&#8203; </dt>
 <dd>
 <p>The remote refs to update.</p>
 </dd>
@@ -140,15 +140,15 @@ remote end.</p>
 </div>
 <div class="paragraph">
 <p>With <em>--all</em> flag, all refs that exist locally are transferred to
-the remote side.  You cannot specify any <em>&lt;ref&gt;</em> if you use
+the remote side.  You cannot specify any <em><span class="hover-term" data-term="ref">&lt;ref&gt;</span></em> if you use
 this flag.</p>
 </div>
 <div class="paragraph">
-<p>Without <em>--all</em> and without any <em>&lt;ref&gt;</em>, the heads that exist
+<p>Without <em>--all</em> and without any <em><span class="hover-term" data-term="ref">&lt;ref&gt;</span></em>, the heads that exist
 both on the local side and on the remote side are updated.</p>
 </div>
 <div class="paragraph">
-<p>When one or more <em>&lt;ref&gt;</em> are specified explicitly (whether on the
+<p>When one or more <em><span class="hover-term" data-term="ref">&lt;ref&gt;</span></em> are specified explicitly (whether on the
 command line or via <span class='synopsis'><code>--stdin</code></span>), it can be either a
 single pattern, or a pair of such pattern separated by a colon
 ":" (this means that a ref name cannot have a colon in it).  A
@@ -201,7 +201,7 @@ remote ref and lose other peoples' commits from there.</p>
 <p>With <em>--force</em>, the fast-forward check is disabled for all refs.</p>
 </div>
 <div class="paragraph">
-<p>Optionally, a &lt;ref&gt; parameter can be prefixed with a plus <em>+</em> sign
+<p>Optionally, a <span class="hover-term" data-term="ref">&lt;ref&gt;</span> parameter can be prefixed with a plus <em>+</em> sign
 to disable the fast-forward check only on that ref.</p>
 </div>
 </div>

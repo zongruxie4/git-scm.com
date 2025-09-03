@@ -46,7 +46,7 @@ headings:
 	[--column[=&lt;параметры&gt;] | --no-column] [--sort=&lt;ключ&gt;]
 	[--merged [&lt;коммит&gt;]] [--no-merged [&lt;коммит&gt;]]
 	[--contains [&lt;коммит&gt;]] [--no-contains [&lt;коммит&gt;]]
-	[--points-at &lt;объект&gt;] [--format=&lt;формат&gt;]
+	[--points-at <span class="hover-term" data-term="объект">&lt;объект&gt;</span>] [--format=&lt;формат&gt;]
 	[(-r | --remotes) | (-a | --all)]
 	[--list] [&lt;шаблон&gt;&#8230;&#8203;]
 <em>git branch</em> [--track[=(direct|inherit)] | --no-track] [-f]
@@ -287,7 +287,7 @@ headings:
 <dd>
 <p>Сортировать по заданному ключу. Добавьте префикс <span class='synopsis'><code>-</code></span>, чтобы отсортировать в порядке убывания значения. Вы можете использовать параметр <span class='synopsis'><code>--sort=</code><em>&lt;ключ&gt;</em></span> несколько раз, в таком случае последний ключ становится основным. Поддерживаются те же ключи, что и в <span class='synopsis'><code>git</code> <code>for-each-ref</code></span>. Порядок сортировки по умолчанию соответствует значению переменной конфигурации <span class='synopsis'><code>branch.sort</code></span>, если она задана, или сортировке по полному имени ссылки (включая префикс <span class='synopsis'><code>refs/...</code></span>). Это означает, что сначала в списке будут идти отсоединённый указатель HEAD (если есть), затем локальные ветки и наконец отслеживаемые внешние ветки. См. <a href='{{< relurl "docs/git-config/ru" >}}'>git-config[1]</a>.</p>
 </dd>
-<dt class="hdlist1" id="git-branch---points-atltgt"> <a class="anchor" href="#git-branch---points-at"></a> <a class="anchor" href="#git-branch---points-atltgt"></a>--points-at &lt;объект&gt; </dt>
+<dt class="hdlist1" id="git-branch---points-atltgt"> <a class="anchor" href="#git-branch---points-at"></a> <a class="anchor" href="#git-branch---points-atltgt"></a>--points-at <span class="hover-term" data-term="объект">&lt;объект&gt;</span> </dt>
 <dd>
 <p>Перечислить только ветки данного объекта.</p>
 </dd>

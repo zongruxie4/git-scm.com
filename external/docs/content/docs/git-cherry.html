@@ -38,7 +38,7 @@ aliases:
 <h2 id="_synopsis"><a class="anchor" href="#_synopsis"></a>SYNOPSIS</h2>
 <div class="sectionbody">
 <div class="verseblock">
-<pre class="content"><em>git cherry</em> [-v] [&lt;upstream&gt; [&lt;head&gt; [&lt;limit&gt;]]]</pre>
+<pre class="content"><em>git cherry</em> [-v] [&lt;upstream&gt; [<span class="hover-term" data-term="head">&lt;head&gt;</span> [&lt;limit&gt;]]]</pre>
 </div>
 </div>
 </div>
@@ -46,8 +46,8 @@ aliases:
 <h2 id="_description"><a class="anchor" href="#_description"></a>DESCRIPTION</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Determine whether there are commits in <span class='synopsis'><em>&lt;head&gt;</em><code>..</code><em>&lt;upstream&gt;</em></span> that are
-equivalent to those in the range <span class='synopsis'><em>&lt;limit&gt;</em><code>..</code><em>&lt;head&gt;</em></span>.</p>
+<p>Determine whether there are commits in <span class='synopsis'><em><span class="hover-term" data-term="head">&lt;head&gt;</span></em><code>..</code><em>&lt;upstream&gt;</em></span> that are
+equivalent to those in the range <span class='synopsis'><em>&lt;limit&gt;</em><code>..</code><em><span class="hover-term" data-term="head">&lt;head&gt;</span></em></span>.</p>
 </div>
 <div class="paragraph">
 <p>The equivalence test is based on the diff, after removing whitespace
@@ -56,7 +56,7 @@ and line numbers.  git-cherry therefore detects when commits have been
 <a href='{{< relurl "docs/git-rebase" >}}'>git-rebase[1]</a>.</p>
 </div>
 <div class="paragraph">
-<p>Outputs the SHA1 of every commit in <span class='synopsis'><em>&lt;limit&gt;</em><code>..</code><em>&lt;head&gt;</em></span>, prefixed with
+<p>Outputs the SHA1 of every commit in <span class='synopsis'><em>&lt;limit&gt;</em><code>..</code><em><span class="hover-term" data-term="head">&lt;head&gt;</span></em></span>, prefixed with
 <span class='synopsis'><code>-</code></span> for commits that have an equivalent in &lt;upstream&gt;, and <span class='synopsis'><code>+</code></span> for
 commits that do not.</p>
 </div>
@@ -76,7 +76,7 @@ commits that do not.</p>
 <p>Upstream branch to search for equivalent commits.
 Defaults to the upstream branch of HEAD.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-cherry.txt-ltheadgt"><a id="Documentation/git-cherry.txt-head" class="anchor" href="#Documentation/git-cherry.txt-head"></a>&lt;head&gt; </dt>
+<dt class="hdlist1" id="Documentation/git-cherry.txt-ltheadgt"><a id="Documentation/git-cherry.txt-head" class="anchor" href="#Documentation/git-cherry.txt-head"></a><span class="hover-term" data-term="head">&lt;head&gt;</span> </dt>
 <dd>
 <p>Working branch; defaults to HEAD.</p>
 </dd>

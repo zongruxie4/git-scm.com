@@ -364,7 +364,7 @@ machineB$ git pull</pre>
 <h2 id="_discussion"><a class="anchor" href="#_discussion"></a>DISCUSSION</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Une manière naïve de faire une sauvegarde complète d&#8217;un dépôt est d&#8217;utiliser quelque chose qui fait comme <span class='synopsis'><code>cp</code> <code>-r</code> <em>&lt;dépôt&gt;</em> <em>&lt;destination&gt;</em></span>. Cela est découragé puisque le dépôt pourrait être écrit pendant l&#8217;opération de copie. À son tour, certains fichiers dans <span class='synopsis'><em>&lt;destination&gt;</em></span> pourraient être corrompus.</p>
+<p>Une manière naïve de faire une sauvegarde complète d&#8217;un dépôt est d&#8217;utiliser quelque chose qui fait comme <span class='synopsis'><code>cp</code> <code>-r</code> <em><span class="hover-term" data-term="dépôt">&lt;dépôt&gt;</span></em> <em>&lt;destination&gt;</em></span>. Cela est découragé puisque le dépôt pourrait être écrit pendant l&#8217;opération de copie. À son tour, certains fichiers dans <span class='synopsis'><em>&lt;destination&gt;</em></span> pourraient être corrompus.</p>
 </div>
 <div class="paragraph">
 <p>C&#8217;est pourquoi il est recommandé d&#8217;utiliser l&#8217;outillage Git pour faire des sauvegardes de dépôt, soit avec cette commande soit par exemple avec <a href='{{< relurl "docs/git-clone/fr" >}}'>git-clone[1]</a>. Mais gardez à l&#8217;esprit que ces outils ne vous aideront pas à sauvegarder l&#8217;état autre que les refs et les commits. En d&#8217;autres termes, ils ne vous aideront pas à sauvegarder le contenu de l&#8217;index, l&#8217;arbre de travail, la remise, la configuration par dépôt, les crochets, etc.</p>

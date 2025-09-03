@@ -46,10 +46,10 @@ aliases:
 <em>git stash</em> branch &lt;branchname&gt; [&lt;stash&gt;]
 <em>git stash</em> [push [-p|--patch] [-k|--[no-]keep-index] [-q|--quiet]
 	     [-u|--include-untracked] [-a|--all] [-m|--message &lt;message&gt;]]
-	     [--] [&lt;pathspec&gt;&#8230;&#8203;]]
+	     [--] [<span class="hover-term" data-term="pathspec">&lt;pathspec&gt;</span>&#8230;&#8203;]]
 <em>git stash</em> clear
 <em>git stash</em> create [&lt;message&gt;]
-<em>git stash</em> store [-m|--message &lt;message&gt;] [-q|--quiet] &lt;commit&gt;</pre>
+<em>git stash</em> store [-m|--message &lt;message&gt;] [-q|--quiet] <span class="hover-term" data-term="commit">&lt;commit&gt;</span></pre>
 </div>
 </div>
 </div>
@@ -86,7 +86,7 @@ stash index (e.g. the integer <span class='synopsis'><code>n</code></span> is eq
 <div class="sectionbody">
 <div class="dlist">
 <dl>
-<dt class="hdlist1" id="Documentation/git-stash.txt-push-p--patch-k--no-keep-index-u--include-untracked-a--all-q--quiet-m--messageltmessagegt--ltpathspecgt82308203"><a id="Documentation/git-stash.txt-push-p--patch-k--no-keep-index-u--include-untracked-a--all-q--quiet-m--messagemessage--pathspec" class="anchor" href="#Documentation/git-stash.txt-push-p--patch-k--no-keep-index-u--include-untracked-a--all-q--quiet-m--messagemessage--pathspec"></a>push [-p|--patch] [-k|--[no-]keep-index] [-u|--include-untracked] [-a|--all] [-q|--quiet] [-m|--message &lt;message&gt;] [--] [&lt;pathspec&gt;&#8230;&#8203;] </dt>
+<dt class="hdlist1" id="Documentation/git-stash.txt-push-p--patch-k--no-keep-index-u--include-untracked-a--all-q--quiet-m--messageltmessagegt--ltpathspecgt82308203"><a id="Documentation/git-stash.txt-push-p--patch-k--no-keep-index-u--include-untracked-a--all-q--quiet-m--messagemessage--pathspec" class="anchor" href="#Documentation/git-stash.txt-push-p--patch-k--no-keep-index-u--include-untracked-a--all-q--quiet-m--messagemessage--pathspec"></a>push [-p|--patch] [-k|--[no-]keep-index] [-u|--include-untracked] [-a|--all] [-q|--quiet] [-m|--message &lt;message&gt;] [--] [<span class="hover-term" data-term="pathspec">&lt;pathspec&gt;</span>&#8230;&#8203;] </dt>
 <dd>
 <p>Save your local modifications to a new <em>stash entry</em> and roll them
 back to HEAD (in the working tree and in the index).
@@ -184,7 +184,7 @@ longer apply the changes as they were originally).</p>
 </div>
 <div class="paragraph">
 <p>When no <span class='synopsis'><em>&lt;stash&gt;</em></span> is given, <span class='synopsis'><code>stash@{0}</code></span> is assumed, otherwise <span class='synopsis'><em>&lt;stash&gt;</em></span> must
-be a reference of the form <span class='synopsis'><code>stash@{</code><em>&lt;revision&gt;</em><code>}</code></span>.</p>
+be a reference of the form <span class='synopsis'><code>stash@{</code><em><span class="hover-term" data-term="revision">&lt;revision&gt;</span></em><code>}</code></span>.</p>
 </div>
 </dd>
 <dt class="hdlist1" id="Documentation/git-stash.txt-apply--index-q--quietltstashgt"><a id="Documentation/git-stash.txt-apply--index-q--quietstash" class="anchor" href="#Documentation/git-stash.txt-apply--index-q--quietstash"></a>apply [--index] [-q|--quiet] [&lt;stash&gt;] </dt>
@@ -199,7 +199,7 @@ be a reference of the form <span class='synopsis'><code>stash@{</code><em>&lt;re
 the commit at which the <span class='synopsis'><em>&lt;stash&gt;</em></span> was originally created, applies the
 changes recorded in <span class='synopsis'><em>&lt;stash&gt;</em></span> to the new working tree and index.
 If that succeeds, and <span class='synopsis'><em>&lt;stash&gt;</em></span> is a reference of the form
-<span class='synopsis'><code>stash@{</code><em>&lt;revision&gt;</em><code>}</code></span>, it then drops the <span class='synopsis'><em>&lt;stash&gt;</em></span>. When no <span class='synopsis'><em>&lt;stash&gt;</em></span>
+<span class='synopsis'><code>stash@{</code><em><span class="hover-term" data-term="revision">&lt;revision&gt;</span></em><code>}</code></span>, it then drops the <span class='synopsis'><em>&lt;stash&gt;</em></span>. When no <span class='synopsis'><em>&lt;stash&gt;</em></span>
 is given, applies the latest one.</p>
 <div class="paragraph">
 <p>This is useful if the branch on which you ran <span class='synopsis'><code>git</code> <code>stash</code> <code>push</code></span> has
@@ -220,7 +220,7 @@ be subject to pruning, and may be impossible to recover (see
 <p>Remove a single stash entry from the list of stash entries.
 When no <span class='synopsis'><em>&lt;stash&gt;</em></span> is given, it removes the latest one.
 i.e. <span class='synopsis'><code>stash@{0}</code></span>, otherwise <span class='synopsis'><em>&lt;stash&gt;</em></span> must be a valid stash
-log reference of the form <span class='synopsis'><code>stash@{</code><em>&lt;revision&gt;</em><code>}</code></span>.</p>
+log reference of the form <span class='synopsis'><code>stash@{</code><em><span class="hover-term" data-term="revision">&lt;revision&gt;</span></em><code>}</code></span>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-stash.txt-create"><a class="anchor" href="#Documentation/git-stash.txt-create"></a>create </dt>
 <dd>

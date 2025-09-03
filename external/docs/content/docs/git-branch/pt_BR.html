@@ -44,8 +44,8 @@ headings:
 <pre class="content"><em>git branch</em> [--color[=&lt;quando&gt;] | --no-color] [--show-current]
 	[-v [--abbrev=&lt;n&gt; | --no-abbrev]]
 	[--column[=&lt;opções&gt;] | --no-column] [--sort=&lt;chaves&gt;]
-	[--merged [&lt;commit&gt;]] [--no-merged [&lt;commit&gt;]]
-	[--contains [&lt;commit&gt;]] [--no-contains [&lt;commit&gt;]]
+	[--merged [<span class="hover-term" data-term="commit">&lt;commit&gt;</span>]] [--no-merged [<span class="hover-term" data-term="commit">&lt;commit&gt;</span>]]
+	[--contains [<span class="hover-term" data-term="commit">&lt;commit&gt;</span>]] [--no-contains [<span class="hover-term" data-term="commit">&lt;commit&gt;</span>]]
 	[--points-at &lt;objeto&gt;] [--format=&lt;formato&gt;]
 	[(-r | --remotes) | (-a | --all)]
 	[--list] [&lt;padrão&gt;&#8230;&#8203;]
@@ -73,7 +73,7 @@ headings:
 <p>Note que ao fornecer um <span class='synopsis'><em>&lt;padrão&gt;</em></span> você deve utilizar <span class='synopsis'><code>--list</code></span>; caso contrário, o comando pode ser interpretado como uma criação do ramo.</p>
 </div>
 <div class="paragraph">
-<p>Com <span class='synopsis'><code>--contains</code></span>, mostra apenas os ramos que contêm o commit indicado (em outras palavras, os ramos cujos commits do cume são descendentes do commit nomeado), a opção <span class='synopsis'><code>--no-contains</code></span> inverte isso. Com a opção <span class='synopsis'><code>--merged</code></span>, apenas as ramificações mescladas no commit indicado (ou seja, as ramificações cujos commits principais são acessíveis a partir do commit indicado) serão listados. Com a opção <span class='synopsis'><code>--no-merged</code></span>, apenas as ramificações não mescladas no commit indicado serão listados. Se o argumento &lt;commit&gt; estiver ausente, a predefinição será <span class='synopsis'><code>HEAD</code></span> (ou seja, o cume do ramo atual).</p>
+<p>Com <span class='synopsis'><code>--contains</code></span>, mostra apenas os ramos que contêm o commit indicado (em outras palavras, os ramos cujos commits do cume são descendentes do commit nomeado), a opção <span class='synopsis'><code>--no-contains</code></span> inverte isso. Com a opção <span class='synopsis'><code>--merged</code></span>, apenas as ramificações mescladas no commit indicado (ou seja, as ramificações cujos commits principais são acessíveis a partir do commit indicado) serão listados. Com a opção <span class='synopsis'><code>--no-merged</code></span>, apenas as ramificações não mescladas no commit indicado serão listados. Se o argumento <span class="hover-term" data-term="commit">&lt;commit&gt;</span> estiver ausente, a predefinição será <span class='synopsis'><code>HEAD</code></span> (ou seja, o cume do ramo atual).</p>
 </div>
 <div class="paragraph">
 <p>O segundo formulário do comando cria um novo cabeçalho do ramo informado <span class='synopsis'><em>&lt;nome-do-ramo&gt;</em></span> (nome do ramo0), que aponta para o <span class='synopsis'><code>HEAD</code></span> atual, ou o <span class='synopsis'><em>&lt;ponto-de-partida&gt;</em></span> caso seja utilizado. Como um caso especial, para o <span class='synopsis'><em>&lt;ponto-de-partida&gt;</em></span>, utilize <span class='synopsis'><code>"A...B"</code></span> como um atalho para a base da mesclagem de <span class='synopsis'><code>A</code></span> e <span class='synopsis'><code>B</code></span> caso sejam exatamente uma base para ser mesclada. Você pode deixar de fora no máximo um de <span class='synopsis'><code>A</code></span> e <span class='synopsis'><code>B</code></span>, caso onde a predefinição retorna para <span class='synopsis'><code>HEAD</code></span>.</p>
@@ -250,19 +250,19 @@ headings:
 <dd>
 <p>Abra um editor e edite o texto para explicar para que serve a ramificação, para ser utilizado por outros comandos (<span class='synopsis'><code>format-patch</code></span>, <span class='synopsis'><code>request-pull</code></span> e <span class='synopsis'><code>merge</code></span> por exemplo (se ativado)). Podem ser utilizadas as explicações em mais de uma linha.</p>
 </dd>
-<dt class="hdlist1" id="git-branch---containsltcommitgt"> <a class="anchor" href="#git-branch---containscommit"></a> <a class="anchor" href="#git-branch---containsltcommitgt"></a>--contains [&lt;commit&gt;] </dt>
+<dt class="hdlist1" id="git-branch---containsltcommitgt"> <a class="anchor" href="#git-branch---containscommit"></a> <a class="anchor" href="#git-branch---containsltcommitgt"></a>--contains [<span class="hover-term" data-term="commit">&lt;commit&gt;</span>] </dt>
 <dd>
 <p>Listar apenas as ramificações que contenham o commit informado (<span class='synopsis'><code>HEAD</code></span>, caso nenhum seja informado). Implica no uso da opção <span class='synopsis'><code>--list</code></span>.</p>
 </dd>
-<dt class="hdlist1" id="git-branch---no-containsltcommitgt"> <a class="anchor" href="#git-branch---no-containscommit"></a> <a class="anchor" href="#git-branch---no-containsltcommitgt"></a>--no-contains [&lt;commit&gt;] </dt>
+<dt class="hdlist1" id="git-branch---no-containsltcommitgt"> <a class="anchor" href="#git-branch---no-containscommit"></a> <a class="anchor" href="#git-branch---no-containsltcommitgt"></a>--no-contains [<span class="hover-term" data-term="commit">&lt;commit&gt;</span>] </dt>
 <dd>
 <p>Liste apenas as ramificações que não contenha o commit informado (<span class='synopsis'><code>HEAD</code></span>, caso nenhum seja informado). Implica no uso da opção <span class='synopsis'><code>--list</code></span>.</p>
 </dd>
-<dt class="hdlist1" id="git-branch---mergedltcommitgt"> <a class="anchor" href="#git-branch---mergedcommit"></a> <a class="anchor" href="#git-branch---mergedltcommitgt"></a>--merged [&lt;commit&gt;] </dt>
+<dt class="hdlist1" id="git-branch---mergedltcommitgt"> <a class="anchor" href="#git-branch---mergedcommit"></a> <a class="anchor" href="#git-branch---mergedltcommitgt"></a>--merged [<span class="hover-term" data-term="commit">&lt;commit&gt;</span>] </dt>
 <dd>
 <p>Liste apenas as ramificações cujas dicas são acessíveis a partir do commit informado (<span class='synopsis'><code>HEAD</code></span>, caso nenhum seja informado). Implica no uso da opção <span class='synopsis'><code>--list</code></span>.</p>
 </dd>
-<dt class="hdlist1" id="git-branch---no-mergedltcommitgt"> <a class="anchor" href="#git-branch---no-mergedcommit"></a> <a class="anchor" href="#git-branch---no-mergedltcommitgt"></a>--no-merged [&lt;commit&gt;] </dt>
+<dt class="hdlist1" id="git-branch---no-mergedltcommitgt"> <a class="anchor" href="#git-branch---no-mergedcommit"></a> <a class="anchor" href="#git-branch---no-mergedltcommitgt"></a>--no-merged [<span class="hover-term" data-term="commit">&lt;commit&gt;</span>] </dt>
 <dd>
 <p>Liste apenas as ramificações cujas dicas não possam ser acessadas a partir do commit informado (<span class='synopsis'><code>HEAD</code></span>, caso nenhum seja informado). Implica no uso da opção <span class='synopsis'><code>--list</code></span>.</p>
 </dd>
@@ -408,10 +408,10 @@ $ git for-each-ref 'refs/remotes/&lt;remoto&gt;/&lt;padrão&gt;'    <b class="co
 <div class="ulist">
 <ul>
 <li>
-<p><span class='synopsis'><code>--contains</code> <em>&lt;commit&gt;</em></span> é utilizado para encontrar todas as ramificações que precisarão de atenção especial caso <span class='synopsis'><em>&lt;commit&gt;</em></span> precise de um novo "rebase" ou corrigido, uma vez que essas ramificações contêm o <span class='synopsis'><em>&lt;commit&gt;</em></span> informato.</p>
+<p><span class='synopsis'><code>--contains</code> <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em></span> é utilizado para encontrar todas as ramificações que precisarão de atenção especial caso <span class='synopsis'><em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em></span> precise de um novo "rebase" ou corrigido, uma vez que essas ramificações contêm o <span class='synopsis'><em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em></span> informato.</p>
 </li>
 <li>
-<p><span class='synopsis'><code>--no-contains</code> <em>&lt;commit&gt;</em></span> é o inverso, isto é, as ramificações que não contêm o <span class='synopsis'><em>&lt;commit&gt;</em></span> informado.</p>
+<p><span class='synopsis'><code>--no-contains</code> <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em></span> é o inverso, isto é, as ramificações que não contêm o <span class='synopsis'><em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em></span> informado.</p>
 </li>
 <li>
 <p><span class='synopsis'><code>--merged</code></span> é utilizado para encontrar todas as ramificações que podem ser excluídas com segurança, uma vez que essas ramificações são totalmente contidas pelo <span class='synopsis'><code>HEAD</code></span>.</p>

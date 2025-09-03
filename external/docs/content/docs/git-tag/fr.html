@@ -49,12 +49,12 @@ headings:
 <div class="verseblock">
 <pre class="content"><em>git tag</em> [-a | -s | -u &lt;id-clé&gt;] [-f] [-m &lt;msg&gt; | -F &lt;fichier&gt;] [-e]
 		[(--trailer &lt;jeton&gt;[(=|:)&lt;valeur&gt;])&#8230;&#8203;]
-	&lt;nom-d-étiquette&gt; [&lt;commit&gt; | &lt;objet&gt;]
+	&lt;nom-d-étiquette&gt; [<span class="hover-term" data-term="commit">&lt;commit&gt;</span> | <span class="hover-term" data-term="objet">&lt;objet&gt;</span>]
 <em>git tag</em> -d &lt;nom-d-étiquette&gt;&#8230;&#8203;
-<em>git tag</em> [-n[&lt;num&gt;]] -l [--contains &lt;commit&gt;] [--no-contains &lt;commit&gt;]
-	[--points-at &lt;objet&gt;] [--column[=&lt;options&gt;] | --no-column]
+<em>git tag</em> [-n[&lt;num&gt;]] -l [--contains <span class="hover-term" data-term="commit">&lt;commit&gt;</span>] [--no-contains <span class="hover-term" data-term="commit">&lt;commit&gt;</span>]
+	[--points-at <span class="hover-term" data-term="objet">&lt;objet&gt;</span>] [--column[=&lt;options&gt;] | --no-column]
 	[--create-reflog] [--sort=&lt;clé&gt;] [--format=&lt;format&gt;]
-	[--merged &lt;commit&gt;] [--no-merged [&lt;commit&gt;]] [&lt;motif&gt;&#8230;&#8203;]
+	[--merged <span class="hover-term" data-term="commit">&lt;commit&gt;</span>] [--no-merged [<span class="hover-term" data-term="commit">&lt;commit&gt;</span>]] [&lt;motif&gt;&#8230;&#8203;]
 <em>git tag</em> -v [--format=&lt;format&gt;] &lt;nom-d-étiquette&gt;&#8230;&#8203;</pre>
 </div>
 </div>
@@ -170,23 +170,23 @@ headings:
 <p>Cette option n&#8217;est applicable que pour les listes d&#8217;étiquettes sans lignes d&#8217;annotation.</p>
 </div>
 </dd>
-<dt class="hdlist1" id="git-tag---containsltcommitgt"> <a class="anchor" href="#git-tag---containscommit"></a> <a class="anchor" href="#git-tag---containsltcommitgt"></a>--contains [&lt;commit&gt;] </dt>
+<dt class="hdlist1" id="git-tag---containsltcommitgt"> <a class="anchor" href="#git-tag---containscommit"></a> <a class="anchor" href="#git-tag---containsltcommitgt"></a>--contains [<span class="hover-term" data-term="commit">&lt;commit&gt;</span>] </dt>
 <dd>
 <p>Ne répertorier que les étiquettes qui contiennent le commit spécifié (HEAD si non spécifié). Implique <span class='synopsis'><code>--list</code></span>.</p>
 </dd>
-<dt class="hdlist1" id="git-tag---no-containsltcommitgt"> <a class="anchor" href="#git-tag---no-containscommit"></a> <a class="anchor" href="#git-tag---no-containsltcommitgt"></a>--no-contains [&lt;commit&gt;] </dt>
+<dt class="hdlist1" id="git-tag---no-containsltcommitgt"> <a class="anchor" href="#git-tag---no-containscommit"></a> <a class="anchor" href="#git-tag---no-containsltcommitgt"></a>--no-contains [<span class="hover-term" data-term="commit">&lt;commit&gt;</span>] </dt>
 <dd>
 <p>Ne répertorier que les étiquettes qui ne contiennent pas le commit spécifié (HEAD si non spécifié). Implique <span class='synopsis'><code>--list</code></span>.</p>
 </dd>
-<dt class="hdlist1" id="git-tag---mergedltcommitgt"> <a class="anchor" href="#git-tag---mergedcommit"></a> <a class="anchor" href="#git-tag---mergedltcommitgt"></a>--merged [&lt;commit&gt;] </dt>
+<dt class="hdlist1" id="git-tag---mergedltcommitgt"> <a class="anchor" href="#git-tag---mergedcommit"></a> <a class="anchor" href="#git-tag---mergedltcommitgt"></a>--merged [<span class="hover-term" data-term="commit">&lt;commit&gt;</span>] </dt>
 <dd>
 <p>Ne lister que les étiquettes dont les commits sont accessibles à partir du commit spécifié (<span class='synopsis'><code>HEAD</code></span> si non spécifié).</p>
 </dd>
-<dt class="hdlist1" id="git-tag---no-mergedltcommitgt"> <a class="anchor" href="#git-tag---no-mergedcommit"></a> <a class="anchor" href="#git-tag---no-mergedltcommitgt"></a>--no-merged [&lt;commit&gt;] </dt>
+<dt class="hdlist1" id="git-tag---no-mergedltcommitgt"> <a class="anchor" href="#git-tag---no-mergedcommit"></a> <a class="anchor" href="#git-tag---no-mergedltcommitgt"></a>--no-merged [<span class="hover-term" data-term="commit">&lt;commit&gt;</span>] </dt>
 <dd>
 <p>Ne lister que les étiquettes dont les commits ne sont pas accessibles à partir du commit spécifié (<span class='synopsis'><code>HEAD</code></span> si non spécifié).</p>
 </dd>
-<dt class="hdlist1" id="git-tag---points-atltobjetgt"> <a class="anchor" href="#git-tag---points-atobjet"></a> <a class="anchor" href="#git-tag---points-atltobjetgt"></a>--points-at &lt;objet&gt; </dt>
+<dt class="hdlist1" id="git-tag---points-atltobjetgt"> <a class="anchor" href="#git-tag---points-atobjet"></a> <a class="anchor" href="#git-tag---points-atltobjetgt"></a>--points-at <span class="hover-term" data-term="objet">&lt;objet&gt;</span> </dt>
 <dd>
 <p>Ne répertorier que les étiquettes de l&#8217;objet donné (HEAD si non spécifié). Implique <span class='synopsis'><code>--list</code></span>.</p>
 </dd>
@@ -225,8 +225,8 @@ headings:
 <dd>
 <p>Le nom de l&#8217;étiquette à créer, supprimer ou décrire. Le nouveau nom de l&#8217;étiquette doit passer tous les contrôles définis par <a href='{{< relurl "docs/git-check-ref-format/fr" >}}'>git-check-ref-format[1]</a>. Certains de ces contrôles peuvent restreindre les caractères autorisés dans un nom d&#8217;étiquette.</p>
 </dd>
-<dt class="hdlist1" id="git-tag-ltcommitgt"> <a class="anchor" href="#git-tag-commit"></a> <a class="anchor" href="#git-tag-ltcommitgt"></a>&lt;commit&gt; </dt>
-<dt class="hdlist1" id="git-tag-ltobjetgt"> <a class="anchor" href="#git-tag-objet"></a> <a class="anchor" href="#git-tag-ltobjetgt"></a>&lt;objet&gt; </dt>
+<dt class="hdlist1" id="git-tag-ltcommitgt"> <a class="anchor" href="#git-tag-commit"></a> <a class="anchor" href="#git-tag-ltcommitgt"></a><span class="hover-term" data-term="commit">&lt;commit&gt;</span> </dt>
+<dt class="hdlist1" id="git-tag-ltobjetgt"> <a class="anchor" href="#git-tag-objet"></a> <a class="anchor" href="#git-tag-ltobjetgt"></a><span class="hover-term" data-term="objet">&lt;objet&gt;</span> </dt>
 <dd>
 <p>L&#8217;objet auquel la nouvelle étiquette fera référence, généralement un commit. La valeur par défaut est HEAD.</p>
 </dd>

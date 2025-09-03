@@ -44,9 +44,9 @@ aliases:
 <pre class="content"><span class='synopsis'><code>git</code></span> <span class='synopsis'><code>branch</code></span> [<span class='synopsis'><code>--color</code></span>[<span class='synopsis'><code>=</code></span><em>&lt;when&gt;</em>] | <span class='synopsis'><code>--no-color</code></span>] [<span class='synopsis'><code>--show-current</code></span>]
 	   [<span class='synopsis'><code>-v</code></span> [<span class='synopsis'><code>--abbrev=</code></span><em>&lt;n&gt;</em> | <span class='synopsis'><code>--no-abbrev</code></span>]]
 	   [<span class='synopsis'><code>--column</code></span>[<span class='synopsis'><code>=</code></span><em>&lt;options&gt;</em>] | <span class='synopsis'><code>--no-column</code></span>] [<span class='synopsis'><code>--sort=</code></span><em>&lt;key&gt;</em>]
-	   [<span class='synopsis'><code>--merged</code></span> [<em>&lt;commit&gt;</em>]] [<span class='synopsis'><code>--no-merged</code></span> [<em>&lt;commit&gt;</em>]]
-	   [<span class='synopsis'><code>--contains</code></span> [<em>&lt;commit&gt;</em>]] [<span class='synopsis'><code>--no-contains</code></span> [<em>&lt;commit&gt;</em>]]
-	   [<span class='synopsis'><code>--points-at</code></span> <em>&lt;object&gt;</em>] [<span class='synopsis'><code>--format=</code></span><em>&lt;format&gt;</em>]
+	   [<span class='synopsis'><code>--merged</code></span> [<em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>]] [<span class='synopsis'><code>--no-merged</code></span> [<em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>]]
+	   [<span class='synopsis'><code>--contains</code></span> [<em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>]] [<span class='synopsis'><code>--no-contains</code></span> [<em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>]]
+	   [<span class='synopsis'><code>--points-at</code></span> <em><span class="hover-term" data-term="object">&lt;object&gt;</span></em>] [<span class='synopsis'><code>--format=</code></span><em>&lt;format&gt;</em>]
 	   [(<span class='synopsis'><code>-r</code></span>|<span class='synopsis'><code>--remotes</code></span>) | (<span class='synopsis'><code>-a</code></span>|<span class='synopsis'><code>--all</code></span>)]
 	   [<span class='synopsis'><code>--list</code></span>] [<em>&lt;pattern&gt;</em>&#8230;&#8203;]
 <span class='synopsis'><code>git</code></span> <span class='synopsis'><code>branch</code></span> [<span class='synopsis'><code>--track</code></span>[<span class='synopsis'><code>=</code></span>(<span class='synopsis'><code>direct</code></span>|<span class='synopsis'><code>inherit</code></span>)] | <span class='synopsis'><code>--no-track</code></span>] [<span class='synopsis'><code>-f</code></span>]
@@ -88,7 +88,7 @@ as branch creation.</p>
 named commit), <span class='synopsis'><code>--no-contains</code></span> inverts it. With <span class='synopsis'><code>--merged</code></span>, only branches
 merged into the named commit (i.e. the branches whose tip commits are
 reachable from the named commit) will be listed.  With <span class='synopsis'><code>--no-merged</code></span> only
-branches not merged into the named commit will be listed.  If the <em>&lt;commit&gt;</em>
+branches not merged into the named commit will be listed.  If the <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>
 argument is missing it defaults to <span class='synopsis'><code>HEAD</code></span> (i.e. the tip of the current
 branch).</p>
 </div>
@@ -382,29 +382,29 @@ for, to be used by various other commands (e.g. <span class='synopsis'><code>for
 <span class='synopsis'><code>request-pull</code></span>, and <span class='synopsis'><code>merge</code></span> (if enabled)). Multi-line explanations
 may be used.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-branch.txt-spanclasssynopsiscode--containscodeemltcommitgtemspan"><a id="Documentation/git-branch.txt---containscommit" class="anchor" href="#Documentation/git-branch.txt---containscommit"></a><span class='synopsis'><code>--contains</code> [<em>&lt;commit&gt;</em>]</span> </dt>
+<dt class="hdlist1" id="Documentation/git-branch.txt-spanclasssynopsiscode--containscodeemltcommitgtemspan"><a id="Documentation/git-branch.txt---containscommit" class="anchor" href="#Documentation/git-branch.txt---containscommit"></a><span class='synopsis'><code>--contains</code> [<em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>]</span> </dt>
 <dd>
-<p>Only list branches which contain <em>&lt;commit&gt;</em> (<span class='synopsis'><code>HEAD</code></span>
+<p>Only list branches which contain <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em> (<span class='synopsis'><code>HEAD</code></span>
 if not specified). Implies <span class='synopsis'><code>--list</code></span>.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-branch.txt-spanclasssynopsiscode--no-containscodeemltcommitgtemspan"><a id="Documentation/git-branch.txt---no-containscommit" class="anchor" href="#Documentation/git-branch.txt---no-containscommit"></a><span class='synopsis'><code>--no-contains</code> [<em>&lt;commit&gt;</em>]</span> </dt>
+<dt class="hdlist1" id="Documentation/git-branch.txt-spanclasssynopsiscode--no-containscodeemltcommitgtemspan"><a id="Documentation/git-branch.txt---no-containscommit" class="anchor" href="#Documentation/git-branch.txt---no-containscommit"></a><span class='synopsis'><code>--no-contains</code> [<em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>]</span> </dt>
 <dd>
-<p>Only list branches which don&#8217;t contain <em>&lt;commit&gt;</em>
+<p>Only list branches which don&#8217;t contain <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>
 (<span class='synopsis'><code>HEAD</code></span> if not specified). Implies <span class='synopsis'><code>--list</code></span>.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-branch.txt-spanclasssynopsiscode--mergedcodeemltcommitgtemspan"><a id="Documentation/git-branch.txt---mergedcommit" class="anchor" href="#Documentation/git-branch.txt---mergedcommit"></a><span class='synopsis'><code>--merged</code> [<em>&lt;commit&gt;</em>]</span> </dt>
+<dt class="hdlist1" id="Documentation/git-branch.txt-spanclasssynopsiscode--mergedcodeemltcommitgtemspan"><a id="Documentation/git-branch.txt---mergedcommit" class="anchor" href="#Documentation/git-branch.txt---mergedcommit"></a><span class='synopsis'><code>--merged</code> [<em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>]</span> </dt>
 <dd>
 <p>Only list branches whose tips are reachable from
-<em>&lt;commit&gt;</em> (<span class='synopsis'><code>HEAD</code></span> if not specified). Implies <span class='synopsis'><code>--list</code></span>.</p>
+<em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em> (<span class='synopsis'><code>HEAD</code></span> if not specified). Implies <span class='synopsis'><code>--list</code></span>.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-branch.txt-spanclasssynopsiscode--no-mergedcodeemltcommitgtemspan"><a id="Documentation/git-branch.txt---no-mergedcommit" class="anchor" href="#Documentation/git-branch.txt---no-mergedcommit"></a><span class='synopsis'><code>--no-merged</code> [<em>&lt;commit&gt;</em>]</span> </dt>
+<dt class="hdlist1" id="Documentation/git-branch.txt-spanclasssynopsiscode--no-mergedcodeemltcommitgtemspan"><a id="Documentation/git-branch.txt---no-mergedcommit" class="anchor" href="#Documentation/git-branch.txt---no-mergedcommit"></a><span class='synopsis'><code>--no-merged</code> [<em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>]</span> </dt>
 <dd>
 <p>Only list branches whose tips are not reachable from
-<em>&lt;commit&gt;</em> (<span class='synopsis'><code>HEAD</code></span> if not specified). Implies <span class='synopsis'><code>--list</code></span>.</p>
+<em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em> (<span class='synopsis'><code>HEAD</code></span> if not specified). Implies <span class='synopsis'><code>--list</code></span>.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-branch.txt-spanclasssynopsiscode--points-atcodeemltobjectgtemspan"><a id="Documentation/git-branch.txt---points-atobject" class="anchor" href="#Documentation/git-branch.txt---points-atobject"></a><span class='synopsis'><code>--points-at</code> <em>&lt;object&gt;</em></span> </dt>
+<dt class="hdlist1" id="Documentation/git-branch.txt-spanclasssynopsiscode--points-atcodeemltobjectgtemspan"><a id="Documentation/git-branch.txt---points-atobject" class="anchor" href="#Documentation/git-branch.txt---points-atobject"></a><span class='synopsis'><code>--points-at</code> <em><span class="hover-term" data-term="object">&lt;object&gt;</span></em></span> </dt>
 <dd>
-<p>Only list branches of <em>&lt;object&gt;</em>.</p>
+<p>Only list branches of <em><span class="hover-term" data-term="object">&lt;object&gt;</span></em>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-branch.txt-spanclasssynopsiscode--formatcodeemltformatgtemspan"><a id="Documentation/git-branch.txt---formatformat" class="anchor" href="#Documentation/git-branch.txt---formatformat"></a><span class='synopsis'><code>--format</code> <em>&lt;format&gt;</em></span> </dt>
 <dd>
@@ -700,13 +700,13 @@ serve four related but different purposes:</p>
 <div class="ulist">
 <ul>
 <li>
-<p><span class='synopsis'><code>--contains</code> <em>&lt;commit&gt;</em></span> is used to find all branches which will need
-special attention if <em>&lt;commit&gt;</em> were to be rebased or amended, since those
-branches contain the specified <em>&lt;commit&gt;</em>.</p>
+<p><span class='synopsis'><code>--contains</code> <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em></span> is used to find all branches which will need
+special attention if <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em> were to be rebased or amended, since those
+branches contain the specified <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>.</p>
 </li>
 <li>
-<p><span class='synopsis'><code>--no-contains</code> <em>&lt;commit&gt;</em></span> is the inverse of that, i.e. branches that don&#8217;t
-contain the specified <em>&lt;commit&gt;</em>.</p>
+<p><span class='synopsis'><code>--no-contains</code> <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em></span> is the inverse of that, i.e. branches that don&#8217;t
+contain the specified <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>.</p>
 </li>
 <li>
 <p><span class='synopsis'><code>--merged</code></span> is used to find all branches which can be safely deleted,

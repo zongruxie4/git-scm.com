@@ -536,7 +536,7 @@ change to the project.</p>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>	'commit' SP &lt;ref&gt; LF
+<pre>	'commit' SP <span class="hover-term" data-term="ref">&lt;ref&gt;</span> LF
 	mark?
 	('author' (SP &lt;name&gt;)? SP LT &lt;email&gt; GT SP &lt;when&gt; LF)?
 	'committer' (SP &lt;name&gt;)? SP LT &lt;email&gt; GT SP &lt;when&gt; LF
@@ -548,11 +548,11 @@ change to the project.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>where <span class='synopsis'><em>&lt;ref&gt;</em></span> is the name of the branch to make the commit on.
+<p>where <span class='synopsis'><em><span class="hover-term" data-term="ref">&lt;ref&gt;</span></em></span> is the name of the branch to make the commit on.
 Typically branch names are prefixed with <span class='synopsis'><code>refs/heads/</code></span> in
 Git, so importing the CVS branch symbol <span class='synopsis'><code>RELENG-1_0</code></span> would use
-<span class='synopsis'><code>refs/heads/RELENG-1_0</code></span> for the value of <span class='synopsis'><em>&lt;ref&gt;</em></span>.  The value of
-<span class='synopsis'><em>&lt;ref&gt;</em></span> must be a valid refname in Git.  As <span class='synopsis'><code>LF</code></span> is not valid in
+<span class='synopsis'><code>refs/heads/RELENG-1_0</code></span> for the value of <span class='synopsis'><em><span class="hover-term" data-term="ref">&lt;ref&gt;</span></em></span>.  The value of
+<span class='synopsis'><em><span class="hover-term" data-term="ref">&lt;ref&gt;</span></em></span> must be a valid refname in Git.  As <span class='synopsis'><code>LF</code></span> is not valid in
 a Git refname, no quoting or escaping syntax is supported here.</p>
 </div>
 <div class="paragraph">
@@ -1074,13 +1074,13 @@ branch from an existing commit without creating a new commit.</p>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>	'reset' SP &lt;ref&gt; LF
+<pre>	'reset' SP <span class="hover-term" data-term="ref">&lt;ref&gt;</span> LF
 	('from' SP &lt;commit-ish&gt; LF)?
 	LF?</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>For a detailed description of <span class='synopsis'><em>&lt;ref&gt;</em></span> and <span class='synopsis'><em>&lt;commit-ish&gt;</em></span> see above
+<p>For a detailed description of <span class='synopsis'><em><span class="hover-term" data-term="ref">&lt;ref&gt;</span></em></span> and <span class='synopsis'><em>&lt;commit-ish&gt;</em></span> see above
 under <span class='synopsis'><code>commit</code></span> and <span class='synopsis'><code>from</code></span>.</p>
 </div>
 <div class="paragraph">
@@ -1377,7 +1377,7 @@ named by <span class='synopsis'><em>&lt;dataref&gt;</em></span>.</p>
 <p>See <span class='synopsis'><code>filemodify</code></span> above for a detailed description of <span class='synopsis'><em>&lt;path&gt;</em></span>.</p>
 </div>
 <div class="paragraph">
-<p>Output uses the same format as <span class='synopsis'><code>git</code> <code>ls-tree</code> <em>&lt;tree&gt;</em> <code>--</code> <em>&lt;path&gt;</em></span>:</p>
+<p>Output uses the same format as <span class='synopsis'><code>git</code> <code>ls-tree</code> <em><span class="hover-term" data-term="tree">&lt;tree&gt;</span></em> <code>--</code> <em>&lt;path&gt;</em></span>:</p>
 </div>
 <div class="exampleblock">
 <div class="content">

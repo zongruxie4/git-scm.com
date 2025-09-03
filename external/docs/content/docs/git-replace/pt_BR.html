@@ -43,7 +43,7 @@ headings:
 <div class="verseblock">
 <pre class="content"><em>git replace</em> [-f] &lt;objeto&gt; &lt;rearranjo&gt;
 <em>git replace</em> [-f] --edit &lt;objeto&gt;
-<em>git replace</em> [-f] --graft &lt;commit&gt; [&lt;origem &gt;&#8230;&#8203;]
+<em>git replace</em> [-f] --graft <span class="hover-term" data-term="commit">&lt;commit&gt;</span> [&lt;origem &gt;&#8230;&#8203;]
 <em>git replace</em> [-f] --convert-graft-file
 <em>git replace</em> -d &lt;objeto&gt;&#8230;&#8203;
 <em>git replace</em> [--format=&lt;formato&gt;] [-l [&lt;padrão&gt;]]</pre>
@@ -121,9 +121,9 @@ headings:
 <dd>
 <p>Ao editar, forneça o conteúdo do objeto bruto, em vez do impresso bonito. Atualmente afeta apenas as árvores que serão exibidas na sua forma binária. É mais difícil trabalhar com isso, porém pode ajudar durante o reparo de uma árvore que está tão corrompida que não pode ser bem impressa. Observe que pode ser necessário configurar o seu editor para ler e gravar os dados binários de forma limpa.</p>
 </dd>
-<dt class="hdlist1" id="git-replace---graftltcommitgtltorigemgt82308203"> <a class="anchor" href="#git-replace---graftcommitorigem"></a> <a class="anchor" href="#git-replace---graftltcommitgtltorigemgt82308203"></a>--graft &lt;commit&gt; [&lt;origem&gt;&#8230;&#8203;] </dt>
+<dt class="hdlist1" id="git-replace---graftltcommitgtltorigemgt82308203"> <a class="anchor" href="#git-replace---graftcommitorigem"></a> <a class="anchor" href="#git-replace---graftltcommitgtltorigemgt82308203"></a>--graft <span class="hover-term" data-term="commit">&lt;commit&gt;</span> [&lt;origem&gt;&#8230;&#8203;] </dt>
 <dd>
-<p>Cria um commit com enxerto. Um novo commit é criado com o mesmo conteúdo de <span class='synopsis'><em>&lt;commit&gt;</em></span> exceto que as suas origens serão [&lt;origem&gt;&#8230;&#8203;] em vez do &lt;commit&gt; das origens. Uma ref de reposição é então criada para substituir o <span class='synopsis'><em>&lt;commit&gt;</em></span> pelo commit recém-criado. Utilize <span class='synopsis'><code>--convert-graft-file</code></span> para converter um arquivo <span class='synopsis'><code>$GIT_DIR/info/grafts</code></span> e utilize as refs de reposição em seu lugar.</p>
+<p>Cria um commit com enxerto. Um novo commit é criado com o mesmo conteúdo de <span class='synopsis'><em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em></span> exceto que as suas origens serão [&lt;origem&gt;&#8230;&#8203;] em vez do <span class="hover-term" data-term="commit">&lt;commit&gt;</span> das origens. Uma ref de reposição é então criada para substituir o <span class='synopsis'><em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em></span> pelo commit recém-criado. Utilize <span class='synopsis'><code>--convert-graft-file</code></span> para converter um arquivo <span class='synopsis'><code>$GIT_DIR/info/grafts</code></span> e utilize as refs de reposição em seu lugar.</p>
 </dd>
 <dt class="hdlist1" id="git-replace---convert-graft-file"> <a class="anchor" href="#git-replace---convert-graft-file"></a>--convert-graft-file </dt>
 <dd>

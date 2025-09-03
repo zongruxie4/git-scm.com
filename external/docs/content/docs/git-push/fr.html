@@ -50,11 +50,11 @@ headings:
 <div class="sectionbody">
 <div class="verseblock">
 <pre class="content"><em>git push</em> [--all | --branches | --mirror | --tags] [--follow-tags] [--atomic] [-n | --dry-run] [--receive-pack=&lt;git-receive-pack&gt;]
-	   [--repo=&lt;dépôt&gt;] [-f | --force] [-d | --delete] [--prune] [-q | --quiet] [-v | --verbose]
-	   [-u | --set-upstream] [-o &lt;chaîne&gt; | --push-option=&lt;chaîne&gt;]
+	   [--repo=<span class="hover-term" data-term="dépôt">&lt;dépôt&gt;</span>] [-f | --force] [-d | --delete] [--prune] [-q | --quiet] [-v | --verbose]
+	   [-u | --set-upstream] [-o <span class="hover-term" data-term="chaîne">&lt;chaîne&gt;</span> | --push-option=<span class="hover-term" data-term="chaîne">&lt;chaîne&gt;</span>]
 	   [--[no-]signed|--signed=(true|false|if-asked)]
 	   [--force-with-lease[=&lt;nom-de-réf&gt;[:&lt;attendu&gt;]] [--force-if-includes]]
-	   [--no-verify] [&lt;dépôt&gt; [&lt;spéc-de-réf&gt;&#8230;&#8203;]]</pre>
+	   [--no-verify] [<span class="hover-term" data-term="dépôt">&lt;dépôt&gt;</span> [&lt;spéc-de-réf&gt;&#8230;&#8203;]]</pre>
 </div>
 </div>
 </div>
@@ -68,7 +68,7 @@ headings:
 <p>Vous pouvez faire arriver des choses intéressantes à un dépôt chaque fois que vous poussez vers lui, en y mettant en place des « crochets ». Voir la documentation pour <a href='{{< relurl "docs/git-receive-pack/fr" >}}'>git-receive-pack[1]</a>.</p>
 </div>
 <div class="paragraph">
-<p>Lorsque la ligne de commande ne spécifie pas où pousser avec l&#8217;argument <span class='synopsis'><em>&lt;dépôt&gt;</em></span>, la configuration <span class='synopsis'><code>branch.</code> <code>*.</code> <code>remote</code></span> de la branche actuelle est consultée pour déterminer où pousser. Si la configuration est manquante, elle est par défaut <em>origin</em>.</p>
+<p>Lorsque la ligne de commande ne spécifie pas où pousser avec l&#8217;argument <span class='synopsis'><em><span class="hover-term" data-term="dépôt">&lt;dépôt&gt;</span></em></span>, la configuration <span class='synopsis'><code>branch.</code> <code>*.</code> <code>remote</code></span> de la branche actuelle est consultée pour déterminer où pousser. Si la configuration est manquante, elle est par défaut <em>origin</em>.</p>
 </div>
 <div class="paragraph">
 <p>Lorsque la ligne de commande ne spécifie pas quoi pousser avec les arguments <span class='synopsis'><em>&lt;spéc-de-réf&gt;</em>...</span> ou les options <span class='synopsis'><code>--all</code></span>, <span class='synopsis'><code>--mirror</code></span> ou <span class='synopsis'><code>--tags</code></span>, la commande trouve la valeur par défaut` &lt;spéc-de-réf&gt; ` en consultant la configuration <span class='synopsis'><code>remote.</code> <code>*.</code> <code>push</code></span>, et si elle n&#8217;est pas trouvée, honore la configuration` push.default` pour décider quoi pousser (Voir <a href='{{< relurl "docs/git-config/fr" >}}'>git-config[1]</a> pour la signification de <span class='synopsis'><code>push.default</code></span>) .</p>
@@ -83,7 +83,7 @@ headings:
 <div class="sectionbody">
 <div class="dlist">
 <dl>
-<dt class="hdlist1" id="git-push-ltdptgt"> <a class="anchor" href="#git-push-dpt"></a> <a class="anchor" href="#git-push-ltdptgt"></a>&lt;dépôt&gt; </dt>
+<dt class="hdlist1" id="git-push-ltdptgt"> <a class="anchor" href="#git-push-dpt"></a> <a class="anchor" href="#git-push-ltdptgt"></a><span class="hover-term" data-term="dépôt">&lt;dépôt&gt;</span> </dt>
 <dd>
 <p>Le dépôt "distant" qui est la destination d&#8217;une opération de poussée. Ce paramètre peut être soit une URL (voir la section <a href="#URLS">URLS GIT </a> ci-dessous) ou le nom d&#8217;un dépôt distant (voir la section <a href="#REMOTES">DISTANTS </a> ci-dessous).</p>
 </dd>
@@ -94,17 +94,17 @@ headings:
 <p>Le &lt;src&gt; est souvent le nom de la branche que vous voudriez pousser, mais il peut s&#8217;agir de n&#8217;importe quelle "expression SHA-1" arbitraire, comme <span class='synopsis'><code>master</code> <code>~</code> <code>4</code></span> ou <span class='synopsis'><code>HEAD</code></span> (voir <a href='{{< relurl "docs/gitrevisions/fr" >}}'>gitrevisions[7]</a>) .</p>
 </div>
 <div class="paragraph">
-<p>Le <em>&lt;dst&gt;</em> indique quelle référence du côté distant est mise à jour avec cette poussée. Des expressions arbitraires ne peuvent pas être utilisées ici, une référence réelle doit être nommée. Si <span class='synopsis'><code>git</code> <code>push</code> [<em>&lt;dépôt&gt;</em>]</span> sans aucun argument <span class='synopsis'><em>&lt;spéc-de-réf&gt;</em></span> est défini pour mettre à jour une référence à la destination avec <span class='synopsis'><em>&lt;src&gt;</em></span> avec la variable de configuration <span class='synopsis'><code>remote.</code> <em>&lt;dépôt&gt;</em> <code>.push</code></span>, la partie <span class='synopsis'><em>:&lt;dst &gt;</em></span> peut être omise - une telle poussée mettra à jour une référence que <span class='synopsis'><em>&lt;src&gt;</em></span> met normalement à jour sans aucun <span class='synopsis'><em>&lt;spéc-de-réf&gt;</em></span> sur la ligne de commande. Sinon, un <span class='synopsis'><code>:</code><em>&lt;dst&gt;</em></span> manquant signifie mettre à jour la même référence que le <span class='synopsis'><em>&lt;src&gt;</em></span>.</p>
+<p>Le <em>&lt;dst&gt;</em> indique quelle référence du côté distant est mise à jour avec cette poussée. Des expressions arbitraires ne peuvent pas être utilisées ici, une référence réelle doit être nommée. Si <span class='synopsis'><code>git</code> <code>push</code> [<em><span class="hover-term" data-term="dépôt">&lt;dépôt&gt;</span></em>]</span> sans aucun argument <span class='synopsis'><em>&lt;spéc-de-réf&gt;</em></span> est défini pour mettre à jour une référence à la destination avec <span class='synopsis'><em>&lt;src&gt;</em></span> avec la variable de configuration <span class='synopsis'><code>remote.</code> <em><span class="hover-term" data-term="dépôt">&lt;dépôt&gt;</span></em> <code>.push</code></span>, la partie <span class='synopsis'><em>:&lt;dst &gt;</em></span> peut être omise - une telle poussée mettra à jour une référence que <span class='synopsis'><em>&lt;src&gt;</em></span> met normalement à jour sans aucun <span class='synopsis'><em>&lt;spéc-de-réf&gt;</em></span> sur la ligne de commande. Sinon, un <span class='synopsis'><code>:</code><em>&lt;dst&gt;</em></span> manquant signifie mettre à jour la même référence que le <span class='synopsis'><em>&lt;src&gt;</em></span>.</p>
 </div>
 <div class="paragraph">
-<p>Si &lt;dst&gt; ne commence pas par <span class='synopsis'><code>refs/</code></span> (par exemple <span class='synopsis'><code>refs/heads/master</code></span>), nous essaierons de déduire où dans <span class='synopsis'><code>refs/*</code></span> sur le &lt;dépôt&gt; de destination il appartient en fonction du type de &lt;src&gt; poussé et si &lt;dst&gt; est ambigu.</p>
+<p>Si &lt;dst&gt; ne commence pas par <span class='synopsis'><code>refs/</code></span> (par exemple <span class='synopsis'><code>refs/heads/master</code></span>), nous essaierons de déduire où dans <span class='synopsis'><code>refs/*</code></span> sur le <span class="hover-term" data-term="dépôt">&lt;dépôt&gt;</span> de destination il appartient en fonction du type de &lt;src&gt; poussé et si &lt;dst&gt; est ambigu.</p>
 </div>
 <div class="openblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>Si &lt;dst&gt; fait référence sans ambiguïté à une référence sur le &lt;dépôt&gt; distant, alors pousser sur cette référence.</p>
+<p>Si &lt;dst&gt; fait référence sans ambiguïté à une référence sur le <span class="hover-term" data-term="dépôt">&lt;dépôt&gt;</span> distant, alors pousser sur cette référence.</p>
 </li>
 <li>
 <p>Si &lt;src&gt; se résout en une réf commençant par refs/heads/ ou refs/tags/, alors préfixer ceci à &lt;dst&gt;.</p>
@@ -144,7 +144,7 @@ headings:
 <p>La spéc-de-réf spéciale <span class='synopsis'><code>:</code></span> (ou <span class='synopsis'><code>+:</code></span> pour permettre des mises à jour pas en avance rapide) ordonne à Git de pousser les branches "correspondantes" : pour chaque branche qui existe du côté local, le côté distant est mis à jour si une branche du même nom existe déjà du côté distant.</p>
 </div>
 <div class="paragraph">
-<p><span class='synopsis'><code>tag</code> <em>&lt;étiquette&gt;</em></span> signifie la même chose que <span class='synopsis'><code>refs/tags/</code><em>&lt;étiquette&gt;</em><code>:refs/tags/</code><em>&lt;étiquette&gt;</em></span>.</p>
+<p><span class='synopsis'><code>tag</code> <em><span class="hover-term" data-term="étiquette">&lt;étiquette&gt;</span></em></span> signifie la même chose que <span class='synopsis'><code>refs/tags/</code><em><span class="hover-term" data-term="étiquette">&lt;étiquette&gt;</span></em><code>:refs/tags/</code><em><span class="hover-term" data-term="étiquette">&lt;étiquette&gt;</span></em></span>.</p>
 </div>
 </dd>
 <dt class="hdlist1" id="git-push---all"> <a class="anchor" href="#git-push---all"></a>--all </dt>
@@ -295,9 +295,9 @@ git push --force-with-lease=master:base master:master</pre>
 <p>Spécifier <span class='synopsis'><code>--no-force-if-includes</code></span> désactive ce comportement.</p>
 </div>
 </dd>
-<dt class="hdlist1" id="git-push---repoltdptgt"> <a class="anchor" href="#git-push---repodpt"></a> <a class="anchor" href="#git-push---repoltdptgt"></a>--repo=&lt;dépôt&gt; </dt>
+<dt class="hdlist1" id="git-push---repoltdptgt"> <a class="anchor" href="#git-push---repodpt"></a> <a class="anchor" href="#git-push---repoltdptgt"></a>--repo=<span class="hover-term" data-term="dépôt">&lt;dépôt&gt;</span> </dt>
 <dd>
-<p>Cette option est équivalente à l&#8217;argument &lt;dépôt&gt;. Si les deux sont spécifiés, l&#8217;argument de la ligne de commande a la priorité.</p>
+<p>Cette option est équivalente à l&#8217;argument <span class="hover-term" data-term="dépôt">&lt;dépôt&gt;</span>. Si les deux sont spécifiés, l&#8217;argument de la ligne de commande a la priorité.</p>
 </dd>
 <dt class="hdlist1" id="git-push--u"> <a class="anchor" href="#git-push--u"></a>-u </dt>
 <dt class="hdlist1" id="git-push---set-upstream"> <a class="anchor" href="#git-push---set-upstream"></a>--set-upstream </dt>
@@ -485,7 +485,7 @@ git push --force-with-lease=master:base master:master</pre>
 <h2 id="_distants"><a class="anchor" href="#_distants"></a>DISTANTS<a id="REMOTES"></a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Le nom de l&#8217;un des éléments suivants peut être utilisé à la place d&#8217;une URL en tant qu&#8217;argument <span class='synopsis'><em>&lt;dépôt&gt;</em></span> :</p>
+<p>Le nom de l&#8217;un des éléments suivants peut être utilisé à la place d&#8217;une URL en tant qu&#8217;argument <span class='synopsis'><em><span class="hover-term" data-term="dépôt">&lt;dépôt&gt;</span></em></span> :</p>
 </div>
 <div class="ulist">
 <ul>
@@ -544,21 +544,21 @@ git push --force-with-lease=master:base master:master</pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>	&lt;URL&gt;#&lt;tête&gt;</pre>
+<pre>	&lt;URL&gt;#<span class="hover-term" data-term="tête">&lt;tête&gt;</span></pre>
 </div>
 </div>
 <div class="paragraph">
-<p><span class='synopsis'><em>&lt;URL&gt;</em></span> est obligatoire ; <span class='synopsis'><code>#</code><em>&lt;tête&gt;</em></span> est facultatif.</p>
+<p><span class='synopsis'><em>&lt;URL&gt;</em></span> est obligatoire ; <span class='synopsis'><code>#</code><em><span class="hover-term" data-term="tête">&lt;tête&gt;</span></em></span> est facultatif.</p>
 </div>
 <div class="paragraph">
-<p>En fonction de l&#8217;opération, git utilisera l&#8217;un des spécificateurs de référence suivants, si vous n&#8217;en fournissez pas un en ligne de commande. <span class='synopsis'><em>&lt;branche&gt;</em></span> est le nom de ce fichier dans <span class='synopsis'><code>$GIT_DIR/branches</code></span> et <span class='synopsis'><em>&lt;tête&gt;</em></span> vaut par défaut <span class='synopsis'><code>master</code></span>.</p>
+<p>En fonction de l&#8217;opération, git utilisera l&#8217;un des spécificateurs de référence suivants, si vous n&#8217;en fournissez pas un en ligne de commande. <span class='synopsis'><em><span class="hover-term" data-term="branche">&lt;branche&gt;</span></em></span> est le nom de ce fichier dans <span class='synopsis'><code>$GIT_DIR/branches</code></span> et <span class='synopsis'><em><span class="hover-term" data-term="tête">&lt;tête&gt;</span></em></span> vaut par défaut <span class='synopsis'><code>master</code></span>.</p>
 </div>
 <div class="paragraph">
 <p>git fetch utilise :</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>	refs/heads/&lt;tête&gt;:refs/heads/&lt;branche&gt;</pre>
+<pre>	refs/heads/<span class="hover-term" data-term="tête">&lt;tête&gt;</span>:refs/heads/<span class="hover-term" data-term="branche">&lt;branche&gt;</span></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -566,7 +566,7 @@ git push --force-with-lease=master:base master:master</pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>	HEAD:refs/heads/&lt;tête&gt;</pre>
+<pre>	HEAD:refs/heads/<span class="hover-term" data-term="tête">&lt;tête&gt;</span></pre>
 </div>
 </div>
 </div>

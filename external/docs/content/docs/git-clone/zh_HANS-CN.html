@@ -145,7 +145,7 @@ headings:
 </dd>
 <dt class="hdlist1" id="git-clone-spanclasssynopsiscode--barecodespan"> <a class="anchor" href="#git-clone---bare"></a> <a class="anchor" href="#git-clone-spanclasssynopsiscode--barecodespan"></a><span class='synopsis'><code>--bare</code></span> </dt>
 <dd>
-<p>创建一个 ‘裸’ Git 仓库。也就是说，不要创建 <em>&lt;目录&gt;</em> 并将管理文件放在 <span class='synopsis'><em>&lt;目录&gt;</em><code>/.git</code></span>，而是将 <em>&lt;目录&gt;</em> 本身设为 <span class='synopsis'><code>$GIT_DIR</code></span>。这显然暗含着 <span class='synopsis'><code>--no-checkout</code></span> 选项，因为没有地方可以检出工作目录树。此外，远程的分支头直接复制到相应的本地分支头，而不将它们映射到 <span class='synopsis'><code>refs/remotes/origin/</code></span>。使用此选项时，不会创建远程跟踪分支或相关配置变量。</p>
+<p>创建一个 ‘裸’ Git 仓库。也就是说，不要创建 <em><span class="hover-term" data-term="目录">&lt;目录&gt;</span></em> 并将管理文件放在 <span class='synopsis'><em><span class="hover-term" data-term="目录">&lt;目录&gt;</span></em><code>/.git</code></span>，而是将 <em><span class="hover-term" data-term="目录">&lt;目录&gt;</span></em> 本身设为 <span class='synopsis'><code>$GIT_DIR</code></span>。这显然暗含着 <span class='synopsis'><code>--no-checkout</code></span> 选项，因为没有地方可以检出工作目录树。此外，远程的分支头直接复制到相应的本地分支头，而不将它们映射到 <span class='synopsis'><code>refs/remotes/origin/</code></span>。使用此选项时，不会创建远程跟踪分支或相关配置变量。</p>
 </dd>
 <dt class="hdlist1" id="git-clone-spanclasssynopsiscode--sparsecodespan"> <a class="anchor" href="#git-clone---sparse"></a> <a class="anchor" href="#git-clone-spanclasssynopsiscode--sparsecodespan"></a><span class='synopsis'><code>--sparse</code></span> </dt>
 <dd>
@@ -266,9 +266,9 @@ headings:
 <dd>
 <p>要克隆的（可能是远程的）&lt;仓库&gt;。有关指定仓库的更多信息，参阅下面的 <a href="#URLS">GIT 地址</a> 部分。</p>
 </dd>
-<dt class="hdlist1" id="git-clone-emltgtem-1"> <a class="anchor" href="#git-clone--1"></a> <a class="anchor" href="#git-clone-emltgtem-1"></a><em>&lt;目录&gt;</em> </dt>
+<dt class="hdlist1" id="git-clone-emltgtem-1"> <a class="anchor" href="#git-clone--1"></a> <a class="anchor" href="#git-clone-emltgtem-1"></a><em><span class="hover-term" data-term="目录">&lt;目录&gt;</span></em> </dt>
 <dd>
-<p>要克隆到的新目录的名称。如果未明确指定 &lt;目录&gt;，则使用源仓库中的 “人性化” 部分（对于 <span class='synopsis'><code>/path/to/repo.git</code></span> 而言，为 <span class='synopsis'><code>repo</code></span>；对于 <span class='synopsis'><code>host.xz:foo/.git</code></span> 而言，为 <span class='synopsis'><code>foo</code></span> ）。仅当目录为空时才允许克隆到现有目录。</p>
+<p>要克隆到的新目录的名称。如果未明确指定 <span class="hover-term" data-term="目录">&lt;目录&gt;</span>，则使用源仓库中的 “人性化” 部分（对于 <span class='synopsis'><code>/path/to/repo.git</code></span> 而言，为 <span class='synopsis'><code>repo</code></span>；对于 <span class='synopsis'><code>host.xz:foo/.git</code></span> 而言，为 <span class='synopsis'><code>foo</code></span> ）。仅当目录为空时才允许克隆到现有目录。</p>
 </dd>
 <dt class="hdlist1" id="git-clone-spanclasssynopsiscode--bundle-uricodeemlturigtemspan"> <a class="anchor" href="#git-clone---bundle-uriuri"></a> <a class="anchor" href="#git-clone-spanclasssynopsiscode--bundle-uricodeemlturigtemspan"></a><span class='synopsis'><code>--bundle-uri=</code><em>&lt;uri&gt;</em></span> </dt>
 <dd>

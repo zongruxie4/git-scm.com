@@ -46,11 +46,11 @@ headings:
 <div class="sectionbody">
 <div class="verseblock">
 <pre class="content"><em>git remote</em> [-v | --verbose]
-<em>git remote add</em> [-t &lt;branche&gt;] [-m &lt;master&gt;] [-f] [--[no-]tags] [--mirror=(fetch|push)] &lt;nom&gt; &lt;URL&gt;
+<em>git remote add</em> [-t <span class="hover-term" data-term="branche">&lt;branche&gt;</span>] [-m <span class="hover-term" data-term="master">&lt;master&gt;</span>] [-f] [--[no-]tags] [--mirror=(fetch|push)] &lt;nom&gt; &lt;URL&gt;
 <em>git remote rename</em> [--[no-]progress] &lt;ancien&gt; &lt;nouveau&gt;
 <em>git remote remove</em> &lt;nom&gt;
-<em>git remote set-head</em> &lt;nom&gt; (-a | --auto | -d | --delete | &lt;branche&gt;)
-<em>git remote set-branches</em> [--add] &lt;nom&gt; &lt;branche&gt;&#8230;&#8203;
+<em>git remote set-head</em> &lt;nom&gt; (-a | --auto | -d | --delete | <span class="hover-term" data-term="branche">&lt;branche&gt;</span>)
+<em>git remote set-branches</em> [--add] &lt;nom&gt; <span class="hover-term" data-term="branche">&lt;branche&gt;</span>&#8230;&#8203;
 <em>git remote get-url</em> [--push] [--all] &lt;nom&gt;
 <em>git remote set-url</em> [--push] &lt;nom&gt; &lt;nouvelle-URL&gt; [&lt;ancienne-url&gt;]
 <em>git remote set-url --add</em> [--push] &lt;nom&gt; &lt;nouvelle-URL&gt;
@@ -93,7 +93,7 @@ headings:
 <dl>
 <dt class="hdlist1" id="git-remote-emaddem"> <a class="anchor" href="#git-remote-add"></a> <a class="anchor" href="#git-remote-emaddem"></a><em>add</em> </dt>
 <dd>
-<p>Ajouter un distant nommé &lt;nom&gt; pour le dépôt à &lt;URL&gt;. La commande <span class='synopsis'><code>git</code> <code>fetch</code> <em>&lt;nom&gt;</em></span> peut alors être utilisée pour créer et mettre à jour les branches de suivi à distance &lt;nom&gt;/&lt;branche&gt;.</p>
+<p>Ajouter un distant nommé &lt;nom&gt; pour le dépôt à &lt;URL&gt;. La commande <span class='synopsis'><code>git</code> <code>fetch</code> <em>&lt;nom&gt;</em></span> peut alors être utilisée pour créer et mettre à jour les branches de suivi à distance &lt;nom&gt;/<span class="hover-term" data-term="branche">&lt;branche&gt;</span>.</p>
 <div class="paragraph">
 <p>Avec l&#8217;option <span class='synopsis'><code>-f</code></span>, <span class='synopsis'><code>git</code> <code>fetch</code> <em>&lt;nom&gt;</em></span> est lancé immédiatement après la mise en place des informations distantes.</p>
 </div>
@@ -107,10 +107,10 @@ headings:
 <p>Par défaut, seules les étiquettes sur les branches récupérées sont importées (voir <a href='{{< relurl "docs/git-fetch/fr" >}}'>git-fetch[1]</a>).</p>
 </div>
 <div class="paragraph">
-<p>Avec l&#8217;option <span class='synopsis'><code>-t</code> <em>&lt;branche&gt;</em></span>, au lieu du spécificateur par défaut de glob pour que le distant suive toutes les branches dans l&#8217;espace de noms <span class='synopsis'><code>refs/remotes/</code><em>&lt;nom&gt;</em><code>/</code></span>, un spécificateur de référence de suivi uniquement pour <span class='synopsis'><em>&lt;branche&gt;</em></span> est créé. Vous pouvez donner plus d&#8217;un <span class='synopsis'><code>-t</code> <em>&lt;branche&gt;</em></span> pour suivre plusieurs branches sans saisir toutes les branches.</p>
+<p>Avec l&#8217;option <span class='synopsis'><code>-t</code> <em><span class="hover-term" data-term="branche">&lt;branche&gt;</span></em></span>, au lieu du spécificateur par défaut de glob pour que le distant suive toutes les branches dans l&#8217;espace de noms <span class='synopsis'><code>refs/remotes/</code><em>&lt;nom&gt;</em><code>/</code></span>, un spécificateur de référence de suivi uniquement pour <span class='synopsis'><em><span class="hover-term" data-term="branche">&lt;branche&gt;</span></em></span> est créé. Vous pouvez donner plus d&#8217;un <span class='synopsis'><code>-t</code> <em><span class="hover-term" data-term="branche">&lt;branche&gt;</span></em></span> pour suivre plusieurs branches sans saisir toutes les branches.</p>
 </div>
 <div class="paragraph">
-<p>Avec l&#8217;option <span class='synopsis'><code>-m</code> <em>&lt;master&gt;</em></span>, une réf symbolique <span class='synopsis'><code>refs/remotes/</code><em>&lt;nom&gt;</em><code>/HEAD</code></span> est mise en place pour pointer sur la branche <span class='synopsis'><em>&lt;master&gt;</em></span> du distant. Voir aussi la commande set-head.</p>
+<p>Avec l&#8217;option <span class='synopsis'><code>-m</code> <em><span class="hover-term" data-term="master">&lt;master&gt;</span></em></span>, une réf symbolique <span class='synopsis'><code>refs/remotes/</code><em>&lt;nom&gt;</em><code>/HEAD</code></span> est mise en place pour pointer sur la branche <span class='synopsis'><em><span class="hover-term" data-term="master">&lt;master&gt;</span></em></span> du distant. Voir aussi la commande set-head.</p>
 </div>
 <div class="paragraph">
 <p>Lorsqu&#8217;un miroir est créé avec <span class='synopsis'><code>--mirror=fetch</code></span>, les refs ne seront pas stockées dans l&#8217;espace de noms <em>refs/remotes/</em>, mais tout ce qui se trouve dans <em>refs/</em> sur le serveur distant sera directement reflété dans <em>refs/</em> dans le dépôt local. Cette option n&#8217;a de sens que dans les dépôts nus, car une récupération écraserait tous les commit locaux.</p>
@@ -141,7 +141,7 @@ headings:
 <p>Avec <span class='synopsis'><code>-a</code></span> ou <span class='synopsis'><code>--auto</code></span>, le distant est interrogé pour déterminer son <span class='synopsis'><code>HEAD</code></span>, puis la référence symbolique <span class='synopsis'><code>refs/remotes/</code><em>&lt;nom&gt;</em><code>/HEAD</code></span> est définie sur la même branche. Par exemple, si le distant <span class='synopsis'><code>HEAD</code></span> est pointé sur <span class='synopsis'><code>next</code></span>, <span class='synopsis'><code>git</code> <code>remote</code> <code>set-head</code> <code>origin</code> <code>-a</code></span> définira la référence symbolique <span class='synopsis'><code>refs/remotes/origin/HEAD</code></span> sur <span class='synopsis'><code>refs/remotes/origin/next</code></span>. Cela ne fonctionnera que si <span class='synopsis'><code>refs/remotes/origin/next</code></span> existe déjà ; sinon, il faut d&#8217;abord la récupérer.</p>
 </div>
 <div class="paragraph">
-<p>Utiliser <span class='synopsis'><em>&lt;branche&gt;</em></span> pour définir la référence symbolique <span class='synopsis'><code>refs/remotes/</code><em>&lt;nom&gt;</em><code>/HEAD</code></span> explicitement. Par exemple, <span class='synopsis'><code>git</code> <code>remote</code> <code>set-head</code> <code>origin</code> <code>master</code></span> définira la référence symbolique <span class='synopsis'><code>refs/remotes/origin/HEAD</code></span> à <span class='synopsis'><code>refs/remotes/origin/master</code></span>. Cela ne fonctionnera que si <span class='synopsis'><code>refs/remotes/origin/master</code></span> existe déjà ; sinon, il faut d&#8217;abord le récupérer.</p>
+<p>Utiliser <span class='synopsis'><em><span class="hover-term" data-term="branche">&lt;branche&gt;</span></em></span> pour définir la référence symbolique <span class='synopsis'><code>refs/remotes/</code><em>&lt;nom&gt;</em><code>/HEAD</code></span> explicitement. Par exemple, <span class='synopsis'><code>git</code> <code>remote</code> <code>set-head</code> <code>origin</code> <code>master</code></span> définira la référence symbolique <span class='synopsis'><code>refs/remotes/origin/HEAD</code></span> à <span class='synopsis'><code>refs/remotes/origin/master</code></span>. Cela ne fonctionnera que si <span class='synopsis'><code>refs/remotes/origin/master</code></span> existe déjà ; sinon, il faut d&#8217;abord le récupérer.</p>
 </div>
 </dd>
 <dt class="hdlist1" id="git-remote-emset-branchesem"> <a class="anchor" href="#git-remote-set-branches"></a> <a class="anchor" href="#git-remote-emset-branchesem"></a><em>set-branches</em> </dt>

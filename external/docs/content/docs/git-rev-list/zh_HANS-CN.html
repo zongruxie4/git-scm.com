@@ -37,7 +37,7 @@ headings:
 <h2 id="_概述"><a class="anchor" href="#_概述"></a>概述</h2>
 <div class="sectionbody">
 <div class="verseblock">
-<pre class="content"><em>git rev-list</em> [&lt;选项&gt;] &lt;提交&gt;&#8230;&#8203; [[--] &lt;路径&gt;&#8230;&#8203;]</pre>
+<pre class="content"><em>git rev-list</em> [&lt;选项&gt;] <span class="hover-term" data-term="提交">&lt;提交&gt;</span>&#8230;&#8203; [[--] &lt;路径&gt;&#8230;&#8203;]</pre>
 </div>
 </div>
 </div>
@@ -422,7 +422,7 @@ $ git rev-list A...B</pre>
 <dd>
 <p>为`--full-history`增加了一个选项，可以从结果的历史中删除一些不必要的合并，因为没有选定的提交对这次合并有贡献。</p>
 </dd>
-<dt class="hdlist1" id="git-rev-list---ancestry-pathltgt"> <a class="anchor" href="#git-rev-list---ancestry-path"></a> <a class="anchor" href="#git-rev-list---ancestry-pathltgt"></a>--ancestry-path[=&lt;提交&gt;] </dt>
+<dt class="hdlist1" id="git-rev-list---ancestry-pathltgt"> <a class="anchor" href="#git-rev-list---ancestry-path"></a> <a class="anchor" href="#git-rev-list---ancestry-pathltgt"></a>--ancestry-path[=<span class="hover-term" data-term="提交">&lt;提交&gt;</span>] </dt>
 <dd>
 <p>When given a range of commits to display (e.g. <em>commit1..commit2</em> or <em>commit2 ^commit1</em>), and a commit &lt;commit&gt; in that range, only display commits in that range that are ancestors of &lt;commit&gt;, descendants of &lt;commit&gt;, or &lt;commit&gt; itself. If no commit is specified, use <em>commit1</em> (the excluded part of the range) as &lt;commit&gt;. Can be passed multiple times; if so, a commit is included if it is any of the commits given or if it is an ancestor or descendant of one of them.</p>
 </dd>
@@ -614,9 +614,9 @@ $ git rev-list A...B</pre>
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1" id="git-rev-list---ancestry-pathltgt-1"> <a class="anchor" href="#git-rev-list---ancestry-path-1"></a> <a class="anchor" href="#git-rev-list---ancestry-pathltgt-1"></a>--ancestry-path[=&lt;提交&gt;] </dt>
+<dt class="hdlist1" id="git-rev-list---ancestry-pathltgt-1"> <a class="anchor" href="#git-rev-list---ancestry-path-1"></a> <a class="anchor" href="#git-rev-list---ancestry-pathltgt-1"></a>--ancestry-path[=<span class="hover-term" data-term="提交">&lt;提交&gt;</span>] </dt>
 <dd>
-<p>将显示的提交限制在&lt;提交&gt;的祖先，或&lt;提交&gt;的后代，或&lt;提交&gt;本身。</p>
+<p>将显示的提交限制在<span class="hover-term" data-term="提交">&lt;提交&gt;</span>的祖先，或<span class="hover-term" data-term="提交">&lt;提交&gt;</span>的后代，或<span class="hover-term" data-term="提交">&lt;提交&gt;</span>本身。</p>
 <div class="paragraph">
 <p>作为一个用例，请考虑以下提交历史：</p>
 </div>
@@ -913,7 +913,7 @@ $ git rev-list A...B</pre>
 <p>表格 <em>--filter=sparse:oid=&lt;blob-ish&gt;</em> 使用 blob（或 blob 表达式）<em>&lt;blob-ish&gt;</em> 中包含的稀疏检出规范，以省略在请求的引用上进行稀疏检出时不需要的 blob。</p>
 </div>
 <div class="paragraph">
-<p><em>--filter=tree:&lt;深度&gt;</em> 的形式省略了所有从根树开始深度 &gt;=&lt;深度&gt;（如果一个对象在所穿越的提交中位于多个深度，则为最小深度）的blobs和目录树。&lt;深度&gt;=0 将不包括任何目录树或 blobs，除非在命令行中明确包括（或使用 --stdin 选项时的标准输入）。&lt;深度&gt;=1 将只包括由 &lt;提交&gt; 或明确指定的对象所能到达的提交直接引用的目录树和 blobs。&lt;深度&gt;=2 与 &lt;深度&gt;=1 类似，同时也包括从明确给出的提交或目录树中移出的多一级的目录树和 blobs。</p>
+<p><em>--filter=tree:&lt;深度&gt;</em> 的形式省略了所有从根树开始深度 &gt;=&lt;深度&gt;（如果一个对象在所穿越的提交中位于多个深度，则为最小深度）的blobs和目录树。&lt;深度&gt;=0 将不包括任何目录树或 blobs，除非在命令行中明确包括（或使用 --stdin 选项时的标准输入）。&lt;深度&gt;=1 将只包括由 <span class="hover-term" data-term="提交">&lt;提交&gt;</span> 或明确指定的对象所能到达的提交直接引用的目录树和 blobs。&lt;深度&gt;=2 与 &lt;深度&gt;=1 类似，同时也包括从明确给出的提交或目录树中移出的多一级的目录树和 blobs。</p>
 </div>
 <div class="paragraph">
 <p>注意，出于安全原因，想要从文件系统上的任意路径读取的'--filter=sparse:path=&lt;path&gt;'形式已经被放弃了。</p>

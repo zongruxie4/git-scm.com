@@ -53,14 +53,14 @@ aliases:
 <em>git stash</em> [push [-p | --patch] [-S | --staged] [-k | --[no-]keep-index] [-q | --quiet]
 	     [-u | --include-untracked] [-a | --all] [(-m | --message) &lt;message&gt;]
 	     [--pathspec-from-file=&lt;file&gt; [--pathspec-file-nul]]
-	     [--] [&lt;pathspec&gt;&#8230;&#8203;]]
+	     [--] [<span class="hover-term" data-term="pathspec">&lt;pathspec&gt;</span>&#8230;&#8203;]]
 <em>git stash</em> save [-p | --patch] [-S | --staged] [-k | --[no-]keep-index] [-q | --quiet]
 	     [-u | --include-untracked] [-a | --all] [&lt;message&gt;]
 <em>git stash</em> clear
 <em>git stash</em> create [&lt;message&gt;]
-<em>git stash</em> store [(-m | --message) &lt;message&gt;] [-q | --quiet] &lt;commit&gt;
-<em>git stash</em> export (--print | --to-ref &lt;ref&gt;) [&lt;stash&gt;&#8230;&#8203;]
-<em>git stash</em> import &lt;commit&gt;</pre>
+<em>git stash</em> store [(-m | --message) &lt;message&gt;] [-q | --quiet] <span class="hover-term" data-term="commit">&lt;commit&gt;</span>
+<em>git stash</em> export (--print | --to-ref <span class="hover-term" data-term="ref">&lt;ref&gt;</span>) [&lt;stash&gt;&#8230;&#8203;]
+<em>git stash</em> import <span class="hover-term" data-term="commit">&lt;commit&gt;</span></pre>
 </div>
 </div>
 </div>
@@ -97,7 +97,7 @@ stash index (e.g. the integer <span class='synopsis'><code>n</code></span> is eq
 <div class="sectionbody">
 <div class="dlist">
 <dl>
-<dt class="hdlist1" id="Documentation/git-stash.txt-push-p--patch-S--staged-k--no-keep-index-u--include-untracked-a--all-q--quiet-m--messageltmessagegt--pathspec-from-fileltfilegt--pathspec-file-nul--ltpathspecgt82308203"><a id="Documentation/git-stash.txt-push-p--patch-S--staged-k--no-keep-index-u--include-untracked-a--all-q--quiet-m--messagemessage--pathspec-from-filefile--pathspec-file-nul--pathspec" class="anchor" href="#Documentation/git-stash.txt-push-p--patch-S--staged-k--no-keep-index-u--include-untracked-a--all-q--quiet-m--messagemessage--pathspec-from-filefile--pathspec-file-nul--pathspec"></a>push [-p|--patch] [-S|--staged] [-k|--[no-]keep-index] [-u|--include-untracked] [-a|--all] [-q|--quiet] [(-m|--message) &lt;message&gt;] [--pathspec-from-file=&lt;file&gt; [--pathspec-file-nul]] [--] [&lt;pathspec&gt;&#8230;&#8203;] </dt>
+<dt class="hdlist1" id="Documentation/git-stash.txt-push-p--patch-S--staged-k--no-keep-index-u--include-untracked-a--all-q--quiet-m--messageltmessagegt--pathspec-from-fileltfilegt--pathspec-file-nul--ltpathspecgt82308203"><a id="Documentation/git-stash.txt-push-p--patch-S--staged-k--no-keep-index-u--include-untracked-a--all-q--quiet-m--messagemessage--pathspec-from-filefile--pathspec-file-nul--pathspec" class="anchor" href="#Documentation/git-stash.txt-push-p--patch-S--staged-k--no-keep-index-u--include-untracked-a--all-q--quiet-m--messagemessage--pathspec-from-filefile--pathspec-file-nul--pathspec"></a>push [-p|--patch] [-S|--staged] [-k|--[no-]keep-index] [-u|--include-untracked] [-a|--all] [-q|--quiet] [(-m|--message) &lt;message&gt;] [--pathspec-from-file=&lt;file&gt; [--pathspec-file-nul]] [--] [<span class="hover-term" data-term="pathspec">&lt;pathspec&gt;</span>&#8230;&#8203;] </dt>
 <dd>
 <p>Save your local modifications to a new <em>stash entry</em> and roll them
 back to HEAD (in the working tree and in the index).
@@ -173,7 +173,7 @@ and call <span class='synopsis'><code>git</code> <code>stash</code> <code>drop</
 the commit at which the <span class='synopsis'><em>&lt;stash&gt;</em></span> was originally created, applies the
 changes recorded in <span class='synopsis'><em>&lt;stash&gt;</em></span> to the new working tree and index.
 If that succeeds, and <span class='synopsis'><em>&lt;stash&gt;</em></span> is a reference of the form
-<span class='synopsis'><code>stash@{</code><em>&lt;revision&gt;</em><code>}</code></span>, it then drops the <span class='synopsis'><em>&lt;stash&gt;</em></span>.</p>
+<span class='synopsis'><code>stash@{</code><em><span class="hover-term" data-term="revision">&lt;revision&gt;</span></em><code>}</code></span>, it then drops the <span class='synopsis'><em>&lt;stash&gt;</em></span>.</p>
 <div class="paragraph">
 <p>This is useful if the branch on which you ran <span class='synopsis'><code>git</code> <code>stash</code> <code>push</code></span> has
 changed enough that <span class='synopsis'><code>git</code> <code>stash</code> <code>apply</code></span> fails due to conflicts. Since
@@ -207,13 +207,13 @@ dangling merge commit) in the stash ref, updating the stash
 reflog.  This is intended to be useful for scripts.  It is
 probably not the command you want to use; see "push" above.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-stash.txt-export--print--to-refltrefgtltstashgt82308203"><a id="Documentation/git-stash.txt-export--print--to-refrefstash" class="anchor" href="#Documentation/git-stash.txt-export--print--to-refrefstash"></a>export ( --print | --to-ref &lt;ref&gt; ) [&lt;stash&gt;&#8230;&#8203;] </dt>
+<dt class="hdlist1" id="Documentation/git-stash.txt-export--print--to-refltrefgtltstashgt82308203"><a id="Documentation/git-stash.txt-export--print--to-refrefstash" class="anchor" href="#Documentation/git-stash.txt-export--print--to-refrefstash"></a>export ( --print | --to-ref <span class="hover-term" data-term="ref">&lt;ref&gt;</span> ) [&lt;stash&gt;&#8230;&#8203;] </dt>
 <dd>
 <p>Export the specified stashes, or all of them if none are specified, to
 a chain of commits which can be transferred using the normal fetch and
 push mechanisms, then imported using the <span class='synopsis'><code>import</code></span> subcommand.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-stash.txt-importltcommitgt"><a id="Documentation/git-stash.txt-importcommit" class="anchor" href="#Documentation/git-stash.txt-importcommit"></a>import &lt;commit&gt; </dt>
+<dt class="hdlist1" id="Documentation/git-stash.txt-importltcommitgt"><a id="Documentation/git-stash.txt-importcommit" class="anchor" href="#Documentation/git-stash.txt-importcommit"></a>import <span class="hover-term" data-term="commit">&lt;commit&gt;</span> </dt>
 <dd>
 <p>Import the specified stashes from the specified commit, which must have been
 created by <span class='synopsis'><code>export</code></span>, and add them to the list of stashes.  To replace the
@@ -373,7 +373,7 @@ it to the specified ref.</p>
 <p>Separates pathspec from options for disambiguation purposes.</p>
 </div>
 </dd>
-<dt class="hdlist1" id="Documentation/git-stash.txt-ltpathspecgt82308203"><a id="Documentation/git-stash.txt-pathspec" class="anchor" href="#Documentation/git-stash.txt-pathspec"></a>&lt;pathspec&gt;&#8230;&#8203; </dt>
+<dt class="hdlist1" id="Documentation/git-stash.txt-ltpathspecgt82308203"><a id="Documentation/git-stash.txt-pathspec" class="anchor" href="#Documentation/git-stash.txt-pathspec"></a><span class="hover-term" data-term="pathspec">&lt;pathspec&gt;</span>&#8230;&#8203; </dt>
 <dd>
 <p>This option is only valid for <span class='synopsis'><code>push</code></span> command.</p>
 <div class="paragraph">
@@ -391,7 +391,7 @@ too, leaving files that do not match the pathspec intact.</p>
 <p>This option is only valid for <span class='synopsis'><code>apply</code></span>, <span class='synopsis'><code>branch</code></span>, <span class='synopsis'><code>drop</code></span>, <span class='synopsis'><code>pop</code></span>,
 <span class='synopsis'><code>show</code></span>, and <span class='synopsis'><code>export</code></span> commands.</p>
 <div class="paragraph">
-<p>A reference of the form <span class='synopsis'><code>stash@{</code><em>&lt;revision&gt;</em><code>}</code></span>. When no <span class='synopsis'><em>&lt;stash&gt;</em></span> is
+<p>A reference of the form <span class='synopsis'><code>stash@{</code><em><span class="hover-term" data-term="revision">&lt;revision&gt;</span></em><code>}</code></span>. When no <span class='synopsis'><em>&lt;stash&gt;</em></span> is
 given, the latest stash is assumed (that is, <span class='synopsis'><code>stash@{0}</code></span>).</p>
 </div>
 </dd>

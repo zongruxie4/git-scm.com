@@ -48,12 +48,12 @@ aliases:
 <div class="verseblock">
 <pre class="content"><em>git clone</em> [--template=&lt;template_directory&gt;]
 	  [-l] [-s] [--no-hardlinks] [-q] [-n] [--bare] [--mirror]
-	  [-o &lt;name&gt;] [-b &lt;name&gt;] [-u &lt;upload-pack&gt;] [--reference &lt;repository&gt;]
+	  [-o &lt;name&gt;] [-b &lt;name&gt;] [-u &lt;upload-pack&gt;] [--reference <span class="hover-term" data-term="repository">&lt;repository&gt;</span>]
 	  [--dissociate] [--separate-git-dir &lt;git dir&gt;]
 	  [--depth &lt;depth&gt;] [--[no-]single-branch] [--no-tags]
-	  [--recurse-submodules[=&lt;pathspec&gt;]] [--[no-]shallow-submodules]
-	  [--[no-]remote-submodules] [--jobs &lt;n&gt;] [--sparse] [--] &lt;repository&gt;
-	  [&lt;directory&gt;]</pre>
+	  [--recurse-submodules[=<span class="hover-term" data-term="pathspec">&lt;pathspec&gt;</span>]] [--[no-]shallow-submodules]
+	  [--[no-]remote-submodules] [--jobs &lt;n&gt;] [--sparse] [--] <span class="hover-term" data-term="repository">&lt;repository&gt;</span>
+	  [<span class="hover-term" data-term="directory">&lt;directory&gt;</span>]</pre>
 </div>
 </div>
 </div>
@@ -144,7 +144,7 @@ its source repository, you can simply run <span class='synopsis'><code>git</code
 objects from the source repository into a pack in the cloned repository.</p>
 </div>
 </dd>
-<dt class="hdlist1" id="Documentation/git-clone.txt---reference-if-ableltrepositorygt"><a id="Documentation/git-clone.txt---reference-if-ablerepository" class="anchor" href="#Documentation/git-clone.txt---reference-if-ablerepository"></a>--reference[-if-able] &lt;repository&gt; </dt>
+<dt class="hdlist1" id="Documentation/git-clone.txt---reference-if-ableltrepositorygt"><a id="Documentation/git-clone.txt---reference-if-ablerepository" class="anchor" href="#Documentation/git-clone.txt---reference-if-ablerepository"></a>--reference[-if-able] <span class="hover-term" data-term="repository">&lt;repository&gt;</span> </dt>
 <dd>
 <p>If the reference repository is on the local machine,
 automatically setup <span class='synopsis'><code>.git/objects/info/alternates</code></span> to
@@ -208,8 +208,8 @@ sent to the other side in the order listed on the command line.</p>
 <dt class="hdlist1" id="Documentation/git-clone.txt---bare"><a class="anchor" href="#Documentation/git-clone.txt---bare"></a>--bare </dt>
 <dd>
 <p>Make a <em>bare</em> Git repository.  That is, instead of
-creating <span class='synopsis'><em>&lt;directory&gt;</em></span> and placing the administrative
-files in <span class='synopsis'><em>&lt;directory&gt;</em><code>/.git</code></span>, make the <span class='synopsis'><em>&lt;directory&gt;</em></span>
+creating <span class='synopsis'><em><span class="hover-term" data-term="directory">&lt;directory&gt;</span></em></span> and placing the administrative
+files in <span class='synopsis'><em><span class="hover-term" data-term="directory">&lt;directory&gt;</span></em><code>/.git</code></span>, make the <span class='synopsis'><em><span class="hover-term" data-term="directory">&lt;directory&gt;</span></em></span>
 itself the <span class='synopsis'><code>$GIT_DIR</code></span>. This obviously implies the <span class='synopsis'><code>--no-checkout</code></span>
 because there is nowhere to check out the working tree.
 Also the branch heads at the remote are copied directly
@@ -293,7 +293,7 @@ also pass <span class='synopsis'><code>--shallow-submodules</code></span>.</p>
 <dd>
 <p>Create a shallow clone with a history after the specified time.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-clone.txt---shallow-excludeltrevisiongt"><a id="Documentation/git-clone.txt---shallow-excluderevision" class="anchor" href="#Documentation/git-clone.txt---shallow-excluderevision"></a>--shallow-exclude=&lt;revision&gt; </dt>
+<dt class="hdlist1" id="Documentation/git-clone.txt---shallow-excludeltrevisiongt"><a id="Documentation/git-clone.txt---shallow-excluderevision" class="anchor" href="#Documentation/git-clone.txt---shallow-excluderevision"></a>--shallow-exclude=<span class="hover-term" data-term="revision">&lt;revision&gt;</span> </dt>
 <dd>
 <p>Create a shallow clone with a history, excluding commits
 reachable from a specified remote branch or tag.  This option
@@ -336,7 +336,7 @@ pathspec is provided.</p>
 <div class="paragraph">
 <p>Submodules are initialized and cloned using their default settings. This is
 equivalent to running
-<span class='synopsis'><code>git</code> <code>submodule</code> <code>update</code> <code>--init</code> <code>--recursive</code> <em>&lt;pathspec&gt;</em></span> immediately after
+<span class='synopsis'><code>git</code> <code>submodule</code> <code>update</code> <code>--init</code> <code>--recursive</code> <em><span class="hover-term" data-term="pathspec">&lt;pathspec&gt;</span></em></span> immediately after
 the clone is finished. This option is ignored if the cloned repository does
 not have a worktree/checkout (i.e. if any of <span class='synopsis'><code>--no-checkout</code></span>/<span class='synopsis'><code>-n</code></span>, <span class='synopsis'><code>--bare</code></span>,
 or <span class='synopsis'><code>--mirror</code></span> is given)</p>
@@ -367,13 +367,13 @@ tree.</p>
 <p>The number of submodules fetched at the same time.
 Defaults to the <span class='synopsis'><code>submodule.fetchJobs</code></span> option.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-clone.txt-ltrepositorygt"><a id="Documentation/git-clone.txt-repository" class="anchor" href="#Documentation/git-clone.txt-repository"></a>&lt;repository&gt; </dt>
+<dt class="hdlist1" id="Documentation/git-clone.txt-ltrepositorygt"><a id="Documentation/git-clone.txt-repository" class="anchor" href="#Documentation/git-clone.txt-repository"></a><span class="hover-term" data-term="repository">&lt;repository&gt;</span> </dt>
 <dd>
 <p>The (possibly remote) repository to clone from.  See the
 <a href="#URLS">GIT URLS</a> section below for more information on specifying
 repositories.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-clone.txt-ltdirectorygt"><a id="Documentation/git-clone.txt-directory" class="anchor" href="#Documentation/git-clone.txt-directory"></a>&lt;directory&gt; </dt>
+<dt class="hdlist1" id="Documentation/git-clone.txt-ltdirectorygt"><a id="Documentation/git-clone.txt-directory" class="anchor" href="#Documentation/git-clone.txt-directory"></a><span class="hover-term" data-term="directory">&lt;directory&gt;</span> </dt>
 <dd>
 <p>The name of a new directory to clone into.  The "humanish"
 part of the source repository is used if no directory is

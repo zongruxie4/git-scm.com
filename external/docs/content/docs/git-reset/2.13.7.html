@@ -37,9 +37,9 @@ aliases:
 <h2 id="_synopsis"><a class="anchor" href="#_synopsis"></a>SYNOPSIS</h2>
 <div class="sectionbody">
 <div class="verseblock">
-<pre class="content"><em>git reset</em> [-q] [&lt;tree-ish&gt;] [--] &lt;paths&gt;&#8230;&#8203;
-<em>git reset</em> (--patch | -p) [&lt;tree-ish&gt;] [--] [&lt;paths&gt;&#8230;&#8203;]
-<em>git reset</em> [--soft | --mixed [-N] | --hard | --merge | --keep] [-q] [&lt;commit&gt;]</pre>
+<pre class="content"><em>git reset</em> [-q] [<span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span>] [--] &lt;paths&gt;&#8230;&#8203;
+<em>git reset</em> (--patch | -p) [<span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span>] [--] [&lt;paths&gt;&#8230;&#8203;]
+<em>git reset</em> [--soft | --mixed [-N] | --hard | --merge | --keep] [-q] [<span class="hover-term" data-term="commit">&lt;commit&gt;</span>]</pre>
 </div>
 </div>
 </div>
@@ -47,17 +47,17 @@ aliases:
 <h2 id="_description"><a class="anchor" href="#_description"></a>DESCRIPTION</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In the first and second form, copy entries from &lt;tree-ish&gt; to the index.
-In the third form, set the current branch head (HEAD) to &lt;commit&gt;, optionally
-modifying index and working tree to match.  The &lt;tree-ish&gt;/&lt;commit&gt; defaults
+<p>In the first and second form, copy entries from <span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span> to the index.
+In the third form, set the current branch head (HEAD) to <span class="hover-term" data-term="commit">&lt;commit&gt;</span>, optionally
+modifying index and working tree to match.  The <span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span>/<span class="hover-term" data-term="commit">&lt;commit&gt;</span> defaults
 to HEAD in all forms.</p>
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1" id="Documentation/git-reset.txt-emgitresetem-qlttree-ishgt--ltpathsgt82308203"><a id="Documentation/git-reset.txt-gitreset-qtree-ish--paths" class="anchor" href="#Documentation/git-reset.txt-gitreset-qtree-ish--paths"></a><em>git reset</em> [-q] [&lt;tree-ish&gt;] [--] &lt;paths&gt;&#8230;&#8203; </dt>
+<dt class="hdlist1" id="Documentation/git-reset.txt-emgitresetem-qlttree-ishgt--ltpathsgt82308203"><a id="Documentation/git-reset.txt-gitreset-qtree-ish--paths" class="anchor" href="#Documentation/git-reset.txt-gitreset-qtree-ish--paths"></a><em>git reset</em> [-q] [<span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span>] [--] &lt;paths&gt;&#8230;&#8203; </dt>
 <dd>
 <p>This form resets the index entries for all &lt;paths&gt; to their
-state at &lt;tree-ish&gt;.  (It does not affect the working tree or
+state at <span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span>.  (It does not affect the working tree or
 the current branch.)</p>
 <div class="paragraph">
 <p>This means that <span class='synopsis'><code>git</code> <code>reset</code> <em>&lt;paths&gt;</em></span> is the opposite of <span class='synopsis'><code>git</code> <code>add</code>
@@ -73,10 +73,10 @@ can copy the contents of a path out of a commit to the index and to the
 working tree in one go.</p>
 </div>
 </dd>
-<dt class="hdlist1" id="Documentation/git-reset.txt-emgitresetem--patch-plttree-ishgt--ltpathsgt82308203"><a id="Documentation/git-reset.txt-gitreset--patch-ptree-ish--paths" class="anchor" href="#Documentation/git-reset.txt-gitreset--patch-ptree-ish--paths"></a><em>git reset</em> (--patch | -p) [&lt;tree-ish&gt;] [--] [&lt;paths&gt;&#8230;&#8203;] </dt>
+<dt class="hdlist1" id="Documentation/git-reset.txt-emgitresetem--patch-plttree-ishgt--ltpathsgt82308203"><a id="Documentation/git-reset.txt-gitreset--patch-ptree-ish--paths" class="anchor" href="#Documentation/git-reset.txt-gitreset--patch-ptree-ish--paths"></a><em>git reset</em> (--patch | -p) [<span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span>] [--] [&lt;paths&gt;&#8230;&#8203;] </dt>
 <dd>
 <p>Interactively select hunks in the difference between the index
-and &lt;tree-ish&gt; (defaults to HEAD).  The chosen hunks are applied
+and <span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span> (defaults to HEAD).  The chosen hunks are applied
 in reverse to the index.</p>
 <div class="paragraph">
 <p>This means that <span class='synopsis'><code>git</code> <code>reset</code> <code>-p</code></span> is the opposite of <span class='synopsis'><code>git</code> <code>add</code> <code>-p</code></span>, i.e.
@@ -84,10 +84,10 @@ you can use it to selectively reset hunks. See the &#8220;Interactive Mode&#8221
 section of <a href='{{< relurl "docs/git-add" >}}'>git-add[1]</a> to learn how to operate the <span class='synopsis'><code>--patch</code></span> mode.</p>
 </div>
 </dd>
-<dt class="hdlist1" id="Documentation/git-reset.txt-emgitresetemltmodegtltcommitgt"><a id="Documentation/git-reset.txt-gitresetmodecommit" class="anchor" href="#Documentation/git-reset.txt-gitresetmodecommit"></a><em>git reset</em> [&lt;mode&gt;] [&lt;commit&gt;] </dt>
+<dt class="hdlist1" id="Documentation/git-reset.txt-emgitresetemltmodegtltcommitgt"><a id="Documentation/git-reset.txt-gitresetmodecommit" class="anchor" href="#Documentation/git-reset.txt-gitresetmodecommit"></a><em>git reset</em> [&lt;mode&gt;] [<span class="hover-term" data-term="commit">&lt;commit&gt;</span>] </dt>
 <dd>
-<p>This form resets the current branch head to &lt;commit&gt; and
-possibly updates the index (resetting it to the tree of &lt;commit&gt;) and
+<p>This form resets the current branch head to <span class="hover-term" data-term="commit">&lt;commit&gt;</span> and
+possibly updates the index (resetting it to the tree of <span class="hover-term" data-term="commit">&lt;commit&gt;</span>) and
 the working tree depending on &lt;mode&gt;. If &lt;mode&gt; is omitted,
 defaults to "--mixed". The &lt;mode&gt; must be one of the following:</p>
 <div class="openblock">
@@ -97,7 +97,7 @@ defaults to "--mixed". The &lt;mode&gt; must be one of the following:</p>
 <dt class="hdlist1" id="Documentation/git-reset.txt---soft"><a class="anchor" href="#Documentation/git-reset.txt---soft"></a>--soft </dt>
 <dd>
 <p>Does not touch the index file or the working tree at all (but
-resets the head to &lt;commit&gt;, just like all modes do). This leaves
+resets the head to <span class="hover-term" data-term="commit">&lt;commit&gt;</span>, just like all modes do). This leaves
 all your changed files "Changes to be committed", as <em>git status</em>
 would put it.</p>
 </dd>
@@ -114,26 +114,26 @@ been updated. This is the default action.</p>
 <dt class="hdlist1" id="Documentation/git-reset.txt---hard"><a class="anchor" href="#Documentation/git-reset.txt---hard"></a>--hard </dt>
 <dd>
 <p>Resets the index and working tree. Any changes to tracked files in the
-working tree since &lt;commit&gt; are discarded.</p>
+working tree since <span class="hover-term" data-term="commit">&lt;commit&gt;</span> are discarded.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-reset.txt---merge"><a class="anchor" href="#Documentation/git-reset.txt---merge"></a>--merge </dt>
 <dd>
 <p>Resets the index and updates the files in the working tree that are
-different between &lt;commit&gt; and HEAD, but keeps those which are
+different between <span class="hover-term" data-term="commit">&lt;commit&gt;</span> and HEAD, but keeps those which are
 different between the index and working tree (i.e. which have changes
 which have not been added).
-If a file that is different between &lt;commit&gt; and the index has unstaged
+If a file that is different between <span class="hover-term" data-term="commit">&lt;commit&gt;</span> and the index has unstaged
 changes, reset is aborted.</p>
 <div class="paragraph">
-<p>In other words, --merge does something like a <em>git read-tree -u -m &lt;commit&gt;</em>,
+<p>In other words, --merge does something like a <em>git read-tree -u -m <span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>,
 but carries forward unmerged index entries.</p>
 </div>
 </dd>
 <dt class="hdlist1" id="Documentation/git-reset.txt---keep"><a class="anchor" href="#Documentation/git-reset.txt---keep"></a>--keep </dt>
 <dd>
 <p>Resets index entries and updates files in the working tree that are
-different between &lt;commit&gt; and HEAD.
-If a file that is different between &lt;commit&gt; and HEAD has local changes,
+different between <span class="hover-term" data-term="commit">&lt;commit&gt;</span> and HEAD.
+If a file that is different between <span class="hover-term" data-term="commit">&lt;commit&gt;</span> and HEAD has local changes,
 reset is aborted.</p>
 </dd>
 </dl>

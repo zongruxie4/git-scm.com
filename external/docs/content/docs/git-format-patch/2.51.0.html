@@ -63,7 +63,7 @@ aliases:
 		   [--to=&lt;email&gt;] [--cc=&lt;email&gt;]
 		   [--[no-]cover-letter] [--quiet]
 		   [--[no-]encode-email-headers]
-		   [--no-notes | --notes[=&lt;ref&gt;]]
+		   [--no-notes | --notes[=<span class="hover-term" data-term="ref">&lt;ref&gt;</span>]]
 		   [--interdiff=&lt;previous&gt;]
 		   [--range-diff=&lt;previous&gt; [--creation-factor=&lt;percent&gt;]]
 		   [--filename-max-length=&lt;n&gt;]
@@ -88,7 +88,7 @@ for use with <em>git am</em>.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>A brief metadata header that begins with <span class='synopsis'><code>From</code> <em>&lt;commit&gt;</em></span>
+<p>A brief metadata header that begins with <span class='synopsis'><code>From</code> <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em></span>
 with a fixed <span class='synopsis'><code>Mon</code> <code>Sep</code> <code>17</code> <code>00:00:00</code> <code>2001</code></span> datestamp to help programs
 like "file(1)" to recognize that the file is an output from this
 command, fields that record the author identity, the author date,
@@ -126,12 +126,12 @@ commits in the specified range.</p>
 </ol>
 </div>
 <div class="paragraph">
-<p>The first rule takes precedence in the case of a single &lt;commit&gt;.  To
+<p>The first rule takes precedence in the case of a single <span class="hover-term" data-term="commit">&lt;commit&gt;</span>.  To
 apply the second rule, i.e., format everything since the beginning of
-history up until &lt;commit&gt;, use the <span class='synopsis'><code>--root</code></span> option: <span class='synopsis'><code>git</code> <code>format-patch</code>
+history up until <span class="hover-term" data-term="commit">&lt;commit&gt;</span>, use the <span class='synopsis'><code>--root</code></span> option: <span class='synopsis'><code>git</code> <code>format-patch</code>
 
-<code>--root</code> <em>&lt;commit&gt;</em></span>.  If you want to format only &lt;commit&gt; itself, you
-can do this with <span class='synopsis'><code>git</code> <code>format-patch</code> <code>-1</code> <em>&lt;commit&gt;</em></span>.</p>
+<code>--root</code> <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em></span>.  If you want to format only <span class="hover-term" data-term="commit">&lt;commit&gt;</span> itself, you
+can do this with <span class='synopsis'><code>git</code> <code>format-patch</code> <code>-1</code> <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em></span>.</p>
 </div>
 <div class="paragraph">
 <p>By default, each output file is numbered sequentially from 1, and uses the
@@ -1004,7 +1004,7 @@ topic and the tool should find more correspondence between the two
 sets of patches.</p>
 </div>
 </dd>
-<dt class="hdlist1" id="Documentation/git-format-patch.txt---notesltrefgt"><a id="Documentation/git-format-patch.txt---notesref" class="anchor" href="#Documentation/git-format-patch.txt---notesref"></a>--notes[=&lt;ref&gt;] </dt>
+<dt class="hdlist1" id="Documentation/git-format-patch.txt---notesltrefgt"><a id="Documentation/git-format-patch.txt---notesref" class="anchor" href="#Documentation/git-format-patch.txt---notesref"></a>--notes[=<span class="hover-term" data-term="ref">&lt;ref&gt;</span>] </dt>
 <dt class="hdlist1" id="Documentation/git-format-patch.txt---no-notes"><a class="anchor" href="#Documentation/git-format-patch.txt---no-notes"></a>--no-notes </dt>
 <dd>
 <p>Append the notes (see <a href='{{< relurl "docs/git-notes" >}}'>git-notes[1]</a>) for the commit
@@ -1062,11 +1062,11 @@ still useful for code review.</p>
 <p>Output an all-zero hash in each patch&#8217;s From header instead
 of the hash of the commit.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-format-patch.txt---no-baseltcommitgt"><a id="Documentation/git-format-patch.txt---no-basecommit" class="anchor" href="#Documentation/git-format-patch.txt---no-basecommit"></a>--[no-]base[=&lt;commit&gt;] </dt>
+<dt class="hdlist1" id="Documentation/git-format-patch.txt---no-baseltcommitgt"><a id="Documentation/git-format-patch.txt---no-basecommit" class="anchor" href="#Documentation/git-format-patch.txt---no-basecommit"></a>--[no-]base[=<span class="hover-term" data-term="commit">&lt;commit&gt;</span>] </dt>
 <dd>
 <p>Record the base tree information to identify the state the
 patch series applies to.  See the BASE TREE INFORMATION section
-below for details. If &lt;commit&gt; is "auto", a base commit is
+below for details. If <span class="hover-term" data-term="commit">&lt;commit&gt;</span> is "auto", a base commit is
 automatically chosen. The <span class='synopsis'><code>--no-base</code></span> option overrides a
 <span class='synopsis'><code>format.useAutoBase</code></span> configuration.</p>
 </dd>
@@ -1107,7 +1107,7 @@ with configuration variables.</p>
 	cc = &lt;email&gt;
 	attach [ = mime-boundary-string ]
 	signOff = true
-	outputDirectory = &lt;directory&gt;
+	outputDirectory = <span class="hover-term" data-term="directory">&lt;directory&gt;</span>
 	coverLetter = auto
 	coverFromDescription = auto</pre>
 </div>

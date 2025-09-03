@@ -48,9 +48,9 @@ aliases:
 <h2 id="_synopsis"><a class="anchor" href="#_synopsis"></a>SYNOPSIS</h2>
 <div class="sectionbody">
 <div class="verseblock">
-<pre class="content"><em>git diff</em> [options] [&lt;commit&gt;] [--] [&lt;path&gt;&#8230;&#8203;]
-<em>git diff</em> [options] --cached [&lt;commit&gt;] [--] [&lt;path&gt;&#8230;&#8203;]
-<em>git diff</em> [options] &lt;commit&gt; &lt;commit&gt; [--] [&lt;path&gt;&#8230;&#8203;]
+<pre class="content"><em>git diff</em> [options] [<span class="hover-term" data-term="commit">&lt;commit&gt;</span>] [--] [&lt;path&gt;&#8230;&#8203;]
+<em>git diff</em> [options] --cached [<span class="hover-term" data-term="commit">&lt;commit&gt;</span>] [--] [&lt;path&gt;&#8230;&#8203;]
+<em>git diff</em> [options] <span class="hover-term" data-term="commit">&lt;commit&gt;</span> <span class="hover-term" data-term="commit">&lt;commit&gt;</span> [--] [&lt;path&gt;&#8230;&#8203;]
 <em>git diff</em> [options] &lt;blob&gt; &lt;blob&gt;
 <em>git diff</em> [options] [--no-index] [--] &lt;path&gt; &lt;path&gt;</pre>
 </div>
@@ -83,57 +83,57 @@ at least one of the paths points outside the working tree,
 or when running the command outside a working tree
 controlled by Git.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-diff.txt-emgitdiffem--options--cachedltcommitgt--ltpathgt82308203"><a id="Documentation/git-diff.txt-gitdiff--options--cachedcommit--path" class="anchor" href="#Documentation/git-diff.txt-gitdiff--options--cachedcommit--path"></a><em>git diff</em> [--options] --cached [&lt;commit&gt;] [--] [&lt;path&gt;&#8230;&#8203;] </dt>
+<dt class="hdlist1" id="Documentation/git-diff.txt-emgitdiffem--options--cachedltcommitgt--ltpathgt82308203"><a id="Documentation/git-diff.txt-gitdiff--options--cachedcommit--path" class="anchor" href="#Documentation/git-diff.txt-gitdiff--options--cachedcommit--path"></a><em>git diff</em> [--options] --cached [<span class="hover-term" data-term="commit">&lt;commit&gt;</span>] [--] [&lt;path&gt;&#8230;&#8203;] </dt>
 <dd>
 <p>This form is to view the changes you staged for the next
-commit relative to the named &lt;commit&gt;.  Typically you
+commit relative to the named <span class="hover-term" data-term="commit">&lt;commit&gt;</span>.  Typically you
 would want comparison with the latest commit, so if you
-do not give &lt;commit&gt;, it defaults to HEAD.
+do not give <span class="hover-term" data-term="commit">&lt;commit&gt;</span>, it defaults to HEAD.
 If HEAD does not exist (e.g. unborn branches) and
-&lt;commit&gt; is not given, it shows all staged changes.
+<span class="hover-term" data-term="commit">&lt;commit&gt;</span> is not given, it shows all staged changes.
 --staged is a synonym of --cached.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-diff.txt-emgitdiffem--optionsltcommitgt--ltpathgt82308203"><a id="Documentation/git-diff.txt-gitdiff--optionscommit--path" class="anchor" href="#Documentation/git-diff.txt-gitdiff--optionscommit--path"></a><em>git diff</em> [--options] &lt;commit&gt; [--] [&lt;path&gt;&#8230;&#8203;] </dt>
+<dt class="hdlist1" id="Documentation/git-diff.txt-emgitdiffem--optionsltcommitgt--ltpathgt82308203"><a id="Documentation/git-diff.txt-gitdiff--optionscommit--path" class="anchor" href="#Documentation/git-diff.txt-gitdiff--optionscommit--path"></a><em>git diff</em> [--options] <span class="hover-term" data-term="commit">&lt;commit&gt;</span> [--] [&lt;path&gt;&#8230;&#8203;] </dt>
 <dd>
 <p>This form is to view the changes you have in your
-working tree relative to the named &lt;commit&gt;.  You can
+working tree relative to the named <span class="hover-term" data-term="commit">&lt;commit&gt;</span>.  You can
 use HEAD to compare it with the latest commit, or a
 branch name to compare with the tip of a different
 branch.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-diff.txt-emgitdiffem--optionsltcommitgtltcommitgt--ltpathgt82308203"><a id="Documentation/git-diff.txt-gitdiff--optionscommitcommit--path" class="anchor" href="#Documentation/git-diff.txt-gitdiff--optionscommitcommit--path"></a><em>git diff</em> [--options] &lt;commit&gt; &lt;commit&gt; [--] [&lt;path&gt;&#8230;&#8203;] </dt>
+<dt class="hdlist1" id="Documentation/git-diff.txt-emgitdiffem--optionsltcommitgtltcommitgt--ltpathgt82308203"><a id="Documentation/git-diff.txt-gitdiff--optionscommitcommit--path" class="anchor" href="#Documentation/git-diff.txt-gitdiff--optionscommitcommit--path"></a><em>git diff</em> [--options] <span class="hover-term" data-term="commit">&lt;commit&gt;</span> <span class="hover-term" data-term="commit">&lt;commit&gt;</span> [--] [&lt;path&gt;&#8230;&#8203;] </dt>
 <dd>
 <p>This is to view the changes between two arbitrary
-&lt;commit&gt;.</p>
+<span class="hover-term" data-term="commit">&lt;commit&gt;</span>.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-diff.txt-emgitdiffem--optionsltcommitgtltcommitgt--ltpathgt82308203-1"><a id="Documentation/git-diff.txt-gitdiff--optionscommitcommit--path-1" class="anchor" href="#Documentation/git-diff.txt-gitdiff--optionscommitcommit--path-1"></a><em>git diff</em> [--options] &lt;commit&gt;..&lt;commit&gt; [--] [&lt;path&gt;&#8230;&#8203;] </dt>
+<dt class="hdlist1" id="Documentation/git-diff.txt-emgitdiffem--optionsltcommitgtltcommitgt--ltpathgt82308203-1"><a id="Documentation/git-diff.txt-gitdiff--optionscommitcommit--path-1" class="anchor" href="#Documentation/git-diff.txt-gitdiff--optionscommitcommit--path-1"></a><em>git diff</em> [--options] <span class="hover-term" data-term="commit">&lt;commit&gt;</span>..<span class="hover-term" data-term="commit">&lt;commit&gt;</span> [--] [&lt;path&gt;&#8230;&#8203;] </dt>
 <dd>
-<p>This is synonymous to the previous form.  If &lt;commit&gt; on
+<p>This is synonymous to the previous form.  If <span class="hover-term" data-term="commit">&lt;commit&gt;</span> on
 one side is omitted, it will have the same effect as
 using HEAD instead.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-diff.txt-emgitdiffem--optionsltcommitgtltcommitgt--ltpathgt82308203-1-1"><a id="Documentation/git-diff.txt-gitdiff--optionscommitcommit--path-1-1" class="anchor" href="#Documentation/git-diff.txt-gitdiff--optionscommitcommit--path-1-1"></a><em>git diff</em> [--options] &lt;commit&gt;...&lt;commit&gt; [--] [&lt;path&gt;&#8230;&#8203;] </dt>
+<dt class="hdlist1" id="Documentation/git-diff.txt-emgitdiffem--optionsltcommitgtltcommitgt--ltpathgt82308203-1-1"><a id="Documentation/git-diff.txt-gitdiff--optionscommitcommit--path-1-1" class="anchor" href="#Documentation/git-diff.txt-gitdiff--optionscommitcommit--path-1-1"></a><em>git diff</em> [--options] <span class="hover-term" data-term="commit">&lt;commit&gt;</span>...<span class="hover-term" data-term="commit">&lt;commit&gt;</span> [--] [&lt;path&gt;&#8230;&#8203;] </dt>
 <dd>
 <p>This form is to view the changes on the branch containing
-and up to the second &lt;commit&gt;, starting at a common ancestor
-of both &lt;commit&gt;.  "git diff A...B" is equivalent to
+and up to the second <span class="hover-term" data-term="commit">&lt;commit&gt;</span>, starting at a common ancestor
+of both <span class="hover-term" data-term="commit">&lt;commit&gt;</span>.  "git diff A...B" is equivalent to
 "git diff $(git-merge-base A B) B".  You can omit any one
-of &lt;commit&gt;, which has the same effect as using HEAD instead.</p>
+of <span class="hover-term" data-term="commit">&lt;commit&gt;</span>, which has the same effect as using HEAD instead.</p>
 </dd>
 </dl>
 </div>
 <div class="paragraph">
 <p>Just in case if you are doing something exotic, it should be
-noted that all of the &lt;commit&gt; in the above description, except
+noted that all of the <span class="hover-term" data-term="commit">&lt;commit&gt;</span> in the above description, except
 in the last two forms that use ".." notations, can be any
-&lt;tree&gt;.</p>
+<span class="hover-term" data-term="tree">&lt;tree&gt;</span>.</p>
 </div>
 <div class="paragraph">
-<p>For a more complete list of ways to spell &lt;commit&gt;, see
+<p>For a more complete list of ways to spell <span class="hover-term" data-term="commit">&lt;commit&gt;</span>, see
 "SPECIFYING REVISIONS" section in <a href='{{< relurl "docs/gitrevisions" >}}'>gitrevisions[7]</a>.
 However, "diff" is about comparing two <em>endpoints</em>, not ranges,
-and the range notations ("&lt;commit&gt;..&lt;commit&gt;" and
-"&lt;commit&gt;...&lt;commit&gt;") do not mean a range as defined in the
+and the range notations ("<span class="hover-term" data-term="commit">&lt;commit&gt;</span>..<span class="hover-term" data-term="commit">&lt;commit&gt;</span>" and
+"<span class="hover-term" data-term="commit">&lt;commit&gt;</span>...<span class="hover-term" data-term="commit">&lt;commit&gt;</span>") do not mean a range as defined in the
 "SPECIFYING RANGES" section in <a href='{{< relurl "docs/gitrevisions" >}}'>gitrevisions[7]</a>.</p>
 </div>
 <div class="dlist">
@@ -785,13 +785,13 @@ compared differs:</p>
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1" id="Documentation/git-diff.txt-git-diff-indexlttree-ishgt"><a id="Documentation/git-diff.txt-git-diff-indextree-ish" class="anchor" href="#Documentation/git-diff.txt-git-diff-indextree-ish"></a>git-diff-index &lt;tree-ish&gt; </dt>
+<dt class="hdlist1" id="Documentation/git-diff.txt-git-diff-indexlttree-ishgt"><a id="Documentation/git-diff.txt-git-diff-indextree-ish" class="anchor" href="#Documentation/git-diff.txt-git-diff-indextree-ish"></a>git-diff-index <span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span> </dt>
 <dd>
-<p>compares the &lt;tree-ish&gt; and the files on the filesystem.</p>
+<p>compares the <span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span> and the files on the filesystem.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-diff.txt-git-diff-index--cachedlttree-ishgt"><a id="Documentation/git-diff.txt-git-diff-index--cachedtree-ish" class="anchor" href="#Documentation/git-diff.txt-git-diff-index--cachedtree-ish"></a>git-diff-index --cached &lt;tree-ish&gt; </dt>
+<dt class="hdlist1" id="Documentation/git-diff.txt-git-diff-index--cachedlttree-ishgt"><a id="Documentation/git-diff.txt-git-diff-index--cachedtree-ish" class="anchor" href="#Documentation/git-diff.txt-git-diff-index--cachedtree-ish"></a>git-diff-index --cached <span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span> </dt>
 <dd>
-<p>compares the &lt;tree-ish&gt; and the index.</p>
+<p>compares the <span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span> and the index.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-diff.txt-git-diff-tree-rlttree-ish-1gtlttree-ish-2gtltpatterngt82308203"><a id="Documentation/git-diff.txt-git-diff-tree-rtree-ish-1tree-ish-2pattern" class="anchor" href="#Documentation/git-diff.txt-git-diff-tree-rtree-ish-1tree-ish-2pattern"></a>git-diff-tree [-r] &lt;tree-ish-1&gt; &lt;tree-ish-2&gt; [&lt;pattern&gt;&#8230;&#8203;] </dt>
 <dd>
@@ -1021,7 +1021,7 @@ rename from &lt;path&gt;
 rename to &lt;path&gt;
 similarity index &lt;number&gt;
 dissimilarity index &lt;number&gt;
-index &lt;hash&gt;..&lt;hash&gt; &lt;mode&gt;</pre>
+index <span class="hover-term" data-term="hash">&lt;hash&gt;</span>..<span class="hover-term" data-term="hash">&lt;hash&gt;</span> &lt;mode&gt;</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1140,7 +1140,7 @@ this (when <em>-c</em> option is used):</p>
 (this example shows a merge with two parents):</p>
 <div class="literalblock">
 <div class="content">
-<pre>index &lt;hash&gt;,&lt;hash&gt;..&lt;hash&gt;
+<pre>index <span class="hover-term" data-term="hash">&lt;hash&gt;</span>,<span class="hover-term" data-term="hash">&lt;hash&gt;</span>..<span class="hover-term" data-term="hash">&lt;hash&gt;</span>
 mode &lt;mode&gt;,&lt;mode&gt;..&lt;mode&gt;
 new file mode &lt;mode&gt;
 deleted file mode &lt;mode&gt;,&lt;mode&gt;</pre>
@@ -1151,7 +1151,7 @@ deleted file mode &lt;mode&gt;,&lt;mode&gt;</pre>
 the &lt;mode&gt; is different from the rest. Extended headers with
 information about detected contents movement (renames and
 copying detection) are designed to work with diff of two
-&lt;tree-ish&gt; and are not used by combined diff format.</p>
+<span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span> and are not used by combined diff format.</p>
 </div>
 </li>
 <li>

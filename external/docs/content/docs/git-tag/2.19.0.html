@@ -43,12 +43,12 @@ aliases:
 <div class="sectionbody">
 <div class="verseblock">
 <pre class="content"><em>git tag</em> [-a | -s | -u &lt;keyid&gt;] [-f] [-m &lt;msg&gt; | -F &lt;file&gt;] [-e]
-	&lt;tagname&gt; [&lt;commit&gt; | &lt;object&gt;]
+	&lt;tagname&gt; [<span class="hover-term" data-term="commit">&lt;commit&gt;</span> | <span class="hover-term" data-term="object">&lt;object&gt;</span>]
 <em>git tag</em> -d &lt;tagname&gt;&#8230;&#8203;
-<em>git tag</em> [-n[&lt;num&gt;]] -l [--contains &lt;commit&gt;] [--no-contains &lt;commit&gt;]
-	[--points-at &lt;object&gt;] [--column[=&lt;options&gt;] | --no-column]
+<em>git tag</em> [-n[&lt;num&gt;]] -l [--contains <span class="hover-term" data-term="commit">&lt;commit&gt;</span>] [--no-contains <span class="hover-term" data-term="commit">&lt;commit&gt;</span>]
+	[--points-at <span class="hover-term" data-term="object">&lt;object&gt;</span>] [--column[=&lt;options&gt;] | --no-column]
 	[--create-reflog] [--sort=&lt;key&gt;] [--format=&lt;format&gt;]
-	[--[no-]merged [&lt;commit&gt;]] [&lt;pattern&gt;&#8230;&#8203;]
+	[--[no-]merged [<span class="hover-term" data-term="commit">&lt;commit&gt;</span>]] [&lt;pattern&gt;&#8230;&#8203;]
 <em>git tag</em> -v [--format=&lt;format&gt;] &lt;tagname&gt;&#8230;&#8203;</pre>
 </div>
 </div>
@@ -197,27 +197,27 @@ without options are equivalent to <em>always</em> and <em>never</em> respectivel
 <p>This option is only applicable when listing tags without annotation lines.</p>
 </div>
 </dd>
-<dt class="hdlist1" id="Documentation/git-tag.txt---containsltcommitgt"><a id="Documentation/git-tag.txt---containscommit" class="anchor" href="#Documentation/git-tag.txt---containscommit"></a>--contains [&lt;commit&gt;] </dt>
+<dt class="hdlist1" id="Documentation/git-tag.txt---containsltcommitgt"><a id="Documentation/git-tag.txt---containscommit" class="anchor" href="#Documentation/git-tag.txt---containscommit"></a>--contains [<span class="hover-term" data-term="commit">&lt;commit&gt;</span>] </dt>
 <dd>
 <p>Only list tags which contain the specified commit (HEAD if not
 specified). Implies <span class='synopsis'><code>--list</code></span>.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-tag.txt---no-containsltcommitgt"><a id="Documentation/git-tag.txt---no-containscommit" class="anchor" href="#Documentation/git-tag.txt---no-containscommit"></a>--no-contains [&lt;commit&gt;] </dt>
+<dt class="hdlist1" id="Documentation/git-tag.txt---no-containsltcommitgt"><a id="Documentation/git-tag.txt---no-containscommit" class="anchor" href="#Documentation/git-tag.txt---no-containscommit"></a>--no-contains [<span class="hover-term" data-term="commit">&lt;commit&gt;</span>] </dt>
 <dd>
 <p>Only list tags which don&#8217;t contain the specified commit (HEAD if
 not specified). Implies <span class='synopsis'><code>--list</code></span>.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-tag.txt---mergedltcommitgt"><a id="Documentation/git-tag.txt---mergedcommit" class="anchor" href="#Documentation/git-tag.txt---mergedcommit"></a>--merged [&lt;commit&gt;] </dt>
+<dt class="hdlist1" id="Documentation/git-tag.txt---mergedltcommitgt"><a id="Documentation/git-tag.txt---mergedcommit" class="anchor" href="#Documentation/git-tag.txt---mergedcommit"></a>--merged [<span class="hover-term" data-term="commit">&lt;commit&gt;</span>] </dt>
 <dd>
 <p>Only list tags whose commits are reachable from the specified
 commit (<span class='synopsis'><code>HEAD</code></span> if not specified), incompatible with <span class='synopsis'><code>--no-merged</code></span>.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-tag.txt---no-mergedltcommitgt"><a id="Documentation/git-tag.txt---no-mergedcommit" class="anchor" href="#Documentation/git-tag.txt---no-mergedcommit"></a>--no-merged [&lt;commit&gt;] </dt>
+<dt class="hdlist1" id="Documentation/git-tag.txt---no-mergedltcommitgt"><a id="Documentation/git-tag.txt---no-mergedcommit" class="anchor" href="#Documentation/git-tag.txt---no-mergedcommit"></a>--no-merged [<span class="hover-term" data-term="commit">&lt;commit&gt;</span>] </dt>
 <dd>
 <p>Only list tags whose commits are not reachable from the specified
 commit (<span class='synopsis'><code>HEAD</code></span> if not specified), incompatible with <span class='synopsis'><code>--merged</code></span>.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-tag.txt---points-atltobjectgt"><a id="Documentation/git-tag.txt---points-atobject" class="anchor" href="#Documentation/git-tag.txt---points-atobject"></a>--points-at &lt;object&gt; </dt>
+<dt class="hdlist1" id="Documentation/git-tag.txt---points-atltobjectgt"><a id="Documentation/git-tag.txt---points-atobject" class="anchor" href="#Documentation/git-tag.txt---points-atobject"></a>--points-at <span class="hover-term" data-term="object">&lt;object&gt;</span> </dt>
 <dd>
 <p>Only list tags of the given object (HEAD if not
 specified). Implies <span class='synopsis'><code>--list</code></span>.</p>
@@ -269,8 +269,8 @@ The new tag name must pass all checks defined by
 <a href='{{< relurl "docs/git-check-ref-format" >}}'>git-check-ref-format[1]</a>.  Some of these checks
 may restrict the characters allowed in a tag name.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-tag.txt-ltcommitgt"><a id="Documentation/git-tag.txt-commit" class="anchor" href="#Documentation/git-tag.txt-commit"></a>&lt;commit&gt; </dt>
-<dt class="hdlist1" id="Documentation/git-tag.txt-ltobjectgt"><a id="Documentation/git-tag.txt-object" class="anchor" href="#Documentation/git-tag.txt-object"></a>&lt;object&gt; </dt>
+<dt class="hdlist1" id="Documentation/git-tag.txt-ltcommitgt"><a id="Documentation/git-tag.txt-commit" class="anchor" href="#Documentation/git-tag.txt-commit"></a><span class="hover-term" data-term="commit">&lt;commit&gt;</span> </dt>
+<dt class="hdlist1" id="Documentation/git-tag.txt-ltobjectgt"><a id="Documentation/git-tag.txt-object" class="anchor" href="#Documentation/git-tag.txt-object"></a><span class="hover-term" data-term="object">&lt;object&gt;</span> </dt>
 <dd>
 <p>The object that the new tag will refer to, usually a commit.
 Defaults to HEAD.</p>

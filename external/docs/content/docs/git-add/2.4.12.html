@@ -48,7 +48,7 @@ aliases:
 <pre class="content"><em>git add</em> [--verbose | -v] [--dry-run | -n] [--force | -f] [--interactive | -i] [--patch | -p]
 	  [--edit | -e] [--[no-]all | --[no-]ignore-removal | [--update | -u]]
 	  [--intent-to-add | -N] [--refresh] [--ignore-errors] [--ignore-missing]
-	  [--] [&lt;pathspec&gt;&#8230;&#8203;]</pre>
+	  [--] [<span class="hover-term" data-term="pathspec">&lt;pathspec&gt;</span>&#8230;&#8203;]</pre>
 </div>
 </div>
 </div>
@@ -99,7 +99,7 @@ commit.</p>
 <div class="sectionbody">
 <div class="dlist">
 <dl>
-<dt class="hdlist1" id="Documentation/git-add.txt-ltpathspecgt82308203"><a id="Documentation/git-add.txt-pathspec" class="anchor" href="#Documentation/git-add.txt-pathspec"></a>&lt;pathspec&gt;&#8230;&#8203; </dt>
+<dt class="hdlist1" id="Documentation/git-add.txt-ltpathspecgt82308203"><a id="Documentation/git-add.txt-pathspec" class="anchor" href="#Documentation/git-add.txt-pathspec"></a><span class="hover-term" data-term="pathspec">&lt;pathspec&gt;</span>&#8230;&#8203; </dt>
 <dd>
 <p>Files to add content from.  Fileglobs (e.g. <span class='synopsis'><code>*.c</code></span>) can
 be given to add all matching files.  Also a
@@ -168,10 +168,10 @@ apply to the index. See EDITING PATCHES below.</p>
 <dt class="hdlist1" id="Documentation/git-add.txt---update"><a class="anchor" href="#Documentation/git-add.txt---update"></a>--update </dt>
 <dd>
 <p>Update the index just where it already has an entry matching
-&lt;pathspec&gt;.  This removes as well as modifies index entries to
+<span class="hover-term" data-term="pathspec">&lt;pathspec&gt;</span>.  This removes as well as modifies index entries to
 match the working tree, but adds no new files.</p>
 <div class="paragraph">
-<p>If no &lt;pathspec&gt; is given when <span class='synopsis'><code>-u</code></span> option is used, all
+<p>If no <span class="hover-term" data-term="pathspec">&lt;pathspec&gt;</span> is given when <span class='synopsis'><code>-u</code></span> option is used, all
 tracked files in the entire working tree are updated (old versions
 of Git used to limit the update to the current directory and its
 subdirectories).</p>
@@ -182,11 +182,11 @@ subdirectories).</p>
 <dt class="hdlist1" id="Documentation/git-add.txt---no-ignore-removal"><a class="anchor" href="#Documentation/git-add.txt---no-ignore-removal"></a>--no-ignore-removal </dt>
 <dd>
 <p>Update the index not only where the working tree has a file
-matching &lt;pathspec&gt; but also where the index already has an
+matching <span class="hover-term" data-term="pathspec">&lt;pathspec&gt;</span> but also where the index already has an
 entry.	This adds, modifies, and removes index entries to
 match the working tree.</p>
 <div class="paragraph">
-<p>If no &lt;pathspec&gt; is given when <span class='synopsis'><code>-A</code></span> option is used, all
+<p>If no <span class="hover-term" data-term="pathspec">&lt;pathspec&gt;</span> is given when <span class='synopsis'><code>-A</code></span> option is used, all
 files in the entire working tree are updated (old versions
 of Git used to limit the update to the current directory and its
 subdirectories).</p>
@@ -198,11 +198,11 @@ subdirectories).</p>
 <p>Update the index by adding new files that are unknown to the
 index and files modified in the working tree, but ignore
 files that have been removed from the working tree.  This
-option is a no-op when no &lt;pathspec&gt; is used.</p>
+option is a no-op when no <span class="hover-term" data-term="pathspec">&lt;pathspec&gt;</span> is used.</p>
 <div class="paragraph">
 <p>This option is primarily to help users who are used to older
-versions of Git, whose "git add &lt;pathspec&gt;&#8230;&#8203;" was a synonym
-for "git add --no-all &lt;pathspec&gt;&#8230;&#8203;", i.e. ignored removed files.</p>
+versions of Git, whose "git add <span class="hover-term" data-term="pathspec">&lt;pathspec&gt;</span>&#8230;&#8203;" was a synonym
+for "git add --no-all <span class="hover-term" data-term="pathspec">&lt;pathspec&gt;</span>&#8230;&#8203;", i.e. ignored removed files.</p>
 </div>
 </dd>
 <dt class="hdlist1" id="Documentation/git-add.txt--N"><a class="anchor" href="#Documentation/git-add.txt--N"></a>-N </dt>

@@ -96,7 +96,7 @@ headings:
 <dd>
 <p>When generating cruft packs without pruning, only repack existing cruft packs whose size is strictly less than <span class='synopsis'><em>&lt;n&gt;</em></span>, where <span class='synopsis'><em>&lt;n&gt;</em></span> represents a number of bytes, which can optionally be suffixed with "k", "m", or "g". Cruft packs whose size is greater than or equal to <span class='synopsis'><em>&lt;n&gt;</em></span> are left as-is and not repacked. Useful when you want to avoid repacking large cruft pack(s) in repositories that have many and/or large unreachable objects.</p>
 </dd>
-<dt class="hdlist1" id="git-repack---expire-toltgt"> <a class="anchor" href="#git-repack---expire-to"></a> <a class="anchor" href="#git-repack---expire-toltgt"></a>--expire-to=&lt;目录&gt; </dt>
+<dt class="hdlist1" id="git-repack---expire-toltgt"> <a class="anchor" href="#git-repack---expire-to"></a> <a class="anchor" href="#git-repack---expire-toltgt"></a>--expire-to=<span class="hover-term" data-term="目录">&lt;目录&gt;</span> </dt>
 <dd>
 <p>将包含修剪对象（如果有）的压缩包写入目录 <span class='synopsis'><em>&lt;路径&gt;</em></span>。该选项可用于在单独的目录中保留剪枝对象的副本作为备份。仅在使用 <span class='synopsis'><code>--cruft</code> <code>-d</code></span> 时有用。</p>
 </dd>
@@ -145,9 +145,9 @@ headings:
 <dd>
 <p>从生成的包文件中移除符合过滤规范的对象，并将其放入一个单独的包文件中。请注意，工作目录中使用的对象不会被过滤掉。因此，要使拆分完全有效，最好在裸 仓库中执行拆分，并将 <span class='synopsis'><code>-a</code></span> 和 <span class='synopsis'><code>-d</code></span> 选项与此选项一起使用。 此外，还应使用 <span class='synopsis'><code>--no-write-bitmap-index</code></span>（或将 <span class='synopsis'><code>repack.writebitmaps</code></span> 配置选项设为 <span class='synopsis'><code>false</code></span>），否则写入位图索引会失败，因为它假定只有一个包文件包含所有对象。有关有效的 <span class='synopsis'><em>&lt;filter-spec&gt;</em></span> 形式，请参见 <a href='{{< relurl "docs/git-rev-list/zh_HANS-CN" >}}'>git-rev-list[1]</a>。</p>
 </dd>
-<dt class="hdlist1" id="git-repack---filter-toltgt"> <a class="anchor" href="#git-repack---filter-to"></a> <a class="anchor" href="#git-repack---filter-toltgt"></a>--filter-to=&lt;目录&gt; </dt>
+<dt class="hdlist1" id="git-repack---filter-toltgt"> <a class="anchor" href="#git-repack---filter-to"></a> <a class="anchor" href="#git-repack---filter-toltgt"></a>--filter-to=<span class="hover-term" data-term="目录">&lt;目录&gt;</span> </dt>
 <dd>
-<p>将包含筛选出的对象的数据包写入目录 <span class='synopsis'><em>&lt;目录&gt;</em></span>。仅在使用 <span class='synopsis'><code>--filter</code></span> 时有用。这可用于将数据包放在通过 Git 替代机制访问的单独对象目录中。<strong>警告：</strong> 如果包含过滤掉的对象的包文件无法访问，则 repo 可能会损坏，因为可能无法访问该包文件的对象。请参阅 <a href='{{< relurl "docs/gitrepository-layout/zh_HANS-CN" >}}'>gitrepository-layout[5]</a> 的 <span class='synopsis'><code>objects</code></span> 和 <span class='synopsis'><code>objects/info/alternates</code></span> 部分。</p>
+<p>将包含筛选出的对象的数据包写入目录 <span class='synopsis'><em><span class="hover-term" data-term="目录">&lt;目录&gt;</span></em></span>。仅在使用 <span class='synopsis'><code>--filter</code></span> 时有用。这可用于将数据包放在通过 Git 替代机制访问的单独对象目录中。<strong>警告：</strong> 如果包含过滤掉的对象的包文件无法访问，则 repo 可能会损坏，因为可能无法访问该包文件的对象。请参阅 <a href='{{< relurl "docs/gitrepository-layout/zh_HANS-CN" >}}'>gitrepository-layout[5]</a> 的 <span class='synopsis'><code>objects</code></span> 和 <span class='synopsis'><code>objects/info/alternates</code></span> 部分。</p>
 </dd>
 <dt class="hdlist1" id="git-repack--b"> <a class="anchor" href="#git-repack--b"></a>-b </dt>
 <dt class="hdlist1" id="git-repack---write-bitmap-index"> <a class="anchor" href="#git-repack---write-bitmap-index"></a>--write-bitmap-index </dt>

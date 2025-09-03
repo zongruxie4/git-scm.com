@@ -48,9 +48,9 @@ aliases:
 <div class="verseblock">
 <pre class="content"><em>git for-each-ref</em> [--count=&lt;count&gt;] [--shell|--perl|--python|--tcl]
 		   [(--sort=&lt;key&gt;)&#8230;&#8203;] [--format=&lt;format&gt;] [&lt;pattern&gt;&#8230;&#8203;]
-		   [--points-at=&lt;object&gt;]
-		   (--merged[=&lt;object&gt;] | --no-merged[=&lt;object&gt;])
-		   [--contains[=&lt;object&gt;]] [--no-contains[=&lt;object&gt;]]</pre>
+		   [--points-at=<span class="hover-term" data-term="object">&lt;object&gt;</span>]
+		   (--merged[=<span class="hover-term" data-term="object">&lt;object&gt;</span>] | --no-merged[=<span class="hover-term" data-term="object">&lt;object&gt;</span>])
+		   [--contains[=<span class="hover-term" data-term="object">&lt;object&gt;</span>]] [--no-contains[=<span class="hover-term" data-term="object">&lt;object&gt;</span>]]</pre>
 </div>
 </div>
 </div>
@@ -127,28 +127,28 @@ placeholders are quoted as string literals suitable for
 the specified host language.  This is meant to produce
 a scriptlet that can directly be `eval`ed.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-for-each-ref.txt---points-atltobjectgt"><a id="Documentation/git-for-each-ref.txt---points-atobject" class="anchor" href="#Documentation/git-for-each-ref.txt---points-atobject"></a>--points-at=&lt;object&gt; </dt>
+<dt class="hdlist1" id="Documentation/git-for-each-ref.txt---points-atltobjectgt"><a id="Documentation/git-for-each-ref.txt---points-atobject" class="anchor" href="#Documentation/git-for-each-ref.txt---points-atobject"></a>--points-at=<span class="hover-term" data-term="object">&lt;object&gt;</span> </dt>
 <dd>
 <p>Only list refs which points at the given object.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-for-each-ref.txt---mergedltobjectgt"><a id="Documentation/git-for-each-ref.txt---mergedobject" class="anchor" href="#Documentation/git-for-each-ref.txt---mergedobject"></a>--merged[=&lt;object&gt;] </dt>
+<dt class="hdlist1" id="Documentation/git-for-each-ref.txt---mergedltobjectgt"><a id="Documentation/git-for-each-ref.txt---mergedobject" class="anchor" href="#Documentation/git-for-each-ref.txt---mergedobject"></a>--merged[=<span class="hover-term" data-term="object">&lt;object&gt;</span>] </dt>
 <dd>
 <p>Only list refs whose tips are reachable from the
 specified commit (HEAD if not specified),
 incompatible with <span class='synopsis'><code>--no-merged</code></span>.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-for-each-ref.txt---no-mergedltobjectgt"><a id="Documentation/git-for-each-ref.txt---no-mergedobject" class="anchor" href="#Documentation/git-for-each-ref.txt---no-mergedobject"></a>--no-merged[=&lt;object&gt;] </dt>
+<dt class="hdlist1" id="Documentation/git-for-each-ref.txt---no-mergedltobjectgt"><a id="Documentation/git-for-each-ref.txt---no-mergedobject" class="anchor" href="#Documentation/git-for-each-ref.txt---no-mergedobject"></a>--no-merged[=<span class="hover-term" data-term="object">&lt;object&gt;</span>] </dt>
 <dd>
 <p>Only list refs whose tips are not reachable from the
 specified commit (HEAD if not specified),
 incompatible with <span class='synopsis'><code>--merged</code></span>.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-for-each-ref.txt---containsltobjectgt"><a id="Documentation/git-for-each-ref.txt---containsobject" class="anchor" href="#Documentation/git-for-each-ref.txt---containsobject"></a>--contains[=&lt;object&gt;] </dt>
+<dt class="hdlist1" id="Documentation/git-for-each-ref.txt---containsltobjectgt"><a id="Documentation/git-for-each-ref.txt---containsobject" class="anchor" href="#Documentation/git-for-each-ref.txt---containsobject"></a>--contains[=<span class="hover-term" data-term="object">&lt;object&gt;</span>] </dt>
 <dd>
 <p>Only list refs which contain the specified commit (HEAD if not
 specified).</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-for-each-ref.txt---no-containsltobjectgt"><a id="Documentation/git-for-each-ref.txt---no-containsobject" class="anchor" href="#Documentation/git-for-each-ref.txt---no-containsobject"></a>--no-contains[=&lt;object&gt;] </dt>
+<dt class="hdlist1" id="Documentation/git-for-each-ref.txt---no-containsltobjectgt"><a id="Documentation/git-for-each-ref.txt---no-containsobject" class="anchor" href="#Documentation/git-for-each-ref.txt---no-containsobject"></a>--no-contains[=<span class="hover-term" data-term="object">&lt;object&gt;</span>] </dt>
 <dd>
 <p>Only list refs which don&#8217;t contain the specified commit (HEAD
 if not specified).</p>

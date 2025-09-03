@@ -60,8 +60,8 @@ headings:
 	   [-f &lt;file&gt;] [-e] &lt;motif&gt;
 	   [--and|--or|--not|(|)|-e &lt;motif&gt;&#8230;&#8203;]
 	   [--recurse-submodules] [--parent-basename &lt;nom-de-base&gt;]
-	   [ [--[no-]exclude-standard] [--cached | --untracked |--no-index] | &lt;arbre&gt;&#8230;&#8203;]
-	   [--] [&lt;spéc-de-chemin&gt;&#8230;&#8203;]</pre>
+	   [ [--[no-]exclude-standard] [--cached | --untracked |--no-index] | <span class="hover-term" data-term="arbre">&lt;arbre&gt;</span>&#8230;&#8203;]
+	   [--] [<span class="hover-term" data-term="spéc-de-chemin">&lt;spéc-de-chemin&gt;</span>&#8230;&#8203;]</pre>
 </div>
 </div>
 </div>
@@ -103,7 +103,7 @@ headings:
 </dd>
 <dt class="hdlist1" id="git-grep---recurse-submodules"> <a class="anchor" href="#git-grep---recurse-submodules"></a>--recurse-submodules </dt>
 <dd>
-<p>Rechercher récursivement dans chaque sous-module qui est actif et extrait dans l&#8217;arbre de travail. Lorsqu&#8217;il est utilisé en combinaison avec l&#8217;option <em>&lt;arbre&gt;</em>, le préfixe de toutes les sorties de sous-modules sera le nom de l&#8217;objet <em>&lt;arbre&gt;</em> du projet parent. Cette option ne peut pas être utilisée avec <span class='synopsis'><code>--untracked</code></span> et n&#8217;a aucun effet si <span class='synopsis'><code>--no-index</code></span> est donné.</p>
+<p>Rechercher récursivement dans chaque sous-module qui est actif et extrait dans l&#8217;arbre de travail. Lorsqu&#8217;il est utilisé en combinaison avec l&#8217;option <em><span class="hover-term" data-term="arbre">&lt;arbre&gt;</span></em>, le préfixe de toutes les sorties de sous-modules sera le nom de l&#8217;objet <em><span class="hover-term" data-term="arbre">&lt;arbre&gt;</span></em> du projet parent. Cette option ne peut pas être utilisée avec <span class='synopsis'><code>--untracked</code></span> et n&#8217;a aucun effet si <span class='synopsis'><code>--no-index</code></span> est donné.</p>
 </dd>
 <dt class="hdlist1" id="git-grep--a"> <a class="anchor" href="#git-grep--a"></a>-a </dt>
 <dt class="hdlist1" id="git-grep---text"> <a class="anchor" href="#git-grep---text"></a>--text </dt>
@@ -129,7 +129,7 @@ headings:
 </dd>
 <dt class="hdlist1" id="git-grep---max-depthltprofondeurgt"> <a class="anchor" href="#git-grep---max-depthprofondeur"></a> <a class="anchor" href="#git-grep---max-depthltprofondeurgt"></a>--max-depth &lt;profondeur&gt; </dt>
 <dd>
-<p>Pour chaque &lt;spéc-de-chemin&gt; donné sur la ligne de commande, descend au maximum &lt;profondeur&gt; niveaux de répertoires. Une valeur de -1 signifie qu&#8217;il n&#8217;y a pas de limite. Cette option est ignorée si &lt;spéc-de-chemin&gt; contient des caractères génériques actifs. En d&#8217;autres termes, si "a*" correspond à un répertoire nommé "a*", "*" correspond littéralement, donc --max-depth est toujours efficace.</p>
+<p>Pour chaque <span class="hover-term" data-term="spéc-de-chemin">&lt;spéc-de-chemin&gt;</span> donné sur la ligne de commande, descend au maximum &lt;profondeur&gt; niveaux de répertoires. Une valeur de -1 signifie qu&#8217;il n&#8217;y a pas de limite. Cette option est ignorée si <span class="hover-term" data-term="spéc-de-chemin">&lt;spéc-de-chemin&gt;</span> contient des caractères génériques actifs. En d&#8217;autres termes, si "a*" correspond à un répertoire nommé "a*", "*" correspond littéralement, donc --max-depth est toujours efficace.</p>
 </dd>
 <dt class="hdlist1" id="git-grep--r"> <a class="anchor" href="#git-grep--r"></a>-r </dt>
 <dt class="hdlist1" id="git-grep---recursive"> <a class="anchor" href="#git-grep---recursive"></a>--recursive </dt>
@@ -303,13 +303,13 @@ headings:
 <dd>
 <p>Ne pas afficher les lignes correspondantes ; à la place, sortir avec le statut 0 quand il y a une correspondance et avec un statut non nul quand il n&#8217;y en a pas.</p>
 </dd>
-<dt class="hdlist1" id="git-grep-ltarbregt82308203"> <a class="anchor" href="#git-grep-arbre"></a> <a class="anchor" href="#git-grep-ltarbregt82308203"></a>&lt;arbre&gt;&#8230;&#8203; </dt>
+<dt class="hdlist1" id="git-grep-ltarbregt82308203"> <a class="anchor" href="#git-grep-arbre"></a> <a class="anchor" href="#git-grep-ltarbregt82308203"></a><span class="hover-term" data-term="arbre">&lt;arbre&gt;</span>&#8230;&#8203; </dt>
 <dd>
 <p>Au lieu de rechercher les fichiers suivis dans l&#8217;arbre de travail, rechercher les blobs enregistrés dans les arbres fournis.</p>
 </dd>
 <dt class="hdlist1" id="git-grep---"> <a class="anchor" href="#git-grep---"></a>-- </dt>
 <dd>
-<p>Signale la fin des options ; le reste des paramètres sont des limiteurs &lt;spéc-de-chemin&gt;.</p>
+<p>Signale la fin des options ; le reste des paramètres sont des limiteurs <span class="hover-term" data-term="spéc-de-chemin">&lt;spéc-de-chemin&gt;</span>.</p>
 </dd>
 <dt class="hdlist1" id="git-grep-ltspcificateurdechemingt82308203"> <a class="anchor" href="#git-grep-spcificateurdechemin"></a> <a class="anchor" href="#git-grep-ltspcificateurdechemingt82308203"></a>&lt;spécificateur de chemin&gt;&#8230;&#8203; </dt>
 <dd>

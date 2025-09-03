@@ -47,13 +47,13 @@ headings:
 <h2 id="_description"><a class="anchor" href="#_description"></a>DESCRIPTION</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Détermine s&#8217;il existe des commits dans <span class='synopsis'><em>&lt;tête&gt;</em><code>..</code><em>&lt;amont&gt;</em></span> qui sont équivalents à ceux de la plage <span class='synopsis'><em>&lt;limite&gt;</em><code>..</code><em>&lt;tête&gt;</em></span>.</p>
+<p>Détermine s&#8217;il existe des commits dans <span class='synopsis'><em><span class="hover-term" data-term="tête">&lt;tête&gt;</span></em><code>..</code><em>&lt;amont&gt;</em></span> qui sont équivalents à ceux de la plage <span class='synopsis'><em>&lt;limite&gt;</em><code>..</code><em><span class="hover-term" data-term="tête">&lt;tête&gt;</span></em></span>.</p>
 </div>
 <div class="paragraph">
 <p>Le test d&#8217;équivalence est basé sur le diff, après avoir supprimé les espaces et les numéros de ligne. git-cherry détecte donc quand les commits ont été « copiés » au moyen de <a href='{{< relurl "docs/git-cherry-pick/fr" >}}'>git-cherry-pick[1]</a>, <a href='{{< relurl "docs/git-am/fr" >}}'>git-am[1]</a> ou <a href='{{< relurl "docs/git-rebase/fr" >}}'>git-rebase[1]</a>.</p>
 </div>
 <div class="paragraph">
-<p>Sort le SHA1 de chaque commit dans <span class='synopsis'><em>&lt;limite&gt;</em><code>..</code><em>&lt;tête&gt;</em></span>, préfixé avec <span class='synopsis'><code>-</code></span> pour les commits qui ont un équivalent dans &lt;amont&gt;, et <span class='synopsis'><code>+</code></span> pour les commits qui n&#8217;en ont pas.</p>
+<p>Sort le SHA1 de chaque commit dans <span class='synopsis'><em>&lt;limite&gt;</em><code>..</code><em><span class="hover-term" data-term="tête">&lt;tête&gt;</span></em></span>, préfixé avec <span class='synopsis'><code>-</code></span> pour les commits qui ont un équivalent dans &lt;amont&gt;, et <span class='synopsis'><code>+</code></span> pour les commits qui n&#8217;en ont pas.</p>
 </div>
 </div>
 </div>
@@ -70,7 +70,7 @@ headings:
 <dd>
 <p>Branche amont pour rechercher des commits équivalents. La valeur par défaut est la branche amont de HEAD.</p>
 </dd>
-<dt class="hdlist1" id="git-cherry-ltttegt"> <a class="anchor" href="#git-cherry-tte"></a> <a class="anchor" href="#git-cherry-ltttegt"></a>&lt;tête&gt; </dt>
+<dt class="hdlist1" id="git-cherry-ltttegt"> <a class="anchor" href="#git-cherry-tte"></a> <a class="anchor" href="#git-cherry-ltttegt"></a><span class="hover-term" data-term="tête">&lt;tête&gt;</span> </dt>
 <dd>
 <p>Branche de travail ; la valeur par défaut est HEAD.</p>
 </dd>

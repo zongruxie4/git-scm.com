@@ -45,7 +45,7 @@ headings:
 <div class="verseblock">
 <pre class="content"><em>git checkout</em> [-q] [-f] [-m] [&lt;分支&gt;]
 <em>git checkout</em> [-q] [-f] [-m] --detach [&lt;分支&gt;]
-<em>git checkout</em> [-q] [-f] [-m] [--detach] &lt;提交&gt;
+<em>git checkout</em> [-q] [-f] [-m] [--detach] <span class="hover-term" data-term="提交">&lt;提交&gt;</span>
 <em>git checkout</em> [-q] [-f] [-m] [[-b|-B|--orphan] &lt;新分支&gt;] [&lt;起始点&gt;]
 <em>git checkout</em> [-f] &lt;目录树对象&gt; [--] &lt;路径规范&gt;&#8230;&#8203;
 <em>git checkout</em> [-f] &lt;目录树对象&gt; --pathspec-from-file=&lt;文件&gt; [--pathspec-file-nul]
@@ -95,11 +95,11 @@ $ git checkout &lt;分支&gt;</pre>
 </div>
 </dd>
 <dt class="hdlist1" id="git-checkout-emgitcheckoutem--detachltgt"> <a class="anchor" href="#git-checkout-gitcheckout--detach"></a> <a class="anchor" href="#git-checkout-emgitcheckoutem--detachltgt"></a><em>git checkout</em> --detach [&lt;分支&gt;] </dt>
-<dt class="hdlist1" id="git-checkout-emgitcheckoutem--detachltgt-1"> <a class="anchor" href="#git-checkout-gitcheckout--detach-1"></a> <a class="anchor" href="#git-checkout-emgitcheckoutem--detachltgt-1"></a><em>git checkout</em> [--detach] &lt;提交&gt; </dt>
+<dt class="hdlist1" id="git-checkout-emgitcheckoutem--detachltgt-1"> <a class="anchor" href="#git-checkout-gitcheckout--detach-1"></a> <a class="anchor" href="#git-checkout-emgitcheckoutem--detachltgt-1"></a><em>git checkout</em> [--detach] <span class="hover-term" data-term="提交">&lt;提交&gt;</span> </dt>
 <dd>
-<p>准备在 <span class='synopsis'><em>&lt;提交&gt;</em></span> 上工作，通过分离 <span class='synopsis'><code>HEAD</code></span> 来实现（参见 "DETACHED HEAD" 部分），并更新工作区中的索引和文件。 对工作区中的文件的本地修改会被保留，所以最终的工作区将是提交时记录的状态加上本地的修改。</p>
+<p>准备在 <span class='synopsis'><em><span class="hover-term" data-term="提交">&lt;提交&gt;</span></em></span> 上工作，通过分离 <span class='synopsis'><code>HEAD</code></span> 来实现（参见 "DETACHED HEAD" 部分），并更新工作区中的索引和文件。 对工作区中的文件的本地修改会被保留，所以最终的工作区将是提交时记录的状态加上本地的修改。</p>
 <div class="paragraph">
-<p>当 <span class='synopsis'><em>&lt;提交&gt;</em></span> 参数是一个分支名称时， <span class='synopsis'><code>--detach</code></span> 选项可以用来分离分支顶端的 <span class='synopsis'><code>HEAD</code></span> （<span class='synopsis'><code>git</code> <code>checkout</code> <em>&lt;分支&gt;</em></span> 会签出该分支而不分离 <span class='synopsis'><code>HEAD</code></span>）。</p>
+<p>当 <span class='synopsis'><em><span class="hover-term" data-term="提交">&lt;提交&gt;</span></em></span> 参数是一个分支名称时， <span class='synopsis'><code>--detach</code></span> 选项可以用来分离分支顶端的 <span class='synopsis'><code>HEAD</code></span> （<span class='synopsis'><code>git</code> <code>checkout</code> <em>&lt;分支&gt;</em></span> 会签出该分支而不分离 <span class='synopsis'><code>HEAD</code></span>）。</p>
 </div>
 <div class="paragraph">
 <p>省略 <span class='synopsis'><em>&lt;分支&gt;</em></span> 会在当前分支的顶端分离 <span class='synopsis'><code>HEAD</code></span>。</p>
@@ -201,7 +201,7 @@ $ git checkout &lt;分支&gt;</pre>
 <dt class="hdlist1" id="git-checkout--d"> <a class="anchor" href="#git-checkout--d"></a>-d </dt>
 <dt class="hdlist1" id="git-checkout---detach"> <a class="anchor" href="#git-checkout---detach"></a>--detach </dt>
 <dd>
-<p>与其签出一个分支来工作，不如签出一个提交来进行检查和可放弃的实验。当 <span class='synopsis'><em>&lt;提交&gt;</em></span> 不是一个分支名时， 这是 <span class='synopsis'><code>git</code> <code>checkout</code> <em>&lt;提交&gt;</em></span> 的默认行为，。 详见下面的 "游离状态（DETACHED HEAD）"部分。</p>
+<p>与其签出一个分支来工作，不如签出一个提交来进行检查和可放弃的实验。当 <span class='synopsis'><em><span class="hover-term" data-term="提交">&lt;提交&gt;</span></em></span> 不是一个分支名时， 这是 <span class='synopsis'><code>git</code> <code>checkout</code> <em><span class="hover-term" data-term="提交">&lt;提交&gt;</span></em></span> 的默认行为，。 详见下面的 "游离状态（DETACHED HEAD）"部分。</p>
 </dd>
 <dt class="hdlist1" id="git-checkout---orphanltgt"> <a class="anchor" href="#git-checkout---orphan"></a> <a class="anchor" href="#git-checkout---orphanltgt"></a>--orphan &lt;新分支&gt; </dt>
 <dd>

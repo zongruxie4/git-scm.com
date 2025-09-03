@@ -50,7 +50,7 @@ aliases:
 <div class="sectionbody">
 <div class="dlist">
 <dl>
-<dt class="hdlist1" id="Documentation/pull-fetch-param.txt-ltrepositorygt"><a id="Documentation/pull-fetch-param.txt-repository" class="anchor" href="#Documentation/pull-fetch-param.txt-repository"></a>&lt;repository&gt; </dt>
+<dt class="hdlist1" id="Documentation/pull-fetch-param.txt-ltrepositorygt"><a id="Documentation/pull-fetch-param.txt-repository" class="anchor" href="#Documentation/pull-fetch-param.txt-repository"></a><span class="hover-term" data-term="repository">&lt;repository&gt;</span> </dt>
 <dd>
 <p>The "remote" repository that is the source of a fetch
 or pull operation.  This parameter can be either a URL
@@ -63,14 +63,14 @@ of a remote (see the section <a href="#REMOTES">REMOTES</a> below).</p>
 of remotes.&lt;group&gt; in the configuration file.
 (See <a href='{{< relurl "docs/git-config" >}}'>git-config[1]</a>).</p>
 </dd>
-<dt class="hdlist1" id="Documentation/pull-fetch-param.txt-ltrefspecgt"><a id="Documentation/pull-fetch-param.txt-refspec" class="anchor" href="#Documentation/pull-fetch-param.txt-refspec"></a>&lt;refspec&gt; </dt>
+<dt class="hdlist1" id="Documentation/pull-fetch-param.txt-ltrefspecgt"><a id="Documentation/pull-fetch-param.txt-refspec" class="anchor" href="#Documentation/pull-fetch-param.txt-refspec"></a><span class="hover-term" data-term="refspec">&lt;refspec&gt;</span> </dt>
 <dd>
 <p>Specifies which refs to fetch and which local refs to update.
-When no &lt;refspec&gt;s appear on the command line, the refs to fetch
-are read from <span class='synopsis'><code>remote.</code><em>&lt;repository&gt;</em><code>.fetch</code></span> variables instead
+When no <span class="hover-term" data-term="refspec">&lt;refspec&gt;</span>s appear on the command line, the refs to fetch
+are read from <span class='synopsis'><code>remote.</code><em><span class="hover-term" data-term="repository">&lt;repository&gt;</span></em><code>.fetch</code></span> variables instead
 (see <a href="#CRTB">CONFIGURED REMOTE-TRACKING BRANCHES</a> below).</p>
 <div class="paragraph">
-<p>The format of a &lt;refspec&gt; parameter is an optional plus
+<p>The format of a <span class="hover-term" data-term="refspec">&lt;refspec&gt;</span> parameter is an optional plus
 <span class='synopsis'><code>+</code></span>, followed by the source &lt;src&gt;, followed
 by a colon <span class='synopsis'><code>:</code></span>, followed by the destination ref &lt;dst&gt;.
 The colon can be omitted when &lt;dst&gt; is empty.  &lt;src&gt; is
@@ -78,7 +78,7 @@ typically a ref, but it can also be a fully spelled hex object
 name.</p>
 </div>
 <div class="paragraph">
-<p><span class='synopsis'><code>tag</code> <em>&lt;tag&gt;</em></span> means the same as <span class='synopsis'><code>refs/tags/</code><em>&lt;tag&gt;</em><code>:refs/tags/</code><em>&lt;tag&gt;</em></span>;
+<p><span class='synopsis'><code>tag</code> <em><span class="hover-term" data-term="tag">&lt;tag&gt;</span></em></span> means the same as <span class='synopsis'><code>refs/tags/</code><em><span class="hover-term" data-term="tag">&lt;tag&gt;</span></em><code>:refs/tags/</code><em><span class="hover-term" data-term="tag">&lt;tag&gt;</span></em></span>;
 it requests fetching everything up to the given tag.</p>
 </div>
 <div class="paragraph">
@@ -90,7 +90,7 @@ is made to update the local ref that matches it.</p>
 <p>Whether that update is allowed without <span class='synopsis'><code>--force</code></span> depends on the ref
 namespace it&#8217;s being fetched to, the type of object being fetched, and
 whether the update is considered to be a fast-forward. Generally, the
-same rules apply for fetching as when pushing, see the <span class='synopsis'><em>&lt;refspec&gt;</em>...</span>
+same rules apply for fetching as when pushing, see the <span class='synopsis'><em><span class="hover-term" data-term="refspec">&lt;refspec&gt;</span></em>...</span>
 section of <a href='{{< relurl "docs/git-push" >}}'>git-push[1]</a> for what those are. Exceptions to those
 rules particular to <em>git fetch</em> are noted below.</p>
 </div>

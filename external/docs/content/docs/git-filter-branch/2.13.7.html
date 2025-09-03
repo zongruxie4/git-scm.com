@@ -42,9 +42,9 @@ aliases:
 <pre class="content"><em>git filter-branch</em> [--env-filter &lt;command&gt;] [--tree-filter &lt;command&gt;]
 	[--index-filter &lt;command&gt;] [--parent-filter &lt;command&gt;]
 	[--msg-filter &lt;command&gt;] [--commit-filter &lt;command&gt;]
-	[--tag-name-filter &lt;command&gt;] [--subdirectory-filter &lt;directory&gt;]
+	[--tag-name-filter &lt;command&gt;] [--subdirectory-filter <span class="hover-term" data-term="directory">&lt;directory&gt;</span>]
 	[--prune-empty]
-	[--original &lt;namespace&gt;] [-d &lt;directory&gt;] [-f | --force]
+	[--original &lt;namespace&gt;] [-d <span class="hover-term" data-term="directory">&lt;directory&gt;</span>] [-f | --force]
 	[--] [&lt;rev-list options&gt;&#8230;&#8203;]</pre>
 </div>
 </div>
@@ -218,7 +218,7 @@ author or timestamp (or the tag message for that matter). Tags which point
 to other tags will be rewritten to point to the underlying commit.</p>
 </div>
 </dd>
-<dt class="hdlist1" id="Documentation/git-filter-branch.txt---subdirectory-filterltdirectorygt"><a id="Documentation/git-filter-branch.txt---subdirectory-filterdirectory" class="anchor" href="#Documentation/git-filter-branch.txt---subdirectory-filterdirectory"></a>--subdirectory-filter &lt;directory&gt; </dt>
+<dt class="hdlist1" id="Documentation/git-filter-branch.txt---subdirectory-filterltdirectorygt"><a id="Documentation/git-filter-branch.txt---subdirectory-filterdirectory" class="anchor" href="#Documentation/git-filter-branch.txt---subdirectory-filterdirectory"></a>--subdirectory-filter <span class="hover-term" data-term="directory">&lt;directory&gt;</span> </dt>
 <dd>
 <p>Only look at the history which touches the given subdirectory.
 The result will contain that directory (and only that) as its
@@ -238,7 +238,7 @@ provided <span class='synopsis'><code>git_commit_non_empty_tree</code></span> fu
 <p>Use this option to set the namespace where the original commits
 will be stored. The default value is <em>refs/original</em>.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-filter-branch.txt--dltdirectorygt"><a id="Documentation/git-filter-branch.txt--ddirectory" class="anchor" href="#Documentation/git-filter-branch.txt--ddirectory"></a>-d &lt;directory&gt; </dt>
+<dt class="hdlist1" id="Documentation/git-filter-branch.txt--dltdirectorygt"><a id="Documentation/git-filter-branch.txt--ddirectory" class="anchor" href="#Documentation/git-filter-branch.txt--ddirectory"></a>-d <span class="hover-term" data-term="directory">&lt;directory&gt;</span> </dt>
 <dd>
 <p>Use this option to set the path to the temporary directory used for
 rewriting.  When applying a tree filter, the command needs to

@@ -52,7 +52,7 @@ each remote branch history.</p>
 <p>Deepen or shorten the history of a shallow repository to
 include all reachable commits after &lt;date&gt;.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/fetch-options.txt---shallow-excludeltrefgt"><a id="Documentation/fetch-options.txt---shallow-excluderef" class="anchor" href="#Documentation/fetch-options.txt---shallow-excluderef"></a>--shallow-exclude=&lt;ref&gt; </dt>
+<dt class="hdlist1" id="Documentation/fetch-options.txt---shallow-excludeltrefgt"><a id="Documentation/fetch-options.txt---shallow-excluderef" class="anchor" href="#Documentation/fetch-options.txt---shallow-excluderef"></a>--shallow-exclude=<span class="hover-term" data-term="ref">&lt;ref&gt;</span> </dt>
 <dd>
 <p>Deepen or shorten the history of a shallow repository to
 exclude commits reachable from a specified remote branch or tag.
@@ -136,7 +136,7 @@ file is never written.</p>
 <dd>
 <p>When <em>git fetch</em> is used with <span class='synopsis'><em>&lt;src&gt;</em><code>:</code><em>&lt;dst&gt;</em></span> refspec, it may
 refuse to update the local branch as discussed
-in the <span class='synopsis'><em>&lt;refspec&gt;</em></span> part below.
+in the <span class='synopsis'><em><span class="hover-term" data-term="refspec">&lt;refspec&gt;</span></em></span> part below.
 This option overrides that check.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/fetch-options.txt--k"><a class="anchor" href="#Documentation/fetch-options.txt--k"></a>-k </dt>
@@ -146,8 +146,8 @@ This option overrides that check.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/fetch-options.txt---multiple"><a class="anchor" href="#Documentation/fetch-options.txt---multiple"></a>--multiple </dt>
 <dd>
-<p>Allow several &lt;repository&gt; and &lt;group&gt; arguments to be
-specified. No &lt;refspec&gt;s may be specified.</p>
+<p>Allow several <span class="hover-term" data-term="repository">&lt;repository&gt;</span> and &lt;group&gt; arguments to be
+specified. No <span class="hover-term" data-term="refspec">&lt;refspec&gt;</span>s may be specified.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/fetch-options.txt---no-auto-maintenance"><a class="anchor" href="#Documentation/fetch-options.txt---no-auto-maintenance"></a>--[no-]auto-maintenance </dt>
 <dt class="hdlist1" id="Documentation/fetch-options.txt---no-auto-gc"><a class="anchor" href="#Documentation/fetch-options.txt---no-auto-gc"></a>--[no-]auto-gc </dt>
@@ -214,13 +214,13 @@ filter from configuration or using <span class='synopsis'><code>--filter=</code>
 definition has changed. Automatic post-fetch maintenance will perform
 object database pack consolidation to remove any duplicate objects.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/fetch-options.txt---refmapltrefspecgt"><a id="Documentation/fetch-options.txt---refmaprefspec" class="anchor" href="#Documentation/fetch-options.txt---refmaprefspec"></a>--refmap=&lt;refspec&gt; </dt>
+<dt class="hdlist1" id="Documentation/fetch-options.txt---refmapltrefspecgt"><a id="Documentation/fetch-options.txt---refmaprefspec" class="anchor" href="#Documentation/fetch-options.txt---refmaprefspec"></a>--refmap=<span class="hover-term" data-term="refspec">&lt;refspec&gt;</span> </dt>
 <dd>
 <p>When fetching refs listed on the command line, use the
 specified refspec (can be given more than once) to map the
 refs to remote-tracking branches, instead of the values of
 <span class='synopsis'><code>remote.*.fetch</code></span> configuration variables for the remote
-repository.  Providing an empty <span class='synopsis'><em>&lt;refspec&gt;</em></span> to the
+repository.  Providing an empty <span class='synopsis'><em><span class="hover-term" data-term="refspec">&lt;refspec&gt;</span></em></span> to the
 <span class='synopsis'><code>--refmap</code></span> option causes Git to ignore the configured
 refspecs and rely entirely on the refspecs supplied as
 command-line arguments. See section on "Configured Remote-tracking

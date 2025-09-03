@@ -77,7 +77,7 @@ headings:
 <dl>
 <dt class="hdlist1" id="git-pack-objects-"> <a class="anchor" href="#git-pack-objects-"></a>基础名 </dt>
 <dd>
-<p>写入成对的文件（.pack 和 .idx），使用 &lt;base-name&gt; 来确定创建的文件名。 当使用该选项时，一对中的两个文件被写入 &lt;base-name&gt;-&lt;SHA-1&gt;.{pack,idx} 文件。 &lt;SHA-1&gt; 是一个基于 pack 内容的哈希值，会写入命令的标准输出中。</p>
+<p>写入成对的文件（.pack 和 .idx），使用 &lt;base-name&gt; 来确定创建的文件名。 当使用该选项时，一对中的两个文件被写入 &lt;base-name&gt;-<span class="hover-term" data-term="SHA-1">&lt;SHA-1&gt;</span>.{pack,idx} 文件。 <span class="hover-term" data-term="SHA-1">&lt;SHA-1&gt;</span> 是一个基于 pack 内容的哈希值，会写入命令的标准输出中。</p>
 </dd>
 <dt class="hdlist1" id="git-pack-objects---stdout"> <a class="anchor" href="#git-pack-objects---stdout"></a>--stdout </dt>
 <dd>
@@ -85,7 +85,7 @@ headings:
 </dd>
 <dt class="hdlist1" id="git-pack-objects---revs"> <a class="anchor" href="#git-pack-objects---revs"></a>--revs </dt>
 <dd>
-<p>从标准输入读取修订参数，而不是单个对象名称。 修订版参数的处理方式与带有 <span class='synopsis'><code>--objects</code></span> 标志的 <em>git rev-list</em> 使用其 <span class='synopsis'><code>commit</code></span> 参数来建立其输出的对象列表相同。 结果列表上的对象被打包。 除了修订，还接受 <span class='synopsis'><code>--not</code></span> 或 <span class='synopsis'><code>--shallow</code> <em>&lt;SHA-1&gt;</em></span> 行。</p>
+<p>从标准输入读取修订参数，而不是单个对象名称。 修订版参数的处理方式与带有 <span class='synopsis'><code>--objects</code></span> 标志的 <em>git rev-list</em> 使用其 <span class='synopsis'><code>commit</code></span> 参数来建立其输出的对象列表相同。 结果列表上的对象被打包。 除了修订，还接受 <span class='synopsis'><code>--not</code></span> 或 <span class='synopsis'><code>--shallow</code> <em><span class="hover-term" data-term="SHA-1">&lt;SHA-1&gt;</span></em></span> 行。</p>
 </dd>
 <dt class="hdlist1" id="git-pack-objects---unpacked"> <a class="anchor" href="#git-pack-objects---unpacked"></a>--unpacked </dt>
 <dd>

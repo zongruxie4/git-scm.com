@@ -59,13 +59,13 @@ aliases:
 <h2 id="_synopsis"><a class="anchor" href="#_synopsis"></a>SYNOPSIS</h2>
 <div class="sectionbody">
 <div class="verseblock">
-<pre class="content"><em>git filter-branch</em> [--setup &lt;command&gt;] [--subdirectory-filter &lt;directory&gt;]
+<pre class="content"><em>git filter-branch</em> [--setup &lt;command&gt;] [--subdirectory-filter <span class="hover-term" data-term="directory">&lt;directory&gt;</span>]
 	[--env-filter &lt;command&gt;] [--tree-filter &lt;command&gt;]
 	[--index-filter &lt;command&gt;] [--parent-filter &lt;command&gt;]
 	[--msg-filter &lt;command&gt;] [--commit-filter &lt;command&gt;]
 	[--tag-name-filter &lt;command&gt;] [--prune-empty]
-	[--original &lt;namespace&gt;] [-d &lt;directory&gt;] [-f | --force]
-	[--state-branch &lt;branch&gt;] [--] [&lt;rev-list options&gt;&#8230;&#8203;]</pre>
+	[--original &lt;namespace&gt;] [-d <span class="hover-term" data-term="directory">&lt;directory&gt;</span>] [-f | --force]
+	[--state-branch <span class="hover-term" data-term="branch">&lt;branch&gt;</span>] [--] [&lt;rev-list options&gt;&#8230;&#8203;]</pre>
 </div>
 </div>
 </div>
@@ -172,7 +172,7 @@ variables are defined yet.  Functions or variables defined here
 can be used or modified in the following filter steps except
 the commit filter, for technical reasons.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-filter-branch.txt---subdirectory-filterltdirectorygt"><a id="Documentation/git-filter-branch.txt---subdirectory-filterdirectory" class="anchor" href="#Documentation/git-filter-branch.txt---subdirectory-filterdirectory"></a>--subdirectory-filter &lt;directory&gt; </dt>
+<dt class="hdlist1" id="Documentation/git-filter-branch.txt---subdirectory-filterltdirectorygt"><a id="Documentation/git-filter-branch.txt---subdirectory-filterdirectory" class="anchor" href="#Documentation/git-filter-branch.txt---subdirectory-filterdirectory"></a>--subdirectory-filter <span class="hover-term" data-term="directory">&lt;directory&gt;</span> </dt>
 <dd>
 <p>Only look at the history which touches the given subdirectory.
 The result will contain that directory (and only that) as its
@@ -283,7 +283,7 @@ provided <span class='synopsis'><code>git_commit_non_empty_tree</code></span> fu
 <p>Use this option to set the namespace where the original commits
 will be stored. The default value is <em>refs/original</em>.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-filter-branch.txt--dltdirectorygt"><a id="Documentation/git-filter-branch.txt--ddirectory" class="anchor" href="#Documentation/git-filter-branch.txt--ddirectory"></a>-d &lt;directory&gt; </dt>
+<dt class="hdlist1" id="Documentation/git-filter-branch.txt--dltdirectorygt"><a id="Documentation/git-filter-branch.txt--ddirectory" class="anchor" href="#Documentation/git-filter-branch.txt--ddirectory"></a>-d <span class="hover-term" data-term="directory">&lt;directory&gt;</span> </dt>
 <dd>
 <p>Use this option to set the path to the temporary directory used for
 rewriting.  When applying a tree filter, the command needs to
@@ -299,12 +299,12 @@ that choice by this parameter.</p>
 directory or when there are already refs starting with
 <em>refs/original/</em>, unless forced.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-filter-branch.txt---state-branchltbranchgt"><a id="Documentation/git-filter-branch.txt---state-branchbranch" class="anchor" href="#Documentation/git-filter-branch.txt---state-branchbranch"></a>--state-branch &lt;branch&gt; </dt>
+<dt class="hdlist1" id="Documentation/git-filter-branch.txt---state-branchltbranchgt"><a id="Documentation/git-filter-branch.txt---state-branchbranch" class="anchor" href="#Documentation/git-filter-branch.txt---state-branchbranch"></a>--state-branch <span class="hover-term" data-term="branch">&lt;branch&gt;</span> </dt>
 <dd>
 <p>This option will cause the mapping from old to new objects to
 be loaded from named branch upon startup and saved as a new
 commit to that branch upon exit, enabling incremental of large
-trees. If <em>&lt;branch&gt;</em> does not exist it will be created.</p>
+trees. If <em><span class="hover-term" data-term="branch">&lt;branch&gt;</span></em> does not exist it will be created.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-filter-branch.txt-ltrev-listoptionsgt82308203"><a id="Documentation/git-filter-branch.txt-rev-listoptions" class="anchor" href="#Documentation/git-filter-branch.txt-rev-listoptions"></a>&lt;rev-list options&gt;&#8230;&#8203; </dt>
 <dd>

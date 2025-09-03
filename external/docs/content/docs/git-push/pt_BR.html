@@ -50,7 +50,7 @@ headings:
 	   [-u | --set-upstream] [-o &lt;texto&gt; | --push-option=&lt;texto&gt;]
 	   [--[no-]signed|--signed=(true|false|if-asked)]
 	   [--force-with-lease[=&lt;refname&gt;[:&lt;expect&gt;]] [--force-if-includes]]
-	   [--no-verify] [&lt;repositório&gt; [&lt;refspec&gt;&#8230;&#8203;]]</pre>
+	   [--no-verify] [&lt;repositório&gt; [<span class="hover-term" data-term="refspec">&lt;refspec&gt;</span>&#8230;&#8203;]]</pre>
 </div>
 </div>
 </div>
@@ -67,7 +67,7 @@ headings:
 <p>Quando a linha de comando não especifica onde fazer o <em>push</em> com o argumento <span class='synopsis'><em>&lt;repositório&gt;</em></span>, a configuração <span class='synopsis'><code>branch.*.remote</code></span> da ramificação atual é consultada para determinar onde fazer o <em>push</em>. Se a configuração estiver ausente, a predefinição será <em>origin</em>.</p>
 </div>
 <div class="paragraph">
-<p>Quando a linha de comando não especifica o que impulsionar (push) com as opções <span class='synopsis'><em>&lt;refspec&gt;</em>...</span> ou com as opções <span class='synopsis'><code>--all</code></span>, <span class='synopsis'><code>--mirror</code></span>, <span class='synopsis'><code>--tags</code></span>, o comando encontra a predefinição <span class='synopsis'><em>&lt;refspec&gt;</em></span> consultando a configuração <span class='synopsis'><code>remote.*.push</code></span> e caso ainda não tenha sido encontrado, honra a configuração do <span class='synopsis'><code>push.default</code></span> para decidir o que enviar (para saber o significado de <span class='synopsis'><code>push.default</code></span> consulte<a href='{{< relurl "docs/git-config/pt_BR" >}}'>git-config[1]</a>.</p>
+<p>Quando a linha de comando não especifica o que impulsionar (push) com as opções <span class='synopsis'><em><span class="hover-term" data-term="refspec">&lt;refspec&gt;</span></em>...</span> ou com as opções <span class='synopsis'><code>--all</code></span>, <span class='synopsis'><code>--mirror</code></span>, <span class='synopsis'><code>--tags</code></span>, o comando encontra a predefinição <span class='synopsis'><em><span class="hover-term" data-term="refspec">&lt;refspec&gt;</span></em></span> consultando a configuração <span class='synopsis'><code>remote.*.push</code></span> e caso ainda não tenha sido encontrado, honra a configuração do <span class='synopsis'><code>push.default</code></span> para decidir o que enviar (para saber o significado de <span class='synopsis'><code>push.default</code></span> consulte<a href='{{< relurl "docs/git-config/pt_BR" >}}'>git-config[1]</a>.</p>
 </div>
 <div class="paragraph">
 <p>Quando nem a linha de comando nem a configuração informam o que enviar, o comportamento predefinido é utilizado, que corresponde ao valor <span class='synopsis'><code>simple</code></span> para <span class='synopsis'><code>push.default</code></span>: o ramo atual é enviado ao ramo upstream correspondente, porém como uma medida segurança, o envio será cancelado caso o ramo upstream não esteja com o mesmo nome que o ramo local.</p>
@@ -83,14 +83,14 @@ headings:
 <dd>
 <p>O repositório "remote" que é o destino de uma operação <em>push</em>. Este parâmetro pode ser uma URL (consulte a seção <a href="#URLS">GIT URLS</a> abaixo) ou o nome de um controle remoto (consulte a seção <a href="#REMOTES">RAMOS REMOTOS</a> abaixo).</p>
 </dd>
-<dt class="hdlist1" id="git-push-ltrefspecgt82308203"> <a class="anchor" href="#git-push-refspec"></a> <a class="anchor" href="#git-push-ltrefspecgt82308203"></a>&lt;refspec&gt;&#8230;&#8203; </dt>
+<dt class="hdlist1" id="git-push-ltrefspecgt82308203"> <a class="anchor" href="#git-push-refspec"></a> <a class="anchor" href="#git-push-ltrefspecgt82308203"></a><span class="hover-term" data-term="refspec">&lt;refspec&gt;</span>&#8230;&#8203; </dt>
 <dd>
-<p>Especifique qual ref. de destino deve ser atualizada com qual origem do objeto. O formato de um parâmetro &lt;refspec&gt; é um sinal de adição opcional <span class='synopsis'><code>+</code></span>, seguido pelo objeto de origem &lt;src&gt;, seguido por dois-pontos <span class='synopsis'><code>:</code></span>, seguido pela referência de destino &lt;dst&gt;.</p>
+<p>Especifique qual ref. de destino deve ser atualizada com qual origem do objeto. O formato de um parâmetro <span class="hover-term" data-term="refspec">&lt;refspec&gt;</span> é um sinal de adição opcional <span class='synopsis'><code>+</code></span>, seguido pelo objeto de origem &lt;src&gt;, seguido por dois-pontos <span class='synopsis'><code>:</code></span>, seguido pela referência de destino &lt;dst&gt;.</p>
 <div class="paragraph">
 <p>Geralmente <span class='synopsis'><em>&lt;src&gt;</em></span> é o nome do ramo que você deseja impulsionar, pode ser qualquer "expressão SHA-1" arbitrária, como <span class='synopsis'><code>master~4</code></span> ou <span class='synopsis'><code>HEAD</code></span> (consulte <a href='{{< relurl "docs/gitrevisions/pt_BR" >}}'>gitrevisions[7]</a>).</p>
 </div>
 <div class="paragraph">
-<p>O &lt;dst&gt; informa qual referência no lado remoto é atualizado com este <em>push</em>. Aqui as expressões arbitrárias não podem ser usadas, uma referência real deve ser mencionada. Se o comando <span class='synopsis'><code>git</code> <code>push</code> [<em>&lt;repositório&gt;</em>]</span> sem nenhum argumento <span class='synopsis'><em>&lt;refspec&gt;</em></span> for definido para atualizar alguma referência no destino com <span class='synopsis'><em>&lt;src&gt;</em></span> com a variável de configuração <span class='synopsis'><code>remote.</code><em>&lt;repositório&gt;</em><code>.push</code></span>, a parte <span class='synopsis'><code>:</code><em>&lt;dst&gt;</em></span> pode ser omitida - este <em>push</em> atualizará uma referência que o <span class='synopsis'><em>&lt;src&gt;</em></span> normalmente atualiza sem nenhum <span class='synopsis'><em>&lt;refspec&gt;</em></span> na linha de comando. Caso contrário, a ausência de <span class='synopsis'><code>:</code><em>&lt;dst&gt;</em></span> significa atualizar a mesma referência que o <span class='synopsis'><em>&lt;src&gt;</em></span>.</p>
+<p>O &lt;dst&gt; informa qual referência no lado remoto é atualizado com este <em>push</em>. Aqui as expressões arbitrárias não podem ser usadas, uma referência real deve ser mencionada. Se o comando <span class='synopsis'><code>git</code> <code>push</code> [<em>&lt;repositório&gt;</em>]</span> sem nenhum argumento <span class='synopsis'><em><span class="hover-term" data-term="refspec">&lt;refspec&gt;</span></em></span> for definido para atualizar alguma referência no destino com <span class='synopsis'><em>&lt;src&gt;</em></span> com a variável de configuração <span class='synopsis'><code>remote.</code><em>&lt;repositório&gt;</em><code>.push</code></span>, a parte <span class='synopsis'><code>:</code><em>&lt;dst&gt;</em></span> pode ser omitida - este <em>push</em> atualizará uma referência que o <span class='synopsis'><em>&lt;src&gt;</em></span> normalmente atualiza sem nenhum <span class='synopsis'><em><span class="hover-term" data-term="refspec">&lt;refspec&gt;</span></em></span> na linha de comando. Caso contrário, a ausência de <span class='synopsis'><code>:</code><em>&lt;dst&gt;</em></span> significa atualizar a mesma referência que o <span class='synopsis'><em>&lt;src&gt;</em></span>.</p>
 </div>
 <div class="paragraph">
 <p>Caso o &lt;dst&gt; não comece com <span class='synopsis'><code>refs/</code></span> (como <span class='synopsis'><code>refs/heads/master</code></span> por exemplo), tentaremos inferir onde em <span class='synopsis'><code>refs/*</code></span> no &lt;repositório&gt; de destino, ele pertença com base no tipo da &lt;src&gt; sendo impulsionado e caso o &lt;dst&gt; seja ambíguo.</p>
@@ -146,7 +146,7 @@ headings:
 <dt class="hdlist1" id="git-push---all"> <a class="anchor" href="#git-push---all"></a>--all </dt>
 <dt class="hdlist1" id="git-push---branches"> <a class="anchor" href="#git-push---branches"></a>--branches </dt>
 <dd>
-<p>impulsione todos os ramos (ou seja, refs em <span class='synopsis'><code>refs/heads/</code></span>); não pode ser utilizado com outro &lt;refspec&gt;.</p>
+<p>impulsione todos os ramos (ou seja, refs em <span class='synopsis'><code>refs/heads/</code></span>); não pode ser utilizado com outro <span class="hover-term" data-term="refspec">&lt;refspec&gt;</span>.</p>
 </dd>
 <dt class="hdlist1" id="git-push---prune"> <a class="anchor" href="#git-push---prune"></a>--prune </dt>
 <dd>
@@ -275,7 +275,7 @@ git push --force-with-lease=master:base master:master</pre>
 <p>Esta opção desativa estas verificações e pode causar a perda do commit no repositório remoto; utilize com cuidado.</p>
 </div>
 <div class="paragraph">
-<p>Observe que a opção <span class='synopsis'><code>--force</code></span> se aplica a todas as refs que forem enviadas, portanto, usá-lo com <span class='synopsis'><code>push.default</code></span> definido como <span class='synopsis'><code>matching</code></span> ou com vários destinos de envio configurados com <span class='synopsis'><code>remote.*.push</code></span> pode substituir diferentes refs do ramo atual (incluindo as refs locais que estão estritamente atrás de sua contraparte remota). Para forçar um envio para apenas um ramo, use um <span class='synopsis'><code>+</code></span> na frente do refspec que será enviado (<span class='synopsis'><code>git</code> <code>push</code> <code>origin</code> <code>+master</code></span> para forçar um envio para o ramo <span class='synopsis'><code>master</code></span> por exemplo). Para mais detalhes consulte a seção <span class='synopsis'><em>&lt;refspec&gt;</em>...</span> acima.</p>
+<p>Observe que a opção <span class='synopsis'><code>--force</code></span> se aplica a todas as refs que forem enviadas, portanto, usá-lo com <span class='synopsis'><code>push.default</code></span> definido como <span class='synopsis'><code>matching</code></span> ou com vários destinos de envio configurados com <span class='synopsis'><code>remote.*.push</code></span> pode substituir diferentes refs do ramo atual (incluindo as refs locais que estão estritamente atrás de sua contraparte remota). Para forçar um envio para apenas um ramo, use um <span class='synopsis'><code>+</code></span> na frente do refspec que será enviado (<span class='synopsis'><code>git</code> <code>push</code> <code>origin</code> <code>+master</code></span> para forçar um envio para o ramo <span class='synopsis'><code>master</code></span> por exemplo). Para mais detalhes consulte a seção <span class='synopsis'><em><span class="hover-term" data-term="refspec">&lt;refspec&gt;</span></em>...</span> acima.</p>
 </div>
 </dd>
 <dt class="hdlist1" id="git-push---no-force-if-includes"> <a class="anchor" href="#git-push---no-force-if-includes"></a>--[no-]force-if-includes </dt>
@@ -393,8 +393,8 @@ git push --force-with-lease=master:base master:master</pre>
 <pre>	[remote "&lt;nome&gt;"]
 		url = &lt;URL&gt;
 		pushurl = &lt;pushurl&gt;
-		push = &lt;refspec&gt;
-		fetch = &lt;refspec&gt;</pre>
+		push = <span class="hover-term" data-term="refspec">&lt;refspec&gt;</span>
+		fetch = <span class="hover-term" data-term="refspec">&lt;refspec&gt;</span></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -409,8 +409,8 @@ git push --force-with-lease=master:base master:master</pre>
 <div class="listingblock">
 <div class="content">
 <pre>	URL: um dos formatos da URL acima
-	Push: &lt;refspec&gt;
-	Pull: &lt;refspec&gt;</pre>
+	Push: <span class="hover-term" data-term="refspec">&lt;refspec&gt;</span>
+	Pull: <span class="hover-term" data-term="refspec">&lt;refspec&gt;</span></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -632,15 +632,15 @@ git push --force-with-lease=master:base master:master</pre>
 <dd>
 <p>Sem uma configuração adicional, envia a ramificação atual para a upstream configurada (a variável de configuração <span class='synopsis'><code>branch.</code><em>&lt;name&gt;</em><code>.merge</code></span>) caso ela tenha o mesmo nome que o ramo atual e os erros ocorrerem sem qualquer outro impulsionamento.</p>
 <div class="paragraph">
-<p>O comportamento predefinido deste comando quando nenhum &lt;refspec&gt; for informado, pode ser configurado definindo a opção <span class='synopsis'><code>push</code></span> do ramo remoto ou a variável de configuração <span class='synopsis'><code>push.default</code></span>.</p>
+<p>O comportamento predefinido deste comando quando nenhum <span class="hover-term" data-term="refspec">&lt;refspec&gt;</span> for informado, pode ser configurado definindo a opção <span class='synopsis'><code>push</code></span> do ramo remoto ou a variável de configuração <span class='synopsis'><code>push.default</code></span>.</p>
 </div>
 <div class="paragraph">
-<p>Por exemplo, para fazer o envio predefinido apenas do ramo atual para <span class='synopsis'><code>origin</code></span>, use o comando <span class='synopsis'><code>git</code> <code>config</code> <code>remote.origin.push</code> <code>HEAD</code></span>. Qualquer &lt;refspec&gt; válido (como os dos exemplos abaixo) pode ser configurado como o predefinido para o comando <span class='synopsis'><code>git</code> <code>push</code> <code>origin</code></span>.</p>
+<p>Por exemplo, para fazer o envio predefinido apenas do ramo atual para <span class='synopsis'><code>origin</code></span>, use o comando <span class='synopsis'><code>git</code> <code>config</code> <code>remote.origin.push</code> <code>HEAD</code></span>. Qualquer <span class="hover-term" data-term="refspec">&lt;refspec&gt;</span> válido (como os dos exemplos abaixo) pode ser configurado como o predefinido para o comando <span class='synopsis'><code>git</code> <code>push</code> <code>origin</code></span>.</p>
 </div>
 </dd>
 <dt class="hdlist1" id="git-push-spanclasssynopsiscodegitcodecodepushcodecodeorigincodecodecodespan"> <a class="anchor" href="#git-push-gitpushorigin-1"></a> <a class="anchor" href="#git-push-spanclasssynopsiscodegitcodecodepushcodecodeorigincodecodecodespan"></a><span class='synopsis'><code>git</code> <code>push</code> <code>origin</code> <code>:</code></span> </dt>
 <dd>
-<p>Impulsiona (push) as ramificações "que coincidam" para <span class='synopsis'><code>origin</code></span>. Consulte o &lt;refspec&gt; na seção <a href="#OPTIONS">OPTIONS</a> acima para obter uma descrição dos ramos "coincidentes".</p>
+<p>Impulsiona (push) as ramificações "que coincidam" para <span class='synopsis'><code>origin</code></span>. Consulte o <span class="hover-term" data-term="refspec">&lt;refspec&gt;</span> na seção <a href="#OPTIONS">OPTIONS</a> acima para obter uma descrição dos ramos "coincidentes".</p>
 </dd>
 <dt class="hdlist1" id="git-push-spanclasssynopsiscodegitcodecodepushcodecodeorigincodecodemastercodespan"> <a class="anchor" href="#git-push-gitpushoriginmaster"></a> <a class="anchor" href="#git-push-spanclasssynopsiscodegitcodecodepushcodecodeorigincodecodemastercodespan"></a><span class='synopsis'><code>git</code> <code>push</code> <code>origin</code> <code>master</code></span> </dt>
 <dd>
@@ -654,7 +654,7 @@ git push --force-with-lease=master:base master:master</pre>
 <dd>
 <p>Use a referência da origem que corresponde ao <span class='synopsis'><code>master</code></span> (<span class='synopsis'><code>refs/heads/master</code></span> por exemplo) para atualizar a referência que corresponde ao <span class='synopsis'><code>satellite/master</code></span> (provavelmente <span class='synopsis'><code>refs/remotes/satellite/master</code></span>) no repositório <span class='synopsis'><code>mothership</code></span>; faça o mesmo para <span class='synopsis'><code>dev</code></span> e também para <span class='synopsis'><code>satellite/dev</code></span>.</p>
 <div class="paragraph">
-<p>Consulte a seção que descreve <span class='synopsis'><em>&lt;refspec&gt;</em> ...</span> acima para uma discussão sobre a combinação semântica.</p>
+<p>Consulte a seção que descreve <span class='synopsis'><em><span class="hover-term" data-term="refspec">&lt;refspec&gt;</span></em> ...</span> acima para uma discussão sobre a combinação semântica.</p>
 </div>
 <div class="paragraph">
 <p>Isto serve para emular o comando <span class='synopsis'><code>git</code> <code>fetch</code></span> executado na <span class='synopsis'><code>mothership</code></span> utilizando o <span class='synopsis'><code>git</code> <code>push</code></span> que é executado na direção oposta para integrar o trabalho realizado no <span class='synopsis'><code>satellite</code></span> e geralmente é necessário quando só é possível fazer a conexão num sentido (ou seja, o satélite pode fazer uma conexão ssh com a nave mãe "mothership" mas a nave mãe não pode iniciar a conexão com o satélite porque este está atrás de um firewall ou não está executando o sshd (servidor ssh)).</p>

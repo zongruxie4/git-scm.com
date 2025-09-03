@@ -41,13 +41,13 @@ headings:
 <div class="verseblock">
 <pre class="content"><span class='synopsis'><code>git</code></span> <span class='synopsis'><code>clone</code></span> [<span class='synopsis'><code>--template=</code></span><em>&lt;directorio-de-plantilla&gt;</em>]
 	  [<span class='synopsis'><code>-l</code></span>] [<span class='synopsis'><code>-s</code></span>] [<span class='synopsis'><code>--no-hardlinks</code></span>] [<span class='synopsis'><code>-q</code></span>] [<span class='synopsis'><code>-n</code></span>] [<span class='synopsis'><code>--bare</code></span>] [<span class='synopsis'><code>--mirror</code></span>]
-	  [<span class='synopsis'><code>-o</code></span> <em>&lt;nombre&gt;</em>] [<span class='synopsis'><code>-b</code></span> <em>&lt;nombre&gt;</em>] [<span class='synopsis'><code>-u</code></span> <em>&lt;paquete-de-carga&gt;</em>] [<span class='synopsis'><code>--reference</code></span> <em>&lt;repositorio&gt;</em>]
+	  [<span class='synopsis'><code>-o</code></span> <em>&lt;nombre&gt;</em>] [<span class='synopsis'><code>-b</code></span> <em>&lt;nombre&gt;</em>] [<span class='synopsis'><code>-u</code></span> <em>&lt;paquete-de-carga&gt;</em>] [<span class='synopsis'><code>--reference</code></span> <em><span class="hover-term" data-term="repositorio">&lt;repositorio&gt;</span></em>]
 	  [<span class='synopsis'><code>--dissociate</code></span>] [<span class='synopsis'><code>--separate-git-dir</code></span> <em>&lt;directorio-git&gt;</em>]
 	  [<span class='synopsis'><code>--depth</code></span> <em>&lt;profundidad&gt;</em>] [<span class='synopsis'><code>--</code></span>[<span class='synopsis'><code>no-</code></span>]<span class='synopsis'><code>single-branch</code></span>] [<span class='synopsis'><code>--</code></span>[<span class='synopsis'><code>no-</code></span>]<span class='synopsis'><code>tags</code></span>]
 	  [<span class='synopsis'><code>--recurse-submodules</code></span>[<span class='synopsis'><code>=</code></span><em>&lt;especificación-de-ruta&gt;</em>]] [<span class='synopsis'><code>--</code></span>[<span class='synopsis'><code>no-</code></span>]<span class='synopsis'><code>shallow-submodules</code></span>]
 	  [<span class='synopsis'><code>--</code></span>[<span class='synopsis'><code>no-</code></span>]<span class='synopsis'><code>remote-submodules</code></span>] [<span class='synopsis'><code>--jobs</code></span> <em>&lt;n&gt;</em>] [<span class='synopsis'><code>--sparse</code></span>] [<span class='synopsis'><code>--</code></span>[<span class='synopsis'><code>no-</code></span>]<span class='synopsis'><code>reject-shallow</code></span>]
-	  [<span class='synopsis'><code>--filter=</code></span><em>&lt;especificación-de-filtro&gt;</em>] [<span class='synopsis'><code>--also-filter-submodules</code></span>]] [<span class='synopsis'><code>--</code></span>] <em>&lt;repositorio&gt;</em>
-	  [<em>&lt;directorio&gt;</em>]</pre>
+	  [<span class='synopsis'><code>--filter=</code></span><em>&lt;especificación-de-filtro&gt;</em>] [<span class='synopsis'><code>--also-filter-submodules</code></span>]] [<span class='synopsis'><code>--</code></span>] <em><span class="hover-term" data-term="repositorio">&lt;repositorio&gt;</span></em>
+	  [<em><span class="hover-term" data-term="directorio">&lt;directorio&gt;</span></em>]</pre>
 </div>
 </div>
 </div>
@@ -105,9 +105,9 @@ headings:
 <p>Si quieres romper la dependencia de un repositorio clonado con <span class='synopsis'><code>--shared</code></span> de su repositorio origen, puedes simplemente ejecutar <span class='synopsis'><code>git</code> <code>repack</code> <code>-a</code></span> para copiar todos los objetos del repositorio origen en un paquete en el repositorio clonado.</p>
 </div>
 </dd>
-<dt class="hdlist1" id="git-clone-spanclasssynopsiscode--referencecodecode-if-ablecodeemltrepositoriogtemspan"> <a class="anchor" href="#git-clone---reference-if-ablerepositorio"></a> <a class="anchor" href="#git-clone-spanclasssynopsiscode--referencecodecode-if-ablecodeemltrepositoriogtemspan"></a><span class='synopsis'><code>--reference</code>[<code>-if-able</code>] <em>&lt;repositorio&gt;</em></span> </dt>
+<dt class="hdlist1" id="git-clone-spanclasssynopsiscode--referencecodecode-if-ablecodeemltrepositoriogtemspan"> <a class="anchor" href="#git-clone---reference-if-ablerepositorio"></a> <a class="anchor" href="#git-clone-spanclasssynopsiscode--referencecodecode-if-ablecodeemltrepositoriogtemspan"></a><span class='synopsis'><code>--reference</code>[<code>-if-able</code>] <em><span class="hover-term" data-term="repositorio">&lt;repositorio&gt;</span></em></span> </dt>
 <dd>
-<p>Si el <em>&lt;repositorio&gt;</em> referencia esta en el equipo local, automáticamente se configura <span class='synopsis'><code>.git/objects/info/alternates</code></span> para obtener los objetos del <em>&lt;repositorio&gt;</em> referencia. Usando un repositorio ya existente como un alterno requerirá que menos objetos sean copiados del repositorio siendo clonado, reduciendo costos de red y almacenamiento local. Cuando se usa <span class='synopsis'><code>--reference-if-able</code></span>, un directorio inexistente es saltado con una advertencia en lugar de abortar la clonación.</p>
+<p>Si el <em><span class="hover-term" data-term="repositorio">&lt;repositorio&gt;</span></em> referencia esta en el equipo local, automáticamente se configura <span class='synopsis'><code>.git/objects/info/alternates</code></span> para obtener los objetos del <em><span class="hover-term" data-term="repositorio">&lt;repositorio&gt;</span></em> referencia. Usando un repositorio ya existente como un alterno requerirá que menos objetos sean copiados del repositorio siendo clonado, reduciendo costos de red y almacenamiento local. Cuando se usa <span class='synopsis'><code>--reference-if-able</code></span>, un directorio inexistente es saltado con una advertencia en lugar de abortar la clonación.</p>
 <div class="paragraph">
 <p><strong>NOTA</strong>: ver la NOTA para la opción <span class='synopsis'><code>--shared</code></span>, y también la opción <span class='synopsis'><code>--dissociate</code></span>.</p>
 </div>
@@ -145,7 +145,7 @@ headings:
 </dd>
 <dt class="hdlist1" id="git-clone-spanclasssynopsiscode--barecodespan"> <a class="anchor" href="#git-clone---bare"></a> <a class="anchor" href="#git-clone-spanclasssynopsiscode--barecodespan"></a><span class='synopsis'><code>--bare</code></span> </dt>
 <dd>
-<p>Hace un repositorio Git <em>básico</em>. Esto es, en lugar de crear <em>&lt;directorio&gt;</em> y colocar los ficheros administrativos en <span class='synopsis'><em>&lt;directorio&gt;</em><code>/.git</code></span>, hace al <em>&lt;directorio&gt;</em> mismo el <span class='synopsis'><code>$GIT_DIR</code></span>. Esto implica obviamente el <span class='synopsis'><code>--no-checkout</code></span> porque no hay dónde hacer checkout al árbol de trabajo. Además las heads de las ramas en el remoto son copiadas directamente a las heads de rama local correspondientes, sin mapearlas a <span class='synopsis'><code>refs/remotes/origin/</code></span>. Cuando se usa esta opción, no se crean ni las ramas de seguimiento remoto ni las variables de configuración relacionadas.</p>
+<p>Hace un repositorio Git <em>básico</em>. Esto es, en lugar de crear <em><span class="hover-term" data-term="directorio">&lt;directorio&gt;</span></em> y colocar los ficheros administrativos en <span class='synopsis'><em><span class="hover-term" data-term="directorio">&lt;directorio&gt;</span></em><code>/.git</code></span>, hace al <em><span class="hover-term" data-term="directorio">&lt;directorio&gt;</span></em> mismo el <span class='synopsis'><code>$GIT_DIR</code></span>. Esto implica obviamente el <span class='synopsis'><code>--no-checkout</code></span> porque no hay dónde hacer checkout al árbol de trabajo. Además las heads de las ramas en el remoto son copiadas directamente a las heads de rama local correspondientes, sin mapearlas a <span class='synopsis'><code>refs/remotes/origin/</code></span>. Cuando se usa esta opción, no se crean ni las ramas de seguimiento remoto ni las variables de configuración relacionadas.</p>
 </dd>
 <dt class="hdlist1" id="git-clone-spanclasssynopsiscode--sparsecodespan"> <a class="anchor" href="#git-clone---sparse"></a> <a class="anchor" href="#git-clone-spanclasssynopsiscode--sparsecodespan"></a><span class='synopsis'><code>--sparse</code></span> </dt>
 <dd>
@@ -173,7 +173,7 @@ headings:
 <dd>
 <p>En lugar de apuntar la <span class='synopsis'><code>HEAD</code></span> recientemente creada a la rama a la que apunta <span class='synopsis'><code>HEAD</code></span> del repositorio clonado, apunta a la rama <em>&lt;nombre&gt;</em>. En un repositorio no-básico, a esta rama se le hará checkout. <span class='synopsis'><code>--branch</code></span> también puede tomar etiquetas y soltar la <span class='synopsis'><code>HEAD</code></span> en esa confirmación en el repositorio resultante.</p>
 </dd>
-<dt class="hdlist1" id="git-clone-spanclasssynopsiscode--revisioncodeemltrevisingtemspan"> <a class="anchor" href="#git-clone---revisionrevisin"></a> <a class="anchor" href="#git-clone-spanclasssynopsiscode--revisioncodeemltrevisingtemspan"></a><span class='synopsis'><code>--revision=</code><em>&lt;revisión&gt;</em></span> </dt>
+<dt class="hdlist1" id="git-clone-spanclasssynopsiscode--revisioncodeemltrevisingtemspan"> <a class="anchor" href="#git-clone---revisionrevisin"></a> <a class="anchor" href="#git-clone-spanclasssynopsiscode--revisioncodeemltrevisingtemspan"></a><span class='synopsis'><code>--revision=</code><em><span class="hover-term" data-term="revisión">&lt;revisión&gt;</span></em></span> </dt>
 <dd>
 <p>Crea un repositorio nuevo, y trae el historial hasta la revisión <em>&lt;rev&gt;</em> dada (y nada mas), sin hacer rama de rastreo remoto alguna, y sin hacer una rama local, y desprender <span class='synopsis'><code>HEAD</code></span> de <em>&lt;rev&gt;</em>. El argumento puede ser un nombre de referencia (ej. <span class='synopsis'><code>refs/heads/main</code></span> o <span class='synopsis'><code>refs/tags/v1.0</code></span>) que llegue hasta una confirmación, o a un nombre de objeto hexadecimal. Esta opción es incompatible con <span class='synopsis'><code>--branch</code></span> y <span class='synopsis'><code>--mirror</code></span>.</p>
 </dd>
@@ -202,7 +202,7 @@ headings:
 <dd>
 <p>Crear un clon superficial con historial posterior al tiempo especificado.</p>
 </dd>
-<dt class="hdlist1" id="git-clone-spanclasssynopsiscode--shallow-excludecodeemltreferenciagtemspan"> <a class="anchor" href="#git-clone---shallow-excludereferencia"></a> <a class="anchor" href="#git-clone-spanclasssynopsiscode--shallow-excludecodeemltreferenciagtemspan"></a><span class='synopsis'><code>--shallow-exclude=</code><em>&lt;referencia&gt;</em></span> </dt>
+<dt class="hdlist1" id="git-clone-spanclasssynopsiscode--shallow-excludecodeemltreferenciagtemspan"> <a class="anchor" href="#git-clone---shallow-excludereferencia"></a> <a class="anchor" href="#git-clone-spanclasssynopsiscode--shallow-excludecodeemltreferenciagtemspan"></a><span class='synopsis'><code>--shallow-exclude=</code><em><span class="hover-term" data-term="referencia">&lt;referencia&gt;</span></em></span> </dt>
 <dd>
 <p>Crear un clon superficial con historial excluyendo commits alcanzables desde una rama remota o etiqueta especificada. Esta opción puede ser especificada múltiples veces.</p>
 </dd>
@@ -262,13 +262,13 @@ headings:
 <dd>
 <p>La cantidad de submódulos obtenidos al mismo tiempo. Por defecto usa el valor de la opción <span class='synopsis'><code>submodule.fetchJobs</code></span>.</p>
 </dd>
-<dt class="hdlist1" id="git-clone-emltrepositoriogtem"> <a class="anchor" href="#git-clone-repositorio"></a> <a class="anchor" href="#git-clone-emltrepositoriogtem"></a><em>&lt;repositorio&gt;</em> </dt>
+<dt class="hdlist1" id="git-clone-emltrepositoriogtem"> <a class="anchor" href="#git-clone-repositorio"></a> <a class="anchor" href="#git-clone-emltrepositoriogtem"></a><em><span class="hover-term" data-term="repositorio">&lt;repositorio&gt;</span></em> </dt>
 <dd>
-<p>El <em>&lt;repositorio&gt;</em> (posiblemente remoto) a clonar desde. Ver la sección <a href="#URLS">URLS GIT</a> a continuación para mas información sobre la especificación de repositorios.</p>
+<p>El <em><span class="hover-term" data-term="repositorio">&lt;repositorio&gt;</span></em> (posiblemente remoto) a clonar desde. Ver la sección <a href="#URLS">URLS GIT</a> a continuación para mas información sobre la especificación de repositorios.</p>
 </dd>
-<dt class="hdlist1" id="git-clone-emltdirectoriogtem"> <a class="anchor" href="#git-clone-directorio"></a> <a class="anchor" href="#git-clone-emltdirectoriogtem"></a><em>&lt;directorio&gt;</em> </dt>
+<dt class="hdlist1" id="git-clone-emltdirectoriogtem"> <a class="anchor" href="#git-clone-directorio"></a> <a class="anchor" href="#git-clone-emltdirectoriogtem"></a><em><span class="hover-term" data-term="directorio">&lt;directorio&gt;</span></em> </dt>
 <dd>
-<p>El nombre de un nuevo directorio para clonar hacia. Se usa la parte "humanizada" del repositorio fuente si no se da explícitamente un <em>&lt;directorio&gt;</em> (<span class='synopsis'><code>repo</code></span> para <span class='synopsis'><code>/ruta/a/repo.git</code></span> y <span class='synopsis'><code>foo</code></span> para <span class='synopsis'><code>host.xz:foo/.git</code></span>). Sólo se permite clonar a un directorio existente si el directorio está vacío.</p>
+<p>El nombre de un nuevo directorio para clonar hacia. Se usa la parte "humanizada" del repositorio fuente si no se da explícitamente un <em><span class="hover-term" data-term="directorio">&lt;directorio&gt;</span></em> (<span class='synopsis'><code>repo</code></span> para <span class='synopsis'><code>/ruta/a/repo.git</code></span> y <span class='synopsis'><code>foo</code></span> para <span class='synopsis'><code>host.xz:foo/.git</code></span>). Sólo se permite clonar a un directorio existente si el directorio está vacío.</p>
 </dd>
 <dt class="hdlist1" id="git-clone-spanclasssynopsiscode--bundle-uricodeemlturigtemspan"> <a class="anchor" href="#git-clone---bundle-uriuri"></a> <a class="anchor" href="#git-clone-spanclasssynopsiscode--bundle-uricodeemlturigtemspan"></a><span class='synopsis'><code>--bundle-uri=</code><em>&lt;uri&gt;</em></span> </dt>
 <dd>

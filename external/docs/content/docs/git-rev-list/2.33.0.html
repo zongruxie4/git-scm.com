@@ -37,7 +37,7 @@ aliases:
 <h2 id="_synopsis"><a class="anchor" href="#_synopsis"></a>SYNOPSIS</h2>
 <div class="sectionbody">
 <div class="verseblock">
-<pre class="content"><em>git rev-list</em> [&lt;options&gt;] &lt;commit&gt;&#8230;&#8203; [[--] &lt;path&gt;&#8230;&#8203;]</pre>
+<pre class="content"><em>git rev-list</em> [&lt;options&gt;] <span class="hover-term" data-term="commit">&lt;commit&gt;</span>&#8230;&#8203; [[--] &lt;path&gt;&#8230;&#8203;]</pre>
 </div>
 </div>
 </div>
@@ -263,33 +263,33 @@ for all following revision specifiers, up to the next <span class='synopsis'><co
 <dt class="hdlist1" id="Documentation/git-rev-list.txt---all"><a class="anchor" href="#Documentation/git-rev-list.txt---all"></a>--all </dt>
 <dd>
 <p>Pretend as if all the refs in <span class='synopsis'><code>refs/</code></span>, along with <span class='synopsis'><code>HEAD</code></span>, are
-listed on the command line as <em>&lt;commit&gt;</em>.</p>
+listed on the command line as <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt---branchesltpatterngt"><a id="Documentation/git-rev-list.txt---branchespattern" class="anchor" href="#Documentation/git-rev-list.txt---branchespattern"></a>--branches[=&lt;pattern&gt;] </dt>
 <dd>
 <p>Pretend as if all the refs in <span class='synopsis'><code>refs/heads</code></span> are listed
-on the command line as <em>&lt;commit&gt;</em>. If <em>&lt;pattern&gt;</em> is given, limit
+on the command line as <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>. If <em>&lt;pattern&gt;</em> is given, limit
 branches to ones matching given shell glob. If pattern lacks <em>?</em>,
 <em>*</em>, or <em>[</em>, <em>/*</em> at the end is implied.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt---tagsltpatterngt"><a id="Documentation/git-rev-list.txt---tagspattern" class="anchor" href="#Documentation/git-rev-list.txt---tagspattern"></a>--tags[=&lt;pattern&gt;] </dt>
 <dd>
 <p>Pretend as if all the refs in <span class='synopsis'><code>refs/tags</code></span> are listed
-on the command line as <em>&lt;commit&gt;</em>. If <em>&lt;pattern&gt;</em> is given, limit
+on the command line as <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>. If <em>&lt;pattern&gt;</em> is given, limit
 tags to ones matching given shell glob. If pattern lacks <em>?</em>, <em>*</em>,
 or <em>[</em>, <em>/*</em> at the end is implied.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt---remotesltpatterngt"><a id="Documentation/git-rev-list.txt---remotespattern" class="anchor" href="#Documentation/git-rev-list.txt---remotespattern"></a>--remotes[=&lt;pattern&gt;] </dt>
 <dd>
 <p>Pretend as if all the refs in <span class='synopsis'><code>refs/remotes</code></span> are listed
-on the command line as <em>&lt;commit&gt;</em>. If <em>&lt;pattern&gt;</em> is given, limit
+on the command line as <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>. If <em>&lt;pattern&gt;</em> is given, limit
 remote-tracking branches to ones matching given shell glob.
 If pattern lacks <em>?</em>, <em>*</em>, or <em>[</em>, <em>/*</em> at the end is implied.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt---globltglob-patterngt"><a id="Documentation/git-rev-list.txt---globglob-pattern" class="anchor" href="#Documentation/git-rev-list.txt---globglob-pattern"></a>--glob=&lt;glob-pattern&gt; </dt>
 <dd>
 <p>Pretend as if all the refs matching shell glob <em>&lt;glob-pattern&gt;</em>
-are listed on the command line as <em>&lt;commit&gt;</em>. Leading <em>refs/</em>,
+are listed on the command line as <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>. Leading <em>refs/</em>,
 is automatically prepended if missing. If pattern lacks <em>?</em>, <em>*</em>,
 or <em>[</em>, <em>/*</em> at the end is implied.</p>
 </dd>
@@ -312,7 +312,7 @@ explicitly.</p>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt---reflog"><a class="anchor" href="#Documentation/git-rev-list.txt---reflog"></a>--reflog </dt>
 <dd>
 <p>Pretend as if all objects mentioned by reflogs are listed on the
-command line as <span class='synopsis'><em>&lt;commit&gt;</em></span>.</p>
+command line as <span class='synopsis'><em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em></span>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt---alternate-refs"><a class="anchor" href="#Documentation/git-rev-list.txt---alternate-refs"></a>--alternate-refs </dt>
 <dd>
@@ -339,7 +339,7 @@ the bad input was not given.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rev-list.txt---stdin"><a class="anchor" href="#Documentation/git-rev-list.txt---stdin"></a>--stdin </dt>
 <dd>
-<p>In addition to the <em>&lt;commit&gt;</em> listed on the command
+<p>In addition to the <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em> listed on the command
 line, read them from the standard input. If a <span class='synopsis'><code>--</code></span> separator is
 seen, stop reading commits and start reading paths to limit the
 result.</p>
@@ -1212,7 +1212,7 @@ at multiple depths in the commits traversed). &lt;depth&gt;=0 will not include
 any trees or blobs unless included explicitly in the command-line (or
 standard input when --stdin is used). &lt;depth&gt;=1 will include only the
 tree and blobs which are referenced directly by a commit reachable from
-&lt;commit&gt; or an explicitly-given object. &lt;depth&gt;=2 is like &lt;depth&gt;=1
+<span class="hover-term" data-term="commit">&lt;commit&gt;</span> or an explicitly-given object. &lt;depth&gt;=2 is like &lt;depth&gt;=1
 while also including trees and blobs one more level removed from an
 explicitly-given commit or tree.</p>
 </div>
@@ -1612,7 +1612,7 @@ built-in formats:</p>
 <p><em>oneline</em></p>
 <div class="literalblock">
 <div class="content">
-<pre>&lt;hash&gt; &lt;title line&gt;</pre>
+<pre><span class="hover-term" data-term="hash">&lt;hash&gt;</span> &lt;title line&gt;</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1623,7 +1623,7 @@ built-in formats:</p>
 <p><em>short</em></p>
 <div class="literalblock">
 <div class="content">
-<pre>commit &lt;hash&gt;
+<pre>commit <span class="hover-term" data-term="hash">&lt;hash&gt;</span>
 Author: &lt;author&gt;</pre>
 </div>
 </div>
@@ -1637,7 +1637,7 @@ Author: &lt;author&gt;</pre>
 <p><em>medium</em></p>
 <div class="literalblock">
 <div class="content">
-<pre>commit &lt;hash&gt;
+<pre>commit <span class="hover-term" data-term="hash">&lt;hash&gt;</span>
 Author: &lt;author&gt;
 Date:   &lt;author date&gt;</pre>
 </div>
@@ -1657,7 +1657,7 @@ Date:   &lt;author date&gt;</pre>
 <p><em>full</em></p>
 <div class="literalblock">
 <div class="content">
-<pre>commit &lt;hash&gt;
+<pre>commit <span class="hover-term" data-term="hash">&lt;hash&gt;</span>
 Author: &lt;author&gt;
 Commit: &lt;committer&gt;</pre>
 </div>
@@ -1677,7 +1677,7 @@ Commit: &lt;committer&gt;</pre>
 <p><em>fuller</em></p>
 <div class="literalblock">
 <div class="content">
-<pre>commit &lt;hash&gt;
+<pre>commit <span class="hover-term" data-term="hash">&lt;hash&gt;</span>
 Author:     &lt;author&gt;
 AuthorDate: &lt;author date&gt;
 Commit:     &lt;committer&gt;
@@ -1715,7 +1715,7 @@ placeholders, its output is not affected by other options like
 <p><em>email</em></p>
 <div class="literalblock">
 <div class="content">
-<pre>From &lt;hash&gt; &lt;date&gt;
+<pre>From <span class="hover-term" data-term="hash">&lt;hash&gt;</span> &lt;date&gt;
 From: &lt;author&gt;
 Date: &lt;author date&gt;
 Subject: [PATCH] &lt;title line&gt;</pre>

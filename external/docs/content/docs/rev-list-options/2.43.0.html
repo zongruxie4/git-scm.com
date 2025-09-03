@@ -188,33 +188,33 @@ not be affected by it.</p>
 <dt class="hdlist1" id="Documentation/rev-list-options.txt---all"><a class="anchor" href="#Documentation/rev-list-options.txt---all"></a>--all </dt>
 <dd>
 <p>Pretend as if all the refs in <span class='synopsis'><code>refs/</code></span>, along with <span class='synopsis'><code>HEAD</code></span>, are
-listed on the command line as <em>&lt;commit&gt;</em>.</p>
+listed on the command line as <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/rev-list-options.txt---branchesltpatterngt"><a id="Documentation/rev-list-options.txt---branchespattern" class="anchor" href="#Documentation/rev-list-options.txt---branchespattern"></a>--branches[=&lt;pattern&gt;] </dt>
 <dd>
 <p>Pretend as if all the refs in <span class='synopsis'><code>refs/heads</code></span> are listed
-on the command line as <em>&lt;commit&gt;</em>. If <em>&lt;pattern&gt;</em> is given, limit
+on the command line as <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>. If <em>&lt;pattern&gt;</em> is given, limit
 branches to ones matching given shell glob. If pattern lacks <em>?</em>,
 <em>*</em>, or <em>[</em>, <em>/*</em> at the end is implied.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/rev-list-options.txt---tagsltpatterngt"><a id="Documentation/rev-list-options.txt---tagspattern" class="anchor" href="#Documentation/rev-list-options.txt---tagspattern"></a>--tags[=&lt;pattern&gt;] </dt>
 <dd>
 <p>Pretend as if all the refs in <span class='synopsis'><code>refs/tags</code></span> are listed
-on the command line as <em>&lt;commit&gt;</em>. If <em>&lt;pattern&gt;</em> is given, limit
+on the command line as <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>. If <em>&lt;pattern&gt;</em> is given, limit
 tags to ones matching given shell glob. If pattern lacks <em>?</em>, <em>*</em>,
 or <em>[</em>, <em>/*</em> at the end is implied.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/rev-list-options.txt---remotesltpatterngt"><a id="Documentation/rev-list-options.txt---remotespattern" class="anchor" href="#Documentation/rev-list-options.txt---remotespattern"></a>--remotes[=&lt;pattern&gt;] </dt>
 <dd>
 <p>Pretend as if all the refs in <span class='synopsis'><code>refs/remotes</code></span> are listed
-on the command line as <em>&lt;commit&gt;</em>. If <em>&lt;pattern&gt;</em> is given, limit
+on the command line as <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>. If <em>&lt;pattern&gt;</em> is given, limit
 remote-tracking branches to ones matching given shell glob.
 If pattern lacks <em>?</em>, <em>*</em>, or <em>[</em>, <em>/*</em> at the end is implied.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/rev-list-options.txt---globltglob-patterngt"><a id="Documentation/rev-list-options.txt---globglob-pattern" class="anchor" href="#Documentation/rev-list-options.txt---globglob-pattern"></a>--glob=&lt;glob-pattern&gt; </dt>
 <dd>
 <p>Pretend as if all the refs matching shell glob <em>&lt;glob-pattern&gt;</em>
-are listed on the command line as <em>&lt;commit&gt;</em>. Leading <em>refs/</em>,
+are listed on the command line as <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>. Leading <em>refs/</em>,
 is automatically prepended if missing. If pattern lacks <em>?</em>, <em>*</em>,
 or <em>[</em>, <em>/*</em> at the end is implied.</p>
 </dd>
@@ -246,7 +246,7 @@ configuration along with <span class='synopsis'><code>transfer.hideRefs</code></
 <dt class="hdlist1" id="Documentation/rev-list-options.txt---reflog"><a class="anchor" href="#Documentation/rev-list-options.txt---reflog"></a>--reflog </dt>
 <dd>
 <p>Pretend as if all objects mentioned by reflogs are listed on the
-command line as <span class='synopsis'><em>&lt;commit&gt;</em></span>.</p>
+command line as <span class='synopsis'><em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em></span>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/rev-list-options.txt---alternate-refs"><a class="anchor" href="#Documentation/rev-list-options.txt---alternate-refs"></a>--alternate-refs </dt>
 <dd>
@@ -456,13 +456,13 @@ meaningful history.</p>
 merges from the resulting history, as there are no selected
 commits contributing to this merge.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/rev-list-options.txt---ancestry-pathltcommitgt"><a id="Documentation/rev-list-options.txt---ancestry-pathcommit" class="anchor" href="#Documentation/rev-list-options.txt---ancestry-pathcommit"></a>--ancestry-path[=&lt;commit&gt;] </dt>
+<dt class="hdlist1" id="Documentation/rev-list-options.txt---ancestry-pathltcommitgt"><a id="Documentation/rev-list-options.txt---ancestry-pathcommit" class="anchor" href="#Documentation/rev-list-options.txt---ancestry-pathcommit"></a>--ancestry-path[=<span class="hover-term" data-term="commit">&lt;commit&gt;</span>] </dt>
 <dd>
 <p>When given a range of commits to display (e.g. <em>commit1..commit2</em>
 or <em>commit2 ^commit1</em>), only display commits in that range
-that are ancestors of &lt;commit&gt;, descendants of &lt;commit&gt;, or
-&lt;commit&gt; itself.  If no commit is specified, use <em>commit1</em> (the
-excluded part of the range) as &lt;commit&gt;.  Can be passed multiple
+that are ancestors of <span class="hover-term" data-term="commit">&lt;commit&gt;</span>, descendants of <span class="hover-term" data-term="commit">&lt;commit&gt;</span>, or
+<span class="hover-term" data-term="commit">&lt;commit&gt;</span> itself.  If no commit is specified, use <em>commit1</em> (the
+excluded part of the range) as <span class="hover-term" data-term="commit">&lt;commit&gt;</span>.  Can be passed multiple
 times; if so, a commit is included if it is any of the commits
 given or if it is an ancestor or descendant of one of them.</p>
 </dd>
@@ -710,10 +710,10 @@ parent and is TREESAME.</p>
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1" id="Documentation/rev-list-options.txt---ancestry-pathltcommitgt-1"><a id="Documentation/rev-list-options.txt---ancestry-pathcommit-1" class="anchor" href="#Documentation/rev-list-options.txt---ancestry-pathcommit-1"></a>--ancestry-path[=&lt;commit&gt;] </dt>
+<dt class="hdlist1" id="Documentation/rev-list-options.txt---ancestry-pathltcommitgt-1"><a id="Documentation/rev-list-options.txt---ancestry-pathcommit-1" class="anchor" href="#Documentation/rev-list-options.txt---ancestry-pathcommit-1"></a>--ancestry-path[=<span class="hover-term" data-term="commit">&lt;commit&gt;</span>] </dt>
 <dd>
 <p>Limit the displayed commits to those which are an ancestor of
-&lt;commit&gt;, or which are a descendant of &lt;commit&gt;, or are &lt;commit&gt;
+<span class="hover-term" data-term="commit">&lt;commit&gt;</span>, or which are a descendant of <span class="hover-term" data-term="commit">&lt;commit&gt;</span>, or are <span class="hover-term" data-term="commit">&lt;commit&gt;</span>
 itself.</p>
 <div class="paragraph">
 <p>As an example use case, consider the following commit history:</p>
@@ -1097,7 +1097,7 @@ message by 4 spaces (i.e.  <em>medium</em>, which is the default, <em>full</em>,
 and <em>fuller</em>).</p>
 </div>
 </dd>
-<dt class="hdlist1" id="Documentation/rev-list-options.txt---notesltrefgt"><a id="Documentation/rev-list-options.txt---notesref" class="anchor" href="#Documentation/rev-list-options.txt---notesref"></a>--notes[=&lt;ref&gt;] </dt>
+<dt class="hdlist1" id="Documentation/rev-list-options.txt---notesltrefgt"><a id="Documentation/rev-list-options.txt---notesref" class="anchor" href="#Documentation/rev-list-options.txt---notesref"></a>--notes[=<span class="hover-term" data-term="ref">&lt;ref&gt;</span>] </dt>
 <dd>
 <p>Show the notes (see <a href='{{< relurl "docs/git-notes" >}}'>git-notes[1]</a>) that annotate the
 commit, when showing the commit log message.  This is the default
@@ -1110,7 +1110,7 @@ on the command line.</p>
 environment overrides). See <a href='{{< relurl "docs/git-config" >}}'>git-config[1]</a> for more details.</p>
 </div>
 <div class="paragraph">
-<p>With an optional <em>&lt;ref&gt;</em> argument, use the ref to find the notes
+<p>With an optional <em><span class="hover-term" data-term="ref">&lt;ref&gt;</span></em> argument, use the ref to find the notes
 to display.  The ref can specify the full refname when it begins
 with <span class='synopsis'><code>refs/notes/</code></span>; when it begins with <span class='synopsis'><code>notes/</code></span>, <span class='synopsis'><code>refs/</code></span> and otherwise
 <span class='synopsis'><code>refs/notes/</code></span> is prefixed to form the full name of the ref.</p>
@@ -1135,7 +1135,7 @@ from "refs/notes/bar".</p>
 <p>Show the default notes unless options for displaying specific
 notes are given.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/rev-list-options.txt---show-notesltrefgt"><a id="Documentation/rev-list-options.txt---show-notesref" class="anchor" href="#Documentation/rev-list-options.txt---show-notesref"></a>--show-notes[=&lt;ref&gt;] </dt>
+<dt class="hdlist1" id="Documentation/rev-list-options.txt---show-notesltrefgt"><a id="Documentation/rev-list-options.txt---show-notesref" class="anchor" href="#Documentation/rev-list-options.txt---show-notesref"></a>--show-notes[=<span class="hover-term" data-term="ref">&lt;ref&gt;</span>] </dt>
 <dt class="hdlist1" id="Documentation/rev-list-options.txt---no-standard-notes"><a class="anchor" href="#Documentation/rev-list-options.txt---no-standard-notes"></a>--[no-]standard-notes </dt>
 <dd>
 <p>These options are deprecated. Use the above --notes/--no-notes

@@ -45,7 +45,7 @@ aliases:
 <h2 id="_synopsis"><a class="anchor" href="#_synopsis"></a>SYNOPSIS</h2>
 <div class="sectionbody">
 <div class="verseblock">
-<pre class="content"><em>git show</em> [options] &lt;object&gt;&#8230;&#8203;</pre>
+<pre class="content"><em>git show</em> [options] <span class="hover-term" data-term="object">&lt;object&gt;</span>&#8230;&#8203;</pre>
 </div>
 </div>
 </div>
@@ -84,7 +84,7 @@ control how the changes the commit introduces are shown.</p>
 <div class="sectionbody">
 <div class="dlist">
 <dl>
-<dt class="hdlist1" id="Documentation/git-show.txt-ltobjectgt82308203"><a id="Documentation/git-show.txt-object" class="anchor" href="#Documentation/git-show.txt-object"></a>&lt;object&gt;&#8230;&#8203; </dt>
+<dt class="hdlist1" id="Documentation/git-show.txt-ltobjectgt82308203"><a id="Documentation/git-show.txt-object" class="anchor" href="#Documentation/git-show.txt-object"></a><span class="hover-term" data-term="object">&lt;object&gt;</span>&#8230;&#8203; </dt>
 <dd>
 <p>The names of objects to show.
 For a more complete list of ways to spell object names, see
@@ -141,7 +141,7 @@ in <span class='synopsis'><code>X</code></span> and we are outputting in <span c
 verbatim; this means that invalid sequences in the original
 commit may be copied to the output.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-show.txt---noteslttreeishgt"><a id="Documentation/git-show.txt---notestreeish" class="anchor" href="#Documentation/git-show.txt---notestreeish"></a>--notes[=&lt;treeish&gt;] </dt>
+<dt class="hdlist1" id="Documentation/git-show.txt---noteslttreeishgt"><a id="Documentation/git-show.txt---notestreeish" class="anchor" href="#Documentation/git-show.txt---notestreeish"></a>--notes[=<span class="hover-term" data-term="treeish">&lt;treeish&gt;</span>] </dt>
 <dd>
 <p>Show the notes (see <a href='{{< relurl "docs/git-notes" >}}'>git-notes[1]</a>) that annotate the
 commit, when showing the commit log message.  This is the default
@@ -154,7 +154,7 @@ on the command line.</p>
 environment overrides). See <a href='{{< relurl "docs/git-config" >}}'>git-config[1]</a> for more details.</p>
 </div>
 <div class="paragraph">
-<p>With an optional <em>&lt;treeish&gt;</em> argument, use the treeish to find the notes
+<p>With an optional <em><span class="hover-term" data-term="treeish">&lt;treeish&gt;</span></em> argument, use the treeish to find the notes
 to display.  The treeish can specify the full refname when it begins
 with <span class='synopsis'><code>refs/notes/</code></span>; when it begins with <span class='synopsis'><code>notes/</code></span>, <span class='synopsis'><code>refs/</code></span> and otherwise
 <span class='synopsis'><code>refs/notes/</code></span> is prefixed to form a full name of the ref.</p>
@@ -174,7 +174,7 @@ Options are parsed in the order given on the command line, so e.g.
 "--notes --notes=foo --no-notes --notes=bar" will only show notes
 from "refs/notes/bar".</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-show.txt---show-noteslttreeishgt"><a id="Documentation/git-show.txt---show-notestreeish" class="anchor" href="#Documentation/git-show.txt---show-notestreeish"></a>--show-notes[=&lt;treeish&gt;] </dt>
+<dt class="hdlist1" id="Documentation/git-show.txt---show-noteslttreeishgt"><a id="Documentation/git-show.txt---show-notestreeish" class="anchor" href="#Documentation/git-show.txt---show-notestreeish"></a>--show-notes[=<span class="hover-term" data-term="treeish">&lt;treeish&gt;</span>] </dt>
 <dt class="hdlist1" id="Documentation/git-show.txt---no-standard-notes"><a class="anchor" href="#Documentation/git-show.txt---no-standard-notes"></a>--[no-]standard-notes </dt>
 <dd>
 <p>These options are deprecated. Use the above --notes/--no-notes
@@ -1293,7 +1293,7 @@ rename from &lt;path&gt;
 rename to &lt;path&gt;
 similarity index &lt;number&gt;
 dissimilarity index &lt;number&gt;
-index &lt;hash&gt;..&lt;hash&gt; &lt;mode&gt;</pre>
+index <span class="hover-term" data-term="hash">&lt;hash&gt;</span>..<span class="hover-term" data-term="hash">&lt;hash&gt;</span> &lt;mode&gt;</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1412,7 +1412,7 @@ this (when <em>-c</em> option is used):</p>
 (this example shows a merge with two parents):</p>
 <div class="literalblock">
 <div class="content">
-<pre>index &lt;hash&gt;,&lt;hash&gt;..&lt;hash&gt;
+<pre>index <span class="hover-term" data-term="hash">&lt;hash&gt;</span>,<span class="hover-term" data-term="hash">&lt;hash&gt;</span>..<span class="hover-term" data-term="hash">&lt;hash&gt;</span>
 mode &lt;mode&gt;,&lt;mode&gt;..&lt;mode&gt;
 new file mode &lt;mode&gt;
 deleted file mode &lt;mode&gt;,&lt;mode&gt;</pre>
@@ -1423,7 +1423,7 @@ deleted file mode &lt;mode&gt;,&lt;mode&gt;</pre>
 the &lt;mode&gt; is different from the rest. Extended headers with
 information about detected contents movement (renames and
 copying detection) are designed to work with diff of two
-&lt;tree-ish&gt; and are not used by combined diff format.</p>
+<span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span> and are not used by combined diff format.</p>
 </div>
 </li>
 <li>

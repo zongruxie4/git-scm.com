@@ -126,8 +126,8 @@ headings:
 <dd>
 <p>在 --refresh 过程中忽略丢失的文件</p>
 </dd>
-<dt class="hdlist1" id="git-update-index---cacheinfoltgtltgtltgt"> <a class="anchor" href="#git-update-index---cacheinfo"></a> <a class="anchor" href="#git-update-index---cacheinfoltgtltgtltgt"></a>--cacheinfo &lt;模式&gt;,&lt;对象&gt;,&lt;路径&gt; </dt>
-<dt class="hdlist1" id="git-update-index---cacheinfoltgtltgtltgt-1"> <a class="anchor" href="#git-update-index---cacheinfo-1"></a> <a class="anchor" href="#git-update-index---cacheinfoltgtltgtltgt-1"></a>--cacheinfo &lt;模式&gt; &lt;对象&gt; &lt;路径&gt; </dt>
+<dt class="hdlist1" id="git-update-index---cacheinfoltgtltgtltgt"> <a class="anchor" href="#git-update-index---cacheinfo"></a> <a class="anchor" href="#git-update-index---cacheinfoltgtltgtltgt"></a>--cacheinfo &lt;模式&gt;,<span class="hover-term" data-term="对象">&lt;对象&gt;</span>,&lt;路径&gt; </dt>
+<dt class="hdlist1" id="git-update-index---cacheinfoltgtltgtltgt-1"> <a class="anchor" href="#git-update-index---cacheinfo-1"></a> <a class="anchor" href="#git-update-index---cacheinfoltgtltgtltgt-1"></a>--cacheinfo &lt;模式&gt; <span class="hover-term" data-term="对象">&lt;对象&gt;</span> &lt;路径&gt; </dt>
 <dd>
 <p>将指定信息直接插入索引。 为了向后兼容，也可以将这三个参数分别作为三个参数，但建议新用户使用单参数形式。</p>
 </dd>
@@ -455,7 +455,7 @@ M foo.c</pre>
 <p>该模式专为拥有超大索引的仓库而设计，旨在减少重复写入这些索引所需的时间。</p>
 </div>
 <div class="paragraph">
-<p>在这种模式下，索引被分割成两个文件：$GIT_DIR/index 和 $GIT_DIR/sharedindex.&lt;SHA-1&gt;。更改会累积到分割索引的 $GIT_DIR/index，而共享索引文件则包含所有索引条目并保持不变。</p>
+<p>在这种模式下，索引被分割成两个文件：$GIT_DIR/index 和 $GIT_DIR/sharedindex.<span class="hover-term" data-term="SHA-1">&lt;SHA-1&gt;</span>。更改会累积到分割索引的 $GIT_DIR/index，而共享索引文件则包含所有索引条目并保持不变。</p>
 </div>
 <div class="paragraph">
 <p>当拆分索引中的条目数达到 splitIndex.maxPercentChange 配置变量（参见 <a href='{{< relurl "docs/git-config/zh_HANS-CN" >}}'>git-config[1]</a>）指定的水平时，拆分索引中的所有更改都会被推送回共享索引文件。</p>

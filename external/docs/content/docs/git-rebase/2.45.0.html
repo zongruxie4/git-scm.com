@@ -59,9 +59,9 @@ aliases:
 <div class="sectionbody">
 <div class="verseblock">
 <pre class="content"><em>git rebase</em> [-i | --interactive] [&lt;options&gt;] [--exec &lt;cmd&gt;]
-	[--onto &lt;newbase&gt; | --keep-base] [&lt;upstream&gt; [&lt;branch&gt;]]
+	[--onto &lt;newbase&gt; | --keep-base] [&lt;upstream&gt; [<span class="hover-term" data-term="branch">&lt;branch&gt;</span>]]
 <em>git rebase</em> [-i | --interactive] [&lt;options&gt;] [--exec &lt;cmd&gt;] [--onto &lt;newbase&gt;]
-	--root [&lt;branch&gt;]
+	--root [<span class="hover-term" data-term="branch">&lt;branch&gt;</span>]
 <em>git rebase</em> (--continue|--skip|--abort|--quit|--edit-todo|--show-current-patch)</pre>
 </div>
 </div>
@@ -70,8 +70,8 @@ aliases:
 <h2 id="_description"><a class="anchor" href="#_description"></a>DESCRIPTION</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>If <span class='synopsis'><em>&lt;branch&gt;</em></span> is specified, <span class='synopsis'><code>git</code> <code>rebase</code></span> will perform an automatic
-<span class='synopsis'><code>git</code> <code>switch</code> <em>&lt;branch&gt;</em></span> before doing anything else.  Otherwise
+<p>If <span class='synopsis'><em><span class="hover-term" data-term="branch">&lt;branch&gt;</span></em></span> is specified, <span class='synopsis'><code>git</code> <code>rebase</code></span> will perform an automatic
+<span class='synopsis'><code>git</code> <code>switch</code> <em><span class="hover-term" data-term="branch">&lt;branch&gt;</span></em></span> before doing anything else.  Otherwise
 it remains on the current branch.</p>
 </div>
 <div class="paragraph">
@@ -123,7 +123,7 @@ with a different commit message or timestamp will be skipped).</p>
 completely automatic.  You will have to resolve any such merge failure
 and run <span class='synopsis'><code>git</code> <code>rebase</code> <code>--continue</code></span>.  Another option is to bypass the commit
 that caused the merge failure with <span class='synopsis'><code>git</code> <code>rebase</code> <code>--skip</code></span>.  To check out the
-original <span class='synopsis'><em>&lt;branch&gt;</em></span> and remove the <span class='synopsis'><code>.git/rebase-apply</code></span> working files, use
+original <span class='synopsis'><em><span class="hover-term" data-term="branch">&lt;branch&gt;</span></em></span> and remove the <span class='synopsis'><code>.git/rebase-apply</code></span> working files, use
 the command <span class='synopsis'><code>git</code> <code>rebase</code> <code>--abort</code></span> instead.</p>
 </div>
 <div class="paragraph">
@@ -343,8 +343,8 @@ including not with each other:</p>
 <dt class="hdlist1" id="Documentation/git-rebase.txt---abort"><a class="anchor" href="#Documentation/git-rebase.txt---abort"></a>--abort </dt>
 <dd>
 <p>Abort the rebase operation and reset HEAD to the original
-branch. If <span class='synopsis'><em>&lt;branch&gt;</em></span> was provided when the rebase operation was
-started, then <span class='synopsis'><code>HEAD</code></span> will be reset to <span class='synopsis'><em>&lt;branch&gt;</em></span>. Otherwise <span class='synopsis'><code>HEAD</code></span>
+branch. If <span class='synopsis'><em><span class="hover-term" data-term="branch">&lt;branch&gt;</span></em></span> was provided when the rebase operation was
+started, then <span class='synopsis'><code>HEAD</code></span> will be reset to <span class='synopsis'><em><span class="hover-term" data-term="branch">&lt;branch&gt;</span></em></span>. Otherwise <span class='synopsis'><code>HEAD</code></span>
 will be reset to where it was when the rebase operation was
 started.</p>
 </dd>
@@ -389,10 +389,10 @@ leave out at most one of A and B, in which case it defaults to HEAD.</p>
 <dt class="hdlist1" id="Documentation/git-rebase.txt---keep-base"><a class="anchor" href="#Documentation/git-rebase.txt---keep-base"></a>--keep-base </dt>
 <dd>
 <p>Set the starting point at which to create the new commits to the
-merge base of <span class='synopsis'><em>&lt;upstream&gt;</em></span> and <span class='synopsis'><em>&lt;branch&gt;</em></span>. Running
-<span class='synopsis'><code>git</code> <code>rebase</code> <code>--keep-base</code> <em>&lt;upstream&gt;</em> <em>&lt;branch&gt;</em></span> is equivalent to
+merge base of <span class='synopsis'><em>&lt;upstream&gt;</em></span> and <span class='synopsis'><em><span class="hover-term" data-term="branch">&lt;branch&gt;</span></em></span>. Running
+<span class='synopsis'><code>git</code> <code>rebase</code> <code>--keep-base</code> <em>&lt;upstream&gt;</em> <em><span class="hover-term" data-term="branch">&lt;branch&gt;</span></em></span> is equivalent to
 running
-<span class='synopsis'><code>git</code> <code>rebase</code> <code>--reapply-cherry-picks</code> <code>--no-fork-point</code> <code>--onto</code> <em>&lt;upstream&gt;</em><code>...</code><em>&lt;branch&gt;</em> <em>&lt;upstream&gt;</em> <em>&lt;branch&gt;</em></span>.</p>
+<span class='synopsis'><code>git</code> <code>rebase</code> <code>--reapply-cherry-picks</code> <code>--no-fork-point</code> <code>--onto</code> <em>&lt;upstream&gt;</em><code>...</code><em><span class="hover-term" data-term="branch">&lt;branch&gt;</span></em> <em>&lt;upstream&gt;</em> <em><span class="hover-term" data-term="branch">&lt;branch&gt;</span></em></span>.</p>
 <div class="paragraph">
 <p>This option is useful in the case where one is developing a feature on
 top of an upstream branch. While the feature is being worked on, the
@@ -403,7 +403,7 @@ to avoid losing commits.</p>
 </div>
 <div class="paragraph">
 <p>Although both this option and <span class='synopsis'><code>--fork-point</code></span> find the merge base between
-<span class='synopsis'><em>&lt;upstream&gt;</em></span> and <span class='synopsis'><em>&lt;branch&gt;</em></span>, this option uses the merge base as the <em>starting
+<span class='synopsis'><em>&lt;upstream&gt;</em></span> and <span class='synopsis'><em><span class="hover-term" data-term="branch">&lt;branch&gt;</span></em></span>, this option uses the merge base as the <em>starting
 point</em> on which new commits will be created, whereas <span class='synopsis'><code>--fork-point</code></span> uses
 the merge base to determine the <em>set of commits</em> which will be rebased.</p>
 </div>
@@ -417,7 +417,7 @@ the merge base to determine the <em>set of commits</em> which will be rebased.</
 not just an existing branch name. Defaults to the configured
 upstream for the current branch.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-rebase.txt-ltbranchgt"><a id="Documentation/git-rebase.txt-branch" class="anchor" href="#Documentation/git-rebase.txt-branch"></a>&lt;branch&gt; </dt>
+<dt class="hdlist1" id="Documentation/git-rebase.txt-ltbranchgt"><a id="Documentation/git-rebase.txt-branch" class="anchor" href="#Documentation/git-rebase.txt-branch"></a><span class="hover-term" data-term="branch">&lt;branch&gt;</span> </dt>
 <dd>
 <p>Working branch; defaults to <span class='synopsis'><code>HEAD</code></span>.</p>
 </dd>
@@ -556,7 +556,7 @@ This implies <span class='synopsis'><code>--merge</code></span>.</p>
 <div class="paragraph">
 <p>Because <span class='synopsis'><code>git</code> <code>rebase</code></span> replays each commit from the working branch
 on top of the <span class='synopsis'><em>&lt;upstream&gt;</em></span> branch using the given strategy, using
-the <span class='synopsis'><code>ours</code></span> strategy simply empties all patches from the <span class='synopsis'><em>&lt;branch&gt;</em></span>,
+the <span class='synopsis'><code>ours</code></span> strategy simply empties all patches from the <span class='synopsis'><em><span class="hover-term" data-term="branch">&lt;branch&gt;</span></em></span>,
 which makes little sense.</p>
 </div>
 <div class="paragraph">
@@ -653,14 +653,14 @@ details).</p>
 <dt class="hdlist1" id="Documentation/git-rebase.txt---no-fork-point"><a class="anchor" href="#Documentation/git-rebase.txt---no-fork-point"></a>--no-fork-point </dt>
 <dd>
 <p>Use reflog to find a better common ancestor between <span class='synopsis'><em>&lt;upstream&gt;</em></span>
-and <span class='synopsis'><em>&lt;branch&gt;</em></span> when calculating which commits have been
-introduced by <span class='synopsis'><em>&lt;branch&gt;</em></span>.</p>
+and <span class='synopsis'><em><span class="hover-term" data-term="branch">&lt;branch&gt;</span></em></span> when calculating which commits have been
+introduced by <span class='synopsis'><em><span class="hover-term" data-term="branch">&lt;branch&gt;</span></em></span>.</p>
 <div class="paragraph">
 <p>When <span class='synopsis'><code>--fork-point</code></span> is active, <em>fork_point</em> will be used instead of
 <span class='synopsis'><em>&lt;upstream&gt;</em></span> to calculate the set of commits to rebase, where
 <em>fork_point</em> is the result of <span class='synopsis'><code>git</code> <code>merge-base</code> <code>--fork-point</code> <em>&lt;upstream&gt;</em>
 
-<em>&lt;branch&gt;</em></span> command (see <a href='{{< relurl "docs/git-merge-base" >}}'>git-merge-base[1]</a>).  If <em>fork_point</em>
+<em><span class="hover-term" data-term="branch">&lt;branch&gt;</span></em></span> command (see <a href='{{< relurl "docs/git-merge-base" >}}'>git-merge-base[1]</a>).  If <em>fork_point</em>
 ends up being empty, the <span class='synopsis'><em>&lt;upstream&gt;</em></span> will be used as a fallback.</p>
 </div>
 <div class="paragraph">
@@ -822,7 +822,7 @@ without an explicit <span class='synopsis'><code>--interactive</code></span>.</p
 </dd>
 <dt class="hdlist1" id="Documentation/git-rebase.txt---root"><a class="anchor" href="#Documentation/git-rebase.txt---root"></a>--root </dt>
 <dd>
-<p>Rebase all commits reachable from <span class='synopsis'><em>&lt;branch&gt;</em></span>, instead of
+<p>Rebase all commits reachable from <span class='synopsis'><em><span class="hover-term" data-term="branch">&lt;branch&gt;</span></em></span>, instead of
 limiting them with an <span class='synopsis'><em>&lt;upstream&gt;</em></span>.  This allows you to rebase
 the root commit(s) on a branch.</p>
 <div class="paragraph">
@@ -1364,7 +1364,7 @@ if it isn&#8217;t appropriate.  Please see the template <span class='synopsis'><
 for an example.</p>
 </div>
 <div class="paragraph">
-<p>Upon completion, <span class='synopsis'><em>&lt;branch&gt;</em></span> will be the current branch.</p>
+<p>Upon completion, <span class='synopsis'><em><span class="hover-term" data-term="branch">&lt;branch&gt;</span></em></span> will be the current branch.</p>
 </div>
 </div>
 </div>
@@ -1597,8 +1597,8 @@ add other commits.  This can be used to split a commit into two:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Start an interactive rebase with <span class='synopsis'><code>git</code> <code>rebase</code> <code>-i</code> <em>&lt;commit&gt;</em><code>^</code></span>, where
-<span class='synopsis'><em>&lt;commit&gt;</em></span> is the commit you want to split.  In fact, any commit range
+<p>Start an interactive rebase with <span class='synopsis'><code>git</code> <code>rebase</code> <code>-i</code> <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em><code>^</code></span>, where
+<span class='synopsis'><em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em></span> is the commit you want to split.  In fact, any commit range
 will do, as long as it contains that commit.</p>
 </li>
 <li>

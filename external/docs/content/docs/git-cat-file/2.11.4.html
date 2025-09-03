@@ -41,7 +41,7 @@ aliases:
 <h2 id="_synopsis"><a class="anchor" href="#_synopsis"></a>SYNOPSIS</h2>
 <div class="sectionbody">
 <div class="verseblock">
-<pre class="content"><em>git cat-file</em> (-t [--allow-unknown-type]| -s [--allow-unknown-type]| -e | -p | &lt;type&gt; | --textconv | --filters ) [--path=&lt;path&gt;] &lt;object&gt;
+<pre class="content"><em>git cat-file</em> (-t [--allow-unknown-type]| -s [--allow-unknown-type]| -e | -p | &lt;type&gt; | --textconv | --filters ) [--path=&lt;path&gt;] <span class="hover-term" data-term="object">&lt;object&gt;</span>
 <em>git cat-file</em> (--batch | --batch-check) [ --textconv | --filters ] [--follow-symlinks]</pre>
 </div>
 </div>
@@ -70,7 +70,7 @@ space, so that the appropriate drivers can be determined.</p>
 <div class="sectionbody">
 <div class="dlist">
 <dl>
-<dt class="hdlist1" id="Documentation/git-cat-file.txt-ltobjectgt"><a id="Documentation/git-cat-file.txt-object" class="anchor" href="#Documentation/git-cat-file.txt-object"></a>&lt;object&gt; </dt>
+<dt class="hdlist1" id="Documentation/git-cat-file.txt-ltobjectgt"><a id="Documentation/git-cat-file.txt-object" class="anchor" href="#Documentation/git-cat-file.txt-object"></a><span class="hover-term" data-term="object">&lt;object&gt;</span> </dt>
 <dd>
 <p>The name of the object to show.
 For a more complete list of ways to spell object names, see
@@ -79,35 +79,35 @@ the "SPECIFYING REVISIONS" section in <a href='{{< relurl "docs/gitrevisions" >}
 <dt class="hdlist1" id="Documentation/git-cat-file.txt--t"><a class="anchor" href="#Documentation/git-cat-file.txt--t"></a>-t </dt>
 <dd>
 <p>Instead of the content, show the object type identified by
-&lt;object&gt;.</p>
+<span class="hover-term" data-term="object">&lt;object&gt;</span>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-cat-file.txt--s"><a class="anchor" href="#Documentation/git-cat-file.txt--s"></a>-s </dt>
 <dd>
 <p>Instead of the content, show the object size identified by
-&lt;object&gt;.</p>
+<span class="hover-term" data-term="object">&lt;object&gt;</span>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-cat-file.txt--e"><a class="anchor" href="#Documentation/git-cat-file.txt--e"></a>-e </dt>
 <dd>
-<p>Suppress all output; instead exit with zero status if &lt;object&gt;
+<p>Suppress all output; instead exit with zero status if <span class="hover-term" data-term="object">&lt;object&gt;</span>
 exists and is a valid object.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-cat-file.txt--p"><a class="anchor" href="#Documentation/git-cat-file.txt--p"></a>-p </dt>
 <dd>
-<p>Pretty-print the contents of &lt;object&gt; based on its type.</p>
+<p>Pretty-print the contents of <span class="hover-term" data-term="object">&lt;object&gt;</span> based on its type.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-cat-file.txt-lttypegt"><a id="Documentation/git-cat-file.txt-type" class="anchor" href="#Documentation/git-cat-file.txt-type"></a>&lt;type&gt; </dt>
 <dd>
-<p>Typically this matches the real type of &lt;object&gt; but asking
+<p>Typically this matches the real type of <span class="hover-term" data-term="object">&lt;object&gt;</span> but asking
 for a type that can trivially be dereferenced from the given
-&lt;object&gt; is also permitted.  An example is to ask for a
-"tree" with &lt;object&gt; being a commit object that contains it,
-or to ask for a "blob" with &lt;object&gt; being a tag object that
+<span class="hover-term" data-term="object">&lt;object&gt;</span> is also permitted.  An example is to ask for a
+"tree" with <span class="hover-term" data-term="object">&lt;object&gt;</span> being a commit object that contains it,
+or to ask for a "blob" with <span class="hover-term" data-term="object">&lt;object&gt;</span> being a tag object that
 points at it.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-cat-file.txt---textconv"><a class="anchor" href="#Documentation/git-cat-file.txt---textconv"></a>--textconv </dt>
 <dd>
 <p>Show the content as transformed by a textconv filter. In this case,
-&lt;object&gt; has to be of the form &lt;tree-ish&gt;:&lt;path&gt;, or :&lt;path&gt; in
+<span class="hover-term" data-term="object">&lt;object&gt;</span> has to be of the form <span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span>:&lt;path&gt;, or :&lt;path&gt; in
 order to apply the filter to the content recorded in the index at
 &lt;path&gt;.</p>
 </dd>
@@ -115,8 +115,8 @@ order to apply the filter to the content recorded in the index at
 <dd>
 <p>Show the content as converted by the filters configured in
 the current working tree for the given &lt;path&gt; (i.e. smudge filters,
-end-of-line conversion, etc). In this case, &lt;object&gt; has to be of
-the form &lt;tree-ish&gt;:&lt;path&gt;, or :&lt;path&gt;.</p>
+end-of-line conversion, etc). In this case, <span class="hover-term" data-term="object">&lt;object&gt;</span> has to be of
+the form <span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span>:&lt;path&gt;, or :&lt;path&gt;.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-cat-file.txt---pathltpathgt"><a id="Documentation/git-cat-file.txt---pathpath" class="anchor" href="#Documentation/git-cat-file.txt---pathpath"></a>--path=&lt;path&gt; </dt>
 <dd>
@@ -259,16 +259,16 @@ respectively print:</p>
 <p>If <span class='synopsis'><code>-t</code></span> is specified, one of the &lt;type&gt;.</p>
 </div>
 <div class="paragraph">
-<p>If <span class='synopsis'><code>-s</code></span> is specified, the size of the &lt;object&gt; in bytes.</p>
+<p>If <span class='synopsis'><code>-s</code></span> is specified, the size of the <span class="hover-term" data-term="object">&lt;object&gt;</span> in bytes.</p>
 </div>
 <div class="paragraph">
 <p>If <span class='synopsis'><code>-e</code></span> is specified, no output.</p>
 </div>
 <div class="paragraph">
-<p>If <span class='synopsis'><code>-p</code></span> is specified, the contents of &lt;object&gt; are pretty-printed.</p>
+<p>If <span class='synopsis'><code>-p</code></span> is specified, the contents of <span class="hover-term" data-term="object">&lt;object&gt;</span> are pretty-printed.</p>
 </div>
 <div class="paragraph">
-<p>If &lt;type&gt; is specified, the raw (though uncompressed) contents of the &lt;object&gt;
+<p>If &lt;type&gt; is specified, the raw (though uncompressed) contents of the <span class="hover-term" data-term="object">&lt;object&gt;</span>
 will be returned.</p>
 </div>
 </div>
@@ -357,7 +357,7 @@ the repository, then <span class='synopsis'><code>cat-file</code></span> will ig
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>&lt;object&gt; SP missing LF</pre>
+<pre><span class="hover-term" data-term="object">&lt;object&gt;</span> SP missing LF</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -382,7 +382,7 @@ displayed:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>&lt;object&gt; SP missing LF</pre>
+<pre><span class="hover-term" data-term="object">&lt;object&gt;</span> SP missing LF</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -391,7 +391,7 @@ displayed:</p>
 <div class="listingblock">
 <div class="content">
 <pre>dangling SP &lt;size&gt; LF
-&lt;object&gt; LF</pre>
+<span class="hover-term" data-term="object">&lt;object&gt;</span> LF</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -401,7 +401,7 @@ it (transitive-of) points to does not.</p>
 <div class="listingblock">
 <div class="content">
 <pre>loop SP &lt;size&gt; LF
-&lt;object&gt; LF</pre>
+<span class="hover-term" data-term="object">&lt;object&gt;</span> LF</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -411,7 +411,7 @@ require more than 40 link resolutions to resolve).</p>
 <div class="listingblock">
 <div class="content">
 <pre>notdir SP &lt;size&gt; LF
-&lt;object&gt; LF</pre>
+<span class="hover-term" data-term="object">&lt;object&gt;</span> LF</pre>
 </div>
 </div>
 <div class="paragraph">

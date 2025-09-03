@@ -51,10 +51,10 @@ aliases:
 <h2 id="_synopsis"><a class="anchor" href="#_synopsis"></a>SYNOPSIS</h2>
 <div class="sectionbody">
 <div class="verseblock">
-<pre class="content"><span class='synopsis'><code>git</code></span> <span class='synopsis'><code>diff</code></span> [<em>&lt;options&gt;</em>] [<em>&lt;commit&gt;</em>] [<span class='synopsis'><code>--</code></span>] [<em>&lt;path&gt;</em>&#8230;&#8203;]
-<span class='synopsis'><code>git</code></span> <span class='synopsis'><code>diff</code></span> [<em>&lt;options&gt;</em>] <span class='synopsis'><code>--cached</code></span> [<span class='synopsis'><code>--merge-base</code></span>] [<em>&lt;commit&gt;</em>] [<span class='synopsis'><code>--</code></span>] [<em>&lt;path&gt;</em>&#8230;&#8203;]
-<span class='synopsis'><code>git</code></span> <span class='synopsis'><code>diff</code></span> [<em>&lt;options&gt;</em>] [<span class='synopsis'><code>--merge-base</code></span>] <em>&lt;commit&gt;</em> [<em>&lt;commit&gt;</em>&#8230;&#8203;] <em>&lt;commit&gt;</em> [<span class='synopsis'><code>--</code></span>] [<em>&lt;path&gt;</em>&#8230;&#8203;]
-<span class='synopsis'><code>git</code></span> <span class='synopsis'><code>diff</code></span> [<em>&lt;options&gt;</em>] <em>&lt;commit&gt;</em><span class='synopsis'>...</span><em>&lt;commit&gt;</em> [<span class='synopsis'><code>--</code></span>] [<em>&lt;path&gt;</em>&#8230;&#8203;]
+<pre class="content"><span class='synopsis'><code>git</code></span> <span class='synopsis'><code>diff</code></span> [<em>&lt;options&gt;</em>] [<em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>] [<span class='synopsis'><code>--</code></span>] [<em>&lt;path&gt;</em>&#8230;&#8203;]
+<span class='synopsis'><code>git</code></span> <span class='synopsis'><code>diff</code></span> [<em>&lt;options&gt;</em>] <span class='synopsis'><code>--cached</code></span> [<span class='synopsis'><code>--merge-base</code></span>] [<em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>] [<span class='synopsis'><code>--</code></span>] [<em>&lt;path&gt;</em>&#8230;&#8203;]
+<span class='synopsis'><code>git</code></span> <span class='synopsis'><code>diff</code></span> [<em>&lt;options&gt;</em>] [<span class='synopsis'><code>--merge-base</code></span>] <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em> [<em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>&#8230;&#8203;] <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em> [<span class='synopsis'><code>--</code></span>] [<em>&lt;path&gt;</em>&#8230;&#8203;]
+<span class='synopsis'><code>git</code></span> <span class='synopsis'><code>diff</code></span> [<em>&lt;options&gt;</em>] <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em><span class='synopsis'>...</span><em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em> [<span class='synopsis'><code>--</code></span>] [<em>&lt;path&gt;</em>&#8230;&#8203;]
 <span class='synopsis'><code>git</code></span> <span class='synopsis'><code>diff</code></span> [<em>&lt;options&gt;</em>] <em>&lt;blob&gt;</em> <em>&lt;blob&gt;</em>
 <span class='synopsis'><code>git</code></span> <span class='synopsis'><code>diff</code></span> [<em>&lt;options&gt;</em>] <span class='synopsis'><code>--no-index</code></span> [<span class='synopsis'><code>--</code></span>] <em>&lt;path&gt;</em> <em>&lt;path&gt;</em></pre>
 </div>
@@ -88,85 +88,85 @@ at least one of the paths points outside the working tree,
 or when running the command outside a working tree
 controlled by Git. This form implies <span class='synopsis'><code>--exit-code</code></span>.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-diff.txt-spanclasssynopsiscodegitcodecodediffcodeemltoptionsgtemcode--cachedcodecode--merge-basecodeemltcommitgtemcode--codeemltpathgtemspan"><a id="Documentation/git-diff.txt-gitdiffoptions--cached--merge-basecommit--path" class="anchor" href="#Documentation/git-diff.txt-gitdiffoptions--cached--merge-basecommit--path"></a><span class='synopsis'><code>git</code> <code>diff</code> [<em>&lt;options&gt;</em>] <code>--cached</code> [<code>--merge-base</code>] [<em>&lt;commit&gt;</em>] [<code>--</code>] [<em>&lt;path&gt;</em>...]</span> </dt>
+<dt class="hdlist1" id="Documentation/git-diff.txt-spanclasssynopsiscodegitcodecodediffcodeemltoptionsgtemcode--cachedcodecode--merge-basecodeemltcommitgtemcode--codeemltpathgtemspan"><a id="Documentation/git-diff.txt-gitdiffoptions--cached--merge-basecommit--path" class="anchor" href="#Documentation/git-diff.txt-gitdiffoptions--cached--merge-basecommit--path"></a><span class='synopsis'><code>git</code> <code>diff</code> [<em>&lt;options&gt;</em>] <code>--cached</code> [<code>--merge-base</code>] [<em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>] [<code>--</code>] [<em>&lt;path&gt;</em>...]</span> </dt>
 <dd>
 <p>This form is to view the changes you staged for the next
-commit relative to the named <em>&lt;commit&gt;</em>.  Typically you
+commit relative to the named <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>.  Typically you
 would want comparison with the latest commit, so if you
-do not give <em>&lt;commit&gt;</em>, it defaults to <span class='synopsis'><code>HEAD</code></span>.
+do not give <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>, it defaults to <span class='synopsis'><code>HEAD</code></span>.
 If <span class='synopsis'><code>HEAD</code></span> does not exist (e.g. unborn branches) and
-<em>&lt;commit&gt;</em> is not given, it shows all staged changes.
+<em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em> is not given, it shows all staged changes.
 <span class='synopsis'><code>--staged</code></span> is a synonym of <span class='synopsis'><code>--cached</code></span>.</p>
 <div class="paragraph">
-<p>If <span class='synopsis'><code>--merge-base</code></span> is given, instead of using <em>&lt;commit&gt;</em>, use the merge base
-of <em>&lt;commit&gt;</em> and <span class='synopsis'><code>HEAD</code></span>.  <span class='synopsis'><code>git</code> <code>diff</code> <code>--cached</code> <code>--merge-base</code> <code>A</code></span> is equivalent to
+<p>If <span class='synopsis'><code>--merge-base</code></span> is given, instead of using <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>, use the merge base
+of <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em> and <span class='synopsis'><code>HEAD</code></span>.  <span class='synopsis'><code>git</code> <code>diff</code> <code>--cached</code> <code>--merge-base</code> <code>A</code></span> is equivalent to
 <span class='synopsis'><code>git</code> <code>diff</code> <code>--cached</code> <code>$</code>(<code>git</code> <code>merge-base</code> <code>A</code> <code>HEAD</code>)</span>.</p>
 </div>
 </dd>
-<dt class="hdlist1" id="Documentation/git-diff.txt-spanclasssynopsiscodegitcodecodediffcodeemltoptionsgtemcode--merge-basecodeemltcommitgtemcode--codeemltpathgtemspan"><a id="Documentation/git-diff.txt-gitdiffoptions--merge-basecommit--path" class="anchor" href="#Documentation/git-diff.txt-gitdiffoptions--merge-basecommit--path"></a><span class='synopsis'><code>git</code> <code>diff</code> [<em>&lt;options&gt;</em>] [<code>--merge-base</code>] <em>&lt;commit&gt;</em> [<code>--</code>] [<em>&lt;path&gt;</em>...]</span> </dt>
+<dt class="hdlist1" id="Documentation/git-diff.txt-spanclasssynopsiscodegitcodecodediffcodeemltoptionsgtemcode--merge-basecodeemltcommitgtemcode--codeemltpathgtemspan"><a id="Documentation/git-diff.txt-gitdiffoptions--merge-basecommit--path" class="anchor" href="#Documentation/git-diff.txt-gitdiffoptions--merge-basecommit--path"></a><span class='synopsis'><code>git</code> <code>diff</code> [<em>&lt;options&gt;</em>] [<code>--merge-base</code>] <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em> [<code>--</code>] [<em>&lt;path&gt;</em>...]</span> </dt>
 <dd>
 <p>This form is to view the changes you have in your
-working tree relative to the named <em>&lt;commit&gt;</em>.  You can
+working tree relative to the named <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>.  You can
 use <span class='synopsis'><code>HEAD</code></span> to compare it with the latest commit, or a
 branch name to compare with the tip of a different
 branch.</p>
 <div class="paragraph">
-<p>If <span class='synopsis'><code>--merge-base</code></span> is given, instead of using <em>&lt;commit&gt;</em>, use the merge base
-of <em>&lt;commit&gt;</em> and <span class='synopsis'><code>HEAD</code></span>.  <span class='synopsis'><code>git</code> <code>diff</code> <code>--merge-base</code> <code>A</code></span> is equivalent to
+<p>If <span class='synopsis'><code>--merge-base</code></span> is given, instead of using <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>, use the merge base
+of <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em> and <span class='synopsis'><code>HEAD</code></span>.  <span class='synopsis'><code>git</code> <code>diff</code> <code>--merge-base</code> <code>A</code></span> is equivalent to
 <span class='synopsis'><code>git</code> <code>diff</code> <code>$</code>(<code>git</code> <code>merge-base</code> <code>A</code> <code>HEAD</code>)</span>.</p>
 </div>
 </dd>
-<dt class="hdlist1" id="Documentation/git-diff.txt-spanclasssynopsiscodegitcodecodediffcodeemltoptionsgtemcode--merge-basecodeemltcommitgtememltcommitgtemcode--codeemltpathgtemspan"><a id="Documentation/git-diff.txt-gitdiffoptions--merge-basecommitcommit--path" class="anchor" href="#Documentation/git-diff.txt-gitdiffoptions--merge-basecommitcommit--path"></a><span class='synopsis'><code>git</code> <code>diff</code> [<em>&lt;options&gt;</em>] [<code>--merge-base</code>] <em>&lt;commit&gt;</em> <em>&lt;commit&gt;</em> [<code>--</code>] [<em>&lt;path&gt;</em>...]</span> </dt>
+<dt class="hdlist1" id="Documentation/git-diff.txt-spanclasssynopsiscodegitcodecodediffcodeemltoptionsgtemcode--merge-basecodeemltcommitgtememltcommitgtemcode--codeemltpathgtemspan"><a id="Documentation/git-diff.txt-gitdiffoptions--merge-basecommitcommit--path" class="anchor" href="#Documentation/git-diff.txt-gitdiffoptions--merge-basecommitcommit--path"></a><span class='synopsis'><code>git</code> <code>diff</code> [<em>&lt;options&gt;</em>] [<code>--merge-base</code>] <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em> <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em> [<code>--</code>] [<em>&lt;path&gt;</em>...]</span> </dt>
 <dd>
 <p>This is to view the changes between two arbitrary
-<em>&lt;commit&gt;</em>.</p>
+<em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>.</p>
 <div class="paragraph">
 <p>If <span class='synopsis'><code>--merge-base</code></span> is given, use the merge base of the two commits for the
 "before" side.  <span class='synopsis'><code>git</code> <code>diff</code> <code>--merge-base</code> <code>A</code> <code>B</code></span> is equivalent to
 <span class='synopsis'><code>git</code> <code>diff</code> <code>$</code>(<code>git</code> <code>merge-base</code> <code>A</code> <code>B</code>) <code>B</code></span>.</p>
 </div>
 </dd>
-<dt class="hdlist1" id="Documentation/git-diff.txt-spanclasssynopsiscodegitcodecodediffcodeemltoptionsgtememltcommitgtememltcommitgtemcodecodeemltcommitgtemcode--codeemltpathgtemspan"><a id="Documentation/git-diff.txt-gitdiffoptionscommitcommitcommit--path" class="anchor" href="#Documentation/git-diff.txt-gitdiffoptionscommitcommitcommit--path"></a><span class='synopsis'><code>git</code> <code>diff</code> [<em>&lt;options&gt;</em>] <em>&lt;commit&gt;</em> <em>&lt;commit&gt;</em><code>...</code><em>&lt;commit&gt;</em> [<code>--</code>] [<em>&lt;path&gt;</em>...]</span> </dt>
+<dt class="hdlist1" id="Documentation/git-diff.txt-spanclasssynopsiscodegitcodecodediffcodeemltoptionsgtememltcommitgtememltcommitgtemcodecodeemltcommitgtemcode--codeemltpathgtemspan"><a id="Documentation/git-diff.txt-gitdiffoptionscommitcommitcommit--path" class="anchor" href="#Documentation/git-diff.txt-gitdiffoptionscommitcommitcommit--path"></a><span class='synopsis'><code>git</code> <code>diff</code> [<em>&lt;options&gt;</em>] <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em> <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em><code>...</code><em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em> [<code>--</code>] [<em>&lt;path&gt;</em>...]</span> </dt>
 <dd>
 <p>This form is to view the results of a merge commit.  The first
-listed <em>&lt;commit&gt;</em> must be the merge itself; the remaining two or
+listed <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em> must be the merge itself; the remaining two or
 more commits should be its parents.  Convenient ways to produce
 the desired set of revisions are to use the suffixes <span class='synopsis'><code>@</code></span> and
 <span class='synopsis'><code>^!</code></span>.  If <span class='synopsis'><code>A</code></span> is a merge commit, then <span class='synopsis'><code>git</code> <code>diff</code> <code>A</code> <code>A^@</code></span>,
 <span class='synopsis'><code>git</code> <code>diff</code> <code>A^!</code></span> and <span class='synopsis'><code>git</code> <code>show</code> <code>A</code></span> all give the same combined diff.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-diff.txt-spanclasssynopsiscodegitcodecodediffcodeemltoptionsgtememltcommitgtemcodecodeemltcommitgtemcode--codeemltpathgtemspan"><a id="Documentation/git-diff.txt-gitdiffoptionscommitcommit--path" class="anchor" href="#Documentation/git-diff.txt-gitdiffoptionscommitcommit--path"></a><span class='synopsis'><code>git</code> <code>diff</code> [<em>&lt;options&gt;</em>] <em>&lt;commit&gt;</em><code>..</code><em>&lt;commit&gt;</em> [<code>--</code>] [<em>&lt;path&gt;</em>...]</span> </dt>
+<dt class="hdlist1" id="Documentation/git-diff.txt-spanclasssynopsiscodegitcodecodediffcodeemltoptionsgtememltcommitgtemcodecodeemltcommitgtemcode--codeemltpathgtemspan"><a id="Documentation/git-diff.txt-gitdiffoptionscommitcommit--path" class="anchor" href="#Documentation/git-diff.txt-gitdiffoptionscommitcommit--path"></a><span class='synopsis'><code>git</code> <code>diff</code> [<em>&lt;options&gt;</em>] <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em><code>..</code><em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em> [<code>--</code>] [<em>&lt;path&gt;</em>...]</span> </dt>
 <dd>
 <p>This is synonymous to the earlier form (without the <span class='synopsis'><code>..</code></span>) for
-viewing the changes between two arbitrary <em>&lt;commit&gt;</em>.  If <em>&lt;commit&gt;</em> on
+viewing the changes between two arbitrary <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>.  If <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em> on
 one side is omitted, it will have the same effect as
 using <span class='synopsis'><code>HEAD</code></span> instead.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-diff.txt-spanclasssynopsiscodegitcodecodediffcodeemltoptionsgtememltcommitgtemcodecodeemltcommitgtemcode--codeemltpathgtemspan-1"><a id="Documentation/git-diff.txt-gitdiffoptionscommitcommit--path-1" class="anchor" href="#Documentation/git-diff.txt-gitdiffoptionscommitcommit--path-1"></a><span class='synopsis'><code>git</code> <code>diff</code> [<em>&lt;options&gt;</em>] <em>&lt;commit&gt;</em><code>...</code><em>&lt;commit&gt;</em> [<code>--</code>] [<em>&lt;path&gt;</em>...]</span> </dt>
+<dt class="hdlist1" id="Documentation/git-diff.txt-spanclasssynopsiscodegitcodecodediffcodeemltoptionsgtememltcommitgtemcodecodeemltcommitgtemcode--codeemltpathgtemspan-1"><a id="Documentation/git-diff.txt-gitdiffoptionscommitcommit--path-1" class="anchor" href="#Documentation/git-diff.txt-gitdiffoptionscommitcommit--path-1"></a><span class='synopsis'><code>git</code> <code>diff</code> [<em>&lt;options&gt;</em>] <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em><code>...</code><em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em> [<code>--</code>] [<em>&lt;path&gt;</em>...]</span> </dt>
 <dd>
 <p>This form is to view the changes on the branch containing
-and up to the second <em>&lt;commit&gt;</em>, starting at a common ancestor
-of both <em>&lt;commit&gt;</em>.  <span class='synopsis'><code>git</code> <code>diff</code> <code>A...B</code></span> is equivalent to
+and up to the second <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>, starting at a common ancestor
+of both <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>.  <span class='synopsis'><code>git</code> <code>diff</code> <code>A...B</code></span> is equivalent to
 <span class='synopsis'><code>git</code> <code>diff</code> <code>$</code>(<code>git</code> <code>merge-base</code> <code>A</code> <code>B</code>) <code>B</code></span>.  You can omit any one
-of <em>&lt;commit&gt;</em>, which has the same effect as using <span class='synopsis'><code>HEAD</code></span> instead.</p>
+of <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>, which has the same effect as using <span class='synopsis'><code>HEAD</code></span> instead.</p>
 </dd>
 </dl>
 </div>
 <div class="paragraph">
 <p>Just in case you are doing something exotic, it should be
-noted that all of the <em>&lt;commit&gt;</em> in the above description, except
+noted that all of the <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em> in the above description, except
 in the <span class='synopsis'><code>--merge-base</code></span> case and in the last two forms that use <span class='synopsis'><code>..</code></span>
-notations, can be any <em>&lt;tree&gt;</em>. A tree of interest is the one pointed to
+notations, can be any <em><span class="hover-term" data-term="tree">&lt;tree&gt;</span></em>. A tree of interest is the one pointed to
 by the ref named <span class='synopsis'><code>AUTO_MERGE</code></span>, which is written by the <span class='synopsis'><code>ort</code></span> merge
 strategy upon hitting merge conflicts (see <a href='{{< relurl "docs/git-merge" >}}'>git-merge[1]</a>).
 Comparing the working tree with <span class='synopsis'><code>AUTO_MERGE</code></span> shows changes you&#8217;ve made
 so far to resolve textual conflicts (see the examples below).</p>
 </div>
 <div class="paragraph">
-<p>For a more complete list of ways to spell <em>&lt;commit&gt;</em>, see
+<p>For a more complete list of ways to spell <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>, see
 "SPECIFYING REVISIONS" section in <a href='{{< relurl "docs/gitrevisions" >}}'>gitrevisions[7]</a>.
 However, <span class='synopsis'><code>diff</code></span> is about comparing two <em>endpoints</em>, not ranges,
-and the range notations (<span class='synopsis'><em>&lt;commit&gt;</em><code>..</code><em>&lt;commit&gt;</em></span> and <span class='synopsis'><em>&lt;commit&gt;</em><code>...</code><em>&lt;commit&gt;</em></span>)
+and the range notations (<span class='synopsis'><em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em><code>..</code><em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em></span> and <span class='synopsis'><em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em><code>...</code><em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em></span>)
 do not mean a range as defined in the
 "SPECIFYING RANGES" section in <a href='{{< relurl "docs/gitrevisions" >}}'>gitrevisions[7]</a>.</p>
 </div>
@@ -1157,13 +1157,13 @@ compared differs:</p>
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1" id="Documentation/git-diff.txt-spanclasssynopsiscodegit-diff-indexcodeemlttree-ishgtemspan"><a id="Documentation/git-diff.txt-git-diff-indextree-ish" class="anchor" href="#Documentation/git-diff.txt-git-diff-indextree-ish"></a><span class='synopsis'><code>git-diff-index</code> <em>&lt;tree-ish&gt;</em></span> </dt>
+<dt class="hdlist1" id="Documentation/git-diff.txt-spanclasssynopsiscodegit-diff-indexcodeemlttree-ishgtemspan"><a id="Documentation/git-diff.txt-git-diff-indextree-ish" class="anchor" href="#Documentation/git-diff.txt-git-diff-indextree-ish"></a><span class='synopsis'><code>git-diff-index</code> <em><span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span></em></span> </dt>
 <dd>
-<p>compares the <em>&lt;tree-ish&gt;</em> and the files on the filesystem.</p>
+<p>compares the <em><span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span></em> and the files on the filesystem.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-diff.txt-spanclasssynopsiscodegit-diff-indexcodecode--cachedcodeemlttree-ishgtemspan"><a id="Documentation/git-diff.txt-git-diff-index--cachedtree-ish" class="anchor" href="#Documentation/git-diff.txt-git-diff-index--cachedtree-ish"></a><span class='synopsis'><code>git-diff-index</code> <code>--cached</code> <em>&lt;tree-ish&gt;</em></span> </dt>
+<dt class="hdlist1" id="Documentation/git-diff.txt-spanclasssynopsiscodegit-diff-indexcodecode--cachedcodeemlttree-ishgtemspan"><a id="Documentation/git-diff.txt-git-diff-index--cachedtree-ish" class="anchor" href="#Documentation/git-diff.txt-git-diff-index--cachedtree-ish"></a><span class='synopsis'><code>git-diff-index</code> <code>--cached</code> <em><span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span></em></span> </dt>
 <dd>
-<p>compares the <em>&lt;tree-ish&gt;</em> and the index.</p>
+<p>compares the <em><span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span></em> and the index.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-diff.txt-spanclasssynopsiscodegit-diff-treecodecode-rcodeemlttree-ish-1gtememlttree-ish-2gtememltpatterngtemspan"><a id="Documentation/git-diff.txt-git-diff-tree-rtree-ish-1tree-ish-2pattern" class="anchor" href="#Documentation/git-diff.txt-git-diff-tree-rtree-ish-1tree-ish-2pattern"></a><span class='synopsis'><code>git-diff-tree</code> [<code>-r</code>] <em>&lt;tree-ish-1&gt;</em> <em>&lt;tree-ish-2&gt;</em> [<em>&lt;pattern&gt;</em>...]</span> </dt>
 <dd>
@@ -1416,7 +1416,7 @@ the file that the rename/copy produces, respectively.</p>
 <span class='synopsis'><code>rename</code></span> <span class='synopsis'><code>to</code></span> <em>&lt;path&gt;</em>
 <span class='synopsis'><code>similarity</code></span> <span class='synopsis'><code>index</code></span> <em>&lt;number&gt;</em>
 <span class='synopsis'><code>dissimilarity</code></span> <span class='synopsis'><code>index</code></span> <em>&lt;number&gt;</em>
-<span class='synopsis'><code>index</code></span> <em>&lt;hash&gt;</em><span class='synopsis'><code>..</code></span><em>&lt;hash&gt;</em> <em>&lt;mode&gt;</em></pre>
+<span class='synopsis'><code>index</code></span> <em><span class="hover-term" data-term="hash">&lt;hash&gt;</span></em><span class='synopsis'><code>..</code></span><em><span class="hover-term" data-term="hash">&lt;hash&gt;</span></em> <em>&lt;mode&gt;</em></pre>
 </div>
 <div class="paragraph">
 <p>File modes <em>&lt;mode&gt;</em> are printed as 6-digit octal numbers including the file type
@@ -1538,7 +1538,7 @@ this (when the <span class='synopsis'><code>-c</code></span> option is used):</p
 <p>It is followed by one or more extended header lines
 (this example shows a merge with two parents):</p>
 <div class="verseblock">
-<pre class="content"><span class='synopsis'><code>index</code></span> <em>&lt;hash&gt;</em><span class='synopsis'><code>,</code></span><em>&lt;hash&gt;</em><span class='synopsis'><code>..</code></span><em>&lt;hash&gt;</em>
+<pre class="content"><span class='synopsis'><code>index</code></span> <em><span class="hover-term" data-term="hash">&lt;hash&gt;</span></em><span class='synopsis'><code>,</code></span><em><span class="hover-term" data-term="hash">&lt;hash&gt;</span></em><span class='synopsis'><code>..</code></span><em><span class="hover-term" data-term="hash">&lt;hash&gt;</span></em>
 <span class='synopsis'><code>mode</code></span> <em>&lt;mode&gt;</em><span class='synopsis'><code>,</code></span><em>&lt;mode&gt;</em><span class='synopsis'><code>..</code></span><em>&lt;mode&gt;</em>
 <span class='synopsis'><code>new</code></span> <span class='synopsis'><code>file</code></span> <span class='synopsis'><code>mode</code></span> <em>&lt;mode&gt;</em>
 <span class='synopsis'><code>deleted</code></span> <span class='synopsis'><code>file</code></span> <span class='synopsis'><code>mode</code></span> <em>&lt;mode&gt;</em><span class='synopsis'><code>,</code></span><em>&lt;mode&gt;</em></pre>
@@ -1548,7 +1548,7 @@ this (when the <span class='synopsis'><code>-c</code></span> option is used):</p
 the &lt;mode&gt; is different from the rest. Extended headers with
 information about detected content movement (renames and
 copying detection) are designed to work with the diff of two
-<em>&lt;tree-ish&gt;</em> and are not used by combined diff format.</p>
+<em><span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span></em> and are not used by combined diff format.</p>
 </div>
 </li>
 <li>

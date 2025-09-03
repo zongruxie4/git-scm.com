@@ -14,7 +14,7 @@ aliases:
 <div class="sectionbody">
 <div class="dlist">
 <dl>
-<dt class="hdlist1" id="Documentation/pull-fetch-param.txt-ltrepositorygt"><a id="Documentation/pull-fetch-param.txt-repository" class="anchor" href="#Documentation/pull-fetch-param.txt-repository"></a>&lt;repository&gt; </dt>
+<dt class="hdlist1" id="Documentation/pull-fetch-param.txt-ltrepositorygt"><a id="Documentation/pull-fetch-param.txt-repository" class="anchor" href="#Documentation/pull-fetch-param.txt-repository"></a><span class="hover-term" data-term="repository">&lt;repository&gt;</span> </dt>
 <dd>
 <p>The "remote" repository that is the source of a fetch
 or pull operation.  This parameter can be either a URL
@@ -27,9 +27,9 @@ of a remote (see the section <a href="#REMOTES">REMOTES</a> below).</p>
 of remotes.&lt;group&gt; in the configuration file.
 (See <a href='{{< relurl "docs/git-config" >}}'>git-config[1]</a>).</p>
 </dd>
-<dt class="hdlist1" id="Documentation/pull-fetch-param.txt-ltrefspecgt"><a id="Documentation/pull-fetch-param.txt-refspec" class="anchor" href="#Documentation/pull-fetch-param.txt-refspec"></a>&lt;refspec&gt; </dt>
+<dt class="hdlist1" id="Documentation/pull-fetch-param.txt-ltrefspecgt"><a id="Documentation/pull-fetch-param.txt-refspec" class="anchor" href="#Documentation/pull-fetch-param.txt-refspec"></a><span class="hover-term" data-term="refspec">&lt;refspec&gt;</span> </dt>
 <dd>
-<p>The format of a &lt;refspec&gt; parameter is an optional plus
+<p>The format of a <span class="hover-term" data-term="refspec">&lt;refspec&gt;</span> parameter is an optional plus
 <span class='synopsis'><code>+</code></span>, followed by the source ref &lt;src&gt;, followed
 by a colon <span class='synopsis'><code>:</code></span>, followed by the destination ref &lt;dst&gt;.</p>
 <div class="paragraph">
@@ -69,7 +69,7 @@ must know this is the expected usage pattern for a branch.
 </td>
 <td class="content">
 You never do your own development on branches that appear
-on the right hand side of a &lt;refspec&gt; colon on <span class='synopsis'><code>Pull:</code></span> lines;
+on the right hand side of a <span class="hover-term" data-term="refspec">&lt;refspec&gt;</span> colon on <span class='synopsis'><code>Pull:</code></span> lines;
 they are to be updated by <em>git fetch</em>.  If you intend to do
 development derived from a remote branch <span class='synopsis'><code>B</code></span>, have a <span class='synopsis'><code>Pull:</code></span>
 line to track it (i.e. <span class='synopsis'><code>Pull:</code> <code>B:remote-B</code></span>), and have a separate
@@ -91,16 +91,16 @@ on the remote branch, merge it into your development branch with
 <div class="title">Note</div>
 </td>
 <td class="content">
-There is a difference between listing multiple &lt;refspec&gt;
+There is a difference between listing multiple <span class="hover-term" data-term="refspec">&lt;refspec&gt;</span>
 directly on <em>git pull</em> command line and having multiple
-<span class='synopsis'><code>Pull:</code></span> &lt;refspec&gt; lines for a &lt;repository&gt; and running
-<em>git pull</em> command without any explicit &lt;refspec&gt; parameters.
-&lt;refspec&gt; listed explicitly on the command line are always
+<span class='synopsis'><code>Pull:</code></span> <span class="hover-term" data-term="refspec">&lt;refspec&gt;</span> lines for a <span class="hover-term" data-term="repository">&lt;repository&gt;</span> and running
+<em>git pull</em> command without any explicit <span class="hover-term" data-term="refspec">&lt;refspec&gt;</span> parameters.
+<span class="hover-term" data-term="refspec">&lt;refspec&gt;</span> listed explicitly on the command line are always
 merged into the current branch after fetching.  In other words,
 if you list more than one remote refs, you would be making
-an Octopus.  While <em>git pull</em> run without any explicit &lt;refspec&gt;
-parameter takes default &lt;refspec&gt;s from <span class='synopsis'><code>Pull:</code></span> lines, it
-merges only the first &lt;refspec&gt; found into the current branch,
+an Octopus.  While <em>git pull</em> run without any explicit <span class="hover-term" data-term="refspec">&lt;refspec&gt;</span>
+parameter takes default <span class="hover-term" data-term="refspec">&lt;refspec&gt;</span>s from <span class='synopsis'><code>Pull:</code></span> lines, it
+merges only the first <span class="hover-term" data-term="refspec">&lt;refspec&gt;</span> found into the current branch,
 after fetching all the remote refs.  This is because making an
 Octopus from remote refs is rarely done, while keeping track
 of multiple remote heads in one-go by fetching more than one
@@ -115,11 +115,11 @@ is often useful.
 <div class="ulist">
 <ul>
 <li>
-<p><span class='synopsis'><code>tag</code> <em>&lt;tag&gt;</em></span> means the same as <span class='synopsis'><code>refs/tags/</code><em>&lt;tag&gt;</em><code>:refs/tags/</code><em>&lt;tag&gt;</em></span>;
+<p><span class='synopsis'><code>tag</code> <em><span class="hover-term" data-term="tag">&lt;tag&gt;</span></em></span> means the same as <span class='synopsis'><code>refs/tags/</code><em><span class="hover-term" data-term="tag">&lt;tag&gt;</span></em><code>:refs/tags/</code><em><span class="hover-term" data-term="tag">&lt;tag&gt;</span></em></span>;
 it requests fetching everything up to the given tag.</p>
 </li>
 <li>
-<p>A parameter &lt;ref&gt; without a colon fetches that ref into FETCH_HEAD,
+<p>A parameter <span class="hover-term" data-term="ref">&lt;ref&gt;</span> without a colon fetches that ref into FETCH_HEAD,
 and updates the remote-tracking branches (if any).</p>
 </li>
 </ul>

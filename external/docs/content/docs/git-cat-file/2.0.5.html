@@ -43,7 +43,7 @@ aliases:
 <h2 id="_synopsis"><a class="anchor" href="#_synopsis"></a>SYNOPSIS</h2>
 <div class="sectionbody">
 <div class="verseblock">
-<pre class="content"><em>git cat-file</em> (-t | -s | -e | -p | &lt;type&gt; | --textconv ) &lt;object&gt;
+<pre class="content"><em>git cat-file</em> (-t | -s | -e | -p | &lt;type&gt; | --textconv ) <span class="hover-term" data-term="object">&lt;object&gt;</span>
 <em>git cat-file</em> (--batch | --batch-check) &lt; &lt;list-of-objects&gt;</pre>
 </div>
 </div>
@@ -68,7 +68,7 @@ stdin, and the SHA-1, type, and size of each object is printed on stdout.</p>
 <div class="sectionbody">
 <div class="dlist">
 <dl>
-<dt class="hdlist1" id="Documentation/git-cat-file.txt-ltobjectgt"><a id="Documentation/git-cat-file.txt-object" class="anchor" href="#Documentation/git-cat-file.txt-object"></a>&lt;object&gt; </dt>
+<dt class="hdlist1" id="Documentation/git-cat-file.txt-ltobjectgt"><a id="Documentation/git-cat-file.txt-object" class="anchor" href="#Documentation/git-cat-file.txt-object"></a><span class="hover-term" data-term="object">&lt;object&gt;</span> </dt>
 <dd>
 <p>The name of the object to show.
 For a more complete list of ways to spell object names, see
@@ -77,35 +77,35 @@ the "SPECIFYING REVISIONS" section in <a href='{{< relurl "docs/gitrevisions" >}
 <dt class="hdlist1" id="Documentation/git-cat-file.txt--t"><a class="anchor" href="#Documentation/git-cat-file.txt--t"></a>-t </dt>
 <dd>
 <p>Instead of the content, show the object type identified by
-&lt;object&gt;.</p>
+<span class="hover-term" data-term="object">&lt;object&gt;</span>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-cat-file.txt--s"><a class="anchor" href="#Documentation/git-cat-file.txt--s"></a>-s </dt>
 <dd>
 <p>Instead of the content, show the object size identified by
-&lt;object&gt;.</p>
+<span class="hover-term" data-term="object">&lt;object&gt;</span>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-cat-file.txt--e"><a class="anchor" href="#Documentation/git-cat-file.txt--e"></a>-e </dt>
 <dd>
-<p>Suppress all output; instead exit with zero status if &lt;object&gt;
+<p>Suppress all output; instead exit with zero status if <span class="hover-term" data-term="object">&lt;object&gt;</span>
 exists and is a valid object.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-cat-file.txt--p"><a class="anchor" href="#Documentation/git-cat-file.txt--p"></a>-p </dt>
 <dd>
-<p>Pretty-print the contents of &lt;object&gt; based on its type.</p>
+<p>Pretty-print the contents of <span class="hover-term" data-term="object">&lt;object&gt;</span> based on its type.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-cat-file.txt-lttypegt"><a id="Documentation/git-cat-file.txt-type" class="anchor" href="#Documentation/git-cat-file.txt-type"></a>&lt;type&gt; </dt>
 <dd>
-<p>Typically this matches the real type of &lt;object&gt; but asking
+<p>Typically this matches the real type of <span class="hover-term" data-term="object">&lt;object&gt;</span> but asking
 for a type that can trivially be dereferenced from the given
-&lt;object&gt; is also permitted.  An example is to ask for a
-"tree" with &lt;object&gt; being a commit object that contains it,
-or to ask for a "blob" with &lt;object&gt; being a tag object that
+<span class="hover-term" data-term="object">&lt;object&gt;</span> is also permitted.  An example is to ask for a
+"tree" with <span class="hover-term" data-term="object">&lt;object&gt;</span> being a commit object that contains it,
+or to ask for a "blob" with <span class="hover-term" data-term="object">&lt;object&gt;</span> being a tag object that
 points at it.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-cat-file.txt---textconv"><a class="anchor" href="#Documentation/git-cat-file.txt---textconv"></a>--textconv </dt>
 <dd>
 <p>Show the content as transformed by a textconv filter. In this case,
-&lt;object&gt; has be of the form &lt;tree-ish&gt;:&lt;path&gt;, or :&lt;path&gt; in order
+<span class="hover-term" data-term="object">&lt;object&gt;</span> has be of the form <span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span>:&lt;path&gt;, or :&lt;path&gt; in order
 to apply the filter to the content recorded in the index at &lt;path&gt;.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-cat-file.txt---batch"><a class="anchor" href="#Documentation/git-cat-file.txt---batch"></a>--batch </dt>
@@ -133,16 +133,16 @@ section <span class='synopsis'><code>BATCH</code> <code>OUTPUT</code></span> bel
 <p>If <em>-t</em> is specified, one of the &lt;type&gt;.</p>
 </div>
 <div class="paragraph">
-<p>If <em>-s</em> is specified, the size of the &lt;object&gt; in bytes.</p>
+<p>If <em>-s</em> is specified, the size of the <span class="hover-term" data-term="object">&lt;object&gt;</span> in bytes.</p>
 </div>
 <div class="paragraph">
 <p>If <em>-e</em> is specified, no output.</p>
 </div>
 <div class="paragraph">
-<p>If <em>-p</em> is specified, the contents of &lt;object&gt; are pretty-printed.</p>
+<p>If <em>-p</em> is specified, the contents of <span class="hover-term" data-term="object">&lt;object&gt;</span> are pretty-printed.</p>
 </div>
 <div class="paragraph">
-<p>If &lt;type&gt; is specified, the raw (though uncompressed) contents of the &lt;object&gt;
+<p>If &lt;type&gt; is specified, the raw (though uncompressed) contents of the <span class="hover-term" data-term="object">&lt;object&gt;</span>
 will be returned.</p>
 </div>
 </div>
@@ -231,7 +231,7 @@ the repository, then <span class='synopsis'><code>cat-file</code></span> will ig
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>&lt;object&gt; SP missing LF</pre>
+<pre><span class="hover-term" data-term="object">&lt;object&gt;</span> SP missing LF</pre>
 </div>
 </div>
 </div>

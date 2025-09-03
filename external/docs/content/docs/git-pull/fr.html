@@ -51,7 +51,7 @@ headings:
 <h2 id="_synopsis"><a class="anchor" href="#_synopsis"></a>SYNOPSIS</h2>
 <div class="sectionbody">
 <div class="verseblock">
-<pre class="content"><em>git pull</em> [&lt;options&gt;] [&lt;dépôt&gt; [&lt;spécification-de-référence&gt;&#8230;&#8203;]]</pre>
+<pre class="content"><em>git pull</em> [&lt;options&gt;] [<span class="hover-term" data-term="dépôt">&lt;dépôt&gt;</span> [&lt;spécification-de-référence&gt;&#8230;&#8203;]]</pre>
 </div>
 </div>
 </div>
@@ -65,10 +65,10 @@ headings:
 <p>Plus précisément, <span class='synopsis'><code>git</code> <code>pull</code></span> exécute <span class='synopsis'><code>git</code> <code>fetch</code></span> avec les paramètres donnés et ensuite, selon les options de configuration ou les drapeaux de la ligne de commande, appellera soit <span class='synopsis'><code>git</code> <code>rebase</code></span> soit <span class='synopsis'><code>git</code> <code>merge</code></span> pour réconcilier les branches divergentes.</p>
 </div>
 <div class="paragraph">
-<p>&lt;dépôt&gt; doit être le nom d&#8217;un dépôt distant tel que passé à <a href='{{< relurl "docs/git-fetch/fr" >}}'>git-fetch[1]</a>. &lt;spéc-de-réf&gt; peut nommer une réf distante arbitraire (par exemple, le nom d&#8217;une étiquette) ou même une collection de réfs avec les branches de suivi à distance correspondantes (par exemple, refs/heads/*:refs/remotes/origin/*), mais c&#8217;est généralement le nom d&#8217;une branche du dépôt distant.</p>
+<p><span class="hover-term" data-term="dépôt">&lt;dépôt&gt;</span> doit être le nom d&#8217;un dépôt distant tel que passé à <a href='{{< relurl "docs/git-fetch/fr" >}}'>git-fetch[1]</a>. &lt;spéc-de-réf&gt; peut nommer une réf distante arbitraire (par exemple, le nom d&#8217;une étiquette) ou même une collection de réfs avec les branches de suivi à distance correspondantes (par exemple, refs/heads/*:refs/remotes/origin/*), mais c&#8217;est généralement le nom d&#8217;une branche du dépôt distant.</p>
 </div>
 <div class="paragraph">
-<p>Les valeurs par défaut pour &lt;dépôt&gt; et &lt;branche&gt; sont lues à partir de la configuration "remote" et "merge" pour la branche actuelle comme défini par <a href='{{< relurl "docs/git-branch/fr" >}}'>git-branch[1]</a> <span class='synopsis'><code>--track</code></span>.</p>
+<p>Les valeurs par défaut pour <span class="hover-term" data-term="dépôt">&lt;dépôt&gt;</span> et <span class="hover-term" data-term="branche">&lt;branche&gt;</span> sont lues à partir de la configuration "remote" et "merge" pour la branche actuelle comme défini par <a href='{{< relurl "docs/git-branch/fr" >}}'>git-branch[1]</a> <span class='synopsis'><code>--track</code></span>.</p>
 </div>
 <div class="paragraph">
 <p>Supposons que l&#8217;historique suivant existe et que la branche actuelle est <span class='synopsis'><code>master</code></span> :</p>
@@ -464,13 +464,13 @@ Cette option permet de passer outre à ce contrôle.</p>
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1" id="git-pull-ltdptgt"> <a class="anchor" href="#git-pull-dpt"></a> <a class="anchor" href="#git-pull-ltdptgt"></a>&lt;dépôt&gt; </dt>
+<dt class="hdlist1" id="git-pull-ltdptgt"> <a class="anchor" href="#git-pull-dpt"></a> <a class="anchor" href="#git-pull-ltdptgt"></a><span class="hover-term" data-term="dépôt">&lt;dépôt&gt;</span> </dt>
 <dd>
 <p>Le dépôt "distant" qui est la source d&#8217;une opération de récupération ou de tirage. Ce paramètre peut être soit une URL (voir la section <a href="#URLS">URLS GIT</a> ci-dessous) soit le nom d&#8217;un remote (voir la section <a href="#REMOTES">DISTANTS</a> ci-dessous).</p>
 </dd>
 <dt class="hdlist1" id="git-pull-ltspcificateur-de-rfrencegt"> <a class="anchor" href="#git-pull-spcificateur-de-rfrence"></a> <a class="anchor" href="#git-pull-ltspcificateur-de-rfrencegt"></a>&lt;spécificateur-de-référence&gt; </dt>
 <dd>
-<p>Préciser les références à récupérer et les références locales à mettre à jour. Lorsqu&#8217;aucun &lt;spéc-de-réf&gt; n&#8217;apparaît sur la ligne de commande, les références à récupérer sont lues à partir des variables <span class='synopsis'><code>remote.</code><em>&lt;dépôt&gt;</em><code>.fetch</code></span> à la place
+<p>Préciser les références à récupérer et les références locales à mettre à jour. Lorsqu&#8217;aucun &lt;spéc-de-réf&gt; n&#8217;apparaît sur la ligne de commande, les références à récupérer sont lues à partir des variables <span class='synopsis'><code>remote.</code><em><span class="hover-term" data-term="dépôt">&lt;dépôt&gt;</span></em><code>.fetch</code></span> à la place
 (voir la section "<a href="#BRANCHES DE SUIVI À DISTANCE CONFIGURÉES">[BRANCHES DE SUIVI À DISTANCE CONFIGURÉES]</a>"
 dans <a href='{{< relurl "docs/git-fetch/fr" >}}'>git-fetch[1]</a>).</p>
 <div class="paragraph">
@@ -483,7 +483,7 @@ dans <a href='{{< relurl "docs/git-fetch/fr" >}}'>git-fetch[1]</a>).</p>
 <p>Si un spécificateur de référence est préfixé par <span class='synopsis'><code>^</code></span>, il sera interprété comme un spécificateur de référence négatif. Plutôt que de spécifier les références à récupérer ou les références locales à mettre à jour, un tel spécificateur de référence spécifiera les références à exclure. Une référence sera considérée comme correspondante si elle correspond à au moins une référence positive, et ne correspond à aucune référence négative. Les spécificateurs de référence négatifs peuvent être utiles pour restreindre le champ d&#8217;application d&#8217;un spécificateur modèle de référence afin qu&#8217;il n&#8217;inclue pas de références spécifiques. Les spécificateurs de référence négatifs peuvent eux-mêmes être des spécificateurs modèles de référence . Cependant, ils ne peuvent contenir qu&#8217;un &lt;src&gt; et ne peuvent pas spécifier un &lt;dst&gt;. Les noms d&#8217;objets hexagonaux complets ne sont pas non plus pris en charge.</p>
 </div>
 <div class="paragraph">
-<p><span class='synopsis'><code>tag</code> <em>&lt;étiquette&gt;</em></span> signifie la même chose que <span class='synopsis'><code>refs/tags/</code><em>&lt;tag&gt;</em><code>:refs/tags/</code><em>&lt;tag&gt;</em></span> ; cela demande de tout récupérer jusqu&#8217;à l&#8217;étiquette donnée.</p>
+<p><span class='synopsis'><code>tag</code> <em><span class="hover-term" data-term="étiquette">&lt;étiquette&gt;</span></em></span> signifie la même chose que <span class='synopsis'><code>refs/tags/</code><em>&lt;tag&gt;</em><code>:refs/tags/</code><em>&lt;tag&gt;</em></span> ; cela demande de tout récupérer jusqu&#8217;à l&#8217;étiquette donnée.</p>
 </div>
 <div class="paragraph">
 <p>La référence distante qui correspond à &lt;src&gt; est récupérée, et si &lt;dst&gt; n&#8217;est pas une chaîne vide, une tentative est faite pour mettre à jour la référence locale qui lui correspond.</p>
@@ -522,7 +522,7 @@ Lorsque la branche distante que vous voulez récupérer est connue pour être r�
 <div class="title">Note</div>
 </td>
 <td class="content">
-Il y a une différence entre le fait de lister plusieurs &lt;spéc-de-réf&gt; directement sur la ligne de commande <em>git pull</em> et le fait d&#8217;avoir plusieurs entrées <span class='synopsis'><code>remote.</code><em>&lt;dépôt&gt;</em><code>.fetch</code></span> dans votre configuration pour un &lt;dépôt&gt; et d&#8217;exécuter une commande <em>git pull</em> sans aucun paramètre &lt;spéc-de-réf&gt; explicite. Les &lt;spéc-de-réf&gt;s listés explicitement sur la ligne de commande sont toujours fusionnés dans la branche actuelle après avoir été récupérées. En d&#8217;autres termes, si vous listez plus d&#8217;une référence distante, <em>git pull</em> créera une fusion Octopus. D&#8217;un autre côté, si vous n&#8217;indiquez aucun paramètre &lt;spéc-de-réf&gt; explicite sur la ligne de commande, <em>git pull</em> récupérera tous les &lt;spéc-de-réf&gt;s qu&#8217;il trouve dans la configuration <span class='synopsis'><code>remote.</code><em>&lt;dépôt&gt;</em><code>.fetch</code></span> et fusionnera seulement le premier &lt;réf-de-spéc&gt; trouvé dans la branche actuelle. C&#8217;est parce que faire un Octopus à partir de références distantes est rarement fait, alors que garder la trace de plusieurs têtes distantes en un seul coup en en récupérant plusieurs est souvent utile.
+Il y a une différence entre le fait de lister plusieurs &lt;spéc-de-réf&gt; directement sur la ligne de commande <em>git pull</em> et le fait d&#8217;avoir plusieurs entrées <span class='synopsis'><code>remote.</code><em><span class="hover-term" data-term="dépôt">&lt;dépôt&gt;</span></em><code>.fetch</code></span> dans votre configuration pour un <span class="hover-term" data-term="dépôt">&lt;dépôt&gt;</span> et d&#8217;exécuter une commande <em>git pull</em> sans aucun paramètre &lt;spéc-de-réf&gt; explicite. Les &lt;spéc-de-réf&gt;s listés explicitement sur la ligne de commande sont toujours fusionnés dans la branche actuelle après avoir été récupérées. En d&#8217;autres termes, si vous listez plus d&#8217;une référence distante, <em>git pull</em> créera une fusion Octopus. D&#8217;un autre côté, si vous n&#8217;indiquez aucun paramètre &lt;spéc-de-réf&gt; explicite sur la ligne de commande, <em>git pull</em> récupérera tous les &lt;spéc-de-réf&gt;s qu&#8217;il trouve dans la configuration <span class='synopsis'><code>remote.</code><em><span class="hover-term" data-term="dépôt">&lt;dépôt&gt;</span></em><code>.fetch</code></span> et fusionnera seulement le premier &lt;réf-de-spéc&gt; trouvé dans la branche actuelle. C&#8217;est parce que faire un Octopus à partir de références distantes est rarement fait, alors que garder la trace de plusieurs têtes distantes en un seul coup en en récupérant plusieurs est souvent utile.
 </td>
 </tr>
 </table>
@@ -670,7 +670,7 @@ Il y a une différence entre le fait de lister plusieurs &lt;spéc-de-réf&gt; d
 <h2 id="_distants"><a class="anchor" href="#_distants"></a>DISTANTS<a id="REMOTES"></a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Le nom de l&#8217;un des éléments suivants peut être utilisé à la place d&#8217;une URL en tant qu&#8217;argument <span class='synopsis'><em>&lt;dépôt&gt;</em></span> :</p>
+<p>Le nom de l&#8217;un des éléments suivants peut être utilisé à la place d&#8217;une URL en tant qu&#8217;argument <span class='synopsis'><em><span class="hover-term" data-term="dépôt">&lt;dépôt&gt;</span></em></span> :</p>
 </div>
 <div class="ulist">
 <ul>
@@ -729,21 +729,21 @@ Il y a une différence entre le fait de lister plusieurs &lt;spéc-de-réf&gt; d
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>	&lt;URL&gt;#&lt;tête&gt;</pre>
+<pre>	&lt;URL&gt;#<span class="hover-term" data-term="tête">&lt;tête&gt;</span></pre>
 </div>
 </div>
 <div class="paragraph">
-<p><span class='synopsis'><em>&lt;URL&gt;</em></span> est obligatoire ; <span class='synopsis'><code>#</code><em>&lt;tête&gt;</em></span> est facultatif.</p>
+<p><span class='synopsis'><em>&lt;URL&gt;</em></span> est obligatoire ; <span class='synopsis'><code>#</code><em><span class="hover-term" data-term="tête">&lt;tête&gt;</span></em></span> est facultatif.</p>
 </div>
 <div class="paragraph">
-<p>En fonction de l&#8217;opération, git utilisera l&#8217;un des spécificateurs de référence suivants, si vous n&#8217;en fournissez pas un en ligne de commande. <span class='synopsis'><em>&lt;branche&gt;</em></span> est le nom de ce fichier dans <span class='synopsis'><code>$GIT_DIR/branches</code></span> et <span class='synopsis'><em>&lt;tête&gt;</em></span> vaut par défaut <span class='synopsis'><code>master</code></span>.</p>
+<p>En fonction de l&#8217;opération, git utilisera l&#8217;un des spécificateurs de référence suivants, si vous n&#8217;en fournissez pas un en ligne de commande. <span class='synopsis'><em><span class="hover-term" data-term="branche">&lt;branche&gt;</span></em></span> est le nom de ce fichier dans <span class='synopsis'><code>$GIT_DIR/branches</code></span> et <span class='synopsis'><em><span class="hover-term" data-term="tête">&lt;tête&gt;</span></em></span> vaut par défaut <span class='synopsis'><code>master</code></span>.</p>
 </div>
 <div class="paragraph">
 <p>git fetch utilise :</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>	refs/heads/&lt;tête&gt;:refs/heads/&lt;branche&gt;</pre>
+<pre>	refs/heads/<span class="hover-term" data-term="tête">&lt;tête&gt;</span>:refs/heads/<span class="hover-term" data-term="branche">&lt;branche&gt;</span></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -751,7 +751,7 @@ Il y a une différence entre le fait de lister plusieurs &lt;spéc-de-réf&gt; d
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>	HEAD:refs/heads/&lt;tête&gt;</pre>
+<pre>	HEAD:refs/heads/<span class="hover-term" data-term="tête">&lt;tête&gt;</span></pre>
 </div>
 </div>
 </div>
@@ -880,10 +880,10 @@ Il y a une différence entre le fait de lister plusieurs &lt;spéc-de-réf&gt; d
 <p>Souvent, les gens utilisent <span class='synopsis'><code>git</code> <code>pull</code></span> sans donner aucun paramètre. Traditionnellement, cela équivaut à dire <span class='synopsis'><code>git</code> <code>pull</code> <code>origin</code></span>. Cependant, lorsque la configuration <span class='synopsis'><code>branch.</code><em>&lt;nom&gt;</em><code>.remote</code></span> est présente alors que sur la branche <span class='synopsis'><em>&lt;nom&gt;</em></span>, cette valeur est utilisée à la place de <span class='synopsis'><code>origin</code></span>.</p>
 </div>
 <div class="paragraph">
-<p>Afin de déterminer l&#8217;URL à utiliser pour récupérer, la valeur de la configuration <span class='synopsis'><code>remote.</code> <em>&lt;origine&gt;</em> <code>.url</code></span> est consultée et s&#8217;il n&#8217;y a pas une telle variable, la valeur sur la ligne <span class='synopsis'><code>URL:</code></span> dans <span class='synopsis'><code>$GIT_DIR/remotes/</code><em>&lt;origine&gt;</em></span> est utilisée.</p>
+<p>Afin de déterminer l&#8217;URL à utiliser pour récupérer, la valeur de la configuration <span class='synopsis'><code>remote.</code> <em><span class="hover-term" data-term="origine">&lt;origine&gt;</span></em> <code>.url</code></span> est consultée et s&#8217;il n&#8217;y a pas une telle variable, la valeur sur la ligne <span class='synopsis'><code>URL:</code></span> dans <span class='synopsis'><code>$GIT_DIR/remotes/</code><em><span class="hover-term" data-term="origine">&lt;origine&gt;</span></em></span> est utilisée.</p>
 </div>
 <div class="paragraph">
-<p>Afin de déterminer les branches distantes à récupérer (et éventuellement stocker dans les branches de suivi à distance) lorsque la commande est exécutée sans aucun paramètre spéc-de-réf sur la ligne de commande, les valeurs de la variable de configuration <span class='synopsis'><code>remote.</code> <em>&lt;origine&gt;</em> <code>.fetch</code></span> sont consultées , et s&#8217;il n&#8217;y en a pas, <span class='synopsis'><code>$GIT_DIR/remotes/</code><em>&lt;origine&gt;</em></span> est consulté et ses lignes <span class='synopsis'><em>Pull :</em></span> sont utilisées. En plus des formats spéc-de-réf décrits dans la section OPTIONS, vous pouvez avoir un motif de spécificateur de référence qui ressemble à ceci :</p>
+<p>Afin de déterminer les branches distantes à récupérer (et éventuellement stocker dans les branches de suivi à distance) lorsque la commande est exécutée sans aucun paramètre spéc-de-réf sur la ligne de commande, les valeurs de la variable de configuration <span class='synopsis'><code>remote.</code> <em><span class="hover-term" data-term="origine">&lt;origine&gt;</span></em> <code>.fetch</code></span> sont consultées , et s&#8217;il n&#8217;y en a pas, <span class='synopsis'><code>$GIT_DIR/remotes/</code><em><span class="hover-term" data-term="origine">&lt;origine&gt;</span></em></span> est consulté et ses lignes <span class='synopsis'><em>Pull :</em></span> sont utilisées. En plus des formats spéc-de-réf décrits dans la section OPTIONS, vous pouvez avoir un motif de spécificateur de référence qui ressemble à ceci :</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -900,7 +900,7 @@ Il y a une différence entre le fait de lister plusieurs &lt;spéc-de-réf&gt; d
 <p>Si des spécificateurs de référence explicites ont été donnés sur la ligne de commande de <span class='synopsis'><code>git</code> <code>pull</code></span>, elles sont toutes fusionnées.</p>
 </div>
 <div class="paragraph">
-<p>Lorsqu&#8217;aucun spécificateur de référence n&#8217;a été donné sur la ligne de commande, alors <span class='synopsis'><code>git</code> <code>pull</code></span> utilise le spécificateur de référence de la configuration ou <span class='synopsis'><code>$GIT_DIR/remotes/</code><em>&lt;origine&gt;</em></span>. Dans de tels cas, les règles suivantes s&#8217;appliquent :</p>
+<p>Lorsqu&#8217;aucun spécificateur de référence n&#8217;a été donné sur la ligne de commande, alors <span class='synopsis'><code>git</code> <code>pull</code></span> utilise le spécificateur de référence de la configuration ou <span class='synopsis'><code>$GIT_DIR/remotes/</code><em><span class="hover-term" data-term="origine">&lt;origine&gt;</span></em></span>. Dans de tels cas, les règles suivantes s&#8217;appliquent :</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">

@@ -86,9 +86,9 @@ aliases:
 <h2 id="_synopsis"><a class="anchor" href="#_synopsis"></a>SYNOPSIS</h2>
 <div class="sectionbody">
 <div class="verseblock">
-<pre class="content"><em>git restore</em> [&lt;options&gt;] [--source=&lt;tree&gt;] [--staged] [--worktree] [--] &lt;pathspec&gt;&#8230;&#8203;
-<em>git restore</em> [&lt;options&gt;] [--source=&lt;tree&gt;] [--staged] [--worktree] --pathspec-from-file=&lt;file&gt; [--pathspec-file-nul]
-<em>git restore</em> (-p|--patch) [&lt;options&gt;] [--source=&lt;tree&gt;] [--staged] [--worktree] [--] [&lt;pathspec&gt;&#8230;&#8203;]</pre>
+<pre class="content"><em>git restore</em> [&lt;options&gt;] [--source=<span class="hover-term" data-term="tree">&lt;tree&gt;</span>] [--staged] [--worktree] [--] <span class="hover-term" data-term="pathspec">&lt;pathspec&gt;</span>&#8230;&#8203;
+<em>git restore</em> [&lt;options&gt;] [--source=<span class="hover-term" data-term="tree">&lt;tree&gt;</span>] [--staged] [--worktree] --pathspec-from-file=&lt;file&gt; [--pathspec-file-nul]
+<em>git restore</em> (-p|--patch) [&lt;options&gt;] [--source=<span class="hover-term" data-term="tree">&lt;tree&gt;</span>] [--staged] [--worktree] [--] [<span class="hover-term" data-term="pathspec">&lt;pathspec&gt;</span>&#8230;&#8203;]</pre>
 </div>
 </div>
 </div>
@@ -123,8 +123,8 @@ between the three commands.</p>
 <div class="sectionbody">
 <div class="dlist">
 <dl>
-<dt class="hdlist1" id="Documentation/git-restore.txt--slttreegt"><a id="Documentation/git-restore.txt--stree" class="anchor" href="#Documentation/git-restore.txt--stree"></a>-s &lt;tree&gt; </dt>
-<dt class="hdlist1" id="Documentation/git-restore.txt---sourcelttreegt"><a id="Documentation/git-restore.txt---sourcetree" class="anchor" href="#Documentation/git-restore.txt---sourcetree"></a>--source=&lt;tree&gt; </dt>
+<dt class="hdlist1" id="Documentation/git-restore.txt--slttreegt"><a id="Documentation/git-restore.txt--stree" class="anchor" href="#Documentation/git-restore.txt--stree"></a>-s <span class="hover-term" data-term="tree">&lt;tree&gt;</span> </dt>
+<dt class="hdlist1" id="Documentation/git-restore.txt---sourcelttreegt"><a id="Documentation/git-restore.txt---sourcetree" class="anchor" href="#Documentation/git-restore.txt---sourcetree"></a>--source=<span class="hover-term" data-term="tree">&lt;tree&gt;</span> </dt>
 <dd>
 <p>Restore the working tree files with the content from the given
 tree. It is common to specify the source tree by naming a
@@ -207,15 +207,15 @@ specified. Unmerged paths on the working tree are left alone.</p>
 <dt class="hdlist1" id="Documentation/git-restore.txt---ignore-skip-worktree-bits"><a class="anchor" href="#Documentation/git-restore.txt---ignore-skip-worktree-bits"></a>--ignore-skip-worktree-bits </dt>
 <dd>
 <p>In sparse checkout mode, by default is to only update entries
-matched by <span class='synopsis'><em>&lt;pathspec&gt;</em></span> and sparse patterns in
+matched by <span class='synopsis'><em><span class="hover-term" data-term="pathspec">&lt;pathspec&gt;</span></em></span> and sparse patterns in
 $GIT_DIR/info/sparse-checkout. This option ignores the sparse
 patterns and unconditionally restores any files in
-<span class='synopsis'><em>&lt;pathspec&gt;</em></span>.</p>
+<span class='synopsis'><em><span class="hover-term" data-term="pathspec">&lt;pathspec&gt;</span></em></span>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-restore.txt---recurse-submodules"><a class="anchor" href="#Documentation/git-restore.txt---recurse-submodules"></a>--recurse-submodules </dt>
 <dt class="hdlist1" id="Documentation/git-restore.txt---no-recurse-submodules"><a class="anchor" href="#Documentation/git-restore.txt---no-recurse-submodules"></a>--no-recurse-submodules </dt>
 <dd>
-<p>If <span class='synopsis'><em>&lt;pathspec&gt;</em></span> names an active submodule and the restore location
+<p>If <span class='synopsis'><em><span class="hover-term" data-term="pathspec">&lt;pathspec&gt;</span></em></span> names an active submodule and the restore location
 includes the working tree, the submodule will only be updated if
 this option is given, in which case its working tree will be
 restored to the commit recorded in the superproject, and any local
@@ -230,7 +230,7 @@ not be updated. Just like <a href='{{< relurl "docs/git-checkout" >}}'>git-check
 <p>In overlay mode, the command never removes files when
 restoring. In no-overlay mode, tracked files that do not
 appear in the <span class='synopsis'><code>--source</code></span> tree are removed, to make them match
-<span class='synopsis'><em>&lt;tree&gt;</em></span> exactly. The default is no-overlay mode.</p>
+<span class='synopsis'><em><span class="hover-term" data-term="tree">&lt;tree&gt;</span></em></span> exactly. The default is no-overlay mode.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-restore.txt---pathspec-from-fileltfilegt"><a id="Documentation/git-restore.txt---pathspec-from-filefile" class="anchor" href="#Documentation/git-restore.txt---pathspec-from-filefile"></a>--pathspec-from-file=&lt;file&gt; </dt>
 <dd>
@@ -251,7 +251,7 @@ literally (including newlines and quotes).</p>
 <dd>
 <p>Do not interpret any more arguments as options.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-restore.txt-ltpathspecgt82308203"><a id="Documentation/git-restore.txt-pathspec" class="anchor" href="#Documentation/git-restore.txt-pathspec"></a>&lt;pathspec&gt;&#8230;&#8203; </dt>
+<dt class="hdlist1" id="Documentation/git-restore.txt-ltpathspecgt82308203"><a id="Documentation/git-restore.txt-pathspec" class="anchor" href="#Documentation/git-restore.txt-pathspec"></a><span class="hover-term" data-term="pathspec">&lt;pathspec&gt;</span>&#8230;&#8203; </dt>
 <dd>
 <p>Limits the paths affected by the operation.</p>
 <div class="paragraph">

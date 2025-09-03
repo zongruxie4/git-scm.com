@@ -57,7 +57,7 @@ aliases:
 	[<span class='synopsis'><code>--no-verify</code></span>] [<span class='synopsis'><code>-s</code></span> <em>&lt;strategy&gt;</em>] [<span class='synopsis'><code>-X</code></span> <em>&lt;strategy-option&gt;</em>] [<span class='synopsis'><code>-S</code></span>[<em>&lt;keyid&gt;</em>]]
 	[<span class='synopsis'><code>--</code></span>[<span class='synopsis'><code>no-</code></span>]<span class='synopsis'><code>allow-unrelated-histories</code></span>]
 	[<span class='synopsis'><code>--</code></span>[<span class='synopsis'><code>no-</code></span>]<span class='synopsis'><code>rerere-autoupdate</code></span>] [<span class='synopsis'><code>-m</code></span> <em>&lt;msg&gt;</em>] [<span class='synopsis'><code>-F</code></span> <em>&lt;file&gt;</em>]
-	[<span class='synopsis'><code>--into-name</code></span> <em>&lt;branch&gt;</em>] [<em>&lt;commit&gt;</em>&#8230;&#8203;]
+	[<span class='synopsis'><code>--into-name</code></span> <em><span class="hover-term" data-term="branch">&lt;branch&gt;</span></em>] [<em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>&#8230;&#8203;]
 <span class='synopsis'><code>git</code></span> <span class='synopsis'><code>merge</code></span> (<span class='synopsis'><code>--continue</code></span> | <span class='synopsis'><code>--abort</code></span> | <span class='synopsis'><code>--quit</code></span>)</pre>
 </div>
 </div>
@@ -361,10 +361,10 @@ used to give a good default for automated <span class='synopsis'><code>git</code
 invocations. The automated message can include the branch description.</p>
 </div>
 </dd>
-<dt class="hdlist1" id="Documentation/git-merge.txt-spanclasssynopsiscode--into-namecodeemltbranchgtemspan"><a id="Documentation/git-merge.txt---into-namebranch" class="anchor" href="#Documentation/git-merge.txt---into-namebranch"></a><span class='synopsis'><code>--into-name</code> <em>&lt;branch&gt;</em></span> </dt>
+<dt class="hdlist1" id="Documentation/git-merge.txt-spanclasssynopsiscode--into-namecodeemltbranchgtemspan"><a id="Documentation/git-merge.txt---into-namebranch" class="anchor" href="#Documentation/git-merge.txt---into-namebranch"></a><span class='synopsis'><code>--into-name</code> <em><span class="hover-term" data-term="branch">&lt;branch&gt;</span></em></span> </dt>
 <dd>
 <p>Prepare the default merge message as if merging to the branch
-<em>&lt;branch&gt;</em>, instead of the name of the real branch to which
+<em><span class="hover-term" data-term="branch">&lt;branch&gt;</span></em>, instead of the name of the real branch to which
 the merge is made.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-merge.txt-spanclasssynopsiscode-Fcodeemltfilegtemspan"><a id="Documentation/git-merge.txt--Ffile" class="anchor" href="#Documentation/git-merge.txt--Ffile"></a><span class='synopsis'><code>-F</code> <em>&lt;file&gt;</em></span> </dt>
@@ -425,7 +425,7 @@ stash entry will be saved to the stash list.</p>
 merge by running <span class='synopsis'><code>git</code> <code>merge</code> <code>--continue</code></span> (see "HOW TO RESOLVE
 CONFLICTS" section below).</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-merge.txt-spanclasssynopsisemltcommitgtemspan"><a id="Documentation/git-merge.txt-commit" class="anchor" href="#Documentation/git-merge.txt-commit"></a><span class='synopsis'><em>&lt;commit&gt;</em>...</span> </dt>
+<dt class="hdlist1" id="Documentation/git-merge.txt-spanclasssynopsisemltcommitgtemspan"><a id="Documentation/git-merge.txt-commit" class="anchor" href="#Documentation/git-merge.txt-commit"></a><span class='synopsis'><em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>...</span> </dt>
 <dd>
 <p>Commits, usually other branch heads, to merge into our branch.
 Specifying more than one commit will create a merge with

@@ -57,7 +57,7 @@ aliases:
 <div class="verseblock">
 <pre class="content"><em>git diff-tree</em> [--stdin] [-m] [-s] [-v] [--no-commit-id] [--pretty]
 	      [-t] [-r] [-c | --cc] [--combined-all-paths] [--root]
-	      [&lt;common diff options&gt;] &lt;tree-ish&gt; [&lt;tree-ish&gt;] [&lt;path&gt;&#8230;&#8203;]</pre>
+	      [&lt;common diff options&gt;] <span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span> [<span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span>] [&lt;path&gt;&#8230;&#8203;]</pre>
 </div>
 </div>
 </div>
@@ -68,7 +68,7 @@ aliases:
 <p>Compares the content and mode of the blobs found via two tree objects.</p>
 </div>
 <div class="paragraph">
-<p>If there is only one &lt;tree-ish&gt; given, the commit is compared with its parents
+<p>If there is only one <span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span> given, the commit is compared with its parents
 (see --stdin below).</p>
 </div>
 <div class="paragraph">
@@ -942,7 +942,7 @@ experimental and could be removed in future.</p>
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1" id="Documentation/git-diff-tree.txt-lttree-ishgt"><a id="Documentation/git-diff-tree.txt-tree-ish" class="anchor" href="#Documentation/git-diff-tree.txt-tree-ish"></a>&lt;tree-ish&gt; </dt>
+<dt class="hdlist1" id="Documentation/git-diff-tree.txt-lttree-ishgt"><a id="Documentation/git-diff-tree.txt-tree-ish" class="anchor" href="#Documentation/git-diff-tree.txt-tree-ish"></a><span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span> </dt>
 <dd>
 <p>The id of a tree object.</p>
 </dd>
@@ -967,9 +967,9 @@ creation event. This is equivalent to a diff against the NULL tree.</p>
 <dt class="hdlist1" id="Documentation/git-diff-tree.txt---stdin"><a class="anchor" href="#Documentation/git-diff-tree.txt---stdin"></a>--stdin </dt>
 <dd>
 <p>When <span class='synopsis'><code>--stdin</code></span> is specified, the command does not take
-&lt;tree-ish&gt; arguments from the command line.  Instead, it
-reads lines containing either two &lt;tree&gt;, one &lt;commit&gt;, or a
-list of &lt;commit&gt; from its standard input.  (Use a single space
+<span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span> arguments from the command line.  Instead, it
+reads lines containing either two <span class="hover-term" data-term="tree">&lt;tree&gt;</span>, one <span class="hover-term" data-term="commit">&lt;commit&gt;</span>, or a
+list of <span class="hover-term" data-term="commit">&lt;commit&gt;</span> from its standard input.  (Use a single space
 as separator.)</p>
 <div class="paragraph">
 <p>When two trees are given, it compares the first tree with the second.
@@ -1074,7 +1074,7 @@ message by 4 spaces (i.e.  <em>medium</em>, which is the default, <em>full</em>,
 and <em>fuller</em>).</p>
 </div>
 </dd>
-<dt class="hdlist1" id="Documentation/git-diff-tree.txt---noteslttreeishgt"><a id="Documentation/git-diff-tree.txt---notestreeish" class="anchor" href="#Documentation/git-diff-tree.txt---notestreeish"></a>--notes[=&lt;treeish&gt;] </dt>
+<dt class="hdlist1" id="Documentation/git-diff-tree.txt---noteslttreeishgt"><a id="Documentation/git-diff-tree.txt---notestreeish" class="anchor" href="#Documentation/git-diff-tree.txt---notestreeish"></a>--notes[=<span class="hover-term" data-term="treeish">&lt;treeish&gt;</span>] </dt>
 <dd>
 <p>Show the notes (see <a href='{{< relurl "docs/git-notes" >}}'>git-notes[1]</a>) that annotate the
 commit, when showing the commit log message.  This is the default
@@ -1087,7 +1087,7 @@ on the command line.</p>
 environment overrides). See <a href='{{< relurl "docs/git-config" >}}'>git-config[1]</a> for more details.</p>
 </div>
 <div class="paragraph">
-<p>With an optional <em>&lt;treeish&gt;</em> argument, use the treeish to find the notes
+<p>With an optional <em><span class="hover-term" data-term="treeish">&lt;treeish&gt;</span></em> argument, use the treeish to find the notes
 to display.  The treeish can specify the full refname when it begins
 with <span class='synopsis'><code>refs/notes/</code></span>; when it begins with <span class='synopsis'><code>notes/</code></span>, <span class='synopsis'><code>refs/</code></span> and otherwise
 <span class='synopsis'><code>refs/notes/</code></span> is prefixed to form a full name of the ref.</p>
@@ -1107,7 +1107,7 @@ Options are parsed in the order given on the command line, so e.g.
 "--notes --notes=foo --no-notes --notes=bar" will only show notes
 from "refs/notes/bar".</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-diff-tree.txt---show-noteslttreeishgt"><a id="Documentation/git-diff-tree.txt---show-notestreeish" class="anchor" href="#Documentation/git-diff-tree.txt---show-notestreeish"></a>--show-notes[=&lt;treeish&gt;] </dt>
+<dt class="hdlist1" id="Documentation/git-diff-tree.txt---show-noteslttreeishgt"><a id="Documentation/git-diff-tree.txt---show-notestreeish" class="anchor" href="#Documentation/git-diff-tree.txt---show-notestreeish"></a>--show-notes[=<span class="hover-term" data-term="treeish">&lt;treeish&gt;</span>] </dt>
 <dt class="hdlist1" id="Documentation/git-diff-tree.txt---no-standard-notes"><a class="anchor" href="#Documentation/git-diff-tree.txt---no-standard-notes"></a>--[no-]standard-notes </dt>
 <dd>
 <p>These options are deprecated. Use the above --notes/--no-notes
@@ -1127,7 +1127,7 @@ applicable.  This flag suppressed the commit ID output.</p>
 <dd>
 <p>This flag changes the way a merge commit is displayed
 (which means it is useful only when the command is given
-one &lt;tree-ish&gt;, or <span class='synopsis'><code>--stdin</code></span>).  It shows the differences
+one <span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span>, or <span class='synopsis'><code>--stdin</code></span>).  It shows the differences
 from each of the parents to the merge result simultaneously
 instead of showing pairwise diff between a parent and the
 result one at a time (which is what the <span class='synopsis'><code>-m</code></span> option does).
@@ -1793,13 +1793,13 @@ compared differs:</p>
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1" id="Documentation/git-diff-tree.txt-git-diff-indexlttree-ishgt"><a id="Documentation/git-diff-tree.txt-git-diff-indextree-ish" class="anchor" href="#Documentation/git-diff-tree.txt-git-diff-indextree-ish"></a>git-diff-index &lt;tree-ish&gt; </dt>
+<dt class="hdlist1" id="Documentation/git-diff-tree.txt-git-diff-indexlttree-ishgt"><a id="Documentation/git-diff-tree.txt-git-diff-indextree-ish" class="anchor" href="#Documentation/git-diff-tree.txt-git-diff-indextree-ish"></a>git-diff-index <span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span> </dt>
 <dd>
-<p>compares the &lt;tree-ish&gt; and the files on the filesystem.</p>
+<p>compares the <span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span> and the files on the filesystem.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-diff-tree.txt-git-diff-index--cachedlttree-ishgt"><a id="Documentation/git-diff-tree.txt-git-diff-index--cachedtree-ish" class="anchor" href="#Documentation/git-diff-tree.txt-git-diff-index--cachedtree-ish"></a>git-diff-index --cached &lt;tree-ish&gt; </dt>
+<dt class="hdlist1" id="Documentation/git-diff-tree.txt-git-diff-index--cachedlttree-ishgt"><a id="Documentation/git-diff-tree.txt-git-diff-index--cachedtree-ish" class="anchor" href="#Documentation/git-diff-tree.txt-git-diff-index--cachedtree-ish"></a>git-diff-index --cached <span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span> </dt>
 <dd>
-<p>compares the &lt;tree-ish&gt; and the index.</p>
+<p>compares the <span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span> and the index.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-diff-tree.txt-git-diff-tree-rlttree-ish-1gtlttree-ish-2gtltpatterngt82308203"><a id="Documentation/git-diff-tree.txt-git-diff-tree-rtree-ish-1tree-ish-2pattern" class="anchor" href="#Documentation/git-diff-tree.txt-git-diff-tree-rtree-ish-1tree-ish-2pattern"></a>git-diff-tree [-r] &lt;tree-ish-1&gt; &lt;tree-ish-2&gt; [&lt;pattern&gt;&#8230;&#8203;] </dt>
 <dd>
@@ -2048,7 +2048,7 @@ rename from &lt;path&gt;
 rename to &lt;path&gt;
 similarity index &lt;number&gt;
 dissimilarity index &lt;number&gt;
-index &lt;hash&gt;..&lt;hash&gt; &lt;mode&gt;</pre>
+index <span class="hover-term" data-term="hash">&lt;hash&gt;</span>..<span class="hover-term" data-term="hash">&lt;hash&gt;</span> &lt;mode&gt;</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2166,7 +2166,7 @@ this (when <span class='synopsis'><code>-c</code></span> option is used):</p>
 (this example shows a merge with two parents):</p>
 <div class="literalblock">
 <div class="content">
-<pre>index &lt;hash&gt;,&lt;hash&gt;..&lt;hash&gt;
+<pre>index <span class="hover-term" data-term="hash">&lt;hash&gt;</span>,<span class="hover-term" data-term="hash">&lt;hash&gt;</span>..<span class="hover-term" data-term="hash">&lt;hash&gt;</span>
 mode &lt;mode&gt;,&lt;mode&gt;..&lt;mode&gt;
 new file mode &lt;mode&gt;
 deleted file mode &lt;mode&gt;,&lt;mode&gt;</pre>
@@ -2177,7 +2177,7 @@ deleted file mode &lt;mode&gt;,&lt;mode&gt;</pre>
 the &lt;mode&gt; is different from the rest. Extended headers with
 information about detected contents movement (renames and
 copying detection) are designed to work with diff of two
-&lt;tree-ish&gt; and are not used by combined diff format.</p>
+<span class="hover-term" data-term="tree-ish">&lt;tree-ish&gt;</span> and are not used by combined diff format.</p>
 </div>
 </li>
 <li>

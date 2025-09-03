@@ -41,11 +41,11 @@ headings:
 <h2 id="_概述"><a class="anchor" href="#_概述"></a>概述</h2>
 <div class="sectionbody">
 <div class="verseblock">
-<pre class="content"><em>git replace</em> [-f] &lt;对象&gt; &lt;更换&gt;
-<em>git replace</em> [-f] --edit &lt;对象&gt;
-<em>git replace</em> [-f] --graft &lt;提交&gt; [&lt;父&gt;&#8230;&#8203;]
+<pre class="content"><em>git replace</em> [-f] <span class="hover-term" data-term="对象">&lt;对象&gt;</span> &lt;更换&gt;
+<em>git replace</em> [-f] --edit <span class="hover-term" data-term="对象">&lt;对象&gt;</span>
+<em>git replace</em> [-f] --graft <span class="hover-term" data-term="提交">&lt;提交&gt;</span> [&lt;父&gt;&#8230;&#8203;]
 <em>git replace</em> [-f] --convert-graft-file
-<em>git replace</em> -d &lt;对象&gt;&#8230;&#8203;
+<em>git replace</em> -d <span class="hover-term" data-term="对象">&lt;对象&gt;</span>&#8230;&#8203;
 <em>git replace</em> [--format=&lt;格式&gt;] [-l [&lt;模式&gt;]]</pre>
 </div>
 </div>
@@ -113,17 +113,17 @@ headings:
 <dd>
 <p>删除给定对象的现有替换引用。</p>
 </dd>
-<dt class="hdlist1" id="git-replace---editltgt"> <a class="anchor" href="#git-replace---edit"></a> <a class="anchor" href="#git-replace---editltgt"></a>--edit &lt;对象&gt; </dt>
+<dt class="hdlist1" id="git-replace---editltgt"> <a class="anchor" href="#git-replace---edit"></a> <a class="anchor" href="#git-replace---editltgt"></a>--edit <span class="hover-term" data-term="对象">&lt;对象&gt;</span> </dt>
 <dd>
-<p>交互式编辑对象的内容。&lt;对象&gt; 的现有内容会被漂亮地打印到一个临时文件中，然后在该文件上启动编辑器，并对结果进行解析，以创建一个与 &lt;对象&gt; 类型相同的新对象。然后创建一个替换引用，用新创建的对象替换 &lt;对象&gt;。关于如何选择编辑器，详见 <a href='{{< relurl "docs/git-var/zh_HANS-CN" >}}'>git-var[1]</a>。</p>
+<p>交互式编辑对象的内容。<span class="hover-term" data-term="对象">&lt;对象&gt;</span> 的现有内容会被漂亮地打印到一个临时文件中，然后在该文件上启动编辑器，并对结果进行解析，以创建一个与 <span class="hover-term" data-term="对象">&lt;对象&gt;</span> 类型相同的新对象。然后创建一个替换引用，用新创建的对象替换 <span class="hover-term" data-term="对象">&lt;对象&gt;</span>。关于如何选择编辑器，详见 <a href='{{< relurl "docs/git-var/zh_HANS-CN" >}}'>git-var[1]</a>。</p>
 </dd>
 <dt class="hdlist1" id="git-replace---raw"> <a class="anchor" href="#git-replace---raw"></a>--raw </dt>
 <dd>
 <p>编辑时，请提供原始对象内容，而不是格式化打印的内容。目前这只影响目录树，因为目录树将以二进制形式显示。这比较难处理，但在修复已损坏到无法格式化打印的目录树时可以有所帮助。需要注意的是，你可能需要对编辑器进行配置，以便干净利落地读写二进制数据。</p>
 </dd>
-<dt class="hdlist1" id="git-replace---graftltgtltgt82308203"> <a class="anchor" href="#git-replace---graft"></a> <a class="anchor" href="#git-replace---graftltgtltgt82308203"></a>--graft &lt;提交&gt; [&lt;父提交&gt;&#8230;&#8203;] </dt>
+<dt class="hdlist1" id="git-replace---graftltgtltgt82308203"> <a class="anchor" href="#git-replace---graft"></a> <a class="anchor" href="#git-replace---graftltgtltgt82308203"></a>--graft <span class="hover-term" data-term="提交">&lt;提交&gt;</span> [&lt;父提交&gt;&#8230;&#8203;] </dt>
 <dd>
-<p>创建嫁接提交。新创建的提交内容与 &lt;提交&gt; 相同，只是它的父提交将是 [&lt;父提交&gt;&#8230;&#8203;]，而不是 &lt;提交&gt; 的父提交。然后会创建一个替换引用，用新创建的提交替换 &lt;提交&gt;。使用 <span class='synopsis'><code>--convert-graft-file</code></span>，转换 <span class='synopsis'><code>$GIT_DIR/info/grafts</code></span> 文件并使用替换引用代替。</p>
+<p>创建嫁接提交。新创建的提交内容与 <span class="hover-term" data-term="提交">&lt;提交&gt;</span> 相同，只是它的父提交将是 [&lt;父提交&gt;&#8230;&#8203;]，而不是 <span class="hover-term" data-term="提交">&lt;提交&gt;</span> 的父提交。然后会创建一个替换引用，用新创建的提交替换 <span class="hover-term" data-term="提交">&lt;提交&gt;</span>。使用 <span class='synopsis'><code>--convert-graft-file</code></span>，转换 <span class='synopsis'><code>$GIT_DIR/info/grafts</code></span> 文件并使用替换引用代替。</p>
 </dd>
 <dt class="hdlist1" id="git-replace---convert-graft-file"> <a class="anchor" href="#git-replace---convert-graft-file"></a>--convert-graft-file </dt>
 <dd>

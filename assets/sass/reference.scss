@@ -57,6 +57,51 @@ h3.plumbing {
   @include background-image-2x($baseurl + "images/icons/plumbing-sm", 17px, 14px, 2px 50%);
 }
 
+.tooltip {
+  position: absolute;
+  /* invisible padding to make it easier to enter with the mouse */
+  padding: 15px;
+  visibility: hidden;
+
+  .tooltip-content {
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+}
+
+.tooltip.show {
+  visibility: visible;
+}
+
+.expand-icon {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  text-decoration: none;
+  
+  img {
+    width: 16px;
+    height: 16px;
+    opacity: 0.6;
+  }
+  
+  &:hover img {
+    opacity: 1;
+  }
+}
+
+.hover-term {
+  cursor: help;
+  text-decoration: underline dotted;
+  -webkit-text-decoration: underline dotted;
+}
+
 // § section sign anchor links
 #content {
   h1>a.anchor,

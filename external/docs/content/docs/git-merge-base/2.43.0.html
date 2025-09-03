@@ -75,11 +75,11 @@ aliases:
 <h2 id="_synopsis"><a class="anchor" href="#_synopsis"></a>SYNOPSIS</h2>
 <div class="sectionbody">
 <div class="verseblock">
-<pre class="content"><em>git merge-base</em> [-a | --all] &lt;commit&gt; &lt;commit&gt;&#8230;&#8203;
-<em>git merge-base</em> [-a | --all] --octopus &lt;commit&gt;&#8230;&#8203;
-<em>git merge-base</em> --is-ancestor &lt;commit&gt; &lt;commit&gt;
-<em>git merge-base</em> --independent &lt;commit&gt;&#8230;&#8203;
-<em>git merge-base</em> --fork-point &lt;ref&gt; [&lt;commit&gt;]</pre>
+<pre class="content"><em>git merge-base</em> [-a | --all] <span class="hover-term" data-term="commit">&lt;commit&gt;</span> <span class="hover-term" data-term="commit">&lt;commit&gt;</span>&#8230;&#8203;
+<em>git merge-base</em> [-a | --all] --octopus <span class="hover-term" data-term="commit">&lt;commit&gt;</span>&#8230;&#8203;
+<em>git merge-base</em> --is-ancestor <span class="hover-term" data-term="commit">&lt;commit&gt;</span> <span class="hover-term" data-term="commit">&lt;commit&gt;</span>
+<em>git merge-base</em> --independent <span class="hover-term" data-term="commit">&lt;commit&gt;</span>&#8230;&#8203;
+<em>git merge-base</em> --fork-point <span class="hover-term" data-term="ref">&lt;ref&gt;</span> [<span class="hover-term" data-term="commit">&lt;commit&gt;</span>]</pre>
 </div>
 </div>
 </div>
@@ -132,18 +132,18 @@ from any other.  This mimics the behavior of <em>git show-branch
 </dd>
 <dt class="hdlist1" id="Documentation/git-merge-base.txt---is-ancestor"><a class="anchor" href="#Documentation/git-merge-base.txt---is-ancestor"></a>--is-ancestor </dt>
 <dd>
-<p>Check if the first &lt;commit&gt; is an ancestor of the second &lt;commit&gt;,
+<p>Check if the first <span class="hover-term" data-term="commit">&lt;commit&gt;</span> is an ancestor of the second <span class="hover-term" data-term="commit">&lt;commit&gt;</span>,
 and exit with status 0 if true, or with status 1 if not.
 Errors are signaled by a non-zero status that is not 1.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-merge-base.txt---fork-point"><a class="anchor" href="#Documentation/git-merge-base.txt---fork-point"></a>--fork-point </dt>
 <dd>
 <p>Find the point at which a branch (or any history that leads
-to &lt;commit&gt;) forked from another branch (or any reference)
-&lt;ref&gt;. This does not just look for the common ancestor of
+to <span class="hover-term" data-term="commit">&lt;commit&gt;</span>) forked from another branch (or any reference)
+<span class="hover-term" data-term="ref">&lt;ref&gt;</span>. This does not just look for the common ancestor of
 the two commits, but also takes into account the reflog of
-&lt;ref&gt; to see if the history leading to &lt;commit&gt; forked from
-an earlier incarnation of the branch &lt;ref&gt; (see discussion
+<span class="hover-term" data-term="ref">&lt;ref&gt;</span> to see if the history leading to <span class="hover-term" data-term="commit">&lt;commit&gt;</span> forked from
+an earlier incarnation of the branch <span class="hover-term" data-term="ref">&lt;ref&gt;</span> (see discussion
 of this mode below).</p>
 </dd>
 </dl>
