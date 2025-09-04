@@ -19,13 +19,6 @@ jobs:
         curl -Lo /tmp/hugo.deb https://github.com/gohugoio/hugo/releases/download/v$HUGO_VERSION/hugo_extended_${HUGO_VERSION}_linux-amd64.deb &&
         sudo dpkg -i /tmp/hugo.deb
 
-    - name: work around a broken link
-      # See https://github.com/jnavila/git-manpages-l10n/pull/131;
-      # A space is missing in "https://git-scm.com/docs上查看"
-      run: |
-        sed -i 's,\(href="\(https://git-scm.com/docs\)\)\(上查看\)"\([^>]*>\)\2\3\(</a>\),\1"\4\1\5 \3,p' \
-          external/docs/content/docs/git/zh_HANS-CN.html
-
     - name: run Hugo to build the pages
       run: hugo
 
