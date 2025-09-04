@@ -64,4 +64,4 @@ const server = http.createServer(handler);
 server.on("listening", () => {
     console.log(`Now listening on: http://localhost:${server.address().port}/`);
 });
-server.listen(5000);
+server.listen(process.env.PORT || 5000);
