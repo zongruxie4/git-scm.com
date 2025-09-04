@@ -792,6 +792,7 @@ var Graphviz = {
         graphAttributes: {
           bgcolor: "transparent",
         },
+        engine: x.getAttribute("engine") || "dot",
       }
       const svg = vizInstance.renderString(x.innerText, options)
       const img = document.createElement('img')
