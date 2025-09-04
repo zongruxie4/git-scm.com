@@ -782,6 +782,18 @@ var PostelizeAnchor = {
   },
 }
 
+var Graphviz = {
+  render: function() {
+    let vizInstance
+    [...document.querySelectorAll("pre[class=graphviz]")].forEach(async (x) => {
+      if (!vizInstance) vizInstance = await Viz.instance()
+      const svg = vizInstance.renderSVGElement(x.innerText)
+      x.parentNode.insertBefore(svg, x);
+      x.style.display = 'none'
+    });
+  }
+}
+
 // Scroll to Top
 $('#scrollToTop').removeClass('no-js');
 $(window).on('scroll', function() {

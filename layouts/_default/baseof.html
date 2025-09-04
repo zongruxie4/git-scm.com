@@ -191,5 +191,9 @@
   {{ end }}
 
 </body>
+{{ if .Page.Store.Get "hasGraphviz" -}}
+<script src="{{ relURL "js/viz-global.js" }}"> </script>
+<script type="text/javascript">Graphviz.render();</script>
+{{ end -}}
 </html>
 {{ end }}
