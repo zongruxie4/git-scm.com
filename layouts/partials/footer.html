@@ -11,8 +11,8 @@
   <img src="{{ relURL "images/icons/chevron-up@2x.png" }}" width="20" height="20" alt="scroll-to-top"/>
 </a>
 
-<script src="{{ relURL "js/jquery-1.7.1.min.js" }}"></script>
-<script src="{{ relURL "js/jquery-ui-1.8.18.custom.min.js" }}"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://code.jquery.com/ui/1.14.1/jquery-ui.min.js"></script>
 <script src="{{ relURL "js/jquery.defaultvalue.js" }}"></script>
 <script src="{{ relURL "js/session.min.js" }}"></script>
 {{ $js := resources.Get "js/application.js" | resources.ExecuteAsTemplate "js/application.js" . | resources.Minify | fingerprint }}

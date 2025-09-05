@@ -10,8 +10,6 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery-1.7.1.min
-//= require jquery-ui-1.8.18.custom.min
 //= require jquery.defaultvalue
 //= require session.min
 
@@ -43,7 +41,7 @@ $(document).ready(function() {
 
 function onPopState(fn) {
   if (window.history && window.history.pushState) {
-    return $(window).bind('popstate', function(event) {
+    return $(window).on('popstate', function() {
       var section;
       initialPop = !popped && location.href === initialURL;
       popped = true;
@@ -115,7 +113,7 @@ var GitTurns20 = {
     } else {
       let start = 0
       let count = 0
-      $("#tagline").click(e => {
+      $("#tagline").on('click', e => {
         if (count === 0 || e.timeStamp > start + count * 1000) {
           start = e.timeStamp;
           count = 1;
@@ -181,20 +179,20 @@ var Search = {
   },
 
   observeFocus: function() {
-    $('form#search input').focus(function() {
+    $('form#search input').on('focus', function() {
       $(this).parent('form#search').switchClass("", "focus", 200);
     });
-    $('form#search input').blur(function() {
+    $('form#search input').on('blur', function() {
       Search.resetForm();
     });
   },
 
   observeTextEntry: function() {
-    $('form#search input').keyup(function(e) {
+    $('form#search input').on('keyup', function() {
       Search.runSearch();
     });
 
-    $('form#search input').keydown(function(e) {
+    $('form#search input').on('keydown', function(e) {
       if ($('#search-results').not(':visible') && e.which != 27) {
         $('#search-results').fadeIn(0.2);
         Search.highlight(Search.selectedIndex);
@@ -220,16 +218,16 @@ var Search = {
   },
 
   observeResultsClicks: function() {
-    $('#search-results').mousedown(function(e) {
+    $('#search-results').on('mousedown', function(e) {
       e.preventDefault();
     });
   },
 
   installKeyboardShortcuts: function() {
-    $(document).keydown(function(e) {
+    $(document).on('keydown', function(e) {
       if (e.target.tagName.toUpperCase() !== 'INPUT' && ['s', 'S', '/'].includes(e.key)) {
         e.preventDefault();
-        $('form#search input').focus();
+        $('form#search input').trigger('focus');
       }
       else if (e.target.tagName.toUpperCase() !== 'INPUT') GitTurns20.keydown(e);
     });
@@ -476,7 +474,7 @@ var Dropdowns = {
 
   observeTriggers: function() {
     var eles = $('.dropdown-trigger');
-    eles.click(function(e) {
+    eles.on('click', function(e) {
       e.preventDefault();
 
       $(this).toggleClass('active');
@@ -497,7 +495,7 @@ var Forms = {
   },
 
   observeCopyableInputs: function() {
-    $('input.copyable').click(function() {
+    $('input.copyable').on('click', function() {
       $(this).select();
     });
   }
@@ -551,7 +549,7 @@ var Downloads = {
   },
 
   observeGUIOSFilter: function() {
-    $('a.gui-os-filter').click(function(e) {
+    $('a.gui-os-filter').on('click', function(e) {
       e.preventDefault();
       var os = $(this).attr('data-os');
 
@@ -654,7 +652,7 @@ var DarkMode = {
     }
     button.css("display", "block");
 
-    button.click(function(e) {
+    button.on('click', function(e) {
       e.preventDefault();
       let theme
       if (prefersDarkScheme) {
@@ -786,12 +784,12 @@ var PostelizeAnchor = {
 
 // Scroll to Top
 $('#scrollToTop').removeClass('no-js');
-$(window).scroll(function() {
+$(window).on('scroll', function() {
   $(this).scrollTop() > 150
     ? $('#scrollToTop').fadeIn()
     : $('#scrollToTop').fadeOut();
 });
-$('#scrollToTop').click(function(e) {
+$('#scrollToTop').on('click', function(e) {
   e.preventDefault();
   $("html, body").animate({
       scrollTop: 0
