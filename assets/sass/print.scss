@@ -39,7 +39,7 @@
     box-decoration-break: clone;
   }
 
-  #dark-mode-button {
+  .pdf-link, #dark-mode-button {
     display: none !important;
   }
 
@@ -137,4 +137,9 @@
       }
     }
   }
+}
+
+div#main .pdf-link img {
+  float: right;
+  height: 36px;
 }

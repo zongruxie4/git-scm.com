@@ -5,6 +5,23 @@ const path = require('path')
 const url = require('url')
 const { chromium } = require('playwright')
 
+const insertPDFLink = (htmlPath) => {
+  const html = fs.readFileSync(htmlPath, 'utf-8')
+  if (html.includes('class="pdf-link"')) {
+    return
+  }
+  // get baseURL prefix via the `favicon.ico` link, it's in the top-level directory
+  const match = html.match(/<link href="(.*?)favicon\.ico"/)
+  if (!match) throw new Error('Failed to determine baseURL prefix from favicon.ico link')
+  const img = `<img src="${match[1].replace(/\/$/, '')}/images/pdf.png" />`
+  const updatedHtml = html.replace(
+    /<h1/,
+    `<a class="pdf-link" href="${path.basename(htmlPath, '.html')}.pdf">${img}</a>$&`
+  )
+  if (updatedHtml === html) throw new Error('Failed to insert PDF link, no <h1> found')
+  fs.writeFileSync(htmlPath, updatedHtml, 'utf-8')
+}
+
 const htmlToPDF = async (htmlPath, options) => {
   if (!htmlPath.endsWith('.html')) {
     throw new Error(`Input file must have the '.html' extension: ${htmlPath}`)
@@ -32,6 +49,8 @@ const htmlToPDF = async (htmlPath, options) => {
     margin: { top: '0cm', bottom: '0cm', left: '0cm', right: '0cm' },
   })
   await browser.close()
+
+  if (options.insertPDFLink) insertPDFLink(htmlPath)
 }
 
 const args = process.argv.slice(2)
@@ -39,11 +58,12 @@ const options = {}
 while (args?.[0].startsWith('-')) {
   const arg = args.shift()
   if (arg === '--force' || arg === '-f') options.force = true
+  else if (arg === '--insert-pdf-link' || arg === '-i') options.insertPDFLink = true
   else throw new Error(`Unknown argument: ${arg}`)
 }
 
 if (args.length !== 1) {
-  process.stderr.write('Usage: html-to-pdf.js [--force] <input-file.html>\n')
+  process.stderr.write('Usage: html-to-pdf.js [--force] [--insert-pdf-link] <input-file.html>\n')
   process.exit(1)
 }
 
