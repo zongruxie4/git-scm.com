@@ -787,8 +787,16 @@ var Graphviz = {
     let vizInstance
     [...document.querySelectorAll("pre[class=graphviz]")].forEach(async (x) => {
       if (!vizInstance) vizInstance = await Viz.instance()
-      const svg = vizInstance.renderSVGElement(x.innerText)
-      x.parentNode.insertBefore(svg, x);
+      const options = {
+        format: "svg",
+      }
+      const svg = vizInstance.renderString(x.innerText, options)
+      const img = document.createElement('img')
+      img.setAttribute(
+        'src',
+        `data:image/svg+xml;utf8,${encodeURIComponent(svg.substring(svg.indexOf('<svg')))}`
+      )
+      x.parentNode.insertBefore(img, x);
       x.style.display = 'none'
     });
   }
