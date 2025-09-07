@@ -47,6 +47,19 @@ const htmlToPDF = async (htmlPath, options) => {
     // this script runs before deployment, on a file:/// URL, where we need to
     // be a bit clever to give the browser the file it needs.
     const original = req.url()
+    if (original === htmlPathURL) {
+      // Work around rerouted `.css` and `.js` files... Symptom: "has an
+      // integrity attribute, but the resource requires the request to be CORS
+      // enabled to check the integrity, and it is not. The resource has been
+      // blocked because the integrity cannot be enforced."
+      const body =
+        fs.readFileSync(htmlPath, "utf-8")
+	  // strip out the `integrity="sha256-..."` attributes
+          .replace(/(\/application\.[^"/]+") integrity="sha256-[^"]+"/g, "$1")
+      await route.fulfill({ headers: { "Content-Type": "text/html" }, body })
+      return
+    }
+
     const url =
       original.startsWith(baseURLPrefix)
         ? original
