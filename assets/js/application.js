@@ -782,6 +782,32 @@ var PostelizeAnchor = {
   },
 }
 
+var Graphviz = {
+  render: function() {
+    let vizInstance
+    [...document.querySelectorAll("pre[class=graphviz]")].forEach(async (x) => {
+      if (!vizInstance) vizInstance = await Viz.instance()
+      const options = {
+        format: "svg",
+        graphAttributes: {
+          bgcolor: "transparent",
+        },
+        engine: x.getAttribute("engine") || "dot",
+      }
+      const svg = vizInstance.renderString(x.innerText, options)
+      const img = document.createElement('img')
+      img.setAttribute(
+        'src',
+        `data:image/svg+xml;utf8,${encodeURIComponent(svg.substring(svg.indexOf('<svg')))}`
+      )
+      const alt = x.getAttribute("alt")
+      if (alt) img.setAttribute("alt", alt)
+      x.parentNode.insertBefore(img, x);
+      x.style.display = 'none'
+    });
+  }
+}
+
 // Scroll to Top
 $('#scrollToTop').removeClass('no-js');
 $(window).on('scroll', function() {
