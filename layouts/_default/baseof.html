@@ -165,6 +165,17 @@
               <div id="video-container">
                 <iframe src="https://player.vimeo.com/video/{{ .Params.ext_id }}?title=0&amp;byline=0&amp;portrait=0&amp;color=f14e32" width="635" height="360" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
               </div>
+              <div class="bottom-nav" style="display: block;">
+                {{ $prev := where .Site.RegularPages "Params.episode" (sub .Params.episode 1) }}
+                {{ with index $prev 0 }}
+                  <a class="previous" href="{{ .RelPermalink }}">← Previous</a>
+                {{ end }}
+                {{ $next := where .Site.RegularPages "Params.episode" (add .Params.episode 1) }}
+                {{ with index $next 0 }}
+                  <a class="next" href="{{ .RelPermalink }}">Next →</a>
+                {{ end }}
+              </div>
+
             </div>
           {{ else if eq $section "about" }}
             <div id="main">
