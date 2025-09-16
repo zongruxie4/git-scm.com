@@ -34,7 +34,7 @@ const htmlToPDF = async (htmlPath, options) => {
     throw new Error(`Output file already exists: ${outputPath}`)
   }
 
-  const browser = await chromium.launch({ channel: 'chrome' })
+  const browser = await chromium.launch({ channel: 'chrome', ...(options.devtools ? { devtools: true } : {}) })
   const page = await browser.newPage()
 
   const htmlPathURL = url.pathToFileURL(htmlPath).toString()
@@ -76,6 +76,7 @@ const htmlToPDF = async (htmlPath, options) => {
     landscape: true,
     margin: { top: '0cm', bottom: '0cm', left: '0cm', right: '0cm' },
   })
+  if (options.devtools) await new Promise((resolve) => { setTimeout(resolve, 5 * 60 * 1000) })
   await browser.close()
 
   if (options.insertPDFLink) insertPDFLink(htmlPath)
@@ -87,6 +88,7 @@ while (args?.[0].startsWith('-')) {
   const arg = args.shift()
   if (arg === '--force' || arg === '-f') options.force = true
   else if (arg === '--insert-pdf-link' || arg === '-i') options.insertPDFLink = true
+  else if (arg === '--devtools' || arg === '-d') options.devtools = true
   else throw new Error(`Unknown argument: ${arg}`)
 }
 
