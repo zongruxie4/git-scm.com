@@ -22,12 +22,8 @@
         <a href="{{ relURL "learn" }}"{{ if (eq $section "learn") }} class="active"{{ end }}>Learn</a>
         <ul {{ if (eq $section "learn") }}class="expanded"{{ end }}>
           <li>
-            <a href="{{ relURL "cheat-sheet" }}"{{ if (eq .Params.Subsection "cheat-sheet") }} class="active"{{ end }}>Cheat Sheet</a>
-          </li>
-          <li>
             <a href="{{ relURL "book" }}"{{ if (eq .Params.Subsection "book") }} class="active"{{ end }}>Book</a>
           </li>
-
           <li>
             <a href="{{ relURL "cheat-sheet" }}"{{ if (eq .Params.Subsection "cheat-sheet") }} class="active"{{ end }}>Cheat Sheet</a>
           </li>
