@@ -212,10 +212,14 @@ headings:
     <h2 id="discard-your-changes">Discard Your Changes</h2>
     <div class="item">
       <h3>Delete unstaged changes to one file:</h3>
+      <code>git restore &lt;file&gt;</code>
+      <span class="or">OR</span>
       <code>git checkout &lt;file&gt;</code>
     </div>
     <div class="item">
       <h3>Delete all staged and unstaged changes to one file:</h3>
+      <code>git restore --staged --worktree &lt;file&gt;</code>
+      <span class="or">OR</span>
       <code>git checkout HEAD &lt;file&gt;</code>
     </div>
     <div class="item">
