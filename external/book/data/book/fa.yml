@@ -13,8 +13,8 @@ chapters:
     title: تاریخچه کوتاهی از گیت (A Short History of Git)
     url: book/fa/v2/شروع-به-کار-getting-started-تاریخچه-کوتاهی-از-گیت-A-Short-History-of-Git
   - cs_number: '1.3'
-    title: گیت چیست؟ (What is Git?)
-    url: book/fa/v2/شروع-به-کار-getting-started-گیت-چیست؟-What-is-Git?
+    title: گیت چیست؟ (What is Git)
+    url: book/fa/v2/شروع-به-کار-getting-started-گیت-چیست؟-What-is-Git
   - cs_number: '1.4'
     title: نصب گیت (Installing Git)
     url: book/fa/v2/شروع-به-کار-getting-started-نصب-گیت-Installing-Git
@@ -127,26 +127,26 @@ chapters:
     title: خلاصه (Summary)
     url: book/fa/v2/گیت-توزیع‌شده-Distributed-git-خلاصه-Summary
 - cs_number: '6'
-  title: GitHub (گیت هاب)
+  title: گیت هاب (GitHub)
   sections:
   - cs_number: '6.1'
     title: راه‌اندازی و پیکربندی حساب کاربری (Account Setup and Configuration)
-    url: book/fa/v2/GitHub-گیت-هاب-راه‌اندازی-و-پیکربندی-حساب-کاربری-Account-Setup-and-Configuration
+    url: book/fa/v2/گیت-هاب-GitHub-راه‌اندازی-و-پیکربندی-حساب-کاربری-Account-Setup-and-Configuration
   - cs_number: '6.2'
     title: مشارکت در یک پروژه (Contributing to a Project)
-    url: book/fa/v2/GitHub-گیت-هاب-مشارکت-در-یک-پروژه-Contributing-to-a-Project
+    url: book/fa/v2/گیت-هاب-GitHub-مشارکت-در-یک-پروژه-Contributing-to-a-Project
   - cs_number: '6.3'
     title: نگهداری یک پروژه (Maintaining a Project)
-    url: book/fa/v2/GitHub-گیت-هاب-نگهداری-یک-پروژه-Maintaining-a-Project
+    url: book/fa/v2/گیت-هاب-GitHub-نگهداری-یک-پروژه-Maintaining-a-Project
   - cs_number: '6.4'
     title: مدیریت یک سازمان (Managing an organization)
-    url: book/fa/v2/GitHub-گیت-هاب-مدیریت-یک-سازمان-Managing-an-organization
+    url: book/fa/v2/گیت-هاب-GitHub-مدیریت-یک-سازمان-Managing-an-organization
   - cs_number: '6.5'
     title: اسکریپتنویسی در گیتهاب (Scripting GitHub)
-    url: book/fa/v2/GitHub-گیت-هاب-اسکریپتنویسی-در-گیتهاب-Scripting-GitHub
+    url: book/fa/v2/گیت-هاب-GitHub-اسکریپتنویسی-در-گیتهاب-Scripting-GitHub
   - cs_number: '6.6'
     title: خلاصه (Summary)
-    url: book/fa/v2/GitHub-گیت-هاب-خلاصه-Summary
+    url: book/fa/v2/گیت-هاب-GitHub-خلاصه-Summary
 - cs_number: '7'
   title: ابزارهای گیت (Git Tools)
   sections:
@@ -160,8 +160,8 @@ chapters:
     title: ذخیره موقت و پاک‌سازی (Stashing and Cleaning)
     url: book/fa/v2/ابزارهای-گیت-Git-Tools-ذخیره-موقت-و-پاک‌سازی-Stashing-and-Cleaning
   - cs_number: '7.4'
-    title: Signing Your Work (امضای کارهای شما)
-    url: book/fa/v2/ابزارهای-گیت-Git-Tools-Signing-Your-Work-امضای-کارهای-شما
+    title: امضای کارهای شما (Signing Your Work)
+    url: book/fa/v2/ابزارهای-گیت-Git-Tools-امضای-کارهای-شما-Signing-Your-Work
   - cs_number: '7.5'
     title: جستجو (Searching)
     url: book/fa/v2/ابزارهای-گیت-Git-Tools-جستجو-Searching
@@ -205,8 +205,8 @@ chapters:
     title: ویژگی‌های گیت (Git Attributes)
     url: book/fa/v2/سفارشی‌سازی-Git-Customizing-Git-ویژگی‌های-گیت-Git-Attributes
   - cs_number: '8.3'
-    title: هوک‌های Git (Git Hooks)
-    url: book/fa/v2/سفارشی‌سازی-Git-Customizing-Git-هوک‌های-Git-Git-Hooks
+    title: هوک‌های گیت (Git Hooks)
+    url: book/fa/v2/سفارشی‌سازی-Git-Customizing-Git-هوک‌های-گیت-Git-Hooks
   - cs_number: '8.4'
     title: یک نمونه سیاست اعمال شده توسط گیت (An Example Git-Enforced Policy)
     url: book/fa/v2/سفارشی‌سازی-Git-Customizing-Git-یک-نمونه-سیاست-اعمال-شده-توسط-گیت-An-Example-Git-Enforced-Policy
@@ -226,35 +226,35 @@ chapters:
     title: خلاصه (Summary)
     url: book/fa/v2/گیت-و-سیستم‌های-دیگر-Git-and-Other-Systems-خلاصه-Summary
 - cs_number: '10'
-  title: "(Git Internals)"
+  title: مباحث درونی گیت (Git Internals)
   sections:
   - cs_number: '10.1'
     title: ابزارها و دستورات سطح پایین (Plumbing and Porcelain)
-    url: book/fa/v2/Git-Internals-ابزارها-و-دستورات-سطح-پایین-Plumbing-and-Porcelain
+    url: book/fa/v2/مباحث-درونی-گیت-Git-Internals-ابزارها-و-دستورات-سطح-پایین-Plumbing-and-Porcelain
   - cs_number: '10.2'
     title: اشیا گیت (Git Objects)
-    url: book/fa/v2/Git-Internals-اشیا-گیت-Git-Objects
+    url: book/fa/v2/مباحث-درونی-گیت-Git-Internals-اشیا-گیت-Git-Objects
   - cs_number: '10.3'
     title: مراجع گیت (Git References)
-    url: book/fa/v2/Git-Internals-مراجع-گیت-Git-References
+    url: book/fa/v2/مباحث-درونی-گیت-Git-Internals-مراجع-گیت-Git-References
   - cs_number: '10.4'
     title: فایل‌های بسته (Packfiles)
-    url: book/fa/v2/Git-Internals-فایل‌های-بسته-Packfiles
+    url: book/fa/v2/مباحث-درونی-گیت-Git-Internals-فایل‌های-بسته-Packfiles
   - cs_number: '10.5'
     title: نگاشت (The Refspec)
-    url: book/fa/v2/Git-Internals-نگاشت-The-Refspec
+    url: book/fa/v2/مباحث-درونی-گیت-Git-Internals-نگاشت-The-Refspec
   - cs_number: '10.6'
     title: پروتکل‌های انتقال (Transfer Protocols)
-    url: book/fa/v2/Git-Internals-پروتکل‌های-انتقال-Transfer-Protocols
+    url: book/fa/v2/مباحث-درونی-گیت-Git-Internals-پروتکل‌های-انتقال-Transfer-Protocols
   - cs_number: '10.7'
     title: نگهداری و بازیابی داده‌ها (Maintenance and Data Recovery)
-    url: book/fa/v2/Git-Internals-نگهداری-و-بازیابی-داده‌ها-Maintenance-and-Data-Recovery
+    url: book/fa/v2/مباحث-درونی-گیت-Git-Internals-نگهداری-و-بازیابی-داده‌ها-Maintenance-and-Data-Recovery
   - cs_number: '10.8'
     title: متغیرهای محیطی (Environment Variables)
-    url: book/fa/v2/Git-Internals-متغیرهای-محیطی-Environment-Variables
+    url: book/fa/v2/مباحث-درونی-گیت-Git-Internals-متغیرهای-محیطی-Environment-Variables
   - cs_number: '10.9'
-    title: "(Summary)"
-    url: book/fa/v2/Git-Internals-Summary
+    title: خلاصه (Summary)
+    url: book/fa/v2/مباحث-درونی-گیت-Git-Internals-خلاصه-Summary
 - cs_number: A1
   title: 'پیوست A: گیت در محیط‌های دیگر (Git in Other Environments)'
   sections:
@@ -262,27 +262,27 @@ chapters:
     title: رابط های گرافیکی (Graphical Interfaces)
     url: book/fa/v2/پیوست-A:-گیت-در-محیط‌های-دیگر-Git-in-Other-Environments-رابط-های-گرافیکی-Graphical-Interfaces
   - cs_number: A1.2
-    title: Git در ویژوال استودیو (Git in Visual Studio)
-    url: book/fa/v2/پیوست-A:-گیت-در-محیط‌های-دیگر-Git-in-Other-Environments-Git-در-ویژوال-استودیو-Git-in-Visual-Studio
+    title: گیت در ویژوال استودیو (Git in Visual Studio)
+    url: book/fa/v2/پیوست-A:-گیت-در-محیط‌های-دیگر-Git-in-Other-Environments-گیت-در-ویژوال-استودیو-Git-in-Visual-Studio
   - cs_number: A1.3
-    title: Git در Visual Studio Code (Git in Visual Studio Code)
-    url: book/fa/v2/پیوست-A:-گیت-در-محیط‌های-دیگر-Git-in-Other-Environments-Git-در-Visual-Studio-Code-Git-in-Visual-Studio-Code
+    title: گیت در Visual Studio Code (Git in Visual Studio Code)
+    url: book/fa/v2/پیوست-A:-گیت-در-محیط‌های-دیگر-Git-in-Other-Environments-گیت-در-Visual-Studio-Code-Git-in-Visual-Studio-Code
   - cs_number: A1.4
-    title: Git در IntelliJ / PyCharm / WebStorm / PhpStorm / RubyMine (Git in IntelliJ
+    title: گیت در IntelliJ / PyCharm / WebStorm / PhpStorm / RubyMine (Git in IntelliJ
       / PyCharm / WebStorm / PhpStorm / RubyMine)
-    url: book/fa/v2/پیوست-A:-گیت-در-محیط‌های-دیگر-Git-in-Other-Environments-Git-در-IntelliJ-/-PyCharm-/-WebStorm-/-PhpStorm-/-RubyMine-Git-in-IntelliJ-/-PyCharm-/-WebStorm-/-PhpStorm-/-RubyMine
+    url: book/fa/v2/پیوست-A:-گیت-در-محیط‌های-دیگر-Git-in-Other-Environments-گیت-در-IntelliJ-/-PyCharm-/-WebStorm-/-PhpStorm-/-RubyMine-Git-in-IntelliJ-/-PyCharm-/-WebStorm-/-PhpStorm-/-RubyMine
   - cs_number: A1.5
-    title: Git در Sublime Text (Git in Sublime Text)
-    url: book/fa/v2/پیوست-A:-گیت-در-محیط‌های-دیگر-Git-in-Other-Environments-Git-در-Sublime-Text-Git-in-Sublime-Text
+    title: گیت در Sublime Text (Git in Sublime Text)
+    url: book/fa/v2/پیوست-A:-گیت-در-محیط‌های-دیگر-Git-in-Other-Environments-گیت-در-Sublime-Text-Git-in-Sublime-Text
   - cs_number: A1.6
     title: گیت در بش (Git in Bash)
     url: book/fa/v2/پیوست-A:-گیت-در-محیط‌های-دیگر-Git-in-Other-Environments-گیت-در-بش-Git-in-Bash
   - cs_number: A1.7
-    title: Git در Zsh (Git in Zsh)
-    url: book/fa/v2/پیوست-A:-گیت-در-محیط‌های-دیگر-Git-in-Other-Environments-Git-در-Zsh-Git-in-Zsh
+    title: گیت در Zsh (Git in Zsh)
+    url: book/fa/v2/پیوست-A:-گیت-در-محیط‌های-دیگر-Git-in-Other-Environments-گیت-در-Zsh-Git-in-Zsh
   - cs_number: A1.8
-    title: Git در PowerShell (Git in PowerShell)
-    url: book/fa/v2/پیوست-A:-گیت-در-محیط‌های-دیگر-Git-in-Other-Environments-Git-در-PowerShell-Git-in-PowerShell
+    title: گیت در PowerShell (Git in PowerShell)
+    url: book/fa/v2/پیوست-A:-گیت-در-محیط‌های-دیگر-Git-in-Other-Environments-گیت-در-PowerShell-Git-in-PowerShell
   - cs_number: A1.9
     title: خلاصه (Summary)
     url: book/fa/v2/پیوست-A:-گیت-در-محیط‌های-دیگر-Git-in-Other-Environments-خلاصه-Summary
@@ -293,14 +293,14 @@ chapters:
     title: خط فرمان گیت (Command-line Git)
     url: book/fa/v2/پیوست-B:-گنجاندن-گیت-در-برنامه‌های-شما-Embedding-Git-in-your-Applications-خط-فرمان-گیت-Command-line-Git
   - cs_number: A2.2
-    title: کتابخانهٔ گیت به زبان C (Libgit2)
-    url: book/fa/v2/پیوست-B:-گنجاندن-گیت-در-برنامه‌های-شما-Embedding-Git-in-your-Applications-کتابخانهٔ-گیت-به-زبان-C-Libgit2
+    title: کتابخانهٔ گیت به زبان سی (Libgit2)
+    url: book/fa/v2/پیوست-B:-گنجاندن-گیت-در-برنامه‌های-شما-Embedding-Git-in-your-Applications-کتابخانهٔ-گیت-به-زبان-سی-Libgit2
   - cs_number: A2.3
-    title: کتابخانه گیت برای زبان Java (JGit)
-    url: book/fa/v2/پیوست-B:-گنجاندن-گیت-در-برنامه‌های-شما-Embedding-Git-in-your-Applications-کتابخانه-گیت-برای-زبان-Java-JGit
+    title: کتابخانه گیت برای زبان جاوا (JGit)
+    url: book/fa/v2/پیوست-B:-گنجاندن-گیت-در-برنامه‌های-شما-Embedding-Git-in-your-Applications-کتابخانه-گیت-برای-زبان-جاوا-JGit
   - cs_number: A2.4
-    title: کتابخانه گیت برای زبان Go (go-git)
-    url: book/fa/v2/پیوست-B:-گنجاندن-گیت-در-برنامه‌های-شما-Embedding-Git-in-your-Applications-کتابخانه-گیت-برای-زبان-Go-go-git
+    title: کتابخانه گیت برای زبان گو (go-git)
+    url: book/fa/v2/پیوست-B:-گنجاندن-گیت-در-برنامه‌های-شما-Embedding-Git-in-your-Applications-کتابخانه-گیت-برای-زبان-گو-go-git
   - cs_number: A2.5
     title: کتابخانه گیت پایتون (Dulwich)
     url: book/fa/v2/پیوست-B:-گنجاندن-گیت-در-برنامه‌های-شما-Embedding-Git-in-your-Applications-کتابخانه-گیت-پایتون-Dulwich
