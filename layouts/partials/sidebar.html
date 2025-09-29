@@ -35,15 +35,27 @@
           </li>
         </ul>
       </li>
+
+      <li>
+        <a href="{{ relURL "tools" }}"{{ if (eq $section "tools") }} class="active"{{ end }}>Tools</a>
+        <ul {{ if (eq $section "tools") }}class="expanded"{{ end }}>
+          <li>
+            <a href="{{ relURL "tools/command-line" }}"{{ if (eq .Params.Subsection "command-line") }} class="active"{{ end }}>Command Line</a>
+          </li>
+          <li>
+            <a href="{{ relURL "tools/guis" }}"{{ if (eq .Params.Subsection "guis") }} class="active"{{ end }}>GUIs</a>
+          </li>
+          <li>
+            <a href="{{ relURL "tools/hosting" }}"{{ if (eq .Params.Subsection "hosting") }} class="active"{{ end }}>Hosting</a>
+          </li>
+        </ul>
+      </li>
       <li>
         <a href="{{ relURL "docs" }}"{{ if or (eq .Params.Subsection "reference") (eq .Params.Subsection "manual") }} class="active"{{ end }}>Reference</a>
       </li>
       <li>
         <a href="{{ relURL "downloads" }}"{{ if (eq $section "downloads") }} class="active"{{ end }}>Downloads</a>
         <ul {{ if (eq $section "downloads") }}class="expanded"{{ end }}>
-          <li>
-            <a href="{{ relURL "downloads/guis" }}"{{ if (eq .Params.Subsection "guis") }} class="active"{{ end }}>GUI Clients</a>
-          </li>
           <li>
             <a href="{{ relURL "downloads/logos" }}"{{ if (eq .Params.Subsection "logos") }} class="active"{{ end }}>Logos</a>
           </li>
