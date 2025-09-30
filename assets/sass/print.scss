@@ -23,8 +23,7 @@
   }
 
   footer {
-    padding: 0;
-    margin-top: 0;
+    display: none;
   }
 
   aside, .sidebar-btn, #search-container, #reference-version, #dark-mode-button, .site-source {
@@ -50,7 +49,8 @@
       border: 1px solid black;
       display: block;
       gap: 0;
-      margin-bottom: 0;
+      margin-bottom: 8px;
+      padding: 8px;
 
       .item {
         background: none;
@@ -64,12 +64,14 @@
           background: none;
           line-height: inherit;
           padding: 1px;
+          display: block;
+          margin-bottom: 2px;
         }
       }
     }
     .commit-reference {
       background: none;
-      border-left: 0.5px;
+      border-left: 1px solid black;
 
       dl {
         gap: inherit;
@@ -113,8 +115,9 @@
 
   .cheat-sheet {
     /* Multi-column layout */
-    column-count: 6;
+    column-count: 4;
     column-gap: 1em;
+    margin-top: 20px;
 
     h1 {
       column-span: all;
@@ -135,6 +138,11 @@
       label {
         margin-top: 2px;
       }
+    }
+
+    /* Manual column break controls */
+    .print-break-before {
+      break-before: column;
     }
   }
 }
