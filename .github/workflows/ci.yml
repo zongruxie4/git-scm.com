@@ -38,6 +38,11 @@ jobs:
         npm install node-html-parser &&
         node ./script/graphviz-ssr.js
 
+    - name: Install @playwright/test
+      run: npm install @playwright/test
+    - name: offer PDF version of the cheat sheet
+      run: node script/html-to-pdf.js -i public/cheat-sheet.html
+
     - name: run Pagefind ${{ env.PAGEFIND_VERSION }} to build the search index
       run: npx -y pagefind@${{ env.PAGEFIND_VERSION }} --site public --write-playground
 
@@ -83,8 +88,6 @@ jobs:
         output: lychee.md
         jobSummary: true
 
-    - name: Install @playwright/test
-      run: npm install @playwright/test
     - name: Run Playwright tests
       id: playwright
       env:

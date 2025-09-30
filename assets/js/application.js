@@ -37,6 +37,7 @@ $(document).ready(function() {
   Downloads.init();
   DownloadBox.init();
   PostelizeAnchor.init();
+  Print.init();
 });
 
 function onPopState(fn) {
@@ -650,7 +651,7 @@ var DarkMode = {
         || (!prefersDarkScheme && currentTheme === "dark")) {
       button.attr("src", `${baseURLPrefix}images/light-mode.svg`);
     }
-    button.css("display", "block");
+    button.addClass('active');
 
     button.on('click', function(e) {
       e.preventDefault();
@@ -805,5 +806,26 @@ var Graphviz = {
       x.parentNode.insertBefore(img, x);
       x.style.display = 'none'
     });
+  }
+}
+
+var Print = {
+  init: function() {
+    Print.tagline = $("#tagline");
+    Print.scrollToTop = $("#scrollToTop");
+    window.matchMedia("print").addListener((mediaQueryList) => {
+      Print.toggle(mediaQueryList.matches);
+    });
+  },
+  toggle: function(enable) {
+    if (enable) {
+      Print.taglineBackup = Print.tagline.html();
+      Print.tagline.html("--print-out");
+      Print.scrollToTopDisplay = Print.scrollToTop.attr("display");
+      Print.scrollToTop.attr("display", "none");
+    } else {
+      Print.tagline.html(Print.taglineBackup || "--as-git-as-it-gets");
+      Print.scrollToTop.attr("display", Print.scrollToTopDisplay);
+    }
   }
 }
