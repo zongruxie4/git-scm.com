@@ -64,8 +64,8 @@ h3.plumbing {
   visibility: hidden;
 
   .tooltip-content {
-    background: white;
-    border: 1px solid #ccc;
+    background: var(--main-bg);
+    border: 1px solid var(--base-border-color);
     border-radius: 4px;
     padding: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
