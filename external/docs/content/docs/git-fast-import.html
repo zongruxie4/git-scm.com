@@ -6,7 +6,7 @@ section: documentation
 subsection: manual
 title: Git - git-fast-import Documentation
 docname: git-fast-import
-version: 2.51.0
+version: 2.51.1
 headings:
 - text: NAME
   id: _name
@@ -44,7 +44,7 @@ headings:
   id: _see_also
 - text: GIT
   id: _git
-latest-changes: 2.51.0
+latest-changes: 2.51.1
 aliases:
 - "/docs/git-fast-import/index.html"
 ---
@@ -124,13 +124,11 @@ repository). These options are disabled by default, but can be
 allowed by providing this option on the command line.  This
 currently impacts only the <span class='synopsis'><code>export-marks</code></span>, <span class='synopsis'><code>import-marks</code></span>, and
 <span class='synopsis'><code>import-marks-if-exists</code></span> feature commands.</p>
-<div class="literalblock">
-<div class="content">
-<pre>Only enable this option if you trust the program generating the
+<div class="paragraph">
+<p>Only enable this option if you trust the program generating the
 fast-import stream! This option is enabled automatically for
-remote-helpers that use the `import` capability, as they are
-already trusted to run their own code.</pre>
-</div>
+remote-helpers that use the <span class='synopsis'><code>import</code></span> capability, as they are
+already trusted to run their own code.</p>
 </div>
 </dd>
 </dl>

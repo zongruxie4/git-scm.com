@@ -6,7 +6,7 @@ section: documentation
 subsection: manual
 title: Git - git-send-email Documentation
 docname: git-send-email
-version: 2.51.0
+version: 2.51.1
 headings:
 - text: NAME
   id: _name
@@ -26,7 +26,7 @@ headings:
   id: _see_also
 - text: GIT
   id: _git
-latest-changes: 2.51.0
+latest-changes: 2.51.1
 aliases:
 - "/docs/git-send-email/index.html"
 ---
@@ -883,10 +883,10 @@ edit <span class='synopsis'><code>~/.gitconfig</code></span> to specify your acc
 <div class="listingblock">
 <div class="content">
 <pre>[sendemail]
-	smtpEncryption = tls
+	smtpEncryption = ssl
 	smtpServer = smtp.gmail.com
 	smtpUser = yourname@gmail.com
-	smtpServerPort = 587</pre>
+	smtpServerPort = 465</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -907,10 +907,10 @@ if you want to use <span class='synopsis'><code>OAUTHBEARER</code></span>, edit 
 <div class="listingblock">
 <div class="content">
 <pre>[sendemail]
-	smtpEncryption = tls
+	smtpEncryption = ssl
 	smtpServer = smtp.gmail.com
 	smtpUser = yourname@gmail.com
-	smtpServerPort = 587
+	smtpServerPort = 465
 	smtpAuth = OAUTHBEARER</pre>
 </div>
 </div>

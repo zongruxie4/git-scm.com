@@ -6,7 +6,7 @@ section: documentation
 subsection: manual
 title: Git - git Documentation
 docname: git
-version: 2.50.0
+version: 2.51.1
 headings:
 - text: NAME
   id: _name
@@ -54,7 +54,7 @@ headings:
   id: _see_also
 - text: GIT
   id: _git
-latest-changes: 2.50.0
+latest-changes: 2.51.1
 aliases:
 - "/docs/git/index.html"
 ---
@@ -330,7 +330,8 @@ the <span class='synopsis'><code>GIT_ICASE_PATHSPECS</code></span> environment v
 <p>List commands by group. This is an internal/experimental
 option and may change or be removed in the future. Supported
 groups are: builtins, parseopt (builtin commands that use
-parse-options), main (all commands in libexec directory),
+parse-options), deprecated (deprecated builtins),
+main (all commands in libexec directory),
 others (all other commands in <span class='synopsis'><code>$PATH</code></span> that have git- prefix),
 list-&lt;category&gt; (see categories in command-list.txt),
 nohelpers (exclude helper commands), alias and config
@@ -1708,7 +1709,7 @@ a pager.  See also the <span class='synopsis'><code>core.pager</code></span> opt
 <dt class="hdlist1" id="Documentation/git.txt-spanclasssynopsiscodeGITPROGRESSDELAYcodespan"><a id="Documentation/git.txt-GITPROGRESSDELAY" class="anchor" href="#Documentation/git.txt-GITPROGRESSDELAY"></a><span class='synopsis'><code>GIT_PROGRESS_DELAY</code></span> </dt>
 <dd>
 <p>A number controlling how many seconds to delay before showing
-optional progress indicators. Defaults to 2.</p>
+optional progress indicators. Defaults to 1.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git.txt-spanclasssynopsiscodeGITEDITORcodespan"><a id="Documentation/git.txt-GITEDITOR" class="anchor" href="#Documentation/git.txt-GITEDITOR"></a><span class='synopsis'><code>GIT_EDITOR</code></span> </dt>
 <dd>

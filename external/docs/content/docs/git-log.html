@@ -6,7 +6,7 @@ section: documentation
 subsection: manual
 title: Git - git-log Documentation
 docname: git-log
-version: 2.51.0
+version: 2.51.1
 headings:
 - text: NAME
   id: _name
@@ -32,7 +32,7 @@ headings:
   id: _configuration
 - text: GIT
   id: _git
-latest-changes: 2.51.0
+latest-changes: 2.51.1
 aliases:
 - "/docs/git-log/index.html"
 ---
@@ -2065,7 +2065,7 @@ parentheses (<span class='synopsis'><code>%x29</code></span>), due to their role
 <div class="ulist">
 <ul>
 <li>
-<p><span class='synopsis'><code>prefix=</code><em>&lt;value&gt;</em></span>: Shown before the list of ref names.  Defaults to "&#160;+(+".</p>
+<p><span class='synopsis'><code>prefix=</code><em>&lt;value&gt;</em></span>: Shown before the list of ref names.  Defaults to "&#160;<span class='synopsis'>(</span>".</p>
 </li>
 <li>
 <p><span class='synopsis'><code>suffix=</code><em>&lt;value&gt;</em></span>: Shown after the list of ref names.  Defaults to "<span class='synopsis'>)</span>".</p>
@@ -2075,7 +2075,7 @@ parentheses (<span class='synopsis'><code>%x29</code></span>), due to their role
 </li>
 <li>
 <p><span class='synopsis'><code>pointer=</code><em>&lt;value&gt;</em></span>: Shown between HEAD and the branch it points to, if any.
-Defaults to "&#160;+&#8594;+&#160;".</p>
+Defaults to "&#160;<span class='synopsis'><em>&#8594;</em></span>&#160;".</p>
 </li>
 <li>
 <p><span class='synopsis'><code>tag=</code><em>&lt;value&gt;</em></span>: Shown before tag names. Defaults to "<span class='synopsis'><code>tag:</code></span>&#160;".</p>
@@ -2088,13 +2088,16 @@ Defaults to "&#160;+&#8594;+&#160;".</p>
 </li>
 </ul>
 </div>
+<div class="openblock">
+<div class="content">
 <div class="paragraph">
 <p>For example, to produce decorations with no wrapping
 or tag annotations, and spaces as separators:</p>
 </div>
 <div class="paragraph">
-<p>+
-<span class='synopsis'><code>%</code>(<code>decorate:prefix=,suffix=,tag=,separator=</code> )</span></p>
+<p><span class='synopsis'><code>%</code>(<code>decorate:prefix=,suffix=,tag=,separator=</code> )</span></p>
+</div>
+</div>
 </div>
 <div class="dlist">
 <dl>
@@ -3878,14 +3881,27 @@ be used.</p>
 <dd>
 <p>Print out the ref names of any commits that are shown by the log
 command. Possible values are:</p>
-<div class="listingblock">
+<div class="openblock">
 <div class="content">
-<pre>`short`;; the ref name prefixes `refs/heads/`, `refs/tags/` and
-	`refs/remotes/` are not printed.
-`full`;; the full ref name (including prefix) are printed.
-`auto`;; if the output is going to a terminal,
-	the ref names are shown as if `short` were given, otherwise no ref
-	names are shown.</pre>
+<div class="dlist">
+<dl>
+<dt class="hdlist1" id="Documentation/git-log.txt-spanclasssynopsiscodeshortcodespan"><a id="Documentation/git-log.txt-short" class="anchor" href="#Documentation/git-log.txt-short"></a><span class='synopsis'><code>short</code></span> </dt>
+<dd>
+<p>the ref name prefixes <span class='synopsis'><code>refs/heads/</code></span>, <span class='synopsis'><code>refs/tags/</code></span> and
+<span class='synopsis'><code>refs/remotes/</code></span> are not printed.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-log.txt-spanclasssynopsiscodefullcodespan"><a id="Documentation/git-log.txt-full" class="anchor" href="#Documentation/git-log.txt-full"></a><span class='synopsis'><code>full</code></span> </dt>
+<dd>
+<p>the full ref name (including prefix) are printed.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-log.txt-spanclasssynopsiscodeautocodespan"><a id="Documentation/git-log.txt-auto" class="anchor" href="#Documentation/git-log.txt-auto"></a><span class='synopsis'><code>auto</code></span> </dt>
+<dd>
+<p>if the output is going to a terminal,
+the ref names are shown as if <span class='synopsis'><code>short</code></span> were given, otherwise no ref
+names are shown.</p>
+</dd>
+</dl>
+</div>
 </div>
 </div>
 <div class="paragraph">
