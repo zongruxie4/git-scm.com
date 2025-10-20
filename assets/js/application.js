@@ -819,7 +819,7 @@ var InstallPageLink = {
     if (os === "Mac") {
       installLink.href = installLink.href.replace('/install', '/install/mac');
     } else if (os === "Windows") {
-      installLink.href = installLink.href.replace('/install', '/install/win');
+      installLink.href = installLink.href.replace('/install', '/install/windows');
     } else if (os === "Linux") {
       installLink.href = installLink.href.replace('/install', '/install/linux');
     }
