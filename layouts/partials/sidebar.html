@@ -5,16 +5,10 @@
     <ul>
       <li>
         <a href="{{ relURL "about" }}"{{ if (eq $section "about") }} class="active"{{ end }}>About</a>
-        <ul{{ if (eq $section "about") }} class="expanded"{{ end }}>
-          {{ if (eq $section "about") }}
-          {{ $subsection := .Params.subsection }}
-          {{ $abouts := sort (where .Site.RegularPages "Params.section" "about") "Params.order"  }}
-          {{ range $i, $about := $abouts }}
-            <li>
-              <a href="{{ relURL (strings.TrimSuffix ".html" $about.RelPermalink) }}"{{ if (eq $.Params.subsection $about.Params.subsection) }} class="active"{{ end }}>{{ $about.Params.subtitle }}</a>
-            </li>
-          {{ end }}
-          {{ end }}
+        <ul {{ if (eq $section "about") }} class="expanded"{{ end }}>
+          <li>
+            <a href="{{ relURL "about/trademark" }}"{{ if (eq .Params.Subsection "trademark") }} class="active"{{ end }}>Trademark</a>
+          </li>
         </ul>
       </li>
 
