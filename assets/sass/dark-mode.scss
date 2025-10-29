@@ -108,14 +108,6 @@
                 @include box-shadow(none);
             }
 
-            div.monitor {
-                filter: brightness(.85);
-            }
-
-            .monitor a {
-                color: #dbd7d7;
-            }
-
             hr.sidebar {
                 filter: brightness(0.5);
             }
