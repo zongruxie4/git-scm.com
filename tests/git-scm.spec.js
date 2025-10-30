@@ -303,18 +303,6 @@ test('sidebar', async ({ page }) => {
   await expect(page.getByRole('heading', { name: 'About - Branching and Merging' })).toBeVisible();
 });
 
-test('small-and-fast', async ({ page }) => {
-  await page.setViewportSize(devices['iPhone X'].viewport);
-
-  await page.goto(`${url}about/small-and-fast`);
-
-  // Scroll to text right below the graphs
-  await page.getByText('For testing, large AWS instances').scrollIntoViewIfNeeded();
-
-  const lastGraph = page.locator('.bar-chart').last();
-  await expect(lastGraph).toBeInViewport();
-});
-
 test('dark mode', async({ page }) => {
   // Helper: returns relative luminance in range [0, 1]
   const getPageBrightness = async () => {

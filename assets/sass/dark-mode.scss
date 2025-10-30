@@ -92,10 +92,6 @@
                 img:not(.no-filter) {
                     filter: brightness(0.9) contrast(0.6) invert(1);
                 }
-
-                ol#about-nav li a {
-                    filter: brightness(0.8);
-                }
             }
 
             img[alt="Git"] {
