@@ -6,7 +6,7 @@ section: documentation
 subsection: manual
 title: Git - scalar Documentation
 docname: scalar
-version: 2.50.0
+version: 2.52.0
 headings:
 - text: NAME
   id: _name
@@ -20,7 +20,7 @@ headings:
   id: _see_also
 - text: GIT
   id: _git
-latest-changes: 2.50.0
+latest-changes: 2.52.0
 aliases:
 - "/docs/scalar/index.html"
 ---
@@ -118,7 +118,8 @@ subdirectories outside your sparse-checkout by using <span class='synopsis'><cod
 <p>Instead of checking out the branch pointed to by the cloned
 repository&#8217;s HEAD, check out the <span class='synopsis'><em>&lt;name&gt;</em></span> branch instead.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/scalar.txt---no-single-branch"><a class="anchor" href="#Documentation/scalar.txt---no-single-branch"></a>--[no-]single-branch </dt>
+<dt class="hdlist1" id="Documentation/scalar.txt---single-branch"><a class="anchor" href="#Documentation/scalar.txt---single-branch"></a>--single-branch </dt>
+<dt class="hdlist1" id="Documentation/scalar.txt---no-single-branch"><a class="anchor" href="#Documentation/scalar.txt---no-single-branch"></a>--no-single-branch </dt>
 <dd>
 <p>Clone only the history leading to the tip of a single branch, either
 specified by the <span class='synopsis'><code>--branch</code></span> option or the primary branch remote&#8217;s
@@ -130,13 +131,15 @@ cloning. If the HEAD at the remote did not point at any branch when
 <span class='synopsis'><code>--single-branch</code></span> clone was made, no remote-tracking branch is created.</p>
 </div>
 </dd>
-<dt class="hdlist1" id="Documentation/scalar.txt---no-src"><a class="anchor" href="#Documentation/scalar.txt---no-src"></a>--[no-]src </dt>
+<dt class="hdlist1" id="Documentation/scalar.txt---src"><a class="anchor" href="#Documentation/scalar.txt---src"></a>--src </dt>
+<dt class="hdlist1" id="Documentation/scalar.txt---no-src"><a class="anchor" href="#Documentation/scalar.txt---no-src"></a>--no-src </dt>
 <dd>
 <p>By default, <span class='synopsis'><code>scalar</code> <code>clone</code></span> places the cloned repository within a
 <span class='synopsis'><em>&lt;entlistment&gt;</em><code>/src</code></span> directory. Use <span class='synopsis'><code>--no-src</code></span> to place the cloned
 repository directly in the <span class='synopsis'><em>&lt;enlistment&gt;</em></span> directory.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/scalar.txt---no-tags"><a class="anchor" href="#Documentation/scalar.txt---no-tags"></a>--[no-]tags </dt>
+<dt class="hdlist1" id="Documentation/scalar.txt---tags"><a class="anchor" href="#Documentation/scalar.txt---tags"></a>--tags </dt>
+<dt class="hdlist1" id="Documentation/scalar.txt---no-tags"><a class="anchor" href="#Documentation/scalar.txt---no-tags"></a>--no-tags </dt>
 <dd>
 <p>By default, <span class='synopsis'><code>scalar</code> <code>clone</code></span> will fetch the tag objects advertised by
 the remote and future <span class='synopsis'><code>git</code> <code>fetch</code></span> commands will do the same. Use
@@ -144,12 +147,14 @@ the remote and future <span class='synopsis'><code>git</code> <code>fetch</code>
 the repository to avoid fetching tags in the future. To fetch tags after
 cloning with <span class='synopsis'><code>--no-tags</code></span>, run <span class='synopsis'><code>git</code> <code>fetch</code> <code>--tags</code></span>.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/scalar.txt---no-full-clone"><a class="anchor" href="#Documentation/scalar.txt---no-full-clone"></a>--[no-]full-clone </dt>
+<dt class="hdlist1" id="Documentation/scalar.txt---full-clone"><a class="anchor" href="#Documentation/scalar.txt---full-clone"></a>--full-clone </dt>
+<dt class="hdlist1" id="Documentation/scalar.txt---no-full-clone"><a class="anchor" href="#Documentation/scalar.txt---no-full-clone"></a>--no-full-clone </dt>
 <dd>
 <p>A sparse-checkout is initialized by default. This behavior can be
 turned off via <span class='synopsis'><code>--full-clone</code></span>.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/scalar.txt---no-maintenance"><a class="anchor" href="#Documentation/scalar.txt---no-maintenance"></a>--[no-]maintenance </dt>
+<dt class="hdlist1" id="Documentation/scalar.txt---maintenance"><a class="anchor" href="#Documentation/scalar.txt---maintenance"></a>--maintenance </dt>
+<dt class="hdlist1" id="Documentation/scalar.txt---no-maintenance"><a class="anchor" href="#Documentation/scalar.txt---no-maintenance"></a>--no-maintenance </dt>
 <dd>
 <p>By default, <span class='synopsis'><code>scalar</code> <code>clone</code></span> configures the enlistment to use Git&#8217;s
 background maintenance feature. Use the <span class='synopsis'><code>--no-maintenance</code></span> to skip
@@ -186,7 +191,8 @@ parent directory is considered to be the Scalar enlistment. If the worktree is
 <em>not</em> called <span class='synopsis'><code>src/</code></span>, it itself will be considered to be the Scalar enlistment.</p>
 </div>
 </dd>
-<dt class="hdlist1" id="Documentation/scalar.txt---no-maintenance-1"><a class="anchor" href="#Documentation/scalar.txt---no-maintenance-1"></a>--[no-]maintenance </dt>
+<dt class="hdlist1" id="Documentation/scalar.txt---maintenance-1"><a class="anchor" href="#Documentation/scalar.txt---maintenance-1"></a>--maintenance </dt>
+<dt class="hdlist1" id="Documentation/scalar.txt---no-maintenance-1"><a class="anchor" href="#Documentation/scalar.txt---no-maintenance-1"></a>--no-maintenance </dt>
 <dd>
 <p>By default, <span class='synopsis'><code>scalar</code> <code>register</code></span> configures the enlistment to use Git&#8217;s
 background maintenance feature. Use the <span class='synopsis'><code>--no-maintenance</code></span> to skip

@@ -6,8 +6,8 @@ section: documentation
 subsection: manual
 title: Git - fetch-options Documentation
 docname: fetch-options
-version: 2.51.1
-latest-changes: 2.51.1
+version: 2.52.0
+latest-changes: 2.52.0
 aliases:
 - "/docs/fetch-options/index.html"
 ---
@@ -15,7 +15,8 @@ aliases:
 <div class="sectionbody">
 <div class="dlist">
 <dl>
-<dt class="hdlist1" id="Documentation/fetch-options.txt---no-all"><a class="anchor" href="#Documentation/fetch-options.txt---no-all"></a>--[no-]all </dt>
+<dt class="hdlist1" id="Documentation/fetch-options.txt---all"><a class="anchor" href="#Documentation/fetch-options.txt---all"></a>--all </dt>
+<dt class="hdlist1" id="Documentation/fetch-options.txt---no-all"><a class="anchor" href="#Documentation/fetch-options.txt---no-all"></a>--no-all </dt>
 <dd>
 <p>Fetch all remotes, except for the ones that has the
 <span class='synopsis'><code>remote.</code><em>&lt;name&gt;</em><code>.skipFetchAll</code></span> configuration variable set.
@@ -123,7 +124,8 @@ scripts. See section OUTPUT in <a href='{{< relurl "docs/git-fetch" >}}'>git-fet
 precedence over the <span class='synopsis'><code>fetch.output</code></span> config option.</p>
 </div>
 </dd>
-<dt class="hdlist1" id="Documentation/fetch-options.txt---no-write-fetch-head"><a class="anchor" href="#Documentation/fetch-options.txt---no-write-fetch-head"></a>--[no-]write-fetch-head </dt>
+<dt class="hdlist1" id="Documentation/fetch-options.txt---write-fetch-head"><a class="anchor" href="#Documentation/fetch-options.txt---write-fetch-head"></a>--write-fetch-head </dt>
+<dt class="hdlist1" id="Documentation/fetch-options.txt---no-write-fetch-head"><a class="anchor" href="#Documentation/fetch-options.txt---no-write-fetch-head"></a>--no-write-fetch-head </dt>
 <dd>
 <p>Write the list of remote refs fetched in the <span class='synopsis'><code>FETCH_HEAD</code></span>
 file directly under <span class='synopsis'><code>$GIT_DIR</code></span>.  This is the default.
@@ -149,14 +151,17 @@ This option overrides that check.</p>
 <p>Allow several <span class="hover-term" data-term="repository">&lt;repository&gt;</span> and &lt;group&gt; arguments to be
 specified. No <span class="hover-term" data-term="refspec">&lt;refspec&gt;</span>s may be specified.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/fetch-options.txt---no-auto-maintenance"><a class="anchor" href="#Documentation/fetch-options.txt---no-auto-maintenance"></a>--[no-]auto-maintenance </dt>
-<dt class="hdlist1" id="Documentation/fetch-options.txt---no-auto-gc"><a class="anchor" href="#Documentation/fetch-options.txt---no-auto-gc"></a>--[no-]auto-gc </dt>
+<dt class="hdlist1" id="Documentation/fetch-options.txt---auto-maintenance"><a class="anchor" href="#Documentation/fetch-options.txt---auto-maintenance"></a>--auto-maintenance </dt>
+<dt class="hdlist1" id="Documentation/fetch-options.txt---no-auto-maintenance"><a class="anchor" href="#Documentation/fetch-options.txt---no-auto-maintenance"></a>--no-auto-maintenance </dt>
+<dt class="hdlist1" id="Documentation/fetch-options.txt---auto-gc"><a class="anchor" href="#Documentation/fetch-options.txt---auto-gc"></a>--auto-gc </dt>
+<dt class="hdlist1" id="Documentation/fetch-options.txt---no-auto-gc"><a class="anchor" href="#Documentation/fetch-options.txt---no-auto-gc"></a>--no-auto-gc </dt>
 <dd>
 <p>Run <span class='synopsis'><code>git</code> <code>maintenance</code> <code>run</code> <code>--auto</code></span> at the end to perform automatic
 repository maintenance if needed. (<span class='synopsis'><code>--</code>[<code>no-</code>]<code>auto-gc</code></span> is a synonym.)
 This is enabled by default.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/fetch-options.txt---no-write-commit-graph"><a class="anchor" href="#Documentation/fetch-options.txt---no-write-commit-graph"></a>--[no-]write-commit-graph </dt>
+<dt class="hdlist1" id="Documentation/fetch-options.txt---write-commit-graph"><a class="anchor" href="#Documentation/fetch-options.txt---write-commit-graph"></a>--write-commit-graph </dt>
+<dt class="hdlist1" id="Documentation/fetch-options.txt---no-write-commit-graph"><a class="anchor" href="#Documentation/fetch-options.txt---no-write-commit-graph"></a>--no-write-commit-graph </dt>
 <dd>
 <p>Write a commit-graph after fetching. This overrides the config
 setting <span class='synopsis'><code>fetch.writeCommitGraph</code></span>.</p>

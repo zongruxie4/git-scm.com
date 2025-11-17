@@ -6,7 +6,7 @@ section: documentation
 subsection: manual
 title: Git - git-config Documentation
 docname: git-config
-version: 2.51.2
+version: 2.52.0
 headings:
 - text: NAME
   id: _name
@@ -36,7 +36,7 @@ headings:
   id: _bugs
 - text: GIT
   id: _git
-latest-changes: 2.51.2
+latest-changes: 2.52.0
 aliases:
 - "/docs/git-config/index.html"
 ---
@@ -430,7 +430,8 @@ is to be used, or exits with status 1 otherwise.
 When the color setting for <span class='synopsis'><code>name</code></span> is undefined, the command uses
 <span class='synopsis'><code>color.ui</code></span> as fallback.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-config.txt---no-includes"><a class="anchor" href="#Documentation/git-config.txt---no-includes"></a>--[no-]includes </dt>
+<dt class="hdlist1" id="Documentation/git-config.txt---includes"><a class="anchor" href="#Documentation/git-config.txt---includes"></a>--includes </dt>
+<dt class="hdlist1" id="Documentation/git-config.txt---no-includes"><a class="anchor" href="#Documentation/git-config.txt---no-includes"></a>--no-includes </dt>
 <dd>
 <p>Respect <span class='synopsis'><code>include.*</code></span> directives in config files when looking up
 values. Defaults to <span class='synopsis'><code>off</code></span> when a specific file is given (e.g.,
@@ -1298,6 +1299,10 @@ compiled without runtime prefix support, the compiled-in prefix will be
 substituted instead. In the unlikely event that a literal path needs to
 be specified that should <em>not</em> be expanded, it needs to be prefixed by
 <span class='synopsis'><code>./</code></span>, like so: <span class='synopsis'><code>./%</code>(<code>prefix</code>)<code>/bin</code></span>.</p>
+</div>
+<div class="paragraph">
+<p>If prefixed with <span class='synopsis'><code>:</code>(<code>optional</code>)</span>, the configuration variable is treated
+as if it does not exist, if the named path does not exist.</p>
 </div>
 </dd>
 </dl>
@@ -2555,6 +2560,18 @@ the corrected commit dates will not be written or read. Defaults to
 
 <code>commit-graph</code> <code>write</code></span> (c.f., <a href='{{< relurl "docs/git-commit-graph" >}}'>git-commit-graph[1]</a>).</p>
 </dd>
+<dt class="hdlist1" id="Documentation/git-config.txt-commitGraphchangedPaths"><a class="anchor" href="#Documentation/git-config.txt-commitGraphchangedPaths"></a>commitGraph.changedPaths </dt>
+<dd>
+<p>If true, then <span class='synopsis'><code>git</code> <code>commit-graph</code> <code>write</code></span> will compute and write
+changed-path Bloom filters by default, equivalent to passing
+<span class='synopsis'><code>--changed-paths</code></span>. If false or unset, changed-paths Bloom filters will
+be written during <span class='synopsis'><code>git</code> <code>commit-graph</code> <code>write</code></span> only if the filters already
+exist in the current commit-graph file. This matches the default
+behavior of <span class='synopsis'><code>git</code> <code>commit-graph</code> <code>write</code></span> without any <span class='synopsis'><code>--</code>[<code>no-</code>]<code>changed-paths</code></span>
+option. To rewrite a commit-graph file without any filters, use the
+<span class='synopsis'><code>--no-changed-paths</code></span> option. Command-line option <span class='synopsis'><code>--</code>[<code>no-</code>]<code>changed-paths</code></span>
+always takes precedence over this configuration. Defaults to unset.</p>
+</dd>
 <dt class="hdlist1" id="Documentation/git-config.txt-commitGraphreadChangedPaths"><a class="anchor" href="#Documentation/git-config.txt-commitGraphreadChangedPaths"></a>commitGraph.readChangedPaths </dt>
 <dd>
 <p>Deprecated. Equivalent to commitGraph.changedPathsVersion=-1 if true, and
@@ -2937,6 +2954,10 @@ CIFS/Microsoft Windows.</p>
 and other symbolic reference files, use symbolic links.
 This is sometimes needed to work with old scripts that
 expect HEAD to be a symbolic link.</p>
+<div class="paragraph">
+<p>This configuration is deprecated and will be removed in Git 3.0. Symbolic refs
+will always be written as textual symrefs.</p>
+</div>
 </dd>
 <dt class="hdlist1" id="Documentation/git-config.txt-corealternateRefsCommand"><a class="anchor" href="#Documentation/git-config.txt-corealternateRefsCommand"></a>core.alternateRefsCommand </dt>
 <dd>
@@ -3223,8 +3244,35 @@ messages consider a line that begins with this character
 commented, and removes them after the editor returns
 (default <em>#</em>).</p>
 <div class="paragraph">
-<p>If set to "auto", <span class='synopsis'><code>git-commit</code></span> would select a character that is not
-the beginning character of any line in existing commit messages.</p>
+<p>If set to "auto", <span class='synopsis'><code>git-commit</code></span> will select a character that is not
+the beginning character of any line in existing commit messages.
+Support for this value is deprecated and will be removed in Git 3.0
+due to the following limitations:</p>
+</div>
+<div class="openblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>It is incompatible with adding comments in a commit message
+template. This includes the conflicts comments added to
+the commit message by <span class='synopsis'><code>cherry-pick</code></span>, <span class='synopsis'><code>merge</code></span>, <span class='synopsis'><code>rebase</code></span> and
+<span class='synopsis'><code>revert</code></span>.</p>
+</li>
+<li>
+<p>It is incompatible with adding comments to the commit message
+in the <span class='synopsis'><code>prepare-commit-msg</code></span> hook.</p>
+</li>
+<li>
+<p>It is incompatible with the <span class='synopsis'><code>fixup</code></span> and <span class='synopsis'><code>squash</code></span> commands when
+rebasing,</p>
+</li>
+<li>
+<p>It is not respected by <span class='synopsis'><code>git</code> <code>notes</code></span></p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 <div class="paragraph">
 <p>Note that these two variables are aliases of each other, and in modern
@@ -6239,23 +6287,47 @@ detach.</p>
 <dt class="hdlist1" id="Documentation/git-config.txt-maintenancestrategy"><a class="anchor" href="#Documentation/git-config.txt-maintenancestrategy"></a>maintenance.strategy </dt>
 <dd>
 <p>This string config option provides a way to specify one of a few
-recommended schedules for background maintenance. This only affects
-which tasks are run during <span class='synopsis'><code>git</code> <code>maintenance</code> <code>run</code> <code>--schedule=X</code></span>
-commands, provided no <span class='synopsis'><code>--task=</code><em>&lt;task&gt;</em></span> arguments are provided.
-Further, if a <span class='synopsis'><code>maintenance.</code><em>&lt;task&gt;</em><code>.schedule</code></span> config value is set,
-then that value is used instead of the one provided by
-<span class='synopsis'><code>maintenance.strategy</code></span>. The possible strategy strings are:</p>
+recommended strategies for repository maintenance. This affects
+which tasks are run during <span class='synopsis'><code>git</code> <code>maintenance</code> <code>run</code></span>, provided no
+<span class='synopsis'><code>--task=</code><em>&lt;task&gt;</em></span> arguments are provided. This setting impacts manual
+maintenance, auto-maintenance as well as scheduled maintenance. The
+tasks that run may be different depending on the maintenance type.</p>
+<div class="paragraph">
+<p>The maintenance strategy can be further tweaked by setting
+<span class='synopsis'><code>maintenance.</code><em>&lt;task&gt;</em><code>.enabled</code></span> and <span class='synopsis'><code>maintenance.</code><em>&lt;task&gt;</em><code>.schedule</code></span>. If set, these
+values are used instead of the defaults provided by <span class='synopsis'><code>maintenance.strategy</code></span>.</p>
+</div>
+<div class="paragraph">
+<p>The possible strategies are:</p>
+</div>
 <div class="ulist">
 <ul>
 <li>
-<p><span class='synopsis'><code>none</code></span>: This default setting implies no tasks are run at any schedule.</p>
+<p><span class='synopsis'><code>none</code></span>: This strategy implies no tasks are run at all. This is the default
+strategy for scheduled maintenance.</p>
+</li>
+<li>
+<p><span class='synopsis'><code>gc</code></span>: This strategy runs the <span class='synopsis'><code>gc</code></span> task. This is the default strategy for
+manual maintenance.</p>
+</li>
+<li>
+<p><span class='synopsis'><code>geometric</code></span>: This strategy performs geometric repacking of packfiles and
+keeps auxiliary data structures up-to-date. The strategy expires data in the
+reflog and removes worktrees that cannot be located anymore. When the
+geometric repacking strategy would decide to do an all-into-one repack, then
+the strategy generates a cruft pack for all unreachable objects. Objects that
+are already part of a cruft pack will be expired.</p>
+<div class="paragraph">
+<p>This repacking strategy is a full replacement for the <span class='synopsis'><code>gc</code></span> strategy and is
+recommended for large repositories.</p>
+</div>
 </li>
 <li>
 <p><span class='synopsis'><code>incremental</code></span>: This setting optimizes for performing small maintenance
 activities that do not delete any data. This does not schedule the <span class='synopsis'><code>gc</code></span>
 task, but runs the <span class='synopsis'><code>prefetch</code></span> and <span class='synopsis'><code>commit-graph</code></span> tasks hourly, the
 <span class='synopsis'><code>loose-objects</code></span> and <span class='synopsis'><code>incremental-repack</code></span> tasks daily, and the <span class='synopsis'><code>pack-refs</code></span>
-task weekly.</p>
+task weekly. Manual repository maintenance uses the <span class='synopsis'><code>gc</code></span> task.</p>
 </li>
 </ul>
 </div>
@@ -6310,6 +6382,24 @@ option. A negative value will force the task to run every time.
 Otherwise, a positive value implies the command should run when the
 number of pack-files not in the multi-pack-index is at least the value
 of <span class='synopsis'><code>maintenance.incremental-repack.auto</code></span>. The default value is 10.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-config.txt-maintenancegeometric-repackauto"><a class="anchor" href="#Documentation/git-config.txt-maintenancegeometric-repackauto"></a>maintenance.geometric-repack.auto </dt>
+<dd>
+<p>This integer config option controls how often the <span class='synopsis'><code>geometric-repack</code></span>
+task should be run as part of <span class='synopsis'><code>git</code> <code>maintenance</code> <code>run</code> <code>--auto</code></span>. If zero,
+then the <span class='synopsis'><code>geometric-repack</code></span> task will not run with the <span class='synopsis'><code>--auto</code></span>
+option. A negative value will force the task to run every time.
+Otherwise, a positive value implies the command should run either when
+there are packfiles that need to be merged together to retain the
+geometric progression, or when there are at least this many loose
+objects that would be written into a new packfile. The default value is
+100.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-config.txt-maintenancegeometric-repacksplitFactor"><a class="anchor" href="#Documentation/git-config.txt-maintenancegeometric-repacksplitFactor"></a>maintenance.geometric-repack.splitFactor </dt>
+<dd>
+<p>This integer config option controls the factor used for the geometric
+sequence. See the <span class='synopsis'><code>--geometric=</code></span> option in <a href='{{< relurl "docs/git-repack" >}}'>git-repack[1]</a> for
+more details. Defaults to <span class='synopsis'><code>2</code></span>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-config.txt-maintenancereflog-expireauto"><a class="anchor" href="#Documentation/git-config.txt-maintenancereflog-expireauto"></a>maintenance.reflog-expire.auto </dt>
 <dd>
@@ -7112,6 +7202,35 @@ promisor remotes it is using, if it uses some. Default is
 "false", which means the "promisor-remote" capability is not
 advertised.</p>
 </dd>
+<dt class="hdlist1" id="Documentation/git-config.txt-promisorsendFields"><a class="anchor" href="#Documentation/git-config.txt-promisorsendFields"></a>promisor.sendFields </dt>
+<dd>
+<p>A comma or space separated list of additional remote related
+field names. A server sends these field names and the
+associated field values from its configuration when
+advertising its promisor remotes using the "promisor-remote"
+capability, see <a href='{{< relurl "docs/gitprotocol-v2" >}}'>gitprotocol-v2[5]</a>. Currently, only the
+"partialCloneFilter" and "token" field names are supported.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-config.txt-spanclasssynopsiscodepartialCloneFiltercodespan"><a id="Documentation/git-config.txt-partialCloneFilter" class="anchor" href="#Documentation/git-config.txt-partialCloneFilter"></a><span class='synopsis'><code>partialCloneFilter</code></span> </dt>
+<dd>
+<p>contains the partial clone filter
+used for the remote.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-config.txt-spanclasssynopsiscodetokencodespan"><a id="Documentation/git-config.txt-token" class="anchor" href="#Documentation/git-config.txt-token"></a><span class='synopsis'><code>token</code></span> </dt>
+<dd>
+<p>contains an authentication token for the remote.</p>
+<div class="paragraph">
+<p>When a field name is part of this list and a corresponding
+"remote.foo.&lt;field-name&gt;" config variable is set on the server to a
+non-empty value, then the field name and value are sent when
+advertising the promisor remote "foo".</p>
+</div>
+<div class="paragraph">
+<p>This list has no effect unless the "promisor.advertise" config
+variable is set to "true", and the "name" and "url" fields are always
+advertised regardless of this setting.</p>
+</div>
+</dd>
 <dt class="hdlist1" id="Documentation/git-config.txt-promisoracceptFromServer"><a class="anchor" href="#Documentation/git-config.txt-promisoracceptFromServer"></a>promisor.acceptFromServer </dt>
 <dd>
 <p>If set to "all", a client will accept all the promisor remotes
@@ -7132,6 +7251,61 @@ client agrees that the server might omit objects that are
 lazily fetchable from this promisor remote from its responses
 to "fetch" and "clone" requests from the client. Name and URL
 comparisons are case sensitive. See <a href='{{< relurl "docs/gitprotocol-v2" >}}'>gitprotocol-v2[5]</a>.</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-config.txt-promisorcheckFields"><a class="anchor" href="#Documentation/git-config.txt-promisorcheckFields"></a>promisor.checkFields </dt>
+<dd>
+<p>A comma or space separated list of additional remote related
+field names. A client checks if the values of these fields
+transmitted by a server correspond to the values of these
+fields in its own configuration before accepting a promisor
+remote. Currently, "partialCloneFilter" and "token" are the
+only supported field names.</p>
+<div class="paragraph">
+<p>If one of these field names (e.g., "token") is being checked for an
+advertised promisor remote (e.g., "foo"), three conditions must be met
+for the check of this specific field to pass:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The corresponding local configuration (e.g., <span class='synopsis'><code>remote.foo.token</code></span>)
+must be set.</p>
+</li>
+<li>
+<p>The server must advertise the "token" field for remote "foo".</p>
+</li>
+<li>
+<p>The value of the locally configured <span class='synopsis'><code>remote.foo.token</code></span> must exactly
+match the value advertised by the server for the "token" field.</p>
+<div class="paragraph">
+<p>If any of these conditions is not met for any field name listed in
+<span class='synopsis'><code>promisor.checkFields</code></span>, the advertised remote "foo" is rejected.</p>
+</div>
+<div class="paragraph">
+<p>For the "partialCloneFilter" field, this allows the client to ensure
+that the server&#8217;s filter matches what it expects locally, preventing
+inconsistencies in filtering behavior. For the "token" field, this can
+be used to verify that authentication credentials match expected
+values.</p>
+</div>
+<div class="paragraph">
+<p>Field values are compared case-sensitively.</p>
+</div>
+<div class="paragraph">
+<p>The "name" and "url" fields are always checked according to the
+<span class='synopsis'><code>promisor.acceptFromServer</code></span> policy, independently of this setting.</p>
+</div>
+<div class="paragraph">
+<p>The field names and values should be passed by the server through the
+"promisor-remote" capability by using the <span class='synopsis'><code>promisor.sendFields</code></span> config
+variable. The fields are checked only if the
+<span class='synopsis'><code>promisor.acceptFromServer</code></span> config variable is not set to "None". If
+set to "None", this config variable has no effect. See
+<a href='{{< relurl "docs/gitprotocol-v2" >}}'>gitprotocol-v2[5]</a>.</p>
+</div>
+</li>
+</ol>
+</div>
 </dd>
 <dt class="hdlist1" id="Documentation/git-config.txt-protocolallow"><a class="anchor" href="#Documentation/git-config.txt-protocolallow"></a>protocol.allow </dt>
 <dd>
@@ -8216,6 +8390,8 @@ recognized by the parser.</p>
 <dt class="hdlist1" id="Documentation/git-config.txt-sendemailsmtpServerPort"><a class="anchor" href="#Documentation/git-config.txt-sendemailsmtpServerPort"></a>sendemail.smtpServerPort </dt>
 <dt class="hdlist1" id="Documentation/git-config.txt-sendemailsmtpServerOption"><a class="anchor" href="#Documentation/git-config.txt-sendemailsmtpServerOption"></a>sendemail.smtpServerOption </dt>
 <dt class="hdlist1" id="Documentation/git-config.txt-sendemailsmtpUser"><a class="anchor" href="#Documentation/git-config.txt-sendemailsmtpUser"></a>sendemail.smtpUser </dt>
+<dt class="hdlist1" id="Documentation/git-config.txt-sendemailimapSentFolder"><a class="anchor" href="#Documentation/git-config.txt-sendemailimapSentFolder"></a>sendemail.imapSentFolder </dt>
+<dt class="hdlist1" id="Documentation/git-config.txt-sendemailuseImapOnly"><a class="anchor" href="#Documentation/git-config.txt-sendemailuseImapOnly"></a>sendemail.useImapOnly </dt>
 <dt class="hdlist1" id="Documentation/git-config.txt-sendemailthread"><a class="anchor" href="#Documentation/git-config.txt-sendemailthread"></a>sendemail.thread </dt>
 <dt class="hdlist1" id="Documentation/git-config.txt-sendemailtransferEncoding"><a class="anchor" href="#Documentation/git-config.txt-sendemailtransferEncoding"></a>sendemail.transferEncoding </dt>
 <dt class="hdlist1" id="Documentation/git-config.txt-sendemailvalidate"><a class="anchor" href="#Documentation/git-config.txt-sendemailvalidate"></a>sendemail.validate </dt>
@@ -8372,23 +8548,37 @@ follows:</p>
 change as git gains new features.</p>
 </div>
 </dd>
-<dt class="hdlist1" id="Documentation/git-config.txt-stashshowIncludeUntracked"><a class="anchor" href="#Documentation/git-config.txt-stashshowIncludeUntracked"></a>stash.showIncludeUntracked </dt>
+</dl>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1" id="Documentation/git-config.txt-spanclasssynopsiscodestashindexcodespan"><a id="Documentation/git-config.txt-stashindex" class="anchor" href="#Documentation/git-config.txt-stashindex"></a><span class='synopsis'><code>stash.index</code></span> </dt>
+<dd>
+<p>	If this is set to true, <span class='synopsis'><code>git</code> <code>stash</code> <code>apply</code></span> and <span class='synopsis'><code>git</code> <code>stash</code> <code>pop</code></span> will
+	behave as if <span class='synopsis'><code>--index</code></span> was supplied. Defaults to false.
+See the descriptions in <a href='{{< relurl "docs/git-stash" >}}'>git-stash[1]</a>.</p>
+<div class="paragraph">
+<p>This also affects invocations of <a href='{{< relurl "docs/git-stash" >}}'>git-stash[1]</a> via <span class='synopsis'><code>--autostash</code></span> from
+commands like <a href='{{< relurl "docs/git-merge" >}}'>git-merge[1]</a>, <a href='{{< relurl "docs/git-rebase" >}}'>git-rebase[1]</a>, and
+<a href='{{< relurl "docs/git-pull" >}}'>git-pull[1]</a>.</p>
+</div>
+</dd>
+<dt class="hdlist1" id="Documentation/git-config.txt-spanclasssynopsiscodestashshowIncludeUntrackedcodespan"><a id="Documentation/git-config.txt-stashshowIncludeUntracked" class="anchor" href="#Documentation/git-config.txt-stashshowIncludeUntracked"></a><span class='synopsis'><code>stash.showIncludeUntracked</code></span> </dt>
 <dd>
 <p>If this is set to true, the <span class='synopsis'><code>git</code> <code>stash</code> <code>show</code></span> command will show
-the untracked files of a stash entry.  Defaults to false. See
-the description of the <em>show</em> command in <a href='{{< relurl "docs/git-stash" >}}'>git-stash[1]</a>.</p>
+the untracked files of a stash entry. Defaults to false. See the description of the 'show' command in <a href='{{< relurl "docs/git-stash" >}}'>git-stash[1]</a>.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-config.txt-stashshowPatch"><a class="anchor" href="#Documentation/git-config.txt-stashshowPatch"></a>stash.showPatch </dt>
+<dt class="hdlist1" id="Documentation/git-config.txt-spanclasssynopsiscodestashshowPatchcodespan"><a id="Documentation/git-config.txt-stashshowPatch" class="anchor" href="#Documentation/git-config.txt-stashshowPatch"></a><span class='synopsis'><code>stash.showPatch</code></span> </dt>
 <dd>
 <p>If this is set to true, the <span class='synopsis'><code>git</code> <code>stash</code> <code>show</code></span> command without an
 option will show the stash entry in patch form.  Defaults to false.
-See the description of the <em>show</em> command in <a href='{{< relurl "docs/git-stash" >}}'>git-stash[1]</a>.</p>
+See the description of the 'show' command in <a href='{{< relurl "docs/git-stash" >}}'>git-stash[1]</a>.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-config.txt-stashshowStat"><a class="anchor" href="#Documentation/git-config.txt-stashshowStat"></a>stash.showStat </dt>
+<dt class="hdlist1" id="Documentation/git-config.txt-spanclasssynopsiscodestashshowStatcodespan"><a id="Documentation/git-config.txt-stashshowStat" class="anchor" href="#Documentation/git-config.txt-stashshowStat"></a><span class='synopsis'><code>stash.showStat</code></span> </dt>
 <dd>
 <p>If this is set to true, the <span class='synopsis'><code>git</code> <code>stash</code> <code>show</code></span> command without an
 option will show a diffstat of the stash entry.  Defaults to true.
-See the description of the <em>show</em> command in <a href='{{< relurl "docs/git-stash" >}}'>git-stash[1]</a>.</p>
+See the description of the 'show' command in <a href='{{< relurl "docs/git-stash" >}}'>git-stash[1]</a>.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-config.txt-statusrelativePaths"><a class="anchor" href="#Documentation/git-config.txt-statusrelativePaths"></a>status.relativePaths </dt>
 <dd>
@@ -8625,26 +8815,27 @@ as computed via <span class='synopsis'><code>submodule.alternateLocation</code><
 or <span class='synopsis'><code>info</code></span>, and if there is an error with the computed alternate, the
 clone proceeds as if no alternate was specified.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-config.txt-tagforceSignAnnotated"><a class="anchor" href="#Documentation/git-config.txt-tagforceSignAnnotated"></a>tag.forceSignAnnotated </dt>
+<dt class="hdlist1" id="Documentation/git-config.txt-spanclasssynopsiscodetagforceSignAnnotatedcodespan"><a id="Documentation/git-config.txt-tagforceSignAnnotated" class="anchor" href="#Documentation/git-config.txt-tagforceSignAnnotated"></a><span class='synopsis'><code>tag.forceSignAnnotated</code></span> </dt>
 <dd>
 <p>A boolean to specify whether annotated tags created should be GPG signed.
 If <span class='synopsis'><code>--annotate</code></span> is specified on the command line, it takes
 precedence over this option.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-config.txt-tagsort"><a class="anchor" href="#Documentation/git-config.txt-tagsort"></a>tag.sort </dt>
+<dt class="hdlist1" id="Documentation/git-config.txt-spanclasssynopsiscodetagsortcodespan"><a id="Documentation/git-config.txt-tagsort" class="anchor" href="#Documentation/git-config.txt-tagsort"></a><span class='synopsis'><code>tag.sort</code></span> </dt>
 <dd>
 <p>This variable controls the sort ordering of tags when displayed by
-<a href='{{< relurl "docs/git-tag" >}}'>git-tag[1]</a>. Without the "--sort=&lt;value&gt;" option provided, the
-value of this variable will be used as the default.</p>
+<a href='{{< relurl "docs/git-tag" >}}'>git-tag[1]</a>.
+Without the <span class='synopsis'><code>--sort=</code><em>&lt;value&gt;</em></span> option provided, the value of this variable will
+be used as the default.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-config.txt-taggpgSign"><a class="anchor" href="#Documentation/git-config.txt-taggpgSign"></a>tag.gpgSign </dt>
+<dt class="hdlist1" id="Documentation/git-config.txt-spanclasssynopsiscodetaggpgSigncodespan"><a id="Documentation/git-config.txt-taggpgSign" class="anchor" href="#Documentation/git-config.txt-taggpgSign"></a><span class='synopsis'><code>tag.gpgSign</code></span> </dt>
 <dd>
 <p>A boolean to specify whether all tags should be GPG signed.
 Use of this option when running in an automated script can
 result in a large number of tags being signed. It is therefore
-convenient to use an agent to avoid typing your gpg passphrase
+convenient to use an agent to avoid typing your GPG passphrase
 several times. Note that this option doesn&#8217;t affect tag signing
-behavior enabled by "-u &lt;keyid&gt;" or "--local-user=&lt;keyid&gt;" options.</p>
+behavior enabled by <span class='synopsis'><code>-u</code> <em>&lt;keyid&gt;</em></span> or <span class='synopsis'><code>--local-user=</code><em>&lt;keyid&gt;</em></span> options.</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-config.txt-tarumask"><a class="anchor" href="#Documentation/git-config.txt-tarumask"></a>tar.umask </dt>
 <dd>
@@ -9340,7 +9531,7 @@ in multiple config files.</p>
 Currently only <a href='{{< relurl "docs/git-instaweb" >}}'>git-instaweb[1]</a> and <a href='{{< relurl "docs/git-help" >}}'>git-help[1]</a>
 may use it.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-config.txt-worktreeguessRemote"><a class="anchor" href="#Documentation/git-config.txt-worktreeguessRemote"></a>worktree.guessRemote </dt>
+<dt class="hdlist1" id="Documentation/git-config.txt-spanclasssynopsiscodeworktreeguessRemotecodespan"><a id="Documentation/git-config.txt-worktreeguessRemote" class="anchor" href="#Documentation/git-config.txt-worktreeguessRemote"></a><span class='synopsis'><code>worktree.guessRemote</code></span> </dt>
 <dd>
 <p>If no branch is specified and neither <span class='synopsis'><code>-b</code></span> nor <span class='synopsis'><code>-B</code></span> nor
 <span class='synopsis'><code>--detach</code></span> is used, then <span class='synopsis'><code>git</code> <code>worktree</code> <code>add</code></span> defaults to
@@ -9349,16 +9540,16 @@ set to true, <span class='synopsis'><code>worktree</code> <code>add</code></span
 branch whose name uniquely matches the new branch name.  If
 such a branch exists, it is checked out and set as "upstream"
 for the new branch.  If no such match can be found, it falls
-back to creating a new branch from the current HEAD.</p>
+back to creating a new branch from the current <span class='synopsis'><code>HEAD</code></span>.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-config.txt-worktreeuseRelativePaths"><a class="anchor" href="#Documentation/git-config.txt-worktreeuseRelativePaths"></a>worktree.useRelativePaths </dt>
+<dt class="hdlist1" id="Documentation/git-config.txt-spanclasssynopsiscodeworktreeuseRelativePathscodespan"><a id="Documentation/git-config.txt-worktreeuseRelativePaths" class="anchor" href="#Documentation/git-config.txt-worktreeuseRelativePaths"></a><span class='synopsis'><code>worktree.useRelativePaths</code></span> </dt>
 <dd>
-<p>Link worktrees using relative paths (when "true") or absolute
-paths (when "false"). This is particularly useful for setups
+<p>Link worktrees using relative paths (when "<span class='synopsis'><code>true</code></span>") or absolute
+paths (when "<span class='synopsis'><code>false</code></span>"). This is particularly useful for setups
 where the repository and worktrees may be moved between
-different locations or environments. Defaults to "false".</p>
+different locations or environments. Defaults to "<span class='synopsis'><code>false</code></span>".</p>
 <div class="paragraph">
-<p>Note that setting <span class='synopsis'><code>worktree.useRelativePaths</code></span> to "true" implies enabling the
+<p>Note that setting <span class='synopsis'><code>worktree.useRelativePaths</code></span> to "<span class='synopsis'><code>true</code></span>" implies enabling the
 <span class='synopsis'><code>extensions.relativeWorktrees</code></span> config (see <a href='{{< relurl "docs/git-config" >}}'>git-config[1]</a>),
 thus making it incompatible with older versions of Git.</p>
 </div>

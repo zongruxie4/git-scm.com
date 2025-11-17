@@ -6,7 +6,7 @@ section: documentation
 subsection: manual
 title: Git - git-rev-parse Documentation
 docname: git-rev-parse
-version: 2.51.2
+version: 2.52.0
 headings:
 - text: NAME
   id: _name
@@ -30,7 +30,7 @@ headings:
   id: _examples
 - text: GIT
   id: _git
-latest-changes: 2.51.2
+latest-changes: 2.52.0
 aliases:
 - "/docs/git-rev-parse/index.html"
 ---
@@ -450,12 +450,13 @@ directory (typically a sequence of "../", or an empty string).</p>
 path of the current directory relative to the top-level
 directory.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-rev-parse.txt---show-object-formatstorageinputoutput"><a class="anchor" href="#Documentation/git-rev-parse.txt---show-object-formatstorageinputoutput"></a>--show-object-format[=(storage|input|output)] </dt>
+<dt class="hdlist1" id="Documentation/git-rev-parse.txt---show-object-formatstorageinputoutputcompat"><a class="anchor" href="#Documentation/git-rev-parse.txt---show-object-formatstorageinputoutputcompat"></a>--show-object-format[=(storage|input|output|compat)] </dt>
 <dd>
-<p>Show the object format (hash algorithm) used for the repository
-for storage inside the <span class='synopsis'><code>.git</code></span> directory, input, or output. For
-input, multiple algorithms may be printed, space-separated.
-If not specified, the default is "storage".</p>
+<p>Show the object format (hash algorithm) used for the repository for storage
+inside the <span class='synopsis'><code>.git</code></span> directory, input, output, or compatibility. For input,
+multiple algorithms may be printed, space-separated. If <span class='synopsis'><code>compat</code></span> is
+requested and no compatibility algorithm is enabled, prints an empty line. If
+not specified, the default is "storage".</p>
 </dd>
 <dt class="hdlist1" id="Documentation/git-rev-parse.txt---show-ref-format"><a class="anchor" href="#Documentation/git-rev-parse.txt---show-ref-format"></a>--show-ref-format </dt>
 <dd>

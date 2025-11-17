@@ -6,7 +6,7 @@ section: documentation
 subsection: manual
 title: Git - git-fast-import Documentation
 docname: git-fast-import
-version: 2.51.1
+version: 2.52.0
 headings:
 - text: NAME
   id: _name
@@ -44,7 +44,7 @@ headings:
   id: _see_also
 - text: GIT
   id: _git
-latest-changes: 2.51.1
+latest-changes: 2.52.0
 aliases:
 - "/docs/git-fast-import/index.html"
 ---
@@ -131,6 +131,18 @@ remote-helpers that use the <span class='synopsis'><code>import</code></span> ca
 already trusted to run their own code.</p>
 </div>
 </dd>
+<dt class="hdlist1" id="Documentation/git-fast-import.txt---signed-tagsverbatimwarn-verbatimwarn-stripstripabort"><a class="anchor" href="#Documentation/git-fast-import.txt---signed-tagsverbatimwarn-verbatimwarn-stripstripabort"></a>--signed-tags=(verbatim|warn-verbatim|warn-strip|strip|abort) </dt>
+<dd>
+<p>Specify how to handle signed tags.  Behaves in the same way
+as the same option in <a href='{{< relurl "docs/git-fast-export" >}}'>git-fast-export[1]</a>, except that
+default is <em>verbatim</em> (instead of <em>abort</em>).</p>
+</dd>
+<dt class="hdlist1" id="Documentation/git-fast-import.txt---signed-commitsverbatimwarn-verbatimwarn-stripstripabort"><a class="anchor" href="#Documentation/git-fast-import.txt---signed-commitsverbatimwarn-verbatimwarn-stripstripabort"></a>--signed-commits=(verbatim|warn-verbatim|warn-strip|strip|abort) </dt>
+<dd>
+<p>Specify how to handle signed commits.  Behaves in the same way
+as the same option in <a href='{{< relurl "docs/git-fast-export" >}}'>git-fast-export[1]</a>, except that
+default is <em>verbatim</em> (instead of <em>abort</em>).</p>
+</dd>
 </dl>
 </div>
 <div class="sect2">
@@ -189,7 +201,8 @@ the last file wins.</p>
 <p>Like --import-marks but instead of erroring out, silently
 skips the file if it does not exist.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-fast-import.txt---no-relative-marks"><a class="anchor" href="#Documentation/git-fast-import.txt---no-relative-marks"></a>--[no-]relative-marks </dt>
+<dt class="hdlist1" id="Documentation/git-fast-import.txt---relative-marks"><a class="anchor" href="#Documentation/git-fast-import.txt---relative-marks"></a>--relative-marks </dt>
+<dt class="hdlist1" id="Documentation/git-fast-import.txt---no-relative-marks"><a class="anchor" href="#Documentation/git-fast-import.txt---no-relative-marks"></a>--no-relative-marks </dt>
 <dd>
 <p>After specifying --relative-marks the paths specified
 with --import-marks= and --export-marks= are relative

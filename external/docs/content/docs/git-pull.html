@@ -6,7 +6,7 @@ section: documentation
 subsection: manual
 title: Git - git-pull Documentation
 docname: git-pull
-version: 2.51.1
+version: 2.52.0
 headings:
 - text: NAME
   id: _name
@@ -20,10 +20,12 @@ headings:
   id: _git_urls
 - text: REMOTES
   id: _remotes
+- text: UPSTREAM BRANCHES
+  id: UPSTREAM-BRANCHES
 - text: MERGE STRATEGIES
   id: _merge_strategies
 - text: DEFAULT BEHAVIOUR
-  id: _default_behaviour
+  id: DEFAULT-BEHAVIOUR
 - text: EXAMPLES
   id: _examples
 - text: SECURITY
@@ -34,7 +36,7 @@ headings:
   id: _see_also
 - text: GIT
   id: _git
-latest-changes: 2.51.1
+latest-changes: 2.52.0
 aliases:
 - "/docs/git-pull/index.html"
 ---
@@ -58,74 +60,46 @@ aliases:
 <h2 id="_description"><a class="anchor" href="#_description"></a>DESCRIPTION</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Incorporates changes from a remote repository into the current branch.
-If the current branch is behind the remote, then by default it will
-fast-forward the current branch to match the remote.  If the current
-branch and the remote have diverged, the user needs to specify how to
-reconcile the divergent branches with <span class='synopsis'><code>--rebase</code></span> or <span class='synopsis'><code>--no-rebase</code></span> (or
-the corresponding configuration option in <span class='synopsis'><code>pull.rebase</code></span>).</p>
+<p>Integrate changes from a remote repository into the current branch.</p>
 </div>
 <div class="paragraph">
-<p>More precisely, <span class='synopsis'><code>git</code> <code>pull</code></span> runs <span class='synopsis'><code>git</code> <code>fetch</code></span> with the given parameters
-and then depending on configuration options or command line flags,
-will call either <span class='synopsis'><code>git</code> <code>rebase</code></span> or <span class='synopsis'><code>git</code> <code>merge</code></span> to reconcile diverging
-branches.</p>
+<p>First, <span class='synopsis'><code>git</code> <code>pull</code></span> runs <span class='synopsis'><code>git</code> <code>fetch</code></span> with the same arguments
+(excluding merge options) to fetch remote branch(es).
+Then it decides which remote branch to integrate: if you run <span class='synopsis'><code>git</code> <code>pull</code></span>
+with no arguments this defaults to the <a href="#UPSTREAM-BRANCHES">upstream</a>
+for the current branch.
+Then it integrates that branch into the current branch.</p>
 </div>
 <div class="paragraph">
-<p><span class="hover-term" data-term="repository">&lt;repository&gt;</span> should be the name of a remote repository as
-passed to <a href='{{< relurl "docs/git-fetch" >}}'>git-fetch[1]</a>.  <span class="hover-term" data-term="refspec">&lt;refspec&gt;</span> can name an
-arbitrary remote ref (for example, the name of a tag) or even
-a collection of refs with corresponding remote-tracking branches
-(e.g., refs/heads/*:refs/remotes/origin/*),
-but usually it is the name of a branch in the remote repository.</p>
+<p>There are 4 main options for integrating the remote branch:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><span class='synopsis'><code>git</code> <code>pull</code> <code>--ff-only</code></span> will only do "fast-forward" updates: it
+fails if your local branch has diverged from the remote branch.
+This is the default.</p>
+</li>
+<li>
+<p><span class='synopsis'><code>git</code> <code>pull</code> <code>--rebase</code></span> runs <span class='synopsis'><code>git</code> <code>rebase</code></span></p>
+</li>
+<li>
+<p><span class='synopsis'><code>git</code> <code>pull</code> <code>--no-rebase</code></span> runs <span class='synopsis'><code>git</code> <code>merge</code></span>.</p>
+</li>
+<li>
+<p><span class='synopsis'><code>git</code> <code>pull</code> <code>--squash</code></span> runs <span class='synopsis'><code>git</code> <code>merge</code> <code>--squash</code></span></p>
+</li>
+</ol>
 </div>
 <div class="paragraph">
-<p>Default values for <span class="hover-term" data-term="repository">&lt;repository&gt;</span> and <span class="hover-term" data-term="branch">&lt;branch&gt;</span> are read from the
-"remote" and "merge" configuration for the current branch
-as set by <a href='{{< relurl "docs/git-branch" >}}'>git-branch[1]</a> <span class='synopsis'><code>--track</code></span>.</p>
+<p>You can also set the configuration options <span class='synopsis'><code>pull.rebase</code></span>, <span class='synopsis'><code>pull.squash</code></span>,
+or <span class='synopsis'><code>pull.ff</code></span> with your preferred behaviour.</p>
 </div>
 <div class="paragraph">
-<p>Assume the following history exists and the current branch is
-"<span class='synopsis'><code>master</code></span>":</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>	  A---B---C master on origin
-	 /
-    D---E---F---G master
-	^
-	origin/master in your repository</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Then "<span class='synopsis'><code>git</code> <code>pull</code></span>" will fetch and replay the changes from the remote
-<span class='synopsis'><code>master</code></span> branch since it diverged from the local <span class='synopsis'><code>master</code></span> (i.e., <span class='synopsis'><code>E</code></span>)
-until its current commit (<span class='synopsis'><code>C</code></span>) on top of <span class='synopsis'><code>master</code></span> and record the
-result in a new commit along with the names of the two parent commits
-and a log message from the user describing the changes.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>	  A---B---C origin/master
-	 /         \
-    D---E---F---G---H master</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>See <a href='{{< relurl "docs/git-merge" >}}'>git-merge[1]</a> for details, including how conflicts
-are presented and handled.</p>
-</div>
-<div class="paragraph">
-<p>In Git 1.7.0 or later, to cancel a conflicting merge, use
-<span class='synopsis'><code>git</code> <code>reset</code> <code>--merge</code></span>.  <strong>Warning</strong>: In older versions of Git, running <em>git pull</em>
-with uncommitted changes is discouraged: while possible, it leaves you
-in a state that may be hard to back out of in the case of a conflict.</p>
-</div>
-<div class="paragraph">
-<p>If any of the remote changes overlap with local uncommitted changes,
-the merge will be automatically canceled and the work tree untouched.
-It is generally best to get any local changes in working order before
-pulling or stash them away with <a href='{{< relurl "docs/git-stash" >}}'>git-stash[1]</a>.</p>
+<p>If there&#8217;s a merge conflict during the merge or rebase that you don&#8217;t
+want to handle, you can safely abort it with <span class='synopsis'><code>git</code> <code>merge</code> <code>--abort</code></span> or <span class='synopsis'><code>git</code>
+
+<code>--rebase</code> <code>abort</code></span>.</p>
 </div>
 </div>
 </div>
@@ -134,6 +108,30 @@ pulling or stash them away with <a href='{{< relurl "docs/git-stash" >}}'>git-st
 <div class="sectionbody">
 <div class="dlist">
 <dl>
+<dt class="hdlist1" id="Documentation/git-pull.txt-ltrepositorygt"><a id="Documentation/git-pull.txt-repository" class="anchor" href="#Documentation/git-pull.txt-repository"></a><span class="hover-term" data-term="repository">&lt;repository&gt;</span> </dt>
+<dd>
+<p>The "remote" repository to pull from.  This can be either
+a URL (see the section <a href="#URLS">GIT URLS</a> below) or the name
+of a remote (see the section <a href="#REMOTES">REMOTES</a> below).</p>
+<div class="paragraph">
+<p>Defaults to the configured upstream for the current branch, or <span class='synopsis'><code>origin</code></span>.
+See <a href="#UPSTREAM-BRANCHES">UPSTREAM BRANCHES</a> below for more on how to
+configure upstreams.</p>
+</div>
+</dd>
+<dt class="hdlist1" id="Documentation/git-pull.txt-ltrefspecgt"><a id="Documentation/git-pull.txt-refspec" class="anchor" href="#Documentation/git-pull.txt-refspec"></a><span class="hover-term" data-term="refspec">&lt;refspec&gt;</span> </dt>
+<dd>
+<p>Which branch or other reference(s) to fetch and integrate into the
+current branch, for example <span class='synopsis'><code>main</code></span> in <span class='synopsis'><code>git</code> <code>pull</code> <code>origin</code> <code>main</code></span>.
+Defaults to the configured upstream for the current branch.</p>
+<div class="paragraph">
+<p>This can be a branch, tag, or other collection of reference(s).
+See <a href="#fetch-refspec">&lt;refspec</a>&gt; below under "Options related to fetching"
+for the full syntax, and <a href="#DEFAULT-BEHAVIOUR">DEFAULT BEHAVIOUR</a> below
+for how <span class='synopsis'><code>git</code> <code>pull</code></span> uses this argument to determine which remote branch
+to integrate.</p>
+</div>
+</dd>
 <dt class="hdlist1" id="Documentation/git-pull.txt--q"><a class="anchor" href="#Documentation/git-pull.txt--q"></a>-q </dt>
 <dt class="hdlist1" id="Documentation/git-pull.txt---quiet"><a class="anchor" href="#Documentation/git-pull.txt---quiet"></a>--quiet </dt>
 <dd>
@@ -146,7 +144,8 @@ merging.</p>
 <dd>
 <p>Pass --verbose to git-fetch and git-merge.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-pull.txt---no-recurse-submodulesyeson-demandno"><a class="anchor" href="#Documentation/git-pull.txt---no-recurse-submodulesyeson-demandno"></a>--[no-]recurse-submodules[=(yes|on-demand|no)] </dt>
+<dt class="hdlist1" id="Documentation/git-pull.txt---recurse-submodulesyeson-demandno"><a class="anchor" href="#Documentation/git-pull.txt---recurse-submodulesyeson-demandno"></a>--recurse-submodules[=(yes|on-demand|no)] </dt>
+<dt class="hdlist1" id="Documentation/git-pull.txt---no-recurse-submodules"><a class="anchor" href="#Documentation/git-pull.txt---no-recurse-submodules"></a>--no-recurse-submodules </dt>
 <dd>
 <p>This option controls if new commits of populated submodules should
 be fetched, and if the working trees of active submodules should be
@@ -310,7 +309,8 @@ option can be used to override <span class='synopsis'><code>--squash</code></spa
 <p>Only useful when merging.</p>
 </div>
 </dd>
-<dt class="hdlist1" id="Documentation/git-pull.txt-spanclasssynopsiscode--codecodeno-codecodeverifycodespan"><a id="Documentation/git-pull.txt---no-verify" class="anchor" href="#Documentation/git-pull.txt---no-verify"></a><span class='synopsis'><code>--</code>[<code>no-</code>]<code>verify</code></span> </dt>
+<dt class="hdlist1" id="Documentation/git-pull.txt-spanclasssynopsiscode--verifycodespan"><a id="Documentation/git-pull.txt---verify" class="anchor" href="#Documentation/git-pull.txt---verify"></a><span class='synopsis'><code>--verify</code></span> </dt>
+<dt class="hdlist1" id="Documentation/git-pull.txt-spanclasssynopsiscode--no-verifycodespan"><a id="Documentation/git-pull.txt---no-verify" class="anchor" href="#Documentation/git-pull.txt---no-verify"></a><span class='synopsis'><code>--no-verify</code></span> </dt>
 <dd>
 <p>By default, the pre-merge and commit-msg hooks are run.
 When <span class='synopsis'><code>--no-verify</code></span> is given, these are bypassed.
@@ -423,7 +423,8 @@ unless you have read <a href='{{< relurl "docs/git-rebase" >}}'>git-rebase[1]</a
 <h3 id="_options_related_to_fetching"><a class="anchor" href="#_options_related_to_fetching"></a>Options related to fetching</h3>
 <div class="dlist">
 <dl>
-<dt class="hdlist1" id="Documentation/git-pull.txt---no-all"><a class="anchor" href="#Documentation/git-pull.txt---no-all"></a>--[no-]all </dt>
+<dt class="hdlist1" id="Documentation/git-pull.txt---all"><a class="anchor" href="#Documentation/git-pull.txt---all"></a>--all </dt>
+<dt class="hdlist1" id="Documentation/git-pull.txt---no-all"><a class="anchor" href="#Documentation/git-pull.txt---no-all"></a>--no-all </dt>
 <dd>
 <p>Fetch all remotes, except for the ones that has the
 <span class='synopsis'><code>remote.</code><em>&lt;name&gt;</em><code>.skipFetchAll</code></span> configuration variable set.
@@ -669,14 +670,18 @@ before attempting a fast-forward update. See <a href='{{< relurl "docs/git-confi
 <dd>
 <p>Use IPv6 addresses only, ignoring IPv4 addresses.</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-pull.txt-ltrepositorygt"><a id="Documentation/git-pull.txt-repository" class="anchor" href="#Documentation/git-pull.txt-repository"></a><span class="hover-term" data-term="repository">&lt;repository&gt;</span> </dt>
+<dt class="hdlist1" id="Documentation/git-pull.txt-ltrepositorygt-1"><a id="Documentation/git-pull.txt-repository-1" class="anchor" href="#Documentation/git-pull.txt-repository-1"></a><span class="hover-term" data-term="repository">&lt;repository&gt;</span> </dt>
 <dd>
 <p>The "remote" repository that is the source of a fetch
 or pull operation.  This parameter can be either a URL
 (see the section <a href="#URLS">GIT URLS</a> below) or the name
 of a remote (see the section <a href="#REMOTES">REMOTES</a> below).</p>
 </dd>
-<dt class="hdlist1" id="Documentation/git-pull.txt-ltrefspecgt"><a id="Documentation/git-pull.txt-refspec" class="anchor" href="#Documentation/git-pull.txt-refspec"></a><span class="hover-term" data-term="refspec">&lt;refspec&gt;</span> </dt>
+</dl>
+</div>
+<div id="fetch-refspec" class="dlist">
+<dl>
+<dt class="hdlist1" id="Documentation/git-pull.txt-ltrefspecgt-1"><a id="Documentation/git-pull.txt-refspec-1" class="anchor" href="#Documentation/git-pull.txt-refspec-1"></a><span class="hover-term" data-term="refspec">&lt;refspec&gt;</span> </dt>
 <dd>
 <p>Specifies which refs to fetch and which local refs to update.
 When no <span class="hover-term" data-term="refspec">&lt;refspec&gt;</span>s appear on the command line, the refs to fetch
@@ -1087,6 +1092,83 @@ refspecs, if you don&#8217;t provide one on the command line.
 </div>
 </div>
 <div class="sect1">
+<h2 id="UPSTREAM-BRANCHES"><a class="anchor" href="#UPSTREAM-BRANCHES"></a>UPSTREAM BRANCHES</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Branches in Git can optionally have an upstream remote branch.
+Git defaults to using the upstream branch for remote operations, for example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>It&#8217;s the default for <span class='synopsis'><code>git</code> <code>pull</code></span> or <span class='synopsis'><code>git</code> <code>fetch</code></span> with no arguments.</p>
+</li>
+<li>
+<p>It&#8217;s the default for <span class='synopsis'><code>git</code> <code>push</code></span> with no arguments, with some exceptions.
+For example, you can use the <span class='synopsis'><code>branch.</code><em>&lt;name&gt;</em><code>.pushRemote</code></span> option to push
+to a different remote than you pull from, and by default with
+<span class='synopsis'><code>push.default=simple</code></span> the upstream branch you configure must have
+the same name.</p>
+</li>
+<li>
+<p>Various commands, including <span class='synopsis'><code>git</code> <code>checkout</code></span> and <span class='synopsis'><code>git</code> <code>status</code></span>, will
+show you how many commits have been added to your current branch and
+the upstream since you forked from it, for example "Your branch and
+<em>origin/main</em> have diverged, and have 2 and 3 different commits each
+respectively".</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The upstream is stored in <span class='synopsis'><code>.git/config</code></span>, in the "remote" and "merge"
+fields. For example, if <span class='synopsis'><code>main</code></span>'s upstream is <span class='synopsis'><code>origin/main</code></span>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>[branch "main"]
+   remote = origin
+   merge = refs/heads/main</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>You can set an upstream branch explicitly with
+<span class='synopsis'><code>git</code> <code>push</code> <code>--set-upstream</code> <em>&lt;remote&gt;</em> <em><span class="hover-term" data-term="branch">&lt;branch&gt;</span></em></span>
+but Git will often automatically set the upstream for you, for example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>When you clone a repository, Git will automatically set the upstream
+for the default branch.</p>
+</li>
+<li>
+<p>If you have the <span class='synopsis'><code>push.autoSetupRemote</code></span> configuration option set,
+<span class='synopsis'><code>git</code> <code>push</code></span> will automatically set the upstream the first time you push
+a branch.</p>
+</li>
+<li>
+<p>Checking out a remote-tracking branch with <span class='synopsis'><code>git</code> <code>checkout</code> <em><span class="hover-term" data-term="branch">&lt;branch&gt;</span></em></span>
+will automatically create a local branch with that name and set
+the upstream to the remote branch.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+Upstream branches are sometimes referred to as "tracking information",
+as in "set the branch&#8217;s tracking information".
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="_merge_strategies"><a class="anchor" href="#_merge_strategies"></a>MERGE STRATEGIES</h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -1282,7 +1364,7 @@ substitutes the changed version instead.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_default_behaviour"><a class="anchor" href="#_default_behaviour"></a>DEFAULT BEHAVIOUR</h2>
+<h2 id="DEFAULT-BEHAVIOUR"><a class="anchor" href="#DEFAULT-BEHAVIOUR"></a>DEFAULT BEHAVIOUR</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Often people use <span class='synopsis'><code>git</code> <code>pull</code></span> without giving any parameter.
