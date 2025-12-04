@@ -48,29 +48,10 @@ test.describe('Windows', () => {
   const userAgent = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36'
   test.use({ userAgent })
 
-  test('download/GUI links', async ({ page, browserName }) => {
+  test('install link', async ({ page, browserName }) => {
     await pretendPlatform(page, browserName, userAgent, 'Windows')
     await page.goto(url)
-    await expect(page.getByRole('link', { name: 'Download for Windows' })).toBeVisible()
-
-    await expect(page.getByRole('link', { name: 'Graphical UIs' })).toBeHidden()
-    const windowsGUIs = page.getByRole('link', { name: 'Windows GUIs' })
-    await expect(windowsGUIs).toBeVisible()
-    await expect(windowsGUIs).toHaveAttribute('href', /\/downloads\/guis\?os=windows$/)
-
-    // navigate to Windows GUIs
-    await windowsGUIs.click()
-    const windowsButton = page.getByRole('link', { name: 'Windows' })
-    await expect(windowsButton).toBeVisible()
-    await expect(windowsButton).toHaveClass(/selected/)
-
-    const allButton = page.getByRole('link', { name: 'All', exact: true })
-    await expect(allButton).not.toHaveClass(/selected/)
-
-    const thumbnails = page.locator('.gui-thumbnails li:visible')
-    const count = await thumbnails.count()
-    await allButton.click()
-    await expect.poll(() => thumbnails.count()).toBeGreaterThan(count)
+    await expect(page.getByRole('link', { name: 'Install for Windows' })).toBeVisible()
   })
 })
 
@@ -78,13 +59,10 @@ test.describe('macOS', () => {
   const userAgent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 14_6_1) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.6 Safari/605.1.15'
   test.use({ userAgent })
 
-  test('download/GUI links', async ({ page, browserName }) => {
+  test('install link', async ({ page, browserName }) => {
     await pretendPlatform(page, browserName, userAgent, 'Mac OS X')
     await page.goto(url)
-    await expect(page.getByRole('link', { name: 'Download for Mac' })).toBeVisible()
-
-    await expect(page.getByRole('link', { name: 'Graphical UIs' })).toBeHidden()
-    await expect(page.getByRole('link', { name: 'Mac GUIs' })).toBeVisible()
+    await expect(page.getByRole('link', { name: 'Install for Mac' })).toBeVisible()
   })
 })
 
@@ -92,13 +70,10 @@ test.describe('Linux', () => {
   const userAgent = 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:130.0) Gecko/20100101 Firefox/130.0'
   test.use({ userAgent })
 
-  test('download/GUI links', async ({ page, browserName }) => {
+  test('install link', async ({ page, browserName }) => {
     await pretendPlatform(page, browserName, userAgent, 'Linux')
     await page.goto(url)
-    await expect(page.getByRole('link', { name: 'Download for Linux' })).toBeVisible()
-
-    await expect(page.getByRole('link', { name: 'Graphical UIs' })).toBeHidden()
-    await expect(page.getByRole('link', { name: 'Linux GUIs' })).toBeVisible()
+    await expect(page.getByRole('link', { name: 'Install for Linux' })).toBeVisible()
   })
 })
 

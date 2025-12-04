@@ -57,17 +57,22 @@
     </div>
   </section>
   <section id="front-downloads">
-    {{ partialCached "monitor.html" . }}
-    <table>
-      <tr>
-        <td nowrap="true"><a href="{{ relURL "downloads/guis" }}" class="icon gui" id="gui-link">Graphical UIs</a></td>
-        <td nowrap="true"><a href="https://www.kernel.org/pub/software/scm/git/" class="icon older-releases">Tarballs</a></td>
-      </tr>
-      <tr>
-        <td nowrap="true"><a href="{{ relURL "install/windows" }}" class="icon windows" id="alt-link">Windows Build</a></td>
-        <td nowrap="true"><a href="https://github.com/git/git" class="icon source">Source Code</a></td>
-      </tr>
-    </table>
+    <div class="downloads-box">
+      <div class="release-info">
+        <h4>Latest source release</h4>
+        <span class="version">{{ .Site.Params.latest_version }}</span>
+        <a href="{{ .Site.Params.latest_relnote_url }}">Release Notes</a>
+        <time>({{ .Site.Params.latest_release_date }})</time>
+      </div>
+
+        <a id="download-link" href="{{ relURL "install" }}" class="button">
+          Install
+        </a>
+
+        <a href="https://github.com/git/git" class="button github-link">
+          GitHub Repository
+        </a>
+    </div>
 </section>
 </div>
 
