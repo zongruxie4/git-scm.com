@@ -45,15 +45,15 @@ headings:
 <h2 id="_synopsis"><a class="anchor" href="#_synopsis"></a>SYNOPSIS</h2>
 <div class="sectionbody">
 <div class="verseblock">
-<pre class="content"><span class='synopsis'><code>git</code></span> <span class='synopsis'><code>checkout</code></span> [<span class='synopsis'><code>-q</code></span>] [<span class='synopsis'><code>-f</code></span>] [<span class='synopsis'><code>-m</code></span>] [<em><span class="hover-term" data-term="branche">&lt;branche&gt;</span></em>]
-<span class='synopsis'><code>git</code></span> <span class='synopsis'><code>checkout</code></span> [<span class='synopsis'><code>-q</code></span>] [<span class='synopsis'><code>-f</code></span>] [<span class='synopsis'><code>-m</code></span>] <span class='synopsis'><code>--detach</code></span> [<em><span class="hover-term" data-term="branche">&lt;branche&gt;</span></em>]
-<span class='synopsis'><code>git</code></span> <span class='synopsis'><code>checkout</code></span> [<span class='synopsis'><code>-q</code></span>] [<span class='synopsis'><code>-f</code></span>] [<span class='synopsis'><code>-m</code></span>] [<span class='synopsis'><code>--detach</code></span>] <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>
+<pre class="content"><span class='synopsis'><code>git</code></span> <span class='synopsis'><code>checkout</code></span> [<span class='synopsis'><code>-q</code></span>] [<span class='synopsis'><code>-f</code></span>] [<span class='synopsis'><code>-m</code></span>] [<em>&lt;branche&gt;</em>]
+<span class='synopsis'><code>git</code></span> <span class='synopsis'><code>checkout</code></span> [<span class='synopsis'><code>-q</code></span>] [<span class='synopsis'><code>-f</code></span>] [<span class='synopsis'><code>-m</code></span>] <span class='synopsis'><code>--detach</code></span> [<em>&lt;branche&gt;</em>]
+<span class='synopsis'><code>git</code></span> <span class='synopsis'><code>checkout</code></span> [<span class='synopsis'><code>-q</code></span>] [<span class='synopsis'><code>-f</code></span>] [<span class='synopsis'><code>-m</code></span>] [<span class='synopsis'><code>--detach</code></span>] <em>&lt;commit&gt;</em>
 <span class='synopsis'><code>git</code></span> <span class='synopsis'><code>checkout</code></span> [<span class='synopsis'><code>-q</code></span>] [<span class='synopsis'><code>-f</code></span>] [<span class='synopsis'><code>-m</code></span>] [[<span class='synopsis'><code>-b</code></span>|<span class='synopsis'><code>-B</code></span>|<span class='synopsis'><code>--orphan</code></span>] <em>&lt;nouvelle-branche&gt;</em>] [<em>&lt;point-de-départ&gt;</em>]
-<span class='synopsis'><code>git</code></span> <span class='synopsis'><code>checkout</code></span> [<span class='synopsis'><code>-f</code></span>] <em><span class="hover-term" data-term="arbre-esque">&lt;arbre-esque&gt;</span></em> [<span class='synopsis'><code>--</code></span>] <em>&lt;spec-de-chemin&gt;</em>&#8230;&#8203;
-<span class='synopsis'><code>git</code></span> <span class='synopsis'><code>checkout</code></span> [<span class='synopsis'><code>-f</code></span>] <em><span class="hover-term" data-term="arbre-esque">&lt;arbre-esque&gt;</span></em> <span class='synopsis'><code>--pathspec-from-file=</code></span><em>&lt;fichier&gt;</em> [<span class='synopsis'><code>--pathspec-file-nul</code></span>]
+<span class='synopsis'><code>git</code></span> <span class='synopsis'><code>checkout</code></span> <em>&lt;arbre-esque&gt;</em> [<span class='synopsis'><code>--</code></span>] <em>&lt;spec-de-chemin&gt;</em>&#8230;&#8203;
+<span class='synopsis'><code>git</code></span> <span class='synopsis'><code>checkout</code></span> <em>&lt;arbre-esque&gt;</em> <span class='synopsis'><code>--pathspec-from-file=</code></span><em>&lt;fichier&gt;</em> [<span class='synopsis'><code>--pathspec-file-nul</code></span>]
 <span class='synopsis'><code>git</code></span> <span class='synopsis'><code>checkout</code></span> [<span class='synopsis'><code>-f</code></span>|<span class='synopsis'><code>--ours</code></span>|<span class='synopsis'><code>--theirs</code></span>|<span class='synopsis'><code>-m</code></span>|<span class='synopsis'><code>--conflict=</code></span><em>&lt;style&gt;</em>] [<span class='synopsis'><code>--</code></span>] <em>&lt;spec-de-chemin&gt;</em>&#8230;&#8203;
 <span class='synopsis'><code>git</code></span> <span class='synopsis'><code>checkout</code></span> [<span class='synopsis'><code>-f</code></span>|<span class='synopsis'><code>--ours</code></span>|<span class='synopsis'><code>--theirs</code></span>|<span class='synopsis'><code>-m</code></span>|<span class='synopsis'><code>--conflict=</code></span><em>&lt;style&gt;</em>] <span class='synopsis'><code>--pathspec-from-file=</code></span><em>&lt;fichier&gt;</em> [<span class='synopsis'><code>--pathspec-file-nul</code></span>]
-<span class='synopsis'><code>git</code></span> <span class='synopsis'><code>checkout</code></span> (<span class='synopsis'><code>-p</code></span>|<span class='synopsis'><code>--patch</code></span>) [<em><span class="hover-term" data-term="arbre-esque">&lt;arbre-esque&gt;</span></em>] [<span class='synopsis'><code>--</code></span>] [<em>&lt;spec-de-chemin&gt;</em>&#8230;&#8203;]</pre>
+<span class='synopsis'><code>git</code></span> <span class='synopsis'><code>checkout</code></span> (<span class='synopsis'><code>-p</code></span>|<span class='synopsis'><code>--patch</code></span>) [<em>&lt;arbre-esque&gt;</em>] [<span class='synopsis'><code>--</code></span>] [<em>&lt;spec-de-chemin&gt;</em>&#8230;&#8203;]</pre>
 </div>
 </div>
 </div>
@@ -61,63 +61,79 @@ headings:
 <h2 id="_description"><a class="anchor" href="#_description"></a>DESCRIPTION</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Met à jour les fichiers dans l&#8217;arbre de travail pour correspondre à la version dans l&#8217;index ou dans l&#8217;arbre spécifié. Si aucun spécificateur de chemin n&#8217;est fourni, <span class='synopsis'><code>git</code> <code>checkout</code></span> met aussi à jour <span class='synopsis'><code>HEAD</code></span> pour positionner la branche spécifiée comme la branche actuelle.</p>
+<p><span class='synopsis'><code>git</code> <code>checkout</code></span> a deux modes principaux :</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Basculer de branche</strong>, avec <span class='synopsis'><code>git</code> <code>checkout</code> <em>&lt;branche&gt;</em></span></p>
+</li>
+<li>
+<p><strong>Restaurer une autre version d&#8217;un fichier</strong>, par exemple avec <span class='synopsis'><code>git</code> <code>checkout</code> <em>&lt;commit&gt;</em> <em>&lt;nom-de-fichier&gt;</em></span> ou <span class='synopsis'><code>git</code> <code>checkout</code> <em>&lt;nom-de-fichier&gt;</em></span></p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Voir DÉSAMBIGUÏSATION D&#8217;ARGUMENT ci-dessous pour la façon dont Git décide lequel utiliser.</p>
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1" id="git-checkout-spanclasssynopsiscodegitcodecodecheckoutcodeemltbranchegtemspan"> <a class="anchor" href="#git-checkout-gitcheckoutbranche"></a> <a class="anchor" href="#git-checkout-spanclasssynopsiscodegitcodecodecheckoutcodeemltbranchegtemspan"></a><span class='synopsis'><code>git</code> <code>checkout</code> [<em><span class="hover-term" data-term="branche">&lt;branche&gt;</span></em>]</span> </dt>
+<dt class="hdlist1" id="git-checkout-spanclasssynopsiscodegitcodecodecheckoutcodeemltbranchegtemspan"> <a class="anchor" href="#git-checkout-gitcheckoutbranche"></a> <a class="anchor" href="#git-checkout-spanclasssynopsiscodegitcodecodecheckoutcodeemltbranchegtemspan"></a><span class='synopsis'><code>git</code> <code>checkout</code> [<em>&lt;branche&gt;</em>]</span> </dt>
 <dd>
-<p>Pour se préparer à travailler sur <em><span class="hover-term" data-term="branche">&lt;branche&gt;</span></em>, basculer dessus en mettant l&#8217;index et les fichiers de l&#8217;arbre de travail à jour, et en pointant <span class='synopsis'><code>HEAD</code></span> sur cette branche. Les modifications locales aux fichiers de l&#8217;arbre de travail sont conservées, de sorte qu&#8217;elles peuvent être validées sur la <em><span class="hover-term" data-term="branche">&lt;branche&gt;</span></em>.</p>
+<p>Passage à <em>&lt;branche&gt;</em>. Cela définit la branche actuelle à _ &lt;branche&gt;_ et met à jour les fichiers dans votre répertoire de travail. L&#8217;extraction échouera s&#8217;il n&#8217;y a des changements non validés dans les fichiers où <em>&lt; branche&gt;</em> et votre commit actuel ont un contenu différent. Les changements non validés seront conservés sinon.</p>
 <div class="paragraph">
-<p>Si la <em><span class="hover-term" data-term="branche">&lt;branche&gt;</span></em> n&#8217;est pas trouvée mais qu&#8217;il existe une branche de suivi pour un dépôt distant unique (appelée <em>distant&gt;</em>) avec un nom correspondant et <span class='synopsis'><code>--no-guess</code></span> n&#8217;est pas spécifié, le traiter comme équivalent à</p>
+<p>Si la <em>&lt;branche&gt;</em> n&#8217;est pas trouvée mais qu&#8217;il existe une branche de suivi pour un dépôt distant unique (appelé <em>&lt;distant&gt;</em>) avec un nom correspondant et <span class='synopsis'><code>--no-guess</code></span> n&#8217;est pas spécifié, le traiter comme équivalent à</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>$ git checkout -b <span class="hover-term" data-term="branche">&lt;branche&gt;</span> --track &lt;distant&gt;/<span class="hover-term" data-term="branche">&lt;branche&gt;</span></pre>
+<pre>$ git checkout -b &lt;branche&gt; --track &lt;distant&gt;/&lt;branche&gt;</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Vous pourriez omettre <em><span class="hover-term" data-term="branche">&lt;branche&gt;</span></em> auquel cas la commande dégénère en « extraire la branche actuelle », qui est une opération nulle de luxe avec des effets de bord plutôt chers de ne montrer que l&#8217;information de suivi, si elle existe, pour la branche actuelle.</p>
+<p>Lancer <span class='synopsis'><code>git</code> <code>checkout</code></span> sans spécifier une branche n&#8217;a aucun effet sauf pour afficher les informations de suivi pour la branche actuelle.</p>
 </div>
 </dd>
-<dt class="hdlist1" id="git-checkout-spanclasssynopsiscodegitcodecodecheckoutcodecode-bcodecode-Bcodeemltnouvelle-branchegtememltpoint-de-dpartgtemspan"> <a class="anchor" href="#git-checkout-gitcheckout-b-Bnouvelle-branchepoint-de-dpart"></a> <a class="anchor" href="#git-checkout-spanclasssynopsiscodegitcodecodecheckoutcodecode-bcodecode-Bcodeemltnouvelle-branchegtememltpoint-de-dpartgtemspan"></a><span class='synopsis'><code>git</code> <code>checkout</code> (<code>-b</code>|<code>-B</code>) <em>&lt;nouvelle-branche&gt;</em> [<em>&lt;point-de-départ&gt;</em>]</span> </dt>
+<dt class="hdlist1" id="git-checkout-spanclasssynopsiscodegitcodecodecheckoutcodecode-bcodeemltnouvelle-branchegtememltpoint-de-dpartgtemspan"> <a class="anchor" href="#git-checkout-gitcheckout-bnouvelle-branchepoint-de-dpart"></a> <a class="anchor" href="#git-checkout-spanclasssynopsiscodegitcodecodecheckoutcodecode-bcodeemltnouvelle-branchegtememltpoint-de-dpartgtemspan"></a><span class='synopsis'><code>git</code> <code>checkout</code> <code>-b</code> <em>&lt;nouvelle-branche&gt;</em> [<em>&lt;point-de-départ&gt;</em>]</span> </dt>
 <dd>
-<p>Spécifier <span class='synopsis'><code>-b</code></span> provoque la création d&#8217;une nouvelle branche comme si <a href='{{< relurl "docs/git-branch/fr" >}}'>git-branch[1]</a> était lancé puis la branche extraite. Dans ce cas, vous pouvez utiliser les options <span class='synopsis'><code>--track</code></span> ou <span class='synopsis'><code>--no-track</code></span>, qui seront passées à <span class='synopsis'><code>git</code> <code>branch</code></span>. Pour plus de confort, <span class='synopsis'><code>--track</code></span> sans <span class='synopsis'><code>-b</code></span> implique la création d&#8217;une branche ; voir la description de <span class='synopsis'><code>--track</code></span> ci-dessous.</p>
+<p>Créer une nouvelle branche nommée <em>&lt;nouvelle-branche&gt;</em>, la commencer à <em>&lt;point-de-départ&gt;</em> (par défaut le commit actuel), et basculer sur cette nouvelle branche. Vous pouvez utiliser les options <span class='synopsis'><code>--track</code></span> ou <span class='synopsis'><code>--no-track</code></span> pour renseigner l&#8217;information de suivi amont de cette branche.</p>
 <div class="paragraph">
-<p>Si <span class='synopsis'><code>-B</code></span> est fourni, <em>&lt;nouvelle-branche&gt;</em> est créée si elle n&#8217;existe pas ; sinon, elle est réinitialisée. C&#8217;est l&#8217;équivalent transactionnel de</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>$ git branch -f <span class="hover-term" data-term="branche">&lt;branche&gt;</span> [&lt;point-de-départ&gt;]
-$ git checkout <span class="hover-term" data-term="branche">&lt;branche&gt;</span></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>c&#8217;est-à-dire que la branche n&#8217;est pas réinitialisée/créée à moins que "git checkout" soit réussi (par exemple, lorsque la branche est utilisée dans un autre arbre de travail, pas seulement que la branche actuelle reste la même, mais la branche n&#8217;est pas réinitialisée au point de départ non plus).</p>
+<p>Cela échouera s&#8217;il y a une erreur lors de l&#8217;extraction de <em>&lt;nouvelle-branche&gt;, par exemple si extraire le commit _&lt;point-de-départ&gt;</em> écraserait vos changements non validés.</p>
 </div>
 </dd>
-<dt class="hdlist1" id="git-checkout-spanclasssynopsiscodegitcodecodecheckoutcodecode--detachcodeemltbranchegtemspan"> <a class="anchor" href="#git-checkout-gitcheckout--detachbranche"></a> <a class="anchor" href="#git-checkout-spanclasssynopsiscodegitcodecodecheckoutcodecode--detachcodeemltbranchegtemspan"></a><span class='synopsis'><code>git</code> <code>checkout</code> <code>--detach</code> [<em><span class="hover-term" data-term="branche">&lt;branche&gt;</span></em>]</span> </dt>
-<dt class="hdlist1" id="git-checkout-spanclasssynopsiscodegitcodecodecheckoutcodecode--detachcodeemltcommitgtemspan"> <a class="anchor" href="#git-checkout-gitcheckout--detachcommit"></a> <a class="anchor" href="#git-checkout-spanclasssynopsiscodegitcodecodecheckoutcodecode--detachcodeemltcommitgtemspan"></a><span class='synopsis'><code>git</code> <code>checkout</code> [<code>--detach</code>] <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em></span> </dt>
+<dt class="hdlist1" id="git-checkout-spanclasssynopsiscodegitcodecodecheckoutcodecode-Bcodeemltnouvelle-branchegtememltpoint-de-dpartgtemspan"> <a class="anchor" href="#git-checkout-gitcheckout-Bnouvelle-branchepoint-de-dpart"></a> <a class="anchor" href="#git-checkout-spanclasssynopsiscodegitcodecodecheckoutcodecode-Bcodeemltnouvelle-branchegtememltpoint-de-dpartgtemspan"></a><span class='synopsis'><code>git</code> <code>checkout</code> <code>-B</code> <em>&lt;nouvelle-branche&gt;</em> [<em>&lt;point-de-départ&gt;</em>]</span> </dt>
 <dd>
-<p>Prépare à travailler par-dessus <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>, en détachant <span class='synopsis'><code>HEAD</code></span> dessus (voir la section « HEAD DÉTACHÉE »), et en mettant l&#8217;index et les fichiers de l&#8217;arbre de travail à jour. Les modifications locales des fichiers dans l&#8217;arbre de travail sont conservées, de sorte que l&#8217;arbre de travail sera le résultat du commit plus les modifications locales.</p>
+<p>La même chose que <span class='synopsis'><code>-b</code></span>, sauf que si la branche existe déjà, Git réinitialise <em>&lt;branche&gt;</em> au point de départ au lieu d&#8217;échouer.</p>
+</dd>
+<dt class="hdlist1" id="git-checkout-spanclasssynopsiscodegitcodecodecheckoutcodecode--detachcodeemltbranchegtemspan"> <a class="anchor" href="#git-checkout-gitcheckout--detachbranche"></a> <a class="anchor" href="#git-checkout-spanclasssynopsiscodegitcodecodecheckoutcodecode--detachcodeemltbranchegtemspan"></a><span class='synopsis'><code>git</code> <code>checkout</code> <code>--detach</code> [<em>&lt;branche&gt;</em>]</span> </dt>
+<dt class="hdlist1" id="git-checkout-spanclasssynopsiscodegitcodecodecheckoutcodecode--detachcodeemltcommitgtemspan"> <a class="anchor" href="#git-checkout-gitcheckout--detachcommit"></a> <a class="anchor" href="#git-checkout-spanclasssynopsiscodegitcodecodecheckoutcodecode--detachcodeemltcommitgtemspan"></a><span class='synopsis'><code>git</code> <code>checkout</code> [<code>--detach</code>] <em>&lt;commit&gt;</em></span> </dt>
+<dd>
+<p>La même chose que <span class='synopsis'><code>git</code> <code>checkout</code> <em>&lt;branche&gt;</em></span>, sauf que, au lieu de pointer <span class='synopsis'><code>HEAD</code></span> sur la branche, pointe <span class='synopsis'><code>HEAD</code></span> à l&#8217;ID de commit. Voir la section HEAD DÉTACHÉE ci-dessous pour plus de détails.</p>
 <div class="paragraph">
-<p>Quand l&#8217;argument <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em> est un nom de branche, l&#8217;option <span class='synopsis'><code>--detach</code></span> peut être utilisée pour détacher <span class='synopsis'><code>HEAD</code></span> au sommet de la branche (<span class='synopsis'><code>git</code> <code>checkout</code> <em><span class="hover-term" data-term="branche">&lt;branche&gt;</span></em></span> extrairait cette branche sans détacher <span class='synopsis'><code>HEAD</code></span>).</p>
-</div>
-<div class="paragraph">
-<p>Omettre <em><span class="hover-term" data-term="branche">&lt;branche&gt;</span></em> détache <span class='synopsis'><code>HEAD</code></span> au sommet de la branche actuelle.</p>
+<p>Omettre <em>&lt;branche&gt;</em> détache <span class='synopsis'><code>HEAD</code></span> au sommet de la branche actuelle.</p>
 </div>
 </dd>
-<dt class="hdlist1" id="git-checkout-spanclasssynopsiscodegitcodecodecheckoutcodecode-fcodecode--ourscodecode--theirscodecode-mcodecode--conflictcodeemltstylegtememltarbre-esquegtemcode--codeemltspc-de-chemingtemspan"> <a class="anchor" href="#git-checkout-gitcheckout-f--ours--theirs-m--conflictstylearbre-esque--spc-de-chemin"></a> <a class="anchor" href="#git-checkout-spanclasssynopsiscodegitcodecodecheckoutcodecode-fcodecode--ourscodecode--theirscodecode-mcodecode--conflictcodeemltstylegtememltarbre-esquegtemcode--codeemltspc-de-chemingtemspan"></a><span class='synopsis'><code>git</code> <code>checkout</code> [<code>-f</code> | <code>--ours</code> | <code>--theirs</code> | <code>-m</code> | <code>--conflict=</code><em>&lt;style&gt;</em>] [<em><span class="hover-term" data-term="arbre-esque">&lt;arbre-esque&gt;</span></em>] [<code>--</code>] <em><span class="hover-term" data-term="spéc-de-chemin">&lt;spéc-de-chemin&gt;</span></em>...</span> </dt>
-<dt class="hdlist1" id="git-checkout-spanclasssynopsiscodegitcodecodecheckoutcodecode-fcodecode--ourscodecode--theirscodecode-mcodecode--conflictcodeemltstylegtememltarbre-esquegtemcode--pathspec-from-filecodeemltfichiergtemcode--pathspec-file-nulcodespan"> <a class="anchor" href="#git-checkout-gitcheckout-f--ours--theirs-m--conflictstylearbre-esque--pathspec-from-filefichier--pathspec-file-nul"></a> <a class="anchor" href="#git-checkout-spanclasssynopsiscodegitcodecodecheckoutcodecode-fcodecode--ourscodecode--theirscodecode-mcodecode--conflictcodeemltstylegtememltarbre-esquegtemcode--pathspec-from-filecodeemltfichiergtemcode--pathspec-file-nulcodespan"></a><span class='synopsis'><code>git</code> <code>checkout</code> [<code>-f</code>|<code>--ours</code>|<code>--theirs</code>|<code>-m</code>|<code>--conflict=</code><em>&lt;style&gt;</em>] [<em><span class="hover-term" data-term="arbre-esque">&lt;arbre-esque&gt;</span></em>] <code>--pathspec-from-file=</code><em>&lt;fichier&gt;</em> [<code>--pathspec-file-nul</code>]</span> </dt>
+<dt class="hdlist1" id="git-checkout-spanclasssynopsiscodegitcodecodecheckoutcodeemltarbre-esquegtemcode--codeemltspc-de-chemingtemspan"> <a class="anchor" href="#git-checkout-gitcheckoutarbre-esque--spc-de-chemin"></a> <a class="anchor" href="#git-checkout-spanclasssynopsiscodegitcodecodecheckoutcodeemltarbre-esquegtemcode--codeemltspc-de-chemingtemspan"></a><span class='synopsis'><code>git</code> <code>checkout</code> <em>&lt;arbre-esque&gt;</em> [<code>--</code>] <em>&lt;spéc-de-chemin&gt;</em>...</span> </dt>
+<dt class="hdlist1" id="git-checkout-spanclasssynopsiscodegitcodecodecheckoutcodeemltarbre-esquegtemcode--pathspec-from-filecodeemltfichiergtemcode--pathspec-file-nulcodespan"> <a class="anchor" href="#git-checkout-gitcheckoutarbre-esque--pathspec-from-filefichier--pathspec-file-nul"></a> <a class="anchor" href="#git-checkout-spanclasssynopsiscodegitcodecodecheckoutcodeemltarbre-esquegtemcode--pathspec-from-filecodeemltfichiergtemcode--pathspec-file-nulcodespan"></a><span class='synopsis'><code>git</code> <code>checkout</code> <em>&lt;arbre-esque&gt;</em> <code>--pathspec-from-file=</code><em>&lt;fichier&gt;</em> [<code>--pathspec-file-nul</code>]</span> </dt>
 <dd>
-<p>Écraser le contenu des fichiers qui correspondent au spécificateur-de-chemin. Lorsque le <em><span class="hover-term" data-term="arbre-esque">&lt;arbre-esque&gt;</span></em> (le plus souvent un commit) n&#8217;est pas donné, écraser l&#8217;arbre de travail avec le contenu de l&#8217;index. Lorsque le <em><span class="hover-term" data-term="arbre-esque">&lt;arbre-esque&gt;</span></em> est donné, écraser à la fois l&#8217;index et l&#8217;arbre de travail avec le contenu du <em><span class="hover-term" data-term="arbre-esque">&lt;arbre-esque&gt;</span></em>.</p>
+<p>Remplacer les fichiers et/ou les répertoires spécifiés par la version du commit ou de l&#8217;arbre donné et les ajouter à l&#8217;index (également connu sous le nom de « zone de préparation »).</p>
 <div class="paragraph">
-<p>L&#8217;index peut contenir des entrées non fusionnées à cause d&#8217;un échec précédent de fusion. Par défaut, si vous essayez d&#8217;extraire une telle entrée depuis l&#8217;index, l&#8217;opération d&#8217;extraction échouera et rien ne sera extrait. L&#8217;utilisation de <span class='synopsis'><code>-f</code></span> forcera à ignorer ces entrées non fusionnées. Le contenu depuis un côté donné de la fusion peut être extrait de l&#8217;index en utilisant <span class='synopsis'><code>--ours</code></span> (notre côté) ou <span class='synopsis'><code>--theirs</code></span> (l&#8217;autre côté). Avec <span class='synopsis'><code>-m</code></span>, les modifications opérées sur le fichier de l&#8217;arbre de travail peuvent être jetées pour récréer le résultat originel de conflit de fusion.</p>
+<p>Par exemple, <span class='synopsis'><code>git</code> <code>checkout</code> <code>main</code> <code>fichier.txt</code></span> remplacera <span class='synopsis'><code>fichier.txt</code></span> par sa version dans <span class='synopsis'><code>main</code></span>.</p>
 </div>
 </dd>
-<dt class="hdlist1" id="git-checkout-spanclasssynopsisemgitcheckout-p--patchltarbre-esquegt--ltspcdechemingtemspan"> <a class="anchor" href="#git-checkout-gitcheckout-p--patcharbre-esque--spcdechemin"></a> <a class="anchor" href="#git-checkout-spanclasssynopsisemgitcheckout-p--patchltarbre-esquegt--ltspcdechemingtemspan"></a><span class='synopsis'><em>git checkout (-p|--patch) [<span class="hover-term" data-term="arbre-esque">&lt;arbre-esque&gt;</span>] [--] [&lt;spéc. de chemin&gt;...]</em></span> </dt>
+<dt class="hdlist1" id="git-checkout-spanclasssynopsiscodegitcodecodecheckoutcodecode-fcodecode--ourscodecode--theirscodecode-mcodecode--conflictcodeemltstylegtemcode--codeemltspc-de-chemingtemspan"> <a class="anchor" href="#git-checkout-gitcheckout-f--ours--theirs-m--conflictstyle--spc-de-chemin"></a> <a class="anchor" href="#git-checkout-spanclasssynopsiscodegitcodecodecheckoutcodecode-fcodecode--ourscodecode--theirscodecode-mcodecode--conflictcodeemltstylegtemcode--codeemltspc-de-chemingtemspan"></a><span class='synopsis'><code>git</code> <code>checkout</code> [<code>-f</code> | <code>--ours</code> | <code>--theirs</code> | <code>-m</code> | <code>--conflict=</code><em>&lt;style&gt;</em>] [<code>--</code>] <em>&lt;spéc-de-chemin&gt;</em>...</span> </dt>
+<dt class="hdlist1" id="git-checkout-spanclasssynopsiscodegitcodecodecheckoutcodecode-fcodecode--ourscodecode--theirscodecode-mcodecode--conflictcodeemltstylegtemcode--pathspec-from-filecodeemltfichiergtemcode--pathspec-file-nulcodespan"> <a class="anchor" href="#git-checkout-gitcheckout-f--ours--theirs-m--conflictstyle--pathspec-from-filefichier--pathspec-file-nul"></a> <a class="anchor" href="#git-checkout-spanclasssynopsiscodegitcodecodecheckoutcodecode-fcodecode--ourscodecode--theirscodecode-mcodecode--conflictcodeemltstylegtemcode--pathspec-from-filecodeemltfichiergtemcode--pathspec-file-nulcodespan"></a><span class='synopsis'><code>git</code> <code>checkout</code> [<code>-f</code>|<code>--ours</code>|<code>--theirs</code>|<code>-m</code>|<code>--conflict=</code><em>&lt;style&gt;</em>] <code>--pathspec-from-file=</code><em>&lt;fichier&gt;</em> [<code>--pathspec-file-nul</code>]</span> </dt>
 <dd>
-<p>C&#8217;est similaire au mode précédent, mais vous laisse utiliser l&#8217;interface interactive pour afficher la sortie « diff » et choisir quelles sections utiliser dans le résultat. Voir plus bas la description de l&#8217;option <span class='synopsis'><code>--patch</code></span>.</p>
+<p>Remplacer les fichiers et/ou les répertoires spécifiés par la version de l&#8217;index.</p>
+<div class="paragraph">
+<p>Par exemple, si vous extrayez un commit, puis modifiez <span class='synopsis'><code>fichier.txt</code></span>, puis décidez que ces changements étaient une erreur, <span class='synopsis'><code>git</code> <code>checkout</code> <code>fichier.txt</code></span> va supprimer tout changement non indexé dans <span class='synopsis'><code>fichier.txt</code></span>.</p>
+</div>
+<div class="paragraph">
+<p>Cela échouera si le fichier a un conflit de fusion et vous n&#8217;avez pas encore lancé <span class='synopsis'><code>git</code> <code>add</code> <code>fichier.txt</code></span> (ou quelque chose d&#8217;équivalent) pour le marquer comme résolu. Vous pouvez utiliser <span class='synopsis'><code>-f</code></span> pour ignorer les fichiers non fusionnés au lieu d&#8217;échouer, utiliser <span class='synopsis'><code>--ours</code></span> ou <span class='synopsis'><code>--theirs</code></span> pour les remplacer par la version d&#8217;un côté spécifique de la fusion, ou utiliser <span class='synopsis'><code>-m</code></span> pour les remplacer par le résultat original du conflit de fusion.</p>
+</div>
+</dd>
+<dt class="hdlist1" id="git-checkout-spanclasssynopsisemgitcheckout-p--patchltarbre-esquegt--ltspcdechemingtemspan"> <a class="anchor" href="#git-checkout-gitcheckout-p--patcharbre-esque--spcdechemin"></a> <a class="anchor" href="#git-checkout-spanclasssynopsisemgitcheckout-p--patchltarbre-esquegt--ltspcdechemingtemspan"></a><span class='synopsis'><em>git checkout (-p|--patch) [&lt;arbre-esque&gt;] [--] [&lt;spéc. de chemin&gt;...]</em></span> </dt>
+<dd>
+<p>C&#8217;est similaire aux deux modes précédents, mais vous laisse utiliser l&#8217;interface interactive pour afficher la sortie « diff » et choisir quelles sections utiliser dans le résultat. Voir plus bas la description de l&#8217;option <span class='synopsis'><code>--patch</code></span>.</p>
 </dd>
 </dl>
 </div>
@@ -163,12 +179,12 @@ $ git checkout <span class="hover-term" data-term="branche">&lt;branche&gt;</spa
 </dd>
 <dt class="hdlist1" id="git-checkout-spanclasssynopsiscode-Bcodeemltnouvelle-branchegtemspan"> <a class="anchor" href="#git-checkout--Bnouvelle-branche"></a> <a class="anchor" href="#git-checkout-spanclasssynopsiscode-Bcodeemltnouvelle-branchegtemspan"></a><span class='synopsis'><code>-B</code> <em>&lt;nouvelle-branche&gt;</em></span> </dt>
 <dd>
-<p>Créer la branche <em>&lt;nouvelle-branche&gt;</em>, la commencer à <em>&lt;point-de-départ&gt;</em> et l&#8217;extraire ; si elle existe déjà, alors la réinitialise à <em>&lt;point-de-départ&gt;</em>. C&#8217;est équivalent à lancer <span class='synopsis'><code>git</code> <code>branch</code></span> avec <span class='synopsis'><code>-f</code></span> suivi de <span class='synopsis'><code>git</code> <code>checkout</code></span> de cette branche ; voir <a href='{{< relurl "docs/git-branch/fr" >}}'>git-branch[1]</a> pour plus de détails.</p>
+<p>La même chose que <span class='synopsis'><code>-b</code></span>, sauf que si la branche existe déjà, Git réinitialise <em>&lt;branche&gt;</em> au point de départ au lieu d&#8217;échouer.</p>
 </dd>
 <dt class="hdlist1" id="git-checkout-spanclasssynopsiscode-tcodespan"> <a class="anchor" href="#git-checkout--t"></a> <a class="anchor" href="#git-checkout-spanclasssynopsiscode-tcodespan"></a><span class='synopsis'><code>-t</code></span> </dt>
 <dt class="hdlist1" id="git-checkout-spanclasssynopsiscode--trackcodecodecodecodedirectcodecodeinheritcodespan"> <a class="anchor" href="#git-checkout---trackdirectinherit"></a> <a class="anchor" href="#git-checkout-spanclasssynopsiscode--trackcodecodecodecodedirectcodecodeinheritcodespan"></a><span class='synopsis'><code>--track</code>[<code>=</code>(<code>direct</code>|<code>inherit</code>)]</span> </dt>
 <dd>
-<p>À la création d&#8217;une nouvelle branche, établir la configuration <em>upstream</em> (branche amont). Voir <span class='synopsis'><code>--track</code></span> dans <a href='{{< relurl "docs/git-branch/fr" >}}'>git-branch[1]</a> pour plus de détails.</p>
+<p>À la création d&#8217;une nouvelle branche, établir la configuration <em>upstream</em> (branche amont). Voir <span class='synopsis'><code>--track</code></span> dans <a href='{{< relurl "docs/git-branch/fr" >}}'>git-branch[1]</a> pour plus de détails. Par commodité, <span class='synopsis'><code>--track</code></span> sans <span class='synopsis'><code>-b</code></span> implique la création de la branche.</p>
 <div class="paragraph">
 <p>Si aucune option <span class='synopsis'><code>-b</code></span> n&#8217;est fournie, le nom de la nouvelle branche sera dérivé de la branche de suivi à distance, en regardant la partie locale de la spécification de référence configurée pour le distant correspondant et en enlevant la partie initiale jusqu&#8217;au "*". Cela indiquerait d&#8217;utiliser le nom « <span class='synopsis'><code>hack</code></span> » comme branche locale créée à partir de <span class='synopsis'><code>origin/hack</code></span> (ou <span class='synopsis'><code>remotes/origin/hack</code></span>, ou même <span class='synopsis'><code>refs/remotes/origin/hack</code></span>). Si le nom fourni ne contient pas de barre oblique, ou si le résultat de la dérivation est un nom vide, la dérivation échoue. Vous pouvez spécifier explicitement un nom avec <span class='synopsis'><code>-b</code></span> dans ce cas.</p>
 </div>
@@ -180,14 +196,14 @@ $ git checkout <span class="hover-term" data-term="branche">&lt;branche&gt;</spa
 <dt class="hdlist1" id="git-checkout-spanclasssynopsiscode--guesscodespan"> <a class="anchor" href="#git-checkout---guess"></a> <a class="anchor" href="#git-checkout-spanclasssynopsiscode--guesscodespan"></a><span class='synopsis'><code>--guess</code></span> </dt>
 <dt class="hdlist1" id="git-checkout-spanclasssynopsiscode--no-guesscodespan"> <a class="anchor" href="#git-checkout---no-guess"></a> <a class="anchor" href="#git-checkout-spanclasssynopsiscode--no-guesscodespan"></a><span class='synopsis'><code>--no-guess</code></span> </dt>
 <dd>
-<p>Si la <em><span class="hover-term" data-term="branche">&lt;branche&gt;</span></em> n&#8217;est pas trouvée mais qu&#8217;il existe une branche de suivi pour un dépôt distant unique (appelé <em>&lt;distant&gt;</em>) avec un nom correspondant, le traiter comme équivalent à</p>
+<p>Si la <em>&lt;branche&gt;</em> n&#8217;est pas trouvée mais qu&#8217;il existe une branche de suivi pour un dépôt distant unique (appelé <em>&lt;distant&gt;</em>) avec un nom correspondant, le traiter comme équivalent à</p>
 <div class="listingblock">
 <div class="content">
-<pre>$ git checkout -b <span class="hover-term" data-term="branche">&lt;branche&gt;</span> --track &lt;distant&gt;/<span class="hover-term" data-term="branche">&lt;branche&gt;</span></pre>
+<pre>$ git checkout -b &lt;branche&gt; --track &lt;distant&gt;/&lt;branche&gt;</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Si la branche existe dans plus d&#8217;un distant et que l&#8217;un d&#8217;entre eux est la valeur de la variable de configuration <span class='synopsis'><code>checkout.defaultRemote</code></span>, celui-ci sera utilisé pour désambiguïser, même si la <em><span class="hover-term" data-term="branche">&lt;branche&gt;</span></em> n&#8217;est pas unique parmi tous les distants. Réglez la variable <span class='synopsis'><code>checkout.defaultRemote=origin</code></span> par exemple pour extraire toujours les branches distantes depuis celle-ci si <em><span class="hover-term" data-term="branche">&lt;branche&gt;</span></em> est ambigüe mais existe sur le distant <em>origin</em>. Voir aussi <span class='synopsis'><code>checkout.defaultRemote</code></span> dans <a href='{{< relurl "docs/git-config/fr" >}}'>git-config[1]</a>.</p>
+<p>Si la branche existe dans plus d&#8217;un distant et que l&#8217;un d&#8217;entre eux est la valeur de la variable de configuration <span class='synopsis'><code>checkout.defaultRemote</code></span>, celui-ci sera utilisé pour désambiguïser, même si la <em>&lt;branche&gt;</em> n&#8217;est pas unique parmi tous les distants. Réglez la variable <span class='synopsis'><code>checkout.defaultRemote=origin</code></span> par exemple pour extraire toujours les branches distantes depuis celle-ci si <em>&lt;branche&gt;</em> est ambigüe mais existe sur le distant <em>origin</em>. Voir aussi <span class='synopsis'><code>checkout.defaultRemote</code></span> dans <a href='{{< relurl "docs/git-config/fr" >}}'>git-config[1]</a>.</p>
 </div>
 <div class="paragraph">
 <p><span class='synopsis'><code>--guess</code></span> est le comportement par défaut. Utilisez <span class='synopsis'><code>--no-guess</code></span> pour le désactiver.</p>
@@ -203,7 +219,7 @@ $ git checkout <span class="hover-term" data-term="branche">&lt;branche&gt;</spa
 <dt class="hdlist1" id="git-checkout-spanclasssynopsiscode-dcodespan"> <a class="anchor" href="#git-checkout--d"></a> <a class="anchor" href="#git-checkout-spanclasssynopsiscode-dcodespan"></a><span class='synopsis'><code>-d</code></span> </dt>
 <dt class="hdlist1" id="git-checkout-spanclasssynopsiscode--detachcodespan"> <a class="anchor" href="#git-checkout---detach"></a> <a class="anchor" href="#git-checkout-spanclasssynopsiscode--detachcodespan"></a><span class='synopsis'><code>--detach</code></span> </dt>
 <dd>
-<p>Plutôt que d&#8217;extraire une branche pour travailler dessus, extraire un commit pour l&#8217;inspecter et faire des expériences jetables. C&#8217;est le comportement par défaut de <span class='synopsis'><code>git</code> <code>checkout</code> <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em></span> quand <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em> n&#8217;est pas un nom de branche. Voir la section « HEAD DÉTACHÉE » plus bas pour plus de détails.</p>
+<p>Plutôt que d&#8217;extraire une branche pour travailler dessus, extraire un commit pour l&#8217;inspecter et faire des expériences jetables. C&#8217;est le comportement par défaut de <span class='synopsis'><code>git</code> <code>checkout</code> <em>&lt;commit&gt;</em></span> quand <em>&lt;commit&gt;</em> n&#8217;est pas un nom de branche. Voir la section « HEAD DÉTACHÉE » plus bas pour plus de détails.</p>
 </dd>
 <dt class="hdlist1" id="git-checkout-spanclasssynopsiscode--orphancodeemltnouvelle-branchegtemspan"> <a class="anchor" href="#git-checkout---orphannouvelle-branche"></a> <a class="anchor" href="#git-checkout-spanclasssynopsiscode--orphancodeemltnouvelle-branchegtemspan"></a><span class='synopsis'><code>--orphan</code> <em>&lt;nouvelle-branche&gt;</em></span> </dt>
 <dd>
@@ -243,7 +259,7 @@ $ git checkout <span class="hover-term" data-term="branche">&lt;branche&gt;</spa
 <dt class="hdlist1" id="git-checkout-spanclasssynopsiscode-pcodespan"> <a class="anchor" href="#git-checkout--p"></a> <a class="anchor" href="#git-checkout-spanclasssynopsiscode-pcodespan"></a><span class='synopsis'><code>-p</code></span> </dt>
 <dt class="hdlist1" id="git-checkout-spanclasssynopsiscode--patchcodespan"> <a class="anchor" href="#git-checkout---patch"></a> <a class="anchor" href="#git-checkout-spanclasssynopsiscode--patchcodespan"></a><span class='synopsis'><code>--patch</code></span> </dt>
 <dd>
-<p>Sélectionner interactivement les sections dans la différence entre l'<em><span class="hover-term" data-term="arbre-esque">&lt;arbre-esque&gt;</span></em> (ou l&#8217;index, si non spécifié) et l&#8217;arbre de travail. Les sections choisies sont ensuite appliquées en ordre inversé à l&#8217;arbre de travail (et si un <em><span class="hover-term" data-term="arbre-esque">&lt;arbre-esque&gt;</span></em> a été spécifié, à l&#8217;index).</p>
+<p>Sélectionner interactivement les sections dans la différence entre l'<em>&lt;arbre-esque&gt;</em> (ou l&#8217;index, si non spécifié) et l&#8217;arbre de travail. Les sections choisies sont ensuite appliquées en ordre inversé à l&#8217;arbre de travail (et si un <em>&lt;arbre-esque&gt;</em> a été spécifié, à l&#8217;index).</p>
 <div class="paragraph">
 <p>Ceci signifie que vous pouvez utiliser <span class='synopsis'><code>git</code> <code>checkout</code> <code>-p</code></span> pour supprimer sélectivement les éditions depuis votre arbre de travail actuel. Voir la section « Mode Interactif » de <a href='{{< relurl "docs/git-add/fr" >}}'>git-add[1]</a> pour apprendre à utiliser le mode <span class='synopsis'><code>--patch</code></span>.</p>
 </div>
@@ -281,7 +297,7 @@ $ git checkout <span class="hover-term" data-term="branche">&lt;branche&gt;</spa
 <dt class="hdlist1" id="git-checkout-spanclasssynopsiscode--overlaycodespan"> <a class="anchor" href="#git-checkout---overlay"></a> <a class="anchor" href="#git-checkout-spanclasssynopsiscode--overlaycodespan"></a><span class='synopsis'><code>--overlay</code></span> </dt>
 <dt class="hdlist1" id="git-checkout-spanclasssynopsiscode--no-overlaycodespan"> <a class="anchor" href="#git-checkout---no-overlay"></a> <a class="anchor" href="#git-checkout-spanclasssynopsiscode--no-overlaycodespan"></a><span class='synopsis'><code>--no-overlay</code></span> </dt>
 <dd>
-<p>In the default overlay mode, <span class='synopsis'><code>git</code> <code>checkout</code></span> never removes files from the index or the working tree. When specifying <span class='synopsis'><code>--no-overlay</code></span>, files that appear in the index and working tree, but not in <em>&lt;tree-ish&gt;</em> are removed, to make them match <em>&lt;tree-ish&gt;</em> exactly.</p>
+<p>Dans le mode de superposition par défaut, <span class='synopsis'><code>git</code> <code>checkout</code></span> ne supprime jamais les fichiers de l’index ou de l’arbre de travail. Lorsque vous spécifiez <span class='synopsis'><code>--no-overlay</code></span>, les fichiers qui apparaissent dans l’index et l’arbre de travail, mais pas dans <em>&lt;arbre-esque&gt;</em> sont supprimés, pour les faire correspondre à <em>&lt;arbre-esque&gt;</em> exactement.</p>
 </dd>
 <dt class="hdlist1" id="git-checkout-spanclasssynopsiscode--pathspec-from-filecodeemltfichiergtemspan"> <a class="anchor" href="#git-checkout---pathspec-from-filefichier"></a> <a class="anchor" href="#git-checkout-spanclasssynopsiscode--pathspec-from-filecodeemltfichiergtemspan"></a><span class='synopsis'><code>--pathspec-from-file=</code><em>&lt;fichier&gt;</em></span> </dt>
 <dd>
@@ -291,7 +307,7 @@ $ git checkout <span class="hover-term" data-term="branche">&lt;branche&gt;</spa
 <dd>
 <p>Uniquement significatif avec <span class='synopsis'><code>--pathspec-from-file</code></span>. Les éléments du spécificateur de chemin sont séparés par le caractère <em>NUL</em> et tous les autres caractères sont utilisés littéralement (y compris les retours à la ligne et les guillemets).</p>
 </dd>
-<dt class="hdlist1" id="git-checkout-ltbranchegt"> <a class="anchor" href="#git-checkout-branche"></a> <a class="anchor" href="#git-checkout-ltbranchegt"></a><span class="hover-term" data-term="branche">&lt;branche&gt;</span> </dt>
+<dt class="hdlist1" id="git-checkout-spanclasssynopsisemltbranchegtemspan"> <a class="anchor" href="#git-checkout-branche"></a> <a class="anchor" href="#git-checkout-spanclasssynopsisemltbranchegtemspan"></a><span class='synopsis'><em>&lt;branche&gt;</em></span> </dt>
 <dd>
 <p>Branche à extraire ; si c&#8217;est une référence à une branche (c&#8217;est-à-dire un nom qui, préfixé par « refs/heads/ » est une référence valide), alors cette branche est extraite. Sinon, si c&#8217;est une référence à un commit valide, votre <span class='synopsis'><code>HEAD</code></span> devient « détachée » et vous n&#8217;êtes plus sur aucune branche (voir plus bas pour plus de détails).</p>
 <div class="paragraph">
@@ -312,7 +328,7 @@ $ git checkout <span class="hover-term" data-term="branche">&lt;branche&gt;</spa
 <p>Autre cas spécial, vous pouvez utiliser « <span class='synopsis'><em>&lt;rév-a&gt;</em><code>...</code><em>&lt;rév-b&gt;</em></span> » comme raccourci pour la base de fusion de <em>&lt;rév-a&gt;</em> et <em>&lt;rév-b&gt;</em> s&#8217;il y a exactement une seule base de fusion. Vous pouvez ne pas spécifier <em>&lt;rév-a&gt;</em> ou <em>&lt;rév-b&gt;</em>, auquel cas ce sera <span class='synopsis'><code>HEAD</code></span> par défaut.</p>
 </div>
 </dd>
-<dt class="hdlist1" id="git-checkout-emltarbre-esquegtem"> <a class="anchor" href="#git-checkout-arbre-esque"></a> <a class="anchor" href="#git-checkout-emltarbre-esquegtem"></a><em><span class="hover-term" data-term="arbre-esque">&lt;arbre-esque&gt;</span></em> </dt>
+<dt class="hdlist1" id="git-checkout-emltarbre-esquegtem"> <a class="anchor" href="#git-checkout-arbre-esque"></a> <a class="anchor" href="#git-checkout-emltarbre-esquegtem"></a><em>&lt;arbre-esque&gt;</em> </dt>
 <dd>
 <p>Arbre depuis lequel extraire (quand des chemins sont indiqués). Si non spécifié, l&#8217;index est utilisé.</p>
 <div class="paragraph">
@@ -474,7 +490,15 @@ $ git log -g -2 HEAD</pre>
 <h2 id="_désambiguïsation_dargument"><a class="anchor" href="#_désambiguïsation_dargument"></a>DÉSAMBIGUÏSATION D&#8217;ARGUMENT</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Quand il n&#8217;y a qu&#8217;un argument fourni et qu&#8217;il n&#8217;est pas <span class='synopsis'><code>--</code></span> (par exemple <span class='synopsis'><code>git</code> <code>checkout</code> <code>abc</code></span>) et quand l&#8217;argument est à la fois un <em><span class="hover-term" data-term="arbre-esque">&lt;arbre-esque&gt;</span></em> valide (par exemple une branche <span class='synopsis'><code>abc</code></span> existe) et un <em>&lt;spécificateur-de-chemin&gt;</em> valide (par exemple un fichier ou un répertoire du nom de « abc » existe), Git vous demandera généralement de lever l&#8217;ambiguïté. Du fait qu&#8217;extraire une branche est une opération très commune, cependant, <span class='synopsis'><code>git</code> <code>checkout</code> <code>abc</code></span> considère « abc » comme un <em><span class="hover-term" data-term="arbre-esque">&lt;arbre-esque&gt;</span></em> dans une telle situation. Utilisez <span class='synopsis'><code>git</code> <code>checkout</code> <code>--</code> <em>&lt;spécificateur-de-chemin&gt;</em></span> si vous voulez extraire ces chemins depuis l&#8217;index.</p>
+<p>Quand vous lancez <span class='synopsis'><code>git</code> <code>checkout</code> <em>&lt;quelque-chose&gt;</em></span>, Git essaye de deviner si <em>&lt;quelque-chose&gt;</em> est destiné à être une branche, un commit, ou un ensemble de fichier(s), et ensuite soit se déplace vers cette branche, ou valide ou restaure les fichiers spécifiés.</p>
+</div>
+<div class="paragraph">
+<p>S&#8217;il y a une ambiguïté, Git traitera <em>&lt;quelque-chose&gt;</em> en tant que branche ou commit, mais vous pouvez utiliser le double tiret <span class='synopsis'><code>--</code></span> pour forcer Git à traiter le paramètre comme une liste de fichiers et/ou de répertoires, comme ceci :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>git checkout -- file.txt</pre>
+</div>
 </div>
 </div>
 </div>

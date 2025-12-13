@@ -64,15 +64,15 @@ headings:
 <dt class="hdlist1" id="git-patch-id---verbatim"> <a class="anchor" href="#git-patch-id---verbatim"></a>--verbatim </dt>
 <dd>
 <p>Calculer l&#8217;id-rustine de l&#8217;entrée standard telle qu&#8217;elle est fournie, sans retirer les espaces blancs.</p>
-<div class="literalblock">
-<div class="content">
-<pre>C'est le comportement par défaut si patchid.verbatim est vrai.</pre>
-</div>
+<div class="paragraph">
+<p>C&#8217;est le comportement par défaut si patchid.verbatim est vrai.</p>
 </div>
 </dd>
 <dt class="hdlist1" id="git-patch-id---stable"> <a class="anchor" href="#git-patch-id---stable"></a>--stable </dt>
 <dd>
 <p>Utiliser une somme "stable" de hachages comme ID de rustine. Avec cette option :</p>
+<div class="openblock">
+<div class="content">
 <div class="ulist">
 <ul>
 <li>
@@ -83,22 +83,20 @@ headings:
 </li>
 <li>
 <p>Tous les espaces blancs dans la rustine sont ignorés et n&#8217;affectent pas l&#8217;id.</p>
-<div class="literalblock">
-<div class="content">
-<pre>C'est le comportement par défaut si patchid.stable est fixé à true.</pre>
-</div>
-</div>
 </li>
 </ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>C&#8217;est le comportement par défaut si <span class='synopsis'><code>patchid.stable</code></span> est fixé à <span class='synopsis'><code>true</code></span>.</p>
 </div>
 </dd>
 <dt class="hdlist1" id="git-patch-id---unstable"> <a class="anchor" href="#git-patch-id---unstable"></a>--unstable </dt>
 <dd>
 <p>Use an "unstable" hash as the patch ID. With this option, the result produced is compatible with the patch-id value produced by git 1.9 and older and whitespace is ignored. Users with pre-existing databases storing patch-ids produced by git 1.9 and older (who do not deal with reordered patches) may want to use this option.</p>
-<div class="literalblock">
-<div class="content">
-<pre>C'est l'option par défaut.</pre>
-</div>
+<div class="paragraph">
+<p>C&#8217;est l&#8217;option par défaut.</p>
 </div>
 </dd>
 </dl>

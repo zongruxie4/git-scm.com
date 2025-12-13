@@ -46,7 +46,7 @@ headings:
 <pre class="content"><em>git am</em> [--signoff] [--keep] [--[no-]keep-cr] [--[no-]utf8]] [--no-verify]
 	 [--[no-]3way] [--interactive] [--committer-date-is-author-date]
 	 [--ignore-date] [--ignore-space-change | --ignore-whitespace]
-	 [--whitespace=&lt;action&gt;] [-C&lt;n&gt;] [-p&lt;n&gt;] [--directory=<span class="hover-term" data-term="répertoire">&lt;répertoire&gt;</span>]
+	 [--whitespace=&lt;action&gt;] [-C&lt;n&gt;] [-p&lt;n&gt;] [--directory=&lt;répertoire&gt;]
 	 [--exclude=&lt;path&gt;] [--include=&lt;path&gt;] [--reject] [-q | --quiet]
 	 [--[no-]scissors] [-S[&lt;idclé&gt;]] [--patch-format=&lt;format&gt;]
 	 [--quoted-cr=&lt;action&gt;]
@@ -87,7 +87,8 @@ headings:
 <dd>
 <p>Passer l&#8217;option <span class='synopsis'><code>-b</code></span> à <em>git mailinfo</em> (voir <a href='{{< relurl "docs/git-mailinfo/fr" >}}'>git-mailinfo[1]</a>).</p>
 </dd>
-<dt class="hdlist1" id="git-am---no-keep-cr"> <a class="anchor" href="#git-am---no-keep-cr"></a>--[no-]keep-cr </dt>
+<dt class="hdlist1" id="git-am---keep-cr"> <a class="anchor" href="#git-am---keep-cr"></a>--keep-cr </dt>
+<dt class="hdlist1" id="git-am---no-keep-cr"> <a class="anchor" href="#git-am---no-keep-cr"></a>--no-keep-cr </dt>
 <dd>
 <p>Avec <span class='synopsis'><code>--keep-cr</code></span>, appeler <em>git mailsplit</em> (voir <a href='{{< relurl "docs/git-mailsplit/fr" >}}'>git-mailsplit[1]</a>) avec la même option, pour l&#8217;empêcher de supprimer les CR en fin de ligne. La variable de configuration <span class='synopsis'><code>am.keepcr</code></span> peut être utilisée pour spécifier le comportement par défaut. <span class='synopsis'><code>--no-keep-cr</code></span> permet de surcharger <span class='synopsis'><code>am.keepcr</code></span>.</p>
 </dd>

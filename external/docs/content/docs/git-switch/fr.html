@@ -41,10 +41,10 @@ headings:
 <h2 id="_synopsis"><a class="anchor" href="#_synopsis"></a>SYNOPSIS</h2>
 <div class="sectionbody">
 <div class="verseblock">
-<pre class="content"><span class='synopsis'><code>git</code></span> <span class='synopsis'><code>switch</code></span> [<em>&lt;options&gt;</em>] [<span class='synopsis'><code>--no-guess</code></span>] <em>&lt;branch&gt;</em>
-<span class='synopsis'><code>git</code></span> <span class='synopsis'><code>switch</code></span> [<em>&lt;options&gt;</em>] <span class='synopsis'><code>--detach</code></span> [<em>&lt;start-point&gt;</em>]
-<span class='synopsis'><code>git</code></span> <span class='synopsis'><code>switch</code></span> [<em>&lt;options&gt;</em>] (<span class='synopsis'><code>-c</code></span>|<span class='synopsis'><code>-C</code></span>) <em>&lt;new-branch&gt;</em> [<em>&lt;start-point&gt;</em>]
-<span class='synopsis'><code>git</code></span> <span class='synopsis'><code>switch</code></span> [<em>&lt;options&gt;</em>] <span class='synopsis'><code>--orphan</code></span> <em>&lt;new-branch&gt;</em></pre>
+<pre class="content"><span class='synopsis'><code>git</code></span> <span class='synopsis'><code>switch</code></span> [<em>&lt;options&gt;</em>] [<span class='synopsis'><code>--no-guess</code></span>] <em>&lt;branche&gt;</em>
+<span class='synopsis'><code>git</code></span> <span class='synopsis'><code>switch</code></span> [<em>&lt;options&gt;</em>] <span class='synopsis'><code>--detach</code></span> [<em>&lt;point-de-départ&gt;</em>]
+<span class='synopsis'><code>git</code></span> <span class='synopsis'><code>switch</code></span> [<em>&lt;options&gt;</em>] (<span class='synopsis'><code>-c</code></span>|<span class='synopsis'><code>-C</code></span>) <em>&lt;nouvelle-branche&gt;</em> [<em>&lt;point-de-départ&gt;</em>]
+<span class='synopsis'><code>git</code></span> <span class='synopsis'><code>switch</code></span> [<em>&lt;options&gt;</em>] <span class='synopsis'><code>--orphan</code></span> <em>&lt;nouvelle-branche&gt;</em></pre>
 </div>
 </div>
 </div>
@@ -67,7 +67,7 @@ headings:
 <div class="sectionbody">
 <div class="dlist">
 <dl>
-<dt class="hdlist1" id="git-switch-emltbranchgtem"> <a class="anchor" href="#git-switch-branch"></a> <a class="anchor" href="#git-switch-emltbranchgtem"></a><em>&lt;branch&gt;</em> </dt>
+<dt class="hdlist1" id="git-switch-emltbranchegtem"> <a class="anchor" href="#git-switch-branche"></a> <a class="anchor" href="#git-switch-emltbranchegtem"></a><em>&lt;branche&gt;</em> </dt>
 <dd>
 <p>Branche sur laquelle commuter.</p>
 </dd>
@@ -79,16 +79,16 @@ headings:
 <dd>
 <p>Le point de départ de la nouvelle branche. Indiquer un <em>&lt;point-de-départ&gt;</em> vous permet de créer une branche basée sur un autre point de l&#8217;historique plutôt que celui actuellement pointé par <span class='synopsis'><code>HEAD</code></span>. (Ou, dans le cas de <span class='synopsis'><code>--detach</code></span>, vous permet d&#8217;inspecter et de détacher d&#8217;un autre point.)</p>
 <div class="paragraph">
-<p>You can use the <span class='synopsis'><code>@{-</code><em>&lt;N&gt;</em><code>}</code></span> syntax to refer to the <em>&lt;N&gt;</em>-th last branch/commit switched to using <span class='synopsis'><code>git</code> <code>switch</code></span> or <span class='synopsis'><code>git</code> <code>checkout</code></span> operation. You may also specify <span class='synopsis'><code>-</code></span> which is synonymous to <span class='synopsis'><code>@{-1}</code></span>. This is often used to switch quickly between two branches, or to undo a branch switch by mistake.</p>
+<p>Vous pouvez utiliser la syntaxe <span class='synopsis'><code>@{-</code><em>&lt;N&gt;</em><code>}</code></span> pour faire référence à la &lt;N&gt;-ième dernière branche ou commit sur lesquels on a basculé en utilisant une opération <span class='synopsis'><code>git</code> <code>switch</code></span> ou <span class='synopsis'><code>git</code> <code>checkout</code></span>. Vous pouvez aussi spécifier <span class='synopsis'><code>-</code></span> qui est synonyme de <span class='synopsis'><code>@{-1}</code></span>. C&#8217;est souvent utilisé pour basculer rapidement entre deux branches ou pour annuler un basculement par erreur.</p>
 </div>
 <div class="paragraph">
 <p>Autre cas spécial, vous pouvez utiliser « <span class='synopsis'><em>&lt;rév-a&gt;</em><code>...</code><em>&lt;rév-b&gt;</em></span> » comme raccourci pour la base de fusion de <em>&lt;rév-a&gt;</em> et <em>&lt;rév-b&gt;</em> s&#8217;il y a exactement une seule base de fusion. Vous pouvez ne pas spécifier <em>&lt;rév-a&gt;</em> ou <em>&lt;rév-b&gt;</em>, auquel cas ce sera <span class='synopsis'><code>HEAD</code></span> par défaut.</p>
 </div>
 </dd>
-<dt class="hdlist1" id="git-switch-spanclasssynopsiscode-ccodeemltnew-branchgtemspan"> <a class="anchor" href="#git-switch--cnew-branch"></a> <a class="anchor" href="#git-switch-spanclasssynopsiscode-ccodeemltnew-branchgtemspan"></a><span class='synopsis'><code>-c</code> <em>&lt;new-branch&gt;</em></span> </dt>
-<dt class="hdlist1" id="git-switch-spanclasssynopsiscode--createcodeemltnew-branchgtemspan"> <a class="anchor" href="#git-switch---createnew-branch"></a> <a class="anchor" href="#git-switch-spanclasssynopsiscode--createcodeemltnew-branchgtemspan"></a><span class='synopsis'><code>--create</code> <em>&lt;new-branch&gt;</em></span> </dt>
+<dt class="hdlist1" id="git-switch-spanclasssynopsiscode-ccodeemltnouvelle-branchegtemspan"> <a class="anchor" href="#git-switch--cnouvelle-branche"></a> <a class="anchor" href="#git-switch-spanclasssynopsiscode-ccodeemltnouvelle-branchegtemspan"></a><span class='synopsis'><code>-c</code> <em>&lt;nouvelle-branche&gt;</em></span> </dt>
+<dt class="hdlist1" id="git-switch-spanclasssynopsiscode--createcodeemltnouvelle-branchegtemspan"> <a class="anchor" href="#git-switch---createnouvelle-branche"></a> <a class="anchor" href="#git-switch-spanclasssynopsiscode--createcodeemltnouvelle-branchegtemspan"></a><span class='synopsis'><code>--create</code> <em>&lt;nouvelle-branche&gt;</em></span> </dt>
 <dd>
-<p>Create a new branch named <em>&lt;new-branch&gt;</em> starting at <em>&lt;start-point&gt;</em> before switching to the branch. This is the transactional equivalent of</p>
+<p>Créer une nouvelle branche nommée <em>&lt;nouvelle-branche&gt;</em> commençant à <em>&lt;point-de-départ&gt;</em> avant de basculer sur cette branche. C&#8217;est l&#8217;équivalent transactionnel de</p>
 <div class="listingblock">
 <div class="content">
 <pre>$ git branch &lt;nouvelle-branche&gt;
@@ -99,14 +99,14 @@ $ git switch &lt;nouvelle-branche&gt;</pre>
 <p>c&#8217;est-à-dire que la branche n&#8217;est pas réinitialisée/créée à moins que <span class='synopsis'><code>git</code> <code>switch</code></span> soit réussi (par exemple, lorsque la branche est utilisée dans un autre arbre de travail, pas seulement que la branche actuelle reste la même, mais la branche n&#8217;est pas réinitialisée au point de départ non plus).</p>
 </div>
 </dd>
-<dt class="hdlist1" id="git-switch-spanclasssynopsiscode-Ccodeemltnew-branchgtemspan"> <a class="anchor" href="#git-switch--Cnew-branch"></a> <a class="anchor" href="#git-switch-spanclasssynopsiscode-Ccodeemltnew-branchgtemspan"></a><span class='synopsis'><code>-C</code> <em>&lt;new-branch&gt;</em></span> </dt>
-<dt class="hdlist1" id="git-switch-spanclasssynopsiscode--force-createcodeemltnew-branchgtemspan"> <a class="anchor" href="#git-switch---force-createnew-branch"></a> <a class="anchor" href="#git-switch-spanclasssynopsiscode--force-createcodeemltnew-branchgtemspan"></a><span class='synopsis'><code>--force-create</code> <em>&lt;new-branch&gt;</em></span> </dt>
+<dt class="hdlist1" id="git-switch-spanclasssynopsiscode-Ccodeemltnouvelle-branchegtemspan"> <a class="anchor" href="#git-switch--Cnouvelle-branche"></a> <a class="anchor" href="#git-switch-spanclasssynopsiscode-Ccodeemltnouvelle-branchegtemspan"></a><span class='synopsis'><code>-C</code> <em>&lt;nouvelle-branche&gt;</em></span> </dt>
+<dt class="hdlist1" id="git-switch-spanclasssynopsiscode--force-createcodeemltnouvelle-branchegtemspan"> <a class="anchor" href="#git-switch---force-createnouvelle-branche"></a> <a class="anchor" href="#git-switch-spanclasssynopsiscode--force-createcodeemltnouvelle-branchegtemspan"></a><span class='synopsis'><code>--force-create</code> <em>&lt;nouvelle-branche&gt;</em></span> </dt>
 <dd>
 <p>Similaire à <span class='synopsis'><code>--create</code></span> sauf que si <em>&lt;nouvelle-branche&gt;</em> existe déjà, elle sera remise à <em>&lt;point_de_départ&gt;</em>. C&#8217;est un raccourci pratique pour :</p>
 <div class="listingblock">
 <div class="content">
-<pre>$ git branch -f _&lt;new-branch&gt;_
-$ git switch _&lt;new-branch&gt;_</pre>
+<pre>$ git branch -f _&lt;nouvelle-branche&gt;_
+$ git switch _&lt;nouvelle-branche&gt;_</pre>
 </div>
 </div>
 </dd>
@@ -118,14 +118,14 @@ $ git switch _&lt;new-branch&gt;_</pre>
 <dt class="hdlist1" id="git-switch-spanclasssynopsiscode--guesscodespan"> <a class="anchor" href="#git-switch---guess"></a> <a class="anchor" href="#git-switch-spanclasssynopsiscode--guesscodespan"></a><span class='synopsis'><code>--guess</code></span> </dt>
 <dt class="hdlist1" id="git-switch-spanclasssynopsiscode--no-guesscodespan"> <a class="anchor" href="#git-switch---no-guess"></a> <a class="anchor" href="#git-switch-spanclasssynopsiscode--no-guesscodespan"></a><span class='synopsis'><code>--no-guess</code></span> </dt>
 <dd>
-<p>Si la <em><span class="hover-term" data-term="branche">&lt;branche&gt;</span></em> n&#8217;est pas trouvée mais qu&#8217;il existe une branche de suivi pour un dépôt distant unique (appelé <em>&lt;distant&gt;</em>) avec un nom correspondant, le traiter comme équivalent à</p>
+<p>Si la <em>&lt;branche&gt;</em> n&#8217;est pas trouvée mais qu&#8217;il existe une branche de suivi pour un dépôt distant unique (appelé <em>&lt;distant&gt;</em>) avec un nom correspondant, le traiter comme équivalent à</p>
 <div class="listingblock">
 <div class="content">
-<pre>$ git switch -c <span class="hover-term" data-term="branche">&lt;branche&gt;</span> --track &lt;distant&gt;/<span class="hover-term" data-term="branche">&lt;branche&gt;</span></pre>
+<pre>$ git switch -c &lt;branche&gt; --track &lt;distant&gt;/&lt;branche&gt;</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Si la branche existe dans plus d&#8217;un distant et que l&#8217;un d&#8217;entre eux est la valeur de la variable de configuration <span class='synopsis'><code>checkout.defaultRemote</code></span>, celui-ci sera utilisé pour désambiguïser, même si la <em><span class="hover-term" data-term="branche">&lt;branche&gt;</span></em> n&#8217;est pas unique parmi tous les distants. Réglez la variable <span class='synopsis'><code>checkout.defaultRemote=origin</code></span> par exemple pour extraire toujours les branches distantes depuis celle-ci si <em><span class="hover-term" data-term="branche">&lt;branche&gt;</span></em> est ambigüe mais existe sur le distant <em>origin</em>. Voir aussi <span class='synopsis'><code>checkout.defaultRemote</code></span> dans <a href='{{< relurl "docs/git-config/fr" >}}'>git-config[1]</a>.</p>
+<p>Si la branche existe dans plus d&#8217;un distant et que l&#8217;un d&#8217;entre eux est la valeur de la variable de configuration <span class='synopsis'><code>checkout.defaultRemote</code></span>, celui-ci sera utilisé pour désambiguïser, même si la <em>&lt;branche&gt;</em> n&#8217;est pas unique parmi tous les distants. Réglez la variable <span class='synopsis'><code>checkout.defaultRemote=origin</code></span> par exemple pour extraire toujours les branches distantes depuis celle-ci si <em>&lt;branche&gt;</em> est ambigüe mais existe sur le distant <em>origin</em>. Voir aussi <span class='synopsis'><code>checkout.defaultRemote</code></span> dans <a href='{{< relurl "docs/git-config/fr" >}}'>git-config[1]</a>.</p>
 </div>
 <div class="paragraph">
 <p><span class='synopsis'><code>--guess</code></span> est le comportement par défaut. Utilisez <span class='synopsis'><code>--no-guess</code></span> pour le désactiver.</p>

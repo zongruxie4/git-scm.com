@@ -40,7 +40,7 @@ headings:
 <div class="sectionbody">
 <div class="verseblock">
 <pre class="content"><em>git repack</em> [-a] [-A] [-d] [-f] [-F] [-l] [-n] [-q] [-b] [-m]
-	[--window=&lt;n&gt;] [--depth=&lt;n&gt;] [--threads=&lt;n&gt;] [--keep-pack=&lt;pack-name&gt;]
+	[--window=&lt;n&gt;] [--depth=&lt;n&gt;] [--threads=&lt;n&gt;] [--keep-pack=&lt;nom-de-pack&gt;]
 	[--write-midx] [--name-hash-version=&lt;n&gt;] [--path-walk]</pre>
 </div>
 </div>
@@ -92,11 +92,11 @@ headings:
 </dd>
 <dt class="hdlist1" id="git-repack---max-cruft-sizeltngt"> <a class="anchor" href="#git-repack---max-cruft-sizen"></a> <a class="anchor" href="#git-repack---max-cruft-sizeltngt"></a>--max-cruft-size=&lt;n&gt; </dt>
 <dd>
-<p>Overrides <span class='synopsis'><code>--max-pack-size</code></span> for cruft packs. Inherits the value of <span class='synopsis'><code>--max-pack-size</code></span> (if any) by default. See the documentation for <span class='synopsis'><code>--max-pack-size</code></span> for more details.</p>
+<p>Surcharge <span class='synopsis'><code>--max-pack-size</code></span> pour les paquets de déchets. Hérite la valeur de <span class='synopsis'><code>--max-pack-size</code></span> (le cas échéant) par défaut. Voir la documentation pour <span class='synopsis'><code>--max-pack-size</code></span> pour plus de détails.</p>
 </dd>
 <dt class="hdlist1" id="git-repack---combine-cruft-below-sizeltngt"> <a class="anchor" href="#git-repack---combine-cruft-below-sizen"></a> <a class="anchor" href="#git-repack---combine-cruft-below-sizeltngt"></a>--combine-cruft-below-size=&lt;n&gt; </dt>
 <dd>
-<p>When generating cruft packs without pruning, only repack existing cruft packs whose size is strictly less than <span class='synopsis'><em>&lt;n&gt;</em></span>, where <span class='synopsis'><em>&lt;n&gt;</em></span> represents a number of bytes, which can optionally be suffixed with "k", "m", or "g". Cruft packs whose size is greater than or equal to <span class='synopsis'><em>&lt;n&gt;</em></span> are left as-is and not repacked. Useful when you want to avoid repacking large cruft pack(s) in repositories that have many and/or large unreachable objects.</p>
+<p>Lors de la production de paquets de déchets sans élagage, ne ré-empaqueter que les paquets de déchets existants dont la taille est strictement inférieure à <span class='synopsis'><em>&lt;n&gt;</em></span> octets, qui peuvt éventuellement être suffixé avec <span class='synopsis'><code>k</code></span>, <span class='synopsis'><code>m</code></span>, ou <span class='synopsis'><code>g</code></span>. Les paquets de déchets dont la taille est supérieure ou égale à <em>&lt;n&gt;</em> ne sont pas touchés et ne sont pas ré-empaquetés. Utile lorsque vous voulez éviter de ré-empaqueter de gros paquets de déchets dans des dépôts qui ont beaucoup et/ou de grands objets inaccessibles.</p>
 </dd>
 <dt class="hdlist1" id="git-repack---expire-toltrpgt"> <a class="anchor" href="#git-repack---expire-torp"></a> <a class="anchor" href="#git-repack---expire-toltrpgt"></a>--expire-to=&lt;rép.&gt; </dt>
 <dd>
@@ -149,7 +149,7 @@ headings:
 </dd>
 <dt class="hdlist1" id="git-repack---filter-toltrpgt"> <a class="anchor" href="#git-repack---filter-torp"></a> <a class="anchor" href="#git-repack---filter-toltrpgt"></a>--filter-to=&lt;rép.&gt; </dt>
 <dd>
-<p>Écrire le paquet contenant des objets filtrés vers le répertoire <em><span class="hover-term" data-term="répertoire">&lt;répertoire&gt;</span></em>. Seulement utile avec <span class='synopsis'><code>--filter</code></span>. Ceci peut être utilisé pour mettre le paquet dans un répertoire d&#8217;objets séparé qui est accessible par le mécanisme alternatif de Git. <strong>ATTENTION :</strong> Si le fichier paquet contenant les objets filtrés n&#8217;est pas accessible, le dépôt peut se corrompre car il pourrait ne pas être possible d&#8217;accéder aux objets dans ce fichier. Voir les sections <span class='synopsis'><code>objects</code></span> et <span class='synopsis'><code>objects/info/alternates</code></span> de <a href='{{< relurl "docs/gitrepository-layout/fr" >}}'>gitrepository-layout[5]</a>.</p>
+<p>Écrire le paquet contenant des objets filtrés vers le répertoire <em>&lt;répertoire&gt;</em>. Seulement utile avec <span class='synopsis'><code>--filter</code></span>. Ceci peut être utilisé pour mettre le paquet dans un répertoire d&#8217;objets séparé qui est accessible par le mécanisme alternatif de Git. <strong>ATTENTION :</strong> Si le fichier paquet contenant les objets filtrés n&#8217;est pas accessible, le dépôt peut se corrompre car il pourrait ne pas être possible d&#8217;accéder aux objets dans ce fichier. Voir les sections <span class='synopsis'><code>objects</code></span> et <span class='synopsis'><code>objects/info/alternates</code></span> de <a href='{{< relurl "docs/gitrepository-layout/fr" >}}'>gitrepository-layout[5]</a>.</p>
 </dd>
 <dt class="hdlist1" id="git-repack--b"> <a class="anchor" href="#git-repack--b"></a>-b </dt>
 <dt class="hdlist1" id="git-repack---write-bitmap-index"> <a class="anchor" href="#git-repack---write-bitmap-index"></a>--write-bitmap-index </dt>
@@ -206,7 +206,7 @@ headings:
 </dd>
 <dt class="hdlist1" id="git-repack---path-walk"> <a class="anchor" href="#git-repack---path-walk"></a>--path-walk </dt>
 <dd>
-<p>Pass the <span class='synopsis'><code>--path-walk</code></span> option to the underlying <span class='synopsis'><code>git</code> <code>pack-objects</code></span> process. See <a href='{{< relurl "docs/git-pack-objects/fr" >}}'>git-pack-objects[1]</a> for full details.</p>
+<p>Passer l&#8217;option <span class='synopsis'><code>--path-walk</code></span> au processus sous-jacent <span class='synopsis'><code>git</code> <code>pack-objects</code></span>. Voir <a href='{{< relurl "docs/git-pack-objects/fr" >}}'>git-pack-objects[1]</a> pour plus de détails.</p>
 </dd>
 </dl>
 </div>

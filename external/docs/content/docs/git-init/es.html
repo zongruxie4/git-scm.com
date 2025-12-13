@@ -43,7 +43,7 @@ headings:
 	[<span class='synopsis'><code>--separate-git-dir</code></span> <em>&lt;directorio-git&gt;</em>] [<span class='synopsis'><code>--object-format=</code></span><em>&lt;formato&gt;</em>]
 	[<span class='synopsis'><code>--ref-format=</code></span><em>&lt;formato&gt;</em>]
 	[<span class='synopsis'><code>-b</code></span> <em>&lt;nombre-de-rama&gt;</em> | <span class='synopsis'><code>--initial-branch=</code></span><em>&lt;nombre-de-rama&gt;</em>]
-	[<span class='synopsis'><code>--shared</code></span>[<span class='synopsis'><code>=</code></span><em>&lt;permisos&gt;</em>]] [<em><span class="hover-term" data-term="directorio">&lt;directorio&gt;</span></em>]</pre>
+	[<span class='synopsis'><code>--shared</code></span>[<span class='synopsis'><code>=</code></span><em>&lt;permisos&gt;</em>]] [<em>&lt;directorio&gt;</em>]</pre>
 </div>
 </div>
 </div>
@@ -124,7 +124,10 @@ headings:
 <dt class="hdlist1" id="git-init-spanclasssynopsiscode-bcodeemltnombre-de-ramagtemspan"> <a class="anchor" href="#git-init--bnombre-de-rama"></a> <a class="anchor" href="#git-init-spanclasssynopsiscode-bcodeemltnombre-de-ramagtemspan"></a><span class='synopsis'><code>-b</code><em>&lt;nombre-de-rama&gt;</em></span> </dt>
 <dt class="hdlist1" id="git-init-spanclasssynopsiscode--initial-branchcodeemltnombre-de-ramagtemspan"> <a class="anchor" href="#git-init---initial-branchnombre-de-rama"></a> <a class="anchor" href="#git-init-spanclasssynopsiscode--initial-branchcodeemltnombre-de-ramagtemspan"></a><span class='synopsis'><code>--initial-branch=</code><em>&lt;nombre-de-rama&gt;</em></span> </dt>
 <dd>
-<p>Usar el <em>&lt;nombre-de-rama&gt;</em> especificado para la rama inicial en el repositorio recientemente creado. Si no se especifica, recae en el nombre predeterminado (actualmente <span class='synopsis'><code>master</code></span>, pero está sujeto a cambio en el futuro; el nombre puede ser personalizado con la variable de configuración <span class='synopsis'><code>init.defaultBranch</code></span>).</p>
+<p>Usar el <em>&lt;nombre-de-rama&gt;</em> especificado para la rama inicial en el repositorio recientemente creado. Si no se especifica, recae en el nombre predeterminado
+(actualmente <span class='synopsis'><code>master</code></span>, pero cambiará a <span class='synopsis'><em>main`cuando se libere Git 3.0).
+</em>
+<em>El nombre predeterminado puede cambiarse con la variable de configuración `init.defaultBranch</em></span>.</p>
 </dd>
 <dt class="hdlist1" id="git-init-spanclasssynopsiscode--sharedcodecodecodecodefalsecodecodetruecodecodeumaskcodecodegroupcodecodeallcodecodeworldcodecodeeverybodycodeemltpermisogtemspan"> <a class="anchor" href="#git-init---sharedfalsetrueumaskgroupallworldeverybodypermiso"></a> <a class="anchor" href="#git-init-spanclasssynopsiscode--sharedcodecodecodecodefalsecodecodetruecodecodeumaskcodecodegroupcodecodeallcodecodeworldcodecodeeverybodycodeemltpermisogtemspan"></a><span class='synopsis'><code>--shared</code>[<code>=</code>(<code>false</code>|<code>true</code>|<code>umask</code>|<code>group</code>|<code>all</code>|<code>world</code>|<code>everybody</code><em>&lt;permiso&gt;</em>)]</span> </dt>
 <dd>
@@ -167,7 +170,7 @@ headings:
 <p>Predeterminadamente, la bandera de configuración <span class='synopsis'><code>receive.denyNonFastForwards</code></span> está habilitada en repositorios compartidos, de tal manera que no se pueda forzar un push no-fast-forward en él.</p>
 </div>
 <div class="paragraph">
-<p>Si se proporciona un <em><span class="hover-term" data-term="directorio">&lt;directorio&gt;</span></em>, el comando se ejecuta dentro de éste. Si éste directorio no existe, se creará.</p>
+<p>Si se proporciona un <em>&lt;directorio&gt;</em>, el comando se ejecuta dentro de éste. Si éste directorio no existe, se creará.</p>
 </div>
 </div>
 </div>

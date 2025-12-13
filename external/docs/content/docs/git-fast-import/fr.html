@@ -99,11 +99,17 @@ headings:
 <dt class="hdlist1" id="git-fast-import---allow-unsafe-features"> <a class="anchor" href="#git-fast-import---allow-unsafe-features"></a>--allow-unsafe-features </dt>
 <dd>
 <p>De nombreuses options de ligne de commande peuvent être fournies dans le flux de fast-import lui-même en utilisant les commandes <span class='synopsis'><code>feature</code></span> ou <span class='synopsis'><code>option</code></span>. Cependant, certaines de ces options ne sont pas sûres (par exemple, permettre à fast-import d&#8217;accéder au système de fichiers en dehors du dépôt). Ces options sont désactivées par défaut, mais peuvent être autorisées en fournissant cette option sur la ligne de commande. Ceci n&#8217;affecte actuellement que les commandes <span class='synopsis'><code>export-marks</code></span>, <span class='synopsis'><code>import-marks</code></span>, et <span class='synopsis'><code>import-marks-if-exists</code></span>.</p>
-<div class="literalblock">
-<div class="content">
-<pre>N'activez cette option que si vous faites confiance au programme qui génère le flux d'importation rapide ! Cette option est activée automatiquement pour les assistants à distance qui utilisent la capacité `import`, car ils sont déjà autorisés à exécuter leur propre code.</pre>
+<div class="paragraph">
+<p>N&#8217;activez cette option que si vous faites confiance au programme qui génère le flux d&#8217;importation rapide ! Cette option est activée automatiquement pour les assistants à distance qui utilisent la capacité <span class='synopsis'><code>import</code></span>, car ils sont déjà autorisés à exécuter leur propre code.</p>
 </div>
-</div>
+</dd>
+<dt class="hdlist1" id="git-fast-import---signed-tagsverbatimwarn-verbatimwarn-stripstripabort"> <a class="anchor" href="#git-fast-import---signed-tagsverbatimwarn-verbatimwarn-stripstripabort"></a>--signed-tags=(verbatim|warn-verbatim|warn-strip|strip|abort) </dt>
+<dd>
+<p>Specify how to handle signed tags. Behaves in the same way as the same option in <a href='{{< relurl "docs/git-fast-export/fr" >}}'>git-fast-export[1]</a>, except that default is <em>verbatim</em> (instead of <em>abort</em>).</p>
+</dd>
+<dt class="hdlist1" id="git-fast-import---signed-commitsverbatimwarn-verbatimwarn-stripstripabort"> <a class="anchor" href="#git-fast-import---signed-commitsverbatimwarn-verbatimwarn-stripstripabort"></a>--signed-commits=(verbatim|warn-verbatim|warn-strip|strip|abort) </dt>
+<dd>
+<p>Specify how to handle signed commits. Behaves in the same way as the same option in <a href='{{< relurl "docs/git-fast-export/fr" >}}'>git-fast-export[1]</a>, except that default is <em>verbatim</em> (instead of <em>abort</em>).</p>
 </dd>
 </dl>
 </div>
@@ -142,7 +148,8 @@ headings:
 <dd>
 <p>Comme --import-marks mais au lieu de faire une erreur, ignore silencieusement le fichier s’il n’existe pas.</p>
 </dd>
-<dt class="hdlist1" id="git-fast-import---no-relative-marks"> <a class="anchor" href="#git-fast-import---no-relative-marks"></a>--[no-]relative-marks </dt>
+<dt class="hdlist1" id="git-fast-import---relative-marks"> <a class="anchor" href="#git-fast-import---relative-marks"></a>--relative-marks </dt>
+<dt class="hdlist1" id="git-fast-import---no-relative-marks"> <a class="anchor" href="#git-fast-import---no-relative-marks"></a>--no-relative-marks </dt>
 <dd>
 <p>Après avoir spécifié --relative-marks, les chemins spécifiés avec --import-marks= et --export-marks= sont relatifs à un répertoire interne du dépôt actuel. Dans git-fast-import, cela signifie que les chemins sont relatifs au répertoire .git/info/fast-import. Cependant, d&#8217;autres importateurs peuvent utiliser un emplacement différent.</p>
 <div class="paragraph">
@@ -207,7 +214,7 @@ headings:
 <h2 id="_performance"><a class="anchor" href="#_performance"></a>PERFORMANCE</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The design of fast-import allows it to import large projects in a minimum amount of memory usage and processing time. Assuming the frontend is able to keep up with fast-import and feed it a constant stream of data, import times for projects holding 10+ years of history and containing 100,000+ individual commits are generally completed in just 1-2 hours on quite modest hardware (~$2,000 USD in 2007).</p>
+<p>La conception de fast-import lui permet d’importer de grands projets dans un minimum d’utilisation de la mémoire et de temps de traitement. En supposant que le frontal est capable de suivre fast-import et de lui fournir un flux constant de données, les importations pour les projets contenant plus de 10 ans d’histoire et contenant plus de 100 000 commits individuels sont généralement réalisées en seulement 1 à 2 heures sur du matériel assez modeste (~ 2 000 USD en 2007).</p>
 </div>
 <div class="paragraph">
 <p>La plupart des goulets d&#8217;étranglement semblent se situer au niveau de l&#8217;accès aux données de la source étrangère (la source ne peut tout simplement pas extraire les révisions assez rapidement) ou de l&#8217;E/S du disque (l&#8217;importation rapide écrit aussi vite que le disque peut prendre les données). Les importations s&#8217;exécuteront plus rapidement si les données sources sont stockées sur un lecteur différent de celui du dépôt Git de destination (en raison d&#8217;une moindre contention des entrées/sorties).</p>
@@ -467,7 +474,7 @@ headings:
 <p>A commit may have at most one signature for the SHA-1 object format (stored in the "gpgsig" header) and one for the SHA-256 object format (stored in the "gpgsig-sha256" header).</p>
 </div>
 <div class="paragraph">
-<p>See below for a detailed description of the <span class='synopsis'><code>data</code></span> command which contains the raw signature data.</p>
+<p>Voir ci-dessous pour une description détaillée de la commande <span class='synopsis'><code>data</code></span> qui contient les données de signature brute.</p>
 </div>
 <div class="paragraph">
 <p>Signatures are not yet checked in the current implementation though. (Already setting the <span class='synopsis'><code>extensions.compatObjectFormat</code></span> configuration option might help with verifying both SHA-1 and SHA-256 object format signatures when it will be implemented.)</p>
@@ -1068,7 +1075,7 @@ from :938</pre>
 <p>Voir <span class='synopsis'><code>filemodify</code></span> ci-dessus pour une description détaillée de <span class='synopsis'><em>&lt;chemin&gt;</em></span>.</p>
 </div>
 <div class="paragraph">
-<p>La sortie utilise le même format que <span class='synopsis'><code>git</code> <code>ls-tree</code> <em><span class="hover-term" data-term="arbre">&lt;arbre&gt;</span></em> <code>--</code> <em>&lt;chemin&gt;</em></span> :</p>
+<p>La sortie utilise le même format que <span class='synopsis'><code>git</code> <code>ls-tree</code> <em>&lt;arbre&gt;</em> <code>--</code> <em>&lt;chemin&gt;</em></span> :</p>
 </div>
 <div class="exampleblock">
 <div class="content">

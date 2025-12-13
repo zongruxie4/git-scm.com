@@ -22,6 +22,8 @@ headings:
   id: _url_git
 - text: DISTANTS
   id: _distants
+- text: BRANCHES AMONT
+  id: UPSTREAM-BRANCHES
 - text: LES BRANCHES DE SUIVI À DISTANCE CONFIGURÉES
   id: CRTB
 - text: ÉLAGAGE
@@ -55,10 +57,10 @@ headings:
 <h2 id="_synopsis"><a class="anchor" href="#_synopsis"></a>SYNOPSIS</h2>
 <div class="sectionbody">
 <div class="verseblock">
-<pre class="content"><em>git fetch</em> [&lt;options&gt;] [<span class="hover-term" data-term="dépôt">&lt;dépôt&gt;</span> [&lt;spéc-de-réf&gt;&#8230;&#8203;]]
-<em>git fetch</em> [&lt;options&gt;] &lt;groupe&gt;
-<em>git fetch</em> --multiple [&lt;options&gt;] [(<span class="hover-term" data-term="dépôt">&lt;dépôt&gt;</span> | &lt;groupe&gt;)&#8230;&#8203;]
-<em>git fetch</em> --all [&lt;options&gt;]</pre>
+<pre class="content"><span class='synopsis'><code>git</code></span> <span class='synopsis'><code>fetch'</code></span> [<em>&lt;options&gt;</em>] [<em>&lt;dépôt&gt;</em> [<em>&lt;spéc-de-réf&gt;</em>&#8230;&#8203;]]
+<span class='synopsis'><code>git</code></span> <span class='synopsis'><code>fetch'</code></span> [<em>&lt;options&gt;</em>] <em>&lt;groupe&gt;</em>
+<span class='synopsis'><code>git</code></span> <span class='synopsis'><code>fetch'</code></span> <span class='synopsis'><code>--multiple</code></span> [<em>&lt;options&gt;</em>] [(<em>&lt;dépôt&gt;</em>|<em>&lt;groupe&gt;</em>)&#8230;&#8203;]
+<span class='synopsis'><code>git</code></span> <span class='synopsis'><code>fetch'</code></span> <span class='synopsis'><code>--all</code></span> [<em>&lt;options&gt;</em>]</pre>
 </div>
 </div>
 </div>
@@ -66,13 +68,13 @@ headings:
 <h2 id="_description"><a class="anchor" href="#_description"></a>DESCRIPTION</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Récupérer des branches et/ou des étiquettes (collectivement, "réfs") depuis un ou plusieurs autres dépôts, ainsi que les objets nécessaires pour compléter leur historique. Les branches de suivi à distance sont mises à jour (voir la description de &lt;spéc-de-réf&gt; ci-dessous pour les moyens de contrôler ce comportement).</p>
+<p>Récupérer des branches et/ou des étiquettes (collectivement, "réfs") depuis un ou plusieurs autres dépôts, ainsi que les objets nécessaires pour compléter leur historique. Les branches de suivi à distance sont mises à jour (voir la description de <em>&lt;spéc-de-réf&gt;</em> ci-dessous pour les moyens de contrôler ce comportement).</p>
 </div>
 <div class="paragraph">
-<p>Par défaut, toute étiquette qui pointe vers les historiques recherchés est également recherchée ; l&#8217;effet est de rechercher les étiquettes qui pointent vers les branches qui vous intéressent. Ce comportement par défaut peut être modifié en utilisant les options --tags ou --no-tags ou en configurant remote.&lt;nom&gt;.tagOpt. En utilisant une spécification de référence qui récupère les étiquettes explicitement, vous pouvez également récupérer les étiquettes qui ne pointent pas sur les branches qui vous intéressent.</p>
+<p>Par défaut, toute étiquette qui pointe vers les historiques recherchés est également recherchée ; l&#8217;effet est de rechercher les étiquettes qui pointent vers les branches qui vous intéressent. Ce comportement par défaut peut être modifié en utilisant les options <span class='synopsis'><code>--tags</code></span> ou <span class='synopsis'><code>--no-tags</code></span> ou en configurant <span class='synopsis'><code>remote.</code><em>&lt;nom&gt;</em><code>.tagOpt</code></span>. En utilisant une spécification de référence qui récupère les étiquettes explicitement, vous pouvez également récupérer les étiquettes qui ne pointent pas sur les branches qui vous intéressent.</p>
 </div>
 <div class="paragraph">
-<p><em>git fetch</em> peut aller chercher à partir d&#8217;un seul dépôt nommé ou d&#8217;une seule URL, ou à partir de plusieurs dépôts à la fois si &lt;groupe&gt; est donné et qu&#8217;il y a une entrée remotes.&lt;groupe&gt; dans le fichier de configuration. (Voir <a href='{{< relurl "docs/git-config/fr" >}}'>git-config[1]</a>).</p>
+<p><span class='synopsis'><code>git</code> <code>fetch</code></span> peut aller chercher à partir d&#8217;un seul dépôt nommé ou d&#8217;une seule URL, ou à partir de plusieurs dépôts à la fois si <em>&lt;groupe&gt;</em> est donné et qu&#8217;il y a une entrée <span class='synopsis'><code>remotes.</code><em>&lt;groupe&gt;</em></span> dans le fichier de configuration. (Voir <a href='{{< relurl "docs/git-config/fr" >}}'>git-config[1]</a>).</p>
 </div>
 <div class="paragraph">
 <p>Lorsqu&#8217;aucun distant n&#8217;est spécifié, par défaut le distant <span class='synopsis'><code>origin</code></span> sera utilisé, à moins qu&#8217;il n&#8217;y ait une branche amont configurée pour la branche courante.</p>
@@ -87,47 +89,48 @@ headings:
 <div class="sectionbody">
 <div class="dlist">
 <dl>
-<dt class="hdlist1" id="git-fetch---no-all"> <a class="anchor" href="#git-fetch---no-all"></a>--[no-]all </dt>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscode--allcodespan"> <a class="anchor" href="#git-fetch---all"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscode--allcodespan"></a><span class='synopsis'><code>--all</code></span> </dt>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscode--no-allcodespan"> <a class="anchor" href="#git-fetch---no-all"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscode--no-allcodespan"></a><span class='synopsis'><code>--no-all</code></span> </dt>
 <dd>
 <p>Récupérer tous les distants, à l&#8217;exception de ceux qui ont la variable de configuration <span class='synopsis'><code>remote.</code><em>&lt;nom&gt;</em><code>.skipFetchAll</code></span> renseignée. Cela surcharge la variable de configuration <span class='synopsis'><code>fetch.all</code></span> .</p>
 </dd>
-<dt class="hdlist1" id="git-fetch--a"> <a class="anchor" href="#git-fetch--a"></a>-a </dt>
-<dt class="hdlist1" id="git-fetch---append"> <a class="anchor" href="#git-fetch---append"></a>--append </dt>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscode-acodespan"> <a class="anchor" href="#git-fetch--a"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscode-acodespan"></a><span class='synopsis'><code>-a</code></span> </dt>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscode--appendcodespan"> <a class="anchor" href="#git-fetch---append"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscode--appendcodespan"></a><span class='synopsis'><code>--append</code></span> </dt>
 <dd>
 <p>Ajouter les noms de références et les noms d&#8217;objets des références récupérées au contenu existant de <span class='synopsis'><code>.git/FETCH_HEAD</code></span>. Sans cette option, les anciennes données dans <span class='synopsis'><code>.git/FETCH_HEAD</code></span> seront écrasées.</p>
 </dd>
-<dt class="hdlist1" id="git-fetch---atomic"> <a class="anchor" href="#git-fetch---atomic"></a>--atomic </dt>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscode--atomiccodespan"> <a class="anchor" href="#git-fetch---atomic"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscode--atomiccodespan"></a><span class='synopsis'><code>--atomic</code></span> </dt>
 <dd>
 <p>Utiliser une transaction atomique pour mettre à jour les références locales. Soit toutes les références sont mises à jour, soit, en cas d&#8217;erreur, aucune référence n&#8217;est mise à jour.</p>
 </dd>
-<dt class="hdlist1" id="git-fetch---depthltprofondeurgt"> <a class="anchor" href="#git-fetch---depthprofondeur"></a> <a class="anchor" href="#git-fetch---depthltprofondeurgt"></a>--depth=&lt;profondeur&gt; </dt>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscode--depthcodeemltprofondeurgtemspan"> <a class="anchor" href="#git-fetch---depthprofondeur"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscode--depthcodeemltprofondeurgtemspan"></a><span class='synopsis'><code>--depth=</code><em>&lt;profondeur&gt;</em></span> </dt>
 <dd>
 <p>Limiter la récupération au nombre spécifié de commits à partir du sommet de l&#8217;historique de chaque branche distante. Si vous allez chercher dans un dépôt "superficiel" créé par <span class='synopsis'><code>git</code> <code>clone</code></span> avec l&#8217;option <span class='synopsis'><code>--depth=</code><em>&lt;profondeur&gt;</em></span> (voir <a href='{{< relurl "docs/git-clone/fr" >}}'>git-clone[1]</a>), approfondir ou raccourcir l&#8217;historique jusqu&#8217;au nombre spécifié de validations. Les étiquettes pour les commits approfondis ne sont pas récupérées.</p>
 </dd>
-<dt class="hdlist1" id="git-fetch---deepenltprofondeurgt"> <a class="anchor" href="#git-fetch---deepenprofondeur"></a> <a class="anchor" href="#git-fetch---deepenltprofondeurgt"></a>--deepen=&lt;profondeur&gt; </dt>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscode--deepencodeemltprofondeurgtemspan"> <a class="anchor" href="#git-fetch---deepenprofondeur"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscode--deepencodeemltprofondeurgtemspan"></a><span class='synopsis'><code>--deepen=</code><em>&lt;profondeur&gt;</em></span> </dt>
 <dd>
-<p>Semblable à --depth, sauf que cela précise le nombre de commits à partir de la limite actuelle superficielle au lieu du sommet de l&#8217;historique de chaque branche distante.</p>
+<p>Semblable à <span class='synopsis'><code>--depth</code></span>, sauf que cela précise le nombre de commits à partir de la limite actuelle superficielle au lieu du sommet de l&#8217;historique de chaque branche distante.</p>
 </dd>
-<dt class="hdlist1" id="git-fetch---shallow-sinceltdategt"> <a class="anchor" href="#git-fetch---shallow-sincedate"></a> <a class="anchor" href="#git-fetch---shallow-sinceltdategt"></a>--shallow-since=&lt;date&gt; </dt>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscode--shallow-sincecodeemltdategtemspan"> <a class="anchor" href="#git-fetch---shallow-sincedate"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscode--shallow-sincecodeemltdategtemspan"></a><span class='synopsis'><code>--shallow-since=</code><em>&lt;date&gt;</em></span> </dt>
 <dd>
-<p>Approfondir ou raccourcir l&#8217;historique d&#8217;un dépôt superficiel pour inclure tous les commits accessibles après &lt;date&gt;.</p>
+<p>Approfondir ou raccourcir l&#8217;historique d&#8217;un dépôt superficiel pour inclure tous les commits accessibles après <em>&lt;date&gt;</em>.</p>
 </dd>
-<dt class="hdlist1" id="git-fetch-spanclasssynopsiscode--shallow-excludecodeemltrfgtemspan"> <a class="anchor" href="#git-fetch---shallow-excluderf"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscode--shallow-excludecodeemltrfgtemspan"></a><span class='synopsis'><code>--shallow-exclude=</code><em>&lt;réf&gt;</em></span> </dt>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscode--shallow-excludecodeemltrvisiongtemspan"> <a class="anchor" href="#git-fetch---shallow-excludervision"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscode--shallow-excludecodeemltrvisiongtemspan"></a><span class='synopsis'><code>--shallow-exclude=</code><em>&lt;révision&gt;</em></span> </dt>
 <dd>
 <p>Approfondir ou raccourcir l&#8217;historique d&#8217;un dépôt superficiel afin d&#8217;exclure les commits accessibles depuis une branche ou une étiquette distante spécifiée. Cette option peut être spécifiée plusieurs fois.</p>
 </dd>
-<dt class="hdlist1" id="git-fetch---unshallow"> <a class="anchor" href="#git-fetch---unshallow"></a>--unshallow </dt>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscode--unshallowcodespan"> <a class="anchor" href="#git-fetch---unshallow"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscode--unshallowcodespan"></a><span class='synopsis'><code>--unshallow</code></span> </dt>
 <dd>
 <p>Si le dépôt de sources est complet, convertir un dépôt superficiel en un dépôt complet, en supprimant toutes les limitations imposées par les dépôts superficiels.</p>
 <div class="paragraph">
 <p>Si le dépôt source est superficiel, il faut en extraire le plus possible afin que le dépôt actuel ait le même historique que le dépôt source.</p>
 </div>
 </dd>
-<dt class="hdlist1" id="git-fetch---update-shallow"> <a class="anchor" href="#git-fetch---update-shallow"></a>--update-shallow </dt>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscode--update-shallowcodespan"> <a class="anchor" href="#git-fetch---update-shallow"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscode--update-shallowcodespan"></a><span class='synopsis'><code>--update-shallow</code></span> </dt>
 <dd>
-<p>Par défaut, lors de la récupération d&#8217;un dépôt superficiel, <span class='synopsis'><code>git</code> <code>fetch</code></span> refuse les références qui nécessitent une mise à jour de .git/shallow. Cette option met à jour le fichier .git/shallow et accepte de telles références.</p>
+<p>Par défaut, lors de la récupération d&#8217;un dépôt superficiel, <span class='synopsis'><code>git</code> <code>fetch</code></span> refuse les références qui nécessitent une mise à jour de <span class='synopsis'><code>.git/shallow</code></span>. Cette option met à jour le fichier <span class='synopsis'><code>.git/shallow</code></span> et accepte de telles références.</p>
 </dd>
-<dt class="hdlist1" id="git-fetch---negotiation-tipltcommitglobgt"> <a class="anchor" href="#git-fetch---negotiation-tipcommitglob"></a> <a class="anchor" href="#git-fetch---negotiation-tipltcommitglobgt"></a>--negotiation-tip=&lt;commit|glob&gt; </dt>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscode--negotiation-tipcodeemltcommitgtememltglobgtemspan"> <a class="anchor" href="#git-fetch---negotiation-tipcommitglob"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscode--negotiation-tipcodeemltcommitgtememltglobgtemspan"></a><span class='synopsis'><code>--negotiation-tip=</code>(<em>&lt;commit&gt;</em>|<em>&lt;glob&gt;</em>)</span> </dt>
 <dd>
 <p>Par défaut, Git signalera au serveur les commits accessibles à partir de toutes les références locales pour trouver les commits communs afin de réduire la taille du fichier de paquet à recevoir. Si ceci est spécifié, Git ne signalera que les commits accessibles à partir des sommets donnés. Ceci est utile pour accélérer les recherches lorsque l&#8217;utilisateur sait quelle réf locale est susceptible d&#8217;avoir des commits en commun avec la réf amont qui est recherchée.</p>
 <div class="paragraph">
@@ -140,105 +143,108 @@ headings:
 <p>Voir aussi les variables de configuration <span class='synopsis'><code>fetch.negotiationAlgorithm</code></span> et <span class='synopsis'><code>push.negotiate</code></span> documentées dans <a href='{{< relurl "docs/git-config/fr" >}}'>git-config[1]</a>, ainsi que l&#8217;option <span class='synopsis'><code>--negotiate-only</code></span> ci-après.</p>
 </div>
 </dd>
-<dt class="hdlist1" id="git-fetch---negotiate-only"> <a class="anchor" href="#git-fetch---negotiate-only"></a>--negotiate-only </dt>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscode--negotiate-onlycodespan"> <a class="anchor" href="#git-fetch---negotiate-only"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscode--negotiate-onlycodespan"></a><span class='synopsis'><code>--negotiate-only</code></span> </dt>
 <dd>
-<p>Ne rien récupérer du serveur, et à la place afficher les ancêtres des arguments fournis par <span class='synopsis'><code>--negotiation-tip=*</code></span>, que nous avons en commun avec le serveur.</p>
+<p>Ne rien récupérer du serveur, et à la place afficher les ancêtres des arguments fournis par <span class='synopsis'><code>--negotiation-tip=</code></span>, que nous avons en commun avec le serveur.</p>
 <div class="paragraph">
-<p>C&#8217;est incompatible avec <span class='synopsis'><code>--recurse-submodules=</code>[<code>yes</code>|<code>on-demand</code>]</span>. En interne, ceci est utilisé pour implémenter l&#8217;option <span class='synopsis'><code>push.negotiate</code></span>, voir <a href='{{< relurl "docs/git-config/fr" >}}'>git-config[1]</a>.</p>
+<p>C&#8217;est incompatible avec <span class='synopsis'><code>--recurse-submodules=</code>(<code>yes</code>|<code>on-demand</code>)</span>. En interne, ceci est utilisé pour implémenter l&#8217;option <span class='synopsis'><code>push.negotiate</code></span>, voir <a href='{{< relurl "docs/git-config/fr" >}}'>git-config[1]</a>.</p>
 </div>
 </dd>
-<dt class="hdlist1" id="git-fetch---dry-run"> <a class="anchor" href="#git-fetch---dry-run"></a>--dry-run </dt>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscode--dry-runcodespan"> <a class="anchor" href="#git-fetch---dry-run"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscode--dry-runcodespan"></a><span class='synopsis'><code>--dry-run</code></span> </dt>
 <dd>
 <p>Montrer ce qui serait fait, sans faire de changements.</p>
 </dd>
-<dt class="hdlist1" id="git-fetch---porcelain"> <a class="anchor" href="#git-fetch---porcelain"></a>--porcelain </dt>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscode--porcelaincodespan"> <a class="anchor" href="#git-fetch---porcelain"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscode--porcelaincodespan"></a><span class='synopsis'><code>--porcelain</code></span> </dt>
 <dd>
 <p>Afficher la sortie sur la sortie standard dans un format facile à décrypter pour les scripts. Voir la section SORTIE dans <a href='{{< relurl "docs/git-fetch/fr" >}}'>git-fetch[1]</a> pour plus de détails.</p>
 <div class="paragraph">
-<p>C&#8217;est incompatible avec <span class='synopsis'><code>--recurse-submodules=</code>[<code>yes</code>|<code>on-demand</code>]</span> et a la priorité sur l&#8217;option de configuration <span class='synopsis'><code>fetch.output</code></span>.</p>
+<p>C&#8217;est incompatible avec <span class='synopsis'><code>--recurse-submodules=</code>(<code>yes</code>|<code>on-demand</code>)</span> et a la priorité sur l&#8217;option de configuration <span class='synopsis'><code>fetch.output</code></span>.</p>
 </div>
 </dd>
-<dt class="hdlist1" id="git-fetch---no-write-fetch-head"> <a class="anchor" href="#git-fetch---no-write-fetch-head"></a>--[no-]write-fetch-head </dt>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscode--write-fetch-headcodespan"> <a class="anchor" href="#git-fetch---write-fetch-head"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscode--write-fetch-headcodespan"></a><span class='synopsis'><code>--write-fetch-head</code></span> </dt>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscode--no-write-fetch-headcodespan"> <a class="anchor" href="#git-fetch---no-write-fetch-head"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscode--no-write-fetch-headcodespan"></a><span class='synopsis'><code>--no-write-fetch-head</code></span> </dt>
 <dd>
 <p>Ecrire la liste des refs distants récupérés dans le fichier <span class='synopsis'><code>FETCH_HEAD</code></span> directement sous <span class='synopsis'><code>$GIT_DIR</code></span>. C&#8217;est la valeur par défaut. Passer <span class='synopsis'><code>--no-write-fetch-head</code></span> depuis la ligne de commande indique à Git de ne pas écrire le fichier. Avec l&#8217;option <span class='synopsis'><code>--dry-run</code></span>, le fichier n&#8217;est jamais écrit.</p>
 </dd>
-<dt class="hdlist1" id="git-fetch--f"> <a class="anchor" href="#git-fetch--f"></a>-f </dt>
-<dt class="hdlist1" id="git-fetch---force"> <a class="anchor" href="#git-fetch---force"></a>--force </dt>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscode-fcodespan"> <a class="anchor" href="#git-fetch--f"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscode-fcodespan"></a><span class='synopsis'><code>-f</code></span> </dt>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscode--forcecodespan"> <a class="anchor" href="#git-fetch---force"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscode--forcecodespan"></a><span class='synopsis'><code>--force</code></span> </dt>
 <dd>
-<p>Lorsque <em>git fetch</em> est utilisé avec la spécification de référence <span class='synopsis'><em>&lt;src&gt;</em><code>:</code><em>&lt;dst&gt;</em></span>, il peut refuser de mettre à jour la branche locale comme cela a été discuté
-dans la partie <span class='synopsis'><em>&lt;spécificateur-de-référence&gt;</em></span> ci-dessous.
+<p>Lorsque <span class='synopsis'><code>git</code> <code>fetch</code></span> est utilisé avec la spécification de référence <span class='synopsis'><em>&lt;src&gt;</em><code>:</code><em>&lt;dst&gt;</em></span>, il peut refuser de mettre à jour la branche locale comme cela a été discuté dans la partie <em>&lt;refspec&gt;</em> ci-dessous.
 Cette option permet de passer outre à ce contrôle.</p>
 </dd>
-<dt class="hdlist1" id="git-fetch--k"> <a class="anchor" href="#git-fetch--k"></a>-k </dt>
-<dt class="hdlist1" id="git-fetch---keep"> <a class="anchor" href="#git-fetch---keep"></a>--keep </dt>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscode-kcodespan"> <a class="anchor" href="#git-fetch--k"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscode-kcodespan"></a><span class='synopsis'><code>-k</code></span> </dt>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscode--keepcodespan"> <a class="anchor" href="#git-fetch---keep"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscode--keepcodespan"></a><span class='synopsis'><code>--keep</code></span> </dt>
 <dd>
 <p>Conserver le paquet téléchargé.</p>
 </dd>
-<dt class="hdlist1" id="git-fetch---multiple"> <a class="anchor" href="#git-fetch---multiple"></a>--multiple </dt>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscode--multiplecodespan"> <a class="anchor" href="#git-fetch---multiple"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscode--multiplecodespan"></a><span class='synopsis'><code>--multiple</code></span> </dt>
 <dd>
-<p>Permettre de spécifier plusieurs arguments <span class="hover-term" data-term="dépôt">&lt;dépôt&gt;</span> et &lt;groupe&gt;. Aucun &lt;spécificateur-de-référence&gt; ne peut être spécifié.</p>
+<p>Allow several <em>&lt;repository&gt;</em> and <em>&lt;group&gt;</em> arguments to be specified. No <em>&lt;refspec&gt;</em>s may be specified.</p>
 </dd>
-<dt class="hdlist1" id="git-fetch---no-auto-maintenance"> <a class="anchor" href="#git-fetch---no-auto-maintenance"></a>--[no-]auto-maintenance </dt>
-<dt class="hdlist1" id="git-fetch---no-auto-gc"> <a class="anchor" href="#git-fetch---no-auto-gc"></a>--[no-]auto-gc </dt>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscode--auto-maintenancecodespan"> <a class="anchor" href="#git-fetch---auto-maintenance"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscode--auto-maintenancecodespan"></a><span class='synopsis'><code>--auto-maintenance</code></span> </dt>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscode--no-auto-maintenancecodespan"> <a class="anchor" href="#git-fetch---no-auto-maintenance"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscode--no-auto-maintenancecodespan"></a><span class='synopsis'><code>--no-auto-maintenance</code></span> </dt>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscode--auto-gccodespan"> <a class="anchor" href="#git-fetch---auto-gc"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscode--auto-gccodespan"></a><span class='synopsis'><code>--auto-gc</code></span> </dt>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscode--no-auto-gccodespan"> <a class="anchor" href="#git-fetch---no-auto-gc"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscode--no-auto-gccodespan"></a><span class='synopsis'><code>--no-auto-gc</code></span> </dt>
 <dd>
-<p>Exécuter <span class='synopsis'><code>git</code> <code>maintenance</code> <code>--auto</code></span> à la fin pour effectuer la maintenance automatique du dépôt si nécessaire. (<span class='synopsis'><code>--</code>[<code>no-</code>]<code>auto-gc</code></span> est un synonym.) Ceci est activé par défaut.</p>
+<p>Exécuter <span class='synopsis'><code>git</code> <code>maintenance</code> <code>--auto</code></span> à la fin pour effectuer la maintenance automatique du dépôt si nécessaire. Ceci est activé par défaut.</p>
 </dd>
-<dt class="hdlist1" id="git-fetch---no-write-commit-graph"> <a class="anchor" href="#git-fetch---no-write-commit-graph"></a>--[no-]write-commit-graph </dt>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscode--write-commit-graphcodespan"> <a class="anchor" href="#git-fetch---write-commit-graph"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscode--write-commit-graphcodespan"></a><span class='synopsis'><code>--write-commit-graph</code></span> </dt>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscode--no-write-commit-graphcodespan"> <a class="anchor" href="#git-fetch---no-write-commit-graph"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscode--no-write-commit-graphcodespan"></a><span class='synopsis'><code>--no-write-commit-graph</code></span> </dt>
 <dd>
 <p>Écrire un graphe de commit après avoir récupéré. Ceci remplace le paramètre de configuration <span class='synopsis'><code>fetch.writeCommitGraph</code></span>.</p>
 </dd>
-<dt class="hdlist1" id="git-fetch---prefetch"> <a class="anchor" href="#git-fetch---prefetch"></a>--prefetch </dt>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscode--prefetchcodespan"> <a class="anchor" href="#git-fetch---prefetch"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscode--prefetchcodespan"></a><span class='synopsis'><code>--prefetch</code></span> </dt>
 <dd>
 <p>Modifier le spécificateur de référence configuré pour placer toutes les refs dans l&#8217;espace de noms <span class='synopsis'><code>refs/prefetch/</code></span>. Voir la tâche <span class='synopsis'><code>prefetch</code></span> dans <a href='{{< relurl "docs/git-maintenance/fr" >}}'>git-maintenance[1]</a>.</p>
 </dd>
-<dt class="hdlist1" id="git-fetch--p"> <a class="anchor" href="#git-fetch--p"></a>-p </dt>
-<dt class="hdlist1" id="git-fetch---prune"> <a class="anchor" href="#git-fetch---prune"></a>--prune </dt>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscode-pcodespan"> <a class="anchor" href="#git-fetch--p"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscode-pcodespan"></a><span class='synopsis'><code>-p</code></span> </dt>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscode--prunecodespan"> <a class="anchor" href="#git-fetch---prune"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscode--prunecodespan"></a><span class='synopsis'><code>--prune</code></span> </dt>
 <dd>
-<p>Avant de récupérer, supprimer toutes les références de suivi à distance qui n&#8217;existent plus sur le dépôt distant. Les étiquettes ne sont pas sujettes à l&#8217;élagage si elles ne sont récupérées qu&#8217;en raison du suivi automatique de l&#8217;étiquette par défaut ou en raison d&#8217;une option --tags. Cependant, si les étiquettes sont récupérées en raison d&#8217;un spécificateur de référence explicite (soit en ligne de commande, soit dans la configuration distante, par exemple si le dépôt distant a été cloné avec l&#8217;option --mirror), alors elles sont également sujettes à l&#8217;élagage. La fourniture de <span class='synopsis'><code>--prune-tags</code></span> est une abréviation pour la fourniture du spécificateur de référence d&#8217;étiquette.</p>
+<p>Avant de récupérer, supprimer toutes les références de suivi à distance qui n&#8217;existent plus sur le dépôt distant. Les étiquettes ne sont pas sujettes à l&#8217;élagage si elles ne sont récupérées qu&#8217;en raison du suivi automatique de l&#8217;étiquette par défaut ou en raison d&#8217;une option <span class='synopsis'><code>--tags</code></span>. Cependant, si les étiquettes sont récupérées en raison d&#8217;un spécificateur de référence explicite (soit en ligne de commande, soit dans la configuration distante, par exemple si le dépôt distant a été cloné avec l&#8217;option <span class='synopsis'><code>--mirror</code></span>), alors elles sont également sujettes à l&#8217;élagage. La fourniture de <span class='synopsis'><code>--prune-tags</code></span> est une abréviation pour la fourniture du spécificateur de référence d&#8217;étiquette.</p>
 <div class="paragraph">
 <p>Voir la section ÉLAGAGE ci-dessous pour plus de détails.</p>
 </div>
 </dd>
-<dt class="hdlist1" id="git-fetch--P"> <a class="anchor" href="#git-fetch--P"></a>-P </dt>
-<dt class="hdlist1" id="git-fetch---prune-tags"> <a class="anchor" href="#git-fetch---prune-tags"></a>--prune-tags </dt>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscode-Pcodespan"> <a class="anchor" href="#git-fetch--P"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscode-Pcodespan"></a><span class='synopsis'><code>-P</code></span> </dt>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscode--prune-tagscodespan"> <a class="anchor" href="#git-fetch---prune-tags"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscode--prune-tagscodespan"></a><span class='synopsis'><code>--prune-tags</code></span> </dt>
 <dd>
 <p>Avant de récupérer, supprimer toutes les étiquettes locales qui n&#8217;existent plus sur le distant si <span class='synopsis'><code>--prune</code></span> est activé. Cette option doit être utilisée avec plus de précaution, car contrairement à <span class='synopsis'><code>--prune</code></span>, elle supprime toutes les références locales (étiquettes locales) qui ont été créées. Cette option est un raccourci pour la fourniture du spécificateur de référence d&#8217;étiquette explicite avec <span class='synopsis'><code>--prune</code></span>, voir la discussion à ce sujet dans sa documentation.</p>
 <div class="paragraph">
 <p>Voir la section ÉLAGAGE ci-dessous pour plus de détails.</p>
 </div>
 </dd>
-<dt class="hdlist1" id="git-fetch--n"> <a class="anchor" href="#git-fetch--n"></a>-n </dt>
-<dt class="hdlist1" id="git-fetch---no-tags"> <a class="anchor" href="#git-fetch---no-tags"></a>--no-tags </dt>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscode-ncodespan"> <a class="anchor" href="#git-fetch--n"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscode-ncodespan"></a><span class='synopsis'><code>-n</code></span> </dt>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscode--no-tagscodespan"> <a class="anchor" href="#git-fetch---no-tags"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscode--no-tagscodespan"></a><span class='synopsis'><code>--no-tags</code></span> </dt>
 <dd>
-<p>Par défaut, les étiquettes qui pointent sur des objets téléchargés à partir du dépôt distant sont récupérées et stockées localement. Cette option désactive le suivi automatique des étiquettes. Le comportement par défaut d&#8217;un distant peut être spécifié avec le paramètre remote.&lt;nom&gt;.tagOpt. Voir <a href='{{< relurl "docs/git-config/fr" >}}'>git-config[1]</a>.</p>
+<p>Par défaut, les étiquettes qui pointent sur des objets téléchargés à partir du dépôt distant sont récupérées et stockées localement. Cette option désactive le suivi automatique des étiquettes. Le comportement par défaut d&#8217;un distant peut être spécifié avec le paramètre <span class='synopsis'><code>remote.</code><em>&lt;nom&gt;</em><code>.tagOpt</code></span>. Voir <a href='{{< relurl "docs/git-config/fr" >}}'>git-config[1]</a>.</p>
 </dd>
-<dt class="hdlist1" id="git-fetch---refetch"> <a class="anchor" href="#git-fetch---refetch"></a>--refetch </dt>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscode--refetchcodespan"> <a class="anchor" href="#git-fetch---refetch"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscode--refetchcodespan"></a><span class='synopsis'><code>--refetch</code></span> </dt>
 <dd>
 <p>Au lieu de négocier avec le serveur pour éviter de transférer les commits et les objets associés qui sont déjà présents localement, cette option récupère tous les objets comme le ferait un nouveau clone. Utilisez cette option pour réappliquer un filtre de clone partiel depuis la configuration ou en utilisant <span class='synopsis'><code>--filter=</code></span> lorsque la définition du filtre a changé. La maintenance automatique post-récupération effectuera une consolidation des paquets de la base de données des objets pour supprimer tout objet en double.</p>
 </dd>
-<dt class="hdlist1" id="git-fetch---refmapltspcificateur-de-rfrencegt"> <a class="anchor" href="#git-fetch---refmapspcificateur-de-rfrence"></a> <a class="anchor" href="#git-fetch---refmapltspcificateur-de-rfrencegt"></a>--refmap=&lt;spécificateur-de-référence&gt; </dt>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscode--refmapcodeemltspc-de-rfgtemspan"> <a class="anchor" href="#git-fetch---refmapspc-de-rf"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscode--refmapcodeemltspc-de-rfgtemspan"></a><span class='synopsis'><code>--refmap=</code><em>&lt;spéc-de-réf&gt;</em></span> </dt>
 <dd>
-<p>Lors de la récupération des références listées en ligne de commande, utiliser la spécification de référence (qui peut être donnée plusieurs fois) pour mapper les références sur les branches de suivi à distance, au lieu des valeurs des variables de configuration <span class='synopsis'><code>remote.*.fetch</code></span> pour le dépôt distant. Fournir un <span class='synopsis'><em>&lt;spécificateur-de-référence&gt;</em></span> vide à l&#8217;option <span class='synopsis'><code>--refmap</code></span> fait que Git ignore les spécification de référence configurées et se fie entièrement aux spécifications de référence fournies comme arguments de la ligne de commande. Voir la section sur les "Branches de suivi à distance configurées" pour plus de détails.</p>
+<p>Lors de la récupération des références listées en ligne de commande, utiliser la spécification de référence (qui peut être donnée plusieurs fois) pour mapper les références sur les branches de suivi à distance, au lieu des valeurs des variables de configuration <span class='synopsis'><code>remote.</code><em>&lt;nome&gt;</em><code>.fetch</code></span> pour le dépôt distant. Fournir un <em>&lt;spéc-de-réf&gt;</em> vide à l&#8217;option <span class='synopsis'><code>--refmap</code></span> fait que Git ignore les spécification de référence configurées et se fie entièrement aux spécifications de référence fournies comme arguments de la ligne de commande. Voir la section sur les "Branches de suivi à distance configurées" pour plus de détails.</p>
 </dd>
-<dt class="hdlist1" id="git-fetch--t"> <a class="anchor" href="#git-fetch--t"></a>-t </dt>
-<dt class="hdlist1" id="git-fetch---tags"> <a class="anchor" href="#git-fetch---tags"></a>--tags </dt>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscode-tcodespan"> <a class="anchor" href="#git-fetch--t"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscode-tcodespan"></a><span class='synopsis'><code>-t</code></span> </dt>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscode--tagscodespan"> <a class="anchor" href="#git-fetch---tags"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscode--tagscodespan"></a><span class='synopsis'><code>--tags</code></span> </dt>
 <dd>
-<p>Récupérer toutes les étiquettes à distance (c&#8217;est-à-dire, récupérer les étiquettes <span class='synopsis'><code>refs/tags/*</code></span> dans les étiquettes locales avec le même nom), en plus de tout ce qui serait récupéré autrement. L&#8217;utilisation de cette seule option ne soumet pas les étiquettes à un élagage, même si --prune est utilisé (bien que les étiquettes puissent être élaguées de toute façon si elles sont aussi la destination d&#8217;une spécification de référence explicite ; voir <span class='synopsis'><code>--prune</code></span>).</p>
+<p>Récupérer toutes les étiquettes à distance (c&#8217;est-à-dire, récupérer les étiquettes <span class='synopsis'><code>refs/tags/*</code></span> dans les étiquettes locales avec le même nom), en plus de tout ce qui serait récupéré autrement. L&#8217;utilisation de cette seule option ne soumet pas les étiquettes à un élagage, même si <span class='synopsis'><code>--prune</code></span> est utilisé (bien que les étiquettes puissent être élaguées de toute façon si elles sont aussi la destination d&#8217;une spécification de référence explicite ; voir <span class='synopsis'><code>--prune</code></span>).</p>
 </dd>
-<dt class="hdlist1" id="git-fetch---recurse-submodulesyeson-demandno"> <a class="anchor" href="#git-fetch---recurse-submodulesyeson-demandno"></a>--recurse-submodules[=(yes|on-demand|no)] </dt>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscode--recurse-submodulescodecodecodecodeyescodecodeon-demandcodecodenocodespan"> <a class="anchor" href="#git-fetch---recurse-submodulesyeson-demandno"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscode--recurse-submodulescodecodecodecodeyescodecodeon-demandcodecodenocodespan"></a><span class='synopsis'><code>--recurse-submodules</code>[<code>=</code>(<code>yes</code>|<code>on-demand</code>|<code>no</code>)]</span> </dt>
 <dd>
-<p>Cette option contrôle si et sous quelles conditions les nouveaux commits des sous-modules doivent être récupérés également. Lorsqu&#8217;il parcourt les sous-modules, <span class='synopsis'><code>git</code> <code>fetch</code></span> essaie toujours de récupérer les sous-modules "modifiés", c&#8217;est-à-dire les sous-modules qui ont des commits référencés par un commit de superprojet récemment récupéré mais qui sont manquants dans le clone de sous-module local. Un sous-module modifié peut être récupéré tant qu&#8217;il est présent localement, par exemple dans <span class='synopsis'><code>$GIT_DIR/modules/</code></span> (voir <a href='{{< relurl "docs/gitsubmodules/fr" >}}'>gitsubmodules[7]</a>) ; si l&#8217;amont ajoute un nouveau sous-module, ce sous-module ne peut pas être récupéré jusqu&#8217;à ce qu&#8217;il soit cloné, par exemple par <span class='synopsis'><code>git</code> <code>submodule</code> <code>update</code></span>.</p>
+<p>Contrôle si et sous quelles conditions les nouveaux commits des sous-modules doivent être récupérés également. Lorsqu&#8217;il parcourt les sous-modules, <span class='synopsis'><code>git</code> <code>fetch</code></span> essaie toujours de récupérer les sous-modules "modifiés", c&#8217;est-à-dire les sous-modules qui ont des commits référencés par un commit de superprojet récemment récupéré mais qui sont manquants dans le clone de sous-module local. Un sous-module modifié peut être récupéré tant qu&#8217;il est présent localement, par exemple dans <span class='synopsis'><code>$GIT_DIR/modules/</code></span> (voir <a href='{{< relurl "docs/gitsubmodules/fr" >}}'>gitsubmodules[7]</a>) ; si l&#8217;amont ajoute un nouveau sous-module, ce sous-module ne peut pas être récupéré jusqu&#8217;à ce qu&#8217;il soit cloné, par exemple par <span class='synopsis'><code>git</code> <code>submodule</code> <code>update</code></span>.</p>
 <div class="paragraph">
-<p>Lorsqu&#8217;il est défini sur <em>on-demand</em>, seuls les sous-modules modifiés sont récupérés. Lorsqu&#8217;il a pour valeur <em>yes</em>, tous les sous-modules peuplés sont récupérés et les sous-modules non peuplés et modifiés sont récupérés. Avec la valeur <em>no</em>, les sous-modules ne sont jamais récupérés.</p>
+<p>Lorsqu&#8217;il est défini sur <span class='synopsis'><code>on-demand</code></span>, seuls les sous-modules modifiés sont récupérés. Lorsqu&#8217;il a pour valeur <span class='synopsis'><code>yes</code></span>, tous les sous-modules peuplés sont récupérés et les sous-modules non peuplés et modifiés sont récupérés. Avec la valeur <span class='synopsis'><code>no</code></span>, les sous-modules ne sont jamais récupérés.</p>
 </div>
 <div class="paragraph">
-<p>Lorsque cette option n&#8217;est pas spécifiée, elle utilise la valeur de <span class='synopsis'><code>fetch.recurseSubmodules</code></span> si elle est définie (voir <a href='{{< relurl "docs/git-config/fr" >}}'>git-config[1]</a>), et prend par défaut la valeur <em>on-demand</em> si elle n&#8217;est pas définie. Lorsque cette option est utilisée sans aucune valeur, elle prend par défaut la valeur <em>yes</em>.</p>
+<p>Lorsque cette option n&#8217;est pas spécifiée, elle utilise la valeur de <span class='synopsis'><code>fetch.recurseSubmodules</code></span> si elle est définie (voir <a href='{{< relurl "docs/git-config/fr" >}}'>git-config[1]</a>), et prend par défaut la valeur <span class='synopsis'><code>on-demand</code></span> si elle n&#8217;est pas définie. Lorsque cette option est utilisée sans aucune valeur, elle prend par défaut la valeur <span class='synopsis'><code>yes</code></span>.</p>
 </div>
 </dd>
-<dt class="hdlist1" id="git-fetch--j"> <a class="anchor" href="#git-fetch--j"></a>-j </dt>
-<dt class="hdlist1" id="git-fetch---jobsltngt"> <a class="anchor" href="#git-fetch---jobsn"></a> <a class="anchor" href="#git-fetch---jobsltngt"></a>--jobs=&lt;n&gt; </dt>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscode-jcodeemltngtemspan"> <a class="anchor" href="#git-fetch--jn"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscode-jcodeemltngtemspan"></a><span class='synopsis'><code>-j</code> <em>&lt;n&gt;</em></span> </dt>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscode--jobscodeemltngtemspan"> <a class="anchor" href="#git-fetch---jobsn"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscode--jobscodeemltngtemspan"></a><span class='synopsis'><code>--jobs=</code><em>&lt;n&gt;</em></span> </dt>
 <dd>
-<p>Nombre d&#8217;enfants parallèles à utiliser pour toutes les formes d&#8217;extraction.</p>
+<p>Paralléliser toutes les formes de récupération à <em>&lt;n&gt;</em> actions à la fois.</p>
 <div class="paragraph">
 <p>Si l&#8217;option <span class='synopsis'><code>--multiple</code></span> a été spécifiée, les différents distants seront récupérés en parallèle. Si plusieurs sous-modules sont récupérés, ils seront récupérés en parallèle. Pour les contrôler indépendamment, utilisez les paramètres de configuration <span class='synopsis'><code>fetch.parallel</code></span> et <span class='synopsis'><code>submodule.fetchJobs</code></span> (voir <a href='{{< relurl "docs/git-config/fr" >}}'>git-config[1]</a>).</p>
 </div>
@@ -246,65 +252,65 @@ Cette option permet de passer outre à ce contrôle.</p>
 <p>Généralement, les recherches récursives parallèles et sur des distants multiples seront plus rapides. Par défaut, les recherches sont effectuées de manière séquentielle, et non en parallèle.</p>
 </div>
 </dd>
-<dt class="hdlist1" id="git-fetch---no-recurse-submodules"> <a class="anchor" href="#git-fetch---no-recurse-submodules"></a>--no-recurse-submodules </dt>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscode--no-recurse-submodulescodespan"> <a class="anchor" href="#git-fetch---no-recurse-submodules"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscode--no-recurse-submodulescodespan"></a><span class='synopsis'><code>--no-recurse-submodules</code></span> </dt>
 <dd>
 <p>Désactiver la récupération récursive des sous-modules (cela a le même effet que d&#8217;utiliser l&#8217;option <span class='synopsis'><code>--recurse-submodules=no</code></span>).</p>
 </dd>
-<dt class="hdlist1" id="git-fetch---set-upstream"> <a class="anchor" href="#git-fetch---set-upstream"></a>--set-upstream </dt>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscode--set-upstreamcodespan"> <a class="anchor" href="#git-fetch---set-upstream"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscode--set-upstreamcodespan"></a><span class='synopsis'><code>--set-upstream</code></span> </dt>
 <dd>
 <p>Si le distant est récupéré avec succès, ajouter la référence (de suivi) amont , utilisée par les commandes sans argument <a href='{{< relurl "docs/git-pull/fr" >}}'>git-pull[1]</a> et autres. Pour plus d&#8217;informations, voir <span class='synopsis'><code>branch.</code><em>&lt;nom&gt;</em><code>.merge</code></span> et <span class='synopsis'><code>branch.</code><em>&lt;nom&gt;</em><code>.remote</code></span> dans <a href='{{< relurl "docs/git-config/fr" >}}'>git-config[1]</a>.</p>
 </dd>
-<dt class="hdlist1" id="git-fetch---submodule-prefixltchemingt"> <a class="anchor" href="#git-fetch---submodule-prefixchemin"></a> <a class="anchor" href="#git-fetch---submodule-prefixltchemingt"></a>--submodule-prefix=&lt;chemin&gt; </dt>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscode--submodule-prefixcodeemltchemingtemspan"> <a class="anchor" href="#git-fetch---submodule-prefixchemin"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscode--submodule-prefixcodeemltchemingtemspan"></a><span class='synopsis'><code>--submodule-prefix=</code><em>&lt;chemin&gt;</em></span> </dt>
 <dd>
-<p>Préfixer &lt;chemin&gt; aux chemins affichés dans les messages informatifs tels que "Récupération du sous-module foo". Cette option est utilisée en interne lors de la récursion sur les sous-modules.</p>
+<p>Préfixer <em>&lt;chemin&gt;</em> aux chemins affichés dans les messages informatifs tels que "Récupération du sous-module foo". Cette option est utilisée en interne lors de la récursion sur les sous-modules.</p>
 </dd>
-<dt class="hdlist1" id="git-fetch---recurse-submodules-defaultyeson-demand"> <a class="anchor" href="#git-fetch---recurse-submodules-defaultyeson-demand"></a>--recurse-submodules-default=[yes|on-demand] </dt>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscode--recurse-submodules-defaultcodecodeyescodecodeon-demandcodespan"> <a class="anchor" href="#git-fetch---recurse-submodules-defaultyeson-demand"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscode--recurse-submodules-defaultcodecodeyescodecodeon-demandcodespan"></a><span class='synopsis'><code>--recurse-submodules-default=</code>(<code>yes</code>|<code>on-demand</code>)</span> </dt>
 <dd>
-<p>Cette option est utilisée en interne pour fournir temporairement une valeur par défaut non négative pour l&#8217;option --recurse-submodules. Toutes les autres méthodes de configuration de la récupération récursive des sous-module (comme les paramètres de <a href='{{< relurl "docs/gitmodules/fr" >}}'>gitmodules[5]</a> et <a href='{{< relurl "docs/git-config/fr" >}}'>git-config[1]</a>) remplacent cette option, tout comme le fait de spécifier directement --[no-]recurse-submodules.</p>
+<p>Cette option est utilisée en interne pour fournir temporairement une valeur par défaut non négative pour l&#8217;option <span class='synopsis'><code>--recurse-submodules</code></span>. Toutes les autres méthodes de configuration de la récupération récursive des sous-module (comme les paramètres de <a href='{{< relurl "docs/gitmodules/fr" >}}'>gitmodules[5]</a> et <a href='{{< relurl "docs/git-config/fr" >}}'>git-config[1]</a>) remplacent cette option, tout comme le fait de spécifier directement <span class='synopsis'><code>--</code>[<code>no-</code>]<code>recurse-submodules</code></span>.</p>
 </dd>
-<dt class="hdlist1" id="git-fetch--u"> <a class="anchor" href="#git-fetch--u"></a>-u </dt>
-<dt class="hdlist1" id="git-fetch---update-head-ok"> <a class="anchor" href="#git-fetch---update-head-ok"></a>--update-head-ok </dt>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscode-ucodespan"> <a class="anchor" href="#git-fetch--u"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscode-ucodespan"></a><span class='synopsis'><code>-u</code></span> </dt>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscode--update-head-okcodespan"> <a class="anchor" href="#git-fetch---update-head-ok"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscode--update-head-okcodespan"></a><span class='synopsis'><code>--update-head-ok</code></span> </dt>
 <dd>
-<p>Par défaut, <em>git fetch</em> refuse de mettre à jour la tête qui correspond à la branche en cours. Ce drapeau désactive la vérification. C&#8217;est purement pour l&#8217;usage interne de <em>git pull</em> pour communiquer avec <em>git fetch</em>, et à moins que vous n&#8217;implémentiez votre propre Porcelaine, vous n&#8217;êtes pas censé l&#8217;utiliser.</p>
+<p>Par défaut, <span class='synopsis'><code>git</code> <code>fetch</code></span> refuse de mettre à jour la tête qui correspond à la branche en cours. Ce drapeau désactive la vérification. C&#8217;est purement pour l&#8217;usage interne de <span class='synopsis'><code>git</code> <code>pull</code></span> pour communiquer avec <span class='synopsis'><code>git</code> <code>fetch</code></span>, et à moins que vous n&#8217;implémentiez votre propre Porcelaine, vous n&#8217;êtes pas censé l&#8217;utiliser.</p>
 </dd>
-<dt class="hdlist1" id="git-fetch---upload-packltupload-packgt"> <a class="anchor" href="#git-fetch---upload-packupload-pack"></a> <a class="anchor" href="#git-fetch---upload-packltupload-packgt"></a>--upload-pack &lt;upload-pack&gt; </dt>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscode--upload-packcodeemltupload-packgtemspan"> <a class="anchor" href="#git-fetch---upload-packupload-pack"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscode--upload-packcodeemltupload-packgtemspan"></a><span class='synopsis'><code>--upload-pack</code> <em>&lt;upload-pack&gt;</em></span> </dt>
 <dd>
-<p>Lorsqu&#8217;il est donné, et que le dépôt à récupérer est géré par <em>git fetch-pack</em>, <span class='synopsis'><code>--exec=</code><em>&lt;upload-pack&gt;</em></span> est passé à la commande pour spécifier le chemin par défaut pour la commande exécutée à l&#8217;autre bout.</p>
+<p>Lorsqu&#8217;il est donné, et que le dépôt à récupérer est géré par <span class='synopsis'><code>git</code> <code>fetch-pack</code></span>, <span class='synopsis'><code>--exec=</code><em>&lt;upload-pack&gt;</em></span> est passé à la commande pour spécifier le chemin par défaut pour la commande exécutée à l&#8217;autre bout.</p>
 </dd>
-<dt class="hdlist1" id="git-fetch--q"> <a class="anchor" href="#git-fetch--q"></a>-q </dt>
-<dt class="hdlist1" id="git-fetch---quiet"> <a class="anchor" href="#git-fetch---quiet"></a>--quiet </dt>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscode-qcodespan"> <a class="anchor" href="#git-fetch--q"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscode-qcodespan"></a><span class='synopsis'><code>-q</code></span> </dt>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscode--quietcodespan"> <a class="anchor" href="#git-fetch---quiet"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscode--quietcodespan"></a><span class='synopsis'><code>--quiet</code></span> </dt>
 <dd>
-<p>Passer --quiet pour git-fetch-pack et faire taire toute autre commande git utilisée en interne. La progression n&#8217;est pas signalée dans le flux d&#8217;erreurs standard.</p>
+<p>Passer <span class='synopsis'><code>--quiet</code></span> pour <span class='synopsis'><code>git-fetch-pack</code></span> et faire taire toute autre commande git utilisée en interne. La progression n&#8217;est pas signalée dans le flux d&#8217;erreurs standard.</p>
 </dd>
-<dt class="hdlist1" id="git-fetch--v"> <a class="anchor" href="#git-fetch--v"></a>-v </dt>
-<dt class="hdlist1" id="git-fetch---verbose"> <a class="anchor" href="#git-fetch---verbose"></a>--verbose </dt>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscode-vcodespan"> <a class="anchor" href="#git-fetch--v"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscode-vcodespan"></a><span class='synopsis'><code>-v</code></span> </dt>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscode--verbosecodespan"> <a class="anchor" href="#git-fetch---verbose"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscode--verbosecodespan"></a><span class='synopsis'><code>--verbose</code></span> </dt>
 <dd>
 <p>Mode bavard.</p>
 </dd>
-<dt class="hdlist1" id="git-fetch---progress"> <a class="anchor" href="#git-fetch---progress"></a>--progress </dt>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscode--progresscodespan"> <a class="anchor" href="#git-fetch---progress"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscode--progresscodespan"></a><span class='synopsis'><code>--progress</code></span> </dt>
 <dd>
-<p>L&#8217;état d&#8217;avancement est affiché sur la sortie d&#8217;erreur standard quand elle est attachée à un terminal, à moins que -q soit spécifié. Ce drapeau force l&#8217;état d&#8217;avancement même si le flux d&#8217;erreur standard n&#8217;est pas dirigé vers un terminal.</p>
+<p>L&#8217;état d&#8217;avancement est affiché sur la sortie d&#8217;erreur standard quand elle est attachée à un terminal, à moins que <span class='synopsis'><code>-q</code></span> soit spécifié. Ce drapeau force l&#8217;état d&#8217;avancement même si le flux d&#8217;erreur standard n&#8217;est pas dirigé vers un terminal.</p>
 </dd>
-<dt class="hdlist1" id="git-fetch--oltoptiongt"> <a class="anchor" href="#git-fetch--ooption"></a> <a class="anchor" href="#git-fetch--oltoptiongt"></a>-o &lt;option&gt; </dt>
-<dt class="hdlist1" id="git-fetch---server-optionltoptiongt"> <a class="anchor" href="#git-fetch---server-optionoption"></a> <a class="anchor" href="#git-fetch---server-optionltoptiongt"></a>--server-option=&lt;option&gt; </dt>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscode-ocodeemltoptiongtemspan"> <a class="anchor" href="#git-fetch--ooption"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscode-ocodeemltoptiongtemspan"></a><span class='synopsis'><code>-o</code> <em>&lt;option&gt;</em></span> </dt>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscode--server-optioncodeemltoptiongtemspan"> <a class="anchor" href="#git-fetch---server-optionoption"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscode--server-optioncodeemltoptiongtemspan"></a><span class='synopsis'><code>--server-option=</code><em>&lt;option&gt;</em></span> </dt>
 <dd>
-<p>Transmettre la chaîne donnée au serveur lors d&#8217;une communication utilisant la version 2 du protocole. La chaîne donnée ne doit pas contenir de caractère NUL ou LF. La gestion par le serveur des options du serveur, y compris les options inconnues, est spécifique au serveur. Lorsque plusieurs <span class='synopsis'><code>--server-option=</code><em>&lt;option&gt;</em></span> sont donnés, ils sont tous envoyés à l&#8217;autre côté dans l&#8217;ordre indiqué sur la ligne de commande. Quand aucun <span class='synopsis'><code>--server-option=</code><em>&lt;option&gt;</em><code>est</code> <code>fourni</code> <code>sur</code> <code>la</code> <code>ligne</code> <code>de</code> <code>commande,</code> <code>les</code> <code>valeurs</code> <code>de</code> <code>la</code> <code>variable</code> <code>de</code> <code>configuration</code> <code>remote.</code><em>&lt;nom&gt;</em><code>.serverOption</code></span> sont utilisées à la place.</p>
+<p>Transmettre la chaîne donnée au serveur lors d&#8217;une communication utilisant la version 2 du protocole. La chaîne donnée ne doit pas contenir de caractère <em>NUL</em> ou <em>LF</em>. La gestion par le serveur des options du serveur, y compris les options inconnues, est spécifique au serveur. Lorsque plusieurs <span class='synopsis'><code>--server-option=</code><em>&lt;option&gt;</em></span> sont donnés, ils sont tous envoyés à l&#8217;autre côté dans l&#8217;ordre indiqué sur la ligne de commande. Quand aucun <span class='synopsis'><code>--server-option=</code><em>&lt;option&gt;</em><code>n'est</code> <code>fourni</code> <code>sur</code> <code>la</code> <code>ligne</code> <code>de</code> <code>commande,</code> <code>les</code> <code>valeurs</code> <code>de</code> <code>la</code> <code>variable</code> <code>de</code> <code>configuration</code> <code>remote.</code><em>&lt;nom&gt;</em><code>.serverOption</code></span> sont utilisées à la place.</p>
 </dd>
-<dt class="hdlist1" id="git-fetch---show-forced-updates"> <a class="anchor" href="#git-fetch---show-forced-updates"></a>--show-forced-updates </dt>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscode--show-forced-updatescodespan"> <a class="anchor" href="#git-fetch---show-forced-updates"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscode--show-forced-updatescodespan"></a><span class='synopsis'><code>--show-forced-updates</code></span> </dt>
 <dd>
-<p>Par défaut, git vérifie si une branche est mise à jour de force pendant la récupération. Cela peut être désactivé via fetch.showForcedUpdates, mais l&#8217;option --show-forced-updates garantit que cette vérification a lieu. Voir <a href='{{< relurl "docs/git-config/fr" >}}'>git-config[1]</a>.</p>
+<p>Par défaut, git vérifie si une branche est mise à jour de force pendant la récupération. Cela peut être désactivé via <span class='synopsis'><code>fetch.showForcedUpdates</code></span>, mais l&#8217;option <span class='synopsis'><code>--show-forced-updates</code></span> garantit que cette vérification a lieu. Voir <a href='{{< relurl "docs/git-config/fr" >}}'>git-config[1]</a>.</p>
 </dd>
-<dt class="hdlist1" id="git-fetch---no-show-forced-updates"> <a class="anchor" href="#git-fetch---no-show-forced-updates"></a>--no-show-forced-updates </dt>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscode--no-show-forced-updatescodespan"> <a class="anchor" href="#git-fetch---no-show-forced-updates"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscode--no-show-forced-updatescodespan"></a><span class='synopsis'><code>--no-show-forced-updates</code></span> </dt>
 <dd>
-<p>Par défaut, git vérifie si une branche est mise à jour de force pendant la récupération. Passer --no-show-forced-updates ou régler fetch.showForcedUpdates à false pour sauter cette vérification pour des raisons de performance. Si elle est utilisée pendant <em>git-pull</em>, l&#8217;option --ff-only vérifiera toujours les mises à jour forcées avant de tenter une mise à jour rapide. Voir <a href='{{< relurl "docs/git-config/fr" >}}'>git-config[1]</a>.</p>
+<p>Par défaut, git vérifie si une branche est mise à jour de force pendant la récupération. Passer <span class='synopsis'><code>--no-show-forced-updates</code></span> ou régler <span class='synopsis'><code>fetch.showForcedUpdates</code></span> à <span class='synopsis'><code>false</code></span> pour sauter cette vérification pour des raisons de performance. Si elle est utilisée pendant <span class='synopsis'><code>git-pull</code></span>, l&#8217;option <span class='synopsis'><code>--ff-only</code></span> vérifiera toujours les mises à jour forcées avant de tenter une mise à jour rapide. Voir <a href='{{< relurl "docs/git-config/fr" >}}'>git-config[1]</a>.</p>
 </dd>
-<dt class="hdlist1" id="git-fetch--4"> <a class="anchor" href="#git-fetch--4"></a>-4 </dt>
-<dt class="hdlist1" id="git-fetch---ipv4"> <a class="anchor" href="#git-fetch---ipv4"></a>--ipv4 </dt>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscode-4codespan"> <a class="anchor" href="#git-fetch--4"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscode-4codespan"></a><span class='synopsis'><code>-4</code></span> </dt>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscode--ipv4codespan"> <a class="anchor" href="#git-fetch---ipv4"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscode--ipv4codespan"></a><span class='synopsis'><code>--ipv4</code></span> </dt>
 <dd>
 <p>Utiliser uniquement les adresses IPv4, en ignorant les adresses IPv6.</p>
 </dd>
-<dt class="hdlist1" id="git-fetch--6"> <a class="anchor" href="#git-fetch--6"></a>-6 </dt>
-<dt class="hdlist1" id="git-fetch---ipv6"> <a class="anchor" href="#git-fetch---ipv6"></a>--ipv6 </dt>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscode-6codespan"> <a class="anchor" href="#git-fetch--6"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscode-6codespan"></a><span class='synopsis'><code>-6</code></span> </dt>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscode--ipv6codespan"> <a class="anchor" href="#git-fetch---ipv6"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscode--ipv6codespan"></a><span class='synopsis'><code>--ipv6</code></span> </dt>
 <dd>
 <p>Utiliser uniquement les adresses IPv6, en ignorant les adresses IPv4.</p>
 </dd>
@@ -312,35 +318,39 @@ Cette option permet de passer outre à ce contrôle.</p>
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1" id="git-fetch-ltdptgt"> <a class="anchor" href="#git-fetch-dpt"></a> <a class="anchor" href="#git-fetch-ltdptgt"></a><span class="hover-term" data-term="dépôt">&lt;dépôt&gt;</span> </dt>
+<dt class="hdlist1" id="git-fetch-emltdptgtem"> <a class="anchor" href="#git-fetch-dpt"></a> <a class="anchor" href="#git-fetch-emltdptgtem"></a><em>&lt;dépôt&gt;</em> </dt>
 <dd>
 <p>Le dépôt "distant" qui est la source d&#8217;une opération de récupération ou de tirage. Ce paramètre peut être soit une URL (voir la section <a href="#URLS">URLS GIT</a> ci-dessous) soit le nom d&#8217;un remote (voir la section <a href="#REMOTES">DISTANTS</a> ci-dessous).</p>
 </dd>
-<dt class="hdlist1" id="git-fetch-ltgroupegt"> <a class="anchor" href="#git-fetch-groupe"></a> <a class="anchor" href="#git-fetch-ltgroupegt"></a>&lt;groupe&gt; </dt>
+<dt class="hdlist1" id="git-fetch-emltgroupegtem"> <a class="anchor" href="#git-fetch-groupe"></a> <a class="anchor" href="#git-fetch-emltgroupegtem"></a><em>&lt;groupe&gt;</em> </dt>
 <dd>
-<p>Un nom faisant référence à une liste des dépôts comme la valeur de remotes.&lt;groupe&gt; dans le fichier de configuration. (voir <a href='{{< relurl "docs/git-config/fr" >}}'>git-config[1]</a>).</p>
+<p>Un nom faisant référence à une liste des dépôts comme la valeur de <span class='synopsis'><code>remotes.</code><em>&lt;groupe&gt;</em></span> dans le fichier de configuration. (voir <a href='{{< relurl "docs/git-config/fr" >}}'>git-config[1]</a>).</p>
 </dd>
-<dt class="hdlist1" id="git-fetch-ltspcificateur-de-rfrencegt"> <a class="anchor" href="#git-fetch-spcificateur-de-rfrence"></a> <a class="anchor" href="#git-fetch-ltspcificateur-de-rfrencegt"></a>&lt;spécificateur-de-référence&gt; </dt>
+</dl>
+</div>
+<div id="fetch-refspec" class="dlist">
+<dl>
+<dt class="hdlist1" id="git-fetch-emltspc-de-rfgtem"> <a class="anchor" href="#git-fetch-spc-de-rf"></a> <a class="anchor" href="#git-fetch-emltspc-de-rfgtem"></a><em>&lt;spéc-de-réf&gt;</em> </dt>
 <dd>
-<p>Préciser les références à récupérer et les références locales à mettre à jour. Lorsqu&#8217;aucun &lt;spéc-de-réf&gt; n&#8217;apparaît sur la ligne de commande, les références à récupérer sont lues à partir des variables <span class='synopsis'><code>remote.</code><em><span class="hover-term" data-term="dépôt">&lt;dépôt&gt;</span></em><code>.fetch</code></span> à la place
+<p>Specifies which refs to fetch and which local refs to update. When no <em>&lt;refspec&gt;</em>s appear on the command line, the refs to fetch are read from <span class='synopsis'><code>remote.</code><em>&lt;repository&gt;</em><code>.fetch</code></span> variables instead
 (voir <a href="#CRTB">BRANCHES DE SUIVI À DISTANCE CONFIGURÉES</a> ci-dessous).</p>
 <div class="paragraph">
-<p>Le format d&#8217;un paramètre &lt;spéc-de-réf&gt; est un plus <span class='synopsis'><code>+</code></span> optionnel, suivi de la source &lt;src&gt;, suivi de deux points <span class='synopsis'><code>:</code></span>, suivi de la destination &lt;dst&gt;. Les deux points peuvent être omis lorsque &lt;dst&gt; est vide. &lt;src&gt; est typiquement une réf, ou un motif glob avec un unique <span class='synopsis'><code>*</code></span> qui est utilisé pour trouver un ensemble de réfs mais cela peut aussi être un nom d&#8217;objet hexadécimal entier.</p>
+<p>Le format d&#8217;un paramètre <em>&lt;spéc-de-réf&gt;</em> est un plus <span class='synopsis'><code>+</code></span> optionnel, suivi de la source <em>&lt;src&gt;</em>, suivi de deux points <span class='synopsis'><code>:</code></span>, suivi de la destination <em>&lt;dst&gt;</em>. Les deux points peuvent être omis lorsque <em>&lt;dst&gt;</em> est vide. <em>&lt;src&gt;</em> est typiquement une réf, ou un motif glob avec un unique <span class='synopsis'><code>*</code></span> qui est utilisé pour trouver un ensemble de réfs mais cela peut aussi être un nom d&#8217;objet hexadécimal complet.</p>
 </div>
 <div class="paragraph">
-<p>Un &lt;spec-de-réf&gt; peut contenir un <span class='synopsis'><code>*</code></span> dans son &lt;src&gt; pour indiquer une simple correspondance de motif. Un tel refspec fonctionne comme un motif qui correspond à n&#8217;importe quelle ref avec le même préfixe. Un motif &lt;spec-de-réf&gt; doit avoir un et un seul <span class='synopsis'><code>*</code></span> dans les deux &lt;src&gt; et &lt;dst&gt;. Il va faire correspondre les références à la destination en remplaçant le <span class='synopsis'><code>*</code></span> par le contenu correspondant de la source.</p>
+<p>Un <em>&lt;spec-de-réf&gt;</em> peut contenir un <span class='synopsis'><code>*</code></span> dans son <em>&lt;src&gt;</em> pour indiquer une simple correspondance de motif. Un tel refspec fonctionne comme un motif qui correspond à n&#8217;importe quelle ref avec le même préfixe. Un motif <em>&lt;spec-de-réf&gt;</em> doit avoir un et un seul <span class='synopsis'><code>*</code></span> dans les deux <em>&lt;src&gt;</em> et <em>&lt;dst&gt;</em>. Il va faire correspondre les références à la destination en remplaçant le <span class='synopsis'><code>*</code></span> par le contenu correspondant de la source.</p>
 </div>
 <div class="paragraph">
-<p>Si un spécificateur de référence est préfixé par <span class='synopsis'><code>^</code></span>, il sera interprété comme un spécificateur de référence négatif. Plutôt que de spécifier les références à récupérer ou les références locales à mettre à jour, un tel spécificateur de référence spécifiera les références à exclure. Une référence sera considérée comme correspondante si elle correspond à au moins une référence positive, et ne correspond à aucune référence négative. Les spécificateurs de référence négatifs peuvent être utiles pour restreindre le champ d&#8217;application d&#8217;un spécificateur modèle de référence afin qu&#8217;il n&#8217;inclue pas de références spécifiques. Les spécificateurs de référence négatifs peuvent eux-mêmes être des spécificateurs modèles de référence . Cependant, ils ne peuvent contenir qu&#8217;un &lt;src&gt; et ne peuvent pas spécifier un &lt;dst&gt;. Les noms d&#8217;objets hexagonaux complets ne sont pas non plus pris en charge.</p>
+<p>Si un spécificateur de référence est préfixé par <span class='synopsis'><code>^</code></span>, il sera interprété comme un spécificateur de référence négatif. Plutôt que de spécifier les références à récupérer ou les références locales à mettre à jour, un tel spécificateur de référence spécifiera les références à exclure. Une référence sera considérée comme correspondante si elle correspond à au moins une référence positive, et ne correspond à aucune référence négative. Les spécificateurs de référence négatifs peuvent être utiles pour restreindre le champ d&#8217;application d&#8217;un spécificateur modèle de référence afin qu&#8217;il n&#8217;inclue pas de références spécifiques. Les spécificateurs de référence négatifs peuvent eux-mêmes être des spécificateurs modèles de référence . Cependant, ils ne peuvent contenir qu&#8217;un <em>&lt;src&gt;</em> et ne peuvent pas spécifier un <em>&lt;dst&gt;</em>. Les noms d&#8217;objets hexagonaux complets ne sont pas non plus pris en charge.</p>
 </div>
 <div class="paragraph">
-<p><span class='synopsis'><code>tag</code> <em><span class="hover-term" data-term="étiquette">&lt;étiquette&gt;</span></em></span> signifie la même chose que <span class='synopsis'><code>refs/tags/</code><em>&lt;tag&gt;</em><code>:refs/tags/</code><em>&lt;tag&gt;</em></span> ; cela demande de tout récupérer jusqu&#8217;à l&#8217;étiquette donnée.</p>
+<p><span class='synopsis'><code>tag</code> <em>&lt;étiquette&gt;</em></span> signifie la même chose que <span class='synopsis'><code>refs/tags/</code><em>&lt;tag&gt;</em><code>:refs/tags/</code><em>&lt;tag&gt;</em></span> ; cela demande de tout récupérer jusqu&#8217;à l&#8217;étiquette donnée.</p>
 </div>
 <div class="paragraph">
-<p>La référence distante qui correspond à &lt;src&gt; est récupérée, et si &lt;dst&gt; n&#8217;est pas une chaîne vide, une tentative est faite pour mettre à jour la référence locale qui lui correspond.</p>
+<p>La référence distante qui correspond à <em>&lt;src&gt;</em> est récupérée, et si <em>&lt;dst&gt;</em> n&#8217;est pas une chaîne vide, une tentative est faite pour mettre à jour la référence locale qui lui correspond.</p>
 </div>
 <div class="paragraph">
-<p>Le fait que cette mise à jour soit autorisée sans <span class='synopsis'><code>--force</code></span> dépend de l&#8217;espace de noms de référence vers lequel elle est récupérée, du type d&#8217;objet récupéré, et si la mise à jour est considérée comme une avance rapide. Généralement, les mêmes règles s&#8217;appliquent pour la récupération que pour la poussée, voir la section <span class='synopsis'><em>&lt;spéc-de-réf&gt;</em>...</span> de <a href='{{< relurl "docs/git-push/fr" >}}'>git-push[1]</a> pour les connaître. Les exceptions à ces règles particulières à <em>git fetch</em> sont notées ci-dessous.</p>
+<p>Le fait que cette mise à jour soit autorisée sans <span class='synopsis'><code>--force</code></span> dépend de l&#8217;espace de noms de référence vers lequel elle est récupérée, du type d&#8217;objet récupéré, et si la mise à jour est considérée comme une avance rapide. Généralement, les mêmes règles s&#8217;appliquent pour la récupération que pour la poussée, voir la section <span class='synopsis'><em>&lt;spéc-de-réf&gt;</em>...</span> de <a href='{{< relurl "docs/git-push/fr" >}}'>git-push[1]</a> pour les connaître. Les exceptions à ces règles particulières à <span class='synopsis'><code>git</code> <code>fetch</code></span> sont notées ci-dessous.</p>
 </div>
 <div class="paragraph">
 <p>Jusqu&#8217;à la version 2.20 de Git, et contrairement à ce qui se passe avec <a href='{{< relurl "docs/git-push/fr" >}}'>git-push[1]</a>, toute mise à jour de <span class='synopsis'><code>refs/tags/*</code></span> serait acceptée sans <span class='synopsis'><code>+</code></span> dans la spéc-de-réf (ou <span class='synopsis'><code>--force</code></span>). Lors de la récupération, nous considérons sans distinction toutes les mises à jour d&#8217;étiquettes depuis un dépôt distance comme des récupérations forcées. Depuis la version 2.20 de Git, la récupération pour mettre à jour les <span class='synopsis'><code>refs/tags/*</code></span> fonctionne de la même manière que lors de la poussée. C&#8217;est-à-dire que toute mise à jour sera rejetée sans "+" dans le spécificateur de référence (ou <span class='synopsis'><code>--force</code></span>).</p>
@@ -371,9 +381,9 @@ Lorsque la branche distante que vous voulez récupérer est connue pour être r�
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1" id="git-fetch---stdin"> <a class="anchor" href="#git-fetch---stdin"></a>--stdin </dt>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscode--stdincodespan"> <a class="anchor" href="#git-fetch---stdin"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscode--stdincodespan"></a><span class='synopsis'><code>--stdin</code></span> </dt>
 <dd>
-<p>Lire les spécifications de référence, une par ligne, de stdin en plus de celles fournies comme arguments. Le format "tag &lt;nom&gt;" n&#8217;est pas pris en charge.</p>
+<p>Lire les spécifications de référence, une par ligne, de stdin en plus de celles fournies comme arguments. Le format "tag <em>&lt;nom&gt;</em>" n&#8217;est pas pris en charge.</p>
 </dd>
 </dl>
 </div>
@@ -516,7 +526,7 @@ Lorsque la branche distante que vous voulez récupérer est connue pour être r�
 <h2 id="_distants"><a class="anchor" href="#_distants"></a>DISTANTS<a id="REMOTES"></a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Le nom de l&#8217;un des éléments suivants peut être utilisé à la place d&#8217;une URL en tant qu&#8217;argument <span class='synopsis'><em><span class="hover-term" data-term="dépôt">&lt;dépôt&gt;</span></em></span> :</p>
+<p>Le nom de l&#8217;un des éléments suivants peut être utilisé à la place d&#8217;une URL en tant qu&#8217;argument <em>&lt;dépôt&gt;</em> :</p>
 </div>
 <div class="ulist">
 <ul>
@@ -549,7 +559,7 @@ Lorsque la branche distante que vous voulez récupérer est connue pour être r�
 </div>
 </div>
 <div class="paragraph">
-<p>Le <span class='synopsis'><em>&lt;url-de-poussée&gt;</em></span> est utilisé uniquement pour les poussées. Il est optionnel et sa valeur par défaut est <span class='synopsis'><em>&lt;URL&gt;</em></span>. Pousser vers un distant affecte tous les urls-de-poussés définis ou tous les urls définis si aucun url-de-poussée n&#8217;est défini. Fetch, cependant, ne récupérera que le premier url défini si plusieurs urls sont définis.</p>
+<p>L' <em>&lt;url-de-poussée&gt;</em> est utilisé uniquement pour les poussées. Il est optionnel et sa valeur par défaut est <em>&lt;URL&gt;</em>. Pousser vers un distant affecte tous les urls-de-poussés définis ou tous les urls définis si aucun url-de-poussée n&#8217;est défini. Fetch, cependant, ne récupérera que le premier url défini si plusieurs urls sont définis.</p>
 </div>
 </div>
 <div class="sect2">
@@ -565,7 +575,7 @@ Lorsque la branche distante que vous voulez récupérer est connue pour être r�
 </div>
 </div>
 <div class="paragraph">
-<p>Les lignes <span class='synopsis'><code>Push:</code></span>" sont utilisées par <em>git push</em> et les lignes <span class='synopsis'><code>Pull:</code></span> sont utilisées par <em>git pull</em> et <em>git fetch</em>. Des lignes <span class='synopsis'><code>Push:</code></span> et <span class='synopsis'><code>Pull:</code></span> multiples peuvent être spécifiées pour des mappages supplémentaires de branches.</p>
+<p>Les lignes <span class='synopsis'><code>Push:</code></span>" sont utilisées par <span class='synopsis'><code>git</code> <code>push</code></span> et les lignes <span class='synopsis'><code>Pull:</code></span> sont utilisées par <span class='synopsis'><code>git</code> <code>pull</code></span> et <span class='synopsis'><code>git</code> <code>fetch</code></span>. Des lignes <span class='synopsis'><code>Push:</code></span> et <span class='synopsis'><code>Pull:</code></span> multiples peuvent être spécifiées pour des mappages supplémentaires de branches.</p>
 </div>
 </div>
 <div class="sect2">
@@ -575,21 +585,21 @@ Lorsque la branche distante que vous voulez récupérer est connue pour être r�
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>	&lt;URL&gt;#<span class="hover-term" data-term="tête">&lt;tête&gt;</span></pre>
+<pre>	&lt;URL&gt;#&lt;tête&gt;</pre>
 </div>
 </div>
 <div class="paragraph">
-<p><span class='synopsis'><em>&lt;URL&gt;</em></span> est obligatoire ; <span class='synopsis'><code>#</code><em><span class="hover-term" data-term="tête">&lt;tête&gt;</span></em></span> est facultatif.</p>
+<p><em>&lt;URL&gt;</em> est obligatoire ; <span class='synopsis'><code>#</code><em>&lt;tête&gt;</em></span> est facultatif.</p>
 </div>
 <div class="paragraph">
-<p>En fonction de l&#8217;opération, git utilisera l&#8217;un des spécificateurs de référence suivants, si vous n&#8217;en fournissez pas un en ligne de commande. <span class='synopsis'><em><span class="hover-term" data-term="branche">&lt;branche&gt;</span></em></span> est le nom de ce fichier dans <span class='synopsis'><code>$GIT_DIR/branches</code></span> et <span class='synopsis'><em><span class="hover-term" data-term="tête">&lt;tête&gt;</span></em></span> vaut par défaut <span class='synopsis'><code>master</code></span>.</p>
+<p>En fonction de l&#8217;opération, git utilisera l&#8217;un des spécificateurs de référence suivants, si vous n&#8217;en fournissez pas un en ligne de commande. <em>&lt;branche&gt;</em> est le nom de ce fichier dans <span class='synopsis'><code>$GIT_DIR/branches</code></span> et <em>&lt;tête&gt;</em> vaut par défaut <span class='synopsis'><code>master</code></span>.</p>
 </div>
 <div class="paragraph">
 <p>git fetch utilise :</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>	refs/heads/<span class="hover-term" data-term="tête">&lt;tête&gt;</span>:refs/heads/<span class="hover-term" data-term="branche">&lt;branche&gt;</span></pre>
+<pre>	refs/heads/&lt;tête&gt;:refs/heads/&lt;branche&gt;</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -597,9 +607,68 @@ Lorsque la branche distante que vous voulez récupérer est connue pour être r�
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>	HEAD:refs/heads/<span class="hover-term" data-term="tête">&lt;tête&gt;</span></pre>
+<pre>	HEAD:refs/heads/&lt;tête&gt;</pre>
 </div>
 </div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="UPSTREAM-BRANCHES"><a class="anchor" href="#UPSTREAM-BRANCHES"></a>BRANCHES AMONT</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Les branches de Git peuvent en option avoir une branche distante en amont. Git par défaut d&#8217;utiliser la branche amont pour les opérations à distance, par exemple :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>C&#8217;est le comportement par défaut pour <span class='synopsis'><code>git</code> <code>pull</code></span> ou <span class='synopsis'><code>git</code> <code>fetch</code></span> sans argument.</p>
+</li>
+<li>
+<p>C&#8217;est le comportement par défaut pour <span class='synopsis'><code>git</code> <code>push</code></span> sans argument, à quelques exceptions près. Par exemple, vous pouvez utiliser l&#8217;option <span class='synopsis'><code>branch.</code> <em>&lt;nom&gt;</em><code>.pushRemote</code></span> pour pousser vers une autre télécommande que vous tirez, et par défaut avec <span class='synopsis'><code>push.default=simple</code></span> la branche amont que vous configurez doit avoir le même nom.</p>
+</li>
+<li>
+<p>Différentes commandes, y compris <span class='synopsis'><code>git</code> <code>checkout</code></span> et le statut <span class='synopsis'><code>git</code> <code>status</code></span> vous montreront combien de commits ont été ajoutés à votre branche actuelle et l&#8217;amont depuis que vous en avez divergé, par exemple «Votre branche et <em>origin/main</em> ont divergé, et ont respectivement 2 et 3 commits différents».</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>L&#8217;amont est stocké dans <span class='synopsis'><code>.git/config</code></span>, dans les champs <span class='synopsis'><code>remote</code></span> et <span class='synopsis'><code>merge</code></span>. Par exemple, si le <span class='synopsis'><code>main</code></span> de l&#8217;amont est <span class='synopsis'><code>origin/main</code></span> :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>[branch "main"]
+   remote = origin
+   merge = refs/heads/main</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Vous pouvez configurer une branche amont explicitement avec <span class='synopsis'><em>git push --set-upstream &lt;distant&gt; &lt; branche&gt;</em></span> mais Git configurera souvent automatiquement l&#8217;amont pour vous, par exemple :</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Lorsque vous clonez un dépôt, Git configurera automatiquement l&#8217;amont de la branche par défaut.</p>
+</li>
+<li>
+<p>Si vous activez la configuration <span class='synopsis'><code>push.autoSetupRemote</code></span>, <span class='synopsis'><code>git</code> <code>push</code></span> va automatiquement configurer l&#8217;amont la première fois que vous poussez une branche.</p>
+</li>
+<li>
+<p>Extraire une branche de suivi à distance avec <span class='synopsis'><code>git</code> <code>checkout</code> <em>&lt;branche&gt;</em></span> créera automatiquement une branche locale avec ce nom et configurera l&#8217;amont vers la branche distante.</p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+Les branches amont sont parfois appelées « information de suivi «, comme dans « indiquer l&#8217;information de suivi de la branche ».
+</td>
+</tr>
+</table>
 </div>
 </div>
 </div>
@@ -607,7 +676,7 @@ Lorsque la branche distante que vous voulez récupérer est connue pour être r�
 <h2 id="CRTB"><a class="anchor" href="#CRTB"></a>LES BRANCHES DE SUIVI À DISTANCE CONFIGURÉES</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Vous interagissez souvent avec le même dépôt distant en y allant régulièrement et de manière répétée. Afin de suivre la progression d&#8217;un tel dépôt distant, <span class='synopsis'><code>git</code> <code>fetch</code></span> vous permet de configurer les variables de configuration <span class='synopsis'><code>remote.</code><em><span class="hover-term" data-term="dépôt">&lt;dépôt&gt;</span></em><code>.fetch</code></span>.</p>
+<p>Vous interagissez souvent avec le même dépôt distant en y allant régulièrement et de manière répétée. Afin de suivre la progression d&#8217;un tel dépôt distant, <span class='synopsis'><code>git</code> <code>fetch</code></span> vous permet de configurer les variables de configuration <span class='synopsis'><code>remote.</code><em>&lt;dépôt&gt;</em><code>.fetch</code></span>.</p>
 </div>
 <div class="paragraph">
 <p>En général, une telle variable peut ressembler à ceci :</p>
@@ -624,15 +693,15 @@ Lorsque la branche distante que vous voulez récupérer est connue pour être r�
 <div class="ulist">
 <ul>
 <li>
-<p>Lorsque <span class='synopsis'><code>git</code> <code>fetch</code></span> est lancé sans spécifier les branches et/ou les étiquettes à récupérer en ligne de commande, par exemple <span class='synopsis'><code>git</code> <code>fetch</code> <code>origin</code></span> ou <span class='synopsis'><code>git</code> <code>fetch</code></span>, les valeurs <span class='synopsis'><code>remote.</code><em><span class="hover-term" data-term="dépôt">&lt;dépôt&gt;</span></em><code>.fetch</code></span> sont utilisées comme spéc-de-réf --elles spécifient quelles réfs à récupérer et quelles réfs locales à mettre à jour. L&#8217;exemple ci-dessus va chercher toutes les branches qui existent dans <span class='synopsis'><code>origin</code></span> (c&#8217;est-à-dire toute réf qui correspond au côté gauche de la valeur, "refs/heads/*") et mettre à jour les branches de suivi à distance correspondantes dans la hiérarchie <span class='synopsis'><code>refs/remotes/origin/*</code></span>.</p>
+<p>Lorsque <span class='synopsis'><code>git</code> <code>fetch</code></span> est lancé sans spécifier les branches et/ou les étiquettes à récupérer en ligne de commande, par exemple <span class='synopsis'><code>git</code> <code>fetch</code> <code>origin</code></span> ou <span class='synopsis'><code>git</code> <code>fetch</code></span>, les valeurs <span class='synopsis'><code>remote.</code><em>&lt;dépôt&gt;</em><code>.fetch</code></span> sont utilisées comme spéc-de-réf --elles spécifient quelles réfs à récupérer et quelles réfs locales à mettre à jour. L&#8217;exemple ci-dessus va chercher toutes les branches qui existent dans <span class='synopsis'><code>origin</code></span> (c&#8217;est-à-dire toute réf qui correspond au côté gauche de la valeur, "refs/heads/*") et mettre à jour les branches de suivi à distance correspondantes dans la hiérarchie <span class='synopsis'><code>refs/remotes/origin/*</code></span>.</p>
 </li>
 <li>
-<p>Lorsque <span class='synopsis'><code>git</code> <code>fetch</code></span> est lancé avec des branches et/ou des étiquettes explicites à récupérer en ligne de commande, par exemple <span class='synopsis'><code>git</code> <code>fetch</code> <code>origin</code> <code>master</code></span>, les &lt;spéc-de-réf&gt;s données en ligne de commande déterminent ce qui doit être récupéré (par exemple <span class='synopsis'><code>master</code></span> dans l&#8217;exemple, qui est un raccourci pour <span class='synopsis'><code>master:</code></span>, ce qui signifie "chercher la branche <em>master</em> mais je ne dis pas explicitement quelle branche de suivi à distance mettre à jour avec elle depuis la ligne de commande"), et la commande de l&#8217;exemple ne cherchera <em>que</em> la branche <em>master</em>. Les valeurs de <span class='synopsis'><code>remote.</code><em><span class="hover-term" data-term="dépôt">&lt;dépôt&gt;</span></em><code>.fetch</code></span> déterminent quelle branche de suivi à distance, s&#8217;il y en a une, est mise à jour. Lorsqu&#8217;elles sont utilisées de cette façon, les valeurs de <span class='synopsis'><code>remote.</code><em><span class="hover-term" data-term="dépôt">&lt;dépôt&gt;</span></em><code>.fetch</code></span> n&#8217;ont aucun effet sur la décision de ce qui est récupéré (c&#8217;est-à-dire que les valeurs ne sont pas utilisées comme spéc-de-réf lorsque la ligne de commande liste les spéc-de-réfs) ; elles ne sont utilisées que pour décider de l&#8217;endroit où les réfs qui sont récupérées sont stockées en agissant comme une table de correspondance.</p>
+<p>Lorsque <span class='synopsis'><code>git</code> <code>fetch</code></span> est lancé avec des branches et/ou des étiquettes explicites à récupérer en ligne de commande, par exemple <span class='synopsis'><code>git</code> <code>fetch</code> <code>origin</code> <code>master</code></span>, les <em>&lt;spéc-de-réf&gt;</em>s données en ligne de commande déterminent ce qui doit être récupéré (par exemple <span class='synopsis'><code>master</code></span> dans l&#8217;exemple, qui est un raccourci pour <span class='synopsis'><code>master:</code></span>, ce qui signifie "chercher la branche <span class='synopsis'><code>master</code></span> mais je ne dis pas explicitement quelle branche de suivi à distance mettre à jour avec elle depuis la ligne de commande"), et la commande de l&#8217;exemple ne cherchera <em>que</em> la branche <span class='synopsis'><code>master</code></span>. Les valeurs de <span class='synopsis'><code>remote.</code><em>&lt;dépôt&gt;</em><code>.fetch</code></span> déterminent quelle branche de suivi à distance, s&#8217;il y en a une, est mise à jour. Lorsqu&#8217;elles sont utilisées de cette façon, les valeurs de <span class='synopsis'><code>remote.</code><em>&lt;dépôt&gt;</em><code>.fetch</code></span> n&#8217;ont aucun effet sur la décision de ce qui est récupéré (c&#8217;est-à-dire que les valeurs ne sont pas utilisées comme spéc-de-réf lorsque la ligne de commande liste les spéc-de-réfs) ; elles ne sont utilisées que pour décider de l&#8217;endroit où les réfs qui sont récupérées sont stockées en agissant comme une table de correspondance.</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Cette dernière utilisation des valeurs de <span class='synopsis'><code>remote.</code><em><span class="hover-term" data-term="dépôt">&lt;dépôt&gt;</span></em><code>.fetch</code></span> peut être écrasée en donnant le(s) paramètre(s) <span class='synopsis'><code>--refmap=</code><em>&lt;spéc-de-réf&gt;</em></span> sur la ligne de commande.</p>
+<p>Cette dernière utilisation des valeurs de <span class='synopsis'><code>remote.</code><em>&lt;dépôt&gt;</em><code>.fetch</code></span> peut être écrasée en donnant le(s) paramètre(s) <span class='synopsis'><code>--refmap=</code><em>&lt;spéc-de-réf&gt;</em></span> sur la ligne de commande.</p>
 </div>
 </div>
 </div>
@@ -643,7 +712,7 @@ Lorsque la branche distante que vous voulez récupérer est connue pour être r�
 <p>Par défaut, Git conserve les données à moins qu&#8217;elles ne soient explicitement jetées ; cela s&#8217;étend à la conservation des références locales aux branches des distants qui ont eux-mêmes supprimé ces branches.</p>
 </div>
 <div class="paragraph">
-<p>Si on les laisse s&#8217;accumuler, ces références périmées pourraient rendre les performances mauvaises sur les gros dépôt qui ont beaucoup de branches, et par exemple rendre la sortie de commandes comme <span class='synopsis'><code>git</code> <code>branch</code> <code>-a</code> <code>--contains</code> <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em></span> inutilement verbeuse, ainsi qu&#8217;avoir un impact sur tout ce qui travaillera avec l&#8217;ensemble des références connues.</p>
+<p>Si on les laisse s&#8217;accumuler, ces références périmées pourraient rendre les performances mauvaises sur les gros dépôt qui ont beaucoup de branches, et par exemple rendre la sortie de commandes comme <span class='synopsis'><code>git</code> <code>branch</code> <code>-a</code> <code>--contains</code> <em>&lt;commit&gt;</em></span> inutilement verbeuse, ainsi qu&#8217;avoir un impact sur tout ce qui travaillera avec l&#8217;ensemble des références connues.</p>
 </div>
 <div class="paragraph">
 <p>Ces références de suivi à distance peuvent être supprimées une seule fois avec l&#8217;une ou l&#8217;autre des commandes suivantes :</p>
@@ -667,7 +736,7 @@ $ git remote prune &lt;nom&gt;</pre>
 <p>Par conséquent, si le spécificateur de référence du serveur distant inclut par exemple <span class='synopsis'><code>refs/tags/*:refs/tags/*</code></span>, ou si vous lancez manuellement par exemple <span class='synopsis'><code>git</code> <code>fetch</code> <code>--prune</code> <em>&lt;nom&gt;</em> <code>"refs/tags/*:refs/tags/*"</code></span>, ce ne seront pas les branches de suivi à distance qui seront supprimées, mais toute étiquette locale qui n&#8217;existe pas sur le serveur distant.</p>
 </div>
 <div class="paragraph">
-<p>Ce n&#8217;est peut-être pas ce à quoi vous vous attendez, c&#8217;est-à-dire que vous voulez élaguer le server distant <span class='synopsis'><em>&lt;nom&gt;</em></span>, mais aussi y récupérer explicitement des étiquettes, de sorte que lorsque vous le récupérez, vous supprimez toutes vos étiquettes locales, dont la plupart ne proviennent pas du dépôt distant <span class='synopsis'><em>&lt;nom&gt;</em></span> au départ.</p>
+<p>Ce n&#8217;est peut-être pas ce à quoi vous vous attendez, c&#8217;est-à-dire que vous voulez élaguer le server distant <em>&lt;nom&gt;</em>, mais aussi y récupérer explicitement des étiquettes, de sorte que lorsque vous le récupérez, vous supprimez toutes vos étiquettes locales, dont la plupart ne proviennent pas du dépôt distant <em>&lt;nom&gt;</em> au départ.</p>
 </div>
 <div class="paragraph">
 <p>Soyez donc prudent lorsque vous utilisez un spécificateur de référence comme <span class='synopsis'><code>refs/tags/*:refs/tags/*</code></span>, ou toute autre spécificateur de référence qui pourrait faire correspondre des références de plusieurs dépôts distants au même espace de noms local.</p>
@@ -727,10 +796,10 @@ $ git fetch &lt;url-d-origin&gt; --prune 'refs/tags/*:refs/tags/*</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>L&#8217;état des références à jour n&#8217;est affiché que si l&#8217;option --verbose est utilisée.</p>
+<p>L&#8217;état des références à jour n&#8217;est affiché que si l&#8217;option <span class='synopsis'><code>--verbose</code></span> est utilisée.</p>
 </div>
 <div class="paragraph">
-<p>En mode de sortie compact, spécifié avec la variable de configuration fetch.output, si l&#8217;un des deux <span class='synopsis'><em>&lt;de&gt;</em></span> ou <span class='synopsis'><em>&lt;à&gt;</em></span> est trouvé dans l&#8217;autre chaîne, il sera substitué par <span class='synopsis'><code>*</code></span> dans l&#8217;autre chaîne. Par exemple, <span class='synopsis'><em>master -&gt; origin/master</em></span> devient <span class='synopsis'><em>master -&gt; origin/*</em></span>.</p>
+<p>En mode de sortie compact, spécifié avec la variable de configuration fetch.output, si l&#8217;un des deux <em>&lt;de&gt;</em> ou <em>&lt;à&gt;</em> est trouvé dans l&#8217;autre chaîne, il sera substitué par <span class='synopsis'><code>*</code></span> dans l&#8217;autre chaîne. Par exemple, <span class='synopsis'><em>master -&gt; origin/master</em></span> devient <span class='synopsis'><em>master -&gt; origin/*</em></span>.</p>
 </div>
 <div class="dlist">
 <dl>
@@ -803,7 +872,7 @@ $ git fetch &lt;url-d-origin&gt; --prune 'refs/tags/*:refs/tags/*</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>La commande ci-dessus copie toutes les branches de l&#8217;espace de nom distant <span class='synopsis'><code>refs/heads/</code></span> et les stocke dans l&#8217;espace de noms local <span class='synopsis'><code>refs/remotes/origin/</code></span>, sauf si l&#8217;option <span class='synopsis'><code>remote.</code> <em><span class="hover-term" data-term="dépôt">&lt;dépôt&gt;</span></em> <code>.fetch</code></span> est utilisée pour spécifier un spécificateur de référence autre que celui par défaut.</p>
+<p>La commande ci-dessus copie toutes les branches de l&#8217;espace de nom distant <span class='synopsis'><code>refs/heads/</code></span> et les stocke dans l&#8217;espace de noms local <span class='synopsis'><code>refs/remotes/origin/</code></span>, sauf si l&#8217;option <span class='synopsis'><code>remote.</code> <em>&lt;dépôt&gt;</em> <code>.fetch</code></span> est utilisée pour spécifier un spécificateur de référence autre que celui par défaut.</p>
 </div>
 </li>
 <li>
@@ -886,7 +955,7 @@ $ git log FETCH_HEAD</pre>
 <h2 id="_bogues"><a class="anchor" href="#_bogues"></a>BOGUES</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>L&#8217;utilisation de --recurse-submodules ne permet actuellement d&#8217;obtenir de nouveaux commits que dans les sous-modules qui sont présents par exemple dans <span class='synopsis'><code>$GIT_DIR/modules/</code></span>. Lorsqu&#8217;un nouveau sous-module est ajouté en amont, le sous-module lui-même ne peut pas être récupéré, ce qui rend impossible de vérifier ce sous-module plus tard sans avoir à le récupérer à nouveau. Ce problème devrait être corrigé dans une prochaine version de Git.</p>
+<p>L&#8217;utilisation de <span class='synopsis'><code>--recurse-submodules</code></span> ne permet actuellement d&#8217;obtenir de nouveaux commits que dans les sous-modules qui sont présents par exemple dans <span class='synopsis'><code>$GIT_DIR/modules/</code></span>. Lorsqu&#8217;un nouveau sous-module est ajouté en amont, le sous-module lui-même ne peut pas être récupéré, ce qui rend impossible de vérifier ce sous-module plus tard sans avoir à le récupérer à nouveau. Ce problème devrait être corrigé dans une prochaine version de Git.</p>
 </div>
 </div>
 </div>

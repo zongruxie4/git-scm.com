@@ -53,14 +53,14 @@ headings:
 <h2 id="_synopsis"><a class="anchor" href="#_synopsis"></a>SYNOPSIS</h2>
 <div class="sectionbody">
 <div class="verseblock">
-<pre class="content"><em>git config list</em> [&lt;file-option&gt;] [&lt;display-option&gt;] [--includes]
-<em>git config get</em> [&lt;file-option&gt;] [&lt;display-option&gt;] [--includes] [--all] [--regexp] [--value=&lt;pattern&gt;] [--fixed-value] [--default=&lt;default&gt;] [--url=&lt;url&gt;] &lt;name&gt;
-<em>git config set</em> [&lt;file-option&gt;] [--type=&lt;type&gt;] [--all] [--value=&lt;pattern&gt;] [--fixed-value] &lt;name&gt; &lt;value&gt;
-<em>git config unset</em> [&lt;file-option&gt;] [--all] [--value=&lt;pattern&gt;] [--fixed-value] &lt;name&gt;
-<em>git config rename-section</em> [&lt;file-option&gt;] &lt;old-name&gt; &lt;new-name&gt;
-<em>git config remove-section</em> [&lt;file-option&gt;] &lt;name&gt;
-<em>git config edit</em> [&lt;file-option&gt;]
-<em>git config</em> [&lt;file-option&gt;] --get-colorbool &lt;name&gt; [&lt;stdout-is-tty&gt;]</pre>
+<pre class="content"><em>git config list</em> [&lt;option-de-fichier&gt;] [&lt;option-d-affichage&gt;] [--includes]
+<em>git config get</em> [&lt;option-de-fichier&gt;] [&lt;option-d-affichage&gt;] [--includes] [--all] [--regexp] [--value=&lt;motif&gt;] [--fixed-value] [--default=&lt;default&gt;] [--url=&lt;url&gt;] &lt;nom&gt;
+<em>git config set</em> [&lt;option-de-fichier&gt;] [--type=&lt;type&gt;] [--all] [--value=&lt;motif&gt;] [--fixed-value] &lt;nom&gt; &lt;valeur&gt;
+<em>git config unset</em> [&lt;option-de-fichier&gt;] [--all] [--value=&lt;motif&gt;] [--fixed-value] &lt;nom&gt;
+<em>git config rename-section</em> [&lt;option-de-fichier&gt;] &lt;ancien-nom&gt; &lt;nouveau-nom&gt;
+<em>git config remove-section</em> [&lt;option-de-fichier&gt;] &lt;nom&gt;
+<em>git config edit</em> [&lt;option-de-fichier&gt;]
+<em>git config</em> [&lt;option-de-fichier&gt;] --get-colorbool &lt;nom&gt; [&lt;stdout-est-tty&gt;]</pre>
 </div>
 </div>
 </div>
@@ -71,7 +71,7 @@ headings:
 <p>Vous pouvez interroger/définir/remplacer/annuler les options avec cette commande. Le nom est en fait la section et la clé séparées par un point, et la valeur sera échappée.</p>
 </div>
 <div class="paragraph">
-<p>Multiple lines can be added to an option by using the <span class='synopsis'><code>--append</code></span> option. If you want to update or unset an option which can occur on multiple lines, <span class='synopsis'><code>--value=</code><em>&lt;pattern&gt;</em></span> (which is an extended regular expression, unless the <span class='synopsis'><code>--fixed-value</code></span> option is given) needs to be given. Only the existing values that match the pattern are updated or unset. If you want to handle the lines that do <strong>not</strong> match the pattern, just prepend a single exclamation mark in front (see also <a href="#EXAMPLES">EXEMPLES</a>), but note that this only works when the <span class='synopsis'><code>--fixed-value</code></span> option is not in use.</p>
+<p>Plusieurs lignes peuvent être ajoutées à une option en utilisant l&#8217;option <span class='synopsis'><code>--append</code></span>. Si vous voulez mettre à jour ou annuler une option qui peut se trouver sur plusieurs lignes, <span class='synopsis'><code>--value=</code><em>&lt;motif&gt;</em></span> (qui est une expression régulière étendue, à moins que l&#8217;option <span class='synopsis'><code>--fixed-value</code></span> soit donnée) doit être donné. Seules les valeurs existantes qui correspondent au motif sont mises à jour ou annulées. Si vous voulez gérer les lignes qui ne correspondent <strong>pas</strong> au motif, ajoutez simplement un point d&#8217;exclamation devant (voir aussi <a href="#EXAMPLES">EXEMPLES</a>), mais notez que cela ne fonctionne que lorsque l&#8217;option <span class='synopsis'><code>--fixed-value</code></span> n&#8217;est pas utilisée.</p>
 </div>
 <div class="paragraph">
 <p>L&#8217;option <span class='synopsis'><code>--type=</code><em>&lt;type&gt;</em></span> indique à <em>git config</em> de s&#8217;assurer que les valeurs entrantes et sortantes peuvent être canonisées sous le &lt;type&gt; donné. Si aucun <span class='synopsis'><code>--type=</code><em>&lt;type&gt;</em></span> n&#8217;est donné, aucune canonisation ne sera effectuée. Les appelants peuvent annuler un spécificateur <span class='synopsis'><code>--type</code></span> existant avec <span class='synopsis'><code>--no-type</code></span>.</p>
@@ -162,7 +162,7 @@ headings:
 <dl>
 <dt class="hdlist1" id="git-config---replace-all"> <a class="anchor" href="#git-config---replace-all"></a>--replace-all </dt>
 <dd>
-<p>Default behavior is to replace at most one line. This replaces all lines matching the key (and optionally <span class='synopsis'><code>--value=</code><em>&lt;pattern&gt;</em></span>).</p>
+<p>Le comportement par défaut est de remplacer au maximum une ligne. Ceci remplace toutes les lignes correspondant à la clé (et facultativement <span class='synopsis'><code>--value=</code><em>&lt;motif&gt;</em></span>).</p>
 </dd>
 <dt class="hdlist1" id="git-config---append"> <a class="anchor" href="#git-config---append"></a>--append </dt>
 <dd>
@@ -171,10 +171,8 @@ headings:
 <dt class="hdlist1" id="git-config---commentltmessagegt"> <a class="anchor" href="#git-config---commentmessage"></a> <a class="anchor" href="#git-config---commentltmessagegt"></a>--comment &lt;message&gt; </dt>
 <dd>
 <p>Ajouter un commentaire à la fin des lignes nouvelles ou modifiées.</p>
-<div class="literalblock">
-<div class="content">
-<pre>Si _&lt;message&gt;_ commence avec un ou plusieurs espaces blancs suivis par "#", il est utilisé tel quel. S'il commence par "#", un espace est préfixé avant qu'il ne soit utilisé. Sinon, une chaîne " # " (un espace suivi d'un dièse suivi d'un espace) est préfixée à elle. Et la chaîne résultante est placée immédiatement après la valeur définie pour la variable. Le _ &lt;message&gt;_ ne doit pas contenir de caractères retour-chariot (les commentaires multi-lignes ne sont pas permis).</pre>
-</div>
+<div class="paragraph">
+<p>Si <em>&lt;message&gt;</em> commence avec un ou plusieurs espaces blancs suivis par "<mark>", il est utilisé tel quel. S&#8217;il commence par "</mark>", un espace est préfixé avant qu&#8217;il ne soit utilisé. Sinon, une chaîne " # " (un espace suivi d&#8217;un dièse suivi d&#8217;un espace) est préfixée à elle. Et la chaîne résultante est placée immédiatement après la valeur définie pour la variable. Le _ &lt;message&gt;_ ne doit pas contenir de caractères retour-chariot (les commentaires multi-lignes ne sont pas permis).</p>
 </div>
 </dd>
 <dt class="hdlist1" id="git-config---all"> <a class="anchor" href="#git-config---all"></a>--all </dt>
@@ -238,17 +236,17 @@ headings:
 <dd>
 <p>Similaire à <span class='synopsis'><code>--file</code></span> mais utiliser le blob donné au lieu d&#8217;un fichier. Par exemple, vous pouvez utiliser <em>master:.gitmodules</em> pour lire les valeurs du fichier <em>.gitmodules</em> dans la branche master. Voir la section "SPECIFICATION DE REVISIONS" dans <a href='{{< relurl "docs/gitrevisions/fr" >}}'>gitrevisions[7]</a> pour une liste plus complète des façons d&#8217;épeler les noms de blob.</p>
 </dd>
-<dt class="hdlist1" id="git-config-spanclasssynopsiscode--valuecodeemltpatterngtemspan"> <a class="anchor" href="#git-config---valuepattern"></a> <a class="anchor" href="#git-config-spanclasssynopsiscode--valuecodeemltpatterngtemspan"></a><span class='synopsis'><code>--value=</code><em>&lt;pattern&gt;</em></span> </dt>
+<dt class="hdlist1" id="git-config-spanclasssynopsiscode--valuecodeemltmotifgtemspan"> <a class="anchor" href="#git-config---valuemotif"></a> <a class="anchor" href="#git-config-spanclasssynopsiscode--valuecodeemltmotifgtemspan"></a><span class='synopsis'><code>--value=</code><em>&lt;motif&gt;</em></span> </dt>
 <dt class="hdlist1" id="git-config-spanclasssynopsiscode--no-valuecodespan"> <a class="anchor" href="#git-config---no-value"></a> <a class="anchor" href="#git-config-spanclasssynopsiscode--no-valuecodespan"></a><span class='synopsis'><code>--no-value</code></span> </dt>
 <dd>
-<p>With <span class='synopsis'><code>get</code></span>, <span class='synopsis'><code>set</code></span>, and <span class='synopsis'><code>unset</code></span>, match only against <em>&lt;pattern&gt;</em>. The pattern is an extended regular expression unless <span class='synopsis'><code>--fixed-value</code></span> is given.</p>
+<p>Avec <span class='synopsis'><code>get</code></span>, <span class='synopsis'><code>set</code></span>, and <span class='synopsis'><code>unset</code></span>, ne recherche le correspondance qu&#8217;avec <em>&lt;motif&gt;</em>. Le motif est une expression régulière étendue à moins que <span class='synopsis'><code>--fixed-value</code></span> ne soit donné.</p>
 <div class="paragraph">
-<p>Use <span class='synopsis'><code>--no-value</code></span> to unset <em>&lt;pattern&gt;</em>.</p>
+<p>Utiliser <span class='synopsis'><code>--no-value</code></span> pour annuler la défintion de <em>&lt;motif&gt;</em>.</p>
 </div>
 </dd>
 <dt class="hdlist1" id="git-config---fixed-value"> <a class="anchor" href="#git-config---fixed-value"></a>--fixed-value </dt>
 <dd>
-<p>When used with <span class='synopsis'><code>--value=</code><em>&lt;pattern&gt;</em></span>, treat <em>&lt;pattern&gt;</em> as an exact string instead of a regular expression. This will restrict the name/value pairs that are matched to only those where the value is exactly equal to <em>&lt;pattern&gt;</em>.</p>
+<p>Lorsqu’utilisé avec <span class='synopsis'><code>--value=</code><em>&lt;motif&gt;</em></span>, traiter <em>&lt;motif&gt;</em> comme une chaîne exacte au lieu d’une expression régulière. Cela limitera les paires nom/valeur qui correspondent uniquement à celles dont la valeur est exactement égale à <em>&lt;motif&gt;</em>.</p>
 </dd>
 <dt class="hdlist1" id="git-config---typelttypegt"> <a class="anchor" href="#git-config---typetype"></a> <a class="anchor" href="#git-config---typelttypegt"></a>--type &lt;type&gt; </dt>
 <dd>
@@ -303,7 +301,7 @@ headings:
 <dt class="hdlist1" id="git-config-spanclasssynopsiscode--show-namescodespan"> <a class="anchor" href="#git-config---show-names"></a> <a class="anchor" href="#git-config-spanclasssynopsiscode--show-namescodespan"></a><span class='synopsis'><code>--show-names</code></span> </dt>
 <dt class="hdlist1" id="git-config-spanclasssynopsiscode--no-show-namescodespan"> <a class="anchor" href="#git-config---no-show-names"></a> <a class="anchor" href="#git-config-spanclasssynopsiscode--no-show-namescodespan"></a><span class='synopsis'><code>--no-show-names</code></span> </dt>
 <dd>
-<p>With <span class='synopsis'><code>get</code></span>, show config keys in addition to their values. The default is <span class='synopsis'><code>--no-show-names</code></span> unless <span class='synopsis'><code>--url</code></span> is given and there are no subsections in <em>&lt;name&gt;</em>.</p>
+<p>Avec <span class='synopsis'><code>get</code></span>, afficher les clés de configuration en plus de leurs valeurs. La valeur par défaut est <span class='synopsis'><code>--no-show-names</code></span> à moins que <span class='synopsis'><code>--url</code></span> ne soit donnée et qu&#8217;il n&#8217;y ait pas de sous-section dans <em>&lt;nom&gt;</em>.</p>
 </dd>
 <dt class="hdlist1" id="git-config---show-origin"> <a class="anchor" href="#git-config---show-origin"></a>--show-origin </dt>
 <dd>
@@ -317,7 +315,8 @@ headings:
 <dd>
 <p>Trouver le paramètre de couleur pour <span class='synopsis'><em>&lt;nom&gt;</em></span> (par exemple, <span class='synopsis'><code>color.diff</code></span>) et affiche "true" ou "false". <span class='synopsis'><em>&lt;stdout-est-tty&gt;</em></span> devrait être soit "true" soit "false", et est pris en compte lorsque la configuration est "auto". Si <span class='synopsis'><em>&lt;stdout-est-tty&gt;</em></span> est absent, alors vérifier la sortie standard de la commande elle-même, et sortir avec le statut 0 si la couleur doit être utilisée, ou sortir avec le statut 1 sinon. Lorsque le paramètre de couleur pour <span class='synopsis'><em>&lt;nom&gt;</em></span> est indéfini, la commande utilise <span class='synopsis'><code>color.ui</code></span> comme solution de repli.</p>
 </dd>
-<dt class="hdlist1" id="git-config---no-includes"> <a class="anchor" href="#git-config---no-includes"></a>--[no-]includes </dt>
+<dt class="hdlist1" id="git-config---includes"> <a class="anchor" href="#git-config---includes"></a>--includes </dt>
+<dt class="hdlist1" id="git-config---no-includes"> <a class="anchor" href="#git-config---no-includes"></a>--no-includes </dt>
 <dd>
 <p>Respecter les directives <span class='synopsis'><code>include.*</code></span> dans les fichiers de configuration lors de la recherche de valeurs. La valeur par défaut est <span class='synopsis'><code>off</code></span> lorsqu&#8217;un fichier spécifique est donné (par exemple, en utilisant <span class='synopsis'><code>--file</code></span>, <span class='synopsis'><code>--global</code></span>, etc) et <span class='synopsis'><code>on</code></span> lorsqu&#8217;on cherche dans tous les fichiers de configuration.</p>
 </dd>
@@ -766,7 +765,7 @@ http.sslverify false</pre>
 <dl>
 <dt class="hdlist1" id="git-config-spanclasssynopsiscodegitdircodespan"> <a class="anchor" href="#git-config-gitdir"></a> <a class="anchor" href="#git-config-spanclasssynopsiscodegitdircodespan"></a><span class='synopsis'><code>gitdir</code></span> </dt>
 <dd>
-<p>Les données qui suivent le mot-clé <span class='synopsis'><code>gitdir:</code></span> sont utilisées comme modèle de motif glob. Si l&#8217;emplacement du répertoire .git correspond au motif, la condition d&#8217;inclusion est remplie.</p>
+<p>Les données qui suivent le mot-clé <span class='synopsis'><em>gitdir`et deux points sont utilisées comme modèle de motif glob. Si l'emplacement du répertoire `.git</em></span> correspond au motif, la condition d&#8217;inclusion est remplie.</p>
 <div class="paragraph">
 <p>L&#8217;emplacement de .git peut être découvert automatiquement ou provenir de la variable d&#8217;environnement <span class='synopsis'><code>$GIT_DIR</code></span>. Si le dépôt est découvert automatiquement via un fichier .git (par exemple à partir de sous-modules ou d&#8217;un arbre de travail lié), l&#8217;emplacement du .git sera l&#8217;emplacement final où se trouve le répertoire .git, et non pas où le fichier .git est.</p>
 </div>
@@ -796,14 +795,14 @@ http.sslverify false</pre>
 </dd>
 <dt class="hdlist1" id="git-config-spanclasssynopsiscodeonbranchcodespan"> <a class="anchor" href="#git-config-onbranch"></a> <a class="anchor" href="#git-config-spanclasssynopsiscodeonbranchcodespan"></a><span class='synopsis'><code>onbranch</code></span> </dt>
 <dd>
-<p>Les données qui suivent le mot-clé <span class='synopsis'><code>onbranch:</code></span> sont considérées comme un motif avec des jokers standard et deux autres, <span class='synopsis'><code>**/</code></span> et <span class='synopsis'><code>/**</code></span>, qui peuvent correspondre à plusieurs composants de chemin. Si nous nous trouvons dans un arbre de travail où le nom de la branche actuellement extraite correspond au motif, la condition d&#8217;inclusion est remplie.</p>
+<p>Les données qui suivent le mot-clé <span class='synopsis'><code>onbranch</code></span> et deux points sont considérées comme un motif avec des jokers standard et deux autres, <span class='synopsis'><code>**/</code></span> et <span class='synopsis'><code>/**</code></span>, qui peuvent correspondre à plusieurs composants de chemin. Si nous nous trouvons dans un arbre de travail où le nom de la branche actuellement extraite correspond au motif, la condition d&#8217;inclusion est remplie.</p>
 <div class="paragraph">
 <p>Si le motif se termine par <span class='synopsis'><code>/</code></span>, <span class='synopsis'><code>**</code></span> sera automatiquement ajouté. Par exemple, le motif <span class='synopsis'><code>foo/</code></span> devient <span class='synopsis'><code>foo/**</code></span>. En d&#8217;autres termes, il correspond à toutes les branches qui commencent par <span class='synopsis'><code>foo/</code></span>. Ceci est utile si vos branches sont organisées de manière hiérarchique et que vous souhaitez appliquer une configuration à toutes les branches de cette hiérarchie.</p>
 </div>
 </dd>
-<dt class="hdlist1" id="git-config-spanclasssynopsiscodehasconfigremoteurlcodespan"> <a class="anchor" href="#git-config-hasconfigremoteurl"></a> <a class="anchor" href="#git-config-spanclasssynopsiscodehasconfigremoteurlcodespan"></a><span class='synopsis'><code>hasconfig:remote.*.url:</code></span> </dt>
+<dt class="hdlist1" id="git-config-spanclasssynopsiscodehasconfigremoteurlcodespan"> <a class="anchor" href="#git-config-hasconfigremoteurl"></a> <a class="anchor" href="#git-config-spanclasssynopsiscodehasconfigremoteurlcodespan"></a><span class='synopsis'><code>hasconfig:remote.*.url</code></span> </dt>
 <dd>
-<p>Les données qui suivent ce mot-clé sont considérées comme un motif avec des jokers standard et deux autres, <span class='synopsis'><code>**/</code></span> et <span class='synopsis'><code>/**</code></span>, qui peuvent correspondre à plusieurs composants. La première fois que ce mot-clé est vu, le reste des fichiers de configuration sera analysé pour trouver des URL distants (sans appliquer aucune valeur). S&#8217;il exist au moint une URL distante qui correspond au motif, la condition d&#8217;inclusion est remplie.</p>
+<p>Les données qui suivent ce mot-clé et deux points sont considérées comme un motif avec des jokers standard et deux autres, <span class='synopsis'><code>**/</code></span> et <span class='synopsis'><code>/**</code></span>, qui peuvent correspondre à plusieurs composants. La première fois que ce mot-clé est vu, le reste des fichiers de configuration sera analysé pour trouver des URL distants (sans appliquer aucune valeur). S&#8217;il exist au moins une URL distante qui correspond au motif, la condition d&#8217;inclusion est remplie.</p>
 <div class="paragraph">
 <p>Les fichiers inclus par cette option (directement ou indirectement) ne sont pas autorisés à contenir des URL distants.</p>
 </div>
@@ -960,6 +959,9 @@ les chemins relatifs sont toujours relatifs au fichier
 <p>Une variable qui prend la valeur d&#8217;un nom de chemin peut recevoir une chaîne de caractères commençant par "<span class='synopsis'><code>~/</code></span>" ou "<span class='synopsis'><code>~user/</code></span>", et l&#8217;expansion tilde habituelle se fait sur une telle chaîne : <span class='synopsis'><code>~/</code></span> est développée à la valeur de <span class='synopsis'><code>$HOME</code></span>, et <span class='synopsis'><code>~user/</code></span> au répertoire personnel de l&#8217;utilisateur spécifié.</p>
 <div class="paragraph">
 <p>Si un chemin commence par <span class='synopsis'><code>%</code>(<code>prefix</code>)<code>/</code></span>, le reste est interprété comme un chemin relatif au "préfixe d&#8217;exécution" de Git, c&#8217;est-à-dire relatif à l&#8217;emplacement où Git lui-même a été installé. Par exemple, <span class='synopsis'><code>%</code>(<code>prefix</code>)<code>/bin/</code></span> fait référence au répertoire dans lequel se trouve l&#8217;exécutable Git lui-même. Si Git a été compilé sans le support des préfixes d&#8217;exécution, le préfixe compilé sera substitué à la place. Dans le cas peu probable où un chemin littéral doit être spécifié et ne doit <em>pas</em> être étendu, il doit être préfixé par <span class='synopsis'><code>./</code></span>, comme ceci : <span class='synopsis'><em>./%(préfixe)/bin</em></span>.</p>
+</div>
+<div class="paragraph">
+<p>Si la variable de configuration est préfixée avec ``:(optionnel)`, elle est traitée comme si elle n&#8217;existe pas, si le chemin nommé n&#8217;existe pas.</p>
 </div>
 </dd>
 </dl>

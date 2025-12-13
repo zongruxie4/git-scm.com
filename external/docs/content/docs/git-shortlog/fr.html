@@ -79,10 +79,8 @@ git log --pretty=short | <em>git shortlog</em> [&lt;options&gt;]</pre>
 <dt class="hdlist1" id="git-shortlog---formatltformatgt"> <a class="anchor" href="#git-shortlog---formatformat"></a> <a class="anchor" href="#git-shortlog---formatltformatgt"></a>--format[=&lt;format&gt;] </dt>
 <dd>
 <p>Au lieu du sujet du commit, utiliser d&#8217;autres informations pour décrire chaque commit. &lt;format&gt;' peut être n&#8217;importe quelle chaîne acceptée par l&#8217;option <span class='synopsis'><code>--format</code></span> de&#8217;git log', telle que'*[%h] %s'. (Voir la section "MISES EN FORME" de <a href='{{< relurl "docs/git-log/fr" >}}'>git-log[1]</a>.)</p>
-<div class="literalblock">
-<div class="content">
-<pre>Chaque commit mis en forme sera reformaté avant d'être affiché.</pre>
-</div>
+<div class="paragraph">
+<p>Chaque commit mis en forme sera reformaté avant d&#8217;être affiché.</p>
 </div>
 </dd>
 <dt class="hdlist1" id="git-shortlog---dateltformatgt"> <a class="anchor" href="#git-shortlog---dateformat"></a> <a class="anchor" href="#git-shortlog---dateltformatgt"></a>--date=&lt;format&gt; </dt>
@@ -271,23 +269,23 @@ git log --pretty=short | <em>git shortlog</em> [&lt;options&gt;]</pre>
 </dd>
 <dt class="hdlist1" id="git-shortlog-spanclasssynopsiscode--allcodespan"> <a class="anchor" href="#git-shortlog---all"></a> <a class="anchor" href="#git-shortlog-spanclasssynopsiscode--allcodespan"></a><span class='synopsis'><code>--all</code></span> </dt>
 <dd>
-<p>Faire comme si toutes les refs de <span class='synopsis'><code>refs/</code></span>, ainsi que <span class='synopsis'><code>HEAD</code></span>, étaient listées sur la ligne de commande comme <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>.</p>
+<p>Faire comme si toutes les refs de <span class='synopsis'><code>refs/</code></span>, ainsi que <span class='synopsis'><code>HEAD</code></span>, étaient listées sur la ligne de commande comme <em>&lt;commit&gt;</em>.</p>
 </dd>
 <dt class="hdlist1" id="git-shortlog-spanclasssynopsiscode--branchescodecodecodeemltmotifgtemspan"> <a class="anchor" href="#git-shortlog---branchesmotif"></a> <a class="anchor" href="#git-shortlog-spanclasssynopsiscode--branchescodecodecodeemltmotifgtemspan"></a><span class='synopsis'><code>--branches</code>[<code>=</code><em>&lt;motif&gt;</em>]</span> </dt>
 <dd>
-<p>Faire comme si toutes les refs de <span class='synopsis'><code>refs/heads</code></span> étaient listées sur la ligne de commande comme <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>. Si <em>&lt;motif&gt;</em> est fourni, limiter les branches à celles qui correspondent au <em>&lt;motif&gt;</em> glob shell donné. Si le motif ne présente pas de <em>?</em>, <em>*</em>, ni <em>[</em>, <em>/*</em> à la fin est implicite.</p>
+<p>Faire comme si toutes les refs de <span class='synopsis'><code>refs/heads</code></span> étaient listées sur la ligne de commande comme <em>&lt;commit&gt;</em>. Si <em>&lt;motif&gt;</em> est fourni, limiter les branches à celles qui correspondent au <em>&lt;motif&gt;</em> glob shell donné. Si le motif ne présente pas de <em>?</em>, <em>*</em>, ni <em>[</em>, <em>/*</em> à la fin est implicite.</p>
 </dd>
 <dt class="hdlist1" id="git-shortlog-spanclasssynopsiscode--tagscodecodecodeemltmotifgtemspan"> <a class="anchor" href="#git-shortlog---tagsmotif"></a> <a class="anchor" href="#git-shortlog-spanclasssynopsiscode--tagscodecodecodeemltmotifgtemspan"></a><span class='synopsis'><code>--tags</code>[<code>=</code><em>&lt;motif&gt;</em>]</span> </dt>
 <dd>
-<p>Faire comme si toutes les refs de <span class='synopsis'><code>refs/tags</code></span> étaient listées sur la ligne de commande comme <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>. Si <em>&lt;motif&gt;</em> est fournir, limiter les étiquettes à celles qui correspondent à un glob shell donné. Si le motif ne présente pas de <em>?</em>, <em>*</em>, ni <em>[</em>, <em>/*</em> à la fin est implicite.</p>
+<p>Faire comme si toutes les refs de <span class='synopsis'><code>refs/tags</code></span> étaient listées sur la ligne de commande comme <em>&lt;commit&gt;</em>. Si <em>&lt;motif&gt;</em> est fournir, limiter les étiquettes à celles qui correspondent à un glob shell donné. Si le motif ne présente pas de <em>?</em>, <em>*</em>, ni <em>[</em>, <em>/*</em> à la fin est implicite.</p>
 </dd>
 <dt class="hdlist1" id="git-shortlog-spanclasssynopsiscode--remotescodecodecodeemltmotifgtemspan"> <a class="anchor" href="#git-shortlog---remotesmotif"></a> <a class="anchor" href="#git-shortlog-spanclasssynopsiscode--remotescodecodecodeemltmotifgtemspan"></a><span class='synopsis'><code>--remotes</code>[<code>=</code><em>&lt;motif&gt;</em>]</span> </dt>
 <dd>
-<p>Faire comme si toutes les refs de &#8216;refs/remotes&#8217; étaient listées sur la ligne de commande comme <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>. Si <em>&lt;motif&gt;</em> est donné, limiter les branches de suivi à distance à celles qui correspondent à un glob shell donné. Si le motif ne présent pas <em>?</em>, <em>*</em>, ni <em>[</em>, <em>/*</em> à la fin est implicite.</p>
+<p>Faire comme si toutes les refs de &#8216;refs/remotes&#8217; étaient listées sur la ligne de commande comme <em>&lt;commit&gt;</em>. Si <em>&lt;motif&gt;</em> est donné, limiter les branches de suivi à distance à celles qui correspondent à un glob shell donné. Si le motif ne présent pas <em>?</em>, <em>*</em>, ni <em>[</em>, <em>/*</em> à la fin est implicite.</p>
 </dd>
 <dt class="hdlist1" id="git-shortlog-spanclasssynopsiscode--globcodeemltmotif-globgtemspan"> <a class="anchor" href="#git-shortlog---globmotif-glob"></a> <a class="anchor" href="#git-shortlog-spanclasssynopsiscode--globcodeemltmotif-globgtemspan"></a><span class='synopsis'><code>--glob=</code><em>&lt;motif-glob&gt;</em></span> </dt>
 <dd>
-<p>Faire comme si toutes les réfs correspondant au shell glob <em>&lt;motif-glob&gt;</em> étaient listées sur la ligne de commande comme <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>. Le préfixe <em>refs/</em>, est automatiquement ajouté s&#8217;il n&#8217;y en a pas. Si le motif ne présente pas de <em>?</em>, <em>*</em>, ni <em>[</em>, <em>/*</em> à la fin est implicite.</p>
+<p>Faire comme si toutes les réfs correspondant au shell glob <em>&lt;motif-glob&gt;</em> étaient listées sur la ligne de commande comme <em>&lt;commit&gt;</em>. Le préfixe <em>refs/</em>, est automatiquement ajouté s&#8217;il n&#8217;y en a pas. Si le motif ne présente pas de <em>?</em>, <em>*</em>, ni <em>[</em>, <em>/*</em> à la fin est implicite.</p>
 </dd>
 <dt class="hdlist1" id="git-shortlog-spanclasssynopsiscode--excludecodeemltmotif-globgtemspan"> <a class="anchor" href="#git-shortlog---excludemotif-glob"></a> <a class="anchor" href="#git-shortlog-spanclasssynopsiscode--excludecodeemltmotif-globgtemspan"></a><span class='synopsis'><code>--exclude=</code><em>&lt;motif-glob&gt;</em></span> </dt>
 <dd>
@@ -302,7 +300,7 @@ git log --pretty=short | <em>git shortlog</em> [&lt;options&gt;]</pre>
 </dd>
 <dt class="hdlist1" id="git-shortlog-spanclasssynopsiscode--reflogcodespan"> <a class="anchor" href="#git-shortlog---reflog"></a> <a class="anchor" href="#git-shortlog-spanclasssynopsiscode--reflogcodespan"></a><span class='synopsis'><code>--reflog</code></span> </dt>
 <dd>
-<p>Faire comme si tous les objets mentionnés par les reflogs étaient listés sur la ligne de commande comme <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>.</p>
+<p>Faire comme si tous les objets mentionnés par les reflogs étaient listés sur la ligne de commande comme <em>&lt;commit&gt;</em>.</p>
 </dd>
 <dt class="hdlist1" id="git-shortlog-spanclasssynopsiscode--alternate-refscodespan"> <a class="anchor" href="#git-shortlog---alternate-refs"></a> <a class="anchor" href="#git-shortlog-spanclasssynopsiscode--alternate-refscodespan"></a><span class='synopsis'><code>--alternate-refs</code></span> </dt>
 <dd>
@@ -350,7 +348,7 @@ git log --pretty=short | <em>git shortlog</em> [&lt;options&gt;]</pre>
 <dt class="hdlist1" id="git-shortlog-spanclasssynopsiscode-gcodespan"> <a class="anchor" href="#git-shortlog--g"></a> <a class="anchor" href="#git-shortlog-spanclasssynopsiscode-gcodespan"></a><span class='synopsis'><code>-g</code></span> </dt>
 <dt class="hdlist1" id="git-shortlog-spanclasssynopsiscode--walk-reflogscodespan"> <a class="anchor" href="#git-shortlog---walk-reflogs"></a> <a class="anchor" href="#git-shortlog-spanclasssynopsiscode--walk-reflogscodespan"></a><span class='synopsis'><code>--walk-reflogs</code></span> </dt>
 <dd>
-<p>Au lieu de marcher dans la chaîne des commits ancêtres, parcourir les entrées de reflog du plus récent au plus ancien. Lorsque cette option est utilisée, vous ne pouvez pas spécifier de commits à exclure (c&#8217;est-à-dire que les notations <span class='synopsis'><code>^</code><em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em></span>, <span class='synopsis'><em>&lt;commit1&gt;</em><code>..</code><em>&lt;commit2&gt;</em></span> et`&lt;commit1&gt;&#8230;&#8203;&lt;commit2&gt;` ne peuvent pas être utilisées).</p>
+<p>Au lieu de marcher dans la chaîne des commits ancêtres, parcourir les entrées de reflog du plus récent au plus ancien. Lorsque cette option est utilisée, vous ne pouvez pas spécifier de commits à exclure (c&#8217;est-à-dire que les notations <span class='synopsis'><code>^</code><em>&lt;commit&gt;</em></span>, <span class='synopsis'><em>&lt;commit1&gt;</em><code>..</code><em>&lt;commit2&gt;</em></span> et`&lt;commit1&gt;&#8230;&#8203;&lt;commit2&gt;` ne peuvent pas être utilisées).</p>
 <div class="paragraph">
 <p>Avec un format <span class='synopsis'><code>--pretty</code></span> autre que <span class='synopsis'><code>online</code></span> et <span class='synopsis'><code>reference</code></span> (pour des raisons évidentes), cela fait que la sortie a deux lignes supplémentaires d&#8217;informations tirées du reflog. L&#8217;indicateur de reflog dans la sortie peut être affiché comme <span class='synopsis'><code>ref@{</code><em>&lt;Nième&gt;</em><code>}</code></span> (où <em>&lt;Nième&gt;</em> est l&#8217;index chronologique inverse dans le reflog) ou comme <span class='synopsis'><code>ref@{</code><em>&lt;horodatage&gt;</em><code>}</code></span> (avec l'<em>&lt;horodatage&gt;</em> pour cette entrée), selon quelques règles :</p>
 </div>
@@ -444,9 +442,9 @@ git log --pretty=short | <em>git shortlog</em> [&lt;options&gt;]</pre>
 <dd>
 <p>Option supplémentaire à <span class='synopsis'><code>--full-history</code></span> pour supprimer certaines fusions inutiles de l&#8217;historique résultant, car il n&#8217;y a pas de commits sélectionnés contribuant à cette fusion.</p>
 </dd>
-<dt class="hdlist1" id="git-shortlog-spanclasssynopsiscode--ancestry-pathcodecodecodeemltcommitgtemspan"> <a class="anchor" href="#git-shortlog---ancestry-pathcommit"></a> <a class="anchor" href="#git-shortlog-spanclasssynopsiscode--ancestry-pathcodecodecodeemltcommitgtemspan"></a><span class='synopsis'><code>--ancestry-path</code>[<code>=</code><em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>]</span> </dt>
+<dt class="hdlist1" id="git-shortlog-spanclasssynopsiscode--ancestry-pathcodecodecodeemltcommitgtemspan"> <a class="anchor" href="#git-shortlog---ancestry-pathcommit"></a> <a class="anchor" href="#git-shortlog-spanclasssynopsiscode--ancestry-pathcodecodecodeemltcommitgtemspan"></a><span class='synopsis'><code>--ancestry-path</code>[<code>=</code><em>&lt;commit&gt;</em>]</span> </dt>
 <dd>
-<p>When given a range of commits to display (e.g. <span class='synopsis'><em>&lt;commit1&gt;</em><code>..</code><em>&lt;commit2&gt;</em></span> or <span class='synopsis'><em>&lt;commit2&gt;</em> <code>^</code><em>&lt;commit1&gt;</em></span>), and a commit <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em> in that range, only display commits in that range that are ancestors of <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>, descendants of <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>, or <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em> itself. If no commit is specified, use <em>&lt;commit1&gt;</em> (the excluded part of the range) as <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>. Can be passed multiple times; if so, a commit is included if it is any of the commits given or if it is an ancestor or descendant of one of them.</p>
+<p>Lorsque l&#8217;on donne une plage de commits à afficher (par exemple <span class='synopsis'><em>&lt;commit1&gt;</em><code>..</code><em>&lt;commit2&gt;</em></span> ou <span class='synopsis'><em>&lt;commit2&gt;</em> <code>^</code><em>&lt;commit1&gt;</em></span>) et un <em>&lt;commit&gt;</em> dans cette plage, n&#8217;afficher que les commits de cette plage qui sont des ancêtres de <em>&lt;commit&gt;</em>, des descendants de <em>&lt;commit&gt;</em>, ou <em>&lt;commit&gt;</em> lui-même. Si aucun commit n&#8217;est spécifié, utiliser <em>&lt;commit1&gt;</em> (la partie exclue de la plage) comme <em>&lt;commit&gt;</em>. Peut être passée plusieurs fois ; si c&#8217;est le cas, un commit est inclus s&#8217;il est l&#8217;un des commits donnés ou s&#8217;il est un ancêtre ou un descendant de l&#8217;un d&#8217;eux.</p>
 </dd>
 </dl>
 </div>
@@ -454,7 +452,7 @@ git log --pretty=short | <em>git shortlog</em> [&lt;options&gt;]</pre>
 <p>Une explication plus détaillée suit.</p>
 </div>
 <div class="paragraph">
-<p>Suppose you specified <span class='synopsis'><code>foo</code></span> as the <em>&lt;paths&gt;</em>. We shall call commits that modify <span class='synopsis'><code>foo</code></span> !TREESAME, and the rest TREESAME. (In a diff filtered for <span class='synopsis'><code>foo</code></span>, they look different and equal, respectively.)</p>
+<p>Supposons que vous ayez spécifié <span class='synopsis'><code>foo</code></span> pour <em>&lt;chemins&gt;</em>. Nous appellerons les commits qui modifient <span class='synopsis'><code>foo</code></span> !MEMEARBRE, et le reste MEMEARBRE. (Dans un diff filtré pour <span class='synopsis'><code>foo</code></span>, ils sont différents et égaux, respectivement.)</p>
 </div>
 <div class="paragraph">
 <p>Dans ce qui suit, nous nous référerons toujours au même exemple d&#8217;historique pour illustrer les différences entre les paramètres de simplification. Nous supposons que vous filtrez pour un fichier <span class='synopsis'><code>foo</code></span> dans ce graphe de commits :</p>
@@ -474,22 +472,22 @@ git log --pretty=short | <em>git shortlog</em> [&lt;options&gt;]</pre>
 <div class="ulist">
 <ul>
 <li>
-<p><span class='synopsis'><code>I</code></span> is the initial commit, in which <span class='synopsis'><code>foo</code></span> exists with contents <span class='synopsis'><code>asdf</code></span>, and a file <span class='synopsis'><code>quux</code></span> exists with contents <span class='synopsis'><code>quux</code></span>. Initial commits are compared to an empty tree, so <span class='synopsis'><code>I</code></span> is !TREESAME.</p>
+<p><span class='synopsis'><code>I</code></span> est le commit initial, dans lequel 'foo` existe avec le contenu <span class='synopsis'><code>asdf</code></span>, et un fichier <span class='synopsis'><code>quux</code></span> existe avec le contenu <span class='synopsis'><code>quux</code></span>. Les commits initiaux sont comparés à un arbre vide, donc <span class='synopsis'><code>I</code></span> est !MEMEARBRE.</p>
 </li>
 <li>
-<p>In <span class='synopsis'><code>A</code></span>, <span class='synopsis'><code>foo</code></span> contains just <span class='synopsis'><code>foo</code></span>.</p>
+<p>Dans <span class='synopsis'><code>A</code></span>, <span class='synopsis'><code>foo</code></span> ne contient que <span class='synopsis'><code>foo</code></span>.</p>
 </li>
 <li>
 <p><span class='synopsis'><code>B</code></span> contient le même changement que <span class='synopsis'><code>A</code></span>. Sa fusion <span class='synopsis'><code>M</code></span> est triviale et donc MEMEARBRE pour tous les parents.</p>
 </li>
 <li>
-<p><span class='synopsis'><code>C</code></span> does not change <span class='synopsis'><code>foo</code></span>, but its merge <span class='synopsis'><code>N</code></span> changes it to <span class='synopsis'><code>foobar</code></span>, so it is not TREESAME to any parent.</p>
+<p><span class='synopsis'><code>C</code></span> ne change pas <span class='synopsis'><code>foo</code></span>, mais sa fusion <span class='synopsis'><code>N</code></span> le change en <span class='synopsis'><code>foobar</code></span>, donc ce n&#8217;est pas MEMEARBRE à aucun parent.</p>
 </li>
 <li>
-<p><span class='synopsis'><code>D</code></span> sets <span class='synopsis'><code>foo</code></span> to <span class='synopsis'><code>baz</code></span>. Its merge <span class='synopsis'><code>O</code></span> combines the strings from <span class='synopsis'><code>N</code></span> and <span class='synopsis'><code>D</code></span> to <span class='synopsis'><code>foobarbaz</code></span>; i.e., it is not TREESAME to any parent.</p>
+<p><span class='synopsis'><code>D</code></span> met <span class='synopsis'><code>foo</code></span> sur <span class='synopsis'><code>baz</code></span>. Sa fusion <span class='synopsis'><code>O</code></span> combine les chaînes de caractères de <span class='synopsis'><code>N</code></span> et <span class='synopsis'><code>D</code></span> à <span class='synopsis'><code>foobarbaz</code></span> ; c&#8217;est-à-dire qu&#8217;elle n&#8217;est pas MEMEARBRE à aucun parent.</p>
 </li>
 <li>
-<p><span class='synopsis'><code>E</code></span> changes <span class='synopsis'><code>quux</code></span> to <span class='synopsis'><code>xyzzy</code></span>, and its merge <span class='synopsis'><code>P</code></span> combines the strings to <span class='synopsis'><code>quux</code> <code>xyzzy</code></span>. <span class='synopsis'><code>P</code></span> is TREESAME to <span class='synopsis'><code>O</code></span>, but not to <span class='synopsis'><code>E</code></span>.</p>
+<p><span class='synopsis'><code>E</code></span> change <span class='synopsis'><code>quux</code></span> en <span class='synopsis'><code>xyzzy</code></span>, et sa fusion <span class='synopsis'><code>P</code></span> combine les chaînes en <span class='synopsis'><code>quux</code> <code>xyzzy</code></span>. <span class='synopsis'><code>P</code></span> est MEMEARBRE à <span class='synopsis'><code>O</code></span>, mais pas à <span class='synopsis'><code>E</code></span>.</p>
 </li>
 <li>
 <p><span class='synopsis'><code>X</code></span> est un commit racine indépendant qui a ajouté un nouveau fichier <span class='synopsis'><code>side</code></span>, et <span class='synopsis'><code>Y</code></span> l&#8217;a modifié. <span class='synopsis'><code>Y</code></span> est MEMEARBRE à <span class='synopsis'><code>X</code></span>. Sa fusion <span class='synopsis'><code>Q</code></span> a ajouté <span class='synopsis'><code>side</code></span> à <span class='synopsis'><code>P</code></span>, et <span class='synopsis'><code>Q</code></span> est MEMEARBRE à <span class='synopsis'><code>P</code></span>, mais pas à <span class='synopsis'><code>Y</code></span>.</p>
@@ -636,9 +634,9 @@ git log --pretty=short | <em>git shortlog</em> [&lt;options&gt;]</pre>
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1" id="git-shortlog-spanclasssynopsiscode--ancestry-pathcodecodecodeemltcommitgtemspan-1"> <a class="anchor" href="#git-shortlog---ancestry-pathcommit-1"></a> <a class="anchor" href="#git-shortlog-spanclasssynopsiscode--ancestry-pathcodecodecodeemltcommitgtemspan-1"></a><span class='synopsis'><code>--ancestry-path</code>[<code>=</code><em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>]</span> </dt>
+<dt class="hdlist1" id="git-shortlog-spanclasssynopsiscode--ancestry-pathcodecodecodeemltcommitgtemspan-1"> <a class="anchor" href="#git-shortlog---ancestry-pathcommit-1"></a> <a class="anchor" href="#git-shortlog-spanclasssynopsiscode--ancestry-pathcodecodecodeemltcommitgtemspan-1"></a><span class='synopsis'><code>--ancestry-path</code>[<code>=</code><em>&lt;commit&gt;</em>]</span> </dt>
 <dd>
-<p>Limit the displayed commits to those which are an ancestor of <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>, or which are a descendant of <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>, or are <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em> itself.</p>
+<p>Limiter les commits affichés à ceux qui sont un ancêtre de <em>&lt;commit&gt;</em>, ou qui sont soit un descendant de <em>&lt;commit&gt;</em>, soit <em>&lt;commit&gt;</em> lui-même.</p>
 <div class="paragraph">
 <p>À titre d&#8217;exemple, considérons l&#8217;historique de commits suivant :</p>
 </div>
@@ -652,10 +650,10 @@ git log --pretty=short | <em>git shortlog</em> [&lt;options&gt;]</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>A regular <em>D..M</em> computes the set of commits that are ancestors of <span class='synopsis'><code>M</code></span>, but excludes the ones that are ancestors of <span class='synopsis'><code>D</code></span>. This is useful to see what happened to the history leading to <span class='synopsis'><code>M</code></span> since <span class='synopsis'><code>D</code></span>, in the sense that "what does <span class='synopsis'><code>M</code></span> have that did not exist in <span class='synopsis'><code>D</code></span>". The result in this example would be all the commits, except <span class='synopsis'><code>A</code></span> and <span class='synopsis'><code>B</code></span> (and <span class='synopsis'><code>D</code></span> itself, of course).</p>
+<p>Un <em>D..M</em> régulier calcule l&#8217;ensemble des commits qui sont les ancêtres de <span class='synopsis'><code>M</code></span>, mais exclut ceux qui sont les ancêtres de <span class='synopsis'><code>D</code></span>. C&#8217;est utile pour voir ce qui s&#8217;est passé dans l&#8217;historique qui a mené à <span class='synopsis'><code>M</code></span> depuis le <span class='synopsis'><code>D</code></span>, au sens de « ce que <span class='synopsis'><code>M</code></span> a qui n&#8217;existait pas dans <span class='synopsis'><code>D</code></span> ». Le résultat dans cet exemple serait tous les commits, sauf <span class='synopsis'><code>A</code></span> et <span class='synopsis'><code>B</code></span> (et <span class='synopsis'><code>D</code></span> lui-même, bien sûr).</p>
 </div>
 <div class="paragraph">
-<p>When we want to find out what commits in <span class='synopsis'><code>M</code></span> are contaminated with the bug introduced by <span class='synopsis'><code>D</code></span> and need fixing, however, we might want to view only the subset of <span class='synopsis'><code>D..M</code></span> that are actually descendants of <span class='synopsis'><code>D</code></span>, i.e. excluding <span class='synopsis'><code>C</code></span> and <span class='synopsis'><code>K</code></span>. This is exactly what the <span class='synopsis'><code>--ancestry-path</code></span> option does. Applied to the <span class='synopsis'><code>D..M</code></span> range, it results in:</p>
+<p>Quand nous voulons savoir quels commits dans <span class='synopsis'><code>M</code></span> sont contaminés par le bogue introduit par <span class='synopsis'><code>D</code></span> et ont besoin d&#8217;être corrigés, cependant, nous pourrions vouloir voir seulement le sous-ensemble de <span class='synopsis'><code>D..M</code></span> qui sont en fait des descendants de <span class='synopsis'><code>D</code></span>, c&#8217;est-à-dire en excluant <span class='synopsis'><code>C</code></span> et <span class='synopsis'><code>K</code></span>. C&#8217;est exactement ce que fait l&#8217;option <span class='synopsis'><code>--ancestry-path</code></span>. Appliqué à l&#8217;intervalle <span class='synopsis'><code>D..M</code></span>, il se traduit en :</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -667,7 +665,7 @@ git log --pretty=short | <em>git shortlog</em> [&lt;options&gt;]</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>We can also use <span class='synopsis'><code>--ancestry-path=D</code></span> instead of <span class='synopsis'><code>--ancestry-path</code></span> which means the same thing when applied to the <span class='synopsis'><code>D..M</code></span> range but is just more explicit.</p>
+<p>Nous pouvons également utiliser <span class='synopsis'><code>--ancestry-path=D</code></span> au lieu de <span class='synopsis'><code>--ancestry-path</code></span> qui signifie la même chose lorsqu&#8217;il est appliqué à la plage <span class='synopsis'><code>D..M</code></span> mais est juste plus explicite.</p>
 </div>
 <div class="paragraph">
 <p>Si nous sommes plutôt intéressés par un sujet donné dans cette plage, et tous les commits affectés par ce sujet, nous pouvons seulement vouloir voir ceux du sous-ensemble de <span class='synopsis'><code>D..M</code></span> qui contiennent ce sujet dans leur chemin d&#8217;ascendance. Ainsi, en utilisant <span class='synopsis'><code>--ancestry-path=H</code> <code>D..M</code></span> par exemple, on obtiendrait le résultat suivant :</p>

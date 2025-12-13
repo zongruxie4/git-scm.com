@@ -48,7 +48,7 @@ headings:
 <pre class="content"><em>git fsck</em> [--tags] [--root] [--unreachable] [--cache] [--no-reflogs]
 	 [--[no-]full] [--strict] [--verbose] [--lost-found]
 	 [--[no-]dangling] [--[no-]progress] [--connectivity-only]
-	 [--[no-]name-objects] [--[no-]references] [<span class="hover-term" data-term="objet">&lt;objet&gt;</span>&#8230;&#8203;]</pre>
+	 [--[no-]name-objects] [--[no-]references] [&lt;objet&gt;&#8230;&#8203;]</pre>
 </div>
 </div>
 </div>
@@ -65,7 +65,7 @@ headings:
 <div class="sectionbody">
 <div class="dlist">
 <dl>
-<dt class="hdlist1" id="git-fsck-ltobjetgt"> <a class="anchor" href="#git-fsck-objet"></a> <a class="anchor" href="#git-fsck-ltobjetgt"></a><span class="hover-term" data-term="objet">&lt;objet&gt;</span> </dt>
+<dt class="hdlist1" id="git-fsck-ltobjetgt"> <a class="anchor" href="#git-fsck-objet"></a> <a class="anchor" href="#git-fsck-ltobjetgt"></a>&lt;objet&gt; </dt>
 <dd>
 <p>Un objet à traiter comme la tête d&#8217;une trace d&#8217;inaccessibilité.</p>
 <div class="paragraph">
@@ -76,7 +76,8 @@ headings:
 <dd>
 <p>Affiche les objets qui existent mais qui ne sont pas accessibles à partir de l&#8217;un des noeuds de référence.</p>
 </dd>
-<dt class="hdlist1" id="git-fsck---no-dangling"> <a class="anchor" href="#git-fsck---no-dangling"></a>--[no-]dangling </dt>
+<dt class="hdlist1" id="git-fsck---dangling"> <a class="anchor" href="#git-fsck---dangling"></a>--dangling </dt>
+<dt class="hdlist1" id="git-fsck---no-dangling"> <a class="anchor" href="#git-fsck---no-dangling"></a>--no-dangling </dt>
 <dd>
 <p>Affiche les objets qui existent mais qui ne sont jamais <em>directement</em> utilisés (par défaut). <span class='synopsis'><code>--no-dangling</code></span> peut être utilisé pour omettre cette information de la sortie.</p>
 </dd>
@@ -123,13 +124,15 @@ headings:
 <dd>
 <p>Lors de l&#8217;affichage des noms des objets atteignables, en plus du SHA-1, afficher également un nom qui décrit <strong>comment</strong> ils sont atteignables, compatible avec <a href='{{< relurl "docs/git-rev-parse/fr" >}}'>git-rev-parse[1]</a>, par exemple <span class='synopsis'><code>HEAD@{1234567890}~25^2:src/</code></span>.</p>
 </dd>
-<dt class="hdlist1" id="git-fsck---no-progress"> <a class="anchor" href="#git-fsck---no-progress"></a>--[no-]progress </dt>
+<dt class="hdlist1" id="git-fsck---progress"> <a class="anchor" href="#git-fsck---progress"></a>--progress </dt>
+<dt class="hdlist1" id="git-fsck---no-progress"> <a class="anchor" href="#git-fsck---no-progress"></a>--no-progress </dt>
 <dd>
 <p>L&#8217;état d&#8217;avancement est affiché sur la sortie d&#8217;erreur standard quand elle est attachée à un terminal, à moins que --no-progress ou --verbose soit spécifié. --progress force l&#8217;état d&#8217;avancement même si le flux d&#8217;erreur standard n&#8217;est pas dirigé vers un terminal.</p>
 </dd>
-<dt class="hdlist1" id="git-fsck---no-references"> <a class="anchor" href="#git-fsck---no-references"></a>--[no-]references </dt>
+<dt class="hdlist1" id="git-fsck---references"> <a class="anchor" href="#git-fsck---references"></a>--references </dt>
+<dt class="hdlist1" id="git-fsck---no-references"> <a class="anchor" href="#git-fsck---no-references"></a>--no-references </dt>
 <dd>
-<p>Control whether to check the references database consistency via <em>git refs verify</em>. See <a href='{{< relurl "docs/git-refs/fr" >}}'>git-refs[1]</a> for details. The default is to check the references database.</p>
+<p>Contrôler s&#8217;il faut vérifier la cohérence de la base de références via <em>git refs verify</em>. Voir <a href='{{< relurl "docs/git-refs/fr" >}}'>git-refs[1]</a> pour plus de détails. Le comportement par défaut est de vérifier la base de données de références.</p>
 </dd>
 </dl>
 </div>
@@ -179,19 +182,19 @@ headings:
 <div class="sectionbody">
 <div class="dlist">
 <dl>
-<dt class="hdlist1" id="git-fsck-inaccessiblelttypegtltobjetgt"> <a class="anchor" href="#git-fsck-inaccessibletypeobjet"></a> <a class="anchor" href="#git-fsck-inaccessiblelttypegtltobjetgt"></a>inaccessible &lt;type&gt; <span class="hover-term" data-term="objet">&lt;objet&gt;</span> </dt>
+<dt class="hdlist1" id="git-fsck-inaccessiblelttypegtltobjetgt"> <a class="anchor" href="#git-fsck-inaccessibletypeobjet"></a> <a class="anchor" href="#git-fsck-inaccessiblelttypegtltobjetgt"></a>inaccessible &lt;type&gt; &lt;objet&gt; </dt>
 <dd>
-<p>L&#8217;objet<span class="hover-term" data-term="objet">&lt;objet&gt;</span> de type &lt;type&gt; n&#8217;est pas réellement référencé directement ou indirectement dans aucun des arbres ou commits vus. Cela peut signifier qu&#8217;il y a un autre nœud racine que vous ne spécifiez pas ou que l&#8217;arbre est corrompu. Si vous n&#8217;avez pas manqué un nœud racine, alors vous pourriez aussi bien supprimer les nœuds inaccessibles puisqu&#8217;ils ne peuvent pas être utilisés.</p>
+<p>L&#8217;objet&lt;objet&gt; de type &lt;type&gt; n&#8217;est pas réellement référencé directement ou indirectement dans aucun des arbres ou commits vus. Cela peut signifier qu&#8217;il y a un autre nœud racine que vous ne spécifiez pas ou que l&#8217;arbre est corrompu. Si vous n&#8217;avez pas manqué un nœud racine, alors vous pourriez aussi bien supprimer les nœuds inaccessibles puisqu&#8217;ils ne peuvent pas être utilisés.</p>
 </dd>
-<dt class="hdlist1" id="git-fsck-lttypegtltobjetgtmanquant"> <a class="anchor" href="#git-fsck-typeobjetmanquant"></a> <a class="anchor" href="#git-fsck-lttypegtltobjetgtmanquant"></a>&lt;type&gt; <span class="hover-term" data-term="objet">&lt;objet&gt;</span> manquant </dt>
+<dt class="hdlist1" id="git-fsck-lttypegtltobjetgtmanquant"> <a class="anchor" href="#git-fsck-typeobjetmanquant"></a> <a class="anchor" href="#git-fsck-lttypegtltobjetgtmanquant"></a>&lt;type&gt; &lt;objet&gt; manquant </dt>
 <dd>
 <p>L&#8217;objet &lt;type&gt; &lt;object&gt; est référencé mais n&#8217;est pas présent dans la base de données.</p>
 </dd>
-<dt class="hdlist1" id="git-fsck-lttypegtltobjetgtensuspens"> <a class="anchor" href="#git-fsck-typeobjetensuspens"></a> <a class="anchor" href="#git-fsck-lttypegtltobjetgtensuspens"></a>&lt;type&gt; <span class="hover-term" data-term="objet">&lt;objet&gt;</span> en suspens </dt>
+<dt class="hdlist1" id="git-fsck-lttypegtltobjetgtensuspens"> <a class="anchor" href="#git-fsck-typeobjetensuspens"></a> <a class="anchor" href="#git-fsck-lttypegtltobjetgtensuspens"></a>&lt;type&gt; &lt;objet&gt; en suspens </dt>
 <dd>
-<p>L’objet &lt;type&gt; <span class="hover-term" data-term="objet">&lt;objet&gt;</span>, est présent dans la base de données mais n’est jamais utilisé <em>directement</em>. Un commit en suspens peut être un nœud racine.</p>
+<p>L’objet &lt;type&gt; &lt;objet&gt;, est présent dans la base de données mais n’est jamais utilisé <em>directement</em>. Un commit en suspens peut être un nœud racine.</p>
 </dd>
-<dt class="hdlist1" id="git-fsck-Lehachagenecorrespondpasltobjetgt"> <a class="anchor" href="#git-fsck-Lehachagenecorrespondpasobjet"></a> <a class="anchor" href="#git-fsck-Lehachagenecorrespondpasltobjetgt"></a>Le hachage ne correspond pas à <span class="hover-term" data-term="objet">&lt;objet&gt;</span> </dt>
+<dt class="hdlist1" id="git-fsck-Lehachagenecorrespondpasltobjetgt"> <a class="anchor" href="#git-fsck-Lehachagenecorrespondpasobjet"></a> <a class="anchor" href="#git-fsck-Lehachagenecorrespondpasltobjetgt"></a>Le hachage ne correspond pas à &lt;objet&gt; </dt>
 <dd>
 <p>La base de données possède un objet dont le hachage ne correspond pas à la valeur de la base de données d’objets. Cela indique un grave problème d’intégrité des données.</p>
 </dd>
@@ -222,6 +225,14 @@ headings:
 <dt class="hdlist1" id="git-fsck-spanclasssynopsiscodebadFilemodecodespan"> <a class="anchor" href="#git-fsck-badFilemode"></a> <a class="anchor" href="#git-fsck-spanclasssynopsiscodebadFilemodecodespan"></a><span class='synopsis'><code>badFilemode</code></span> </dt>
 <dd>
 <p>(INFO) Un arbre contient une mauvaise entrée de mode de fichier.</p>
+</dd>
+<dt class="hdlist1" id="git-fsck-spanclasssynopsiscodebadGpgsigcodespan"> <a class="anchor" href="#git-fsck-badGpgsig"></a> <a class="anchor" href="#git-fsck-spanclasssynopsiscodebadGpgsigcodespan"></a><span class='synopsis'><code>badGpgsig</code></span> </dt>
+<dd>
+<p>(ERREUR) Une étiquette contient un mauvais entête (tronqué) de signature (par exemple, <span class='synopsis'><code>gpgsig</code></span>).</p>
+</dd>
+<dt class="hdlist1" id="git-fsck-spanclasssynopsiscodebadHeaderContinuationcodespan"> <a class="anchor" href="#git-fsck-badHeaderContinuation"></a> <a class="anchor" href="#git-fsck-spanclasssynopsiscodebadHeaderContinuationcodespan"></a><span class='synopsis'><code>badHeaderContinuation</code></span> </dt>
+<dd>
+<p>(ERREUR) Un en-tête continu (comme pour <span class='synopsis'><code>gpgsig</code></span>) est inopinément tronqué.</p>
 </dd>
 <dt class="hdlist1" id="git-fsck-spanclasssynopsiscodebadNamecodespan"> <a class="anchor" href="#git-fsck-badName"></a> <a class="anchor" href="#git-fsck-spanclasssynopsiscodebadNamecodespan"></a><span class='synopsis'><code>badName</code></span> </dt>
 <dd>
@@ -258,6 +269,10 @@ headings:
 <dt class="hdlist1" id="git-fsck-spanclasssynopsiscodebadReferentNamecodespan"> <a class="anchor" href="#git-fsck-badReferentName"></a> <a class="anchor" href="#git-fsck-spanclasssynopsiscodebadReferentNamecodespan"></a><span class='synopsis'><code>badReferentName</code></span> </dt>
 <dd>
 <p>(ERREUR) Le nom référent d&#8217;un symref est invalide.</p>
+</dd>
+<dt class="hdlist1" id="git-fsck-spanclasssynopsiscodebadReftableTableNamecodespan"> <a class="anchor" href="#git-fsck-badReftableTableName"></a> <a class="anchor" href="#git-fsck-spanclasssynopsiscodebadReftableTableNamecodespan"></a><span class='synopsis'><code>badReftableTableName</code></span> </dt>
+<dd>
+<p>(AVERTISSEMENT) Une table réftable a un nom invalide.</p>
 </dd>
 <dt class="hdlist1" id="git-fsck-spanclasssynopsiscodebadTagNamecodespan"> <a class="anchor" href="#git-fsck-badTagName"></a> <a class="anchor" href="#git-fsck-spanclasssynopsiscodebadTagNamecodespan"></a><span class='synopsis'><code>badTagName</code></span> </dt>
 <dd>
@@ -343,14 +358,6 @@ headings:
 <dd>
 <p>(INFO) Impossible d&#8217;analyser le blob <span class='synopsis'><code>.gitmodules</code></span>.</p>
 </dd>
-</dl>
-</div>
-<div class="paragraph">
-<p><span class='synopsis'><code>gitmodulesLarge</code></span>;
-	(ERREUR) le blob de <span class='synopsis'><code>.gitmodules</code></span> est trop grand pour l&#8217;analyse.</p>
-</div>
-<div class="dlist">
-<dl>
 <dt class="hdlist1" id="git-fsck-spanclasssynopsiscodegitmodulesPathcodespan"> <a class="anchor" href="#git-fsck-gitmodulesPath"></a> <a class="anchor" href="#git-fsck-spanclasssynopsiscodegitmodulesPathcodespan"></a><span class='synopsis'><code>gitmodulesPath</code></span> </dt>
 <dd>
 <p>(ERREUR) Le chemin de <span class='synopsis'><code>.gitmodules</code></span> est invalide.</p>
@@ -425,79 +432,79 @@ headings:
 </dd>
 <dt class="hdlist1" id="git-fsck-spanclasssynopsiscodemissingTaggerEntrycodespan"> <a class="anchor" href="#git-fsck-missingTaggerEntry"></a> <a class="anchor" href="#git-fsck-spanclasssynopsiscodemissingTaggerEntrycodespan"></a><span class='synopsis'><code>missingTaggerEntry</code></span> </dt>
 <dd>
-<p>(INFO) Missing <span class='synopsis'><code>tagger</code></span> line in a tag object.</p>
+<p>(INFO) Ligne <span class='synopsis'><code>tagger</code></span> manquante dans un objet étiquette.</p>
 </dd>
 <dt class="hdlist1" id="git-fsck-spanclasssynopsiscodemissingTreecodespan"> <a class="anchor" href="#git-fsck-missingTree"></a> <a class="anchor" href="#git-fsck-spanclasssynopsiscodemissingTreecodespan"></a><span class='synopsis'><code>missingTree</code></span> </dt>
 <dd>
-<p>(ERROR) Missing <span class='synopsis'><code>tree</code></span> line in a commit object.</p>
+<p>(ERREUR) Ligne`tree` manquante dans un objet commit.</p>
 </dd>
 <dt class="hdlist1" id="git-fsck-spanclasssynopsiscodemissingTypecodespan"> <a class="anchor" href="#git-fsck-missingType"></a> <a class="anchor" href="#git-fsck-spanclasssynopsiscodemissingTypecodespan"></a><span class='synopsis'><code>missingType</code></span> </dt>
 <dd>
-<p>(ERROR) Invalid type value on the <span class='synopsis'><code>type</code></span> line in a tag object.</p>
+<p>(ERREUR) valeur de type invalide sur la ligne <span class='synopsis'><code>type</code></span> de l&#8217;objet étiquette.</p>
 </dd>
 <dt class="hdlist1" id="git-fsck-spanclasssynopsiscodemissingTypeEntrycodespan"> <a class="anchor" href="#git-fsck-missingTypeEntry"></a> <a class="anchor" href="#git-fsck-spanclasssynopsiscodemissingTypeEntrycodespan"></a><span class='synopsis'><code>missingTypeEntry</code></span> </dt>
 <dd>
-<p>(ERROR) Missing <span class='synopsis'><code>type</code></span> line in a tag object.</p>
+<p>(ERREUR) Ligne <span class='synopsis'><code>type</code></span> manquante dans un objet étiquette.</p>
 </dd>
 <dt class="hdlist1" id="git-fsck-spanclasssynopsiscodemultipleAuthorscodespan"> <a class="anchor" href="#git-fsck-multipleAuthors"></a> <a class="anchor" href="#git-fsck-spanclasssynopsiscodemultipleAuthorscodespan"></a><span class='synopsis'><code>multipleAuthors</code></span> </dt>
 <dd>
-<p>(ERROR) Multiple author lines found in a commit.</p>
+<p>(ERREUR) Plusieurs lignes d&#8217;auteur trouvées dans un commit.</p>
 </dd>
 <dt class="hdlist1" id="git-fsck-spanclasssynopsiscodenulInCommitcodespan"> <a class="anchor" href="#git-fsck-nulInCommit"></a> <a class="anchor" href="#git-fsck-spanclasssynopsiscodenulInCommitcodespan"></a><span class='synopsis'><code>nulInCommit</code></span> </dt>
 <dd>
-<p>(WARN) Found a NUL byte in the commit object body.</p>
+<p>(WARN) Trouvé un octet NUL dans le corps de l&#8217;objet commit.</p>
 </dd>
 <dt class="hdlist1" id="git-fsck-spanclasssynopsiscodenulInHeadercodespan"> <a class="anchor" href="#git-fsck-nulInHeader"></a> <a class="anchor" href="#git-fsck-spanclasssynopsiscodenulInHeadercodespan"></a><span class='synopsis'><code>nulInHeader</code></span> </dt>
 <dd>
-<p>(FATAL) NUL byte exists in the object header.</p>
+<p>(FATAL) Le octet NUL apparaît dans l&#8217;en-tête de l&#8217;objet.</p>
 </dd>
 <dt class="hdlist1" id="git-fsck-spanclasssynopsiscodenullSha1codespan"> <a class="anchor" href="#git-fsck-nullSha1"></a> <a class="anchor" href="#git-fsck-spanclasssynopsiscodenullSha1codespan"></a><span class='synopsis'><code>nullSha1</code></span> </dt>
 <dd>
-<p>(WARN) Tree contains entries pointing to a null sha1.</p>
+<p>(WARN) L&#8217;arbre contient des entrées pointant vers un sha1 nul.</p>
 </dd>
 <dt class="hdlist1" id="git-fsck-spanclasssynopsiscodepackedRefEntryNotTerminatedcodespan"> <a class="anchor" href="#git-fsck-packedRefEntryNotTerminated"></a> <a class="anchor" href="#git-fsck-spanclasssynopsiscodepackedRefEntryNotTerminatedcodespan"></a><span class='synopsis'><code>packedRefEntryNotTerminated</code></span> </dt>
 <dd>
-<p>(ERROR) The "packed-refs" file contains an entry that is not terminated by a newline.</p>
+<p>(ERREUR) Le fichier "packed-refs" contient une entrée qui ne finit pas par une nouvelle ligne.</p>
 </dd>
 <dt class="hdlist1" id="git-fsck-spanclasssynopsiscodepackedRefUnsortedcodespan"> <a class="anchor" href="#git-fsck-packedRefUnsorted"></a> <a class="anchor" href="#git-fsck-spanclasssynopsiscodepackedRefUnsortedcodespan"></a><span class='synopsis'><code>packedRefUnsorted</code></span> </dt>
 <dd>
-<p>(ERROR) The "packed-refs" file is not sorted.</p>
+<p>(ERREUR) Le fichier "packed-refs" n&#8217;est pas trié.</p>
 </dd>
 <dt class="hdlist1" id="git-fsck-spanclasssynopsiscoderefMissingNewlinecodespan"> <a class="anchor" href="#git-fsck-refMissingNewline"></a> <a class="anchor" href="#git-fsck-spanclasssynopsiscoderefMissingNewlinecodespan"></a><span class='synopsis'><code>refMissingNewline</code></span> </dt>
 <dd>
-<p>(INFO) A loose ref that does not end with newline(LF). As valid implementations of Git never created such a loose ref file, it may become an error in the future. Report to the <a href="mailto:git@vger.kernel.org">git@vger.kernel.org</a> mailing list if you see this error, as we need to know what tools created such a file.</p>
+<p>(INFO) Une réf qui ne se termine pas avec une nouvelle ligne (<em>LF</em>). Comme les implémentations valides de Git n&#8217;ont jamais créé un tel fichier de réf esseulé, ceci peut devenir une erreur à l&#8217;avenir. Reportez-vous à la liste de diffusion <a href="mailto:git@vger.kernel.org">git@vger.kernel.org</a> si vous voyez cette erreur, car nous avons besoin de savoir quels outils ont créé un tel fichier.</p>
 </dd>
 <dt class="hdlist1" id="git-fsck-spanclasssynopsiscodesymlinkRefcodespan"> <a class="anchor" href="#git-fsck-symlinkRef"></a> <a class="anchor" href="#git-fsck-spanclasssynopsiscodesymlinkRefcodespan"></a><span class='synopsis'><code>symlinkRef</code></span> </dt>
 <dd>
-<p>(INFO) A symbolic link is used as a symref. Report to the <a href="mailto:git@vger.kernel.org">git@vger.kernel.org</a> mailing list if you see this error, as we are assessing the feasibility of dropping the support to drop creating symbolic links as symrefs.</p>
+<p>(INFO) Un lien symbolique est utilisé comme symref. Reportez-vous à la liste de diffusion <a href="mailto:git@vger.kernel.org">git@vger.kernel.org</a> si vous voyez cette erreur, car nous évaluons la faisabilité de laisser tomber la prise en charge des liens symboliques comme symrefs.</p>
 </dd>
 <dt class="hdlist1" id="git-fsck-spanclasssynopsiscodesymrefTargetIsNotARefcodespan"> <a class="anchor" href="#git-fsck-symrefTargetIsNotARef"></a> <a class="anchor" href="#git-fsck-spanclasssynopsiscodesymrefTargetIsNotARefcodespan"></a><span class='synopsis'><code>symrefTargetIsNotARef</code></span> </dt>
 <dd>
-<p>(INFO) The target of a symbolic reference points neither to a root reference nor to a reference starting with "refs/". Although we allow create a symref pointing to the referent which is outside the "ref" by using <span class='synopsis'><code>git</code> <code>symbolic-ref</code></span>, we may tighten the rule in the future. Report to the <a href="mailto:git@vger.kernel.org">git@vger.kernel.org</a> mailing list if you see this error, as we need to know what tools created such a file.</p>
+<p>(INFO) La cible d&#8217;une référence symbolique ne pointe ni sur une référence racine ni sur une référence commençant par "refs/". Bien que nous permettions de créer une symref pointant vers le référent qui est à l&#8217;extérieur du "ref" en utilisant <span class='synopsis'><code>git</code> <code>symbolic-ref</code></span>, nous pourrions durcir cette règle à l&#8217;avenir. Reportez-vous à la liste de diffusion <a href="mailto:git@vger.kernel.org">git@vger.kernel.org</a> si vous voyez cette erreur, car nous avons besoin de savoir quels outils ont créé un tel fichier.</p>
 </dd>
 <dt class="hdlist1" id="git-fsck-spanclasssynopsiscodetrailingRefContentcodespan"> <a class="anchor" href="#git-fsck-trailingRefContent"></a> <a class="anchor" href="#git-fsck-spanclasssynopsiscodetrailingRefContentcodespan"></a><span class='synopsis'><code>trailingRefContent</code></span> </dt>
 <dd>
-<p>(INFO) A loose ref has trailing content. As valid implementations of Git never created such a loose ref file, it may become an error in the future. Report to the <a href="mailto:git@vger.kernel.org">git@vger.kernel.org</a> mailing list if you see this error, as we need to know what tools created such a file.</p>
+<p>(INFO) Une réf libre a du contenu additionnel . Comme les implémentations valides de Git n&#8217;ont jamais créé un tel fichier de réf esseulé, ceci peut devenir une erreur à l&#8217;avenir. Reportez-vous à la liste de diffusion <a href="mailto:git@vger.kernel.org">git@vger.kernel.org</a> si vous voyez cette erreur, car nous avons besoin de savoir quels outils ont créé un tel fichier.</p>
 </dd>
 <dt class="hdlist1" id="git-fsck-spanclasssynopsiscodetreeNotSortedcodespan"> <a class="anchor" href="#git-fsck-treeNotSorted"></a> <a class="anchor" href="#git-fsck-spanclasssynopsiscodetreeNotSortedcodespan"></a><span class='synopsis'><code>treeNotSorted</code></span> </dt>
 <dd>
-<p>(ERROR) A tree is not properly sorted.</p>
+<p>(ERREUR) Un arbre n&#8217;est pas correctement trié.</p>
 </dd>
 <dt class="hdlist1" id="git-fsck-spanclasssynopsiscodeunknownTypecodespan"> <a class="anchor" href="#git-fsck-unknownType"></a> <a class="anchor" href="#git-fsck-spanclasssynopsiscodeunknownTypecodespan"></a><span class='synopsis'><code>unknownType</code></span> </dt>
 <dd>
-<p>(ERROR) Found an unknown object type.</p>
+<p>(ERREUR) Type d&#8217;objet inconnu trouvé.</p>
 </dd>
 <dt class="hdlist1" id="git-fsck-spanclasssynopsiscodeunterminatedHeadercodespan"> <a class="anchor" href="#git-fsck-unterminatedHeader"></a> <a class="anchor" href="#git-fsck-spanclasssynopsiscodeunterminatedHeadercodespan"></a><span class='synopsis'><code>unterminatedHeader</code></span> </dt>
 <dd>
-<p>(FATAL) Missing end-of-line in the object header.</p>
+<p>(FATAL) Fin de ligne manquante dans l&#8217;en-tête d&#8217;objet.</p>
 </dd>
 <dt class="hdlist1" id="git-fsck-spanclasssynopsiscodezeroPaddedDatecodespan"> <a class="anchor" href="#git-fsck-zeroPaddedDate"></a> <a class="anchor" href="#git-fsck-spanclasssynopsiscodezeroPaddedDatecodespan"></a><span class='synopsis'><code>zeroPaddedDate</code></span> </dt>
 <dd>
-<p>(ERROR) Found a zero padded date in an author/committer line.</p>
+<p>(ERREUR) Une date avec remplissage de zéros a été trouvée dans une ligne auteur/validateur.</p>
 </dd>
 <dt class="hdlist1" id="git-fsck-spanclasssynopsiscodezeroPaddedFilemodecodespan"> <a class="anchor" href="#git-fsck-zeroPaddedFilemode"></a> <a class="anchor" href="#git-fsck-spanclasssynopsiscodezeroPaddedFilemodecodespan"></a><span class='synopsis'><code>zeroPaddedFilemode</code></span> </dt>
 <dd>
-<p>(WARN) Found a zero padded filemode in a tree.</p>
+<p>(AVERTISSEMENT) Un mode de fichier avec remplissage de zéros a été trouvé dans un arbre.</p>
 </dd>
 </dl>
 </div>

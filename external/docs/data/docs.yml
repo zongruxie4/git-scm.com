@@ -3727,10 +3727,10 @@ pages:
       - 0
     languages:
       de: 60a0a8b03b4ab574a5a7aeefd0ede2650e0ea09d
-      es: 306cc7720e52ddd8069194cc65261494c12425e1
-      fr: 4c86dfb58a5a7dd8fe891ca24ca8e02229829a9d
+      es: 9f3bad9b2542a8eaebb87b01500550601d0931cd
+      fr: fd5a549df68640d44017cacd7f4734a5bca4addc
       is: 9f654b0b92614e3857162466c6786229aa13caff
-      ja: ab03a72365e090c70b2f33fd530a9b29060b46da
+      ja: bae34344ad93608571c863631ae76a03f31892dc
       pt_BR: 1b91512611a574b94ffdc8f99a7db6dad12ea7e1
       ro: 8a9b8e5bbf41a51a8bbeb8179dbac91ef4915061
       zh_HANS-CN: bd8bcffc090c63b63e083a448243d22228bbe15c
@@ -4157,10 +4157,10 @@ pages:
       - 1
       - 5
     languages:
-      fr: d9dd2da75074f1fe687268b0249961ce8733aba8
+      fr: b2ae48c4e4070c42a101e30c2d6b467b4b652d14
       pt_BR: c876db1d1a10ebb0ea650804fccb8f48c638377e
       zh_HANS-CN: 8c64d6d43cbd78c3106ca43505301417fbfaa2ae
-      ja: b0d3867ebe96248d86bbb5f3320f93f52565817f
+      ja: 416aac431fe5a91c558623d42c4c166b69b706d5
       uk: 47eb3f31ea1bd9fdd909a42875085422b7c34bf2
   git-annotate:
     version-map:
@@ -4527,12 +4527,12 @@ pages:
       - 1
       - 5
     languages:
-      fr: 399eac9a396a41cb82e7b4173d91a10633633663
+      fr: d648b9c7bdcc5f00979f9121b8588084545cff76
       pt_BR: a6d5cbfdd99d7dbd6e0dc4cfd0caf5f1c21c095b
       ru: 9c295f8130163f4164cd68968377c88b9fe52a7c
       zh_HANS-CN: '0008be635601706137d690b5ee7fbc6f14cbbb89'
       uk: 26404881bb580f28f0192f4c0c92a30777ea5ce1
-      ja: '009404f23dfbc872da4d2a79cdad3ff685e27525'
+      ja: 57fb22c080ee536aa286b60a018083a3a1f4093c
   git-apply:
     version-map:
       2.0.5: ba0c21a0c0c24d0e3ab9bc20f884f0f4c2d728cb
@@ -4877,7 +4877,7 @@ pages:
       - 4
       - 0
     languages:
-      fr: 3a502764463f0a5fd0c3dd27fef8040ba6c80da7
+      fr: c47d6daff958f984e0f64f7ded6298d3f35cec68
       pt_BR: fc1910709da6a7d3cda4171f4f08b5e7bd3f7bf5
       zh_HANS-CN: e65abe7892e32e9b4e8d862604b14c6d5a387507
       ja: 828fcf9f469c400724b6af6ca318aca171152db9
@@ -6462,10 +6462,10 @@ pages:
       - 1
       - 5
     languages:
-      fr: b1aa4d29651e542f0ad8bbb437f57f636cc3fc99
+      fr: 4fb10b984531ab7855a31d92048479805115a413
       pt_BR: 11496733c91642a39383514ee9215185aa14c2a3
       zh_HANS-CN: 134fd122cba5d4a8150bb321be1e7b1124e1e39f
-      ja: e0885e08078dbc8e99ac31e41994f74086686006
+      ja: 8ae314fafc9ded8ee35bc8a48e11ed6e5cfdb387
       uk: b7ecae34006569e0edc210720d74050937e2ecad
   git-branch:
     version-map:
@@ -7646,7 +7646,7 @@ pages:
       - 2
       - 2
     languages:
-      fr: 4589965dd968c858d649a33893aba218d97692de
+      fr: 460d90bd7e7f1637d414f6d762a639842fab02c6
       pt_BR: 376f14e26dbc02ae52bd95655b2a2451349f4fea
       zh_HANS-CN: 3d644e06121f285e9afe78651d0dbb2bc9e1330b
       uk: 6850d783a8b3f766267ed3c41dfde0eac5cac8fb
@@ -7930,10 +7930,10 @@ pages:
       - 1
       - 5
     languages:
-      fr: f4aa2fd4c28bd14a1fbadb9ae7788fa7f4b7e457
+      fr: 1b44f47c594a9371c1966c79228fc34984f4726a
       pt_BR: 21fb0680a9111ab37313d254d47e3afd717a5338
       zh_HANS-CN: a2d05ac4f9999e58ffd80b80484ce429d501d2ff
-      ja: bdf235a4187310860d08ffa67aa591fdeeb0cb76
+      ja: 9f2b31905a1a891c36f0487e0e6b5f03ccc07496
       uk: 56139a42cb0fdc335188c65565546a1a801d9884
   git-check-ignore:
     version-map:
@@ -8238,10 +8238,10 @@ pages:
       - 3
       - 0
     languages:
-      fr: d797f51a4d3fbff2940ad501d587e4b149cc5c83
+      fr: b401ccf1d2f88f72212d85ae751c49e0ab59b818
       pt_BR: 7b140fe6fe7b4fa1bfd161fed9e7f5ceebd5413b
       zh_HANS-CN: c83b44e355fc13ecf545aed71a7429c4df30f89a
-      ja: af6413c7c0f196fd6b20ff22519f5395d9170f5b
+      ja: 581ebe720535121e9e4a5ae6585a8532e629224f
       uk: 2ce42abc8a0bf15fa4c2f5738bd342c0ce1ac96a
   git-check-mailmap:
     version-map:
@@ -8784,7 +8784,7 @@ pages:
       - 1
       - 5
     languages:
-      fr: c1bd5a325e36cf8731cbdbee2e623eca5064d748
+      fr: 07d1dd22eff1cca48086dbe127bc5f9dba329176
       pt_BR: f41f6ecf7dd0106db8192cec00e39e8743042e73
       zh_HANS-CN: '09a1ce5168661e2393205e1c772405fd1f77fea5'
       uk: 6b2af43a2623e4e6ab55307fc43b9adfc4cf6931
@@ -9494,7 +9494,7 @@ pages:
       - 4
       - 0
     languages:
-      fr: ff76f31212d3c7e08d039ce6e0da57c10b66d0ee
+      fr: 7a3aa2c1485eec742eaf65d67d46dbb48abe0363
       pt_BR: 7372b02766c960c21b311e3355fdfc652fe3b552
       zh_HANS-CN: e54f7ed9611633cff1b51a99669c6c4c6b361644
       uk: ee02f7638fdabb6487632f89757ac1c406048300
@@ -11105,8 +11105,8 @@ pages:
       - 0
     languages:
       de: 828a8d4d85cdf5a6c77bb353f4114828b31f7193
-      es: b731da3c2bc7f2850ed67f348c668c3567b6a486
-      fr: bbb4daeb4507e148ed320302481af769bdd20655
+      es: e682b4b5c14b7e5e49f2abc091532b08dbb46ed1
+      fr: a240d50f535ee235f11d0dd3abcd0bd466ebbe03
       is: c2c1bbe556c4c2eccf1be3af0bb6356b85317828
       ja: bb63dfcb0576ec14db2348451449d62dc381ab4b
       pt_BR: 1d7d8052d235d1d43bf2ac575bf7ab90ec03782f
@@ -12189,8 +12189,8 @@ pages:
       - 1
       - 4
     languages:
-      es: 8b94f40acffa2073db2d34fd289f383c52841631
-      fr: 61b303e2ffffcaa6e3cf6103744afb1d597dd3f4
+      es: 0da35fced341443de4ac150ea674f7ced080b74e
+      fr: adfc9472c7c373607531faa3a56c908e32827657
       pt_BR: a48c67913b006b6da615e3fb388c89d6be073250
       zh_HANS-CN: 71d920f51d7fe4050c552228960c5d1363ffd835
       ru: 2026972628df9fb944d0e75dc012d665078e6b9f
@@ -13259,7 +13259,7 @@ pages:
       - 0
     languages:
       de: cfc4dde585cd604b17807e748698ba0e59d518ae
-      fr: 7487057344e2f05b230ffdb79583934ede6a6767
+      fr: 36f4a218eb84c4cdb0d13a486bb4f0b4639a438f
       pt_BR: e26dfc5f9a850958aee479ad9c2320215274dfde
       zh_HANS-CN: 73143c8e9e6c2b745919991216e73b2a871fc1ef
       uk: e140af60ee8ba7d8fb0b196c39affd5515a0b403
@@ -13512,7 +13512,7 @@ pages:
       - 0
       - 6
     languages:
-      fr: 5b7f837b8eac054ffad783c8591c1fbf8f8034a7
+      fr: 949f2f777d86df7588512675524873959d9186b2
       pt_BR: 0f6636737f5bdcfd4af73186cc0d0502286090a2
       zh_HANS-CN: 3c4dc2a59bd21d5c2642d8113c432a12172115ec
       uk: 0de1f65fb646d2f8690a6fb6b3de185bcfbd4426
@@ -16646,7 +16646,7 @@ pages:
       - 0
       - 0
     languages:
-      fr: 80e7f47392762866bcafb6accde86766a0c3ad42
+      fr: 437252647e4fa4f6776425acf115e300ff397ce3
       pt_BR: 6da34ef18cf53b7076608931b455c9d17b318058
       zh_HANS-CN: 19a3feedf27a8371bf41edcd981586f7f98816fe
       ru: 1d0511cbedd7218f1afdacbc25563100ba35f150
@@ -17846,7 +17846,7 @@ pages:
       - 1
       - 0
     languages:
-      fr: 0e96f3bf05b668acd7dba5a106e908bd859875c3
+      fr: 2fcca4a46d3bcda002174136771d0fd706f2d261
       pt_BR: fe52ce8d420f608f3a5d9d578460973156a1123e
       zh_HANS-CN: 95d7a8e695f755f27584b718df3b87f620eb7fe4
       ru: 27274ad609db8f94c9e09d9f07af28fda96b3e7e
@@ -18463,11 +18463,11 @@ pages:
       - 0
     languages:
       de: 2b5d38791050f6f04dc47bfaa2672c407e4ca5a0
-      fr: 68ea96085c98959e4426f5df21989850b7df22de
+      fr: afbf96d271fa8b3a17d3dea3e018531cfd570350
       pt_BR: 13ea4c7a18d8df440f7b342430b732cd04592835
       zh_HANS-CN: 7004dd720882b8a39df9ae1e0cd36419206e8d89
       ru: f4eda7da204a2b0c38be70c3196d5e87f5b06ea7
-      es: 3847fa12674a4719078eaf924b7cfcc46d23d899
+      es: 1a24ba9271ccf5c70aec58877cfb89daee7d2170
       uk: ce396a068e9ad614c1339d3515f8109dc2682f77
   git-difftool:
     version-map:
@@ -18797,7 +18797,7 @@ pages:
       - 3
       - 0
     languages:
-      fr: a6d374246a7b50f0010a977cb2bd2725966426ad
+      fr: c6b76dbd1458d1b2e604c2146fe7177b90415afc
       pt_BR: fd92d20dfa4965a787fcde13228ce1ff15fbfd21
       zh_HANS-CN: 9b5aa544aa24625dd538052fc69c47e1c08f4581
       ru: 2d5561ee46355c3427ca778f916710c359fd173e
@@ -19616,7 +19616,7 @@ pages:
       - 1
       - 0
     languages:
-      fr: f40389c928189a8c66940f16e6c3e61075d19634
+      fr: 58170dbf468b0bf862f070cc606f5c09ecfae19d
       pt_BR: 38e50041597b23185ce9d5abc418f783c0709557
       zh_HANS-CN: 9de7470e19e7e4035b1046b19eef22c46f0459d6
       uk: 237ac6a67d03e7cc76a866c819acd9a5d38504ce
@@ -20440,7 +20440,7 @@ pages:
       - 1
       - 0
     languages:
-      fr: b3d8f472b1d6e34b2cc475b1e200b9535b5d7e81
+      fr: 5ad5e24d1862a9aa98cce320780c605ef39f510b
       pt_BR: 8a9e28bb7cf222a1f1c003cead0aa7ccaeac6ef4
       zh_HANS-CN: 22df78d0e418d7e4a126e424fede2cf924e72557
       uk: bd2ba3456a2419df762a64680b560d9ef3f6434c
@@ -21067,7 +21067,7 @@ pages:
       - 1
       - 5
     languages:
-      fr: 50c1871dca7fa5c58bec46506576e00dac5871d4
+      fr: ab0ae8aa6ed80246c158c90f106c0e8467cab0d9
       pt_BR: 381f12a5663d371c744069cbd5f08be3825d42aa
       zh_HANS-CN: de7fa97b2dcf4fc4eabd94c8c418e0e2a26f17c9
       uk: 48feea5801de577dda12c268e2ed337fbbca1408
@@ -22088,7 +22088,7 @@ pages:
       - 1
       - 0
     languages:
-      fr: 60e52175f3599618c8e31b7afd60bdc0b33fd157
+      fr: 97ec042cb82256a853f9de00c2af03fdd4bef700
       pt_BR: c12a14ce88010af560e1f1c8e4b8bcfe4b65289a
       zh_HANS-CN: a5a919eb40549d9cc9e332eb542fdec523a7438f
       uk: 6eada1d57f4973099de335c9e48702a8e4537a96
@@ -22745,7 +22745,7 @@ pages:
       - 2
       - 0
     languages:
-      fr: a1aa2e729b78f5d8e763114d20540ffdd5018776
+      fr: dddf6414ad695ccf1790fe507c28f3dacb79efb9
       pt_BR: fdce44ec77b4e40ed230a5193f77927d28ca1168
       zh_HANS-CN: 297da0ddc7d32335d6b8cd9100b9cb910c24a986
       uk: 78362707ab60dc7b8f2ad8ca99f14b02f09bce9c
@@ -23140,7 +23140,7 @@ pages:
       - 2
       - 2
     languages:
-      fr: 63c2193b9422d595dd8cd80af6187d60ae7c0098
+      fr: f0c9d894c5efe9cc686e2ee71b04e478d04fdd9f
       pt_BR: 31a952e5c5f71025c3d5323cfeb5f1952c4720a0
       zh_HANS-CN: d14e3b75d0a1ea8b0beae5010cfa061ddbc77b6f
       uk: 7b2c69fceaefac98fc082770eed073ea1e17010b
@@ -25211,7 +25211,7 @@ pages:
       - 1
       - 3
     languages:
-      fr: a8b6a85c048fae7410663e1d3b9a0d59ea91c9f1
+      fr: a5ad1fc174a3f45002c481dd49ab86d6a53a4769
       pt_BR: 95b23fbbd42e718ea0bf7e5fdd1840b96bb2fff0
       zh_HANS-CN: 37e188fd96b3e81ab79c8866fc2500a88e6c1c47
       uk: edb6b32e6daa35210bccf137c108f7ee9ac74f28
@@ -25779,7 +25779,7 @@ pages:
       - 1
       - 0
     languages:
-      fr: b7caf78d260a55b40d4803b15836127778cf99f8
+      fr: 31f94d425a97167e30ea7735addf6008a8c21bb3
       pt_BR: 1112173b1f560649c4a24a41cd235ec345f748ea
       zh_HANS-CN: 7b2610ff10ee4731c06c78c9c7a930f31dd87873
       uk: 9d23dd758e887a86aad91fc14677025c6ecb7c6c
@@ -26111,7 +26111,7 @@ pages:
       - 1
       - 5
     languages:
-      fr: bec33f2d2cb3ed21c6c3911fbe11cced60e4f57d
+      fr: 0a65cbd80573a1c290dff61de8b03f601b98324f
       pt_BR: a1b6dc4bfd66f4e08f0165b396e0c055bdf8aa17
       zh_HANS-CN: e3667b16456cf4be4d94f8dc988f80495940f8da
       uk: 869312618bb35a64ca9ee40cdf0b49a7ec28fa6c
@@ -26724,8 +26724,8 @@ pages:
       - 0
     languages:
       de: ebb7dbee75542969ae33898068d461935defa98b
-      es: 44bca0c4d8f90ed53c9f1f2c69b3b7a1ae31e965
-      fr: 86db01498ea7710488be64053162504c00096d43
+      es: 65d178c6d01e7376f5a5efdc2fa36fa7ad324440
+      fr: b8d84eca8234a03d4e1177ac4441125342dfc198
       is: 1908fb93bddf0654eb3abdcb2b531be966b9aabf
       ja: be75a9f1280a3ea2b9b56efcf5288bef57f65e47
       pt_BR: 61711be3b5043290643d585da18095d8b02ca0d0
@@ -27665,7 +27665,7 @@ pages:
       - 1
       - 0
     languages:
-      fr: 3d52259b53ffa346d378912cb88e242f8ad8d0e7
+      fr: 98174cfb7c33a3eb58f331141cb27b9f15dffe34
       pt_BR: 6fe57c7dbee12ebb2218673d311ce704f16c401c
       zh_HANS-CN: ef9cdfd8b0abb22cd36e87effcde23c6d6c80d19
       uk: 45808dcc644f34b75fb51dd08ab6a0b2239856f6
@@ -30529,7 +30529,7 @@ pages:
       - 1
       - 5
     languages:
-      fr: 604eda01ea95743aab15e52a23bc75361ef2cf26
+      fr: '0623095d49acb43b232beb001a4a3c966702e674'
       pt_BR: 84b9b617f531688d1d600daa19126dc7ae82b5ad
       zh_HANS-CN: c0e7413370dfa240cf5d1a78ccc318d3c62796e3
       uk: e77febe6a965f1319479501687c52ef55b48c747
@@ -31068,7 +31068,7 @@ pages:
       - 1
       - 5
     languages:
-      fr: d485685c11df68d2748a22b76f7fe3e408c108dd
+      fr: ad6569685bf4c27e2e26b6ac8e4a069d02ba91c5
       pt_BR: 0072a4143ae85a0370cd23378d93d719369f9be9
       zh_HANS-CN: b2a2d656800df1fb2bc2653ca5390c43887ccf07
       uk: 640225929be3b19de8cbe83a531d499895a755fc
@@ -31660,7 +31660,7 @@ pages:
       - 0
       - 0
     languages:
-      fr: 66539ff1a44778d164dbd7319a080cf9e9d77981
+      fr: 220d4e3d6380c9764d6342c97870311172c27098
       pt_BR: e885e5bce77f657a317a84e00450d9cb8fdf6a89
       zh_HANS-CN: bcb8980585b5ff270d2f584f302012cfa7848fde
       uk: 76b3c376af8ae17ac3c68c739488295f9f63e4fd
@@ -33878,7 +33878,7 @@ pages:
       - 1
       - 5
     languages:
-      fr: 6b67b06ec3081ef6b80a70c3cf74ca9afc21cefd
+      fr: e2bb24257f12f8bf20b912c68e56886b0aea9664
       pt_BR: 0153b7de248bc430bf71df6236132c17222fa33a
       zh_HANS-CN: 891d443f94b111e1aeef495c41c519e304bd2e33
       uk: f6fecef79cf83bbf1859ab72cee081e7ff222c3c
@@ -34399,7 +34399,7 @@ pages:
       - 0
       - 7
     languages:
-      fr: 4f88e063ffcf84fad69d7995461c6082f54e4bc5
+      fr: 4c1c681a13df4560f7114ee178341b9d7e3a0c22
       pt_BR: 077dc7f05595c7ea0030194783bfefaffcc85ed7
       zh_HANS-CN: 5597c8fb976c58f2d47f509e69579dd89440ab2e
       uk: b4e83abaf9125b0ef8d91804ff42c9fe3bef9563
@@ -34767,7 +34767,7 @@ pages:
       - 4
       - 0
     languages:
-      fr: e4d67b156baecc882bf5290701057dd97515010c
+      fr: f0d3e98c30e8a55d6256b9c406ee40f8e8c1ab09
       pt_BR: d52b77184e8ed9f954c92b3d5558c65baf5c8169
       zh_HANS-CN: 90f16f249cba8a645f280fb08e13861c8c5e5b2a
       uk: 9f1a332ec1979a5dd5344ed5d072cd71b5b6cba5
@@ -35871,7 +35871,7 @@ pages:
       - 3
       - 0
     languages:
-      fr: 29d595b6a8c9bf75ac43063890a45d2cb5c68038
+      fr: 5bd3eda88a9514d62a5d5a2ec7b094132c1b09a4
       pt_BR: cc38de351b90803dd7c0d50e8a9ec1695cb2f7df
       zh_HANS-CN: d38f5181bc57322893e8e2af28a461ba265e77bf
       uk: 470c96e731d0318c12351fabb4ad0230938d66bf
@@ -36360,7 +36360,7 @@ pages:
       - 3
       - 0
     languages:
-      fr: c0b099c8d67621b01d681df14b2a11f3717c8f59
+      fr: 37a1794ac31556349718950aa8eca451e97d92ee
       pt_BR: 8e960262941078829d4ee7c98a7267301565c8ba
       zh_HANS-CN: 0b0b10e9672032849a4d40095a657113a05c3c04
       uk: e2352cc7ba538bc3164af7a97ce0093c4bec96d1
@@ -37584,7 +37584,7 @@ pages:
     languages:
       pt_BR: 0c6c014f02e0310f0a5b12b29a49518275c5653e
       zh_HANS-CN: db056173c8575fc2f03cf2e906e81570152fff42
-      fr: 2ca0ac68cb53c4595969c658859e05eb9f14cddb
+      fr: fee83f164b891debc6d7175b872388504b47b86d
       uk: 808fd9137a912fb65711d42f1f55f5a6746a9fbb
   git-receive-pack:
     version-map:
@@ -38201,7 +38201,7 @@ pages:
     languages:
       pt_BR: 822ce86783b96afcde7fd84be4e236e843376d05
       zh_HANS-CN: 69b848edd1e598b8450ffbef96cee0b3789880a6
-      fr: deffcc9e5b1e652180bc56b607278cddff1d31a3
+      fr: 12daa49f9309eda12108617e04d0b0a849025b19
       uk: 417d14f03477368371536a57000b5d8c97d490ec
   git-relink:
     version-map:
@@ -39524,7 +39524,7 @@ pages:
     languages:
       pt_BR: 9dab3de511e85189c2dec0a5bf599109b4e12c9d
       zh_HANS-CN: 94e88a1a014fdea3353b1596428ff5438633a92c
-      fr: 8e47f7f55bbb3d3f37eb4f04e453a6824bcdcd39
+      fr: 19e97faabd4568332e059f688600a7cb95f6dec3
       uk: f6251dc37f1969c76217f492487bef42707d4cd9
   git-replace:
     version-map:
@@ -40682,7 +40682,7 @@ pages:
       - 1
       - 5
     languages:
-      fr: fefa590309f2a921d02e61d81dd8f85a71e11c02
+      fr: 7c182d15f1ffb498a5c6ff216c98ddaf14395ebb
       pt_BR: c4b9a7447fd5b64fb6588c0fca244556acfcd7bb
       zh_HANS-CN: 5bb5e80dc5f39714a2464ae0f44b080576f77e3d
       uk: 6f4ede96835a9cba918c064c1a692bf3272e9c73
@@ -44606,7 +44606,7 @@ pages:
       - 4
       - 0
     languages:
-      fr: 289fd085d8ada353b8853eca28d79ec795ff117e
+      fr: c40319e36ef35c815cfe258cfbbee11bb662da17
       pt_BR: 4c21dceae31cebbe5bd21318596cc3763dab5139
       zh_HANS-CN: afa3b604ad767ede27aec4a8c1c28786b58b4bd4
       uk: 47ede27c9781d2950adf4a662afbd51d5e31a24b
@@ -46080,7 +46080,7 @@ pages:
       - 1
       - 0
     languages:
-      fr: 8274cacd5304e72acd8ed29cfebd25e7e4b45e3b
+      fr: 3367fd2662da6b1dcef3b7e44c685f052bf17fb9
       pt_BR: c5c0e794f5c0713028adaf6e4345bc3bf43a8b72
       zh_HANS-CN: d8e25beef6ba0db950e2f189278eb284b7187733
       uk: d27980aac7a10a4e1e7808758b4d3710743e4081
@@ -46711,7 +46711,7 @@ pages:
       - 4
       - 0
     languages:
-      fr: c798b188cb4a84622d04f964e54f03be87a73740
+      fr: be89a910e52eabde4d7119a489a6617ddeaf3204
       pt_BR: 81761b98b24a23c0f3fa0dac6bc4272ade2c7438
       zh_HANS-CN: 6fec4c7c5c017e8109fd3adce7b3cad0a3625907
       uk: 5207a88651ab6d831ffcf9d092aba28f867c5ddf
@@ -47801,7 +47801,7 @@ pages:
       - 2
       - 2
     languages:
-      fr: 41dc485ef0d5417f31e2a9d9e9c5aab3c482c5d4
+      fr: f01af159bd28356c6959734d97bd07d5fe096ca2
       pt_BR: c6e2f7c22fef33da396a766ecf50ea573cbf37de
       zh_HANS-CN: a4e7027afdd2f7754cbe8673c41825ac1b4462cf
       uk: d9d07c3cafb93d3736bd09dc9562e0c6ebfe362e
@@ -48900,7 +48900,7 @@ pages:
       - 3
       - 0
     languages:
-      fr: b2831518fee4bcab2329832bf187c9930d2a66da
+      fr: '039a916f0615c0288209bebe6282077fc1dfc386'
       pt_BR: f8715cd994c704b23a2156e40e5bf2457efe2d25
       zh_HANS-CN: da6f1fa499845f0ae30c5f7a150601f544cb804e
       uk: c9b549714c6151c3bc14144853b5c8aa5c7c1a95
@@ -53476,8 +53476,8 @@ pages:
       - 0
     languages:
       de: 3ec6cfaa1793e0bb0406b4fdcf0fdbd298b227b9
-      es: 8f642877416ca0e16e11fa1f691fb3c8827229f2
-      fr: '044891138fc0ea9630818f7e21465099d8adf088'
+      es: ea5684bc41e12682e5e2aa4cb7eccc97651e6269
+      fr: 8577ec515cca74d62007d0cec135b508da725f34
       pt_BR: ab46dc0896341663e02d573793b8a98f720a3b70
       zh_HANS-CN: 72f931611507426c82659723e2f4d2b10094f123
       uk: 5c5998285f362054def2f1379744f6a877120445
@@ -69796,7 +69796,7 @@ pages:
       - 4
       - 0
     languages:
-      fr: ad8890cd937784bf59341c51d5574086d6c7cfa0
+      fr: b64d1bfe769fc30fe31e092abe21c536778b2751
       pt_BR: b1336b5feb52dafbb4473d532f4d4c8dc2f954c0
       zh_HANS-CN: d77ea82ed6c04edcd0b8b1c2ba7196d595a2db17
       uk: f0daf5e4f6a842835abf10ec237c402fb2c20bb3
@@ -70727,7 +70727,7 @@ pages:
       - 3
       - 0
     languages:
-      fr: 0d713119ce3fe3ba3567d52439e7da61f145b603
+      fr: 766dd2f85f539c953655896d07bb6ad04e3a6ed1
       pt_BR: 26fc878c7b34ad641d8f87a7d421d0e3b5f9e67b
       zh_HANS-CN: b75c296beb5a015e8d1b91061daf32c86469c1b5
       uk: b31d0a9f969a5c94e8c14b237622628a1c123581
@@ -73750,7 +73750,7 @@ pages:
       - 1
       - 5
     languages:
-      fr: 3b5facc927a0ced4b312ec75dbdb37c4f359cf77
+      fr: 78fb1de3cf738d6511de97c0fe6fd5ac5ff03e78
       pt_BR: 180d53d8c9188286d3828bccc9c2e83fb19a2b00
       zh_HANS-CN: f9325d9a9185fb3f58e8b08ff79624c13101ccfc
       uk: 1c8cef9f6828c2aab0995608de6d32265bcb9461
@@ -75846,7 +75846,7 @@ pages:
     languages:
       pt_BR: ca5b22c8720aabb5485835ecf8f246ac34c49038
       zh_HANS-CN: e792193f0d334a42a13c0a335417ca0b7f534671
-      fr: f61fb2240fa300ab708913b41257d888eaa9334b
+      fr: ce184314de2685e3f583f5b87f7fb5b91059559b
       uk: da553527c0a2e33b17ba2fffe3fc1516ff1c3a25
   MyFirstObjectWalk:
     version-map:
@@ -81492,6 +81492,6 @@ pages:
       removed: 0
 latest-version: 2.52.0
 l10n:
-  commit_sha: 3bc4edfebd93c2e3ecd231599c9e6505375ea220
-  tree_sha: e63d9bee0b619c12e7fc69356144442b95bf14e4
-  committed: 2025-10-05 19:34:20.000000000 +00:00
+  commit_sha: 6861a5445f1e5b68e5905378b980431404597d92
+  tree_sha: 18f1bdbbc295a5971493ab19750abf1c414943ac
+  committed: 2025-12-12 20:36:09.000000000 +00:00

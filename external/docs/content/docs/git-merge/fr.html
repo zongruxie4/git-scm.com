@@ -56,10 +56,10 @@ headings:
 <div class="sectionbody">
 <div class="verseblock">
 <pre class="content"><span class='synopsis'><code>git</code></span> <span class='synopsis'><code>merge</code></span> [<span class='synopsis'><code>-n</code></span>] [<span class='synopsis'><code>--stat</code></span>] [<span class='synopsis'><code>--compact-summary</code></span>] [<span class='synopsis'><code>--no-commit</code></span>] [<span class='synopsis'><code>--squash</code></span>] [<span class='synopsis'><code>--</code></span>[<span class='synopsis'><code>no-</code></span>]<span class='synopsis'><code>edit</code></span>]
-	[<span class='synopsis'><code>--no-verify</code></span>] [<span class='synopsis'><code>-s</code></span> <em>&lt;strategy&gt;</em>] [<span class='synopsis'><code>-X</code></span> <em>&lt;strategy-option&gt;</em>] [<span class='synopsis'><code>-S</code></span>[<em>&lt;keyid&gt;</em>]]
+	[<span class='synopsis'><code>--no-verify</code></span>] [<span class='synopsis'><code>-s</code></span> <em>&lt;strategie&gt;</em>] [<span class='synopsis'><code>-X</code></span> <em>&lt;option-de-strategie&gt;</em>] [<span class='synopsis'><code>-S</code></span>[<em>&lt;id-clé&gt;</em>]]
 	[<span class='synopsis'><code>--</code></span>[<span class='synopsis'><code>no-</code></span>]<span class='synopsis'><code>allow-unrelated-histories</code></span>]
-	[<span class='synopsis'><code>--</code></span>[<span class='synopsis'><code>no-</code></span>]<span class='synopsis'><code>rerere-autoupdate</code></span>] [<span class='synopsis'><code>-m</code></span> <em>&lt;msg&gt;</em>] [<span class='synopsis'><code>-F</code></span> <em>&lt;file&gt;</em>]
-	[<span class='synopsis'><code>--into-name</code></span> <em>&lt;branch&gt;</em>] [<em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>&#8230;&#8203;]
+	[<span class='synopsis'><code>--</code></span>[<span class='synopsis'><code>no-</code></span>]<span class='synopsis'><code>rerere-autoupdate</code></span>] [<span class='synopsis'><code>-m</code></span> <em>&lt;msg&gt;</em>] [<span class='synopsis'><code>-F</code></span> <em>&lt;fichier&gt;</em>]
+	[<span class='synopsis'><code>--into-name</code></span> <em>&lt;branche&gt;</em>] [<em>&lt;commit&gt;</em>&#8230;&#8203;]
 <span class='synopsis'><code>git</code></span> <span class='synopsis'><code>merge</code></span> (<span class='synopsis'><code>--continue</code></span> | <span class='synopsis'><code>--abort</code></span> | <span class='synopsis'><code>--quit</code></span>)</pre>
 </div>
 </div>
@@ -81,7 +81,7 @@ headings:
 </div>
 </div>
 <div class="paragraph">
-<p>Then <span class='synopsis'><code>git</code> <code>merge</code> <code>topic</code></span> will replay the changes made on the <span class='synopsis'><code>topic</code></span> branch since it diverged from <span class='synopsis'><code>master</code></span> (i.e., <span class='synopsis'><code>E</code></span>) until its current commit (<span class='synopsis'><code>C</code></span>) on top of <span class='synopsis'><code>master</code></span>, and record the result in a new commit along with the names of the two parent commits and a log message from the user describing the changes. Before the operation, <span class='synopsis'><code>ORIG_HEAD</code></span> is set to the tip of the current branch (<span class='synopsis'><code>G</code></span>).</p>
+<p>Alors, <span class='synopsis'><code>git</code> <code>merge</code> <code>sujet</code></span> rejouera les modifications apportées à la branche <span class='synopsis'><code>sujet</code></span> puisqu’elle s’est écartée de <span class='synopsis'><code>master</code></span> (c’est-à-dire <span class='synopsis'><code>E</code></span>) jusqu’à son commit actuel (<span class='synopsis'><code>C</code></span>) par-dessus <span class='synopsis'><code>master</code></span>, et enregistrera le résultat dans un nouveau commit comprenant les noms des deux parents et un message de validation de l’utilisateur décrivant les modifications. Avant l’opération, <span class='synopsis'><code>ORIG_HEAD</code></span> est défini sur le sommet de la branche actuelle (<span class='synopsis'><code>G</code></span>).</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -103,7 +103,7 @@ headings:
 <div class="title">Warning</div>
 </td>
 <td class="content">
-Running <span class='synopsis'><code>git</code> <code>merge</code></span> with non-trivial uncommitted changes is discouraged: while possible, it may leave you in a state that is hard to back out of in the case of a conflict.
+L&#8217;exécution de <span class='synopsis'><code>git</code> <code>merge</code></span> avec des modifications non triviales non validées est découragée : bien que possible, elle peut vous laisser dans un état duquel il est difficile de revenir en arrière en cas de conflit.
 </td>
 </tr>
 </table>
@@ -138,7 +138,7 @@ L&#8217;option <span class='synopsis'><code>--edit</code></span> (ou <span class
 </dd>
 <dt class="hdlist1" id="git-merge-spanclasssynopsiscode--cleanupcodeemltmodegtemspan"> <a class="anchor" href="#git-merge---cleanupmode"></a> <a class="anchor" href="#git-merge-spanclasssynopsiscode--cleanupcodeemltmodegtemspan"></a><span class='synopsis'><code>--cleanup=</code><em>&lt;mode&gt;</em></span> </dt>
 <dd>
-<p>This option determines how the merge message will be cleaned up before committing. See <a href='{{< relurl "docs/git-commit/fr" >}}'>git-commit[1]</a> for more details. In addition, if the <em>&lt;mode&gt;</em> is given a value of <span class='synopsis'><code>scissors</code></span>, scissors will be appended to <span class='synopsis'><code>MERGE_MSG</code></span> before being passed on to the commit machinery in the case of a merge conflict.</p>
+<p>Cette option détermine comment le message de fusion sera nettoyé avant d&#8217;être envoyé. Voir <a href='{{< relurl "docs/git-commit/fr" >}}'>git-commit[1]</a> pour plus de détails. De plus, si le <em>&lt;mode&gt;</em> a la valeur <span class='synopsis'><code>scissors</code></span>, les ciseaux seront ajoutés à <em>MERGE_MSG</em> avant d&#8217;être transmis à la machinerie de commit dans le cas d&#8217;un conflit de fusion.</p>
 </dd>
 <dt class="hdlist1" id="git-merge-spanclasssynopsiscode--ffcodespan"> <a class="anchor" href="#git-merge---ff"></a> <a class="anchor" href="#git-merge-spanclasssynopsiscode--ffcodespan"></a><span class='synopsis'><code>--ff</code></span> </dt>
 <dt class="hdlist1" id="git-merge-spanclasssynopsiscode--no-ffcodespan"> <a class="anchor" href="#git-merge---no-ff"></a> <a class="anchor" href="#git-merge-spanclasssynopsiscode--no-ffcodespan"></a><span class='synopsis'><code>--no-ff</code></span> </dt>
@@ -159,14 +159,14 @@ L&#8217;option <span class='synopsis'><code>--edit</code></span> (ou <span class
 <dt class="hdlist1" id="git-merge-spanclasssynopsiscode--gpg-signcodecodecodeemltid-clgtemspan"> <a class="anchor" href="#git-merge---gpg-signid-cl"></a> <a class="anchor" href="#git-merge-spanclasssynopsiscode--gpg-signcodecodecodeemltid-clgtemspan"></a><span class='synopsis'><code>--gpg-sign</code>[<code>=</code><em>&lt;id-clé&gt;</em>]</span> </dt>
 <dt class="hdlist1" id="git-merge-spanclasssynopsiscode--no-gpg-signcodespan"> <a class="anchor" href="#git-merge---no-gpg-sign"></a> <a class="anchor" href="#git-merge-spanclasssynopsiscode--no-gpg-signcodespan"></a><span class='synopsis'><code>--no-gpg-sign</code></span> </dt>
 <dd>
-<p>GPG-sign the resulting merge commit. The <em>&lt;key-id&gt;</em> argument is optional and defaults to the committer identity; if specified, it must be stuck to the option without a space. <span class='synopsis'><code>--no-gpg-sign</code></span> is useful to countermand both <span class='synopsis'><code>commit.gpgSign</code></span> configuration variable, and earlier <span class='synopsis'><code>--gpg-sign</code></span>.</p>
+<p>Signer le commit résultant de la fusion avec GPG. L&#8217;argument <em>&lt;id-clé&gt;</em> est optionnel avec par défaut l&#8217;identité du validateur ; si spécifiée, elle doit être collée à l&#8217;option sans aucun espace. <span class='synopsis'><code>--no-gpg-sign</code></span> est utile pour annuler l&#8217;effet de la variable de configuration <span class='synopsis'><code>commit.gpgSign</code></span> ainsi que tout <span class='synopsis'><code>--gpg-sign</code></span> précédent.</p>
 </dd>
 <dt class="hdlist1" id="git-merge-spanclasssynopsiscode--logcodecodecodeemltngtemspan"> <a class="anchor" href="#git-merge---logn"></a> <a class="anchor" href="#git-merge-spanclasssynopsiscode--logcodecodecodeemltngtemspan"></a><span class='synopsis'><code>--log</code>[<code>=</code><em>&lt;n&gt;</em>]</span> </dt>
 <dt class="hdlist1" id="git-merge-spanclasssynopsiscode--no-logcodespan"> <a class="anchor" href="#git-merge---no-log"></a> <a class="anchor" href="#git-merge-spanclasssynopsiscode--no-logcodespan"></a><span class='synopsis'><code>--no-log</code></span> </dt>
 <dd>
-<p>In addition to branch names, populate the log message with one-line descriptions from at most <em>&lt;n&gt;</em> actual commits that are being merged. See also <a href='{{< relurl "docs/git-fmt-merge-msg/fr" >}}'>git-fmt-merge-msg[1]</a>.</p>
+<p>En plus des noms de branches, remplir le message du journal avec les descriptions d&#8217;une ligne depuis au maximum <em>&lt;n&gt;</em> commits réels qui sont en train d&#8217;être fusionnés. Voir aussi <a href='{{< relurl "docs/git-fmt-merge-msg/fr" >}}'>git-fmt-merge-msg[1]</a>.</p>
 <div class="paragraph">
-<p>With <span class='synopsis'><code>--no-log</code></span> do not list one-line descriptions from the actual commits being merged.</p>
+<p>Avec <span class='synopsis'><code>--no-log</code></span>, ne pas indiquer les descriptions d&#8217;une ligne des commits réels qui sont fusionnés.</p>
 </div>
 </dd>
 <dt class="hdlist1" id="git-merge-spanclasssynopsiscode--signoffcodespan"> <a class="anchor" href="#git-merge---signoff"></a> <a class="anchor" href="#git-merge-spanclasssynopsiscode--signoffcodespan"></a><span class='synopsis'><code>--signoff</code></span> </dt>
@@ -187,7 +187,7 @@ L&#8217;option <span class='synopsis'><code>--edit</code></span> (ou <span class
 <dd>
 <p>Afficher un diffstat à la fin de la fusion. Le diffstat est également contrôlé par l&#8217;option de configuration merge.stat.</p>
 <div class="paragraph">
-<p>With <span class='synopsis'><code>-n</code></span> or <span class='synopsis'><code>--no-stat</code></span> do not show a diffstat at the end of the merge.</p>
+<p>Avec <span class='synopsis'><code>-n</code></span> ou <span class='synopsis'><code>--no-stat</code></span>, ne pas afficher de diffstat à la fin de la fusion.</p>
 </div>
 </dd>
 <dt class="hdlist1" id="git-merge-spanclasssynopsiscode--compact-summarycodespan"> <a class="anchor" href="#git-merge---compact-summary"></a> <a class="anchor" href="#git-merge-spanclasssynopsiscode--compact-summarycodespan"></a><span class='synopsis'><code>--compact-summary</code></span> </dt>
@@ -205,7 +205,8 @@ L&#8217;option <span class='synopsis'><code>--edit</code></span> (ou <span class
 <p>Avec <span class='synopsis'><code>--squash</code></span>, <span class='synopsis'><code>--commit</code></span> n&#8217;est pas permis, et échouera.</p>
 </div>
 </dd>
-<dt class="hdlist1" id="git-merge-spanclasssynopsiscode--codecodeno-codecodeverifycodespan"> <a class="anchor" href="#git-merge---no-verify"></a> <a class="anchor" href="#git-merge-spanclasssynopsiscode--codecodeno-codecodeverifycodespan"></a><span class='synopsis'><code>--</code>[<code>no-</code>]<code>verify</code></span> </dt>
+<dt class="hdlist1" id="git-merge-spanclasssynopsiscode--verifycodespan"> <a class="anchor" href="#git-merge---verify"></a> <a class="anchor" href="#git-merge-spanclasssynopsiscode--verifycodespan"></a><span class='synopsis'><code>--verify</code></span> </dt>
+<dt class="hdlist1" id="git-merge-spanclasssynopsiscode--no-verifycodespan"> <a class="anchor" href="#git-merge---no-verify"></a> <a class="anchor" href="#git-merge-spanclasssynopsiscode--no-verifycodespan"></a><span class='synopsis'><code>--no-verify</code></span> </dt>
 <dd>
 <p>Par défaut, les crochets pre-merge et commit-msg sont exécutés. Lorsque <span class='synopsis'><code>--no-verify</code></span> est donné, ils sont contournés. Voir aussi <a href='{{< relurl "docs/githooks/fr" >}}'>githooks[5]</a>.</p>
 </dd>
@@ -267,9 +268,9 @@ L&#8217;option <span class='synopsis'><code>--edit</code></span> (ou <span class
 <p>La commande <span class='synopsis'><code>git</code> <code>fmt-merge-msg</code></span> peut être utilisée pour donner une bonne valeur par défaut pour les invocations automatisées de <span class='synopsis'><code>git</code> <code>merge</code></span>. Le message automatisé peut inclure la description de la branche.</p>
 </div>
 </dd>
-<dt class="hdlist1" id="git-merge-spanclasssynopsiscode--into-namecodeemltbranchgtemspan"> <a class="anchor" href="#git-merge---into-namebranch"></a> <a class="anchor" href="#git-merge-spanclasssynopsiscode--into-namecodeemltbranchgtemspan"></a><span class='synopsis'><code>--into-name</code> <em>&lt;branch&gt;</em></span> </dt>
+<dt class="hdlist1" id="git-merge-spanclasssynopsiscode--into-namecodeemltbranchegtemspan"> <a class="anchor" href="#git-merge---into-namebranche"></a> <a class="anchor" href="#git-merge-spanclasssynopsiscode--into-namecodeemltbranchegtemspan"></a><span class='synopsis'><code>--into-name</code> <em>&lt;branche&gt;</em></span> </dt>
 <dd>
-<p>Prepare the default merge message as if merging to the branch <em>&lt;branch&gt;</em>, instead of the name of the real branch to which the merge is made.</p>
+<p>Préparer le message de fusion par défaut comme si la fusion se faisait vers la branche <em>&lt;branche&gt;</em>, au lieu du nom de la branche réelle vers laquelle la fusion est faite.</p>
 </dd>
 <dt class="hdlist1" id="git-merge-spanclasssynopsiscode-Fcodeemltfichiergtemspan"> <a class="anchor" href="#git-merge--Ffichier"></a> <a class="anchor" href="#git-merge-spanclasssynopsiscode-Fcodeemltfichiergtemspan"></a><span class='synopsis'><code>-F</code> <em>&lt;fichier&gt;</em></span> </dt>
 <dt class="hdlist1" id="git-merge-spanclasssynopsiscode--filecodeemltfichiergtemspan"> <a class="anchor" href="#git-merge---filefichier"></a> <a class="anchor" href="#git-merge-spanclasssynopsiscode--filecodeemltfichiergtemspan"></a><span class='synopsis'><code>--file=</code><em>&lt;fichier&gt;</em></span> </dt>
@@ -311,7 +312,7 @@ L&#8217;option <span class='synopsis'><code>--edit</code></span> (ou <span class
 <dd>
 <p>Après l&#8217;arrêt d&#8217;un <span class='synopsis'><code>git</code> <code>merge</code></span> en raison de conflits, vous pouvez conclure la fusion en lançant <span class='synopsis'><code>git</code> <code>merge</code> <code>--continue</code></span> (voir la section "COMMENT RÉSOUDRE LES CONFLITS" ci-dessous).</p>
 </dd>
-<dt class="hdlist1" id="git-merge-spanclasssynopsisemltcommitgtemspan"> <a class="anchor" href="#git-merge-commit"></a> <a class="anchor" href="#git-merge-spanclasssynopsisemltcommitgtemspan"></a><span class='synopsis'><em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em>...</span> </dt>
+<dt class="hdlist1" id="git-merge-spanclasssynopsisemltcommitgtemspan"> <a class="anchor" href="#git-merge-commit"></a> <a class="anchor" href="#git-merge-spanclasssynopsisemltcommitgtemspan"></a><span class='synopsis'><em>&lt;commit&gt;</em>...</span> </dt>
 <dd>
 <p>Les commits, généralement les sommets des autres branches, à fusionner avec notre branche. En spécifiant plus d&#8217;un commit, on crée une fusion avec plus de deux parents (affectueusement appelée fusion Octopus).</p>
 <div class="paragraph">
@@ -332,7 +333,7 @@ L&#8217;option <span class='synopsis'><code>--edit</code></span> (ou <span class
 <p>Avant d&#8217;appliquer des modifications extérieures, vous devez faire en sorte que votre propre travail soit en bon état et validé localement, afin qu&#8217;il ne soit pas écrasé en cas de conflits. Voir aussi <a href='{{< relurl "docs/git-stash/fr" >}}'>git-stash[1]</a>. <span class='synopsis'><code>git</code> <code>pull</code></span> et <span class='synopsis'><code>git</code> <code>merge</code></span> s&#8217;arrêteront sans rien faire lorsque des modifications locales non validées chevaucheront des fichiers que <span class='synopsis'><code>git</code> <code>pull</code></span>/<span class='synopsis'><code>git</code> <code>merge</code></span> devront mettre à jour.</p>
 </div>
 <div class="paragraph">
-<p>To avoid recording unrelated changes in the merge commit, <span class='synopsis'><code>git</code> <code>pull</code></span> and <span class='synopsis'><code>git</code> <code>merge</code></span> will also abort if there are any changes registered in the index relative to the <span class='synopsis'><code>HEAD</code></span> commit. (Special narrow exceptions to this rule may exist depending on which merge strategy is in use, but generally, the index must match <span class='synopsis'><code>HEAD</code></span>.)</p>
+<p>Pour éviter d&#8217;enregistrer des modifications sans rapport dans le commit de fusion, <span class='synopsis'><code>git</code> <code>pull</code></span> et <span class='synopsis'><code>git</code> <code>merge</code></span> seront également annulés s&#8217;il y a des modifications enregistrées dans l&#8217;index par rapport au commit <span class='synopsis'><code>HEAD</code></span>. (Des exceptions rares à cette règle peuvent exister selon la stratégie de fusion utilisée, mais en général, l&#8217;index doit correspondre à <span class='synopsis'><code>HEAD</code></span>.)</p>
 </div>
 <div class="paragraph">
 <p>Si tous les commit nommés sont déjà des ancêtres de <span class='synopsis'><code>HEAD</code></span>, <span class='synopsis'><code>git</code> <code>merge</code></span> sortira plus tôt avec le message « Déjà à jour ».</p>
@@ -374,10 +375,10 @@ L&#8217;option <span class='synopsis'><code>--edit</code></span> (ou <span class
 <p>Les chemins qui ont été fusionnés proprement sont mis à jour à la fois dans le fichier d&#8217;index et dans votre arbre de travail.</p>
 </li>
 <li>
-<p>For conflicting paths, the index file records up to three versions: stage 1 stores the version from the common ancestor, stage 2 from <span class='synopsis'><code>HEAD</code></span>, and stage 3 from <span class='synopsis'><code>MERGE_HEAD</code></span> (you can inspect the stages with <span class='synopsis'><code>git</code> <code>ls-files</code> <code>-u</code></span>). The working tree files contain the result of the merge operation; i.e. 3-way merge results with familiar conflict markers <span class='synopsis'><em>&lt;&lt;&lt;</em></span> <span class='synopsis'><code>===</code></span> <span class='synopsis'><em>&gt;&gt;&gt;</em></span>.</p>
+<p>En cas de conflit de chemins, le fichier d&#8217;index enregistre jusqu&#8217;à trois versions : l&#8217;étape 1 stocke la version de l&#8217;ancêtre commun, l&#8217;étape 2 de <span class='synopsis'><code>HEAD</code></span>, et l&#8217;étape 3 de <span class='synopsis'><code>MERGE_HEAD</code></span> (vous pouvez inspecter les étapes avec <span class='synopsis'><code>git</code> <code>ls-files</code> <code>-u</code></span>). Les fichiers de l&#8217;arbre de travail contiennent le résultat de l&#8217;opération de fusion, c&#8217;est-à-dire les résultats de la fusion à 3 points avec les marqueurs de conflit familiers <span class='synopsis'><em>&lt;&lt;&lt;</em></span> <span class='synopsis'><code>===</code></span> <span class='synopsis'><em>&gt;&gt;&gt;</em></span>.</p>
 </li>
 <li>
-<p>A ref named <span class='synopsis'><code>AUTO_MERGE</code></span> is written, pointing to a tree corresponding to the current content of the working tree (including conflict markers for textual conflicts). Note that this ref is only written when the <span class='synopsis'><code>ort</code></span> merge strategy is used (the default).</p>
+<p>Une réf nommée <span class='synopsis'><code>AUTO_MERGE</code></span> est écrite, indiquant un arbre correspondant au contenu actuel de l&#8217;arbre de travail (y compris les marqueurs de conflit pour les conflits textuels). Notez que cette réf n&#8217;est écrite que lorsque la stratégie de fusion <span class='synopsis'><code>ort</code></span> est utilisée (par défaut).</p>
 </li>
 <li>
 <p>Aucune autre modification n&#8217;est apportée. En particulier, les modifications locales que vous aviez avant de commencer la fusion resteront les mêmes et les entrées de l&#8217;index qui les concernent resteront telles quelles, c&#8217;est-à-dire correspondant à <span class='synopsis'><code>HEAD</code></span>.</p>
@@ -434,13 +435,13 @@ Et voici une autre ligne qui est résolue proprement ou non modifiée.</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>The area where a pair of conflicting changes happened is marked with markers <span class='synopsis'><em>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</em></span>, <span class='synopsis'><code>=======</code></span>, and <span class='synopsis'><em>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</em></span>. The part before the <span class='synopsis'><code>=======</code></span> is typically your side, and the part afterwards is typically their side.</p>
+<p>La zone où une paire de modifications contradictoires s&#8217;est produite est marquée par les marqueurs <span class='synopsis'><em>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</em></span>, <span class='synopsis'><code>========</code></span>, et <span class='synopsis'><em>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;</em></span>. La partie qui précède le <span class='synopsis'><code>=======</code></span> est généralement votre côté, et la partie qui suit est généralement leur côté.</p>
 </div>
 <div class="paragraph">
 <p>Le format par défaut ne montre pas ce que l&#8217;original a dit dans la zone de conflit. Vous ne pouvez pas savoir combien de lignes sont supprimées et remplacées par la remarque de Barbie à votre côté. La seule chose que vous pouvez dire, c&#8217;est que votre côté veut dire que c&#8217;est difficile et que vous préférez faire du shopping, alors que l&#8217;autre côté veut prétendre que c&#8217;est facile.</p>
 </div>
 <div class="paragraph">
-<p>An alternative style can be used by setting the <span class='synopsis'><code>merge.conflictStyle</code></span> configuration variable to either <span class='synopsis'><code>diff3</code></span> or <span class='synopsis'><code>zdiff3</code></span>. In <span class='synopsis'><code>diff3</code></span> style, the above conflict may look like this:</p>
+<p>Un autre style peut être utilisé en réglant la variable de configuration <span class='synopsis'><code>merge.conflictStyle</code></span> sur <span class='synopsis'><code>diff3</code></span> ou <span class='synopsis'><code>zdiff3</code></span>. Dans le style <span class='synopsis'><code>diff3</code></span>, le conflit ci-dessus peut ressembler à ceci :</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -461,7 +462,7 @@ Et voici une autre ligne qui est proprement résolue ou non modifiée.</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>while in <span class='synopsis'><code>zdiff3</code></span> style, it may look like this:</p>
+<p>alors que dans le style <span class='synopsis'><code>zdiff3</code></span>, cela peut ressembler à ceci :</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -481,7 +482,7 @@ Et voici une autre ligne qui est proprement résolue ou non modifiée.</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>In addition to the <span class='synopsis'><em>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</em></span>, <span class='synopsis'><code>=======</code></span>, and <span class='synopsis'><em>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</em></span> markers, it uses another <span class='synopsis'>|||||||</span> marker that is followed by the original text. You can tell that the original just stated a fact, and your side simply gave in to that statement and gave up, while the other side tried to have a more positive attitude. You can sometimes come up with a better resolution by viewing the original.</p>
+<p>En plus des marqueurs <span class='synopsis'><em>&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</em></span>, <span class='synopsis'><code>=======</code></span>, et <span class='synopsis'><em>&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;</em></span>, il utilise un autre marqueur <span class='synopsis'>||||||||</span> qui est suivi par le texte original. Vous pouvez voir que l&#8217;original ne faisait qu&#8217;énoncer un fait, et que votre camp a simplement cédé à cette déclaration et a abandonné, tandis que l&#8217;autre camp a essayé d&#8217;avoir une attitude plus positive. Vous pouvez parfois aboutir à une meilleure résolution en regardant l&#8217;original.</p>
 </div>
 </div>
 </div>
@@ -682,9 +683,9 @@ Et voici une autre ligne qui est proprement résolue ou non modifiée.</pre>
 <div class="sectionbody">
 <div class="dlist">
 <dl>
-<dt class="hdlist1" id="git-merge-spanclasssynopsiscodebranchcodeemltnamegtemcodemergeOptionscodespan"> <a class="anchor" href="#git-merge-branchnamemergeOptions"></a> <a class="anchor" href="#git-merge-spanclasssynopsiscodebranchcodeemltnamegtemcodemergeOptionscodespan"></a><span class='synopsis'><code>branch.</code><em>&lt;name&gt;</em><code>.mergeOptions</code></span> </dt>
+<dt class="hdlist1" id="git-merge-spanclasssynopsiscodebranchcodeemltnomgtemcodemergeOptionscodespan"> <a class="anchor" href="#git-merge-branchnommergeOptions"></a> <a class="anchor" href="#git-merge-spanclasssynopsiscodebranchcodeemltnomgtemcodemergeOptionscodespan"></a><span class='synopsis'><code>branch.</code><em>&lt;nom&gt;</em><code>.mergeOptions</code></span> </dt>
 <dd>
-<p>Sets default options for merging into branch <em>&lt;name&gt;</em>. The syntax and supported options are the same as those of <span class='synopsis'><code>git</code> <code>merge</code></span>, but option values containing whitespace characters are currently not supported.</p>
+<p>Définir les options par défaut pour la fusion dans la branche <em>&lt;nom&gt;</em>. La syntaxe et les options prises en charge sont les mêmes que celles de <span class='synopsis'><code>git</code> <code>merge</code></span>, mais les valeurs d&#8217;options contenant des espaces ne sont actuellement pas prises en charge.</p>
 </dd>
 </dl>
 </div>

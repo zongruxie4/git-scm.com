@@ -392,7 +392,8 @@ Ces modes peuvent être fournis comme une liste séparée par des virgules :</p
 <dd>
 <p>Désactiver la détection de renommage, même si le fichier de configuration indique de le faire par défaut.</p>
 </dd>
-<dt class="hdlist1" id="git-diff-files-spanclasssynopsiscode--codecodeno-codecoderename-emptycodespan"> <a class="anchor" href="#git-diff-files---no-rename-empty"></a> <a class="anchor" href="#git-diff-files-spanclasssynopsiscode--codecodeno-codecoderename-emptycodespan"></a><span class='synopsis'><code>--</code>[<code>no-</code>]<code>rename-empty</code></span> </dt>
+<dt class="hdlist1" id="git-diff-files-spanclasssynopsiscode--rename-emptycodespan"> <a class="anchor" href="#git-diff-files---rename-empty"></a> <a class="anchor" href="#git-diff-files-spanclasssynopsiscode--rename-emptycodespan"></a><span class='synopsis'><code>--rename-empty</code></span> </dt>
+<dt class="hdlist1" id="git-diff-files-spanclasssynopsiscode--no-rename-emptycodespan"> <a class="anchor" href="#git-diff-files---no-rename-empty"></a> <a class="anchor" href="#git-diff-files-spanclasssynopsiscode--no-rename-emptycodespan"></a><span class='synopsis'><code>--no-rename-empty</code></span> </dt>
 <dd>
 <p>S&#8217;il faut utiliser les blobs vides comme source de renommage.</p>
 </dd>
@@ -473,9 +474,9 @@ utilisez <span class='synopsis'><code>-M100%</code></span>. L&#8217;index de sim
 <p>Notez que toutes les diffs ne peuvent pas présenter tous les types. Par exemple, les entrées copiées et renommées ne peuvent pas apparaître si la détection de ces types est désactivée.</p>
 </div>
 </dd>
-<dt class="hdlist1" id="git-diff-files-spanclasssynopsiscode-Scodeemltchanegtemspan"> <a class="anchor" href="#git-diff-files--Schane"></a> <a class="anchor" href="#git-diff-files-spanclasssynopsiscode-Scodeemltchanegtemspan"></a><span class='synopsis'><code>-S</code><em><span class="hover-term" data-term="chaîne">&lt;chaîne&gt;</span></em></span> </dt>
+<dt class="hdlist1" id="git-diff-files-spanclasssynopsiscode-Scodeemltchanegtemspan"> <a class="anchor" href="#git-diff-files--Schane"></a> <a class="anchor" href="#git-diff-files-spanclasssynopsiscode-Scodeemltchanegtemspan"></a><span class='synopsis'><code>-S</code><em>&lt;chaîne&gt;</em></span> </dt>
 <dd>
-<p>Trouver des différences qui modifient le nombre d&#8217;occurrences de la <em><span class="hover-term" data-term="chaîne">&lt;chaîne&gt;</span></em> spécifiée (par ex. addition/suppression) dans un fichier. Destiné à l&#8217;usage dans des scripts.</p>
+<p>Trouver des différences qui modifient le nombre d&#8217;occurrences de la <em>&lt;chaîne&gt;</em> spécifiée (par ex. addition/suppression) dans un fichier. Destiné à l&#8217;usage dans des scripts.</p>
 <div class="paragraph">
 <p>C&#8217;est utile lorsqu&#8217;on cherche un bloc exact de code (comme une struct), et qu&#8217;on veut connaître l&#8217;historique de ce bloc depuis son apparition : utiliser cette fonctionnalité itérativement pour fournir le bloc d&#8217;une pré-image à <span class='synopsis'><code>-S</code></span> et continuer jusqu&#8217;à obtenir la toute première version du bloc.</p>
 </div>
@@ -515,11 +516,11 @@ utilisez <span class='synopsis'><code>-M100%</code></span>. L&#8217;index de sim
 </dd>
 <dt class="hdlist1" id="git-diff-files-spanclasssynopsiscode--pickaxe-allcodespan"> <a class="anchor" href="#git-diff-files---pickaxe-all"></a> <a class="anchor" href="#git-diff-files-spanclasssynopsiscode--pickaxe-allcodespan"></a><span class='synopsis'><code>--pickaxe-all</code></span> </dt>
 <dd>
-<p>Quand <span class='synopsis'><code>-S</code></span> ou <span class='synopsis'><code>-G</code></span> trouvent une modification, afficher toutes les modifications dans l&#8217;ensemble de modifications, pas seulement les fichiers qui contiennent la modification dans <em><span class="hover-term" data-term="chaîne">&lt;chaîne&gt;</span></em>.</p>
+<p>Quand <span class='synopsis'><code>-S</code></span> ou <span class='synopsis'><code>-G</code></span> trouvent une modification, afficher toutes les modifications dans l&#8217;ensemble de modifications, pas seulement les fichiers qui contiennent la modification dans <em>&lt;chaîne&gt;</em>.</p>
 </dd>
 <dt class="hdlist1" id="git-diff-files-spanclasssynopsiscode--pickaxe-regexcodespan"> <a class="anchor" href="#git-diff-files---pickaxe-regex"></a> <a class="anchor" href="#git-diff-files-spanclasssynopsiscode--pickaxe-regexcodespan"></a><span class='synopsis'><code>--pickaxe-regex</code></span> </dt>
 <dd>
-<p>Traiter la <em><span class="hover-term" data-term="chaîne">&lt;chaîne&gt;</span></em> fournie à <span class='synopsis'><code>-S</code></span> comme une expression régulière POSIX étendue à faire correspondre.</p>
+<p>Traiter la <em>&lt;chaîne&gt;</em> fournie à <span class='synopsis'><code>-S</code></span> comme une expression régulière POSIX étendue à faire correspondre.</p>
 </dd>
 <dt class="hdlist1" id="git-diff-files-spanclasssynopsiscode-Ocodeemltfichier-d-ordregtemspan"> <a class="anchor" href="#git-diff-files--Ofichier-d-ordre"></a> <a class="anchor" href="#git-diff-files-spanclasssynopsiscode-Ocodeemltfichier-d-ordregtemspan"></a><span class='synopsis'><code>-O</code><em>&lt;fichier-d-ordre&gt;</em></span> </dt>
 <dd>
@@ -655,6 +656,39 @@ utilisez <span class='synopsis'><code>-M100%</code></span>. L&#8217;index de sim
 <dd>
 <p>Par défaut, une entrée ajoutée par <span class='synopsis'><code>git</code> <code>add</code> <code>-N</code></span> apparaît comme un fichier vide existant dans <span class='synopsis'><code>git</code> <code>diff</code></span> et un nouveau fichier dans <span class='synopsis'><code>git</code> <code>diff</code> <code>--cached</code></span>. Cette option fait apparaître l&#8217;entrée comme un fichier nouveau dans <span class='synopsis'><code>git</code> <code>diff</code></span> et non existant dans <span class='synopsis'><code>git</code> <code>diff</code> <code>--cached</code></span>. Cette option peut être inversée avec <span class='synopsis'><code>--ita-visible-in-index</code></span>. Les deux options sont expérimentales et peuvent être retirées dans le futur.</p>
 </dd>
+<dt class="hdlist1" id="git-diff-files---max-depthltprofondeurgt"> <a class="anchor" href="#git-diff-files---max-depthprofondeur"></a> <a class="anchor" href="#git-diff-files---max-depthltprofondeurgt"></a>--max-depth=&lt;profondeur&gt; </dt>
+<dd>
+<p>Pour chaque &lt;spéc-de-chemin&gt; donné sur la ligne de commande, descend au maximum <em>&lt;profondeur&gt;</em> niveaux de répertoires. Une valeur de <span class='synopsis'><code>-1</code></span> signifie qu&#8217;il n&#8217;y a pas de limite. Ne peut pas être combiné avec des caractères génériques dans le spécificateur de chemin. Étant donné un arbre contenant <span class='synopsis'><code>foo/bar/baz</code></span>, la liste suivante indique les correspondances générées par chaque ensemble d&#8217;options :</p>
+<div class="openblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p><span class='synopsis'><code>--max-depth=0</code> <code>--</code> <code>foo</code></span> : <span class='synopsis'><code>foo</code></span></p>
+</li>
+<li>
+<p><span class='synopsis'><code>--max-depth=1</code> <code>--</code> <code>foo</code></span> : <span class='synopsis'><code>foo/bar</code></span></p>
+</li>
+<li>
+<p><span class='synopsis'><code>--max-depth=1</code> <code>--</code> <code>foo/bar</code></span> : <span class='synopsis'><code>foo/bar/baz</code></span></p>
+</li>
+<li>
+<p><span class='synopsis'><code>--max-depth=1</code> <code>--</code> <code>foo</code> <code>foo/bar</code></span> : <span class='synopsis'><code>foo/bar/baz</code></span></p>
+</li>
+<li>
+<p><span class='synopsis'><code>--max-depth=2</code> <code>--</code> <code>foo</code></span> : <span class='synopsis'><code>foo/bar/baz</code></span></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Si aucun pathspec n&#8217;est donné, la profondeur est mesurée comme si toutes les entrées de niveau supérieur étaient spécifiées. Notez que cela diffère de compter à partie de la racine, en ce que <span class='synopsis'><code>--max-depth=0</code></span> retournerait encore <span class='synopsis'><code>foo</code></span>. Cela vous permet de limiter encore la profondeur tout en demandant un sous-ensemble des entrées de haut niveau.</p>
+</div>
+<div class="paragraph">
+<p>Notez que cette option est uniquement gérée pour les diffs entre les objets d&#8217;arbre, et non avec l&#8217;index ou l&#8217;arbre de travail.</p>
+</div>
+</dd>
 </dl>
 </div>
 <div class="paragraph">
@@ -696,13 +730,13 @@ utilisez <span class='synopsis'><code>-M100%</code></span>. L&#8217;index de sim
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1" id="git-diff-files-spanclasssynopsiscodegit-diff-indexcodeemltarbre-esquegtemspan"> <a class="anchor" href="#git-diff-files-git-diff-indexarbre-esque"></a> <a class="anchor" href="#git-diff-files-spanclasssynopsiscodegit-diff-indexcodeemltarbre-esquegtemspan"></a><span class='synopsis'><code>git-diff-index</code> <em><span class="hover-term" data-term="arbre-esque">&lt;arbre-esque&gt;</span></em></span> </dt>
+<dt class="hdlist1" id="git-diff-files-spanclasssynopsiscodegit-diff-indexcodeemltarbre-esquegtemspan"> <a class="anchor" href="#git-diff-files-git-diff-indexarbre-esque"></a> <a class="anchor" href="#git-diff-files-spanclasssynopsiscodegit-diff-indexcodeemltarbre-esquegtemspan"></a><span class='synopsis'><code>git-diff-index</code> <em>&lt;arbre-esque&gt;</em></span> </dt>
 <dd>
-<p>compare l'<em><span class="hover-term" data-term="arbre-esque">&lt;arbre-esque&gt;</span></em> et les fichiers du système de fichiers.</p>
+<p>compare l'<em>&lt;arbre-esque&gt;</em> et les fichiers du système de fichiers.</p>
 </dd>
-<dt class="hdlist1" id="git-diff-files-spanclasssynopsiscodegit-diff-indexcodecode--cachedcodeemltarbre-esquegtemspan"> <a class="anchor" href="#git-diff-files-git-diff-index--cachedarbre-esque"></a> <a class="anchor" href="#git-diff-files-spanclasssynopsiscodegit-diff-indexcodecode--cachedcodeemltarbre-esquegtemspan"></a><span class='synopsis'><code>git-diff-index</code> <code>--cached</code> <em><span class="hover-term" data-term="arbre-esque">&lt;arbre-esque&gt;</span></em></span> </dt>
+<dt class="hdlist1" id="git-diff-files-spanclasssynopsiscodegit-diff-indexcodecode--cachedcodeemltarbre-esquegtemspan"> <a class="anchor" href="#git-diff-files-git-diff-index--cachedarbre-esque"></a> <a class="anchor" href="#git-diff-files-spanclasssynopsiscodegit-diff-indexcodecode--cachedcodeemltarbre-esquegtemspan"></a><span class='synopsis'><code>git-diff-index</code> <code>--cached</code> <em>&lt;arbre-esque&gt;</em></span> </dt>
 <dd>
-<p>compare l'<em><span class="hover-term" data-term="arbre-esque">&lt;arbre-esque&gt;</span></em> et l&#8217;index.</p>
+<p>compare l'<em>&lt;arbre-esque&gt;</em> et l&#8217;index.</p>
 </dd>
 <dt class="hdlist1" id="git-diff-files-spanclasssynopsiscodegit-diff-treecodecode-rcodeemltarbre-esque-1gtememltarbre-esque-2gtememltmotifgtemspan"> <a class="anchor" href="#git-diff-files-git-diff-tree-rarbre-esque-1arbre-esque-2motif"></a> <a class="anchor" href="#git-diff-files-spanclasssynopsiscodegit-diff-treecodecode-rcodeemltarbre-esque-1gtememltarbre-esque-2gtememltmotifgtemspan"></a><span class='synopsis'><code>git-diff-tree</code> [<code>-r</code>] <em>&lt;arbre-esque-1&gt;</em> <em>&lt;arbre-esque-2&gt;</em> [<em>&lt;motif&gt;</em>...]</span> </dt>
 <dd>

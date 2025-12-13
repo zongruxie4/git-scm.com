@@ -16,6 +16,8 @@ headings:
   id: _synopsis
 - text: DESCRIPTION
   id: _description
+- text: TRANSPLANTING A TOPIC BRANCH WITH --ONTO
+  id: _transplanting_a_topic_branch_with_onto
 - text: OPTIONS DE MODE
   id: _options_de_mode
 - text: OPTIONS
@@ -56,9 +58,9 @@ headings:
 <div class="sectionbody">
 <div class="verseblock">
 <pre class="content"><em>git rebase</em> [-i | --interactive] [&lt;options&gt;] [--exec &lt;cmd&gt;]
-	[--onto &lt;nouvellebase&gt; | --keep-base] [&lt;amont&gt; [<span class="hover-term" data-term="branche">&lt;branche&gt;</span>]]
+	[--onto &lt;nouvellebase&gt; | --keep-base] [&lt;amont&gt; [&lt;branche&gt;]]
 <em>git rebase</em> [-i | --interactive] [&lt;options&gt;] [--exec &lt;cmd&gt;] [--onto &lt;nouvellebase&gt;]
-	--root [<span class="hover-term" data-term="branche">&lt;branche&gt;</span>]
+	--root [&lt;branche&gt;]
 <em>git rebase</em> (--continue|--skip|--abort|--quit|--edit-todo|--show-current-patch)</pre>
 </div>
 </div>
@@ -67,37 +69,10 @@ headings:
 <h2 id="_description"><a class="anchor" href="#_description"></a>DESCRIPTION</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Si l ' on spécifie <span class='synopsis'><em><span class="hover-term" data-term="branche">&lt;branche&gt;</span></em>  <code>,</code> <code>git</code> <code>rebase</code></span> effectuera un <span class='synopsis'><code>git</code> <code>switch</code> <em><span class="hover-term" data-term="branche">&lt;branche&gt;</span></em></span> automatique avant de faire autre chose. Sinon, il reste sur la branche actuelle.</p>
+<p>Transplant a series of commits onto a different starting point. You can also use <span class='synopsis'><code>git</code> <code>rebase</code></span> to reorder or combine commits: see INTERACTIVE MODE below for how to do that.</p>
 </div>
 <div class="paragraph">
-<p>Si <span class='synopsis'><em>&lt;amont&gt;</em></span> n&#8217;est pas spécifié, on utilisera l&#8217;amont configuré dans les options <span class='synopsis'><code>branch.</code><em>&lt;nom&gt;</em><code>.</code> <code>remote</code></span> et <span class='synopsis'><code>branch.</code><em>&lt;nom&gt;</em><code>.merge</code></span> (voir <a href='{{< relurl "docs/git-config/fr" >}}'>git-config[1]</a> pour plus de détails) et on suppose l&#8217;option <span class='synopsis'><code>--fork-point</code></span>. Si vous n&#8217;êtes actuellement sur aucune branche ou si la branche actuelle n&#8217;a pas d&#8217;amont configuré, le rebasage échouera.</p>
-</div>
-<div class="paragraph">
-<p>Tous les changements apportés par des commits dans la branche actuelle, mais qui ne sont pas dans <span class='synopsis'><em>&lt;amont&gt;</em></span> sont enregistrés dans une zone temporaire. Il s&#8217;agit de la même série de commits qui serait affichée par <span class='synopsis'><code>git</code> <code>log</code> <em>&lt;amont&gt;</em><code>.HEAD</code></span> ; ou par <span class='synopsis'><code>git</code> <code>log</code> <code>fork_point'.HEAD</code></span>, si <span class='synopsis'><code>--fork-point</code></span> est actif (voir la description de <span class='synopsis'><code>--fork-point</code></span> ci-dessous) ; ou par <span class='synopsis'><code>git</code> <code>log</code> <code>HEAD</code></span> si l&#8217;option <span class='synopsis'><code>--root</code></span> est spécifiée.</p>
-</div>
-<div class="paragraph">
-<p>La branche actuelle est réinitialisée à <span class='synopsis'><em>&lt;amont&gt;</em></span> ou <span class='synopsis'><em>&lt;nouvellebase&gt;</em></span> si l&#8217;option <span class='synopsis'><code>--onto</code></span> a été fournie. Cela a le même effet que <span class='synopsis'><code>git</code> <code>reset</code> <code>--hard</code> <em>&lt;amont&gt;</em></span> (ou <span class='synopsis'><em>&lt;nouvellebase&gt;</em></span>). <span class='synopsis'><code>ORIG_HEAD</code></span> est fixé pour pointer au sommet de la branche avant la réinitialisation.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-<span class='synopsis'><code>ORIG_HEAD</code></span> n&#8217;est pas garanti de toujours pointer vers le sommet de la branche précédente à la fin du rebasage si d&#8217;autres commandes qui écrivent cette pseudo-réf (par exemple <span class='synopsis'><code>git</code> <code>reset</code></span>) sont utilisées pendant le rebasage. La pointe de la branche précédente, cependant, est accessible en utilisant le reflog de la branche actuelle (i.e. <span class='synopsis'><code>@{1}</code></span>, voir <a href='{{< relurl "docs/gitrevisions/fr" >}}'>gitrevisions[7]</a>).
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Les commits qui ont été précédemment sauvés dans la zone temporaire sont ensuite réappliqués à la branche actuelle, un par un, dans l&#8217;ordre. Notez que tout commit dans <span class='synopsis'><code>HEAD</code></span> qui introduit les mêmes changements textuels que ceux d&#8217;un commit dans <span class='synopsis'><code>HEAD..</code><em>&lt;amont&gt;</em></span> sont omis (c.-à-d. une rustine déjà acceptée en amont avec un autre message de validation ou un autre horodatage sera ignorée).</p>
-</div>
-<div class="paragraph">
-<p>Il est possible qu&#8217;un échec de fusion empêche ce processus d&#8217;être complètement automatique. Vous devrez résoudre un tel échec de fusion et exécuter <span class='synopsis'><code>git</code> <code>rebase</code> <code>--continue</code></span>. Une autre option est de contourner le commit qui a causé l&#8217;échec de fusion avec <span class='synopsis'><code>git</code> <code>rebase</code> <code>--skip</code></span>. Pour extraire la <span class='synopsis'><em><span class="hover-term" data-term="branche">&lt;branche&gt;</span></em><code>originale</code> <code>et</code> <code>supprimer</code> <code>les</code> <code>fichiers</code> <code>de</code> <code>travail</code> <code>de</code> <code>.git/rebase-apply</code></span>, utilisez la commande <span class='synopsis'><code>git</code> <code>rebase</code> <code>--abort</code></span> à la place.</p>
-</div>
-<div class="paragraph">
-<p>Supposons que l&#8217;historique suivant existe et que la branche actuelle est "sujet" :</p>
+<p>Par exemple, imaginez que vous avez travaillé sur la branche <span class='synopsis'><code>sujet</code></span> de cet historique, et vous voulez « rattraper » le travail effectué sur la branche <span class='synopsis'><code>master</code></span>.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -107,16 +82,7 @@ headings:
 </div>
 </div>
 <div class="paragraph">
-<p>À partir de là, le résultat de l&#8217;une des commandes suivantes :</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>git rebase master
-git rebase master sujet</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>serait :</p>
+<p>Vous voulez transplanter les commits que vous avez faits sur <span class='synopsis'><code>sujet</code></span> car il a divergé de <span class='synopsis'><code>master</code></span> (c&#8217;est-à-dire A, B, et C), sur le sommet du <span class='synopsis'><code>master</code></span> actuel. Vous pouvez le faire en utilisant <span class='synopsis'><code>git</code> <code>rebase</code> <code>master</code></span> pendant que la branche <span class='synopsis'><code>sujet</code></span> est extraite. Si vous voulez rebaser <span class='synopsis'><code>sujet</code></span> tandis que sur une autre branche, <span class='synopsis'><code>git</code> <code>rebase</code> <code>master</code> <code>sujet</code></span> est un raccourci pour <span class='synopsis'><em>git checkout sujet &amp;&amp; git rebase master</em></span>.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -126,28 +92,75 @@ git rebase master sujet</pre>
 </div>
 </div>
 <div class="paragraph">
-<p><strong>NOTE:</strong> Cette dernière forme n&#8217;est qu&#8217;un raccourcis de`git checkout sujet` suivi par <span class='synopsis'><code>git</code> <code>rebase</code> <code>master</code></span> . Lorsque rebase se termine, <span class='synopsis'><code>sujet</code></span> restera à la branche extraite.</p>
+<p>S&#8217;il y a un conflit de fusions au cours de ce processus, <span class='synopsis'><code>git</code> <code>rebase</code></span> s&#8217;arrêtera au premier problème et laissera des marqueurs de conflit. Si cela arrive, vous pouvez faire une de ces choses :</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Résoudre le conflit. Vous pouvez utiliser <span class='synopsis'><code>git</code> <code>diff</code></span> pour trouver les marqueurs (&lt;&lt;&lt;&lt;&lt;&lt;) et faire des modification pour résoudre le conflit. Pour chaque fichier que vous éditez, vous devez dire à Git que le conflit a été résolu. Vous pouvez marque le conflit comme résolu avec <span class='synopsis'><code>git</code> <code>add</code> <em>&lt;nom-de-fichier&gt;</em></span>. Après avoir résolu tous les conflits, vous pouvez continuer le processus de rebasage avec</p>
+<div class="literalblock">
+<div class="content">
+<pre>git rebase --continue</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Arrêtez &#8216;git rebase&#8217; et retournez votre branche à son état original avec</p>
+<div class="literalblock">
+<div class="content">
+<pre>git rebase --abort</pre>
+</div>
+</div>
+</li>
+<li>
+<p>Sautez le commit qui a causé le conflit de fusion avec</p>
+<div class="literalblock">
+<div class="content">
+<pre>git rebase --skip</pre>
+</div>
+</div>
+</li>
+</ol>
 </div>
 <div class="paragraph">
-<p>Si la branche amont contient déjà un changement que vous avez fait (par exemple, parce que vous avez envoyé une rustine qui a été appliquée en amont), alors ce commit sera ignoré et des avertissements seront émis (si le backend <em>merge</em> est utilisé). Par exemple, l&#8217;exécution de <span class='synopsis'><code>git</code> <code>rebase</code> <code>master</code></span> sur l&#8217;historique suivant (dans lequel <span class='synopsis'><code>A'</code></span> et <span class='synopsis'><code>A</code></span> introduisent le même ensemble de modifications, mais ont des informations de validateur différentes) :</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>          A---B---C sujet
-         /
-    D---E---A'---F master</pre>
-</div>
+<p>si vous ne spécifiez par un <em>&lt;amont&gt;</em> sur lequel rebaser, l&#8217;amont configuré dans les options <span class='synopsis'><code>branch.</code><em>&lt;nom&gt;</em><code>.</code> <code>remote</code></span> et <span class='synopsis'><code>branch.</code><em>&lt;nom&gt;</em><code>.merge</code></span> sera utilisé (voir <a href='{{< relurl "docs/git-config/fr" >}}'>git-config[1]</a> pour plus de détails) et on suppose l&#8217;option <span class='synopsis'><code>--fork-point</code></span>. Si vous n&#8217;êtes actuellement sur aucune branche ou si la branche actuelle n&#8217;a pas d&#8217;amont configuré, le rebasage échouera.</p>
 </div>
 <div class="paragraph">
-<p>donnera :</p>
+<p>Voici une description simplifiée de ce que <span class='synopsis'><code>git</code> <code>rebase</code> <em>&lt;amont&gt;</em></span> fait :</p>
 </div>
-<div class="listingblock">
-<div class="content">
-<pre>                   B'---C' sujet
-                  /
-    D---E---A'---F master</pre>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Faites une liste de tous les commits sur votre branche actuelle depuis qu&#8217;il a branché depuis <span class='synopsis'><em>&lt;amont&gt;</em></span> qui n&#8217;ont pas un commit équivalent dans <span class='synopsis'><em>&lt;amont&gt;</em></span>.</p>
+</li>
+<li>
+<p>Extrayez <span class='synopsis'><em>&lt;amont&gt;</em></span> avec l&#8217;équivalent de <span class='synopsis'><code>git</code> <code>checkout</code> <code>--detach</code> <em>&lt;amont&gt;</em></span>.</p>
+</li>
+<li>
+<p>Rejouer les commits, un par un, en ordre. C&#8217;est similaire à l&#8217;exécution de `git cherry-pick &lt;commit&gt; ` pour chaque commit. Voir REBASER LES FUSIONS pour comment les fusions sont gérées.</p>
+</li>
+<li>
+<p>Update your branch to point to the final commit with the equivalent of <span class='synopsis'><code>git</code> <code>checkout</code> <code>-B</code> <em>&lt;branch&gt;</em></span>.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+Lors du commencement du rebasage, <span class='synopsis'><code>ORIG_HEAD</code></span> est positionné sur le commit au sommet de la branche à rebaser. Cependant, <span class='synopsis'><code>ORIG_HEAD</code></span> n&#8217;est pas garanti de toujours pointer vers ce commit à la fin du rebasage si d&#8217;autres commandes qui change <span class='synopsis'><code>ORIG_HEAD</code></span> (par exemple <span class='synopsis'><code>git</code> <code>reset</code></span>) sont utilisées pendant le rebasage. La pointe de la branche précédente, cependant, est accessible en utilisant le reflog de la branche actuelle (i.e. <span class='synopsis'><code>@{1}</code></span>, voir <a href='{{< relurl "docs/gitrevisions/fr" >}}'>gitrevisions[7]</a>).
+</td>
+</tr>
+</table>
 </div>
 </div>
+</div>
+<div class="sect1">
+<h2 id="_transplanting_a_topic_branch_with_onto"><a class="anchor" href="#_transplanting_a_topic_branch_with_onto"></a>TRANSPLANTING A TOPIC BRANCH WITH --ONTO</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>Voici comment vous transplanteriez une branche de sujet basée sur une branche sur une autre, pour prétendre que vous avez fourché la branche de sujet de cette dernière branche, en utilisant <span class='synopsis'><code>rebase</code> <code>--onto</code></span>.</p>
 </div>
@@ -245,30 +258,6 @@ git rebase master sujet</pre>
 <div class="paragraph">
 <p>Ceci est utile si F et G ont été corrompues d&#8217;une certaine manière, ou ne devraient pas faire partie de sujetA. Notez que l&#8217;argument pour <span class='synopsis'><code>--onto</code></span> et le paramètre <span class='synopsis'><em>&lt;amont&gt;</em></span> peuvent être n&#8217;importe quel commit-esque valide.</p>
 </div>
-<div class="paragraph">
-<p>En cas de conflit, <span class='synopsis'><code>git</code> <code>rebase</code></span> s&#8217;arrêtera au premier commit problématique et laissera les marqueurs de conflit dans l&#8217;arbre. Vous pouvez utiliser <span class='synopsis'><code>git</code> <code>diff</code></span> pour localiser les marqueurs (&lt;&lt;&lt;&lt;&lt;&lt;) et faire des modification pour résoudre le conflit. Pour chaque fichier que vous éditez, vous devez dire à Git que le conflit a été résolu, généralement cela serait fait avec</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>git add &lt;fichier&gt;</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Après avoir résolu le conflit manuellement et mis à jour l&#8217;index avec la résolution souhaitée, vous pouvez poursuivre le processus de rebasage avec</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>git rebase --continue</pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Alternativement, vous pouvez défaire le <em>git rebase</em> avec</p>
-</div>
-<div class="literalblock">
-<div class="content">
-<pre>git rebase --abort</pre>
-</div>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -289,7 +278,7 @@ git rebase master sujet</pre>
 </dd>
 <dt class="hdlist1" id="git-rebase---abort"> <a class="anchor" href="#git-rebase---abort"></a>--abort </dt>
 <dd>
-<p>Abandonner l&#8217;opération de rebasage et réinitialiser HEAD à la branche originale. Si <span class='synopsis'><em><span class="hover-term" data-term="branche">&lt;branche&gt;</span></em></span> a été fournie quand l&#8217;opération de rebasage a été lancée, <span class='synopsis'><code>HEAD</code></span> sera réinitialisée à <span class='synopsis'><em><span class="hover-term" data-term="branche">&lt;branche&gt;</span></em></span>. Sinon <span class='synopsis'><code>HEAD</code></span> sera réinitialisée vers où elle était lorsque l&#8217;opération de rebasage a été lancée.</p>
+<p>Abandonner l&#8217;opération de rebasage et réinitialiser HEAD à la branche originale. Si <span class='synopsis'><em>&lt;branche&gt;</em></span> a été fournie quand l&#8217;opération de rebasage a été lancée, <span class='synopsis'><code>HEAD</code></span> sera réinitialisée à <span class='synopsis'><em>&lt;branche&gt;</em></span>. Sinon <span class='synopsis'><code>HEAD</code></span> sera réinitialisée vers où elle était lorsque l&#8217;opération de rebasage a été lancée.</p>
 </dd>
 <dt class="hdlist1" id="git-rebase---quit"> <a class="anchor" href="#git-rebase---quit"></a>--quit </dt>
 <dd>
@@ -319,14 +308,21 @@ git rebase master sujet</pre>
 <p>Autre cas spécial, vous pouvez utiliser « A...B » comme raccourci pour la base de fusion de <span class='synopsis'><code>A</code></span> et <span class='synopsis'><code>B</code></span> s&#8217;il y a exactement une seule base de fusion. Vous pouvez ne pas spécifier <span class='synopsis'><code>A</code></span> ou <span class='synopsis'><code>B</code></span>, auquel cas ce sera <span class='synopsis'><code>HEAD</code></span> par défaut.</p>
 </div>
 </dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>See TRANSPLANTING A TOPIC BRANCH WITH --ONTO above for examples.</p>
+</div>
+<div class="dlist">
+<dl>
 <dt class="hdlist1" id="git-rebase---keep-base"> <a class="anchor" href="#git-rebase---keep-base"></a>--keep-base </dt>
 <dd>
-<p>Définir le point de départ pour créer les nouveaux commits à la base de fusion de <span class='synopsis'><em>&lt;amont&gt;</em></span> et <span class='synopsis'><em><span class="hover-term" data-term="branche">&lt;branche&gt;</span></em></span>. Lancer <span class='synopsis'><code>git</code> <code>rebase</code> <code>--keep-base</code> <em>&lt;amont&gt;</em> <em><span class="hover-term" data-term="branche">&lt;branche&gt;</span></em></span> équivaut à lancer <span class='synopsis'><code>git</code> <code>rebase</code> <code>--reapply-cherry-picks</code> <code>--no-fork-point</code> <code>--onto</code> <em>&lt;amont&gt;</em><code>...</code><em><span class="hover-term" data-term="branche">&lt;branche&gt;</span></em> <em>&lt;amont&gt;</em> <em><span class="hover-term" data-term="branche">&lt;branche&gt;</span></em></span>.</p>
+<p>Définir le point de départ pour créer les nouveaux commits à la base de fusion de <span class='synopsis'><em>&lt;amont&gt;</em></span> et <span class='synopsis'><em>&lt;branche&gt;</em></span>. Lancer <span class='synopsis'><code>git</code> <code>rebase</code> <code>--keep-base</code> <em>&lt;amont&gt;</em> <em>&lt;branche&gt;</em></span> équivaut à lancer <span class='synopsis'><code>git</code> <code>rebase</code> <code>--reapply-cherry-picks</code> <code>--no-fork-point</code> <code>--onto</code> <em>&lt;amont&gt;</em><code>...</code><em>&lt;branche&gt;</em> <em>&lt;amont&gt;</em> <em>&lt;branche&gt;</em></span>.</p>
 <div class="paragraph">
 <p>Cette option est utile dans le cas où l&#8217;on développe une fonctionnalité au sommet d&#8217;une branche amont. Bien que la fonction soit en cours de travaux, la branche amont peut progresser et ce n&#8217;est peut-être pas la meilleure idée de continuer à rebaser sur le sommet de l&#8217;amont au lieu de garder la base telle quelle. Comme le commit de base est inchangé cette option implique <span class='synopsis'><code>--reapply-cherry-picks</code></span> pour éviter de perdre des commits.</p>
 </div>
 <div class="paragraph">
-<p>Bien que cette option et <span class='synopsis'><code>--fork-point</code></span> trouvent la base de fusion entre <span class='synopsis'><em>&lt;amont&gt;</em></span> et <span class='synopsis'><em><span class="hover-term" data-term="branche">&lt;branche&gt;</span></em></span>, cette option utilise la base de fusion comme <em>point de départ</em> sur lequel les nouveaux commits seront créés, tandis que <span class='synopsis'><code>--fork-point</code></span> utilise la base de fusion pour déterminer l'_ensemble de commits` qui sera rebasé.</p>
+<p>Bien que cette option et <span class='synopsis'><code>--fork-point</code></span> trouvent la base de fusion entre <span class='synopsis'><em>&lt;amont&gt;</em></span> et <span class='synopsis'><em>&lt;branche&gt;</em></span>, cette option utilise la base de fusion comme <em>point de départ</em> sur lequel les nouveaux commits seront créés, tandis que <span class='synopsis'><code>--fork-point</code></span> utilise la base de fusion pour déterminer l'_ensemble de commits` qui sera rebasé.</p>
 </div>
 <div class="paragraph">
 <p>Voir aussi OPTIONS INCOMPATIBLES ci-dessous.</p>
@@ -336,7 +332,7 @@ git rebase master sujet</pre>
 <dd>
 <p>Branche en amont à comparer. Peut être n&#8217;importe quel commit valide, pas seulement un nom de branche existant. Par défaut à l&#8217;amont configuré pour la branche actuelle.</p>
 </dd>
-<dt class="hdlist1" id="git-rebase-ltbranchegt"> <a class="anchor" href="#git-rebase-branche"></a> <a class="anchor" href="#git-rebase-ltbranchegt"></a><span class="hover-term" data-term="branche">&lt;branche&gt;</span> </dt>
+<dt class="hdlist1" id="git-rebase-ltbranchegt"> <a class="anchor" href="#git-rebase-branche"></a> <a class="anchor" href="#git-rebase-ltbranchegt"></a>&lt;branche&gt; </dt>
 <dd>
 <p>Branche de travail ; la valeur par défaut est <span class='synopsis'><code>HEAD</code></span>.</p>
 </dd>
@@ -429,7 +425,7 @@ git rebase master sujet</pre>
 <dd>
 <p>Utiliser la stratégie de fusion donnée, au lieu du <span class='synopsis'><code>ort</code></span> par défaut. Cela implique <span class='synopsis'><code>--merge</code></span>.</p>
 <div class="paragraph">
-<p>Parce que <span class='synopsis'><code>git</code> <code>rebase</code></span> rejoue chaque commit de la branche de travail par dessus la branche <em>&lt;amont&gt;</em> en utilisant la stratégie donnée, utiliser la stratégie <span class='synopsis'><code>ours</code></span> vide simplement toutes les rustines de <em><span class="hover-term" data-term="branche">&lt;branche&gt;</span></em>, ce qui n&#8217;a pas de sens.</p>
+<p>Parce que <span class='synopsis'><code>git</code> <code>rebase</code></span> rejoue chaque commit de la branche de travail par dessus la branche <em>&lt;amont&gt;</em> en utilisant la stratégie donnée, utiliser la stratégie <span class='synopsis'><code>ours</code></span> vide simplement toutes les rustines de <em>&lt;branche&gt;</em>, ce qui n&#8217;a pas de sens.</p>
 </div>
 <div class="paragraph">
 <p>Voir aussi OPTIONS INCOMPATIBLES ci-dessous.</p>
@@ -504,9 +500,9 @@ git rebase master sujet</pre>
 <dt class="hdlist1" id="git-rebase---fork-point"> <a class="anchor" href="#git-rebase---fork-point"></a>--fork-point </dt>
 <dt class="hdlist1" id="git-rebase---no-fork-point"> <a class="anchor" href="#git-rebase---no-fork-point"></a>--no-fork-point </dt>
 <dd>
-<p>Utiliser le reflog pour trouver un meilleur ancêtre commun entre <span class='synopsis'><em>&lt;amont&gt;</em></span> et <span class='synopsis'><em><span class="hover-term" data-term="branche">&lt;branche&gt;</span></em></span> lors du calcul des commits introduits par <span class='synopsis'><em><span class="hover-term" data-term="branche">&lt;branche&gt;</span></em></span>.</p>
+<p>Utiliser le reflog pour trouver un meilleur ancêtre commun entre <span class='synopsis'><em>&lt;amont&gt;</em></span> et <span class='synopsis'><em>&lt;branche&gt;</em></span> lors du calcul des commits introduits par <span class='synopsis'><em>&lt;branche&gt;</em></span>.</p>
 <div class="paragraph">
-<p>Lorsque <span class='synopsis'><code>--fork-point</code></span> est actif, <em>fork_point</em> sera utilisé au lieu de <span class='synopsis'><em>&lt;amont&gt;</em></span> pour calculer l&#8217;ensemble des commits à rebaser, où <em>fork_point</em> est le résultat de la commande <span class='synopsis'><code>git</code> <code>merge-base</code> <code>--fork-point</code> <em>&lt;amont&gt;</em> <em><span class="hover-term" data-term="branche">&lt;branche&gt;</span></em></span> (voir <a href='{{< relurl "docs/git-merge-base/fr" >}}'>git-merge-base[1]</a>). Si <em>fork_point</em> finit par être vide, l'<span class='synopsis'><em>&lt;amont&gt;</em></span> sera utilisé par défaut.</p>
+<p>Lorsque <span class='synopsis'><code>--fork-point</code></span> est actif, <em>fork_point</em> sera utilisé au lieu de <span class='synopsis'><em>&lt;amont&gt;</em></span> pour calculer l&#8217;ensemble des commits à rebaser, où <em>fork_point</em> est le résultat de la commande <span class='synopsis'><code>git</code> <code>merge-base</code> <code>--fork-point</code> <em>&lt;amont&gt;</em> <em>&lt;branche&gt;</em></span> (voir <a href='{{< relurl "docs/git-merge-base/fr" >}}'>git-merge-base[1]</a>). Si <em>fork_point</em> finit par être vide, l'<span class='synopsis'><em>&lt;amont&gt;</em></span> sera utilisé par défaut.</p>
 </div>
 <div class="paragraph">
 <p>Si <span class='synopsis'><em>&lt;amon&gt;</em></span> ou <span class='synopsis'><code>--keep-base</code></span> est fourni sur la ligne de commande, la valeur par défaut est <span class='synopsis'><code>--no-fork-point</code></span>, sinon la valeur par défaut est <span class='synopsis'><code>--fork-point</code></span>. Voir aussi `rebase.forkpoint ` dans <a href='{{< relurl "docs/git-config/fr" >}}'>git-config[1]</a>.</p>
@@ -618,7 +614,7 @@ git rebase master sujet</pre>
 </dd>
 <dt class="hdlist1" id="git-rebase---root"> <a class="anchor" href="#git-rebase---root"></a>--root </dt>
 <dd>
-<p>Rebaser tous les commits atteignables à partir de <em><span class="hover-term" data-term="branche">&lt;branche&gt;</span></em>, au lieu de les limiter avec <em>&lt;amont&gt;</em>. Cela vous permet de rebaser le ou les commits racines sur une branche.</p>
+<p>Rebaser tous les commits atteignables à partir de <em>&lt;branche&gt;</em>, au lieu de les limiter avec <em>&lt;amont&gt;</em>. Cela vous permet de rebaser le ou les commits racines sur une branche.</p>
 <div class="paragraph">
 <p>Voir aussi OPTIONS INCOMPATIBLES ci-dessous.</p>
 </div>
@@ -961,7 +957,7 @@ git rebase master sujet</pre>
 <p>Lorsque le rebasage est exécuté, il exécutera d&#8217;abord un crochet <span class='synopsis'><code>pre-rebase</code></span> si il existe. Vous pouvez utiliser ce crochet pour faire des vérifications de santé et rejeter le rebasage si il n&#8217;est pas approprié. Veuillez voir le modèle de script crochet`pre-rebase` pour un exemple.</p>
 </div>
 <div class="paragraph">
-<p>Une fois terminé, <span class='synopsis'><em><span class="hover-term" data-term="branche">&lt;branche&gt;</span></em></span> sera la branche actuelle.</p>
+<p>Une fois terminé, <span class='synopsis'><em>&lt;branche&gt;</em></span> sera la branche actuelle.</p>
 </div>
 </div>
 </div>
@@ -1146,7 +1142,7 @@ exec make test</pre>
 <div class="ulist">
 <ul>
 <li>
-<p>Démarrez un rebasage interactif avec <span class='synopsis'><code>git</code> <code>rebase</code> <code>-i</code> <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em></span>, où <em><span class="hover-term" data-term="commit">&lt;commit&gt;</span></em> est le commit que vous voulez partager. En fait, toute plage de commits fonctionne, tant qu&#8217;elle contient ce commit.</p>
+<p>Démarrez un rebasage interactif avec <span class='synopsis'><code>git</code> <code>rebase</code> <code>-i</code> <em>&lt;commit&gt;</em></span>, où <em>&lt;commit&gt;</em> est le commit que vous voulez partager. En fait, toute plage de commits fonctionne, tant qu&#8217;elle contient ce commit.</p>
 </li>
 <li>
 <p>Marquez le commit que vous voulez diviser avec l&#8217;action "edit".</p>
@@ -1361,10 +1357,10 @@ merge -C 6f5e4d report-a-bug # Merge 'report-a-bug'</pre>
 <p>Contrairement à une base interactive régulière, il y a des commandes <span class='synopsis'><code>label</code></span>, <span class='synopsis'><code>reset</code></span> et <span class='synopsis'><code>merge</code></span> en plus des commandes <span class='synopsis'><code>pick</code></span>.</p>
 </div>
 <div class="paragraph">
-<p>La commande <span class='synopsis'><code>label</code></span> associe une étiquette à la HEAD actuelle lorsque cette commande est exécutée. Ces étiquettes sont créées sous forme de refs local à l&#8217;arbre-de-travail (<span class='synopsis'><code>refs/rewritten/</code><em><span class="hover-term" data-term="étiquette">&lt;étiquette&gt;</span></em></span>) qui seront supprimées lorsque le rebasage sera terminé. De cette façon, les opérations de rebasage dans plusieurs arbre-de-travail liés au même dépôt n&#8217;interfèrent pas les uns avec les autres. Si la commande <span class='synopsis'><code>label</code></span> échoue, elle est reprogrammée immédiatement, avec un message indiquant comment procéder.</p>
+<p>La commande <span class='synopsis'><code>label</code></span> associe une étiquette à la HEAD actuelle lorsque cette commande est exécutée. Ces étiquettes sont créées sous forme de refs local à l&#8217;arbre-de-travail (<span class='synopsis'><code>refs/rewritten/</code><em>&lt;étiquette&gt;</em></span>) qui seront supprimées lorsque le rebasage sera terminé. De cette façon, les opérations de rebasage dans plusieurs arbre-de-travail liés au même dépôt n&#8217;interfèrent pas les uns avec les autres. Si la commande <span class='synopsis'><code>label</code></span> échoue, elle est reprogrammée immédiatement, avec un message indiquant comment procéder.</p>
 </div>
 <div class="paragraph">
-<p>La commande <span class='synopsis'><code>reset</code></span> réinitialise la HEAD, l&#8217;index et l&#8217;abre de travail à la révision spécifiée. Il est semblable à un <span class='synopsis'><code>exec</code> <code>git</code> <code>reset</code> <code>--hard</code> <em><span class="hover-term" data-term="étiquette">&lt;étiquette&gt;</span></em></span>, mais refuse d&#8217;écraser des fichiers non suivis. Si la commande <span class='synopsis'><code>reset</code></span> échoue, elle est reprogrammée immédiatement, avec un message indiquant comment modifier la liste de todo (cela arrive généralement quand une commande <span class='synopsis'><code>reset</code></span> a été insérée dans la liste de todo manuellement et contient une typo).</p>
+<p>La commande <span class='synopsis'><code>reset</code></span> réinitialise la HEAD, l&#8217;index et l&#8217;abre de travail à la révision spécifiée. Il est semblable à un <span class='synopsis'><code>exec</code> <code>git</code> <code>reset</code> <code>--hard</code> <em>&lt;étiquette&gt;</em></span>, mais refuse d&#8217;écraser des fichiers non suivis. Si la commande <span class='synopsis'><code>reset</code></span> échoue, elle est reprogrammée immédiatement, avec un message indiquant comment modifier la liste de todo (cela arrive généralement quand une commande <span class='synopsis'><code>reset</code></span> a été insérée dans la liste de todo manuellement et contient une typo).</p>
 </div>
 <div class="paragraph">
 <p>La commande <span class='synopsis'><code>merge</code></span> fusionnera la ou les révisions spécifiées dans ce qui est HEAD à ce moment-là. Avec <span class='synopsis'><code>-C</code> <em>&lt;commit-original&gt;</em></span>, le message de validation de la fusion spécifiée sera utilisé. Lorsque le <span class='synopsis'><code>-C</code></span> est changé en minuscule <span class='synopsis'><code>-c</code></span>, le message sera ouvert dans un éditeur après une fusion réussie afin que l&#8217;utilisateur puisse modifier le message.</p>
