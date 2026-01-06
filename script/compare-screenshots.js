@@ -8,7 +8,9 @@ Usage:
 
 Arguments can be URLs or paths to git-scm.com worktrees. When a worktree
 path is given, Hugo is run to build the site and a local server is started.
+Use worktree@commit to checkout a specific commit before building.
 Use worktree:/path/to/page to navigate to a specific page.
+Both can be combined: worktree@commit:/path/to/page
 
 Options:
   --dark              Emulate dark mode (prefers-color-scheme: dark)
@@ -18,6 +20,7 @@ Options:
 Examples:
   node script/compare-screenshots.js https://git-scm.com http://localhost:5000
   node script/compare-screenshots.js https://git-scm.com /path/to/worktree
+  node script/compare-screenshots.js https://git-scm.com .@HEAD~2
   node script/compare-screenshots.js https://git-scm.com/docs/git-config /path/to/worktree:/docs/git-config
   node script/compare-screenshots.js --dark https://git-scm.com http://localhost:5000
   node script/compare-screenshots.js --clip=1280x720+0+0 https://git-scm.com http://localhost:5000`;
@@ -27,21 +30,53 @@ const { spawn, execSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 
+/**
+ * Parse a worktree argument to extract worktree path, commit, and page path.
+ *
+ * Format: worktree[@commit][:/page/path]
+ *
+ * Examples:
+ *   .                    -> { worktreePath: '.', commit: undefined, pagePath: '' }
+ *   .@HEAD~2             -> { worktreePath: '.', commit: 'HEAD~2', pagePath: '' }
+ *   /path/to/worktree:/docs/git -> { worktreePath: '/path/to/worktree', commit: undefined, pagePath: 'docs/git' }
+ *   .@main:/about        -> { worktreePath: '.', commit: 'main', pagePath: 'about' }
+ *
+ * Returns false if the argument is a URL or not a valid worktree.
+ */
 function getWorktreeInfo(arg) {
   if (arg.startsWith('http://') || arg.startsWith('https://')) return false;
   const colonIndex = arg.indexOf(':');
-  const worktreePath = colonIndex === -1 ? arg : arg.slice(0, colonIndex);
+  const beforeColon = colonIndex === -1 ? arg : arg.slice(0, colonIndex);
   const pagePath = colonIndex === -1 ? '' : arg.slice(colonIndex + 1).replace(/^\/+/, '');
+  const atIndex = beforeColon.indexOf('@');
+  const worktreePath = atIndex === -1 ? beforeColon : beforeColon.slice(0, atIndex);
+  const commit = atIndex === -1 ? undefined : beforeColon.slice(atIndex + 1);
   try {
     if (fs.statSync(path.join(worktreePath, 'hugo.yml')).isFile()) {
-      return { worktreePath, pagePath };
+      return { worktreePath, commit, pagePath };
     }
   } catch {
   }
   return false;
 }
 
-async function startServer(worktreePath, port) {
+async function startServer(worktreePath, port, commit) {
+  let restoreRef;
+  let wasDetached = false;
+
+  if (commit) {
+    // Determine if we're on a branch (symbolic ref) or detached HEAD
+    try {
+      restoreRef = execSync('git symbolic-ref --short HEAD', { cwd: worktreePath, encoding: 'utf-8' }).trim();
+    } catch {
+      // Not on a branch, save the commit SHA
+      restoreRef = execSync('git rev-parse HEAD', { cwd: worktreePath, encoding: 'utf-8' }).trim();
+      wasDetached = true;
+    }
+    console.log(`Switching to ${commit} in ${worktreePath}...`);
+    execSync(`git switch -d ${commit}`, { cwd: worktreePath, stdio: 'inherit' });
+  }
+
   // Build Hugo site
   console.error(`Building Hugo site in ${worktreePath}...`);
   execSync('hugo', { cwd: worktreePath, stdio: 'inherit' });
@@ -53,6 +88,18 @@ async function startServer(worktreePath, port) {
     env: { ...process.env, PORT: String(port) },
     stdio: ['ignore', 'pipe', 'inherit'],
   });
+
+  // Attach restore function to server
+  server.restore = () => {
+    if (restoreRef) {
+      console.log(`Restoring ${worktreePath} to ${restoreRef}...`);
+      if (wasDetached) {
+        execSync(`git switch -d ${restoreRef}`, { cwd: worktreePath, stdio: 'inherit' });
+      } else {
+        execSync(`git switch ${restoreRef}`, { cwd: worktreePath, stdio: 'inherit' });
+      }
+    }
+  };
 
   // Wait for server to be ready
   await new Promise((resolve, reject) => {
@@ -137,7 +184,7 @@ async function main() {
 
       const worktreeInfo = getWorktreeInfo(urlOrWorktree);
       if (worktreeInfo) {
-        server = await startServer(worktreeInfo.worktreePath, 5000);
+        server = await startServer(worktreeInfo.worktreePath, 5000, worktreeInfo.commit);
         url = `http://localhost:5000/${worktreeInfo.pagePath}`;
       }
 
@@ -156,6 +203,7 @@ async function main() {
       } finally {
         if (server) {
           server.kill();
+          server.restore();
         }
       }
     }
