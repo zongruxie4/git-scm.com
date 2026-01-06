@@ -11,6 +11,8 @@ path is given, Hugo is run to build the site and a local server is started.
 Use worktree@commit to checkout a specific commit before building.
 Use worktree:/path/to/page to navigate to a specific page.
 Both can be combined: worktree@commit:/path/to/page
+As a convenience, @commit implies the current directory, and @{u} is
+treated as @@{u} since refs cannot start with a curly brace.
 
 Options:
   --dark              Emulate dark mode (prefers-color-scheme: dark)
@@ -21,6 +23,7 @@ Examples:
   node script/compare-screenshots.js https://git-scm.com http://localhost:5000
   node script/compare-screenshots.js https://git-scm.com /path/to/worktree
   node script/compare-screenshots.js https://git-scm.com @HEAD~2
+  node script/compare-screenshots.js @{u} .
   node script/compare-screenshots.js https://git-scm.com/docs/git-config /path/to/worktree:/docs/git-config
   node script/compare-screenshots.js --dark https://git-scm.com http://localhost:5000
   node script/compare-screenshots.js --clip=1280x720+0+0 https://git-scm.com http://localhost:5000`;
@@ -39,6 +42,7 @@ const path = require('path');
  *   .                    -> { worktreePath: '.', commit: undefined, pagePath: '' }
  *   @HEAD~2              -> { worktreePath: '.', commit: 'HEAD~2', pagePath: '' }
  *   .@HEAD~2             -> { worktreePath: '.', commit: 'HEAD~2', pagePath: '' }
+ *   @{u}                 -> { worktreePath: '.', commit: '@{u}', pagePath: '' }
  *   /path/to/worktree:/docs/git -> { worktreePath: '/path/to/worktree', commit: undefined, pagePath: 'docs/git' }
  *   .@main:/about        -> { worktreePath: '.', commit: 'main', pagePath: 'about' }
  *
@@ -53,7 +57,9 @@ function getWorktreeInfo(arg) {
   const pagePath = colonIndex === -1 ? '' : arg.slice(colonIndex + 1).replace(/^\/+/, '');
   const atIndex = beforeColon.indexOf('@');
   const worktreePath = atIndex === -1 ? beforeColon : beforeColon.slice(0, atIndex);
-  const commit = atIndex === -1 ? undefined : beforeColon.slice(atIndex + 1);
+  let commit = atIndex === -1 ? undefined : beforeColon.slice(atIndex + 1);
+  // Allow @{u} as shorthand for @@{u} since refs can't start with {
+  if (commit && commit.startsWith('{')) commit = '@' + commit;
   try {
     if (fs.statSync(path.join(worktreePath, 'hugo.yml')).isFile()) {
       return { worktreePath, commit, pagePath };
