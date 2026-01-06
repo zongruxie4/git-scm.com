@@ -33,6 +33,8 @@ const { spawn, execSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 
+let lastPagePath;
+
 /**
  * Parse a worktree argument to extract worktree path, commit, and page path.
  *
@@ -46,23 +48,38 @@ const path = require('path');
  *   /path/to/worktree:/docs/git -> { worktreePath: '/path/to/worktree', commit: undefined, pagePath: 'docs/git' }
  *   .@main:/about        -> { worktreePath: '.', commit: 'main', pagePath: 'about' }
  *
+ * If no page path is specified, inherits the page path from the previous call.
+ *
  * Returns false if the argument is a URL or not a valid worktree.
  */
 function getWorktreeInfo(arg) {
-  if (arg.startsWith('http://') || arg.startsWith('https://')) return false;
+  if (arg.startsWith('http://') || arg.startsWith('https://')) {
+    // Extract path from URL for inheritance
+    try {
+      lastPagePath = new URL(arg).pathname.replace(/^\/+/, '');
+    } catch {
+    }
+    return false;
+  }
   // Allow @commit as shorthand for .@commit (current directory)
   if (arg.startsWith('@')) arg = '.' + arg;
   const colonIndex = arg.indexOf(':');
   const beforeColon = colonIndex === -1 ? arg : arg.slice(0, colonIndex);
-  const pagePath = colonIndex === -1 ? '' : arg.slice(colonIndex + 1).replace(/^\/+/, '');
+  let pagePath = colonIndex === -1 ? undefined : arg.slice(colonIndex + 1).replace(/^\/+/, '');
   const atIndex = beforeColon.indexOf('@');
   const worktreePath = atIndex === -1 ? beforeColon : beforeColon.slice(0, atIndex);
   let commit = atIndex === -1 ? undefined : beforeColon.slice(atIndex + 1);
   // Allow @{u} as shorthand for @@{u} since refs can't start with {
   if (commit && commit.startsWith('{')) commit = '@' + commit;
+  // Inherit page path from previous call if not specified
+  if (pagePath === undefined && lastPagePath !== undefined) {
+    pagePath = lastPagePath;
+  } else if (pagePath !== undefined) {
+    lastPagePath = pagePath;
+  }
   try {
     if (fs.statSync(path.join(worktreePath, 'hugo.yml')).isFile()) {
-      return { worktreePath, commit, pagePath };
+      return { worktreePath, commit, pagePath: pagePath || '' };
     }
   } catch {
   }
