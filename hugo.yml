@@ -38,7 +38,7 @@ params:
   hugo_version: 0.148.2
   pagefind_version: 1.4.0
   latest_version: 2.52.0
-  latest_relnote_url: https://github.com/git/git/raw/HEAD/Documentation/RelNotes/2.52.0.adoc
+  latest_relnote_url: https://gitlab.com/git-scm/git/-/blob/HEAD/Documentation/RelNotes/2.52.0.adoc
   latest_release_date: '2025-11-17'
   windows_installer:
     installer_x64:
