@@ -232,7 +232,7 @@ var Search = {
       if(term != Search.currentSearch) {
         Search.currentSearch = term;
         const language = document.querySelector("html")?.getAttribute("lang");
-        const allResultsURL = `${baseURLPrefix}search/results?search=${term}${language && `&language=${language}`}`;
+        const allResultsURL = `${baseURLPrefix}search/results?search=${encodeURIComponent(term)}${language && `&language=${encodeURIComponent(language)}`}`;
         $("#search-results").html(`
           <header> Search Results </header>
           <table>
@@ -242,7 +242,7 @@ var Search = {
                 <td class="matches">
                   <ul>
                     <li>
-                      <a class="highlight" id="show-results-label" href="${allResultsURL}">
+                      <a class="highlight" id="show-results-label">
                         Searching for <span id="search-term">&nbsp;</span>...
                       </a>
                     </li>
@@ -273,6 +273,9 @@ var Search = {
           </table>
         `);
         $("#search-term").text(term);
+        // Set the link target safely (no HTML parsing).
+        $("#show-results-label").attr("href", allResultsURL);
+
         this.initializeSearchIndex(async () => {
           const results = await Search.pagefind.debouncedSearch(term);
           if (results === null || results.results.length === 0) {
@@ -325,7 +328,11 @@ var Search = {
                 if (!i || typeof results.results[i - 1].data === 'object') categorizeResult(i);
                 result.data.meta.title = result.data.meta.title.replace(/^Git - (.*) Documentation$/, "$1")
                 result.data.url = result.data.url.replace(/\.html$/, '')
-                result.li.html(`<a href = "${result.data.url}">${result.data.meta.title}</a>`);
+                // Build result item safely (no HTML parsing).
+                const a = $("<a>");
+                a.attr("href", result.data.url);
+                a.text(result.data.meta.title);
+                result.li.empty().append(a);
               })(displayCount).catch((err) => {
                 console.log(err);
                 result.li.html(`<i>Error loading result</i>`);
@@ -362,7 +369,7 @@ var Search = {
       const term = $('#search-text').val();
       if (!term) return;
       const language = document.querySelector("html")?.getAttribute("lang");
-      url = `${baseURLPrefix}search/results?search=${term}${language && `&language=${language}`}`;
+      url = `${baseURLPrefix}search/results?search=${encodeURIComponent(term)}${language && `&language=${encodeURIComponent(language)}`}`;
     }
     window.location.href = url;
     selectedIndex = 0;
