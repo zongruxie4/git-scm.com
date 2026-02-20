@@ -349,3 +349,20 @@ test('dark mode', async({ page }) => {
   const autoLightBrightness = await getPageBrightness();
   expect(autoLightBrightness).toBeCloseTo(0.85, 0.1);
 });
+
+test('right-side alignment of header and content areas', async ({ page }) => {
+  await page.goto(`${url}about`)
+
+  // The sidebar (aside) and #content sit inside #content-wrapper (display: flex).
+  // Their combined widths must fill the container so the right edges align.
+  const containerBox = await page.locator('#content-wrapper').boundingBox()
+  const contentBox = await page.locator('#content').boundingBox()
+
+  expect(containerBox).not.toBeNull()
+  expect(contentBox).not.toBeNull()
+
+  const containerRight = containerBox.x + containerBox.width
+  const contentRight = contentBox.x + contentBox.width
+
+  expect(Math.abs(containerRight - contentRight)).toBeLessThanOrEqual(1)
+})
