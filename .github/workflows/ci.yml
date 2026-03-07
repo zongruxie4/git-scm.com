@@ -84,6 +84,7 @@ jobs:
           --exclude file:///Pfad/zum/Repo.git/
           --exclude file:///chemin/du/d%C3%A9p%C3%B4t.git/
           --exclude file:///srv/git/project.git
+          --root-dir public/
           public/
         output: lychee.md
         jobSummary: true
