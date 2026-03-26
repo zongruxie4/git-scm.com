@@ -133,7 +133,7 @@ function generateLogo(variant, iconFill, textFill) {
     `<path fill="${textFill}" d="${iGlyph}"/>` +
     `<path fill="${textFill}" d="${tGlyph}"/>`;
   const svg =
-    `<svg xmlns="http://www.w3.org/2000/svg" width="292" height="92pt"` +
+    `<svg xmlns="http://www.w3.org/2000/svg" width="219pt" height="92pt"` +
     ` viewBox="0 0 219 92">${iconPath}${textPaths}</svg>`;
   saveFile(`Git-Logo-${variant}.svg`, svg);
 }
