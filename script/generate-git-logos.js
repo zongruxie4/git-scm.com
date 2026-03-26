@@ -128,7 +128,7 @@ async function buildEPS(psContent, svgString, previewFitTo) {
   const resvgOpts = previewFitTo ? { fitTo: previewFitTo } : { dpi: 72 };
   const resvg = new Resvg(svgString, resvgOpts);
   const tiffBuf = await sharp(resvg.render().asPng())
-    .tiff({ compression: 'none' })
+    .tiff({ compression: 'lzw' })
     .toBuffer();
 
   const psBuf = Buffer.from(psContent, 'latin1');
