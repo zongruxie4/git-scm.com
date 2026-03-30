@@ -251,12 +251,12 @@ Joe Smith &lt;joe@company.com&gt;</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>I det här exemplet har samma person (Bob) skapat ändringsuppsättningar under fyra olika namn, varav ett ser korrekt ut och ett skulle vara helt ogiltigt som Git‑incheckning.
+<p>I exemplet har samma person (Bob) skapat ändringsuppsättningar under fyra olika namn, varav ett ser korrekt ut och ett skulle vara helt ogiltigt som Git‑incheckning.
 Hg-fast-export låter oss fixa detta genom att omvandla varje rad till en regel: <code>"&lt;input&gt;"="&lt;output&gt;"</code>, som mappar ett <code>&lt;input&gt;</code> till ett <code>&lt;output&gt;</code>.
 I strängarna <code>&lt;input&gt;</code> och <code>&lt;output&gt;</code> stöds alla escape‑sekvenser som Pythons <code>string_escape</code>‑kodning förstår.
 Om författarmappningsfilen inte innehåller ett matchande <code>&lt;input&gt;</code> skickas författaren vidare till Git oförändrad.
 Om alla användarnamn ser bra ut behöver vi inte filen alls.
-I det här exemplet vill vi att filen ska se ut så här:</p>
+I exemplet vill vi att filen ska se ut så här:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -853,7 +853,7 @@ Date:   Mon Feb 3 01:00:00 2014 -0700
 </div>
 <div class="paragraph">
 <p>Där har du det – ett snyggt, rent Git‑kodförråd.
-Det är viktigt att notera att inget är utcheckat – du har inga filer i arbetskatalogen till att börja med.
+Tänk på att inget är utcheckat – du har inga filer i arbetskatalogen till att börja med.
 För att få dem måste du återställa din gren till där <code>master</code> är nu:</p>
 </div>
 <div class="listingblock">

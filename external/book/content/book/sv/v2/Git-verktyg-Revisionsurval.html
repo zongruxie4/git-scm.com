@@ -141,7 +141,7 @@ $ git show topic1</code></pre>
 <div class="paragraph">
 <p>Om du vill se vilken specifik SHA‑1 en gren pekar på, eller om du vill se vad något av exemplen i praktiken leder till i termer av SHA‑1, kan du använda ett Git-rörverktyg som heter <code>rev-parse</code>.
 Du kan läsa mer om rörverktyg i <a href="{{< relurl "book/sv/v2/ch00/ch10-git-internals" >}}">Git bakom kulisserna</a>; kort sagt finns <code>rev-parse</code> för lågnivåoperationer och är inte tänkt för dagligt bruk.
-Det kan ändå vara hjälpsamt när du behöver se vad som faktiskt händer.
+Det kan ändå vara hjälpsamt när du behöver se vad som egentligen händer.
 Här kan du köra <code>rev-parse</code> på din gren.</p>
 </div>
 <div class="listingblock">
@@ -218,7 +218,7 @@ Date:   Thu Dec 11 15:08:43 2008 -0800
 </div>
 </div>
 <div class="paragraph">
-<p>Det är viktigt att notera att referenslogg-information är strikt lokal – det är en logg enbart över det <em>du</em> har gjort i <em>ditt</em> kodförråd.
+<p>Tänk på att referenslogg-information är strikt lokal – det är en logg enbart över det <em>du</em> har gjort i <em>ditt</em> kodförråd.
 Referenserna kommer inte att vara desamma i någon annans kopia av kodförrådet; dessutom har du en tom referenslogg direkt efter att du klonat ett kodförråd, eftersom ingen aktivitet ännu skett i ditt kodförråd.
 Om du kör <code>git show HEAD@{2.months.ago}</code> kommer du bara se den matchande incheckningen om du klonade projektet för minst två månader sedan – klonade du det nyligen ser du bara din första lokala incheckning.</p>
 </div>

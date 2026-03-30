@@ -44,7 +44,7 @@ Det låter dig klona ett annat kodförråd in i ditt projekt och hålla dina inc
 <div class="paragraph">
 <p>Låt oss börja med att lägga till ett befintligt Git-kodförråd som en undermodul till kodförrådet vi arbetar i.
 För att lägga till en ny undermodul använder du kommandot <code>git submodule add</code> med den absoluta eller relativa URL:en till projektet du vill börja spåra.
-I det här exemplet lägger vi till ett bibliotek som heter “DbConnector”.</p>
+I exemplet lägger vi till ett bibliotek som heter “DbConnector”.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -89,8 +89,8 @@ Det är en konfigurationsfil som lagrar kopplingen mellan projektets URL och den
 </div>
 </div>
 <div class="paragraph">
-<p>Om du har flera undermoduler får du flera poster i den här filen.
-Det är viktigt att notera att den här filen är versionshanterad tillsammans med dina övriga filer, som din <code>.gitignore</code>‑fil.
+<p>Om du har flera undermoduler får du flera poster i filen.
+Tänk på att filen är versionshanterad tillsammans med dina övriga filer, som din <code>.gitignore</code>‑fil.
 Den skickas upp och dras tillsammans med resten av projektet.
 Så vet andra som klonar projektet var undermodulsprojekten ska uppdateras ifrån.</p>
 </div>
@@ -263,7 +263,7 @@ För att även initiera, uppdatera och växla till eventuella inbäddade undermo
 <div class="sect4">
 <h4 id="_hämta_uppströmsändringar_från_undermodulens_fjärrkodförråd">Hämta uppströmsändringar från undermodulens fjärrkodförråd</h4>
 <div class="paragraph">
-<p>Den enklaste modellen för att använda undermoduler i ett projekt är när du bara konsumerar ett underprojekt och vill få uppdateringar från det då och då, utan att själv ändra något i din utläggning.
+<p>Den enklaste modellen för att använda undermoduler i ett projekt är när du bara använder ett underprojekt och vill få uppdateringar från det då och då, utan att själv ändra något i din utläggning.
 Låt oss gå igenom ett enkelt exempel.</p>
 </div>
 <div class="paragraph">
@@ -403,7 +403,7 @@ index 6fc0b3d..fd1cc29 100644
 </div>
 </div>
 <div class="paragraph">
-<p>Det här är rätt kul eftersom vi faktiskt kan se loggen över incheckningarna som vi håller på att checka in i vår undermodul.
+<p>Det här är rätt kul eftersom vi verkligen kan se loggen över incheckningarna som vi håller på att checka in i vår undermodul.
 När det är checkat in kan du se informationen i efterhand också när du kör <code>git log -p</code>.</p>
 </div>
 <div class="listingblock">
@@ -1177,7 +1177,7 @@ Du kan behöva gå in i undermodulkatalogen och köra <code>git checkout .</code
 Du kan köra detta i ett <code>submodule foreach</code>‑skript för att göra det på flera undermoduler.</p>
 </div>
 <div class="paragraph">
-<p>Det är viktigt att notera att undermoduler numera håller all sin Git‑data i överprojektets <code>.git</code>‑katalog, så till skillnad från mycket äldre Git‑versioner förlorar du inga incheckningar eller grenar genom att radera en undermodulkatalog.</p>
+<p>Tänk på att undermoduler numera håller all sin Git‑data i överprojektets <code>.git</code>‑katalog, så till skillnad från mycket äldre Git‑versioner förlorar du inga incheckningar eller grenar genom att radera en undermodulkatalog.</p>
 </div>
 <div class="paragraph">
 <p>Med dessa verktyg kan undermoduler vara en ganska enkel och effektiv metod för att utveckla flera relaterade men fortfarande separata projekt samtidigt.</p>

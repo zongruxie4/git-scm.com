@@ -26,7 +26,7 @@ Dessa sökvägsspecifika inställningar kallas Git‑attribut och sätts antinge
 </div>
 <div class="paragraph">
 <p>Med attribut kan du till exempel ange separata sammanslagningsstrategier för enskilda filer eller kataloger i projektet, tala om för Git hur den ska diffa icke‑textfiler eller låta Git filtrera innehåll innan du checkar in eller lägger ut det.
-I det här avsnittet lär du dig om några attribut du kan sätta på sökvägar i ditt Git‑projekt och ser några exempel på hur funktionen används i praktiken.</p>
+I avsnittet lär du dig om några attribut du kan sätta på sökvägar i ditt Git‑projekt och ser några exempel på hur funktionen används i praktiken.</p>
 </div>
 <div class="sect3">
 <h3 id="_binära_filer">Binära filer</h3>
@@ -42,7 +42,7 @@ Du får se hur du talar om för Git vilket som är vilket.</p>
 <p>Vissa filer ser ut som textfiler men ska i praktiken behandlas som binärdata.
 Till exempel innehåller Xcode‑projekt på macOS en fil som slutar på <code>.pbxproj</code>, som i praktiken är en JSON‑liknande dataset som IDE:n skriver till disk och som beskriver bygginställningar och liknande.
 Även om det tekniskt sett är en textfil (eftersom den är UTF‑8) vill du inte behandla den som sådan eftersom det i praktiken är en lättviktig databas – du kan inte sammanfoga innehållet om två personer ändrar den, och diffar är sällan hjälpsamma.
-Filen är tänkt att konsumeras av en maskin.
+Filen är tänkt att läsas av en maskin.
 I praktiken vill du behandla den som en binär fil.</p>
 </div>
 <div class="paragraph">
@@ -54,7 +54,7 @@ I praktiken vill du behandla den som en binär fil.</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Nu försöker Git varken konvertera eller fixa CRLF‑problem; inte heller försöker den beräkna eller skriva ut en diff för ändringar i den här filen när du kör <code>git show</code> eller <code>git diff</code> på projektet.</p>
+<p>Nu försöker Git varken konvertera eller fixa CRLF‑problem; inte heller försöker den beräkna eller skriva ut en diff för ändringar i filen när du kör <code>git show</code> eller <code>git diff</code> på projektet.</p>
 </div>
 </div>
 <div class="sect4">
@@ -106,7 +106,7 @@ docx2txt.pl "$1" -</code></pre>
 </div>
 <div class="paragraph">
 <p>Glöm inte <code>chmod a+x</code> på den filen.
-Till sist konfigurerar du Git att använda det här skriptet:</p>
+Till sist konfigurerar du Git att använda skriptet:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -118,7 +118,7 @@ Till sist konfigurerar du Git att använda det här skriptet:</p>
 Detta ger i praktiken läsbara textversioner av dina Word‑filer innan diffen beräknas.</p>
 </div>
 <div class="paragraph">
-<p>Här är ett exempel: kapitel 1 i den här boken konverterades till Word‑format och incheckades i ett Git‑kodförråd.
+<p>Här är ett exempel: kapitel 1 i boken konverterades till Word‑format och incheckades i ett Git‑kodförråd.
 Sedan lades ett nytt stycke till.
 Så här visar <code>git diff</code>:</p>
 </div>
@@ -204,7 +204,7 @@ Git‑attribut ger dig två sätt att göra detta.</p>
 <div class="paragraph">
 <p>Först kan du automatiskt injicera SHA‑1‑kontrollsumman för en blob i ett <code>$Id$</code>‑fält i filen.
 Om du sätter detta attribut på en fil eller uppsättning filer kommer Git nästa gång du växlar till den grenen att ersätta fältet med blob‑SHA‑1:an.
-Det är viktigt att notera att det inte är SHA‑1:an för incheckningen, utan för blobben själv.
+Tänk på att det inte är SHA‑1:an för incheckningen, utan för blobben själv.
 Lägg följande rad i din <code>.gitattributes</code>‑fil:</p>
 </div>
 <div class="listingblock">

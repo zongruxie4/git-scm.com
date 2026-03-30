@@ -25,7 +25,7 @@ Du kan bestämma vilka filer som ska hamna i vilka incheckningar precis innan du
 Det kan handla om att ändra ordningen på incheckningar, ändra meddelanden eller modifiera filer i en incheckning, sammanfoga eller dela upp incheckningar, eller ta bort incheckningar helt och hållet — allt innan du delar ditt arbete med andra.</p>
 </div>
 <div class="paragraph">
-<p>I det här avsnittet ser du hur du genomför dessa uppgifter så att du kan få din incheckningshistorik att se ut som du vill innan du delar den.</p>
+<p>I avsnittet ser du hur du genomför dessa uppgifter så att du kan få din incheckningshistorik att se ut som du vill innan du delar den.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -66,7 +66,7 @@ När du sparar och stänger redigeraren skriver den en ny incheckning som inneh�
 <p>Om du i stället vill ändra det faktiska <em>innehållet</em> i din senaste incheckning fungerar processen i princip på samma sätt — gör först de ändringar du tror att du glömde, köa dem, och det efterföljande <code>git commit --amend</code> <em>ersätter</em> den senaste incheckningen med din nya, förbättrade incheckning.</p>
 </div>
 <div class="paragraph">
-<p>Du måste vara försiktig med den här tekniken eftersom en amend ändrar SHA-1 för incheckningen.
+<p>Du måste vara försiktig med tekniken eftersom en amend ändrar SHA-1 för incheckningen.
 Det är som en mycket liten ombasering — ändra inte din senaste incheckning om du redan har skickat upp den.</p>
 </div>
 <div class="admonitionblock tip">
@@ -105,7 +105,7 @@ Du måste ange hur långt tillbaka du vill skriva om incheckningar genom att tal
 </div>
 <div class="paragraph">
 <p>Till exempel, om du vill ändra de tre senaste incheckningsmeddelandena, eller något av incheckningsmeddelandena i den gruppen, anger du som argument till <code>git rebase -i</code> föräldern till den senaste incheckningen du vill redigera, vilket är <code>HEAD~2^</code> eller <code>HEAD~3</code>.
-Det kan vara lättare att komma ihåg <code>~3</code> eftersom du försöker redigera de tre senaste incheckningarna, men tänk på att du faktiskt pekar ut föräldern till den senaste incheckningen du vill redigera, vilket är fyra incheckningar tillbaka:</p>
+Det kan vara lättare att komma ihåg <code>~3</code> eftersom du försöker redigera de tre senaste incheckningarna, men tänk på att du egentligen pekar ut föräldern till den senaste incheckningen du vill redigera, vilket är fyra incheckningar tillbaka:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -497,7 +497,7 @@ Du måste vara försiktig så att du bara ändrar de e-postadresser som är dina
 </div>
 <div class="paragraph">
 <p>Detta går igenom och skriver om varje incheckning så att den får din nya adress.
-Eftersom incheckningar innehåller SHA-1-värdena för sina föräldrar ändrar det här kommandot varje SHA-1 i din historik, inte bara de som matchar e-postadressen.</p>
+Eftersom incheckningar innehåller SHA-1-värdena för sina föräldrar ändrar kommandot varje SHA-1 i din historik, inte bara de som matchar e-postadressen.</p>
 </div>
 </div>
 </div>

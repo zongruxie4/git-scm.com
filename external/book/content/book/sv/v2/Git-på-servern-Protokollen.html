@@ -257,7 +257,7 @@ Om du vill ha anonym läsåtkomst och samtidigt använda SSH för uppsändning m
 <div class="paragraph">
 <p>
 Till sist har vi Git-protokollet.
-Det är en särskild demon som följer med Git; den lyssnar på en dedikerad port (9418) och tillhandahåller en tjänst liknande SSH, men helt utan autentisering eller kryptering.
+Det är en särskild demon som följer med Git; den lyssnar på en egen port (9418) och tillhandahåller en tjänst liknande SSH, men helt utan autentisering eller kryptering.
 För att ett kodförråd ska kunna erbjudas via Git-protokollet måste du skapa en <code>git-daemon-export-ok</code>-fil – annars serveras det inte – men förutom det finns det ingen säkerhet.
 Antingen är kodförrådet tillgängligt för alla att klona eller inte alls.
 Det innebär att man normalt inte skickar upp via detta protokoll.

@@ -23,7 +23,7 @@ url: "/book/sv/v2/Anpassa-Git-Git‑krokar.html"
 <p>
 Likt många andra versionshanteringssystem har Git ett sätt att köra egna skript när vissa viktiga händelser inträffar.
 Det finns två grupper av krokar: klientsidan och serversidan.
-Krokar på klientsidan triggas av operationer som incheckning och sammanslagning, medan krokar på serversidan körs vid nätverksoperationer som att ta emot uppskickade incheckningar.
+Krokar på klientsidan utlöses av operationer som incheckning och sammanslagning, medan krokar på serversidan körs vid nätverksoperationer som att ta emot uppskickade incheckningar.
 Du kan använda dessa krokar av många olika skäl.</p>
 </div>
 <div class="sect3">
@@ -55,7 +55,7 @@ Detta avsnitt delar in dem i krokar för incheckningsflödet, skript för e-post
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Det är viktigt att notera att krokar på klientsidan <strong>inte</strong> kopieras när du klonar ett kodförråd.
+<p>Tänk på att krokar på klientsidan <strong>inte</strong> kopieras när du klonar ett kodförråd.
 Om din avsikt med dessa skript är att upprätthålla en policy vill du sannolikt göra det på serversidan; se exemplet i <a href="{{< relurl "book/sv/v2/ch00/_an_example_git_enforced_policy" >}}">Ett exempel på Git‑upprätthållen policy</a>.</p>
 </div>
 </td>
@@ -83,7 +83,7 @@ Du kan använda den tillsammans med en incheckningsmall för att programatiskt i
 <div class="paragraph">
 <p>Kroken <code>commit-msg</code> tar en parameter, vilket återigen är sökvägen till en temporär fil som innehåller incheckningsmeddelandet som utvecklaren har skrivit.
 Om detta skript avslutas med en icke‑nollkod avbryter Git incheckningsprocessen, så du kan använda det för att validera projektets läge eller incheckningsmeddelandet innan incheckningen får gå igenom.
-I sista delen av det här kapitlet visar vi hur du använder denna krok för att kontrollera att incheckningsmeddelandet följer ett obligatoriskt mönster.</p>
+I sista delen av kapitlet visar vi hur du använder denna krok för att kontrollera att incheckningsmeddelandet följer ett obligatoriskt mönster.</p>
 </div>
 <div class="paragraph">
 <p>När hela incheckningsprocessen är klar körs kroken <code>post-commit</code>.

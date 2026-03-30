@@ -52,7 +52,7 @@ Subversion‑bryggan är inkörsporten till DVCS‑världen.</p>
 Det har ganska många underkommandon, så vi visar de vanligaste medan vi går igenom några enkla arbetsflöden.</p>
 </div>
 <div class="paragraph">
-<p>Det är viktigt att notera att när du använder <code>git svn</code> så interagerar du med Subversion, som fungerar på ett helt annat sätt än Git.
+<p>Tänk på att när du använder <code>git svn</code> så interagerar du med Subversion, som fungerar på ett helt annat sätt än Git.
 Även om du <strong>kan</strong> göra lokala grenar och sammanslagningar är det generellt bäst att hålla historiken så linjär som möjligt genom att ombasera ditt arbete och undvika att samtidigt arbeta mot ett Git‑fjärrkodförråd.</p>
 </div>
 <div class="paragraph">
@@ -177,7 +177,7 @@ Följande kommando är likvärdigt:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Notera hur det här verktyget hanterar Subversion‑taggar som fjärrreferenser.
+<p>Lägg märke till hur verktyget hanterar Subversion‑taggar som fjärrreferenser.
 
 Låt oss titta närmare med Git‑lågnivåkommandot <code>show-ref</code>:</p>
 </div>
@@ -260,7 +260,7 @@ Date:   Thu Jul 24 03:08:36 2014 +0000
 </div>
 </div>
 <div class="paragraph">
-<p>Notera att SHA‑1‑kontrollsumman som ursprungligen började med <code>4af61fd</code> när du checkade in nu börjar med <code>95e0222</code>.
+<p>Observera att SHA‑1‑kontrollsumman som ursprungligen började med <code>4af61fd</code> när du checkade in nu börjar med <code>95e0222</code>.
 Om du vill skicka till både en Git‑server och en Subversion‑server måste du skicka (<code>dcommit</code>) till Subversion‑servern först, eftersom den åtgärden ändrar din incheckningsdata.</p>
 </div>
 </div>
@@ -428,7 +428,7 @@ r91 = f1b64a3855d3c8dd84ee0ef10fa89d27f1584302 (refs/remotes/origin/opera)</code
 </div>
 <div class="paragraph">
 <p>Det här motsvarar Subversion‑kommandot <code>svn copy trunk branches/opera</code> och arbetar mot Subversion‑servern.
-Det är viktigt att notera att det inte växlar till den grenen; om du checkar in nu kommer incheckningen att hamna i <code>trunk</code> på servern, inte <code>opera</code>.</p>
+Tänk på att det inte växlar till den grenen; om du checkar in nu kommer incheckningen att hamna i <code>trunk</code> på servern, inte <code>opera</code>.</p>
 </div>
 </div>
 <div class="sect4">
@@ -791,7 +791,7 @@ $ git log --oneline --graph --decorate --all
 <div class="paragraph">
 <p>Eftersom vi använde flaggan <code>--all</code> ser vi “notes”‑referenserna som används internt av git-remote-hg, men vi kan ignorera dem.
 Resten är vad vi förväntade oss; <code>origin/master</code> har gått framåt med en incheckning, och vår historik har nu divergerat.
-Till skillnad från de andra systemen vi arbetar med i det här kapitlet klarar Mercurial av sammanslagningar, så vi behöver inte göra något avancerat.</p>
+Till skillnad från de andra systemen vi arbetar med i kapitlet klarar Mercurial av sammanslagningar, så vi behöver inte göra något avancerat.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -875,7 +875,7 @@ summary:     More documentation</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Notera raden som börjar med “branch”.
+<p>Lägg märke till raden som börjar med “branch”.
 Git kan egentligen inte replikera detta (och behöver inte heller; båda typerna av grenar kan representeras som en Git‑referens), men git-remote-hg behöver förstå skillnaden eftersom Mercurial gör det.</p>
 </div>
 <div class="paragraph">
@@ -923,7 +923,7 @@ o  0   0a04b987be5a   2005-08-26 01:20 -0700   mpm
 </div>
 </div>
 <div class="paragraph">
-<p>Notera den nya taggen <code>[featureA]</code> på revision 5.
+<p>Lägg märke till den nya taggen <code>[featureA]</code> på revision 5.
 De fungerar exakt som Git‑grenar på Git‑sidan, med ett undantag: du kan inte ta bort ett bokmärke från Git‑sidan (detta är en begränsning i fjärrhjälparen).</p>
 </div>
 <div class="paragraph">
@@ -1038,9 +1038,9 @@ Om du undviker att ändra historik som har lämnat din maskin (som generellt rek
 <p>
 
 Perforce är ett mycket populärt versionshanteringssystem i organisationsmiljöer.
-Det har funnits sedan 1995, vilket gör det till det äldsta systemet som behandlas i det här kapitlet.
+Det har funnits sedan 1995, vilket gör det till det äldsta systemet som behandlas i kapitlet.
 Därför är det utformat med sin tids begränsningar; det antar att du alltid är uppkopplad mot en enda central server och att bara en version hålls på den lokala disken.
-För tydlighetens skull är dess funktioner och begränsningar väl lämpade för flera specifika problem, men det finns många projekt som använder Perforce där Git faktiskt skulle fungera bättre.</p>
+För tydlighetens skull är dess funktioner och begränsningar väl lämpade för flera specifika problem, men det finns många projekt som använder Perforce där Git egentligen skulle fungera bättre.</p>
 </div>
 <div class="paragraph">
 <p>Det finns två alternativ om du vill kombinera användningen av Perforce och Git.
@@ -1070,7 +1070,7 @@ När det är klart ser du detta:</p>
 <div class="title">Figur 169. Git Fusions uppstartsskärm för den virtuella maskinen</div>
 </div>
 <div class="paragraph">
-<p>Du bör notera IP‑adressen som visas här; vi använder den senare.
+<p>Du bör lägga märke till IP‑adressen som visas här; vi använder den senare.
 Nästa steg är att skapa en Perforce‑användare.
 Välj alternativet “Login” längst ner och tryck enter (eller SSH:a till maskinen) och logga in som <code>root</code>.
 Använd sedan dessa kommandon för att skapa en användare:</p>
@@ -1148,7 +1148,7 @@ Filstrukturen ser ut så här:</p>
 </div>
 <div class="paragraph">
 <p>Katalogen <code>objects</code> används internt av Git Fusion för att mappa Perforce‑objekt till Git och vice versa; du behöver inte röra något där.
-Det finns en global <code>p4gf_config</code>‑fil i den här katalogen, samt en för varje kodförråd – det är konfigurationsfilerna som avgör hur Git Fusion beter sig.
+Det finns en global <code>p4gf_config</code>‑fil i katalogen, samt en för varje kodförråd – det är konfigurationsfilerna som avgör hur Git Fusion beter sig.
 Låt oss titta på filen i roten:</p>
 </div>
 <div class="listingblock">
@@ -1182,7 +1182,7 @@ email-case-sensitivity = no</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Vi går inte in på betydelsen av dessa flaggor här, men notera att det bara är en INI‑formaterad textfil, ungefär som Git använder för konfiguration.
+<p>Vi går inte in på betydelsen av dessa flaggor här, men lägg märke till att det bara är en INI‑formaterad textfil, ungefär som Git använder för konfiguration.
 Filen anger de globala alternativen, som sedan kan skrivas över av kodförrådsspecifika konfigurationsfiler, som <code>repos/Talkhouse/p4gf_config</code>.
 Om du öppnar denna fil ser du en <code>[@repo]</code>‑sektion med vissa inställningar som skiljer sig från de globala standarderna.
 Du ser också sektioner som ser ut så här:</p>
@@ -1318,7 +1318,7 @@ $ git log --oneline --decorate --graph --all
 </div>
 <div class="paragraph">
 <p>Det ser ut som att någon gjorde det!
-Du skulle inte veta det från den här vyn, men incheckningen <code>6afeb15</code> skapades faktiskt med en Perforce‑klient.
+Du skulle inte veta det från den här vyn, men incheckningen <code>6afeb15</code> skapades i själva verket med en Perforce‑klient.
 Den ser bara ut som en annan incheckning ur Gits perspektiv, vilket är precis poängen.
 Låt oss se hur Perforce‑servern hanterar en sammanslagningsincheckning:</p>
 </div>
@@ -1451,7 +1451,7 @@ $ git log --oneline --all --graph --decorate
 </div>
 </div>
 <div class="paragraph">
-<p>Notera att det finns ett “p4”‑fjärrkodförråd för Perforce‑servern, men i övrigt ser allt ut som en standardklon.
+<p>Observera att det finns ett “p4”‑fjärrkodförråd för Perforce‑servern, men i övrigt ser allt ut som en standardklon.
 Det är dock lite missvisande; det finns egentligen inget fjärrkodförråd där.</p>
 </div>
 <div class="listingblock">
@@ -1619,11 +1619,11 @@ $ git log --oneline --all --graph --decorate
 </div>
 </div>
 <div class="paragraph">
-<p>Resultatet motsvarar i praktiken att vi just körde <code>git push</code>, vilket ligger nära det som faktiskt hände.</p>
+<p>Resultatet motsvarar i praktiken att vi just körde <code>git push</code>, vilket ligger nära det som egentligen hände.</p>
 </div>
 <div class="paragraph">
-<p>Notera att under denna process omvandlas varje Git‑incheckning till en Perforce‑ändringsuppsättning; om du vill sammanfoga dem till en enda ändringsuppsättning kan du göra det med en interaktiv ombasering innan du kör <code>git p4 submit</code>.
-Notera också att SHA‑1‑hasharna för alla incheckningar som skickades in som ändringsuppsättningar har förändrats; detta beror på att git-p4 lägger till en rad i slutet av varje incheckning som den konverterar:</p>
+<p>Observera att under denna process omvandlas varje Git‑incheckning till en Perforce‑ändringsuppsättning; om du vill sammanfoga dem till en enda ändringsuppsättning kan du göra det med en interaktiv ombasering innan du kör <code>git p4 submit</code>.
+Lägg också märke till att SHA‑1‑hasharna för alla incheckningar som skickades in som ändringsuppsättningar har förändrats; detta beror på att git-p4 lägger till en rad i slutet av varje incheckning som den konverterar:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1696,7 +1696,7 @@ $ git log --oneline --all --graph --decorate
 </div>
 </div>
 <div class="paragraph">
-<p>Vår historik blev linjär, precis som om vi hade ombaserat innan vi skickade in (vilket faktiskt är exakt vad som hände).
+<p>Vår historik blev linjär, precis som om vi hade ombaserat innan vi skickade in (vilket är precis vad som hände).
 Det betyder att du kan skapa, arbeta på, kasta bort och sammanfoga grenar på Git‑sidan utan att oroa dig för att historiken på något sätt blir inkompatibel med Perforce.
 Om du kan ombasera det kan du bidra med det till en Perforce‑server.</p>
 </div>
@@ -1746,7 +1746,7 @@ $ cd project; git log --oneline --all --graph --decorate
 </div>
 </div>
 <div class="paragraph">
-<p>Notera specifikationen “@all” i depå‑sökvägen; den säger till git-p4 att klona inte bara den senaste ändringsuppsättningen för det underträdet, utan alla ändringsuppsättningar som någonsin har rört dessa sökvägar.
+<p>Lägg märke till specifikationen “@all” i depå‑sökvägen; den säger till git-p4 att klona inte bara den senaste ändringsuppsättningen för det underträdet, utan alla ändringsuppsättningar som någonsin har rört dessa sökvägar.
 Detta ligger närmare Gits klonbegrepp, men om du arbetar på ett projekt med lång historik kan det ta tid.</p>
 </div>
 <div class="paragraph">

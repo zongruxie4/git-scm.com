@@ -123,7 +123,7 @@ String name = cfg.getString("user", null, "name");</code></pre>
 <p>Den första raden hämtar en pekare till referensen <code>master</code>.
 JGit hämtar automatiskt den <em>faktiska</em> <code>master</code>‑refen, som ligger på <code>refs/heads/master</code>, och returnerar ett objekt som låter dig hämta information om referensen.
 Du kan få namnet (<code>.getName()</code>) och antingen målobjektet för en direkt referens (<code>.getObjectId()</code>) eller referensen som en symbolisk ref pekar på (<code>.getTarget()</code>).
-Ref‑objekt används också för att representera tagg‑refs och objekt, så du kan fråga om taggen är “peeled”, vilket betyder att den pekar på det slutliga målet i en (potentiellt lång) kedja av taggobjekt.</p>
+Ref‑objekt används också för att representera tagg‑refs och objekt, så du kan fråga om taggen är “peeled”, vilket betyder att den pekar på det slutliga målet i en (möjligen lång) kedja av taggobjekt.</p>
 </div>
 <div class="paragraph">
 <p>Den andra raden hämtar målet för <code>master</code>‑referensen, som returneras som en ObjectId‑instans.
@@ -132,12 +132,12 @@ Den tredje raden är liknande men visar hur JGit hanterar rev‑parse‑syntaxen
 </div>
 <div class="paragraph">
 <p>De nästa två raderna visar hur man laddar det råa innehållet i ett objekt.
-I det här exemplet anropar vi <code>ObjectLoader.copyTo()</code> för att strömma objektets innehåll direkt till stdout, men ObjectLoader har också metoder för att läsa typ och storlek på ett objekt, samt returnera det som en byte‑array.
+I exemplet anropar vi <code>ObjectLoader.copyTo()</code> för att strömma objektets innehåll direkt till stdout, men ObjectLoader har också metoder för att läsa typ och storlek på ett objekt, samt returnera det som en byte‑array.
 För stora objekt (där <code>.isLarge()</code> returnerar <code>true</code>) kan du anropa <code>.openStream()</code> för att få ett InputStream‑liknande objekt som kan läsa rådata utan att dra in allt i minnet på en gång.</p>
 </div>
 <div class="paragraph">
 <p>De följande raderna visar vad som krävs för att skapa en ny gren.
-Vi skapar en RefUpdate‑instans, konfigurerar vissa parametrar och anropar <code>.update()</code> för att trigga ändringen.
+Vi skapar en RefUpdate‑instans, konfigurerar vissa parametrar och anropar <code>.update()</code> för att utlösa ändringen.
 Direkt efter detta följer koden som tar bort samma gren.
 Observera att <code>.setForceUpdate(true)</code> krävs för att detta ska fungera; annars returnerar <code>.delete()</code>‑anropet <code>REJECTED</code>, och inget händer.</p>
 </div>
@@ -185,7 +185,7 @@ for (Ref ref : remoteRefs) {
 <div class="paragraph">
 <p>Det här är ett vanligt mönster med Git‑klassen; metoderna returnerar ett kommandoobjekt som låter dig kedja metodanrop för att sätta parametrar, vilka körs när du anropar <code>.call()</code>.
 I det här fallet frågar vi fjärrkodförrådet <code>origin</code> efter taggar, men inte heads.
-Notera också användningen av ett <code>CredentialsProvider</code>‑objekt för autentisering.</p>
+Lägg också märke till användningen av ett <code>CredentialsProvider</code>‑objekt för autentisering.</p>
 </div>
 <div class="paragraph">
 <p>Många andra kommandon finns tillgängliga via Git‑klassen, inklusive men inte begränsat till <code>add</code>, <code>blame</code>, <code>commit</code>, <code>clean</code>, <code>push</code>, <code>rebase</code>, <code>revert</code> och <code>reset</code>.</p>

@@ -37,7 +37,7 @@ Du kommer att följa dessa steg:</p>
 </ol>
 </div>
 <div class="paragraph">
-<p>I det här läget får du ett samtal om att ett annat problem är mer kritiskt och att det behövs en snabbkorrigering.
+<p>I det läget får du ett samtal om att ett annat problem är mer kritiskt och att det behövs en snabbkorrigering.
 Då gör du följande:</p>
 </div>
 <div class="olist arabic">
@@ -115,7 +115,7 @@ Med Git behöver du inte distribuera din fix tillsammans med <code>iss53</code>-
 Allt du behöver göra är att byta tillbaka till <code>master</code>.</p>
 </div>
 <div class="paragraph">
-<p>Notera dock att om arbetskatalogen eller köytan innehåller icke checkade in ändringar som krockar med grenen du vill växla till, kommer Git att hindra bytet.
+<p>Observera dock att om arbetskatalogen eller köytan innehåller icke checkade in ändringar som krockar med grenen du vill växla till, kommer Git att hindra bytet.
 Det är bäst att ha en ren arbetskatalog när du byter gren.
 Det finns sätt att komma runt detta (gömma ändringar eller göra en tilläggsincheckning), vilket vi går igenom senare i <a href="{{< relurl "book/sv/v2/ch00/_git_stashing" >}}">Lägga undan och städa</a>.
 För tillfället antar vi att du har checkat in allt och kan byta tillbaka till <code>master</code>:</p>
@@ -213,7 +213,7 @@ $ git commit -a -m 'Finish the new footer [issue 53]'
 </div>
 </div>
 <div class="paragraph">
-<p>Det är värt att notera att arbetet du gjorde i <code>hotfix</code>-grenen inte finns i <code>iss53</code>.
+<p>Värt att veta är att arbetet du gjorde i <code>hotfix</code>-grenen inte finns i <code>iss53</code>.
 Om du behöver få in ändringarna kan du sammanfoga <code>master</code> in i <code>iss53</code> med <code>git merge master</code>, eller vänta tills du senare sammanfogar <code>iss53</code> till <code>master</code>.</p>
 </div>
 </div>

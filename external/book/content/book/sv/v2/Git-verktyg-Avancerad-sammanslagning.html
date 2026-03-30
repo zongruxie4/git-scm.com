@@ -29,7 +29,7 @@ Gits filosofi är att vara smart när en sammanslagningslösning är entydig, me
 Därför kan du, om du väntar för länge med att sammanfoga två grenar som snabbt glider isär, stöta på vissa problem.</p>
 </div>
 <div class="paragraph">
-<p>I det här avsnittet går vi igenom vad några av dessa problem kan vara och vilka verktyg Git ger dig för att hantera mer knepiga situationer.
+<p>I avsnittet går vi igenom vad några av dessa problem kan vara och vilka verktyg Git ger dig för att hantera mer knepiga situationer.
 Vi tar också upp några olika, icke‑standardiserade typer av sammanslagningar du kan göra, samt hur du tar dig ur sammanslagningar du redan gjort.</p>
 </div>
 <div class="sect3">
@@ -204,7 +204,7 @@ Sedan vill vi ta kopior av vår version av filen, deras version (från grenen vi
 Sedan vill vi fixa antingen deras sida eller vår sida och försöka sammanfoga igen för just den filen.</p>
 </div>
 <div class="paragraph">
-<p>Att få de tre filversionerna är faktiskt ganska enkelt.
+<p>Att få de tre filversionerna är ganska enkelt.
 Git lagrar alla dessa versioner i indexet under "steg" som vart och ett har ett nummer kopplat till sig.
 Steg 1 är den gemensamma anfadern, steg 2 är din version och steg 3 är från <code>MERGE_HEAD</code>, versionen du sammanfogar in (“theirs”/"deras").</p>
 </div>
@@ -262,11 +262,11 @@ index 36c06c8,e85207e..0000000
 </div>
 <div class="paragraph">
 <p>Vid det här laget har vi snyggt sammanfogat filen.
-Faktum är att det här fungerar bättre än alternativet <code>ignore-space-change</code> eftersom det faktiskt åtgärdar blankteckensändringarna före sammanslagning i stället för att bara ignorera dem.
-I sammanslagningen med <code>ignore-space-change</code> hamnade vi faktiskt med några rader med DOS‑radslut, vilket gav en blandning.</p>
+Faktum är att det här fungerar bättre än alternativet <code>ignore-space-change</code> eftersom det verkligen åtgärdar blankteckensändringarna före sammanslagning i stället för att bara ignorera dem.
+I sammanslagningen med <code>ignore-space-change</code> hamnade vi med några rader med DOS‑radslut, vilket gav en blandning.</p>
 </div>
 <div class="paragraph">
-<p>Om du vill få en uppfattning innan du slutför den här incheckningen om vad som faktiskt ändrades mellan den ena sidan och den andra kan du be <code>git diff</code> jämföra det som ligger i din arbetskatalog och som du är på väg att checka in som resultat av sammanslagningen med något av dessa steg.
+<p>Om du vill få en uppfattning innan du slutför den här incheckningen om vad som egentligen ändrades mellan den ena sidan och den andra kan du be <code>git diff</code> jämföra det som ligger i din arbetskatalog och som du är på väg att checka in som resultat av sammanslagningen med något av dessa steg.
 Låt oss gå igenom dem allihop.</p>
 </div>
 <div class="paragraph">
@@ -292,7 +292,7 @@ index 36c06c8..44d0a25 100755
 </div>
 </div>
 <div class="paragraph">
-<p>Här ser vi alltså att det som hände i vår gren, det vi faktiskt inför i filen med denna sammanslagning, är att en enda rad ändras.</p>
+<p>Här ser vi alltså att det som hände i vår gren, det vi egentligen inför i filen med denna sammanslagning, är att en enda rad ändras.</p>
 </div>
 <div class="paragraph">
 <p>Om vi vill se hur resultatet av sammanslagningen skiljer sig från deras sida kan du köra <code>git diff --theirs</code>.
@@ -357,7 +357,7 @@ Removing hello.theirs.rb</code></pre>
 </div>
 <div class="paragraph">
 <p>Låt oss ändra exemplet lite.
-I det här exemplet har vi två långlivade grenar som båda har några incheckningar i sig men skapar en legitim innehållskonflikt vid sammanslagning.</p>
+I exemplet har vi två långlivade grenar som båda har några incheckningar i sig men skapar en legitim innehållskonflikt vid sammanslagning.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -535,7 +535,7 @@ index 0399cd5,59727f0..0000000
 Den första kolumnen visar om raden är annorlunda (tillagd eller borttagen) mellan “ours”‑grenen och filen i din arbetskatalog och den andra kolumnen gör samma sak mellan “theirs”‑grenen och din arbetskatalogskopia.</p>
 </div>
 <div class="paragraph">
-<p>I det här exemplet kan du se att <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code> och <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>‑raderna finns i arbetskopian men inte fanns på någon av sidorna i sammanslagningen.
+<p>I exemplet kan du se att <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code> och <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>‑raderna finns i arbetskopian men inte fanns på någon av sidorna i sammanslagningen.
 Det är logiskt eftersom sammanslagningsverktyget satte in dem för kontext, men vi förväntas ta bort dem.</p>
 </div>
 <div class="paragraph">
@@ -720,7 +720,7 @@ $ git merge topic</code></pre>
 <div class="title">Figur 157. Historik efter att sammanfoga om en återställd sammanslagning</div>
 </div>
 <div class="paragraph">
-<p>I det här exemplet tar <code>M</code> och <code>^M</code> ut varandra.
+<p>I exemplet tar <code>M</code> och <code>^M</code> ut varandra.
 <code>^^M</code> sammanfogar i praktiken ändringarna från <code>C3</code> och <code>C4</code>, och <code>C8</code> sammanfogar ändringarna från <code>C7</code>, så nu är <code>topic</code> helt sammanfogad.</p>
 </div>
 </div>
