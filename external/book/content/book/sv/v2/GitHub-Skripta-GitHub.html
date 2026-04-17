@@ -23,7 +23,7 @@ title: Git - Skripta GitHub
 </div>
 <div class="paragraph">
 <p>Lyckligtvis är GitHub ganska enkelt att anpassa på många sätt.
-I det här avsnittet går vi igenom hur du använder GitHubs krok-system och dess API för att få GitHub att fungera som du vill.</p>
+I avsnittet går vi igenom hur du använder GitHubs krok-system och dess API för att få GitHub att fungera som du vill.</p>
 </div>
 <div class="sect3">
 <h3 id="_tjänster_och_krokar">Tjänster och krokar</h3>
@@ -67,7 +67,7 @@ Om du till exempel använder Jenkins för att köra tester på din kodbas kan du
 <div class="sect4">
 <h4 id="_krokar_2">Krokar</h4>
 <div class="paragraph">
-<p>Om du behöver något mer specifikt eller vill integrera med en tjänst eller webbplats som inte finns i listan kan du i stället använda det mer generella krok-systemet.
+<p>Om du behöver något mer specifikt eller vill integrera med en tjänst eller webbplats som inte finns i listan kan du i stället använda det mer allmänna krok-systemet.
 GitHubs kodförrådskrokar är ganska enkla.
 Du anger en URL och GitHub skickar en HTTP-last till den URL:en för vilken händelse du vill.</p>
 </div>
@@ -90,7 +90,7 @@ I de flesta fall anger du bara en URL och en hemlig nyckel och trycker på "Läg
 Det finns några val för vilka händelser du vill att GitHub ska skicka en last för — standard är att bara få en last för <code>push</code>-händelsen, när någon skickar upp ny kod till valfri gren i kodförrådet.</p>
 </div>
 <div class="paragraph">
-<p>Låt oss se ett litet exempel på en webbtjänst som du kan sätta upp för att hantera en webbkrok.
+<p>Här är ett litet exempel på en webbtjänst som du kan sätta upp för att hantera en webbkrok.
 Vi använder Ruby-ramverket Sinatra eftersom det är ganska kortfattat och det bör vara enkelt att se vad vi gör.</p>
 </div>
 <div class="paragraph">
@@ -163,9 +163,9 @@ Tjänster och krokar ger dig ett sätt att få skicka-aviseringar om händelser 
 Vad händer om du behöver automatisera något som att lägga till medarbetare eller märka ärenden?</p>
 </div>
 <div class="paragraph">
-<p>Det är här GitHub-API:t kommer till nytta.
+<p>Här kommer GitHub-API:t till nytta.
 GitHub har massor av API-ändpunkter för att göra nästan allt du kan göra på webbplatsen på ett automatiserat sätt.
-I det här avsnittet lär vi oss hur vi autentiserar och ansluter till API:t, hur vi kommenterar ett ärende och hur vi ändrar status för en ändringsförfrågan via API:t.</p>
+I avsnittet lär vi oss hur vi autentiserar och ansluter till API:t, hur vi kommenterar ett ärende och hur vi ändrar status för en ändringsförfrågan via API:t.</p>
 </div>
 </div>
 <div class="sect3">
@@ -193,7 +193,7 @@ Om vi till exempel vill veta mer om en användare som heter "schacon" kan vi kö
 </div>
 <div class="paragraph">
 <p>Det finns massor av API-ändpunkter som den här för att hämta information om organisationer, projekt, ärenden och incheckningar — i princip allt du kan se offentligt på GitHub.
-Du kan till och med använda API:t för att rendera godtycklig Markdown eller hitta en <code>.gitignore</code>-mall.</p>
+Du kan till och med använda API:t för att återge godtycklig Markdown eller hitta en <code>.gitignore</code>-mall.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -248,7 +248,7 @@ Utan autentisering är du begränsad till 60 förfrågningar per timme.
 Om du autentiserar dig kan du göra upp till 5 000 förfrågningar per timme.</p>
 </div>
 <div class="paragraph">
-<p>Låt oss använda den för att lämna en kommentar i ett av våra ärenden.
+<p>Vi använder den för att lämna en kommentar i ett av våra ärenden.
 Säg att vi vill lämna en kommentar i ärende #6.
 För att göra det måste vi göra en HTTP POST-begäran till <code>repos/&lt;användare&gt;/&lt;kodförråd&gt;/issues/&lt;num&gt;/comments</code> med tokenen vi just skapade som en Authorization-header.</p>
 </div>
@@ -349,7 +349,7 @@ I denna webbkrokshanterare går vi igenom varje incheckning som just skickades u
 </div>
 <div class="paragraph">
 <p>I det här fallet kan du skicka ett tillstånd ("success", "failure", "error"), en beskrivning av vad som hände, en mål-URL som användaren kan gå till för mer information och en "context" om det finns flera statusar för en och samma incheckning.
-Till exempel kan en testtjänst ge en status och en valideringstjänst som denna kan också ge en status — fältet "context" är hur de skiljs åt.</p>
+Till exempel kan en testtjänst rapportera status och en valideringstjänst som denna kan också rapportera status — fältet "context" är hur de skiljs åt.</p>
 </div>
 <div class="paragraph">
 <p>Om någon öppnar en ny ändringsförfrågan på GitHub och denna krok är konfigurerad kan du se något som <a href="{{< relurl "book/sv/v2/ch00/_commit_status" >}}">Incheckningsstatus via API:t</a>.</p>
@@ -369,7 +369,7 @@ Det här är väldigt användbart om du använder API:t för testresultat så at
 <div class="sect3">
 <h3 id="_octokit">Octokit</h3>
 <div class="paragraph">
-<p>Även om vi har gjort nästan allt via <code>curl</code> och enkla HTTP-begäran i dessa exempel finns det flera bibliotek med öppen källkod som gör API:t tillgängligt på ett mer idiomatiskt sätt.
+<p>Även om vi har gjort nästan allt via <code>curl</code> och enkla HTTP-begäran i dessa exempel finns det flera bibliotek med öppen källkod som gör API:t tillgängligt på ett mer naturligt sätt.
 När detta skrevs fanns stöd för språk som Go, Objective-C, Ruby och .NET.
 Se <a href="https://github.com/octokit" class="bare" target="_blank" rel="noopener">https://github.com/octokit</a> för mer information om dessa, eftersom de hanterar mycket av HTTP åt dig.</p>
 </div>

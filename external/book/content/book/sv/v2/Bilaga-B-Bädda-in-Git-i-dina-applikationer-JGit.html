@@ -29,7 +29,7 @@ JGit‑projektet ligger under Eclipse‑paraplyet, och dess hem finns på <a hre
 <h3 id="_kom_igång_4">Kom igång</h3>
 <div class="paragraph">
 <p>Det finns flera sätt att koppla ditt projekt till JGit och börja skriva kod mot det.
-Det enklaste är förmodligen att använda Maven – integrationen görs genom att lägga till följande kodsnutt i taggen <code>&lt;dependencies&gt;</code> i din <code>pom.xml</code>‑fil:</p>
+Det enklaste är förmodligen att använda Maven – du integrerar genom att lägga till följande kodsnutt i taggen <code>&lt;dependencies&gt;</code> i din <code>pom.xml</code>‑fil:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -62,7 +62,7 @@ java -cp .:org.eclipse.jgit-3.5.0.201409260305-r.jar App</code></pre>
 Terminologin kommer från Git självt, och JGit är uppdelat i ungefär samma typer av områden: användar‑API:er (porcelain) är ett vänligt gränssnitt för vanliga användaråtgärder (sådant en normal användare skulle använda Gits kommandoradsverktyg för), medan lågnivå‑API:erna (plumbing) används för att interagera direkt med kodförrådets lågnivåobjekt.</p>
 </div>
 <div class="paragraph">
-<p>Startpunkten för de flesta JGit‑sessioner är klassen <code>Repository</code>, och det första du vill göra är att skapa en instans av den.
+<p>Startpunkten för de flesta JGit‑sessioner är klassen <code>Repository</code>, och du börjar med att skapa en instans av den.
 För ett filsystemsbaserat kodförråd (ja, JGit tillåter andra lagringsmodeller) görs detta med <code>FileRepositoryBuilder</code>:</p>
 </div>
 <div class="listingblock">
@@ -117,13 +117,13 @@ String name = cfg.getString("user", null, "name");</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Det händer ganska mycket här, så låt oss gå igenom det steg för steg.</p>
+<p>Det händer ganska mycket här, så vi går igenom det steg för steg.</p>
 </div>
 <div class="paragraph">
 <p>Den första raden hämtar en pekare till referensen <code>master</code>.
 JGit hämtar automatiskt den <em>faktiska</em> <code>master</code>‑refen, som ligger på <code>refs/heads/master</code>, och returnerar ett objekt som låter dig hämta information om referensen.
 Du kan få namnet (<code>.getName()</code>) och antingen målobjektet för en direkt referens (<code>.getObjectId()</code>) eller referensen som en symbolisk ref pekar på (<code>.getTarget()</code>).
-Ref‑objekt används också för att representera tagg‑refs och objekt, så du kan fråga om taggen är “peeled”, vilket betyder att den pekar på det slutliga målet i en (potentiellt lång) kedja av taggobjekt.</p>
+Ref‑objekt används också för att representera tagg‑refs och objekt, så du kan fråga om taggen är “peeled”, vilket betyder att den pekar på det slutliga målet i en (möjligen lång) kedja av taggobjekt.</p>
 </div>
 <div class="paragraph">
 <p>Den andra raden hämtar målet för <code>master</code>‑referensen, som returneras som en ObjectId‑instans.
@@ -132,12 +132,12 @@ Den tredje raden är liknande men visar hur JGit hanterar rev‑parse‑syntaxen
 </div>
 <div class="paragraph">
 <p>De nästa två raderna visar hur man laddar det råa innehållet i ett objekt.
-I det här exemplet anropar vi <code>ObjectLoader.copyTo()</code> för att strömma objektets innehåll direkt till stdout, men ObjectLoader har också metoder för att läsa typ och storlek på ett objekt, samt returnera det som en byte‑array.
+I exemplet anropar vi <code>ObjectLoader.copyTo()</code> för att strömma objektets innehåll direkt till stdout, men ObjectLoader har också metoder för att läsa typ och storlek på ett objekt, samt returnera det som en byte‑array.
 För stora objekt (där <code>.isLarge()</code> returnerar <code>true</code>) kan du anropa <code>.openStream()</code> för att få ett InputStream‑liknande objekt som kan läsa rådata utan att dra in allt i minnet på en gång.</p>
 </div>
 <div class="paragraph">
 <p>De följande raderna visar vad som krävs för att skapa en ny gren.
-Vi skapar en RefUpdate‑instans, konfigurerar vissa parametrar och anropar <code>.update()</code> för att trigga ändringen.
+Vi skapar en RefUpdate‑instans, konfigurerar vissa parametrar och anropar <code>.update()</code> för att utlösa ändringen.
 Direkt efter detta följer koden som tar bort samma gren.
 Observera att <code>.setForceUpdate(true)</code> krävs för att detta ska fungera; annars returnerar <code>.delete()</code>‑anropet <code>REJECTED</code>, och inget händer.</p>
 </div>
@@ -147,7 +147,7 @@ Denna Config‑instans använder kodförrådet vi öppnade tidigare för lokal k
 </div>
 <div class="paragraph">
 <p>Det här är bara ett litet smakprov av hela lågnivå‑API:t; det finns många fler metoder och klasser.
-Inte heller visat här är hur JGit hanterar fel, vilket sker genom undantag.
+Vi visar inte heller här hur JGit hanterar fel, vilket sker genom undantag.
 JGit‑API:er kastar ibland vanliga Java‑undantag (som <code>IOException</code>), men det finns också en uppsättning JGit‑specifika undantagstyper (som <code>NoRemoteRepositoryException</code>, <code>CorruptObjectException</code> och <code>NoMergeBaseException</code>).</p>
 </div>
 </div>
@@ -165,8 +165,8 @@ Git git = new Git(repo);</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Klassen Git har en bra uppsättning <em>builder</em>-liknande metoder på hög nivå som kan användas för att konstruera ganska komplexa beteenden.
-Låt oss titta på ett exempel – att göra något i stil med <code>git ls-remote</code>:</p>
+<p>Klassen Git har en bra uppsättning <em>builder</em>-liknande metoder på hög nivå som kan konstruera ganska komplexa beteenden.
+Här är ett exempel – att göra något i stil med <code>git ls-remote</code>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -185,7 +185,7 @@ for (Ref ref : remoteRefs) {
 <div class="paragraph">
 <p>Det här är ett vanligt mönster med Git‑klassen; metoderna returnerar ett kommandoobjekt som låter dig kedja metodanrop för att sätta parametrar, vilka körs när du anropar <code>.call()</code>.
 I det här fallet frågar vi fjärrkodförrådet <code>origin</code> efter taggar, men inte heads.
-Notera också användningen av ett <code>CredentialsProvider</code>‑objekt för autentisering.</p>
+Lägg också märke till att ett <code>CredentialsProvider</code>‑objekt används för autentisering.</p>
 </div>
 <div class="paragraph">
 <p>Många andra kommandon finns tillgängliga via Git‑klassen, inklusive men inte begränsat till <code>add</code>, <code>blame</code>, <code>commit</code>, <code>clean</code>, <code>push</code>, <code>rebase</code>, <code>revert</code> och <code>reset</code>.</p>

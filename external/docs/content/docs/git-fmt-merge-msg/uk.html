@@ -98,17 +98,17 @@ headings:
 <dl>
 <dt class="hdlist1" id="git-fmt-merge-msg-spanclasssynopsiscodemergebranchdesccodespan"> <a class="anchor" href="#git-fmt-merge-msg-mergebranchdesc"></a> <a class="anchor" href="#git-fmt-merge-msg-spanclasssynopsiscodemergebranchdesccodespan"></a><span class='synopsis'><code>merge.branchdesc</code></span> </dt>
 <dd>
-<p>Окрім назв гілок, заповніть повідомлення журналу текстом опису гілок, пов’язаним із ними. Значення за замовчуванням – false.</p>
+<p>Окрім назв гілок, заповнювати повідомлення журналу текстом опису гілок, повʼязаним із ними. Стандартне значення — false.</p>
 </dd>
 <dt class="hdlist1" id="git-fmt-merge-msg-spanclasssynopsiscodemergelogcodespan"> <a class="anchor" href="#git-fmt-merge-msg-mergelog"></a> <a class="anchor" href="#git-fmt-merge-msg-spanclasssynopsiscodemergelogcodespan"></a><span class='synopsis'><code>merge.log</code></span> </dt>
 <dd>
-<p>Окрім назв гілок, заповніть повідомлення журналу щонайбільше вказаною кількістю однорядкових описів з фактичних комітів, що об&#8217;єднуються. За замовчуванням встановлено значення false, а true є синонімом 20.</p>
+<p>Окрім назв гілок, заповнювати повідомлення журналу щонайбільше вказаною кількістю однорядкових описів з фактичних комітів, що обʼєднуються. Станадртне значення — false, а true є синонімом 20.</p>
 </dd>
 <dt class="hdlist1" id="git-fmt-merge-msg-spanclasssynopsiscodemergesuppressDestcodespan"> <a class="anchor" href="#git-fmt-merge-msg-mergesuppressDest"></a> <a class="anchor" href="#git-fmt-merge-msg-spanclasssynopsiscodemergesuppressDestcodespan"></a><span class='synopsis'><code>merge.suppressDest</code></span> </dt>
 <dd>
-<p>Додаючи глобальний об&#8217;єкт, який відповідає назвам гілок інтеграції, до цієї багатозначної змінної конфігурації, повідомлення про злиття за замовчуванням, обчислене для злиття в ці гілки інтеграції, пропускатиме "into <em>&lt;назва-гілки&gt;</em>" у своєму заголовку.</p>
+<p>Якщо додати до цієї багатозначної конфігураційної змінної шаблон, що відповідає назвам гілок інтеграції, у титулі стандартного повідомлення про злиття, яке генерується під час злиття в ці гілки інтеграції, буде опущено фрагмент «into <em>&lt;branch-name&gt;</em>».</p>
 <div class="paragraph">
-<p>Елемент із порожнім значенням можна використовувати для очищення списку глобусів, накопичених з попередніх записів конфігурації. Якщо змінна <span class='synopsis'><code>merge.suppressDest</code></span> не визначена, для зворотної сумісності використовується значення <span class='synopsis'><code>master</code></span> за замовчуванням.</p>
+<p>Елемент із порожнім значенням можна використовувати для очищення списку шаблонів, накопичених з попередніх записів конфігурації. Якщо змінна <span class='synopsis'><code>merge.suppressDest</code></span> не визначена, для зворотної сумісності стандартно використовується значення <span class='synopsis'><code>master</code></span>.</p>
 </div>
 </dd>
 </dl>

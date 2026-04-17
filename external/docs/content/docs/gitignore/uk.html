@@ -20,8 +20,8 @@ headings:
   id: _формат_визначного_шаблону
 - text: КОНФІГУРАЦІЯ
   id: _конфігурація
-- text: НОТАТКИ
-  id: _нотатки
+- text: ПРИМІТКИ
+  id: _примітки
 - text: ПРИКЛАДИ
   id: _приклади
 - text: ДИВ. ТАКОЖ
@@ -129,7 +129,7 @@ headings:
 </ul>
 </div>
 <div class="paragraph">
-<p>Дві послідовні зірочки ("**") у шаблонах, що збігаються з повним шляхом, можуть мати спеціальне значення:</p>
+<p>Дві зірочки поспіль («<span class='synopsis'><code>**</code></span>») у виразах, що порівнюються з повним іменем шляху, можуть мати особливе значення:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -140,7 +140,7 @@ headings:
 <p>Заключний фрагмент "<span class='synopsis'><code>/**</code></span>" відповідає всьому всередині. Наприклад, "<span class='synopsis'><code>abc/**</code></span>" відповідає всім файлам у каталозі "<span class='synopsis'><code>abc</code></span>", відносно розташування файлу <span class='synopsis'><code>.gitignore</code></span>, з нескінченною глибиною.</p>
 </li>
 <li>
-<p>Слеш-риска, за якою слідують дві послідовні зірочки, а потім ще одна скісну риска, відповідає нулю або більше каталогам. Наприклад, "<span class='synopsis'><code>a/**/b</code></span>" відповідає "<span class='synopsis'><code>a/b</code></span>", "<span class='synopsis'><code>a/x/b</code></span>", "<span class='synopsis'><code>a/x/y/b</code></span>" тощо.</p>
+<p>Скісна риска, за якою йдуть дві зірочки поспіль, а потім ще одна скісна риска, відповідає нулю або більше тек. Наприклад, «<span class='synopsis'><code>a/**/b</code></span>» збігається з «<span class='synopsis'><code>a/b</code></span>», «<span class='synopsis'><code>a/x/b</code></span>», «<span class='synopsis'><code>a/x/y/b</code></span>» тощо.</p>
 </li>
 <li>
 <p>Інші послідовні зірочки вважаються звичайними зірочками та збігатимуться згідно з попередніми правилами.</p>
@@ -158,7 +158,7 @@ headings:
 </div>
 </div>
 <div class="sect1">
-<h2 id="_нотатки"><a class="anchor" href="#_нотатки"></a>НОТАТКИ</h2>
+<h2 id="_примітки"><a class="anchor" href="#_примітки"></a>ПРИМІТКИ</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Мета файлів gitignore полягає в тому, щоб певні файли, які не відстежуються Git, залишалися невідстежуваними.</p>

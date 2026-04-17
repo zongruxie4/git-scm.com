@@ -27,7 +27,7 @@ CGI:t läser sökväg och huvudrader som skickas av <code>git fetch</code> eller
 Om CGI:t ser att klienten är smart kommunicerar den smart, annars faller den tillbaka till det dumma läget (så att äldre klienter fortfarande kan läsa).</p>
 </div>
 <div class="paragraph">
-<p>Låt oss gå igenom en enkel uppsättning.
+<p>Vi går igenom en enkel uppsättning.
 Vi använder Apache som CGI-server.
 Om du inte har Apache kan du installera det på en Linuxmaskin med något i stil med:</p>
 </div>
@@ -91,9 +91,9 @@ Du kommer också nästan säkert vilja köra allt över SSL så att data krypter
 </div>
 <div class="paragraph">
 <p>Vi går inte djupare i Apachekonfiguration, eftersom du kan använda en annan server eller ha andra autentiseringsbehov.
-Poängen är att Git levererar CGI:t <code>git-http-backend</code>, som när det anropas sköter hela förhandlingen för att skicka och ta emot data över HTTP.
+Git levererar CGI:t <code>git-http-backend</code>, som när det anropas sköter hela förhandlingen för att skicka och ta emot data över HTTP.
 Det implementerar inte autentisering i sig, men det styrs enkelt i webbserverlagret som anropar det.
-Det fungerar med nästan vilken CGI-kapabel webserver som helst, så använd den du är mest bekväm med.</p>
+Det fungerar med nästan vilken CGI-kapabel webserver som helst, så använd den du är mest van vid.</p>
 </div>
 <div class="admonitionblock note">
 <table>

@@ -19,22 +19,22 @@ title: Git - Bunta
 ---
 <h2 id="_bundling">Bunta</h2>
 <div class="paragraph">
-<p>Även om vi har gått igenom de vanliga sätten att överföra Git‑data över nätverk (HTTP, SSH, osv.) finns det faktiskt ytterligare ett sätt som inte används så ofta men kan vara riktigt användbart.</p>
+<p>Även om vi har gått igenom de vanliga sätten att överföra Git‑data över nätverk (HTTP, SSH, osv.) finns det ytterligare ett sätt som inte används så ofta men kan vara riktigt användbart.</p>
 </div>
 <div class="paragraph">
 <p>Git kan "bunta" sin data till en enda fil.
-Det kan vara användbart i olika scenarier.
+Användbart i olika scenarier.
 Kanske ligger nätverket nere och du vill skicka ändringar till dina kollegor.
 Kanske jobbar du på annan ort och har inte åtkomst till det lokala nätverket av säkerhetsskäl.
 Kanske gick ditt trådlösa nätverkskort eller ethernetkort sönder.
 Kanske har du för tillfället ingen delad server, du vill skicka någon uppdateringar via e-post och du vill inte skicka 40 incheckningar via <code>format-patch</code>.</p>
 </div>
 <div class="paragraph">
-<p>Det är här kommandot <code>git bundle</code> kan vara till hjälp.
+<p>Här kan kommandot <code>git bundle</code> vara till hjälp.
 Kommandot <code>git bundle</code> buntar ihop allt som normalt skulle skickas över tråden med kommandot <code>git push</code> i en binärfil som du kan skicka via e-post till någon eller lägga på ett USB‑minne, och sedan packa upp i ett annat kodförråd.</p>
 </div>
 <div class="paragraph">
-<p>Låt oss se ett enkelt exempel.
+<p>Här är ett enkelt exempel.
 Säg att du har ett kodförråd med två incheckningar:</p>
 </div>
 <div class="listingblock">
@@ -75,7 +75,7 @@ Om du vill att det ska kunna klonas någon annanstans bör du också lägga till
 <p>Du kan skicka filen <code>repo.bundle</code> via e-post till någon annan eller lägga den på ett USB‑minne och bära över.</p>
 </div>
 <div class="paragraph">
-<p>På andra sidan, säg att du får filen <code>repo.bundle</code> och vill arbeta med projektet.
+<p>Hos mottagaren: säg att du får filen <code>repo.bundle</code> och vill arbeta med projektet.
 Du kan klona från den binära filen till en katalog, ungefär som du skulle från en URL.</p>
 </div>
 <div class="listingblock">
@@ -125,7 +125,7 @@ c99cf5b Fourth commit - second repo
 </div>
 </div>
 <div class="paragraph">
-<p>Så nu när vi har listan över incheckningar vi vill inkludera i bunten, låt oss bunta dem.
+<p>Nu när vi har listan över incheckningar vi vill inkludera i bunten buntar vi dem.
 Vi gör det med kommandot <code>git bundle create</code>, där vi anger filnamnet vi vill att bunten ska ha och intervallet av incheckningar vi vill stoppa in.</p>
 </div>
 <div class="listingblock">
@@ -144,7 +144,7 @@ Om vi tar den och skickar den till vår partner kan hon importera den i det ursp
 </div>
 <div class="paragraph">
 <p>När hon får bunten kan hon inspektera den för att se vad den innehåller innan hon importerar den i sitt kodförråd.
-Det första kommandot är <code>git bundle verify</code>, som säkerställer att filen faktiskt är en giltig Git‑bunt och att du har alla nödvändiga anfäder för att återskapa den korrekt.</p>
+Det första kommandot är <code>git bundle verify</code>, som säkerställer att filen verkligen är en giltig Git‑bunt och att du har alla nödvändiga anfäder för att återskapa den korrekt.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -179,7 +179,7 @@ Om du vill se vilka grenar som finns i bunten och kan importeras finns också et
 </div>
 <div class="paragraph">
 <p>Underkommandot <code>verify</code> talar också om huvudena.
-Poängen är att se vad som kan dras in, så du kan använda kommandona <code>fetch</code> eller <code>pull</code> för att importera incheckningar från den här bunten.
+Det visar vad som kan dras in, och du kan använda kommandona <code>fetch</code> eller <code>pull</code> för att importera incheckningar från bunten.
 Här uppdaterar vi <code>master</code>‑grenen från bunten till en gren som heter <code>other-master</code> i vårt kodförråd:</p>
 </div>
 <div class="listingblock">

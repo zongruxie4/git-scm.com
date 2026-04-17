@@ -23,7 +23,7 @@ url: "/book/sv/v2/Anpassa-Git-Git‑krokar.html"
 <p>
 Likt många andra versionshanteringssystem har Git ett sätt att köra egna skript när vissa viktiga händelser inträffar.
 Det finns två grupper av krokar: klientsidan och serversidan.
-Krokar på klientsidan triggas av operationer som incheckning och sammanslagning, medan krokar på serversidan körs vid nätverksoperationer som att ta emot uppskickade incheckningar.
+Krokar på klientsidan utlöses av operationer som incheckning och sammanslagning, medan krokar på serversidan körs vid nätverksoperationer som att ta emot uppskickade incheckningar.
 Du kan använda dessa krokar av många olika skäl.</p>
 </div>
 <div class="sect3">
@@ -32,7 +32,7 @@ Du kan använda dessa krokar av många olika skäl.</p>
 <p>Alla krokar lagras i underkatalogen <code>hooks</code> i Git‑katalogen.
 I de flesta projekt är det <code>.git/hooks</code>.
 När du initierar ett nytt kodförråd med <code>git init</code> fyller Git krok‑katalogen med en uppsättning exempelskript, varav många är användbara i sig själva; de dokumenterar också vilka indata varje skript får.
-Alla exempel är skrivna som skalskript, med lite Perl insprängt, men alla korrekt namngivna körbara skript fungerar – du kan skriva dem i Ruby, Python eller vilket språk du nu är bekväm med.
+Alla exempel är skrivna som skalskript, med lite Perl insprängt, men alla korrekt namngivna körbara skript fungerar – du kan skriva dem i Ruby, Python eller vilket språk du är van vid.
 Om du vill använda de medföljande krok‑skripten behöver du byta namn på dem; deras filnamn slutar med <code>.sample</code>.</p>
 </div>
 <div class="paragraph">
@@ -55,7 +55,7 @@ Detta avsnitt delar in dem i krokar för incheckningsflödet, skript för e-post
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Det är viktigt att notera att krokar på klientsidan <strong>inte</strong> kopieras när du klonar ett kodförråd.
+<p>Tänk på att krokar på klientsidan <strong>inte</strong> kopieras när du klonar ett kodförråd.
 Om din avsikt med dessa skript är att upprätthålla en policy vill du sannolikt göra det på serversidan; se exemplet i <a href="{{< relurl "book/sv/v2/ch00/_an_example_git_enforced_policy" >}}">Ett exempel på Git‑upprätthållen policy</a>.</p>
 </div>
 </td>
@@ -65,7 +65,7 @@ Om din avsikt med dessa skript är att upprätthålla en policy vill du sannolik
 <div class="sect4">
 <h4 id="_krokar_för_incheckningsflödet">Krokar för incheckningsflödet</h4>
 <div class="paragraph">
-<p>De första fyra hooksen har att göra med incheckningsprocessen.</p>
+<p>De första fyra krokarna gäller incheckningsprocessen.</p>
 </div>
 <div class="paragraph">
 <p>Kroken <code>pre-commit</code> körs först, innan du ens skriver in ett incheckningsmeddelande.
@@ -78,12 +78,12 @@ Du kan till exempel kontrollera kodstil (köra <code>lint</code> eller motsvaran
 Den låter dig redigera standardmeddelandet innan författaren ser det.
 Kroken tar några parametrar: sökvägen till filen som innehåller incheckningsmeddelandet hittills, typen av incheckning och incheckningens SHA‑1 om det gäller en ändrad incheckning.
 Denna krok är i allmänhet inte användbar för normala incheckningar; snarare är den bra för incheckningar där standardmeddelandet genereras automatiskt, såsom mallade incheckningsmeddelanden, sammanslagningsincheckningar, sammanfogade incheckningar och ändrade incheckningar.
-Du kan använda den tillsammans med en incheckningsmall för att programatiskt infoga information.</p>
+Du kan använda den tillsammans med en incheckningsmall för att automatiskt infoga information.</p>
 </div>
 <div class="paragraph">
 <p>Kroken <code>commit-msg</code> tar en parameter, vilket återigen är sökvägen till en temporär fil som innehåller incheckningsmeddelandet som utvecklaren har skrivit.
-Om detta skript avslutas med en icke‑nollkod avbryter Git incheckningsprocessen, så du kan använda det för att validera projektets läge eller incheckningsmeddelandet innan incheckningen får gå igenom.
-I sista delen av det här kapitlet visar vi hur du använder denna krok för att kontrollera att incheckningsmeddelandet följer ett obligatoriskt mönster.</p>
+Om detta skript avslutas med en icke‑nollkod avbryter Git incheckningsprocessen, så du kan använda det för att kontrollera projektets läge eller incheckningsmeddelandet innan incheckningen får gå igenom.
+I sista delen av kapitlet visar vi hur du använder denna krok för att kontrollera att incheckningsmeddelandet följer ett obligatoriskt mönster.</p>
 </div>
 <div class="paragraph">
 <p>När hela incheckningsprocessen är klar körs kroken <code>post-commit</code>.
@@ -120,13 +120,13 @@ Du kan inte stoppa själva appliceringen med detta skript.</p>
 <h4 id="_other_client_hooks">Andra krokar på klientsidan</h4>
 <div class="paragraph">
 <p>Kroken <code>pre-rebase</code> körs innan du ombaserar något och kan stoppa processen genom att avslutas med en icke‑nollkod.
-Du kan använda denna krok för att förhindra ombasering av incheckningar som redan har skickats upp.
+Du kan använda denna krok för att förhindra att incheckningar som redan skickats upp ombaseras.
 Exempelkroken <code>pre-rebase</code> som Git installerar gör detta, även om den gör vissa antaganden som kanske inte matchar ditt arbetsflöde.</p>
 </div>
 <div class="paragraph">
 <p>Kroken <code>post-rewrite</code> körs av kommandon som ersätter incheckningar, såsom <code>git commit --amend</code> och <code>git rebase</code> (men inte av <code>git filter-branch</code>).
 Dess enda argument är vilket kommando som utlöste omskrivningen, och den tar emot en lista över omskrivningar på <code>stdin</code>.
-Denna krok har många av samma användningar som hooksen <code>post-checkout</code> och <code>post-merge</code>.</p>
+Denna krok har många av samma användningar som krokarna <code>post-checkout</code> och <code>post-merge</code>.</p>
 </div>
 <div class="paragraph">
 <p>Efter att du har kört en lyckad <code>git checkout</code> körs kroken <code>post-checkout</code>; du kan använda den för att ställa in din arbetskatalog korrekt för projektets miljö.
@@ -135,16 +135,16 @@ Det kan innebära att flytta in stora binärfiler som du inte vill versionshante
 <div class="paragraph">
 <p>Kroken <code>post-merge</code> körs efter en lyckad <code>merge</code>.
 Du kan använda den för att återställa data i arbetsträdet som Git inte kan spåra, såsom behörighetsdata.
-Kroken kan också validera att filer som ligger utanför Gits kontroll finns på plats, sådant du vill kopiera in när arbetsträdet förändras.</p>
+Kroken kan också kontrollera att filer som ligger utanför Gits kontroll finns på plats, sådant du vill kopiera in när arbetsträdet förändras.</p>
 </div>
 <div class="paragraph">
 <p>Kroken <code>pre-push</code> körs under <code>git push</code>, efter att fjärrreferenserna uppdaterats men innan några objekt har överförts.
 Den tar namnet och platsen för fjärrkodförrådet som parametrar, samt en lista över referenser som ska uppdateras via <code>stdin</code>.
-Du kan använda den för att validera uppsättningen referensuppdateringar innan en uppskickning sker (en icke‑nollkod avbryter uppskickningen).</p>
+Du kan använda den för att kontrollera uppsättningen referensuppdateringar innan en uppskickning sker (en icke‑nollkod avbryter uppskickningen).</p>
 </div>
 <div class="paragraph">
 <p>Git gör ibland skräpsamling som en del av sin normala drift, genom att anropa <code>git gc --auto</code>.
-Kroken <code>pre-auto-gc</code> anropas precis innan skräpsamlingen sker, och kan användas för att meddela dig att detta händer, eller för att avbryta samlingen om det inte är ett bra tillfälle.</p>
+Kroken <code>pre-auto-gc</code> anropas precis innan skräpsamlingen sker, och kan meddela dig att detta händer, eller avbryta samlingen om det inte är ett bra tillfälle.</p>
 </div>
 </div>
 </div>
@@ -153,7 +153,7 @@ Kroken <code>pre-auto-gc</code> anropas precis innan skräpsamlingen sker, och k
 <div class="paragraph">
 <p>Utöver krokar på klientsidan kan du använda ett par viktiga krokar på serversidan som systemadministratör för att upprätthålla nästan vilken policy som helst för ditt projekt.
 Dessa skript körs före och efter uppskickningar till servern.
-Pre‑hooksen kan avslutas med en icke‑nollkod när som helst för att neka uppskickningen och skriva ett felmeddelande tillbaka till klienten; du kan sätta upp en uppskickningspolicy som är så komplex som du vill.</p>
+Pre‑krokarna kan avslutas med en icke‑nollkod när som helst för att neka uppskickningen och skriva ett felmeddelande tillbaka till klienten; du kan sätta upp en uppskickningspolicy som är så komplex som du vill.</p>
 </div>
 <div class="sect4">
 <h4 id="_pre_receive"><code>pre-receive</code></h4>
@@ -175,7 +175,7 @@ Om skriptet <code>update</code> avslutas med en icke‑nollkod avslås bara den 
 <div class="sect4">
 <h4 id="_post_receive"><code>post-receive</code></h4>
 <div class="paragraph">
-<p>Kroken <code>post-receive</code> körs efter att hela processen är klar och kan användas för att uppdatera andra tjänster eller meddela användare.
+<p>Kroken <code>post-receive</code> körs efter att hela processen är klar och kan uppdatera andra tjänster eller meddela användare.
 Den tar samma stdin‑data som kroken <code>pre-receive</code>.
 Exempel är att skicka e-post till en lista, meddela en CI‑server eller uppdatera ett ärendehanteringssystem – du kan till och med analysera incheckningsmeddelanden för att se om ärenden behöver öppnas, modifieras eller stängas.
 Detta skript kan inte stoppa uppskickningsprocessen, men klienten kopplar inte ned förrän det är klart, så var försiktig om du försöker göra något som kan ta lång tid.</p>

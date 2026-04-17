@@ -20,8 +20,8 @@ url: "/book/sv/v2/Git-på-servern-Konfigurera-servern.html"
 ---
 <h2 id="_setting_up_server">Konfigurera servern</h2>
 <div class="paragraph">
-<p>Låt oss gå igenom hur du sätter upp SSH‑åtkomst på serversidan.
-I det här exemplet använder du metoden <code>authorized_keys</code> för att autentisera användare.
+<p>Vi går igenom hur du sätter upp SSH‑åtkomst på serversidan.
+I exemplet använder du metoden <code>authorized_keys</code> för att autentisera användare.
 Vi antar också att du kör en vanlig Linuxdistribution, till exempel Ubuntu.</p>
 </div>
 <div class="admonitionblock note">
@@ -90,8 +90,8 @@ Initialized empty Git repository in /srv/git/project.git/</code></pre>
 </div>
 <div class="paragraph">
 <p>Därefter kan John, Josie eller Jessica skicka den första versionen av projektet genom att lägga till kodförrådet som fjärrkodförråd och skicka en gren.
-Notera att någon måste logga in på maskinen och skapa ett bart kodförråd varje gång du vill lägga till ett projekt.
-Låt oss använda <code>gitserver</code> som värdnamn på servern där du har skapat <code>git</code>-användaren och kodförrådet.
+Observera att någon måste logga in på maskinen och skapa ett bart kodförråd varje gång du vill lägga till ett projekt.
+Vi använder <code>gitserver</code> som värdnamn på servern där du har skapat <code>git</code>-användaren och kodförrådet.
 Om du kör detta internt och har DNS som pekar <code>gitserver</code> till servern kan du i praktiken använda kommandona rakt av (förutsatt att <code>myproject</code> redan finns lokalt):</p>
 </div>
 <div class="listingblock">
@@ -158,7 +158,7 @@ Connection to gitserver closed.</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>I det här läget kan användare fortfarande använda SSH‑portvidarebefordran för att nå värdar som gitservern når.
+<p>I nuläget kan användare fortfarande använda SSH‑portvidarebefordran för att nå värdar som gitservern når.
 Om du vill förhindra det kan du redigera <code>authorized_keys</code> och lägga till följande alternativ före varje nyckel du vill begränsa:</p>
 </div>
 <div class="listingblock">

@@ -20,8 +20,8 @@ headings:
   id: _опції
 - text: ЗЛИТТЯ
   id: _злиття
-- text: РІДКІСНА ОПЛАТА ЗАКАЗУ
-  id: _рідкісна_оплата_заказу
+- text: ВИБІРКОВЕ ПЕРЕМИКАННЯ
+  id: _вибіркове_перемикання
 - text: ДИВ. ТАКОЖ
   id: _див_також
 - text: GIT
@@ -125,7 +125,7 @@ headings:
 </dd>
 <dt class="hdlist1" id="git-read-tree---no-sparse-checkout"> <a class="anchor" href="#git-read-tree---no-sparse-checkout"></a>--no-sparse-checkout </dt>
 <dd>
-<p>Вимкнути підтримку розрідженого оформлення замовлення, навіть якщо <span class='synopsis'><code>core.sparseCheckout</code></span> має значення true.</p>
+<p>Вимкнути підтримку вибіркового перемикання, навіть якщо <span class='synopsis'><code>core.sparseCheckout</code></span> має значення true.</p>
 </dd>
 <dt class="hdlist1" id="git-read-tree---empty"> <a class="anchor" href="#git-read-tree---empty"></a>--empty </dt>
 <dd>
@@ -134,7 +134,7 @@ headings:
 <dt class="hdlist1" id="git-read-tree--q"> <a class="anchor" href="#git-read-tree--q"></a>-q </dt>
 <dt class="hdlist1" id="git-read-tree---quiet"> <a class="anchor" href="#git-read-tree---quiet"></a>--quiet </dt>
 <dd>
-<p>Тихі, придушені повідомлення зворотного зв&#8217;язку.</p>
+<p>Тихий режим, повідомлення відгуку придушуються.</p>
 </dd>
 <dt class="hdlist1" id="git-read-tree-lttree-ishgt"> <a class="anchor" href="#git-read-tree-tree-ish"></a> <a class="anchor" href="#git-read-tree-lttree-ishgt"></a>&lt;tree-ish#&gt; </dt>
 <dd>
@@ -354,13 +354,13 @@ $ echo "Merge with Linus" | \
 </div>
 </div>
 <div class="sect1">
-<h2 id="_рідкісна_оплата_заказу"><a class="anchor" href="#_рідкісна_оплата_заказу"></a>РІДКІСНА ОПЛАТА ЗАКАЗУ</h2>
+<h2 id="_вибіркове_перемикання"><a class="anchor" href="#_вибіркове_перемикання"></a>ВИБІРКОВЕ ПЕРЕМИКАННЯ</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Примітка: Можливості skip-worktree у <a href='{{< relurl "docs/git-update-index/uk" >}}'>git-update-index[1]</a> та <span class='synopsis'><code>read-tree</code></span> з&#8217;явилися раніше, ніж у <a href='{{< relurl "docs/git-sparse-checkout/uk" >}}'>git-sparse-checkout[1]</a>. Користувачам рекомендується використовувати команду <span class='synopsis'><code>sparse-checkout</code></span> замість цих команд плавучості для потреб, пов&#8217;язаних зі sparse-checkout/skip-worktree. Однак, наведена нижче інформація може бути корисною для користувачів, які намагаються зрозуміти стиль шаблону, що використовується в неконусному режимі команди <span class='synopsis'><code>sparse-checkout</code></span>.</p>
 </div>
 <div class="paragraph">
-<p>«Різдке отримання» дозволяє розріджено заповнювати робочий каталог. Він використовує біт skip-worktree (див. <a href='{{< relurl "docs/git-update-index/uk" >}}'>git-update-index[1]</a>), щоб повідомити Git, чи варто переглядати файл у робочому каталозі.</p>
+<p>«Вибіркове перемикання» дозволяє вибірково заповнювати робочу теку. Воно використовує біт skip-worktree (див. <a href='{{< relurl "docs/git-update-index/uk" >}}'>git-update-index[1]</a>), щоб повідомити Git, чи варто переглядати файл у робочій теці.</p>
 </div>
 <div class="paragraph">
 <p>Команда «git read-tree» та інші команди на основі злиття («git merge», «git checkout»&#8230;&#8203;) можуть допомогти в підтримці оновлення растрової карти skip-worktree та робочого каталогу. <span class='synopsis'><code>$GIT_DIR/info/sparse-checkout</code></span> використовується для визначення растрової карти посилання skip-worktree. Коли команді «git read-tree» потрібно оновити робочий каталог, вона скидає біт skip-worktree в індексі на основі цього файлу, який використовує той самий синтаксис, що й файли .gitignore. Якщо запис відповідає шаблону в цьому файлі або запис відповідає файлу, присутньому в робочому дереві, тоді skip-worktree не буде встановлено для цього запису. В іншому випадку буде встановлено skip-worktree.</p>
@@ -378,7 +378,7 @@ $ echo "Merge with Linus" | \
 </div>
 </div>
 <div class="paragraph">
-<p>Ще одна складна річ — це повне перезаповнення робочого каталогу, коли вам більше не потрібне розріджене отримання. Ви не можете просто вимкнути "розріджене отримання", оскільки біти skip-worktree все ще знаходяться в індексі, а ваш робочий каталог все ще розріджено заповнений. Вам слід перезаповнити робочий каталог вмістом файлу <span class='synopsis'><code>$GIT_DIR/info/sparse-checkout</code></span> наступним чином:</p>
+<p>Ще одна складна річ — це повне перезаповнення робочої теки, коли вам більше не потрібне вибіркове перемикання. Ви не можете просто вимкнути «вибіркове перемикання» оскільки біти skip-worktree все ще знаходяться в індексі, а ваша робоча тека все ще є вибірково заповненою. Вам слід перезаповнити робочу теку вмістом файлу <span class='synopsis'><code>$GIT_DIR/info/sparse-checkout</code></span> наступним чином:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -386,7 +386,7 @@ $ echo "Merge with Linus" | \
 </div>
 </div>
 <div class="paragraph">
-<p>Тоді ви можете вимкнути розріджене оформлення. Підтримка розрідженого оформлення в <em>git read-tree</em> та подібних командах вимкнена за замовчуванням. Вам потрібно ввімкнути <span class='synopsis'><code>core.sparseCheckout</code></span>, щоб мати підтримку розрідженого оформлення.</p>
+<p>Тоді ви можете вимкнути вибіркове перемикання. Підтримка вибіркового перемикання в <em>git read-tree</em> та подібних командах стандартно вимкнена. Вам потрібно ввімкнути <span class='synopsis'><code>core.sparseCheckout</code></span>, щоб мати підтримку вибіркового перемикання.</p>
 </div>
 </div>
 </div>

@@ -173,9 +173,9 @@ headings:
 <dd>
 <p>不将新创建的 <span class='synopsis'><code>HEAD</code></span> 指向克隆仓库的 <span class='synopsis'><code>HEAD</code></span> 所指向的分支，而是指向 <em>&lt;分支名&gt;</em> 分支。在非裸仓库中，这是将被检出的分支。 <span class='synopsis'><code>--branch</code></span> 也可以使用标签并在生成的仓库中的提交时分离 <span class='synopsis'><code>HEAD</code></span>。</p>
 </dd>
-<dt class="hdlist1" id="git-clone-spanclasssynopsiscode--revisioncodeemltrevgtemspan"> <a class="anchor" href="#git-clone---revisionrev"></a> <a class="anchor" href="#git-clone-spanclasssynopsiscode--revisioncodeemltrevgtemspan"></a><span class='synopsis'><code>--revision=</code><em>&lt;rev&gt;</em></span> </dt>
+<dt class="hdlist1" id="git-clone-spanclasssynopsiscode--revisioncodeemltgtemspan"> <a class="anchor" href="#git-clone---revision"></a> <a class="anchor" href="#git-clone-spanclasssynopsiscode--revisioncodeemltgtemspan"></a><span class='synopsis'><code>--revision=</code><em>&lt;版本&gt;</em></span> </dt>
 <dd>
-<p>Create a new repository, and fetch the history leading to the given revision <em>&lt;rev&gt;</em> (and nothing else), without making any remote-tracking branch, and without making any local branch, and detach <span class='synopsis'><code>HEAD</code></span> to <em>&lt;rev&gt;</em>. The argument can be a ref name (e.g. <span class='synopsis'><code>refs/heads/main</code></span> or <span class='synopsis'><code>refs/tags/v1.0</code></span>) that peels down to a commit, or a hexadecimal object name. This option is incompatible with <span class='synopsis'><code>--branch</code></span> and <span class='synopsis'><code>--mirror</code></span>.</p>
+<p>创建一个新的仓库，并获取直至 <em>&lt;版本&gt;</em> 的历史。它不会创建任何远程跟踪分支、任何本地分支，并将 <span class='synopsis'><code>HEAD</code></span> 分离到 <em>&lt;版本&gt;</em>。该参数可以为指向提交的引用（例如`refs/heads/main`，<span class='synopsis'><code>refs/tags/v1.0</code></span>），或者是一个十六进制对象名称。此选项与 <span class='synopsis'><code>--branch</code></span> 和 <span class='synopsis'><code>--mirror</code></span> 不兼容。</p>
 </dd>
 <dt class="hdlist1" id="git-clone-spanclasssynopsiscode-ucodespanemltgtem"> <a class="anchor" href="#git-clone--u"></a> <a class="anchor" href="#git-clone-spanclasssynopsiscode-ucodespanemltgtem"></a><span class='synopsis'><code>-u</code></span> <em>&lt;上传包&gt;</em> </dt>
 <dt class="hdlist1" id="git-clone-spanclasssynopsiscode--upload-packcodespanemltgtem"> <a class="anchor" href="#git-clone---upload-pack"></a> <a class="anchor" href="#git-clone-spanclasssynopsiscode--upload-packcodespanemltgtem"></a><span class='synopsis'><code>--upload-pack</code></span> <em>&lt;上传包&gt;</em> </dt>
@@ -216,7 +216,7 @@ headings:
 <dd>
 <p>Control whether or not tags will be cloned. When <span class='synopsis'><code>--no-tags</code></span> is given, the option will be become permanent by setting the <span class='synopsis'><code>remote.</code><em>&lt;remote&gt;</em><code>.tagOpt=--no-tags</code></span> configuration. This ensures that future <span class='synopsis'><code>git</code> <code>pull</code></span> and <span class='synopsis'><code>git</code> <code>fetch</code></span> won&#8217;t follow any tags. Subsequent explicit tag fetches will still work (see <a href='{{< relurl "docs/git-fetch/zh_HANS-CN" >}}'>git-fetch[1]</a>).</p>
 <div class="paragraph">
-<p>By default, tags are cloned and passing <span class='synopsis'><code>--tags</code></span> is thus typically a no-op, unless it cancels out a previous <span class='synopsis'><code>--no-tags</code></span>.</p>
+<p>在默认情况下，标签会被克隆，因此传递 <span class='synopsis'><code>--tags</code></span> 没有效果，除非它取消了之前的 <span class='synopsis'><code>--no-tags</code></span> 选项。</p>
 </div>
 <div class="paragraph">
 <p>可以与 <span class='synopsis'><code>--single-branch</code></span> 结合使用，以克隆和维护除单个克隆分支外没有其他引用的分支。这在例如维护某些仓库的默认分支的最小克隆以进行搜索索引时有用。</p>
@@ -356,7 +356,7 @@ headings:
 </ul>
 </div>
 <div class="paragraph">
-<p>These two syntaxes are mostly equivalent, except the former implies <span class='synopsis'><code>--local</code></span> option.</p>
+<p>这两种语法几乎是等效的，除了前者隐式使用了 <span class='synopsis'><code>--local</code></span> 选项。</p>
 </div>
 <div class="paragraph">
 <p><span class='synopsis'><code>git</code> <code>clone</code></span>、<span class='synopsis'><code>git</code> <code>fetch</code></span> 和 <span class='synopsis'><code>git</code> <code>pull</code></span>（但不包括 <span class='synopsis'><code>git</code> <code>push</code></span>）也会接受合适的捆绑包文件。参见 <a href='{{< relurl "docs/git-bundle/zh_HANS-CN" >}}'>git-bundle[1]</a>。</p>

@@ -26,7 +26,7 @@ Den andra delen av kapitlet beskriver hur du migrerar ditt projekt till Git frå
 <div class="paragraph">
 <p>
 Git ger utvecklare en så bra upplevelse att många har lärt sig att använda det på sin arbetsstation, även om resten av teamet använder ett annat VCS.
-Det finns ett antal sådana adaptrar, kallade “bryggor”.
+Det finns flera sådana adaptrar, kallade “bryggor”.
 Här går vi igenom de du troligast stöter på i praktiken.</p>
 </div>
 <div class="sect3">
@@ -52,8 +52,8 @@ Subversion‑bryggan är inkörsporten till DVCS‑världen.</p>
 Det har ganska många underkommandon, så vi visar de vanligaste medan vi går igenom några enkla arbetsflöden.</p>
 </div>
 <div class="paragraph">
-<p>Det är viktigt att notera att när du använder <code>git svn</code> så interagerar du med Subversion, som fungerar på ett helt annat sätt än Git.
-Även om du <strong>kan</strong> göra lokala grenar och sammanslagningar är det generellt bäst att hålla historiken så linjär som möjligt genom att ombasera ditt arbete och undvika att samtidigt arbeta mot ett Git‑fjärrkodförråd.</p>
+<p>Tänk på att när du använder <code>git svn</code> så interagerar du med Subversion, som fungerar på ett helt annat sätt än Git.
+Även om du <strong>kan</strong> göra lokala grenar och sammanslagningar är det i allmänhet bäst att hålla historiken så linjär som möjligt genom att ombasera ditt arbete och undvika att samtidigt arbeta mot ett Git‑fjärrkodförråd.</p>
 </div>
 <div class="paragraph">
 <p>Skriv inte om historiken och försök skicka på nytt, och skicka inte upp till ett parallellt Git‑kodförråd för att samarbeta med andra Git‑utvecklare samtidigt.
@@ -177,9 +177,9 @@ Följande kommando är likvärdigt:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Notera hur det här verktyget hanterar Subversion‑taggar som fjärrreferenser.
+<p>Lägg märke till hur verktyget hanterar Subversion‑taggar som fjärrreferenser.
 
-Låt oss titta närmare med Git‑lågnivåkommandot <code>show-ref</code>:</p>
+Vi tittar närmare med Git‑lågnivåkommandot <code>show-ref</code>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -244,7 +244,7 @@ Resetting to the latest refs/remotes/origin/trunk</code></pre>
 <div class="paragraph">
 <p>Det här tar alla dina lokala incheckningar ovanpå Subversion-koden, gör en Subversion-incheckning för var och en och skriver sedan om de lokala Git-incheckningarna med en unik identifierare.
 Det är viktigt, eftersom alla SHA-1-kontrollsummor för dina incheckningar ändras.
-Delvis av den anledningen är det ingen bra idé att arbeta samtidigt med Git‑baserade fjärrversioner av dina projekt parallellt med en Subversion‑server.
+Delvis av den anledningen bör du inte arbeta samtidigt med Git‑baserade fjärrversioner av dina projekt parallellt med en Subversion‑server.
 Om du tittar på den senaste incheckningen kan du se den nya <code>git-svn-id</code> som lagts till:</p>
 </div>
 <div class="listingblock">
@@ -260,7 +260,7 @@ Date:   Thu Jul 24 03:08:36 2014 +0000
 </div>
 </div>
 <div class="paragraph">
-<p>Notera att SHA‑1‑kontrollsumman som ursprungligen började med <code>4af61fd</code> när du checkade in nu börjar med <code>95e0222</code>.
+<p>Observera att SHA‑1‑kontrollsumman som ursprungligen började med <code>4af61fd</code> när du checkade in nu börjar med <code>95e0222</code>.
 Om du vill skicka till både en Git‑server och en Subversion‑server måste du skicka (<code>dcommit</code>) till Subversion‑servern först, eftersom den åtgärden ändrar din incheckningsdata.</p>
 </div>
 </div>
@@ -344,7 +344,7 @@ First, rewinding head to replay your work on top of it...</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Det är viktigt att komma ihåg, eftersom resultatet kan bli ett projekttillstånd som inte fanns på någon av era datorer vid uppskickning.
+<p>Kom ihåg detta, eftersom resultatet kan bli ett projekttillstånd som inte fanns på någon av era datorer vid uppskickning.
 Om ändringarna är inkompatibla men inte i konflikt kan du få problem som är svåra att felsöka.
 Till skillnad från en Git-server kan du i Git testa hela tillståndet lokalt innan publicering, medan du i SVN inte kan vara säker på att tillstånden före och efter incheckning är identiska.</p>
 </div>
@@ -370,9 +370,9 @@ Om du har lokala ändringar måste du antingen lägga undan arbetet med <code>gi
 <div class="sect4">
 <h4 id="_problem_med_gitgrenar">Problem med Git‑grenar</h4>
 <div class="paragraph">
-<p>När du har blivit bekväm med ett Git‑arbetsflöde skapar du sannolikt ämnesgrenar, gör arbete på dem och sammanfogar dem sedan.
+<p>När du har blivit van vid ett Git‑arbetsflöde skapar du sannolikt ämnesgrenar, gör arbete på dem och sammanfogar dem sedan.
 Om du skickar upp till en Subversion‑server via <code>git svn</code> kan du vilja ombasera ditt arbete till en enda gren varje gång i stället för att sammanfoga grenar.
-Anledningen till att föredra ombasering är att Subversion har en linjär historik och inte hanterar sammanslagningar som Git gör, så <code>git svn</code> följer bara den första föräldern när den konverterar ögonblicksbilderna till Subversion‑incheckningar.</p>
+Ombasering passar bättre eftersom Subversion har en linjär historik och inte hanterar sammanslagningar som Git gör, så <code>git svn</code> följer bara den första föräldern när den konverterar ögonblicksbilderna till Subversion‑incheckningar.</p>
 </div>
 <div class="paragraph">
 <p>Anta att din historik ser ut så här: du skapade en gren <code>experiment</code>, gjorde två incheckningar och sammanfogade dem sedan tillbaka till <code>master</code>.
@@ -428,7 +428,7 @@ r91 = f1b64a3855d3c8dd84ee0ef10fa89d27f1584302 (refs/remotes/origin/opera)</code
 </div>
 <div class="paragraph">
 <p>Det här motsvarar Subversion‑kommandot <code>svn copy trunk branches/opera</code> och arbetar mot Subversion‑servern.
-Det är viktigt att notera att det inte växlar till den grenen; om du checkar in nu kommer incheckningen att hamna i <code>trunk</code> på servern, inte <code>opera</code>.</p>
+Tänk på att det inte växlar till den grenen; om du checkar in nu kommer incheckningen att hamna i <code>trunk</code> på servern, inte <code>opera</code>.</p>
 </div>
 </div>
 <div class="sect4">
@@ -461,7 +461,7 @@ För att undvika problem bör du ta bort den lokala grenen (i detta fall <code>o
 <div class="sect4">
 <h4 id="_subversion_kommandon">Subversion-kommandon</h4>
 <div class="paragraph">
-<p>Verktygsuppsättningen <code>git svn</code> ger ett antal kommandon som underlättar övergången till Git genom att erbjuda funktionalitet som liknar det du hade i Subversion.
+<p>Verktygsuppsättningen <code>git svn</code> ger flera kommandon som underlättar övergången till Git genom att erbjuda funktionalitet som liknar det du hade i Subversion.
 Här är några kommandon som ger dig det Subversion brukade ge.</p>
 </div>
 <div class="sect5">
@@ -590,7 +590,7 @@ Du kan till och med vilja lägga till en <code>pre-receive</code>‑krok som kon
 </div>
 <div class="paragraph">
 <p>Om du följer dessa riktlinjer kan arbete mot en Subversion‑server bli mer uthärdligt.
-Men om det är möjligt att flytta till en riktig Git‑server ger det teamet mycket mer.</p>
+Men om det går att flytta till en riktig Git‑server ger det teamet mycket mer.</p>
 </div>
 </div>
 </div>
@@ -600,12 +600,12 @@ Men om det är möjligt att flytta till en riktig Git‑server ger det teamet my
 <p>
 
 DVCS‑världen är större än bara Git.
-Faktum är att det finns många andra system i det här området, vart och ett med sin egen syn på hur distribuerad versionshantering ska fungera.
+Det finns faktiskt många andra system i det här området, vart och ett med sin egen syn på hur distribuerad versionshantering ska fungera.
 Förutom Git är Mercurial det mest populära, och de två är mycket lika på många sätt.</p>
 </div>
 <div class="paragraph">
-<p>Den goda nyheten, om du föredrar Gits klientbeteende men arbetar med ett projekt vars källkod hanteras med Mercurial, är att det finns ett sätt att använda Git som klient mot ett Mercurial‑värdat kodförråd.
-Eftersom Git kommunicerar med serverkodförråd via fjärrkodförråd är det ingen överraskning att den här bryggan är implementerad som en fjärrhjälpare.
+<p>Om du föredrar Gits klientbeteende men arbetar med ett projekt vars källkod hanteras med Mercurial finns det ett sätt att använda Git som klient mot ett Mercurial‑värdat kodförråd.
+Eftersom Git kommunicerar med serverkodförråd via fjärrkodförråd, är bryggan naturligt nog implementerad som en fjärrhjälpare.
 Projektet heter git-remote-hg och finns på <a href="https://github.com/felipec/git-remote-hg" class="bare" target="_blank" rel="noopener">https://github.com/felipec/git-remote-hg</a>.</p>
 </div>
 <div class="sect4">
@@ -674,8 +674,8 @@ Eftersom Git och Mercurial båda är utformade för att varje klient ska ha en f
 </div>
 <div class="paragraph">
 <p>Kommandot <code>log</code> visar två incheckningar, där den senaste pekas ut av en hel svärm av referenser.
-Det visar sig att några av dem inte finns där.
-Låt oss titta på vad som verkligen ligger i <code>.git</code>‑katalogen:</p>
+Några av dem finns faktiskt inte där.
+Vi tittar på vad som verkligen ligger i <code>.git</code>‑katalogen:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -700,14 +700,14 @@ Låt oss titta på vad som verkligen ligger i <code>.git</code>‑katalogen:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Git‑fjärrkodförråd-hg försöker göra saker mer idiomatiska för Git, men under huven hanterar det den konceptuella mappningen mellan två något olika system.
+<p>Git‑fjärrkodförråd-hg försöker anpassa saker till Git, men internt hanterar det den underliggande kopplingen mellan två något olika system.
 Katalogen <code>refs/hg</code> är där de faktiska fjärrreferenserna lagras.
 Till exempel är <code>refs/hg/origin/branches/default</code> en Git‑reffil som innehåller SHA‑1:an som börjar med “ac7955c”, vilket är incheckningen som <code>master</code> pekar på.
-Så katalogen <code>refs/hg</code> är lite som ett låtsas‑<code>refs/remotes/origin</code>, men med den extra distinktionen mellan bokmärken och grenar.</p>
+Så katalogen <code>refs/hg</code> är lite som ett låtsas‑<code>refs/remotes/origin</code>, men med den extra skillnaden mellan bokmärken och grenar.</p>
 </div>
 <div class="paragraph">
-<p>Filen <code>notes/hg</code> är startpunkten för hur git-remote-hg mappar Git‑incheckningshashar till Mercurial‑ändringsuppsättnings‑ID:n.
-Låt oss utforska lite:</p>
+<p>Filen <code>notes/hg</code> är startpunkten för hur git-remote-hg kopplar Git‑incheckningshashar till Mercurial‑ändringsuppsättnings‑ID:n.
+Vi utforskar lite:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -735,11 +735,11 @@ $ git cat-file -p ac9117f
 När vi gräver oss ner till ett av trädobjekten hittar vi inuti en blob som heter “ac9117f” (SHA‑1‑hashen för incheckningen som <code>master</code> pekar på), med innehållet “0a04b98” (vilket är ID:t för Mercurial‑ändringsuppsättningen längst fram på grenen <code>default</code>).</p>
 </div>
 <div class="paragraph">
-<p>Den goda nyheten är att vi för det mesta inte behöver bekymra oss om allt detta.
+<p>I praktiken behöver vi sällan bekymra oss om allt detta.
 Det typiska arbetsflödet skiljer sig inte särskilt mycket från att arbeta med ett Git‑fjärrkodförråd.</p>
 </div>
 <div class="paragraph">
-<p>Det finns en sak till vi bör ta hand om innan vi fortsätter: ignoreringsregler.
+<p>En sak till behöver ordnas innan vi fortsätter: ignoreringsregler.
 Mercurial och Git använder en mycket liknande mekanism för detta, men du vill sannolikt inte checka in en <code>.gitignore</code>‑fil i ett Mercurial‑kodförråd.
 Lyckligtvis har Git ett sätt att ignorera filer lokalt i ett kodförråd på disk, och Mercurial‑formatet är kompatibelt med Git, så du behöver bara kopiera det:</p>
 </div>
@@ -755,7 +755,7 @@ Lyckligtvis har Git ett sätt att ignorera filer lokalt i ett kodförråd på di
 <div class="sect4">
 <h4 id="_arbetsflöde">Arbetsflöde</h4>
 <div class="paragraph">
-<p>Låt oss anta att vi har gjort lite arbete och gjort några incheckningar på grenen <code>master</code>, och att du är redo att skicka det till fjärrkodförrådet.
+<p>Anta att vi har gjort lite arbete och gjort några incheckningar på grenen <code>master</code>, och att du är redo att skicka det till fjärrkodförrådet.
 Så här ser vårt kodförråd ut just nu:</p>
 </div>
 <div class="listingblock">
@@ -769,7 +769,7 @@ Så här ser vårt kodförråd ut just nu:</p>
 </div>
 <div class="paragraph">
 <p>Vår gren <code>master</code> ligger två incheckningar före <code>origin/master</code>, men de två incheckningarna finns bara på vår lokala maskin.
-Låt oss se om någon annan har gjort viktigt arbete samtidigt:</p>
+Vi ser om någon annan har gjort viktigt arbete samtidigt:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -791,7 +791,7 @@ $ git log --oneline --graph --decorate --all
 <div class="paragraph">
 <p>Eftersom vi använde flaggan <code>--all</code> ser vi “notes”‑referenserna som används internt av git-remote-hg, men vi kan ignorera dem.
 Resten är vad vi förväntade oss; <code>origin/master</code> har gått framåt med en incheckning, och vår historik har nu divergerat.
-Till skillnad från de andra systemen vi arbetar med i det här kapitlet klarar Mercurial av sammanslagningar, så vi behöver inte göra något avancerat.</p>
+Till skillnad från de andra systemen vi arbetar med i kapitlet klarar Mercurial av sammanslagningar, så vi behöver inte göra något avancerat.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -875,7 +875,7 @@ summary:     More documentation</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Notera raden som börjar med “branch”.
+<p>Lägg märke till raden som börjar med “branch”.
 Git kan egentligen inte replikera detta (och behöver inte heller; båda typerna av grenar kan representeras som en Git‑referens), men git-remote-hg behöver förstå skillnaden eftersom Mercurial gör det.</p>
 </div>
 <div class="paragraph">
@@ -923,7 +923,7 @@ o  0   0a04b987be5a   2005-08-26 01:20 -0700   mpm
 </div>
 </div>
 <div class="paragraph">
-<p>Notera den nya taggen <code>[featureA]</code> på revision 5.
+<p>Lägg märke till den nya taggen <code>[featureA]</code> på revision 5.
 De fungerar exakt som Git‑grenar på Git‑sidan, med ett undantag: du kan inte ta bort ett bokmärke från Git‑sidan (detta är en begränsning i fjärrhjälparen).</p>
 </div>
 <div class="paragraph">
@@ -979,7 +979,7 @@ o    changeset:   5:bd5ac26f11f9
 </div>
 <div class="paragraph">
 <p>Från Git‑sidan är arbetet med båda dessa grenstilar detsamma: växla bara till, checka in, uppdatera, sammanfoga, dra och skicka som du brukar.
-En sak du bör känna till är att Mercurial inte stödjer omskrivning av historik, bara tillägg.
+En sak du bör känna till är att Mercurial inte kan skriva om historiken, bara lägga till.
 Så här ser vårt Mercurial‑kodförråd ut efter en interaktiv ombasering och en tvångsuppskickning:</p>
 </div>
 <div class="listingblock">
@@ -1028,7 +1028,7 @@ Det kan vara <strong>mycket</strong> förvirrande för dina teamkamrater som anv
 <h4 id="_sammanfattning_för_mercurial">Sammanfattning för Mercurial</h4>
 <div class="paragraph">
 <p>Git och Mercurial är tillräckligt lika för att arbete över gränsen ska vara ganska smärtfritt.
-Om du undviker att ändra historik som har lämnat din maskin (som generellt rekommenderas) kanske du inte ens märker att den andra änden är Mercurial.</p>
+Om du undviker att ändra historik som har lämnat din maskin (som i allmänhet rekommenderas) kanske du inte ens märker att den andra änden är Mercurial.</p>
 </div>
 </div>
 </div>
@@ -1038,14 +1038,14 @@ Om du undviker att ändra historik som har lämnat din maskin (som generellt rek
 <p>
 
 Perforce är ett mycket populärt versionshanteringssystem i organisationsmiljöer.
-Det har funnits sedan 1995, vilket gör det till det äldsta systemet som behandlas i det här kapitlet.
+Det har funnits sedan 1995, vilket gör det till det äldsta systemet som behandlas i kapitlet.
 Därför är det utformat med sin tids begränsningar; det antar att du alltid är uppkopplad mot en enda central server och att bara en version hålls på den lokala disken.
-För tydlighetens skull är dess funktioner och begränsningar väl lämpade för flera specifika problem, men det finns många projekt som använder Perforce där Git faktiskt skulle fungera bättre.</p>
+För tydlighetens skull är dess funktioner och begränsningar väl lämpade för flera specifika problem, men det finns många projekt som använder Perforce där Git egentligen skulle fungera bättre.</p>
 </div>
 <div class="paragraph">
-<p>Det finns två alternativ om du vill kombinera användningen av Perforce och Git.
+<p>Det finns två alternativ om du vill använda både Perforce och Git.
 Det första vi går igenom är “Git Fusion”‑bryggan från Perforces skapare, som låter dig exponera underträd i din Perforce‑depå som läs‑ och skrivbara Git‑kodförråd.
-Det andra är git-p4, en brygga på klientsidan som låter dig använda Git som Perforce‑klient utan att kräva någon omkonfigurering av Perforce‑servern.</p>
+Det andra är git-p4, en brygga på klientsidan som låter dig använda Git som Perforce‑klient utan att behöva konfigurera om Perforce‑servern.</p>
 </div>
 <div class="sect4">
 <h4 id="_p4_git_fusion">Git Fusion</h4>
@@ -1060,7 +1060,7 @@ Perforce tillhandahåller en produkt som heter Git Fusion (tillgänglig på <a h
 Du kan hämta den virtuella maskinavbildningen från <a href="https://www.perforce.com/downloads" class="bare" target="_blank" rel="noopener">https://www.perforce.com/downloads</a>, och när nedladdningen är klar importerar du den i din favorit‑virtualiseringsmjukvara (vi använder VirtualBox).</p>
 </div>
 <div class="paragraph">
-<p>När du startar maskinen första gången ber den dig att anpassa lösenordet för tre Linux‑användare (<code>root</code>, <code>perforce</code> och <code>git</code>) samt ange ett instansnamn som kan användas för att skilja installationen från andra på samma nätverk.
+<p>När du startar maskinen första gången ber den dig att anpassa lösenordet för tre Linux‑användare (<code>root</code>, <code>perforce</code> och <code>git</code>) samt ange ett instansnamn som skiljer installationen från andra på samma nätverk.
 När det är klart ser du detta:</p>
 </div>
 <div class="imageblock">
@@ -1070,7 +1070,7 @@ När det är klart ser du detta:</p>
 <div class="title">Figur 169. Git Fusions uppstartsskärm för den virtuella maskinen</div>
 </div>
 <div class="paragraph">
-<p>Du bör notera IP‑adressen som visas här; vi använder den senare.
+<p>Du bör lägga märke till IP‑adressen som visas här; vi använder den senare.
 Nästa steg är att skapa en Perforce‑användare.
 Välj alternativet “Login” längst ner och tryck enter (eller SSH:a till maskinen) och logga in som <code>root</code>.
 Använd sedan dessa kommandon för att skapa en användare:</p>
@@ -1123,7 +1123,7 @@ Här klonar vi över HTTPS, med användaren <code>john</code> som vi skapade ova
 <h6 id="_fusion_konfiguration">Fusion-konfiguration</h6>
 <div class="paragraph">
 <p>När du har installerat Git Fusion vill du justera konfigurationen.
-Det är ganska enkelt att göra med din favorit‑Perforce‑klient; mappa bara katalogen <code>//.git-fusion</code> på Perforce‑servern till din arbetskatalog.
+Det är ganska enkelt att göra med din favorit‑Perforce‑klient; koppla bara katalogen <code>//.git-fusion</code> på Perforce‑servern till din arbetskatalog.
 Filstrukturen ser ut så här:</p>
 </div>
 <div class="listingblock">
@@ -1147,9 +1147,9 @@ Filstrukturen ser ut så här:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Katalogen <code>objects</code> används internt av Git Fusion för att mappa Perforce‑objekt till Git och vice versa; du behöver inte röra något där.
-Det finns en global <code>p4gf_config</code>‑fil i den här katalogen, samt en för varje kodförråd – det är konfigurationsfilerna som avgör hur Git Fusion beter sig.
-Låt oss titta på filen i roten:</p>
+<p>Katalogen <code>objects</code> används internt av Git Fusion för att koppla Perforce‑objekt till Git och vice versa; du behöver inte röra något där.
+Det finns en global <code>p4gf_config</code>‑fil i katalogen, samt en för varje kodförråd – det är konfigurationsfilerna som avgör hur Git Fusion beter sig.
+Vi tittar på filen i roten:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1182,7 +1182,7 @@ email-case-sensitivity = no</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Vi går inte in på betydelsen av dessa flaggor här, men notera att det bara är en INI‑formaterad textfil, ungefär som Git använder för konfiguration.
+<p>Vi går inte in på betydelsen av dessa flaggor här, men lägg märke till att det bara är en INI‑formaterad textfil, ungefär som Git använder för konfiguration.
 Filen anger de globala alternativen, som sedan kan skrivas över av kodförrådsspecifika konfigurationsfiler, som <code>repos/Talkhouse/p4gf_config</code>.
 Om du öppnar denna fil ser du en <code>[@repo]</code>‑sektion med vissa inställningar som skiljer sig från de globala standarderna.
 Du ser också sektioner som ser ut så här:</p>
@@ -1198,7 +1198,7 @@ view = //depot/Talkhouse/main-dev/... ...</code></pre>
 <p>Det här är en mappning mellan en Perforce‑gren och en Git‑gren.
 Sektionen kan heta vad du vill, så länge namnet är unikt.
 <code>git-branch-name</code> låter dig omvandla en depot‑sökväg som skulle vara besvärlig i Git till ett mer vänligt namn.
-Inställningen <code>view</code> styr hur Perforce‑filer mappas in i Git‑kodförrådet med hjälp av standard‑syntax för view‑mappning.
+Inställningen <code>view</code> styr hur Perforce‑filer kopplas till Git‑kodförrådet med hjälp av standard‑syntax för view‑mappning.
 Mer än en mappning kan anges, som i detta exempel:</p>
 </div>
 <div class="listingblock">
@@ -1213,7 +1213,7 @@ view = //depot/project1/main/... project1/...
 <p>På så sätt kan du, om din normala arbetsytemappning inkluderar förändringar i katalogstrukturen, replikera det med ett Git‑kodförråd.</p>
 </div>
 <div class="paragraph">
-<p>Den sista filen vi tar upp är <code>users/p4gf_usermap</code>, som mappar Perforce‑användare till Git‑användare, och som du kanske inte ens behöver.
+<p>Den sista filen vi tar upp är <code>users/p4gf_usermap</code>, som kopplar Perforce‑användare till Git‑användare, och som du kanske inte ens behöver.
 När man konverterar från en Perforce‑ändringsuppsättning till en Git‑incheckning är Git Fusions standardbeteende att slå upp Perforce‑användaren och använda e‑postadressen och fullständiga namnet som är lagrat där i Git‑fältet för författare/incheckare.
 När man konverterar åt andra hållet är standarden att slå upp Perforce‑användaren med e‑postadressen som finns i Git‑incheckningens author‑fält och skicka in ändringsuppsättningen som den användaren (med tillhörande behörigheter).
 I de flesta fall fungerar detta alldeles utmärkt, men titta på följande mappningsfil:</p>
@@ -1228,8 +1228,8 @@ joe employeeY@example.com "Anon Y. Mouse"</code></pre>
 </div>
 <div class="paragraph">
 <p>Varje rad har formatet <code>&lt;user&gt; &lt;email&gt; "&lt;full name&gt;"</code> och skapar en användarmappning.
-De två första raderna mappar två olika e‑postadresser till samma Perforce‑användarkonto.
-Det här är användbart om du har skapat Git‑incheckningar under flera olika e‑postadresser (eller byter e‑postadress) men vill att de ska mappas till samma Perforce‑användare.
+De två första raderna kopplar två olika e‑postadresser till samma Perforce‑användarkonto.
+Det här är användbart om du har skapat Git‑incheckningar under flera olika e‑postadresser (eller byter e‑postadress) men vill att de ska kopplas till samma Perforce‑användare.
 När en Git‑incheckning skapas från en Perforce‑ändringsuppsättning används den första raden som matchar Perforce‑användaren för Git‑författarinformationen.</p>
 </div>
 <div class="paragraph">
@@ -1242,7 +1242,7 @@ Observera att e‑postadresserna och fullständiga namnen bör vara unika, om du
 <h6 id="_arbetsflöde_2">Arbetsflöde</h6>
 <div class="paragraph">
 <p>Perforce Git Fusion är en tvåvägsbrygga mellan Perforce och Git.
-Låt oss titta på hur det känns att arbeta från Git‑sidan.
+Vi tittar på hur det känns att arbeta från Git‑sidan.
 Vi antar att vi har mappat in projektet “Jam” med en konfigurationsfil som visas ovan, vilket vi kan klona så här:</p>
 </div>
 <div class="listingblock">
@@ -1273,14 +1273,14 @@ $ git log --oneline --decorate --graph --all
 </div>
 <div class="paragraph">
 <p>Första gången du gör detta kan det ta en stund.
-Det som händer är att Git Fusion konverterar alla relevanta ändringsuppsättningar i Perforce‑historiken till Git‑incheckningar.
+Git Fusion konverterar då alla relevanta ändringsuppsättningar i Perforce‑historiken till Git‑incheckningar.
 Det sker lokalt på servern, så det går relativt snabbt, men om du har mycket historik kan det ändå ta tid.
 Efterföljande uppdateringar gör inkrementell konvertering, så det känns mer som Gits egen hastighet.</p>
 </div>
 <div class="paragraph">
 <p>Som du ser liknar vårt kodförråd vilket annat Git‑kodförråd som helst.
 Det finns tre grenar, och Git har hjälpsamt skapat en lokal <code>master</code>‑gren som spårar <code>origin/master</code>.
-Låt oss göra lite arbete och skapa ett par nya incheckningar:</p>
+Vi gör lite arbete och skapar ett par nya incheckningar:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1318,9 +1318,9 @@ $ git log --oneline --decorate --graph --all
 </div>
 <div class="paragraph">
 <p>Det ser ut som att någon gjorde det!
-Du skulle inte veta det från den här vyn, men incheckningen <code>6afeb15</code> skapades faktiskt med en Perforce‑klient.
+Du skulle inte veta det från den här vyn, men incheckningen <code>6afeb15</code> skapades i själva verket med en Perforce‑klient.
 Den ser bara ut som en annan incheckning ur Gits perspektiv, vilket är precis poängen.
-Låt oss se hur Perforce‑servern hanterar en sammanslagningsincheckning:</p>
+Vi ser hur Perforce‑servern hanterar en sammanslagningsincheckning:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1348,7 +1348,7 @@ To https://10.0.1.254/Jam
 </div>
 <div class="paragraph">
 <p>Git tycker att det fungerade.
-Låt oss titta på historiken för filen <code>README</code> ur Perforces perspektiv, med hjälp av revisionsgraf‑funktionen i <code>p4v</code>:</p>
+Vi tittar på historiken för filen <code>README</code> ur Perforces perspektiv, med revisionsgraf‑funktionen i <code>p4v</code>:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1363,9 +1363,9 @@ Uppe till höger har vi en visuell graf över hur olika revisioner av filen hän
 Resten av vyn är detaljvyn för den valda revisionen (i det här fallet <code>2</code>).</p>
 </div>
 <div class="paragraph">
-<p>En sak att lägga märke till är att grafen ser exakt ut som den i Gits historik.
+<p>Lägg märke till att grafen ser exakt ut som den i Gits historik.
 Perforce hade ingen namngiven gren för att lagra incheckningarna <code>1</code> och <code>2</code>, så den skapade en “anonym”‑gren i katalogen <code>.git-fusion</code> för att hålla dem.
-Detta händer även för namngivna Git‑grenar som inte motsvarar en namngiven Perforce‑gren (och du kan senare mappa dem till en Perforce‑gren med hjälp av konfigurationsfilen).</p>
+Detta händer även för namngivna Git‑grenar som inte motsvarar en namngiven Perforce‑gren (och du kan senare koppla dem till en Perforce‑gren via konfigurationsfilen).</p>
 </div>
 <div class="paragraph">
 <p>Det mesta av detta sker bakom kulisserna, men slutresultatet är att en person i ett team kan använda Git, en annan kan använda Perforce, och ingen av dem behöver veta om den andres val.</p>
@@ -1451,7 +1451,7 @@ $ git log --oneline --all --graph --decorate
 </div>
 </div>
 <div class="paragraph">
-<p>Notera att det finns ett “p4”‑fjärrkodförråd för Perforce‑servern, men i övrigt ser allt ut som en standardklon.
+<p>Observera att det finns ett “p4”‑fjärrkodförråd för Perforce‑servern, men i övrigt ser allt ut som en standardklon.
 Det är dock lite missvisande; det finns egentligen inget fjärrkodförråd där.</p>
 </div>
 <div class="listingblock">
@@ -1467,7 +1467,7 @@ Git-p4 har skapat vissa referenser som representerar serverns tillstånd, och de
 <div class="sect5">
 <h6 id="_arbetsflöde_3">Arbetsflöde</h6>
 <div class="paragraph">
-<p>Okej, låt oss göra lite arbete.
+<p>Okej, vi gör lite arbete.
 Anta att du har gjort en del framsteg på en mycket viktig funktion och är redo att visa den för resten av teamet.</p>
 </div>
 <div class="listingblock">
@@ -1480,7 +1480,7 @@ Anta att du har gjort en del framsteg på en mycket viktig funktion och är redo
 </div>
 <div class="paragraph">
 <p>Vi har gjort två nya incheckningar som vi är redo att skicka in till Perforce‑servern.
-Låt oss se om någon annan arbetade i dag:</p>
+Vi ser om någon annan arbetade i dag:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1619,11 +1619,11 @@ $ git log --oneline --all --graph --decorate
 </div>
 </div>
 <div class="paragraph">
-<p>Resultatet motsvarar i praktiken att vi just körde <code>git push</code>, vilket ligger nära det som faktiskt hände.</p>
+<p>Resultatet motsvarar i praktiken att vi just körde <code>git push</code>, vilket ligger nära det som egentligen hände.</p>
 </div>
 <div class="paragraph">
-<p>Notera att under denna process omvandlas varje Git‑incheckning till en Perforce‑ändringsuppsättning; om du vill sammanfoga dem till en enda ändringsuppsättning kan du göra det med en interaktiv ombasering innan du kör <code>git p4 submit</code>.
-Notera också att SHA‑1‑hasharna för alla incheckningar som skickades in som ändringsuppsättningar har förändrats; detta beror på att git-p4 lägger till en rad i slutet av varje incheckning som den konverterar:</p>
+<p>Observera att under denna process omvandlas varje Git‑incheckning till en Perforce‑ändringsuppsättning; om du vill sammanfoga dem till en enda ändringsuppsättning kan du göra det med en interaktiv ombasering innan du kör <code>git p4 submit</code>.
+Lägg också märke till att SHA‑1‑hasharna för alla incheckningar som skickades in som ändringsuppsättningar har förändrats; detta beror på att git-p4 lägger till en rad i slutet av varje incheckning som den konverterar:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1639,7 +1639,7 @@ Date:   Sun Aug 31 10:31:44 2014 -0800
 </div>
 <div class="paragraph">
 <p>Vad händer om du försöker skicka in en sammanslagningsincheckning?
-Låt oss prova.
+Vi provar.
 Här är läget vi har försatt oss i:</p>
 </div>
 <div class="listingblock">
@@ -1662,7 +1662,7 @@ Här är läget vi har försatt oss i:</p>
 <p>Git‑ och Perforce‑historiken divergerar efter <code>775a46f</code>.
 Git‑sidan har två incheckningar, sedan en sammanslagningsincheckning med Perforce‑toppen, och sedan en till incheckning.
 Vi ska försöka skicka in dessa ovanpå en enda ändringsuppsättning på Perforce‑sidan.
-Låt oss se vad som skulle hända om vi försökte skicka in nu:</p>
+Vi ser vad som skulle hända om vi försökte skicka in nu:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1678,7 +1678,7 @@ Would apply
 <div class="paragraph">
 <p>Flaggan <code>-n</code> är en förkortning för <code>--dry-run</code>, som försöker rapportera vad som skulle hända om submit‑kommandot kördes på riktigt.
 I det här fallet ser det ut som att vi skulle skapa tre Perforce‑ändringsuppsättningar, som motsvarar de tre icke‑sammanfogade incheckningarna som ännu inte finns på Perforce‑servern.
-Det låter precis som vad vi vill, så låt oss se hur det går:</p>
+Det låter precis som vad vi vill, så vi ser hur det går:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -1696,7 +1696,7 @@ $ git log --oneline --all --graph --decorate
 </div>
 </div>
 <div class="paragraph">
-<p>Vår historik blev linjär, precis som om vi hade ombaserat innan vi skickade in (vilket faktiskt är exakt vad som hände).
+<p>Vår historik blev linjär, precis som om vi hade ombaserat innan vi skickade in (vilket är precis vad som hände).
 Det betyder att du kan skapa, arbeta på, kasta bort och sammanfoga grenar på Git‑sidan utan att oroa dig för att historiken på något sätt blir inkompatibel med Perforce.
 Om du kan ombasera det kan du bidra med det till en Perforce‑server.</p>
 </div>
@@ -1746,11 +1746,11 @@ $ cd project; git log --oneline --all --graph --decorate
 </div>
 </div>
 <div class="paragraph">
-<p>Notera specifikationen “@all” i depå‑sökvägen; den säger till git-p4 att klona inte bara den senaste ändringsuppsättningen för det underträdet, utan alla ändringsuppsättningar som någonsin har rört dessa sökvägar.
+<p>Lägg märke till specifikationen “@all” i depå‑sökvägen; den säger till git-p4 att klona inte bara den senaste ändringsuppsättningen för det underträdet, utan alla ändringsuppsättningar som någonsin har rört dessa sökvägar.
 Detta ligger närmare Gits klonbegrepp, men om du arbetar på ett projekt med lång historik kan det ta tid.</p>
 </div>
 <div class="paragraph">
-<p>Flaggan <code>--detect-branches</code> säger åt git-p4 att använda Perforces gren‑specifikationer för att mappa grenar till Git‑referenser.
+<p>Flaggan <code>--detect-branches</code> säger åt git-p4 att använda Perforces gren‑specifikationer för att koppla grenar till Git‑referenser.
 Om dessa mappningar inte finns på Perforce‑servern (vilket är ett helt giltigt sätt att använda Perforce) kan du tala om för git-p4 vad grenmappningarna är, och då får du samma resultat:</p>
 </div>
 <div class="listingblock">
@@ -1779,12 +1779,12 @@ Om du sammanfogar två grenar i Git och försöker skicka in den nya ändringsup
 <div class="sect4">
 <h4 id="_sammanfattning_om_git_och_perforce">Sammanfattning om Git och Perforce</h4>
 <div class="paragraph">
-<p>Git-p4 gör det möjligt att använda ett Git‑arbetsflöde med en Perforce‑server, och det fungerar ganska bra.
+<p>Med Git-p4 kan du använda ett Git‑arbetsflöde med en Perforce‑server, och det fungerar ganska bra.
 Det är dock viktigt att komma ihåg att Perforce styr källan och att du bara använder Git för att arbeta lokalt.
 Var mycket försiktig med att dela Git‑incheckningar; om du har ett fjärrkodförråd som andra använder, skicka inte in några incheckningar som inte redan har skickats in till Perforce‑servern.</p>
 </div>
 <div class="paragraph">
-<p>Om du vill blanda användningen av Perforce och Git fritt som klienter för versionshantering, och du kan övertyga serveradministratören att installera det, gör Git Fusion Git till en förstklassig versionshanteringsklient för en Perforce‑server.</p>
+<p>Om du fritt vill växla mellan Perforce och Git som versionshanteringsklienter, och du kan övertyga serveradministratören att installera det, gör Git Fusion Git till en förstklassig versionshanteringsklient för en Perforce‑server.</p>
 </div>
 </div>
 </div>

@@ -216,7 +216,7 @@ headings:
 <dd>
 <p>Для родительского каталога также учитывает изменения в дочерних подкаталогах. Обратите внимание, что при использовании <span class='synopsis'><code>cumulative</code></span> сумма процентов может превышать 100%. Поведение по умолчанию (некумулятивное) можно задать с помощью аргумента <span class='synopsis'><code>noncumulative</code></span>.</p>
 </dd>
-<dt class="hdlist1" id="git-diff-tree-emltgtem"> <a class="anchor" href="#git-diff-tree-"></a> <a class="anchor" href="#git-diff-tree-emltgtem"></a><em>&lt;число&gt;</em> </dt>
+<dt class="hdlist1" id="git-diff-tree-emltgtem"> <a class="anchor" href="#git-diff-tree-"></a> <a class="anchor" href="#git-diff-tree-emltgtem"></a><em>&lt;предел&gt;</em> </dt>
 <dd>
 <p>При использовании целочисленного значения в качестве аргумента, оно задаёт пороговое значение (по умолчанию 3%). Каталоги, изменения в которых составляют меньшую часть от общего числа изменений, чем указанный процент, не отображаются в выводе.</p>
 </dd>
@@ -270,7 +270,7 @@ headings:
 </dd>
 <dt class="hdlist1" id="git-diff-tree-spanclasssynopsiscode--no-colorcodespan"> <a class="anchor" href="#git-diff-tree---no-color"></a> <a class="anchor" href="#git-diff-tree-spanclasssynopsiscode--no-colorcodespan"></a><span class='synopsis'><code>--no-color</code></span> </dt>
 <dd>
-<p>Выключить выделение цветом при выводе списка изменений.
+<p>Отключить выделение цветом при выводе списка изменений.
 Эквивалентно <span class='synopsis'><code>--color=never</code></span>.</p>
 </dd>
 <dt class="hdlist1" id="git-diff-tree-spanclasssynopsiscode--color-movedcodecodecodeemltgtemspan"> <a class="anchor" href="#git-diff-tree---color-moved"></a> <a class="anchor" href="#git-diff-tree-spanclasssynopsiscode--color-movedcodecodecodeemltgtemspan"></a><span class='synopsis'><code>--color-moved</code>[<code>=</code><em>&lt;режим&gt;</em>]</span> </dt>
@@ -735,7 +735,7 @@ headings:
 </dd>
 <dt class="hdlist1" id="git-diff-tree---stdin"> <a class="anchor" href="#git-diff-tree---stdin"></a>--stdin </dt>
 <dd>
-<p>Когда задан параметр <span class='synopsis'><code>--stdin</code></span>, команда не принимает &lt;указатели-дерева&gt; в качестве аргументов командной строки. Вместо этого она считывает строки, содержащие либо два &lt;дерева&gt;, либо один <span class="hover-term" data-term="коммит">&lt;коммит&gt;</span>, либо список &lt;коммитов&gt; из стандартного ввода. (Используйте один пробел в качестве разделителя.)</p>
+<p>Когда задан параметр <span class='synopsis'><code>--stdin</code></span>, команда не принимает &lt;указатели-дерева&gt; в качестве аргументов командной строки. Вместо этого она считывает строки, содержащие либо два &lt;дерева&gt;, либо один &lt;коммит&gt;, либо список &lt;коммитов&gt; из стандартного ввода. (Используйте один пробел в качестве разделителя.)</p>
 <div class="paragraph">
 <p>Когда заданы два дерева, команда сравнивает первое дерево со вторым. Когда задан один коммит — коммит сравнивается с его родителями. Остальные коммиты, если заданы, используются так, как если бы они были родителями первого коммита.</p>
 </div>

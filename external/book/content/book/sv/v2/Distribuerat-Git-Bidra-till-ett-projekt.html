@@ -22,16 +22,16 @@ title: Git - Bidra till ett projekt
 <p>
 Det svåra med att beskriva hur du gör för att bidra till ett projekt är att medverkan kan ske på mängder av olika sätt.
 Tack vare Gits flexibilitet skiljer sig användningen åt, vilket gör det näst intill omöjligt att säga hur du borde göra – varje projekt arbetar på sitt sätt.
-Faktorer som påverkar hur ett projekt är organiserat är antalet aktivt involverade, överenskomna arbetsprocesser och fördelningen av behörigheter för att checka in kod.
-Det finns dock några generella riktlinjer som kan hjälpa dig att komma igång.</p>
+Faktorer som påverkar hur ett projekt är organiserat är antalet aktiva deltagare, överenskomna arbetsprocesser och hur behörigheterna för att checka in kod är fördelade.
+Det finns dock några allmänna riktlinjer som kan hjälpa dig att komma igång.</p>
 </div>
 <div class="paragraph">
-<p>För det första – hur många involverade bidrar aktivt med källkod och hur ofta?
+<p>För det första – hur många deltagare bidrar aktivt med källkod och hur ofta?
 I mindre projekt är det vanligt att ett par, tre utvecklare gör några få incheckningar om dagen, kanske ännu färre om projektet är vilande.
 I större projekt, eller organisationer för den delen, kan hundratals utvecklare arbeta aktivt med kodbasen och bidra med tusentals incheckningar varje dag.</p>
 </div>
 <div class="paragraph">
-<p>Det är viktigt att känna till ungefär hur många som arbetar aktivt i kodbasen.
+<p>Du bör känna till ungefär hur många som arbetar aktivt i kodbasen.
 Ju fler utvecklare, desto fler problem kan du stöta på för att få din kod att läggas till och integreras smidigt.
 Under tiden du arbetar med dina ändringar, eller väntar på att få dem godkända, kan ny kod göra dem icke-funktionella – eller rentav inaktuella.
 Hur kan du då göra för att din egen kodbas ska hållas uppdaterad och dina incheckningar aktuella?</p>
@@ -41,7 +41,7 @@ Hur kan du då göra för att din egen kodbas ska hållas uppdaterad och dina in
 Är det en centraliserad process, så att varje utvecklare har samma skrivrättigheter till koden på huvudgrenen?
 Har projektet en förvaltare eller integrationsansvarig som granskar alla ändringar?
 Ska alla ändringar granskas och godkännas av en annan utvecklare?
-Kommer du att vara involverad i den processen?
+Kommer du att delta i den processen?
 Eller finns det ett kvalitetssystem med testare på plats som du behöver skicka dina ändringar till först?</p>
 </div>
 <div class="paragraph">
@@ -95,7 +95,7 @@ I avsnittet <a href="{{< relurl "book/sv/v2/ch00/_rewriting_history" >}}">Skriva
 </div>
 <div class="paragraph">
 <p>Slutligen behövs en struktur för incheckningsmeddelandet.
-Med vanan att alltid skriva bra meddelanden blir användningen av – och samarbetet i – Git betydligt enklare.
+Med vanan att alltid skriva bra meddelanden blir det betydligt enklare att använda Git och samarbeta.
 Tumregeln är att dina meddelanden ska börja med en mening på max 50 tecken som sammanfattar ändringen, följt av en blank rad och en mer detaljerad beskrivning.
 Git‑projektet menar att beskrivningen bör inkludera anledningen till ändringen och en jämförelse med tidigare beteende – det är en bra riktlinje att följa.
 Det är också bra att skriva i imperativ form.
@@ -141,7 +141,7 @@ Git‑projektet har välformaterade incheckningsmeddelanden – kör <code>git l
 <td class="content">
 <div class="title">Gör som vi säger och inte som vi gör</div>
 <div class="paragraph">
-<p>För att vara helt ärliga har många av exemplen i den här boken inte särskilt välformaterade incheckningsmeddelanden; vi använder ofta <code>-m</code> efter <code>git commit</code>.</p>
+<p>För att vara helt ärliga har många av exemplen i boken inte särskilt välformaterade incheckningsmeddelanden; vi använder ofta <code>-m</code> efter <code>git commit</code>.</p>
 </div>
 <div class="paragraph">
 <p>Som sagt, gör som vi säger, inte som vi gör.</p>
@@ -376,13 +376,13 @@ To jessica@githost:simplegit.git
 <div class="paragraph">
 <p>Du arbetar ett tag (ofta i en funktionsgren) och sammanfogar arbetet i huvudgrenen när det är klart.
 När du vill dela ditt arbete uppdaterar du och sammanfogar din huvudgren med <code>origin/master</code> och skickar tillbaka din huvudgren till servern.
-Den generella arbetsprocessen ser ut så här:</p>
+Den allmänna arbetsprocessen ser ut så här:</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="{{< relurl "book/sv/v2/images/small-team-flow.png" >}}" alt="Generell arbetsprocess med Git för flera utvecklare.">
 </div>
-<div class="title">Figur 62. Generell arbetsprocess med Git för flera utvecklare</div>
+<div class="title">Figur 62. Allmän arbetsprocess med Git för flera utvecklare</div>
 </div>
 </div>
 <div class="sect3">
@@ -411,7 +411,7 @@ $ git commit -am 'Add limit to log function'
 </div>
 </div>
 <div class="paragraph">
-<p>I det här läget behöver hon dela arbetet med John, så hon skickar sin <code>featureA</code>-gren till servern.
+<p>I nuläget behöver hon dela arbetet med John, så hon skickar sin <code>featureA</code>-gren till servern.
 Jessica har inte behörighet att sammanfoga i huvudgrenen, så hon måste skicka till en separat gren för att kunna samarbeta:</p>
 </div>
 <div class="listingblock">
@@ -553,8 +553,8 @@ Historiken ser då ut så här:</p>
 <div class="title">Figur 65. Jessicas historik efter sammanslagning av ämnesgrenar med huvudgren</div>
 </div>
 <div class="paragraph">
-<p>Många byter till Git på grund av möjligheten för flera team att arbeta parallellt och kombinera sina grenar sent i processen.
-Möjligheten att mindre grupper inom ett team kan samarbeta via fjärrgrenar utan att involvera hela teamet är en av Gits stora fördelar.
+<p>Många byter till Git eftersom flera team kan arbeta parallellt och kombinera sina grenar sent i processen.
+Att mindre grupper inom ett team kan samarbeta via fjärrgrenar utan att blanda in hela teamet är en av Gits stora fördelar.
 Arbetsprocessen som precis beskrivits ser ut ungefär så här:</p>
 </div>
 <div class="imageblock">
@@ -575,7 +575,7 @@ Många värdtjänster har stöd för avgreningar (till exempel GitHub, BitBucket
 Det andra exemplet beskriver arbetsprocessen i projekt som i stället föredrar att ta emot ändringspatchar via e-post.</p>
 </div>
 <div class="paragraph">
-<p>Det första du behöver göra är troligen att klona grundkodförrådet och skapa en funktionsgren för ändringspatcharna du planerar att bidra med.
+<p>Börja troligen med att klona grundkodförrådet och skapa en funktionsgren för ändringspatcharna du planerar att bidra med.
 Flödet ser ut så här:</p>
 </div>
 <div class="listingblock">
@@ -605,7 +605,7 @@ $ git commit</code></pre>
 </div>
 <div class="paragraph">
 <p>När arbetet är klart och du vill dela det går du till grundkodförrådets projektsida och klickar på knappen "Avgrena" för att skapa en avgrening som du har full behörighet till.
-Därefter lägger du till den nya kodförrådets URL som ett nytt fjärrkodförråd; i det här exemplet kallar vi den <code>min-avgrening</code>:</p>
+Därefter lägger du till den nya kodförrådets URL som ett nytt fjärrkodförråd; i exemplet kallar vi den <code>min-avgrening</code>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -708,7 +708,7 @@ Ett alternativ är att skicka det nya arbetet till en annan gren på servern (ti
 </div>
 <div class="paragraph">
 <p>Vi tittar på ytterligare ett alternativ: förvaltarna har tittat på ändringarna i din andra gren och gillar dem mest, men vill att du gör en justering.
-Du använder då möjligheten att flytta avgreningens bas från <code>featureA</code> till huvudgrenen.</p>
+Du flyttar då avgreningens bas från <code>featureA</code> till huvudgrenen.</p>
 </div>
 <div class="paragraph">
 <p>Du kan göra detta genom att skapa en ny gren från <code>origin/master</code>, sammanfoga <code>featureB</code> där, lösa konflikter, göra justeringen och skicka det som en ny gren:</p>
@@ -727,7 +727,7 @@ $ git push myfork featureBv2</code></pre>
 </div>
 <div class="paragraph">
 <p>Flaggan <code>--squash</code> komprimerar alla incheckningar på grenen som ska sammanfogas till en enda ändring, vilket ger samma status i kodförrådet som vid en sammanslagning.
-Det innebär att dina framtida incheckningar bara kommer att ha en förälder och ger dig möjlighet att dra in alla ändringar från en annan gren och göra fler ändringar innan den nya incheckningen skapas.
+Det innebär att dina framtida incheckningar bara kommer att ha en förälder och låter dig dra in alla ändringar från en annan gren och göra fler ändringar innan den nya incheckningen skapas.
 Ibland kan det vara användbart att använda <code>--no-commit</code> för att fördröja incheckningen vid en sammanslagning.
 När detta är klart kan du meddela förvaltaren att ändringarna finns i <code>featureBv2</code>.</p>
 </div>
@@ -818,7 +818,7 @@ Det är en bra plats att förklara varför du gjort ändringarna eller ge testin
 <p>För att skicka ändringspatchfilen till e-postlistan kan du antingen klistra in innehållet i ditt e-postprogram eller skicka det via kommandoraden.
 Att klistra in texten orsakar ofta formateringsproblem, särskilt med "smartare" klienter som inte bevarar radbrytningar och mellanslag korrekt.
 Som tur är har Git ett verktyg som hjälper dig att skicka korrekt formaterade ändringspatchar via IMAP.
-Vi visar hur du skickar en ändringspatch via Gmail, som råkar vara den klient vi känner bäst.
+Vi visar hur du skickar en ändringspatch via Gmail, som är den klient vi känner bäst.
 Du kan läsa detaljerade instruktioner för många e‑postklienter i slutet av filen <code>Documentation/SubmittingPatches</code> i Gits källkod.</p>
 </div>
 <div class="paragraph">

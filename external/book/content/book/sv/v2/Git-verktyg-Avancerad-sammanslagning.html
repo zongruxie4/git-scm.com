@@ -29,7 +29,7 @@ Gits filosofi är att vara smart när en sammanslagningslösning är entydig, me
 Därför kan du, om du väntar för länge med att sammanfoga två grenar som snabbt glider isär, stöta på vissa problem.</p>
 </div>
 <div class="paragraph">
-<p>I det här avsnittet går vi igenom vad några av dessa problem kan vara och vilka verktyg Git ger dig för att hantera mer knepiga situationer.
+<p>I avsnittet går vi igenom vad några av dessa problem kan vara och vilka verktyg Git ger dig för att hantera mer knepiga situationer.
 Vi tar också upp några olika, icke‑standardiserade typer av sammanslagningar du kan göra, samt hur du tar dig ur sammanslagningar du redan gjort.</p>
 </div>
 <div class="sect3">
@@ -44,7 +44,7 @@ Det gör att du kan ångra <strong>allt</strong> du försöker här.
 Om du har osparade ändringar i arbetskatalogen när du försöker sammanfoga kan några av dessa tips hjälpa dig att bevara arbetet.</p>
 </div>
 <div class="paragraph">
-<p>Låt oss gå igenom ett mycket enkelt exempel.
+<p>Vi går igenom ett mycket enkelt exempel.
 Vi har en superenkel Ruby‑fil som skriver ut strängen <code>hello world</code>.</p>
 </div>
 <div class="listingblock">
@@ -168,7 +168,7 @@ Vi vet det eftersom fallet är enkelt, men det är också ganska lätt att se i 
 Som standard ser Git alla dessa rader som ändrade, så den kan inte sammanfoga filerna.</p>
 </div>
 <div class="paragraph">
-<p>Standardstrategin för sammanslagning kan ta argument, och några av dem handlar om att ignorera blankteckensändringar korrekt.
+<p>Standardsammanslagningsstrategin kan ta argument, och några av dem handlar om att ignorera blankteckensändringar korrekt.
 Om du ser att du har många blankteckensproblem i en sammanslagning kan du helt enkelt avbryta den och göra om den, den här gången med <code>-Xignore-all-space</code> eller <code>-Xignore-space-change</code>.
 Det första alternativet ignorerar blanktecken <strong>helt</strong> när rader jämförs, det andra behandlar sekvenser av ett eller flera blanktecken som likvärdiga.</p>
 </div>
@@ -189,9 +189,9 @@ Merge made by the 'recursive' strategy.
 </div>
 </div>
 <div class="sect4">
-<h4 id="_manual_remerge">Manuell omsammanfogning av filer</h4>
+<h4 id="_manual_remerge">Sammanfoga filer manuellt</h4>
 <div class="paragraph">
-<p>Även om Git hanterar förbehandling av blanktecken ganska bra finns det andra typer av ändringar som Git kanske inte kan hantera automatiskt, men som går att fixa med skript.
+<p>Även om Git förbehandlar blanktecken ganska bra finns det andra typer av ändringar som Git kanske inte kan hantera automatiskt, men som går att fixa med skript.
 Som exempel låtsas vi att Git inte kunde hantera blankteckensändringen och att vi behövde göra det för hand.</p>
 </div>
 <div class="paragraph">
@@ -204,7 +204,7 @@ Sedan vill vi ta kopior av vår version av filen, deras version (från grenen vi
 Sedan vill vi fixa antingen deras sida eller vår sida och försöka sammanfoga igen för just den filen.</p>
 </div>
 <div class="paragraph">
-<p>Att få de tre filversionerna är faktiskt ganska enkelt.
+<p>Att få de tre filversionerna är ganska enkelt.
 Git lagrar alla dessa versioner i indexet under "steg" som vart och ett har ett nummer kopplat till sig.
 Steg 1 är den gemensamma anfadern, steg 2 är din version och steg 3 är från <code>MERGE_HEAD</code>, versionen du sammanfogar in (“theirs”/"deras").</p>
 </div>
@@ -261,13 +261,13 @@ index 36c06c8,e85207e..0000000
 </div>
 </div>
 <div class="paragraph">
-<p>Vid det här laget har vi snyggt sammanfogat filen.
-Faktum är att det här fungerar bättre än alternativet <code>ignore-space-change</code> eftersom det faktiskt åtgärdar blankteckensändringarna före sammanslagning i stället för att bara ignorera dem.
-I sammanslagningen med <code>ignore-space-change</code> hamnade vi faktiskt med några rader med DOS‑radslut, vilket gav en blandning.</p>
+<p>Nu har vi snyggt sammanfogat filen.
+Det här fungerar i själva verket bättre än alternativet <code>ignore-space-change</code> eftersom det verkligen åtgärdar blankteckensändringarna före sammanslagning i stället för att bara ignorera dem.
+I sammanslagningen med <code>ignore-space-change</code> hamnade vi med några rader med DOS‑radslut, vilket gav en blandning.</p>
 </div>
 <div class="paragraph">
-<p>Om du vill få en uppfattning innan du slutför den här incheckningen om vad som faktiskt ändrades mellan den ena sidan och den andra kan du be <code>git diff</code> jämföra det som ligger i din arbetskatalog och som du är på väg att checka in som resultat av sammanslagningen med något av dessa steg.
-Låt oss gå igenom dem allihop.</p>
+<p>Om du vill få en uppfattning innan du slutför den här incheckningen om vad som egentligen ändrades mellan den ena sidan och den andra kan du be <code>git diff</code> jämföra det som ligger i din arbetskatalog och som du är på väg att checka in som resultat av sammanslagningen med något av dessa steg.
+Vi går igenom dem allihop.</p>
 </div>
 <div class="paragraph">
 <p>För att jämföra ditt resultat med det du hade i din gren före sammanslagningen, med andra ord, för att se vad sammanslagningen introducerade, kan du köra <code>git diff --ours</code>:</p>
@@ -292,7 +292,7 @@ index 36c06c8..44d0a25 100755
 </div>
 </div>
 <div class="paragraph">
-<p>Här ser vi alltså att det som hände i vår gren, det vi faktiskt inför i filen med denna sammanslagning, är att en enda rad ändras.</p>
+<p>Här ser vi alltså att det som hände i vår gren, det vi egentligen inför i filen med denna sammanslagning, är att en enda rad ändras.</p>
 </div>
 <div class="paragraph">
 <p>Om vi vill se hur resultatet av sammanslagningen skiljer sig från deras sida kan du köra <code>git diff --theirs</code>.
@@ -339,7 +339,7 @@ index ac51efd..44d0a25 100755
 </div>
 </div>
 <div class="paragraph">
-<p>Vid det här laget kan vi använda kommandot <code>git clean</code> för att städa bort de extra filer vi skapade för den manuella sammanslagningen men inte längre behöver.</p>
+<p>Nu kan vi använda kommandot <code>git clean</code> för att städa bort de extra filer vi skapade för den manuella sammanslagningen men inte längre behöver.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -353,11 +353,11 @@ Removing hello.theirs.rb</code></pre>
 <div class="sect4">
 <h4 id="_checking_out_conflicts">Checka ut konflikter</h4>
 <div class="paragraph">
-<p>Kanske är vi inte nöjda med lösningen av någon anledning, eller så fungerade inte manuell redigering av ena eller båda sidor så bra och vi behöver mer kontext.</p>
+<p>Kanske är vi inte nöjda med lösningen av någon anledning, eller så fungerade det inte att redigera ena eller båda sidor manuellt och vi behöver mer kontext.</p>
 </div>
 <div class="paragraph">
-<p>Låt oss ändra exemplet lite.
-I det här exemplet har vi två långlivade grenar som båda har några incheckningar i sig men skapar en legitim innehållskonflikt vid sammanslagning.</p>
+<p>Vi ändrar exemplet lite.
+I exemplet har vi två långlivade grenar som båda har några incheckningar i sig men skapar en legitim innehållskonflikt vid sammanslagning.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -407,14 +407,14 @@ hello()</code></pre>
 <p>Båda sidorna av sammanslagningen lade till innehåll i filen, men några av incheckningarna ändrade filen på samma ställe, vilket orsakade konflikten.</p>
 </div>
 <div class="paragraph">
-<p>Låt oss undersöka ett par verktyg som du nu har tillgång till för att avgöra hur konflikten uppstod.
+<p>Vi undersöker ett par verktyg som du nu har tillgång till för att avgöra hur konflikten uppstod.
 Kanske är det inte självklart hur du ska fixa den.
 Du behöver mer kontext.</p>
 </div>
 <div class="paragraph">
 <p>Ett hjälpsamt verktyg är <code>git checkout</code> med flaggan <code>--conflict</code>.
 Det kommer att lägga ut filen igen och ersätta konfliktmarkörerna.
-Det kan vara användbart om du vill återställa markörerna och försöka lösa dem igen.</p>
+Användbart om du vill återställa markörerna och försöka lösa dem igen.</p>
 </div>
 <div class="paragraph">
 <p>Du kan skicka <code>--conflict</code> antingen <code>diff3</code> eller <code>merge</code> (som är standard).
@@ -457,7 +457,7 @@ hello()</code></pre>
 <p>Kommandot <code>git checkout</code> kan också ta flaggorna <code>--ours</code> och <code>--theirs</code>, vilket kan vara ett riktigt snabbt sätt att bara välja ena sidan eller den andra utan att sammanfoga alls.</p>
 </div>
 <div class="paragraph">
-<p>Det kan vara särskilt användbart för konflikter i binärfiler där du helt enkelt väljer ena sidan, eller när du bara vill sammanfoga vissa filer från en annan gren — då kan du göra sammanslagningen och sedan lägga ut vissa filer från ena sidan eller den andra innan du checkar in.</p>
+<p>Särskilt användbart för konflikter i binärfiler där du helt enkelt väljer ena sidan, eller när du bara vill sammanfoga vissa filer från en annan gren — då kan du göra sammanslagningen och sedan lägga ut vissa filer från ena sidan eller den andra innan du checkar in.</p>
 </div>
 </div>
 <div class="sect4">
@@ -497,14 +497,14 @@ Om vi lägger till flaggan <code>--merge</code> till <code>git log</code> kommer
 </div>
 <div class="paragraph">
 <p>Om du kör det med flaggan <code>-p</code> i stället får du bara diffarna till filen som hamnade i konflikt.
-Det kan vara <strong>mycket</strong> hjälpsamt för att snabbt ge dig den kontext du behöver för att förstå varför något kolliderar och hur du kan lösa det smartare.</p>
+Så får du snabbt den kontext du behöver för att förstå varför något kolliderar och hur du kan lösa det smartare.</p>
 </div>
 </div>
 <div class="sect4">
 <h4 id="_sammanfogat_diffformat">Sammanfogat diff‑format</h4>
 <div class="paragraph">
 <p>Eftersom Git köar alla sammanslagningsresultat som är lyckade kommer <code>git diff</code> i ett sammanslagningsläge med konflikter bara visa det som fortfarande är i konflikt.
-Det kan vara hjälpsamt för att se vad du fortfarande måste lösa.</p>
+Så ser du vad du fortfarande måste lösa.</p>
 </div>
 <div class="paragraph">
 <p>När du kör <code>git diff</code> direkt efter en sammanslagningskonflikt får du information i ett ganska unikt diff‑format.</p>
@@ -535,7 +535,7 @@ index 0399cd5,59727f0..0000000
 Den första kolumnen visar om raden är annorlunda (tillagd eller borttagen) mellan “ours”‑grenen och filen i din arbetskatalog och den andra kolumnen gör samma sak mellan “theirs”‑grenen och din arbetskatalogskopia.</p>
 </div>
 <div class="paragraph">
-<p>I det här exemplet kan du se att <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code> och <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>‑raderna finns i arbetskopian men inte fanns på någon av sidorna i sammanslagningen.
+<p>I exemplet kan du se att <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code> och <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>‑raderna finns i arbetskopian men inte fanns på någon av sidorna i sammanslagningen.
 Det är logiskt eftersom sammanslagningsverktyget satte in dem för kontext, men vi förväntas ta bort dem.</p>
 </div>
 <div class="paragraph">
@@ -608,7 +608,7 @@ En av de fina sakerna med att arbeta i Git är att det är okej att göra missta
 </div>
 <div class="paragraph">
 <p>Sammanslagningsincheckningar är inget undantag.
-Låt oss säga att du började arbeta på en ämnesgren, råkade sammanfoga den in i <code>master</code>, och nu ser din incheckningshistorik ut så här:</p>
+Säg att du började arbeta på en ämnesgren, råkade sammanfoga den in i <code>master</code>, och nu ser din incheckningshistorik ut så här:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -671,7 +671,7 @@ Git kallar denna operation för en "återställning", och i just det här scenar
 <div class="paragraph">
 <p>Flaggan <code>-m 1</code> anger vilken förälder som är "huvudlinjen" och ska behållas.
 När du sammanfogar in i <code>HEAD</code> (<code>git merge topic</code>) har den nya incheckningen två föräldrar: den första är <code>HEAD</code> (<code>C6</code>), och den andra är spetsen på grenen som sammanfogas in (<code>C4</code>).
-I det här fallet vill vi ångra alla ändringar som introducerades av sammanslagningen av förälder #2 (<code>C4</code>), samtidigt som vi behåller allt innehåll från förälder #1 (<code>C6</code>).</p>
+I det här fallet vill vi ångra alla ändringar som fördes in när förälder #2 (<code>C4</code>) sammanfogades, samtidigt som vi behåller allt innehåll från förälder #1 (<code>C6</code>).</p>
 </div>
 <div class="paragraph">
 <p>Historiken med återställningsincheckningen ser ut så här:</p>
@@ -704,7 +704,7 @@ Värre är att om du lägger till arbete i <code>topic</code> och sammanfogar ig
 <div class="title">Figur 156. Historik med en dålig sammanslagning</div>
 </div>
 <div class="paragraph">
-<p>Det bästa sättet runt detta är att ångra återställningen av den ursprungliga sammanslagningen, eftersom du nu vill ta in de ändringar som ångrats, <strong>och sedan</strong> skapa en ny sammanslagningsincheckning:</p>
+<p>Lösningen är att ångra att den ursprungliga sammanslagningen återställdes, eftersom du nu vill ta in de ändringar som ångrats, <strong>och sedan</strong> skapa en ny sammanslagningsincheckning:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -720,7 +720,7 @@ $ git merge topic</code></pre>
 <div class="title">Figur 157. Historik efter att sammanfoga om en återställd sammanslagning</div>
 </div>
 <div class="paragraph">
-<p>I det här exemplet tar <code>M</code> och <code>^M</code> ut varandra.
+<p>I exemplet tar <code>M</code> och <code>^M</code> ut varandra.
 <code>^^M</code> sammanfogar i praktiken ändringarna från <code>C3</code> och <code>C4</code>, och <code>C8</code> sammanfogar ändringarna från <code>C7</code>, så nu är <code>topic</code> helt sammanfogad.</p>
 </div>
 </div>
@@ -728,9 +728,9 @@ $ git merge topic</code></pre>
 <div class="sect3">
 <h3 id="_andra_typer_av_sammanslagningar">Andra typer av sammanslagningar</h3>
 <div class="paragraph">
-<p>Hittills har vi täckt den normala sammanslagningen av två grenar, som normalt hanteras med den rekursiva strategin för sammanslagning.
+<p>Hittills har vi täckt hur man normalt sammanfogar två grenar, vilket hanteras med den rekursiva sammanslagningsstrategin.
 Det finns dock andra sätt att sammanfoga grenar.
-Låt oss gå igenom några av dem snabbt.</p>
+Vi går igenom några av dem snabbt.</p>
 </div>
 <div class="sect4">
 <h4 id="_ställa_in_vår_eller_deras">Ställa in vår eller deras</h4>
@@ -873,7 +873,7 @@ Vi bytte just tillbaka till grenen <code>master</code>, och vi drar in grenen <c
 </div>
 <div class="paragraph">
 <p>När vi checkar in ser det ut som att vi har alla Rack‑filer under den underkatalogen — ungefär som om vi kopierat in dem från en tar‑fil.
-Det som blir intressant är att vi ganska enkelt kan sammanfoga ändringar från den ena grenen till den andra.
+Det intressanta är att vi ganska enkelt kan sammanfoga ändringar från den ena grenen till den andra.
 Så om Rack‑projektet uppdateras kan vi dra in uppströmsändringar genom att byta till den grenen och dra:</p>
 </div>
 <div class="listingblock">

@@ -63,11 +63,11 @@ $ git commit --amend</code></pre>
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Det är viktigt att förstå att när du gör ett tillägg av din senaste incheckning så <em>ersätter</em> du den med en ny, förbättrad incheckning som tränger undan den gamla och lägger den nya på dess plats.
+<p>Tänk på att när du ändrar din senaste incheckning så <em>ersätter</em> du den med en ny, förbättrad incheckning som tränger undan den gamla och lägger den nya på dess plats.
 I praktiken är det som om den föregående incheckningen aldrig existerade, och den syns inte längre i historiken.</p>
 </div>
 <div class="paragraph">
-<p>Det uppenbara värdet med att göra på detta sätt är att kunna göra små förbättringar i den senaste incheckningen utan att fylla historiken med meddelanden av typen "Oj, glömde lägga till en fil" eller "Hoppsan, rättade ett stavfel".</p>
+<p>Fördelen är uppenbar: du kan göra små förbättringar i den senaste incheckningen utan att fylla historiken med meddelanden av typen "Oj, glömde lägga till en fil" eller "Hoppsan, rättade ett stavfel".</p>
 </div>
 </td>
 </tr>
@@ -93,7 +93,7 @@ För mer om vad som händer och hur man återställer om man drabbas, se <a href
 <h3 id="_unstaging">Ta bort en köad fil</h3>
 <div class="paragraph">
 <p>De två följande avsnitten visar hur du arbetar med köytan och ändringar i arbetskatalogen.
-Det trevliga är att kommandot du använder för att se statusen även påminner dig om hur du ångrar ändringar.
+Bekvämt nog påminner statuskommandot dig även om hur du ångrar ändringar.
 Säg att du har ändrat två filer och vill spara dem som två separata incheckningar, men råkar skriva <code>git add *</code> och köar båda.
 Hur tar du bort en av dem från köytan?
 <code>git status</code> påminner dig:</p>
@@ -112,7 +112,7 @@ Changes to be committed:
 </div>
 <div class="paragraph">
 <p>Precis under "Changes to be committed" står det att du kan använda <code>git reset HEAD &lt;file&gt;…​</code> för att ta bort från köytan.
-Låt oss använda det för <code>CONTRIBUTING.md</code>:</p>
+Vi använder det för <code>CONTRIBUTING.md</code>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -176,7 +176,7 @@ I den senaste utskriften ser den oköade delen ut så här:</p>
 </div>
 <div class="paragraph">
 <p>Den talar uttryckligen om hur du kastar bort ändringarna.
-Låt oss göra det:</p>
+Vi gör det:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -200,7 +200,7 @@ Changes to be committed:
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Det är viktigt att förstå att <code>git checkout — &lt;file&gt;</code> är ett farligt kommando.
+<p><code>git checkout — &lt;file&gt;</code> är ett farligt kommando.
 Alla lokala ändringar i filen försvinner – Git ersätter filen med den senast köade eller incheckade versionen.
 Använd aldrig kommandot om du inte är helt säker på att du inte vill behålla ändringarna.</p>
 </div>
@@ -225,7 +225,7 @@ Det är i praktiken ett alternativ till <code>git reset</code>, som vi just gick
 Från och med Git 2.23.0 använder Git <code>git restore</code> i stället för <code>git reset</code> för många åtgärder som ångrar ändringar.</p>
 </div>
 <div class="paragraph">
-<p>Låt oss gå igenom samma exempel, men använda <code>git restore</code> i stället för <code>git reset</code>.</p>
+<p>Vi går igenom samma exempel, men använder <code>git restore</code> i stället för <code>git reset</code>.</p>
 </div>
 <div class="sect4">
 <h4 id="_ta_bort_en_köad_fil_med_git_restore">Ta bort en köad fil med git restore</h4>
@@ -249,7 +249,7 @@ Changes to be committed:
 </div>
 <div class="paragraph">
 <p>Precis under "Changes to be committed" står det att du kan använda <code>git restore --staged &lt;file&gt;…​</code>.
-Låt oss ta bort <code>CONTRIBUTING.md</code> från köytan:</p>
+Vi tar bort <code>CONTRIBUTING.md</code> från köytan:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -287,7 +287,7 @@ Changes not staged for commit:
 </div>
 <div class="paragraph">
 <p>Den säger att du ska köra <code>git restore &lt;file&gt;</code>.
-Låt oss göra det:</p>
+Vi gör det:</p>
 </div>
 <div class="listingblock">
 <div class="content">

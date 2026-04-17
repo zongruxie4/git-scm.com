@@ -425,22 +425,25 @@ xargs git log --merges --no-walk --grep=WIP</pre>
 <div class="paragraph">
 <p>Tout ce qui se trouve en dessous de cette ligne dans cette section est inclus de manière sélective à partir de la documentation <a href='{{< relurl "docs/git-config/fr" >}}'>git-config[1]</a>. Le contenu est le même que celui qui s&#8217;y trouve :</p>
 </div>
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Warning</div>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>Missing <span class='synopsis'><code>fr/config/stash.adoc</code></span></p>
-</div>
-<div class="paragraph">
-<p>See original version for this content.</p>
-</div>
-</td>
-</tr>
-</table>
+<div class="dlist">
+<dl>
+<dt class="hdlist1" id="git-stash-spanclasssynopsiscodestashindexcodespan"> <a class="anchor" href="#git-stash-stashindex"></a> <a class="anchor" href="#git-stash-spanclasssynopsiscodestashindexcodespan"></a><span class='synopsis'><code>stash.index</code></span> </dt>
+<dd>
+<p>Si la valeur est true, <span class='synopsis'><code>git</code> <code>stash</code> <code>apply</code></span> et <span class='synopsis'><code>git</code> <code>stash</code> <code>pop</code></span> se comportera comme si <span class='synopsis'><code>--index</code></span> était fourni. Par défaut à false.</p>
+</dd>
+<dt class="hdlist1" id="git-stash-spanclasssynopsiscodestashshowIncludeUntrackedcodespan"> <a class="anchor" href="#git-stash-stashshowIncludeUntracked"></a> <a class="anchor" href="#git-stash-spanclasssynopsiscodestashshowIncludeUntrackedcodespan"></a><span class='synopsis'><code>stash.showIncludeUntracked</code></span> </dt>
+<dd>
+<p>Si c&#8217;est réglé à <span class='synopsis'><code>true</code></span>, la commande <span class='synopsis'><code>git</code> <code>stash</code> <code>show</code></span> montrera les fichiers non suivis d&#8217;une entrée de remisage. Vaut par défaut <span class='synopsis'><code>false</code></span>. </p>
+</dd>
+<dt class="hdlist1" id="git-stash-spanclasssynopsiscodestashshowPatchcodespan"> <a class="anchor" href="#git-stash-stashshowPatch"></a> <a class="anchor" href="#git-stash-spanclasssynopsiscodestashshowPatchcodespan"></a><span class='synopsis'><code>stash.showPatch</code></span> </dt>
+<dd>
+<p>Si cela est vrai, la commande <span class='synopsis'><code>git</code> <code>stash</code> <code>show</code></span> sans option affichera l&#8217;entrée de remisage sous forme de rustine. Par défaut à faux. </p>
+</dd>
+<dt class="hdlist1" id="git-stash-spanclasssynopsiscodestashshowStatcodespan"> <a class="anchor" href="#git-stash-stashshowStat"></a> <a class="anchor" href="#git-stash-spanclasssynopsiscodestashshowStatcodespan"></a><span class='synopsis'><code>stash.showStat</code></span> </dt>
+<dd>
+<p>Si cela est à true, la commande <span class='synopsis'><code>git</code> <code>stash</code> <code>show</code></span> sans option affichera un diffstat de l`entrée de remisage. Par défaut à true. </p>
+</dd>
+</dl>
 </div>
 </div>
 </div>

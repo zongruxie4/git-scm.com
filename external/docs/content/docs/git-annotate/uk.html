@@ -88,19 +88,19 @@ headings:
 <li>
 <p><span class='synopsis'><code>/</code><em>&lt;regex&gt;</em><code>/</code></span></p>
 <div class="paragraph">
-<p>Ця форма використовуватиме перший рядок, що відповідає заданому POSIX <em>&lt;regex&gt;</em>. Якщо <em>&lt;start&gt;</em> є регулярним виразом, пошук буде розпочато з кінця попереднього діапазону <span class='synopsis'><code>-L</code></span>, якщо такий є, інакше з початку файлу. Якщо <em>&lt;start&gt;</em> є <span class='synopsis'><code>^/</code><em>&lt;regex&gt;</em><code>/</code></span>, пошук буде розпочато з початку файлу. Якщо <em>&lt;end&gt;</em> є регулярним виразом, пошук буде розпочато з рядка, заданого <em>&lt;start&gt;</em>.</p>
+<p>Ця форма використовуватиме перший рядок, що відповідає заданому POSIX-виразу <em>&lt;regex&gt;</em>. Якщо <em>&lt;start&gt;</em> є регулярним виразом, пошук розпочнеться з кінця попереднього діапазону <span class='synopsis'><code>-L</code></span>, якщо такий є, інакше — з початку файлу. Якщо <em>&lt;start&gt;</em> є <span class='synopsis'><code>^/</code><em>&lt;regex&gt;</em><code>/</code></span>, пошук розпочнеться з початку файлу. Якщо <em>&lt;end&gt;</em> є регулярним виразом, пошук розпочнеться з рядка, вказаного в <em>&lt;start&gt;</em>.</p>
 </div>
 </li>
 <li>
 <p><span class='synopsis'><code>+</code><em>&lt;offset&gt;</em></span> або <span class='synopsis'><code>-</code><em>&lt;offset&gt;</em></span></p>
 <div class="paragraph">
-<p>Це дійсне лише для <em>&lt;end&gt;</em> та визначатиме кількість рядків до або після рядка, заданого <em>&lt;start&gt;</em>.</p>
+<p>Є дійсним лише для <em>&lt;end&gt;</em> та визначатиме кількість рядків до або після рядка, заданого <em>&lt;start&gt;</em>.</p>
 </div>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Якщо <span class='synopsis'><code>:</code><em>&lt;funcname&gt;</em></span> вказано замість <em>&lt;start&gt;</em> та <em>&lt;end&gt;</em>, це регулярний вираз, який позначає діапазон від першого рядка funcname, що відповідає <em>&lt;funcname&gt;</em>, до наступного рядка funcname. <span class='synopsis'><code>:</code><em>&lt;funcname&gt;</em></span> шукає з кінця попереднього діапазону <span class='synopsis'><code>-L</code></span>, якщо такий є, інакше з початку файлу. <span class='synopsis'><code>^:</code><em>&lt;funcname&gt;</em></span> шукає з початку файлу. Назви функцій визначаються так само, як <span class='synopsis'><code>git</code> <code>diff</code></span> обчислює заголовки патчів (див. «Визначення власного заголовка hunk» у <a href='{{< relurl "docs/gitattributes/uk" >}}'>gitattributes[5]</a>).</p>
+<p>Якщо <span class='synopsis'><code>:</code><em>&lt;funcname&gt;</em></span> вказано замість <em>&lt;start&gt;</em> та <em>&lt;end&gt;</em>, це регулярний вираз, який позначає діапазон від першого рядка funcname, що відповідає <em>&lt;funcname&gt;</em>, до наступного рядка funcname. <span class='synopsis'><code>:</code><em>&lt;funcname&gt;</em></span> шукає з кінця попереднього діапазону <span class='synopsis'><code>-L</code></span>, якщо такий є, інакше з початку файлу. <span class='synopsis'><code>^:</code><em>&lt;funcname&gt;</em></span> шукає з початку файлу. Назви функцій визначаються так само як <span class='synopsis'><code>git</code> <code>diff</code></span> обчислює заголовки латок (див. «Визначення власного заголовка фрагмента» у <a href='{{< relurl "docs/gitattributes/uk" >}}'>gitattributes[5]</a>).</p>
 </div>
 </dd>
 </dl>

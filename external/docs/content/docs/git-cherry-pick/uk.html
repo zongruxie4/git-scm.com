@@ -126,7 +126,7 @@ headings:
 <dt class="hdlist1" id="git-cherry-pick---gpg-signltkeyidgt"> <a class="anchor" href="#git-cherry-pick---gpg-signkeyid"></a> <a class="anchor" href="#git-cherry-pick---gpg-signltkeyidgt"></a>--gpg-sign[=&lt;keyid&gt;] </dt>
 <dt class="hdlist1" id="git-cherry-pick---no-gpg-sign"> <a class="anchor" href="#git-cherry-pick---no-gpg-sign"></a>--no-gpg-sign </dt>
 <dd>
-<p>Коміти GPG-sign. Аргумент <span class='synopsis'><code>keyid</code></span> є необов&#8217;язковим і за замовчуванням використовує ідентифікатор комітера; якщо його вказано, він має бути прив&#8217;язаний до опції без пробілу. <span class='synopsis'><code>--no-gpg-sign</code></span> корисний для скасування як змінної конфігурації <span class='synopsis'><code>commit.gpgSign</code></span>, так і попередньої змінної <span class='synopsis'><code>--gpg-sign</code></span>.</p>
+<p>Підписувати коміти за допомогою GPG. Аргумент <span class='synopsis'><code>keyid</code></span> є необов’язковим, а стандартним значенням є ідентифікатор автора коміту; якщо його вказано, він повинен бути вказаний безпосередньо після опції без пробілу. Опція <span class='synopsis'><code>--no-gpg-sign</code></span> дозволяє скасувати дію як конфігураційної змінної <span class='synopsis'><code>commit.gpgSign</code></span>, так і раніше вказаної опції <span class='synopsis'><code>--gpg-sign</code></span>.</p>
 </dd>
 <dt class="hdlist1" id="git-cherry-pick---ff"> <a class="anchor" href="#git-cherry-pick---ff"></a>--ff </dt>
 <dd>
@@ -183,7 +183,7 @@ headings:
 <dt class="hdlist1" id="git-cherry-pick-spanclasssynopsiscode--rerere-autoupdatecodespan"> <a class="anchor" href="#git-cherry-pick---rerere-autoupdate"></a> <a class="anchor" href="#git-cherry-pick-spanclasssynopsiscode--rerere-autoupdatecodespan"></a><span class='synopsis'><code>--rerere-autoupdate</code></span> </dt>
 <dt class="hdlist1" id="git-cherry-pick-spanclasssynopsiscode--no-rerere-autoupdatecodespan"> <a class="anchor" href="#git-cherry-pick---no-rerere-autoupdate"></a> <a class="anchor" href="#git-cherry-pick-spanclasssynopsiscode--no-rerere-autoupdatecodespan"></a><span class='synopsis'><code>--no-rerere-autoupdate</code></span> </dt>
 <dd>
-<p>Після того, як механізм rerere повторно використає записане вирішення поточного конфлікту для оновлення файлів у робочому дереві, дозвольте йому також оновити індекс результатом вирішення. <span class='synopsis'><code>--no-rerere-autoupdate</code></span> — це гарний спосіб перевірити, що зробив <span class='synopsis'><code>rerere</code></span>, та виявити потенційні помилки злиття, перш ніж занести результат до індексу за допомогою окремого <span class='synopsis'><code>git</code> <code>add</code></span>.</p>
+<p>Після того, як механізм rerere повторно використає записане розвʼязання поточного конфлікту для оновлення файлів у робочому дереві, дозвольте йому також оновити індекс результатом розвʼязання. <span class='synopsis'><code>--no-rerere-autoupdate</code></span> — це гарний спосіб перевірити, що зробив <span class='synopsis'><code>rerere</code></span>, та виявити потенційні помилки злиття, перш ніж занести результат до індексу за допомогою окремого <span class='synopsis'><code>git</code> <code>add</code></span>.</p>
 </dd>
 </dl>
 </div>

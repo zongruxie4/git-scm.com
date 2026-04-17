@@ -20,12 +20,12 @@ url: "/book/sv/v2/GitHub-Förvalta-ett-projekt.html"
 ---
 <h2 id="_maintaining_gh_project">Förvalta ett projekt</h2>
 <div class="paragraph">
-<p>Nu när vi är bekväma med att bidra till ett projekt tittar vi på den andra sidan: skapa, förvalta och administrera ditt eget projekt.</p>
+<p>Nu när vi är vana vid att bidra till ett projekt tittar vi på den andra sidan: skapa, förvalta och administrera ditt eget projekt.</p>
 </div>
 <div class="sect3">
 <h3 id="_skapa_ett_nytt_kodförråd">Skapa ett nytt kodförråd</h3>
 <div class="paragraph">
-<p>Låt oss skapa ett nytt kodförråd för att dela vår projektkod.
+<p>Vi skapar ett nytt kodförråd för att dela vår projektkod.
 Börja med att klicka på knappen "Nytt kodförråd" på högersidan av översikten, eller på <code>+</code>-knappen i den övre verktygsraden bredvid ditt användarnamn som i <a href="{{< relurl "book/sv/v2/ch00/_new_repo_dropdown" >}}">Rullgardinen "Nytt kodförråd"</a>.</p>
 </div>
 <div class="imageblock">
@@ -260,7 +260,7 @@ Den bör se ut ungefär så här:</p>
 </div>
 <div class="paragraph">
 <p>Raden som börjar med <code>fetch =</code> är en "referensspecifikation".
-Det är ett sätt att mappa namn på fjärrkodförrådet till namn i din lokala <code>.git</code>-katalog.
+Det är ett sätt att koppla namn på fjärrkodförrådet till namn i din lokala <code>.git</code>-katalog.
 Den här berättar för Git att "det som ligger i fjärrkodförrådet under <code>refs/heads</code> ska hamna i mitt lokala kodförråd under `refs/remotes/origin`".
 Du kan ändra detta avsnitt för att lägga till ytterligare en referensspecifikation:</p>
 </div>
@@ -308,7 +308,7 @@ Det gör att du kan testa sammanslagningen innan du ens trycker på knappen.</p>
 <h4 id="_ändringsförfrågningar_på_ändringsförfrågningar">Ändringsförfrågningar på ändringsförfrågningar</h4>
 <div class="paragraph">
 <p>Du kan inte bara öppna ändringsförfrågningar som riktar sig mot huvudgrenen eller <code>master</code>-grenen, du kan öppna en ändringsförfrågan mot vilken gren som helst i nätverket.
-Faktum är att du till och med kan rikta mot en annan ändringsförfrågan.</p>
+Du kan till och med rikta mot en annan ändringsförfrågan.</p>
 </div>
 <div class="paragraph">
 <p>Om du ser en ändringsförfrågan som rör sig i rätt riktning och du har en idé om en ändring som beror på den, eller om du inte är säker på att idén är bra, eller om du helt enkelt inte har skrivrättigheter till målgrenen, kan du öppna en ändringsförfrågan direkt mot den.</p>
@@ -427,7 +427,7 @@ X-GitHub-Recipient-Address: tchacon@example.com</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Det finns ett par intressanta saker här.
+<p>Några saker är värda att lägga märke till.
 Om du vill markera eller omdirigera e-post för just det här projektet eller till och med en ändringsförfrågan ger informationen i <code>Message-ID</code> dig allt i formatet <code>&lt;användare&gt;/&lt;projekt&gt;/&lt;typ&gt;/&lt;id&gt;</code>.
 Om det till exempel var ett ärende skulle fältet <code>&lt;typ&gt;</code> ha varit "issues" i stället för "pull".</p>
 </div>
@@ -436,7 +436,7 @@ Om det till exempel var ett ärende skulle fältet <code>&lt;typ&gt;</code> ha v
 Det är i praktiken samma sak som att klicka på "tyst"-knappen i webbversionen av aviseringen eller "Avprenumerera" på ärende- eller ändringsförfrågesidan.</p>
 </div>
 <div class="paragraph">
-<p>Det är också värt att notera att om du har både e-post- och webbaviseringar aktiverade och du läser e-postversionen av aviseringen kommer webbversionen att markeras som läst också, om du tillåter bilder i din e-postklient.</p>
+<p>Värt att veta är också att om du har både e-post- och webbaviseringar aktiverade och du läser e-postversionen av aviseringen kommer webbversionen att markeras som läst också, om du tillåter bilder i din e-postklient.</p>
 </div>
 </div>
 </div>
@@ -444,7 +444,7 @@ Det är i praktiken samma sak som att klicka på "tyst"-knappen i webbversionen 
 <div class="sect3">
 <h3 id="_särskilda_filer">Särskilda filer</h3>
 <div class="paragraph">
-<p>Det finns ett par särskilda filer som GitHub lägger märke till om de finns i ditt kodförråd.</p>
+<p>GitHub lägger märke till några särskilda filer om de finns i ditt kodförråd.</p>
 </div>
 </div>
 <div class="sect3">
@@ -452,10 +452,10 @@ Det är i praktiken samma sak som att klicka på "tyst"-knappen i webbversionen 
 <div class="paragraph">
 <p>Den första är <code>README</code>-filen, som kan vara i nästan vilket format som helst som GitHub känner igen som brödtext.
 Till exempel kan den vara <code>README</code>, <code>README.md</code>, <code>README.asciidoc</code> och så vidare.
-Om GitHub ser en <code>README</code>-fil i källkoden renderar den den på projektets startsida.</p>
+Om GitHub ser en <code>README</code>-fil i källkoden visar den den på projektets startsida.</p>
 </div>
 <div class="paragraph">
-<p>Många team använder den här filen för att samla all relevant projektinformation för någon som kan vara ny i kodförrådet eller projektet.
+<p>Många team använder filen för att samla all relevant projektinformation för någon som kan vara ny i kodförrådet eller projektet.
 Det inkluderar vanligtvis saker som:</p>
 </div>
 <div class="ulist">
@@ -478,7 +478,7 @@ Det inkluderar vanligtvis saker som:</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>Eftersom GitHub renderar den här filen kan du bädda in bilder eller länkar i den för att göra det lättare att förstå.</p>
+<p>Eftersom GitHub visar filen kan du bädda in bilder eller länkar i den för att göra det lättare att förstå.</p>
 </div>
 </div>
 <div class="sect3">

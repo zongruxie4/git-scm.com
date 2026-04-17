@@ -37,7 +37,7 @@ Om du vill ha historiken kan du göra det så snabbt som du kan dra ut datan ur 
 Det första problemet är författarinformationen.
 I Subversion har varje person som checkar in en användare i systemet som registreras i incheckningsinformationen.
 Exemplen i föregående avsnitt visar <code>schacon</code> på vissa ställen, till exempel i <code>blame</code>‑utdata och <code>git svn log</code>.
-Om du vill mappa detta till bättre Git‑författardata behöver du en mappning från Subversion‑användare till Git‑författare.
+Om du vill koppla detta till bättre Git‑författardata behöver du en mappning från Subversion‑användare till Git‑författare.
 Skapa en fil som heter <code>users.txt</code> med denna mappning i ett format som ser ut så här:</p>
 </div>
 <div class="listingblock">
@@ -76,7 +76,7 @@ Microsoft har lagt upp några bra råd och exempel på <a href="https://learn.mi
 </table>
 </div>
 <div class="paragraph">
-<p>Du kan ge denna fil till <code>git svn</code> för att hjälpa den mappa författardata mer exakt.
+<p>Du kan ge denna fil till <code>git svn</code> för att hjälpa den koppla författardata mer exakt.
 Du kan också säga åt <code>git svn</code> att inte inkludera metadata som Subversion normalt importerar genom att skicka <code>--no-metadata</code> till kommandot <code>clone</code> eller <code>init</code>.
 Metadata innehåller en <code>git-svn-id</code> i varje incheckningsmeddelande som Git skapar under importen.
 Det kan göra din Git‑logg onödigt stor och svårare att läsa.</p>
@@ -164,7 +164,7 @@ Först flyttar du taggarna så att de blir riktiga taggar i stället för udda f
 <div class="paragraph">
 <p>Det kan hända att du ser några extra grenar som slutar med <code>@xxx</code> (där xxx är ett nummer), trots att du i Subversion bara ser en gren.
 Det här är en Subversion‑funktion som kallas “peg‑revisioner”, vilket är något som Git helt saknar en syntaktisk motsvarighet till.
-Därför lägger <code>git svn</code> helt enkelt till SVN‑versionsnumret i grennamnet på samma sätt som du hade skrivit det i SVN för att adressera peg‑revisionen för den grenen.
+Därför lägger <code>git svn</code> helt enkelt till SVN‑versionsnumret i grennamnet på samma sätt som du hade skrivit det i SVN för att referera till peg‑revisionen för den grenen.
 Om du inte längre bryr dig om peg‑revisionerna kan du bara ta bort dem:</p>
 </div>
 <div class="listingblock">
@@ -177,8 +177,8 @@ Om du inte längre bryr dig om peg‑revisionerna kan du bara ta bort dem:</p>
 </div>
 <div class="paragraph">
 <p>Det finns en sista sak att städa upp.
-Tyvärr skapar <code>git svn</code> en extra gren som heter <code>trunk</code>, som mappar till Subversions standardgren, men referensen <code>trunk</code> pekar på samma ställe som <code>master</code>.
-Eftersom <code>master</code> är mer idiomatiskt Git gör du så här för att ta bort den extra grenen:</p>
+Tyvärr skapar <code>git svn</code> en extra gren som heter <code>trunk</code>, som motsvarar Subversions standardgren, men referensen <code>trunk</code> pekar på samma ställe som <code>master</code>.
+Eftersom <code>master</code> är mer typiskt för Git, gör du så här för att ta bort den extra grenen:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -211,7 +211,7 @@ $ git push origin --tags</code></pre>
 <h3 id="_mercurial">Mercurial</h3>
 <div class="paragraph">
 <p>
-Eftersom Mercurial och Git har ganska liknande modeller för att representera versioner, och eftersom Git är lite mer flexibelt, är det ganska okomplicerat att konvertera ett kodförråd från Mercurial till Git med hjälp av verktyget "hg-fast-export", som du behöver ha en kopia av:</p>
+Eftersom Mercurial och Git har ganska liknande modeller för att representera versioner, och eftersom Git är lite mer flexibelt, är det ganska okomplicerat att konvertera ett kodförråd från Mercurial till Git med verktyget "hg-fast-export", som du behöver ha en kopia av:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -219,7 +219,7 @@ Eftersom Mercurial och Git har ganska liknande modeller för att representera ve
 </div>
 </div>
 <div class="paragraph">
-<p>Det första steget i konverteringen är att göra en fullständig klon av Mercurial‑kodförrådet du vill konvertera:</p>
+<p>Det första steget i konverteringen är att fullständigt klona Mercurial‑kodförrådet du vill konvertera:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -251,12 +251,12 @@ Joe Smith &lt;joe@company.com&gt;</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>I det här exemplet har samma person (Bob) skapat ändringsuppsättningar under fyra olika namn, varav ett ser korrekt ut och ett skulle vara helt ogiltigt som Git‑incheckning.
-Hg-fast-export låter oss fixa detta genom att omvandla varje rad till en regel: <code>"&lt;input&gt;"="&lt;output&gt;"</code>, som mappar ett <code>&lt;input&gt;</code> till ett <code>&lt;output&gt;</code>.
+<p>I exemplet har samma person (Bob) skapat ändringsuppsättningar under fyra olika namn, varav ett ser korrekt ut och ett skulle vara helt ogiltigt som Git‑incheckning.
+Hg-fast-export låter oss fixa detta genom att omvandla varje rad till en regel: <code>"&lt;input&gt;"="&lt;output&gt;"</code>, som kopplar ett <code>&lt;input&gt;</code> till ett <code>&lt;output&gt;</code>.
 I strängarna <code>&lt;input&gt;</code> och <code>&lt;output&gt;</code> stöds alla escape‑sekvenser som Pythons <code>string_escape</code>‑kodning förstår.
 Om författarmappningsfilen inte innehåller ett matchande <code>&lt;input&gt;</code> skickas författaren vidare till Git oförändrad.
 Om alla användarnamn ser bra ut behöver vi inte filen alls.
-I det här exemplet vill vi att filen ska se ut så här:</p>
+I exemplet vill vi att filen ska se ut så här:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -267,7 +267,7 @@ I det här exemplet vill vi att filen ska se ut så här:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Samma typ av mappningsfil kan användas för att byta namn på grenar och taggar när Mercurial‑namnet inte tillåts av Git.</p>
+<p>Med samma typ av mappningsfil kan du byta namn på grenar och taggar när Mercurial‑namnet inte tillåts av Git.</p>
 </div>
 <div class="paragraph">
 <p>Nästa steg är att skapa vårt nya Git‑kodförråd och köra exportskriptet:</p>
@@ -499,7 +499,7 @@ Din strategi blir att gå igenom ögonblicksbilderna en i taget och skapa inchec
 </div>
 <div class="paragraph">
 <p>Som vi gjorde i <a href="{{< relurl "book/sv/v2/ch00/_an_example_git_enforced_policy" >}}">Ett exempel på Git‑upprätthållen policy</a> skriver vi detta i Ruby, eftersom det är det vi vanligtvis arbetar med och det brukar vara lätt att läsa.
-Du kan skriva exemplet ganska enkelt i vilket språk du är bekväm med – det behöver bara skriva rätt information till standardutmatningen.
+Du kan skriva exemplet ganska enkelt i vilket språk du är van vid – det behöver bara skriva rätt information till standardutmatningen.
 Och om du kör på Windows betyder det att du måste vara extra noga med att inte introducera vagnreturer i slutet av dina rader – <code>git fast-import</code> vill absolut bara ha radmatningar (LF) och inte de vagnretur‑radmatningar (CRLF) som Windows använder.</p>
 </div>
 <div class="paragraph">
@@ -621,7 +621,7 @@ end</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Allt som återstår är att ange filinnehållet för varje ögonblicksbild.
+<p>Nu återstår bara att ange filinnehållet för varje ögonblicksbild.
 Det är enkelt eftersom du har varje ögonblicksbild i en katalog – du kan skriva ut kommandot <code>deleteall</code> följt av innehållet i varje fil i katalogen.
 Git registrerar sedan varje ögonblicksbild på rätt sätt:</p>
 </div>
@@ -666,7 +666,7 @@ end</code></pre>
 <p>Du återanvänder metoden <code>export_data</code> som du definierade tidigare, eftersom den är densamma som när du angav data för incheckningsmeddelandet.</p>
 </div>
 <div class="paragraph">
-<p>Det sista du behöver göra är att returnera den aktuella markeringen så att den kan skickas vidare till nästa varv:</p>
+<p>Slutligen returnerar du den aktuella markeringen så att den kan skickas vidare till nästa varv:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -852,8 +852,8 @@ Date:   Mon Feb 3 01:00:00 2014 -0700
 </div>
 </div>
 <div class="paragraph">
-<p>Där har du det – ett snyggt, rent Git‑kodförråd.
-Det är viktigt att notera att inget är utcheckat – du har inga filer i arbetskatalogen till att börja med.
+<p>Så har du ett snyggt, rent Git‑kodförråd.
+Tänk på att inget är utcheckat – du har inga filer i arbetskatalogen till att börja med.
 För att få dem måste du återställa din gren till där <code>master</code> är nu:</p>
 </div>
 <div class="listingblock">

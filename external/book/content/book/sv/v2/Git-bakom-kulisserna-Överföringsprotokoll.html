@@ -46,7 +46,7 @@ Generellt rekommenderas det smarta protokollet, som vi beskriver lite längre fr
 </table>
 </div>
 <div class="paragraph">
-<p>Låt oss följa <code>http-fetch</code>‑processen för biblioteket simplegit:</p>
+<p>Vi följer <code>http-fetch</code>‑processen för biblioteket simplegit:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -55,7 +55,7 @@ Generellt rekommenderas det smarta protokollet, som vi beskriver lite längre fr
 </div>
 <div class="paragraph">
 <p>Det första kommandot gör är att hämta filen <code>info/refs</code>.
-Denna fil skrivs av kommandot <code>update-server-info</code>, vilket är anledningen till att du måste aktivera det som en <code>post-receive</code>‑krok för att HTTP‑transporten ska fungera korrekt:</p>
+Denna fil skrivs av kommandot <code>update-server-info</code>, därför måste du aktivera det som en <code>post-receive</code>‑krok för att HTTP‑transporten ska fungera korrekt:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -75,7 +75,7 @@ ref: refs/heads/master</code></pre>
 </div>
 <div class="paragraph">
 <p>Du behöver växla till grenen <code>master</code> när du har slutfört processen.
-Vid det här laget är du redo att börja vandringsprocessen.
+Nu är du redo att börja vandringsprocessen.
 Eftersom din startpunkt är incheckningsobjektet <code>ca82a6</code> som du såg i filen <code>info/refs</code> börjar du med att hämta det:</p>
 </div>
 <div class="listingblock">
@@ -120,7 +120,7 @@ Hämta trädobjektet:</p>
 </div>
 <div class="paragraph">
 <p>Oj – det ser ut som att trädobjektet inte ligger i löst format på servern, så du får ett 404‑svar tillbaka.
-Det finns ett par skäl till detta – objektet kan ligga i ett alternativt kodförråd, eller så kan det ligga i en packfil i detta kodförråd.
+Det kan bero på att objektet ligger i ett alternativt kodförråd, eller i en packfil i detta kodförråd.
 Git kontrollerar först om några alternativ listats:</p>
 </div>
 <div class="listingblock">
@@ -306,9 +306,9 @@ Klienten initierar en <code>fetch-pack</code>‑process som ansluter till en <co
 Dessutom skickar det tillbaka vad HEAD pekar på (<code>symref=HEAD:refs/heads/master</code>) så att klienten vet vad som ska läggas ut om detta är en klon.</p>
 </div>
 <div class="paragraph">
-<p>Vid det här laget tittar <code>fetch-pack</code>‑processen på vilka objekt den har och svarar med de objekt den behöver genom att skicka “want” och sedan SHA‑1:an den vill ha.
+<p>Här tittar <code>fetch-pack</code>‑processen på vilka objekt den har och svarar med de objekt den behöver genom att skicka “want” och sedan SHA‑1:an den vill ha.
 Den skickar alla objekt den redan har med “have” och sedan SHA‑1:an.
-I slutet av listan skriver den “done” för att initiera <code>upload-pack</code>‑processen att börja skicka packfilen med den data den behöver:</p>
+I slutet av listan skriver den “done” så att <code>upload-pack</code>‑processen börjar skicka packfilen med den data den behöver:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -359,8 +359,8 @@ Svaret på denna förfrågan indikerar framgång eller misslyckande och inkluder
 <h3 id="_sammanfattning_av_protokollen">Sammanfattning av protokollen</h3>
 <div class="paragraph">
 <p>Detta avsnitt innehåller en mycket grundläggande översikt av överföringsprotokollen.
-Protokollet innehåller många andra funktioner, som kapabiliteterna <code>multi_ack</code> eller <code>side-band</code>, men att täcka dem ligger utanför den här bokens omfattning.
-Vi har försökt ge dig en känsla för det allmänna fram‑och‑tillbaka mellan klient och server; om du behöver mer kunskap än detta vill du troligen ta en titt på Gits källkod.</p>
+Protokollet innehåller många andra funktioner, som kapabiliteterna <code>multi_ack</code> eller <code>side-band</code>, men att täcka dem ligger utanför bokens omfattning.
+Vi har försökt visa hur klient och server kommunicerar; vill du veta mer kan du titta i Gits källkod.</p>
 </div>
 </div>
 <div id="nav"><a href="{{< previous-section >}}">prev</a> | <a href="{{< next-section >}}">next</a></div>

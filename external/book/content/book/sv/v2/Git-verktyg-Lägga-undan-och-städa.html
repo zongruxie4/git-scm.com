@@ -38,7 +38,7 @@ Svaret på detta är kommandot <code>git stash</code>.</p>
 </div>
 <div class="paragraph">
 <p>Sedan slutet av oktober 2017 har det förts en omfattande diskussion på Gits e-postlista där kommandot <code>git stash save</code> håller på att fasas ut till förmån för det befintliga alternativet <code>git stash push</code>.
-Den främsta orsaken är att <code>git stash push</code> introducerar möjligheten att lägga undan valda <em>sökvägsspecifikationer</em>, något som <code>git stash save</code> inte stödjer.</p>
+Den främsta orsaken är att <code>git stash push</code> låter dig lägga undan valda <em>sökvägsspecifikationer</em>, något som <code>git stash save</code> inte stödjer.</p>
 </div>
 <div class="paragraph">
 <p><code>git stash save</code> försvinner inte i första taget, så oroa dig inte för att det plötsligt ska försvinna.
@@ -93,7 +93,7 @@ nothing to commit, working directory clean</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Vid det här laget kan du byta gren och arbeta på annat håll; dina ändringar ligger sparade på din stapel.
+<p>Nu kan du byta gren och arbeta på annat håll; dina ändringar ligger sparade på din stapel.
 För att se vilka undanläggningar du har sparat kan du använda <code>git stash list</code>:</p>
 </div>
 <div class="listingblock">
@@ -282,7 +282,7 @@ Dropped refs/stash@{0} (29d385a81d163dfd45a452a2ce816487a6b8b014)</code></pre>
 <p>Några vanliga skäl att städa arbetskatalogen kan vara att ta bort skräp som har skapats av sammanslagningar eller externa verktyg eller att ta bort byggartefakter för att köra en ren byggning.</p>
 </div>
 <div class="paragraph">
-<p>Du vill vara ganska försiktig med det här kommandot, eftersom det är utformat för att ta bort filer från din arbetskatalog som inte är spårade.
+<p>Du vill vara ganska försiktig med kommandot, eftersom det är utformat för att ta bort filer från din arbetskatalog som inte är spårade.
 Om du ändrar dig finns det ofta ingen väg tillbaka till innehållet i dessa filer.
 Ett säkrare alternativ är att köra <code>git stash --all</code> för att ta bort allt men spara det i en undanläggning.</p>
 </div>

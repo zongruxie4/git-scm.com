@@ -27,7 +27,7 @@ headings:
 <h2 id="_namn"><a class="anchor" href="#_namn"></a>NAMN</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>git-fetch-pack - Ta emot saknade objekt från ett annat förvar</p>
+<p>git-fetch-pack - Ta emot saknade objekt från ett annat kodförråd</p>
 </div>
 </div>
 </div>
@@ -38,7 +38,7 @@ headings:
 <pre class="content"><em>git fetch-pack</em> [--all] [--quiet|-q] [--keep|-k] [--thin] [--include-tag]
 	[--upload-pack=&lt;git-upload-pack&gt;]
 	[--depth=&lt;n&gt;] [--no-progress]
-	[-v] <span class="hover-term" data-term="förvar">&lt;förvar&gt;</span> [&lt;refs&gt;&#8230;&#8203;]</pre>
+	[-v] <span class="hover-term" data-term="kodförråd">&lt;kodförråd&gt;</span> [&lt;refs&gt;&#8230;&#8203;]</pre>
 </div>
 </div>
 </div>
@@ -49,7 +49,7 @@ headings:
 <p>Vanligtvis vill du istället använda <em>git fetch</em>, vilket är en omslutningsfil på högre nivå för det här kommandot.</p>
 </div>
 <div class="paragraph">
-<p>Anropar <em>git-upload-pack</em> på ett eventuellt fjärrförvar och ber den att skicka objekt som saknas i detta förvar för att uppdatera de namngivna huvudena. Listan över incheckningar som är tillgängliga lokalt tas fram genom att skanna den lokala refs/hierarkin och skickas till <em>git-upload-pack</em> som körs i andra änden.</p>
+<p>Anropar <em>git-upload-pack</em> på ett eventuellt fjärrkodförråd och ber den att skicka objekt som saknas i detta kodförråd för att uppdatera de namngivna huvudena. Listan över incheckningar som är tillgängliga lokalt tas fram genom att skanna den lokala refs/hierarkin och skickas till <em>git-upload-pack</em> som körs i andra änden.</p>
 </div>
 <div class="paragraph">
 <p>Det här kommandot degenererar för att ladda ner allt för att slutföra de begärda referenserna från fjärrsidan när den lokala sidan inte har en gemensam förfader-incheckning.</p>
@@ -104,11 +104,11 @@ headings:
 </dd>
 <dt class="hdlist1" id="git-fetch-pack---shallow-sinceltdatumgt"> <a class="anchor" href="#git-fetch-pack---shallow-sincedatum"></a> <a class="anchor" href="#git-fetch-pack---shallow-sinceltdatumgt"></a>--shallow-since=&lt;datum&gt; </dt>
 <dd>
-<p>Fördjupa eller förkorta historiken för ett ytligt förvar för att inkludera alla nåbara incheckningar efter &lt;datum&gt;.</p>
+<p>Fördjupa eller förkorta historiken för ett ytligt kodförråd för att inkludera alla nåbara incheckningar efter &lt;datum&gt;.</p>
 </dd>
 <dt class="hdlist1" id="git-fetch-pack---shallow-excludeltrefgt"> <a class="anchor" href="#git-fetch-pack---shallow-excluderef"></a> <a class="anchor" href="#git-fetch-pack---shallow-excludeltrefgt"></a>--shallow-exclude=<span class="hover-term" data-term="ref">&lt;ref&gt;</span> </dt>
 <dd>
-<p>Fördjupa eller förkorta historiken för ett ytligt förvar för att exkludera incheckningar som är åtkomliga från en specifik fjärrgren eller tagg. Det här alternativet kan anges flera gånger.</p>
+<p>Fördjupa eller förkorta historiken för ett ytligt kodförråd för att exkludera incheckningar som är åtkomliga från en specifik fjärrgren eller tagg. Det här alternativet kan anges flera gånger.</p>
 </dd>
 <dt class="hdlist1" id="git-fetch-pack---deepen-relative"> <a class="anchor" href="#git-fetch-pack---deepen-relative"></a>--deepen-relative </dt>
 <dd>
@@ -130,9 +130,9 @@ headings:
 <dd>
 <p>Kör utförligt.</p>
 </dd>
-<dt class="hdlist1" id="git-fetch-pack-ltfrvargt"> <a class="anchor" href="#git-fetch-pack-frvar"></a> <a class="anchor" href="#git-fetch-pack-ltfrvargt"></a><span class="hover-term" data-term="förvar">&lt;förvar&gt;</span> </dt>
+<dt class="hdlist1" id="git-fetch-pack-ltkodfrrdgt"> <a class="anchor" href="#git-fetch-pack-kodfrrd"></a> <a class="anchor" href="#git-fetch-pack-ltkodfrrdgt"></a><span class="hover-term" data-term="kodförråd">&lt;kodförråd&gt;</span> </dt>
 <dd>
-<p>URL:en till fjärrförvar.</p>
+<p>URL:en till fjärrkodförråd.</p>
 </dd>
 <dt class="hdlist1" id="git-fetch-pack-ltrefsgt82308203"> <a class="anchor" href="#git-fetch-pack-refs"></a> <a class="anchor" href="#git-fetch-pack-ltrefsgt82308203"></a>&lt;refs&gt;&#8230;&#8203; </dt>
 <dd>

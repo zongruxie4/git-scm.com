@@ -34,8 +34,8 @@ chapters:
   title: Grunderna i Git
   sections:
   - cs_number: '2.1'
-    title: Att få tag i ett Git‑kodförråd
-    url: book/sv/v2/Grunderna-i-Git-Att-få-tag-i-ett-Git‑kodförråd
+    title: Skaffa ett Git‑kodförråd
+    url: book/sv/v2/Grunderna-i-Git-Skaffa-ett-Git‑kodförråd
   - cs_number: '2.2'
     title: Spara ändringar i kodförrådet
     url: book/sv/v2/Grunderna-i-Git-Spara-ändringar-i-kodförrådet
@@ -193,8 +193,8 @@ chapters:
     title: Ersätt
     url: book/sv/v2/Git-verktyg-Ersätt
   - cs_number: '7.14'
-    title: Lagring av inloggningsuppgifter
-    url: book/sv/v2/Git-verktyg-Lagring-av-inloggningsuppgifter
+    title: Lagra inloggningsuppgifter
+    url: book/sv/v2/Git-verktyg-Lagra-inloggningsuppgifter
   - cs_number: '7.15'
     title: Sammanfattning
     url: book/sv/v2/Git-verktyg-Sammanfattning

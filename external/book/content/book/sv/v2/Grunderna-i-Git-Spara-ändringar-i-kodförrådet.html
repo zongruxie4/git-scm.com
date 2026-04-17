@@ -13,7 +13,7 @@ book:
     title: Spara ändringar i kodförrådet
     number: 2
     cs_number: '2.2'
-    previous: book/sv/v2/Grunderna-i-Git-Att-få-tag-i-ett-Git‑kodförråd
+    previous: book/sv/v2/Grunderna-i-Git-Skaffa-ett-Git‑kodförråd
     next: book/sv/v2/Grunderna-i-Git-Visa-incheckningshistoriken
 title: Git - Spara ändringar i kodförrådet
 url: "/book/sv/v2/Grunderna-i-Git-Spara-ändringar-i-kodförrådet.html"
@@ -142,7 +142,7 @@ Du minns kanske att när du körde <code>git init</code> gjorde du sedan <code>g
 <div class="sect3">
 <h3 id="_köa_ändrade_filer">Köa ändrade filer</h3>
 <div class="paragraph">
-<p>Låt oss ändra en fil som redan är spårad.
+<p>Vi ändrar en fil som redan är spårad.
 Om du ändrar en tidigare spårad fil som heter <code>CONTRIBUTING.md</code> och kör <code>git status</code> igen får du något som liknar detta:</p>
 </div>
 <div class="listingblock">
@@ -166,8 +166,8 @@ Changes not staged for commit:
 <p><code>CONTRIBUTING.md</code> visas under "Changes not staged for commit" – en spårad fil har ändrats i arbetskatalogen men ännu inte köats.
 För att köa den kör du <code>git add</code>.
 <code>git add</code> är ett mångsidigt kommando – du använder det för att börja spåra nya filer, för att köa filer och för att markera sammanslagningskonflikter som lösta.
-Det kan vara hjälpsamt att tänka "lägg exakt detta innehåll i nästa incheckning" snarare än "lägg till filen i projektet".
-Låt oss köra <code>git add</code> för att köa <code>CONTRIBUTING.md</code> och sedan köra <code>git status</code> igen:</p>
+Tänk "lägg exakt detta innehåll i nästa incheckning" snarare än "lägg till filen i projektet".
+Vi kör <code>git add</code> för att köa <code>CONTRIBUTING.md</code> och sedan köra <code>git status</code> igen:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -185,7 +185,7 @@ Changes to be committed:
 <div class="paragraph">
 <p>Båda filerna är köade och kommer att ingå i nästa incheckning.
 Anta nu att du kommer på en liten ändring du vill göra i <code>CONTRIBUTING.md</code> innan du sparar.
-Du öppnar filen igen och gör ändringen, och är redo att göra en incheckning.
+Du öppnar filen igen och gör ändringen, och är redo att checka in.
 Men kör <code>git status</code> en gång till:</p>
 </div>
 <div class="listingblock">
@@ -271,7 +271,7 @@ Här är ett exempel på en <code>.gitignore</code>-fil:</p>
 <p>Den första raden talar om för Git att ignorera alla filer som slutar på <code>.o</code> eller <code>.a</code> – objekt- och arkivfiler som kan skapas när du bygger.
 Den andra raden talar om för Git att ignorera alla filer vars namn slutar på tilde (<code>~</code>), vilket många textredigerare, som Emacs, använder för temporära filer.
 Du kan också ta med logg-, tmp- och pid-kataloger, automatiskt genererad dokumentation och så vidare.
-Det är ofta en bra idé att skapa en <code>.gitignore</code> innan du börjar arbeta med ett nytt kodförråd så att du inte oavsiktligt versionshanterar filer du inte vill ha där.</p>
+Skapa helst en <code>.gitignore</code> innan du börjar arbeta med ett nytt kodförråd så att du inte oavsiktligt versionshanterar filer du inte vill ha där.</p>
 </div>
 <div class="paragraph">
 <p>Mönstren i <code>.gitignore</code>-filen följer dessa regler:</p>
@@ -430,7 +430,7 @@ index 0000000..03902a1
 </div>
 </div>
 <div class="paragraph">
-<p>Viktigt att notera är att <code>git diff</code> i sig inte visar alla ändringar sedan senaste incheckningen – bara ändringar som ännu inte kommer ingå i nästa incheckning.
+<p>Viktigt att tänka på är att <code>git diff</code> i sig inte visar alla ändringar sedan senaste incheckningen – bara ändringar som ännu inte kommer ingå i nästa incheckning.
 Om du har köat alla ändringar att ingå i nästa incheckning ger <code>git diff</code> ingen utskrift.</p>
 </div>
 <div class="paragraph">
@@ -517,7 +517,7 @@ Kör <code>git difftool --tool-help</code> för att se vad som finns tillgängli
 <div class="sect3">
 <h3 id="_committing_changes">Spara dina ändringar</h3>
 <div class="paragraph">
-<p>När köytan innehåller det du vill ha kan du göra en incheckning.
+<p>När köytan innehåller det du vill ha kan du checka in.
 Kom ihåg att allt som fortfarande är oköat – filer du skapat eller ändrat sedan du senast körde <code>git add</code> – inte kommer att ingå i den här incheckningen.
 De ligger kvar som ändrade filer på din hårddisk.
 Anta att allt är köat och du är redo att spara.
@@ -676,7 +676,7 @@ Det betyder att du kan göra saker som:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Notera omvänt snedstreck (<code>\</code>) framför <code>*</code>.
+<p>Observera omvänt snedstreck (<code>\</code>) framför <code>*</code>.
 Det behövs eftersom Git gör sin egen filnamnsexpansion utöver skalets expansion.
 Kommandot tar bort alla filer med filändelsen <code>.log</code> i katalogen <code>log/</code>.
 Eller så kan du göra något i stil med:</p>

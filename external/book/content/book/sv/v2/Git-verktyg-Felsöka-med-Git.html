@@ -21,17 +21,17 @@ url: "/book/sv/v2/Git-verktyg-Felsöka-med-Git.html"
 <h2 id="_felsöka_med_git">Felsöka med Git</h2>
 <div class="paragraph">
 <p>Förutom att i första hand vara ett verktyg för versionshantering erbjuder Git också några kommandon som hjälper dig att felsöka källkodsprojekt.
-Eftersom Git är byggt för att hantera nästan vilken typ av innehåll som helst är verktygen ganska generella, men de kan ofta hjälpa dig att jaga ett programfel eller en skyldig när något går snett.</p>
+Eftersom Git är byggt för att hantera nästan vilken typ av innehåll som helst är verktygen ganska allmänna, men de kan ofta hjälpa dig att jaga ett programfel eller en skyldig när något går snett.</p>
 </div>
 <div class="sect3">
 <h3 id="_file_annotation">Filannotering</h3>
 <div class="paragraph">
 <p>Om du spårar ett programfel i din kod och vill veta när det introducerades och varför, är filannotering ofta ditt bästa verktyg.
 Det visar vilken incheckning som senast ändrade varje rad i en fil.
-Så om du ser att en metod i din kod är felaktig kan du annotera filen med <code>git blame</code> för att avgöra vilken incheckning som var ansvarig för att den raden introducerades.</p>
+Så om du ser att en metod i din kod är felaktig kan du annotera filen med <code>git blame</code> för att avgöra vilken incheckning som införde den raden.</p>
 </div>
 <div class="paragraph">
-<p>Följande exempel använder <code>git blame</code> för att avgöra vilken incheckning och incheckare som var ansvarig för rader i Linuxkärnans <code>Makefile</code> på toppnivå och använder dessutom flaggan <code>-L</code> för att begränsa utdata till raderna 69–82 i filen:</p>
+<p>Följande exempel använder <code>git blame</code> för att avgöra vilken incheckning och incheckare som låg bakom raderna i Linuxkärnans <code>Makefile</code> på toppnivå och använder dessutom flaggan <code>-L</code> för att begränsa utdata till raderna 69–82 i filen:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -56,7 +56,7 @@ b8b0618cf6fab (Cheng Renquan  2009-05-26 16:03:07 +0800 70)   KBUILD_VERBOSE = $
 <p>Observera att det första fältet är den förkortade SHA‑1:an för incheckningen som senast ändrade raden.
 De två nästa fälten är värden som hämtats från den incheckningen — författarnamn och författardatum — så att du lätt kan se vem som ändrade raden och när.
 Efter det kommer radnumret och filens innehåll.
-Notera också <code>^1da177e4c3f4</code>‑raderna, där <code>^</code>‑prefixet markerar rader som infördes i kodförrådets första incheckning och har varit oförändrade sedan dess.
+Lägg också märke till <code>^1da177e4c3f4</code>‑raderna, där <code>^</code>‑prefixet markerar rader som infördes i kodförrådets första incheckning och har varit oförändrade sedan dess.
 Det kan vara förvirrande, eftersom du nu har sett minst tre sätt som Git använder <code>^</code> för att modifiera en SHA-1-referens, men här är det just den betydelsen som gäller.</p>
 </div>
 <div class="paragraph">
@@ -116,9 +116,9 @@ Bisecting: 6 revisions left to test after this
 </div>
 <div class="paragraph">
 <p>Git räknade ut att ungefär 12 incheckningar låg mellan incheckningen du markerade som senaste bra (v1.0) och den nuvarande trasiga versionen, och växlade till den mittersta åt dig.
-Vid det här laget kan du köra ditt test för att se om problemet finns i den här incheckningen.
+Nu kan du köra ditt test för att se om problemet finns i den här incheckningen.
 Om det gör det introducerades det någon gång före den här mittersta incheckningen; om det inte gör det introducerades problemet någon gång efter den mittersta incheckningen.
-Det visar sig att det inte finns något problem här, och du talar om för Git genom att skriva <code>git bisect good</code> och fortsätter din resa:</p>
+Det finns inget problem här, och du talar om för Git genom att skriva <code>git bisect good</code> och fortsätter din resa:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -166,7 +166,7 @@ f24d3c6ebcfc639b1a3814550e62d60b8e68a8e4 M  config</code></pre>
 </div>
 <div class="paragraph">
 <p>Det är ett kraftfullt verktyg som kan hjälpa dig att kontrollera hundratals incheckningar efter ett introducerat programfel på några minuter.
-Faktum är att om du har ett skript som returnerar 0 om projektet är bra eller något annat än 0 om projektet är dåligt kan du helt automatisera <code>git bisect</code>.
+Har du ett skript som returnerar 0 om projektet är bra eller något annat än 0 om projektet är dåligt kan du helt automatisera <code>git bisect</code>.
 Först anger du återigen intervallet för bisekteringen genom att ange den kända dåliga och den kända bra incheckningen.
 Du kan göra detta genom att lista dem med kommandot <code>bisect start</code> om du vill, och lista den kända dåliga incheckningen först och den kända bra incheckningen som tvåa:</p>
 </div>

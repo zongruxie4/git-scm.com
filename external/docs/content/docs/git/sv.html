@@ -26,8 +26,8 @@ headings:
   id: _lågnivåkommandon_rörmokeri
 - text: Guider
   id: _guider
-- text: Gränssnitt för förvar, kommandon och filer
-  id: _gränssnitt_för_förvar_kommandon_och_filer
+- text: Gränssnitt för kodförråd, kommandon och filer
+  id: _gränssnitt_för_kodförråd_kommandon_och_filer
 - text: Filformat, protokoll och andra utvecklargränssnitt
   id: _filformat_protokoll_och_andra_utvecklargränssnitt
 - text: Konfigurationsmekanism
@@ -50,8 +50,8 @@ headings:
   id: _ytterligare_dokumentation
 - text: Författare
   id: _författare
-- text: Rapportera buggar
-  id: _rapportera_buggar
+- text: Rapportera programfel
+  id: _rapportera_programfel
 - text: SE ÄVEN
   id: _se_även
 - text: GIT
@@ -85,7 +85,7 @@ headings:
 <p>Git är ett snabbt, skalbart, distribuerat revisionskontrollsystem med en ovanligt rik kommandouppsättning som ger både övergripande operationer och fullständig åtkomst till interna funktioner.</p>
 </div>
 <div class="paragraph">
-<p>See <a href='{{< relurl "docs/gittutorial/sv" >}}'>gittutorial[7]</a> to get started, then see <a href='{{< relurl "docs/giteveryday/sv" >}}'>giteveryday[7]</a> for a useful minimum set of commands. The <a href="{{< relurl "docs/user-manual/sv" >}}">Git User&#8217;s Manual</a> has a more in-depth introduction.</p>
+<p>Se <a href='{{< relurl "docs/gittutorial/sv" >}}'>gittutorial[7]</a> för att komma igång, se sedan <a href='{{< relurl "docs/giteveryday/sv" >}}'>giteveryday[7]</a> för en användbar minimiuppsättning kommandon. <a href="{{< relurl "docs/user-manual/sv" >}}">Git användarmanual</a> har en mer djupgående introduktion.</p>
 </div>
 <div class="paragraph">
 <p>När du bemästrar de grundläggande koncepten kan du återvända till den här sidan för att lära dig vilka kommandon Git erbjuder. Du kan lära dig mer om enskilda Git-kommandon med "git help command". Manualsidan för <a href='{{< relurl "docs/gitcli/sv" >}}'>gitcli[7]</a> ger dig en översikt över kommandoradssyntaxen.</p>
@@ -176,7 +176,7 @@ git --git-dir=c/a.git --work-tree=c/b status</pre>
 <dd>
 <p>Ange sökvägen till arkivet (".git"-katalogen). Detta kan också styras genom att ange miljövariabeln <span class='synopsis'><code>GIT_DIR</code></span>. Det kan vara en absolut sökväg eller en relativ sökväg till den aktuella arbetskatalogen.</p>
 <div class="paragraph">
-<p>Att ange platsen för katalogen ".git" med hjälp av det här alternativet (eller miljövariabeln <span class='synopsis'><code>GIT_DIR</code></span>) stänger av förvar-upptäckten som försöker hitta en katalog med underkatalogen ".git" (vilket är hur förvaret och den översta nivån i arbetsträdet upptäcks), och talar om för Git att du är på den översta nivån i arbetsträdet. Om du inte är på den översta nivån i arbetskatalogen, bör du tala om för Git var den översta nivån i arbetskatalogen finns, med alternativet <span class='synopsis'><code>--work-tree=</code><em>&lt;sökväg&gt;</em></span> (eller miljövariabeln <span class='synopsis'><code>GIT_WORK_TREE</code></span>)</p>
+<p>Att ange platsen för katalogen ".git" med hjälp av det här alternativet (eller miljövariabeln <span class='synopsis'><code>GIT_DIR</code></span>) stänger av kodförråd-upptäckten som försöker hitta en katalog med underkatalogen ".git" (vilket är hur kodförrådet och den översta nivån i arbetsträdet upptäcks), och talar om för Git att du är på den översta nivån i arbetsträdet. Om du inte är på den översta nivån i arbetskatalogen, bör du tala om för Git var den översta nivån i arbetskatalogen finns, med alternativet <span class='synopsis'><code>--work-tree=</code><em>&lt;sökväg&gt;</em></span> (eller miljövariabeln <span class='synopsis'><code>GIT_WORK_TREE</code></span>)</p>
 </div>
 <div class="paragraph">
 <p>Om du bara vill köra git som om det startades i <span class='synopsis'><em>&lt;sökväg&gt;</em></span>, använd då <span class='synopsis'><code>git</code> <code>-C</code> <em>&lt;sökväg&gt;</em></span>.</p>
@@ -184,7 +184,7 @@ git --git-dir=c/a.git --work-tree=c/b status</pre>
 </dd>
 <dt class="hdlist1" id="git---work-treeltskvggt"> <a class="anchor" href="#git---work-treeskvg"></a> <a class="anchor" href="#git---work-treeltskvggt"></a>--work-tree=&lt;sökväg&gt; </dt>
 <dd>
-<p>Set the path to the working tree. It can be an absolute path or a path relative to the current working directory. This can also be controlled by setting the GIT_WORK_TREE environment variable and the core.worktree configuration variable (see core.worktree in <a href='{{< relurl "docs/git-config/sv" >}}'>git-config[1]</a> for a more detailed discussion).</p>
+<p>Ange sökvägen till arbetskatalog. Det kan vara en absolut sökväg eller en sökväg relativ till den aktuella arbetskatalogen. Detta kan också styras genom att ställa in miljövariabeln GIT_WORK_TREE och konfigurationsvariabeln core.worktree (se core.worktree i <a href='{{< relurl "docs/git-config/sv" >}}'>git-config[1]</a> för en mer detaljerad diskussion).</p>
 </dd>
 <dt class="hdlist1" id="git---namespaceltskvggt"> <a class="anchor" href="#git---namespaceskvg"></a> <a class="anchor" href="#git---namespaceltskvggt"></a>--namespace=&lt;sökväg&gt; </dt>
 <dd>
@@ -192,7 +192,7 @@ git --git-dir=c/a.git --work-tree=c/b status</pre>
 </dd>
 <dt class="hdlist1" id="git---bare"> <a class="anchor" href="#git---bare"></a>--bare </dt>
 <dd>
-<p>Behandla förvaret som ett rent bart förvar. Om GIT_DIR-miljön inte är inställd, sätts den till den aktuella arbetskatalogen.</p>
+<p>Behandla kodförrådet som ett rent bart kodförråd. Om GIT_DIR-miljön inte är inställd, sätts den till den aktuella arbetskatalogen.</p>
 </dd>
 <dt class="hdlist1" id="git---no-replace-objects"> <a class="anchor" href="#git---no-replace-objects"></a>--no-replace-objects </dt>
 <dd>
@@ -200,7 +200,7 @@ git --git-dir=c/a.git --work-tree=c/b status</pre>
 </dd>
 <dt class="hdlist1" id="git---no-lazy-fetch"> <a class="anchor" href="#git---no-lazy-fetch"></a>--no-lazy-fetch </dt>
 <dd>
-<p>Hämta inte saknade objekt från promisor-fjärr på begäran. Användbart tillsammans med <span class='synopsis'><code>git</code> <code>cat-file</code> <code>-e</code> <em><span class="hover-term" data-term="objekt">&lt;objekt&gt;</span></em></span> för att se om objektet är lokalt tillgängligt. Detta motsvarar att sätta miljövariabeln <span class='synopsis'><code>GIT_NO_LAZY_FETCH</code></span> till <span class='synopsis'><code>1</code></span>.</p>
+<p>löftesgivareHämta inte saknade objekt från promisor-fjärr på begäran. Användbart tillsammans med <span class='synopsis'><code>git</code> <code>cat-file</code> <code>-e</code> <em><span class="hover-term" data-term="objekt">&lt;objekt&gt;</span></em></span> för att se om objektet är lokalt tillgängligt. Detta motsvarar att sätta miljövariabeln <span class='synopsis'><code>GIT_NO_LAZY_FETCH</code></span> till <span class='synopsis'><code>1</code></span>.</p>
 </dd>
 <dt class="hdlist1" id="git---no-optional-locks"> <a class="anchor" href="#git---no-optional-locks"></a>--no-optional-locks </dt>
 <dd>
@@ -212,19 +212,19 @@ git --git-dir=c/a.git --work-tree=c/b status</pre>
 </dd>
 <dt class="hdlist1" id="git---literal-pathspecs"> <a class="anchor" href="#git---literal-pathspecs"></a>--literal-pathspecs </dt>
 <dd>
-<p>Behandla sökvägsspec bokstavligt (dvs. ingen globbing, ingen pathspec-magi). Detta motsvarar att sätta miljövariabeln <span class='synopsis'><code>GIT_LITERAL_PATHSPECS</code></span> till <span class='synopsis'><code>1</code></span>.</p>
+<p>Behandla sökvägsuttrycket bokstavligt (dvs. ingen globbing, ingen sökvägsuttrycket). Detta motsvarar att sätta miljövariabeln <span class='synopsis'><code>GIT_LITERAL_PATHSPECS</code></span> till <span class='synopsis'><code>1</code></span>.</p>
 </dd>
 <dt class="hdlist1" id="git---glob-pathspecs"> <a class="anchor" href="#git---glob-pathspecs"></a>--glob-pathspecs </dt>
 <dd>
-<p>Lägg till "glob"-magi till alla sökvägsspec. Detta motsvarar att sätta miljövariabeln <span class='synopsis'><code>GIT_GLOB_PATHSPECS</code></span> till <span class='synopsis'><code>1</code></span>. Globbing kan inaktiveras på individuella sökvägsspecar med sökvägsspec-magin ":(literal)"</p>
+<p>Lägg till "glob"-magi till alla sökvägsmönster. Detta motsvarar att sätta miljövariabeln <span class='synopsis'><code>GIT_GLOB_PATHSPECS</code></span> till <span class='synopsis'><code>1</code></span>. Globbing kan inaktiveras på individuella sökvägsmönster med sökvägsuttrycket ":(literal)"</p>
 </dd>
 <dt class="hdlist1" id="git---noglob-pathspecs"> <a class="anchor" href="#git---noglob-pathspecs"></a>--noglob-pathspecs </dt>
 <dd>
-<p>Lägg till "literal" magi till alla sökvägsspecar. Detta motsvarar att sätta miljövariabeln <span class='synopsis'><code>GIT_NOGLOB_PATHSPECS</code></span> till <span class='synopsis'><code>1</code></span>. Att aktivera globbing på individuella pathspecs kan göras med pathspec magic ":(glob)"</p>
+<p>Lägg till "literal" uttryck till alla sökvägsmönster. Detta motsvarar att sätta miljövariabeln <span class='synopsis'><code>GIT_NOGLOB_PATHSPECS</code></span> till <span class='synopsis'><code>1</code></span>. Att aktivera globbing på individuella sökvägsmönster kan göras med sökvägsuttrycket ":(glob)"</p>
 </dd>
 <dt class="hdlist1" id="git---icase-pathspecs"> <a class="anchor" href="#git---icase-pathspecs"></a>--icase-pathspecs </dt>
 <dd>
-<p>Lägg till "icase"-magi till alla sökvägsspecar. Detta motsvarar att sätta miljövariabeln <span class='synopsis'><code>GIT_ICASE_PATHSPECS</code></span> till <span class='synopsis'><code>1</code></span>.</p>
+<p>Lägg till "icase"-uttryck till alla sökvägsmönster. Detta motsvarar att sätta miljövariabeln <span class='synopsis'><code>GIT_ICASE_PATHSPECS</code></span> till <span class='synopsis'><code>1</code></span>.</p>
 </dd>
 <dt class="hdlist1" id="git---list-cmdsltgruppgtltgruppgt82308203"> <a class="anchor" href="#git---list-cmdsgruppgrupp"></a> <a class="anchor" href="#git---list-cmdsltgruppgtltgruppgt82308203"></a>--list-cmds=&lt;grupp&gt;[,&lt;grupp&gt;&#8230;&#8203;] </dt>
 <dd>
@@ -253,7 +253,7 @@ git --git-dir=c/a.git --work-tree=c/b status</pre>
 <p>Vi delar upp porslinskommandona i huvudkommandon och några hjälpprogram.</p>
 </div>
 <div class="sect2">
-<h3 id="_main_porcelain_commands"><a class="anchor" href="#_main_porcelain_commands"></a>Main porcelain commands</h3>
+<h3 id="_huvudkommandon_för_porslin"><a class="anchor" href="#_huvudkommandon_för_porslin"></a>Huvudkommandon för porslin</h3>
 <div class="admonitionblock warning">
 <table>
 <tr>
@@ -372,7 +372,7 @@ git --git-dir=c/a.git --work-tree=c/b status</pre>
 <p>Gränssnittet (indata, utdata, uppsättning alternativ och semantiken) till dessa lågnivåkommandon är avsedda att vara mycket mer stabilt än kommandon på porslinsnivå, eftersom dessa kommandon främst är för skriptbaserad användning. Gränssnittet till porslinskommandon kan däremot komma att ändras för att förbättra slutanvändarupplevelsen.</p>
 </div>
 <div class="paragraph">
-<p>Följande beskrivning delar upp lågnivåkommandon i kommandon som manipulerar objekt (i förvar, indexet och arbetskatalog), kommandon som förhör och jämför objekt, och kommandon som flyttar objekt och referenser mellan arkiv.</p>
+<p>Följande beskrivning delar upp lågnivåkommandon i kommandon som manipulerar objekt (i kodförråd, indexet och arbetskatalog), kommandon som förhör och jämför objekt, och kommandon som flyttar objekt och referenser mellan arkiv.</p>
 </div>
 <div class="sect2">
 <h3 id="_manipulationskommandon"><a class="anchor" href="#_manipulationskommandon"></a>Manipulationskommandon</h3>
@@ -418,7 +418,7 @@ git --git-dir=c/a.git --work-tree=c/b status</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_synkronisera_förvar"><a class="anchor" href="#_synkronisera_förvar"></a>Synkronisera förvar</h3>
+<h3 id="_synkronisera_kodförråd"><a class="anchor" href="#_synkronisera_kodförråd"></a>Synkronisera kodförråd</h3>
 <div class="admonitionblock warning">
 <table>
 <tr>
@@ -508,10 +508,10 @@ git --git-dir=c/a.git --work-tree=c/b status</pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_gränssnitt_för_förvar_kommandon_och_filer"><a class="anchor" href="#_gränssnitt_för_förvar_kommandon_och_filer"></a>Gränssnitt för förvar, kommandon och filer</h2>
+<h2 id="_gränssnitt_för_kodförråd_kommandon_och_filer"><a class="anchor" href="#_gränssnitt_för_kodförråd_kommandon_och_filer"></a>Gränssnitt för kodförråd, kommandon och filer</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Denna dokumentation diskuterar gränssnitt för förvar och kommandon som användare förväntas interagera direkt med. Se <span class='synopsis'><code>--user-formats</code></span> i <a href='{{< relurl "docs/git-help/sv" >}}'>git-help[1]</a> för mer information om kriterierna.</p>
+<p>Denna dokumentation diskuterar gränssnitt för kodförråd och kommandon som användare förväntas interagera direkt med. Se <span class='synopsis'><code>--user-formats</code></span> i <a href='{{< relurl "docs/git-help/sv" >}}'>git-help[1]</a> för mer information om kriterierna.</p>
 </div>
 <div class="admonitionblock warning">
 <table>
@@ -561,7 +561,7 @@ git --git-dir=c/a.git --work-tree=c/b status</pre>
 <h2 id="_konfigurationsmekanism"><a class="anchor" href="#_konfigurationsmekanism"></a>Konfigurationsmekanism</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Git använder ett enkelt textformat för att lagra anpassningar som är per förvar och per användare. En sådan konfigurationsfil kan se ut så här:</p>
+<p>Git använder ett enkelt textformat för att lagra anpassningar som är per kodförråd och per användare. En sådan konfigurationsfil kan se ut så här:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -610,9 +610,9 @@ git --git-dir=c/a.git --work-tree=c/b status</pre>
 <dd>
 <p>Indikerar ett träd-, inchecknings- eller taggobjektnamn. Ett kommando som tar ett &lt;trädlikt&gt;-argument vill i slutändan operera på ett &lt;tree&gt;-objekt men avreferenserar automatiskt &lt;inchecknings&gt;- och <span class="hover-term" data-term="tag">&lt;tag&gt;</span>-objekt som pekar på ett <span class="hover-term" data-term="träd">&lt;träd&gt;</span>.</p>
 </dd>
-<dt class="hdlist1" id="git-ltinchecknings-aktiggt"> <a class="anchor" href="#git-inchecknings-aktig"></a> <a class="anchor" href="#git-ltinchecknings-aktiggt"></a>&lt;inchecknings-aktig&gt; </dt>
+<dt class="hdlist1" id="git-ltincheckning-igtgt"> <a class="anchor" href="#git-incheckning-igt"></a> <a class="anchor" href="#git-ltincheckning-igtgt"></a>&lt;incheckning-igt&gt; </dt>
 <dd>
-<p>Indikerar ett inchecknings- eller tag-objektnamn. Ett kommando som tar ett &lt;inchecknings-aktig&gt;-argument vill i slutändan utföra en åtgärd på ett &lt;inchecknings&gt;-objekt men avreferenserar automatiskt <span class="hover-term" data-term="tag">&lt;tag&gt;</span>-objekt som pekar på en <span class="hover-term" data-term="incheckning">&lt;incheckning&gt;</span>.</p>
+<p>Indikerar ett inchecknings- eller tag-objektnamn. Ett kommando som tar ett &lt;incheckning-igt&gt;-argument vill i slutändan utföra en åtgärd på ett &lt;inchecknings&gt;-objekt men avreferenserar automatiskt <span class="hover-term" data-term="tag">&lt;tag&gt;</span>-objekt som pekar på en <span class="hover-term" data-term="incheckning">&lt;incheckning&gt;</span>.</p>
 </dd>
 <dt class="hdlist1" id="git-lttypgt"> <a class="anchor" href="#git-typ"></a> <a class="anchor" href="#git-lttypgt"></a>&lt;typ&gt; </dt>
 <dd>
@@ -671,7 +671,7 @@ git --git-dir=c/a.git --work-tree=c/b status</pre>
 <h2 id="_terminologi"><a class="anchor" href="#_terminologi"></a>Terminologi</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Please see <a href='{{< relurl "docs/gitglossary/sv" >}}'>gitglossary[7]</a>.</p>
+<p>Se <a href='{{< relurl "docs/gitglossary/sv" >}}'>gitglossary[7]</a>.</p>
 </div>
 </div>
 </div>
@@ -696,7 +696,7 @@ git --git-dir=c/a.git --work-tree=c/b status</pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_git_förvar"><a class="anchor" href="#_git_förvar"></a>Git-förvar</h3>
+<h3 id="_git_kodförråd"><a class="anchor" href="#_git_kodförråd"></a>Git-kodförråd</h3>
 <div class="paragraph">
 <p>Dessa miljövariabler gäller för "alla" centrala Git-kommandon. Obs: det är värt att notera att de kan användas/åsidosättas av SCMS som sitter ovanför Git, så var försiktig om du använder ett främmande framända.</p>
 </div>
@@ -723,7 +723,7 @@ git --git-dir=c/a.git --work-tree=c/b status</pre>
 </dd>
 <dt class="hdlist1" id="git-spanclasssynopsiscodeGITDIRcodespan"> <a class="anchor" href="#git-GITDIR"></a> <a class="anchor" href="#git-spanclasssynopsiscodeGITDIRcodespan"></a><span class='synopsis'><code>GIT_DIR</code></span> </dt>
 <dd>
-<p>Om miljövariabeln <span class='synopsis'><code>GIT_DIR</code></span> är satt anger den en sökväg som ska användas istället för standardvariabeln <span class='synopsis'><code>.git</code></span> för basen av förvaret. Kommandoradsalternativet <span class='synopsis'><code>--git-dir</code></span> ställer också in detta värde.</p>
+<p>Om miljövariabeln <span class='synopsis'><code>GIT_DIR</code></span> är satt anger den en sökväg som ska användas istället för standardvariabeln <span class='synopsis'><code>.git</code></span> för basen av kodförrådet. Kommandoradsalternativet <span class='synopsis'><code>--git-dir</code></span> ställer också in detta värde.</p>
 </dd>
 <dt class="hdlist1" id="git-spanclasssynopsiscodeGITWORKTREEcodespan"> <a class="anchor" href="#git-GITWORKTREE"></a> <a class="anchor" href="#git-spanclasssynopsiscodeGITWORKTREEcodespan"></a><span class='synopsis'><code>GIT_WORK_TREE</code></span> </dt>
 <dd>
@@ -735,11 +735,11 @@ git --git-dir=c/a.git --work-tree=c/b status</pre>
 </dd>
 <dt class="hdlist1" id="git-spanclasssynopsiscodeGITCEILINGDIRECTORIEScodespan"> <a class="anchor" href="#git-GITCEILINGDIRECTORIES"></a> <a class="anchor" href="#git-spanclasssynopsiscodeGITCEILINGDIRECTORIEScodespan"></a><span class='synopsis'><code>GIT_CEILING_DIRECTORIES</code></span> </dt>
 <dd>
-<p>Detta bör vara en kolonseparerad lista med absoluta sökvägar. Om den är angiven är det en lista över kataloger som Git inte ska söka upp till när den letar efter en förvar-katalog (användbart för att exkludera långsamt laddande nätverkskataloger). Den kommer inte att exkludera den aktuella arbetskatalogen eller en GIT_DIR-uppsättning på kommandoraden eller i miljön. Normalt måste Git läsa posterna i den här listan och matcha eventuella symboliska länkar som kan finnas för att jämföra dem med den aktuella katalogen. Men om även denna åtkomst är långsam kan du lägga till en tom post i listan för att tala om för Git att de efterföljande posterna inte är symboliska länkar och inte behöver matchas; t.ex. <span class='synopsis'><code>GIT_CEILING_DIRECTORIES=/maybe/symlink::/very/slow/non/symlink</code></span>.</p>
+<p>Detta bör vara en kolonseparerad lista med absoluta sökvägar. Om den är angiven är det en lista över kataloger som Git inte ska söka upp till när den letar efter en kodförråd-katalog (användbart för att exkludera långsamt laddande nätverkskataloger). Den kommer inte att exkludera den aktuella arbetskatalogen eller en GIT_DIR-uppsättning på kommandoraden eller i miljön. Normalt måste Git läsa posterna i den här listan och matcha eventuella symboliska länkar som kan finnas för att jämföra dem med den aktuella katalogen. Men om även denna åtkomst är långsam kan du lägga till en tom post i listan för att tala om för Git att de efterföljande posterna inte är symboliska länkar och inte behöver matchas; t.ex. <span class='synopsis'><code>GIT_CEILING_DIRECTORIES=/maybe/symlink::/very/slow/non/symlink</code></span>.</p>
 </dd>
 <dt class="hdlist1" id="git-spanclasssynopsiscodeGITDISCOVERYACROSSFILESYSTEMcodespan"> <a class="anchor" href="#git-GITDISCOVERYACROSSFILESYSTEM"></a> <a class="anchor" href="#git-spanclasssynopsiscodeGITDISCOVERYACROSSFILESYSTEMcodespan"></a><span class='synopsis'><code>GIT_DISCOVERY_ACROSS_FILESYSTEM</code></span> </dt>
 <dd>
-<p>När Git körs i en katalog som inte har ".git"-förvar-katalogen, försöker den hitta en sådan katalog i överordnade kataloger för att hitta toppen av arbetsträdet, men som standard korsar den inte filsystemsgränser. Denna booleska miljövariabel kan sättas till true för att ange att Git inte ska stanna vid filsystemsgränser. Liksom <span class='synopsis'><code>GIT_CEILING_DIRECTORIES</code></span> kommer detta inte att påverka en explicit arkivkatalog som anges via <span class='synopsis'><code>GIT_DIR</code></span> eller på kommandoraden.</p>
+<p>När Git körs i en katalog som inte har ".git"-kodförråd-katalogen, försöker den hitta en sådan katalog i överordnade kataloger för att hitta toppen av arbetsträdet, men som standard korsar den inte filsystemsgränser. Denna booleska miljövariabel kan sättas till true för att ange att Git inte ska stanna vid filsystemsgränser. Liksom <span class='synopsis'><code>GIT_CEILING_DIRECTORIES</code></span> kommer detta inte att påverka en explicit arkivkatalog som anges via <span class='synopsis'><code>GIT_DIR</code></span> eller på kommandoraden.</p>
 </dd>
 <dt class="hdlist1" id="git-spanclasssynopsiscodeGITCOMMONDIRcodespan"> <a class="anchor" href="#git-GITCOMMONDIR"></a> <a class="anchor" href="#git-spanclasssynopsiscodeGITCOMMONDIRcodespan"></a><span class='synopsis'><code>GIT_COMMON_DIR</code></span> </dt>
 <dd>
@@ -747,11 +747,11 @@ git --git-dir=c/a.git --work-tree=c/b status</pre>
 </dd>
 <dt class="hdlist1" id="git-spanclasssynopsiscodeGITDEFAULTHASHcodespan"> <a class="anchor" href="#git-GITDEFAULTHASH"></a> <a class="anchor" href="#git-spanclasssynopsiscodeGITDEFAULTHASHcodespan"></a><span class='synopsis'><code>GIT_DEFAULT_HASH</code></span> </dt>
 <dd>
-<p>Om denna variabel är satt kommer standard hashalgoritmen för nya förvar att ställas in på detta värde. Detta värde ignoreras vid kloning och inställningen för fjärrförvar används alltid. Standardvärdet är "sha1". Se <span class='synopsis'><code>--object-format</code></span> i <a href='{{< relurl "docs/git-init/sv" >}}'>git-init[1]</a>.</p>
+<p>Om denna variabel är satt kommer standard hashalgoritmen för nya kodförråd att ställas in på detta värde. Detta värde ignoreras vid kloning och inställningen för fjärrkodförråd används alltid. Standardvärdet är "sha1". Se <span class='synopsis'><code>--object-format</code></span> i <a href='{{< relurl "docs/git-init/sv" >}}'>git-init[1]</a>.</p>
 </dd>
 <dt class="hdlist1" id="git-spanclasssynopsiscodeGITDEFAULTREFFORMATcodespan"> <a class="anchor" href="#git-GITDEFAULTREFFORMAT"></a> <a class="anchor" href="#git-spanclasssynopsiscodeGITDEFAULTREFFORMATcodespan"></a><span class='synopsis'><code>GIT_DEFAULT_REF_FORMAT</code></span> </dt>
 <dd>
-<p>Om den här variabeln är satt, kommer standard-referens bakända formatet för nya förvar att ställas in på detta värde. Standardvärdet är "files". Se <span class='synopsis'><code>--ref-format</code></span> i <a href='{{< relurl "docs/git-init/sv" >}}'>git-init[1]</a>.</p>
+<p>Om den här variabeln är satt, kommer standard-referens bakända formatet för nya kodförråd att ställas in på detta värde. Standardvärdet är "files". Se <span class='synopsis'><code>--ref-format</code></span> i <a href='{{< relurl "docs/git-init/sv" >}}'>git-init[1]</a>.</p>
 </dd>
 </dl>
 </div>
@@ -909,7 +909,7 @@ git --git-dir=c/a.git --work-tree=c/b status</pre>
 </dd>
 <dt class="hdlist1" id="git-spanclasssynopsiscodeGITCONFIGNOSYSTEMcodespan"> <a class="anchor" href="#git-GITCONFIGNOSYSTEM"></a> <a class="anchor" href="#git-spanclasssynopsiscodeGITCONFIGNOSYSTEMcodespan"></a><span class='synopsis'><code>GIT_CONFIG_NOSYSTEM</code></span> </dt>
 <dd>
-<p>Om läsning av inställningar från den systemomfattande <span class='synopsis'><code>$</code>(<code>prefix</code>)<code>/etc/gitconfig</code></span>-filen ska hoppas över. Denna booleska miljövariabel kan användas tillsammans med <span class='synopsis'><code>$HOME</code></span> och <span class='synopsis'><code>$XDG_CONFIG_HOME</code></span> för att skapa en förutsägbar miljö för ett kräsna skript, eller så kan du ställa in den på true för att tillfälligt undvika att använda en buggig <span class='synopsis'><code>/etc/gitconfig</code></span>-fil medan du väntar på att någon med tillräckliga behörigheter ska åtgärda den.</p>
+<p>Om läsning av inställningar från den systemomfattande <span class='synopsis'><code>$</code>(<code>prefix</code>)<code>/etc/gitconfig</code></span>-filen ska hoppas över. Denna booleska miljövariabel kan användas tillsammans med <span class='synopsis'><code>$HOME</code></span> och <span class='synopsis'><code>$XDG_CONFIG_HOME</code></span> för att skapa en förutsägbar miljö för ett kräsna skript, eller så kan du ställa in den på true för att tillfälligt undvika att använda ett programfelig <span class='synopsis'><code>/etc/gitconfig</code></span>-fil medan du väntar på att någon med tillräckliga behörigheter ska åtgärda den.</p>
 </dd>
 <dt class="hdlist1" id="git-spanclasssynopsiscodeGITFLUSHcodespan"> <a class="anchor" href="#git-GITFLUSH"></a> <a class="anchor" href="#git-spanclasssynopsiscodeGITFLUSHcodespan"></a><span class='synopsis'><code>GIT_FLUSH</code></span> </dt>
 <dd>
@@ -945,7 +945,7 @@ git --git-dir=c/a.git --work-tree=c/b status</pre>
 </dd>
 <dt class="hdlist1" id="git-spanclasssynopsiscodeGITTRACEPACKFILEcodespan"> <a class="anchor" href="#git-GITTRACEPACKFILE"></a> <a class="anchor" href="#git-spanclasssynopsiscodeGITTRACEPACKFILEcodespan"></a><span class='synopsis'><code>GIT_TRACE_PACKFILE</code></span> </dt>
 <dd>
-<p>Möjliggör spårning av packfiler som skickats eller mottagits av ett givet program. Till skillnad från annan spårningsutdata är denna spårning ordagrant: inga rubriker och ingen citering av binär data. Du vill nästan säkert dirigera till en fil (t.ex. <span class='synopsis'><code>GIT_TRACE_PACKFILE=/tmp/my.pack</code></span>) snarare än att visa den i terminalen eller blanda den med annan spårningsutdata.</p>
+<p>Möjliggör spårning av packfiler som skickats eller mottagits av ett givet program. Till skillnad från annan spårningsutdata är denna spårning ordagrant: inga huvuden och ingen citering av binär data. Du vill nästan säkert dirigera till en fil (t.ex. <span class='synopsis'><code>GIT_TRACE_PACKFILE=/tmp/my.pack</code></span>) snarare än att visa den i terminalen eller blanda den med annan spårningsutdata.</p>
 <div class="paragraph">
 <p>Observera att detta för närvarande endast är implementerat för klientsidan av kloner och hämtningar.</p>
 </div>
@@ -960,7 +960,7 @@ git --git-dir=c/a.git --work-tree=c/b status</pre>
 </dd>
 <dt class="hdlist1" id="git-spanclasssynopsiscodeGITTRACESETUPcodespan"> <a class="anchor" href="#git-GITTRACESETUP"></a> <a class="anchor" href="#git-spanclasssynopsiscodeGITTRACESETUPcodespan"></a><span class='synopsis'><code>GIT_TRACE_SETUP</code></span> </dt>
 <dd>
-<p>Enables trace messages printing the .git, working tree and current working directory after Git has completed its setup phase. See <span class='synopsis'><code>GIT_TRACE</code></span> for available trace output options.</p>
+<p>Aktiverar spårningsmeddelanden som skriver ut .git, arbetskatalogen och den aktuella arbetskatalogen efter att Git har slutfört sin installationsfas. Se <span class='synopsis'><code>GIT_TRACE</code></span> för tillgängliga spårningsutdataalternativ.</p>
 </dd>
 <dt class="hdlist1" id="git-spanclasssynopsiscodeGITTRACESHALLOWcodespan"> <a class="anchor" href="#git-GITTRACESHALLOW"></a> <a class="anchor" href="#git-spanclasssynopsiscodeGITTRACESHALLOWcodespan"></a><span class='synopsis'><code>GIT_TRACE_SHALLOW</code></span> </dt>
 <dd>
@@ -972,7 +972,7 @@ git --git-dir=c/a.git --work-tree=c/b status</pre>
 </dd>
 <dt class="hdlist1" id="git-spanclasssynopsiscodeGITTRACECURLNODATAcodespan"> <a class="anchor" href="#git-GITTRACECURLNODATA"></a> <a class="anchor" href="#git-spanclasssynopsiscodeGITTRACECURLNODATAcodespan"></a><span class='synopsis'><code>GIT_TRACE_CURL_NO_DATA</code></span> </dt>
 <dd>
-<p>När en curl-spårning är aktiverad (se <span class='synopsis'><code>GIT_TRACE_CURL</code></span> ovan), dumpa inte data (det vill säga, dumpa endast informationsrader och rubriker).</p>
+<p>När en curl-spårning är aktiverad (se <span class='synopsis'><code>GIT_TRACE_CURL</code></span> ovan), dumpa inte data (det vill säga, dumpa endast informationsrader och huvuden).</p>
 </dd>
 <dt class="hdlist1" id="git-spanclasssynopsiscodeGITTRACE2codespan"> <a class="anchor" href="#git-GITTRACE2"></a> <a class="anchor" href="#git-spanclasssynopsiscodeGITTRACE2codespan"></a><span class='synopsis'><code>GIT_TRACE2</code></span> </dt>
 <dd>
@@ -1006,7 +1006,7 @@ git --git-dir=c/a.git --work-tree=c/b status</pre>
 </dd>
 <dt class="hdlist1" id="git-spanclasssynopsiscodeGITTRACEREDACTcodespan"> <a class="anchor" href="#git-GITTRACEREDACT"></a> <a class="anchor" href="#git-spanclasssynopsiscodeGITTRACEREDACTcodespan"></a><span class='synopsis'><code>GIT_TRACE_REDACT</code></span> </dt>
 <dd>
-<p>Som standard, när spårning är aktiverat, redigerar Git värdena för cookies, "Authorization:"-headern, "Proxy-Authorization:"-headern och packfile-URI:er. Sätt denna booleska miljövariabel till falsk för att förhindra denna redigering.</p>
+<p>Som standard, när spårning är aktiverat, redigerar Git värdena för cookies, "Authorization:"-huvud, "Proxy-Authorization:"-huvud och packfile-URI:er. Sätt denna booleska miljövariabel till falsk för att förhindra denna redigering.</p>
 </dd>
 <dt class="hdlist1" id="git-spanclasssynopsiscodeGITNOREPLACEOBJECTScodespan"> <a class="anchor" href="#git-GITNOREPLACEOBJECTS"></a> <a class="anchor" href="#git-spanclasssynopsiscodeGITNOREPLACEOBJECTScodespan"></a><span class='synopsis'><code>GIT_NO_REPLACE_OBJECTS</code></span> </dt>
 <dd>
@@ -1014,27 +1014,27 @@ git --git-dir=c/a.git --work-tree=c/b status</pre>
 </dd>
 <dt class="hdlist1" id="git-spanclasssynopsiscodeGITLITERALPATHSPECScodespan"> <a class="anchor" href="#git-GITLITERALPATHSPECS"></a> <a class="anchor" href="#git-spanclasssynopsiscodeGITLITERALPATHSPECScodespan"></a><span class='synopsis'><code>GIT_LITERAL_PATHSPECS</code></span> </dt>
 <dd>
-<p>Om du ställer in denna booleska miljövariabel till sant kommer Git att behandla alla sökvägsspecifikationer bokstavligt, snarare än som globmönster. Om du till exempel kör <span class='synopsis'><code>GIT_LITERAL_PATHSPECS=1</code> <code>git</code> <code>log</code> <code>--</code> <code>*.c'</code></span> kommer det att söka efter commits som berör sökvägen <span class='synopsis'><code>*.c</code></span>, inte några sökvägar som globen <span class='synopsis'><code>*.c</code></span> matchar. Du kanske vill ha detta om du matar Git med bokstavliga sökvägar (t.ex. sökvägar som tidigare givits till dig av <span class='synopsis'><code>git</code> <code>ls-tree</code></span>, <span class='synopsis'><code>--raw</code></span> diff output, etc.).</p>
+<p>Om du ställer in denna booleska miljövariabel till sant kommer Git att behandla alla sökvägsmönster bokstavligt, snarare än som globmönster. Om du till exempel kör <span class='synopsis'><code>GIT_LITERAL_PATHSPECS=1</code> <code>git</code> <code>log</code> <code>--</code> <code>*.c'</code></span> kommer det att söka efter commits som berör sökvägen <span class='synopsis'><code>*.c</code></span>, inte några sökvägar som globen <span class='synopsis'><code>*.c</code></span> matchar. Du kanske vill ha detta om du matar Git med bokstavliga sökvägar (t.ex. sökvägar som tidigare givits till dig av <span class='synopsis'><code>git</code> <code>ls-tree</code></span>, <span class='synopsis'><code>--raw</code></span> diff output, etc.).</p>
 </dd>
 <dt class="hdlist1" id="git-spanclasssynopsiscodeGITGLOBPATHSPECScodespan"> <a class="anchor" href="#git-GITGLOBPATHSPECS"></a> <a class="anchor" href="#git-spanclasssynopsiscodeGITGLOBPATHSPECScodespan"></a><span class='synopsis'><code>GIT_GLOB_PATHSPECS</code></span> </dt>
 <dd>
-<p>Om denna booleska miljövariabel sätts till true kommer Git att behandla alla sökvägsspecs som glob-mönster (även känd som "glob"-magi).</p>
+<p>Om denna booleska miljövariabel sätts till true kommer Git att behandla alla sökvägsspecs som glob-mönster (även känd som "glob"-uttryck).</p>
 </dd>
 <dt class="hdlist1" id="git-spanclasssynopsiscodeGITNOGLOBPATHSPECScodespan"> <a class="anchor" href="#git-GITNOGLOBPATHSPECS"></a> <a class="anchor" href="#git-spanclasssynopsiscodeGITNOGLOBPATHSPECScodespan"></a><span class='synopsis'><code>GIT_NOGLOB_PATHSPECS</code></span> </dt>
 <dd>
-<p>Om denna booleska miljövariabel sätts till true kommer Git att behandla alla sökvägsspecs som literala (även känd som "literal" magi).</p>
+<p>Om denna booleska miljövariabel sätts till true kommer Git att behandla alla sökvägsmönster som literala (även känd som "literal" uttryck).</p>
 </dd>
 <dt class="hdlist1" id="git-spanclasssynopsiscodeGITICASEPATHSPECScodespan"> <a class="anchor" href="#git-GITICASEPATHSPECS"></a> <a class="anchor" href="#git-spanclasssynopsiscodeGITICASEPATHSPECScodespan"></a><span class='synopsis'><code>GIT_ICASE_PATHSPECS</code></span> </dt>
 <dd>
-<p>Om denna booleska miljövariabel sätts till sant kommer Git att behandla alla sökvägsspecifikationer som skiftläges-okänsliga.</p>
+<p>Om denna booleska miljövariabel sätts till sant kommer Git att behandla alla sökvägsmönster som skiftläges-okänsliga.</p>
 </dd>
 <dt class="hdlist1" id="git-spanclasssynopsiscodeGITNOLAZYFETCHcodespan"> <a class="anchor" href="#git-GITNOLAZYFETCH"></a> <a class="anchor" href="#git-spanclasssynopsiscodeGITNOLAZYFETCHcodespan"></a><span class='synopsis'><code>GIT_NO_LAZY_FETCH</code></span> </dt>
 <dd>
-<p>Att sätta denna booleska miljövariabel till sant säger att Git inte ska lat-hämta saknade objekt från promisor-fjärr på begäran.</p>
+<p>Att sätta denna booleska miljövariabel till sant säger att Git inte ska lat-hämta saknade objekt från löftesgivare-fjärr på begäran.</p>
 </dd>
 <dt class="hdlist1" id="git-spanclasssynopsiscodeGITREFLOGACTIONcodespan"> <a class="anchor" href="#git-GITREFLOGACTION"></a> <a class="anchor" href="#git-spanclasssynopsiscodeGITREFLOGACTIONcodespan"></a><span class='synopsis'><code>GIT_REFLOG_ACTION</code></span> </dt>
 <dd>
-<p>När en referens uppdateras skapas reflogposter för att hålla reda på orsaken till att referensen uppdaterades (vilket vanligtvis är namnet på det högnivåkommando som uppdaterade referensen), utöver de gamla och nya värdena för referensen. Ett skriptat Porcelain-kommando kan använda hjälpfunktionen set_reflog_action i <span class='synopsis'><code>git-sh-setup</code></span> för att sätta dess namn på denna variabel när den anropas som toppnivåkommando av slutanvändaren, för att registreras i refloggens brödtext.</p>
+<p>När en referens uppdateras skapas reflogposter för att hålla reda på orsaken till att referensen uppdaterades (vilket vanligtvis är namnet på det högnivåkommando som uppdaterade referensen), utöver de gamla och nya värdena för referensen. Ett skriptat Porslins-kommando kan använda hjälpfunktionen set_reflog_action i <span class='synopsis'><code>git-sh-setup</code></span> för att sätta dess namn på denna variabel när den anropas som toppnivåkommando av slutanvändaren, för att registreras i refloggens brödtext.</p>
 </dd>
 <dt class="hdlist1" id="git-spanclasssynopsiscodeGITREFPARANOIAcodespan"> <a class="anchor" href="#git-GITREFPARANOIA"></a> <a class="anchor" href="#git-spanclasssynopsiscodeGITREFPARANOIAcodespan"></a><span class='synopsis'><code>GIT_REF_PARANOIA</code></span> </dt>
 <dd>
@@ -1059,10 +1059,10 @@ git --git-dir=c/a.git --work-tree=c/b status</pre>
 <dd>
 <p>Endast för internt bruk. Används vid handskakning av länk-protokollet. Innehåller en lista med nycklar separerad med kolon <em>:</em> och valfria värden <em>&lt;nyckel&gt;[=&lt;värde&gt;]</em>. Förekomst av okända nycklar och värden måste ignoreras.</p>
 <div class="paragraph">
-<p>Observera att servrar kan behöva konfigureras för att tillåta att denna variabel passerar över vissa transporter. Den kommer att spridas automatiskt vid åtkomst till lokala förvar (dvs. <span class='synopsis'><code>file://</code></span> eller en filsystemssökväg), såväl som över <span class='synopsis'><code>git://</code></span>-protokollet. För git-over-http bör det fungera automatiskt i de flesta konfigurationer, men se diskussionen i <a href='{{< relurl "docs/git-http-backend/sv" >}}'>git-http-backend[1]</a>. För git-over-ssh kan ssh-servern behöva konfigureras för att tillåta klienter att skicka denna variabel (t.ex. genom att använda <span class='synopsis'><code>AcceptEnv</code> <code>GIT_PROTOCOL</code></span> med OpenSSH).</p>
+<p>Observera att servrar kan behöva konfigureras för att tillåta att denna variabel passerar över vissa transporter. Den kommer att spridas automatiskt vid åtkomst till lokala kodförråd (dvs. <span class='synopsis'><code>file://</code></span> eller en filsystemssökväg), såväl som över <span class='synopsis'><code>git://</code></span>-protokollet. För git-over-http bör det fungera automatiskt i de flesta konfigurationer, men se diskussionen i <a href='{{< relurl "docs/git-http-backend/sv" >}}'>git-http-backend[1]</a>. För git-over-ssh kan ssh-servern behöva konfigureras för att tillåta klienter att skicka denna variabel (t.ex. genom att använda <span class='synopsis'><code>AcceptEnv</code> <code>GIT_PROTOCOL</code></span> med OpenSSH).</p>
 </div>
 <div class="paragraph">
-<p>This configuration is optional. If the variable is not propagated, then clients will fall back to the original "v0" protocol (but may miss out on some performance improvements or features). This variable currently only affects clones and fetches; it is not yet used for pushes (but may be in the future).</p>
+<p>Denna konfiguration är valfri. Om variabeln inte sprids, kommer klienterna att återgå till det ursprungliga protokollet "v0" (men kan gå miste om vissa prestandaförbättringar eller funktioner). Denna variabel påverkar för närvarande endast kloner och hämtningar; den används ännu inte för sändningar ("push") (men kan komma att göra det i framtiden).</p>
 </div>
 </dd>
 <dt class="hdlist1" id="git-spanclasssynopsiscodeGITOPTIONALLOCKScodespan"> <a class="anchor" href="#git-GITOPTIONALLOCKS"></a> <a class="anchor" href="#git-spanclasssynopsiscodeGITOPTIONALLOCKScodespan"></a><span class='synopsis'><code>GIT_OPTIONAL_LOCKS</code></span> </dt>
@@ -1080,7 +1080,7 @@ git --git-dir=c/a.git --work-tree=c/b status</pre>
 </dd>
 <dt class="hdlist1" id="git-spanclasssynopsiscodeGITPRINTSHA1ELLIPSIScodespanfrldrad"> <a class="anchor" href="#git-GITPRINTSHA1ELLIPSISfrldrad"></a> <a class="anchor" href="#git-spanclasssynopsiscodeGITPRINTSHA1ELLIPSIScodespanfrldrad"></a><span class='synopsis'><code>GIT_PRINT_SHA1_ELLIPSIS</code></span> (föråldrad) </dt>
 <dd>
-<p>Om satt till <span class='synopsis'><code>ja</code></span>, skriv ut en ellips efter ett (förkortat) SHA-1-värde. Detta påverkar indikationer på fristående HEADs (<a href='{{< relurl "docs/git-checkout/sv" >}}'>git-checkout[1]</a>) och den råa diff-utdatan (<a href='{{< relurl "docs/git-diff/sv" >}}'>git-diff[1]</a>). Att skriva ut en ellips i de nämnda fallen anses inte längre vara tillräckligt och stödet för den kommer sannolikt att tas bort inom överskådlig framtid (tillsammans med variabeln).</p>
+<p>Om satt till <span class='synopsis'><code>ja</code></span>, skriv ut en ellips efter ett (förkortat) SHA-1-värde. Detta påverkar indikationer på frånkopplat HEADs (<a href='{{< relurl "docs/git-checkout/sv" >}}'>git-checkout[1]</a>) och den råa diff-utdatan (<a href='{{< relurl "docs/git-diff/sv" >}}'>git-diff[1]</a>). Att skriva ut en ellips i de nämnda fallen anses inte längre vara tillräckligt och stödet för den kommer sannolikt att tas bort inom överskådlig framtid (tillsammans med variabeln).</p>
 </dd>
 <dt class="hdlist1" id="git-spanclasssynopsiscodeGITADVICEcodespan"> <a class="anchor" href="#git-GITADVICE"></a> <a class="anchor" href="#git-spanclasssynopsiscodeGITADVICEcodespan"></a><span class='synopsis'><code>GIT_ADVICE</code></span> </dt>
 <dd>
@@ -1095,10 +1095,10 @@ git --git-dir=c/a.git --work-tree=c/b status</pre>
 <h2 id="_discussion"><a class="anchor" href="#_discussion"></a>Discussion<a id="Discussion"></a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>More detail on the following is available from the <a href="{{< relurl "docs/user-manual/sv#git-concepts" >}}">Git concepts chapter of the user-manual</a> and <a href='{{< relurl "docs/gitcore-tutorial/sv" >}}'>gitcore-tutorial[7]</a>.</p>
+<p>Mer information om följande finns tillgänglig via <a href="{{< relurl "docs/user-manual/sv#git-concepts" >}}">kapitel om Git-koncept i användarmanualen</a> och <a href='{{< relurl "docs/gitcore-tutorial/sv" >}}'>gitcore-tutorial[7]</a>.</p>
 </div>
 <div class="paragraph">
-<p>A Git project normally consists of a working directory with a ".git" subdirectory at the top level. The .git directory contains, among other things, a compressed object database representing the complete history of the project, an "index" file which links that history to the current contents of the working tree, and named pointers into that history such as tags and branch heads.</p>
+<p>Ett Git-projekt består normalt av en arbetskatalog med en underkatalog ".git" på den översta nivån. .git-katalogen innehåller bland annat en komprimerad objektdatabas som representerar projektets fullständiga historik, en "index"-fil som länkar den historiken till det aktuella innehållet i arbetskatalog och namngivna pekare till den historiken, såsom taggar och grenhuvuden.</p>
 </div>
 <div class="paragraph">
 <p>Objektdatabasen innehåller objekt av tre huvudtyper: blobs, som innehåller fildata; träd, som pekar på blobs och andra träd för att bygga upp kataloghierarkier; och incheckningar, som var och en refererar till ett enda träd och ett antal förälder incheckningar.</p>
@@ -1119,7 +1119,7 @@ git --git-dir=c/a.git --work-tree=c/b status</pre>
 <p>Indexfilen initieras med en lista över alla sökvägar och, för varje sökväg, ett blobobjekt och en uppsättning attribut. Blobobjektet representerar innehållet i filen från och med huvudet på den aktuella grenen. Attributen (senast ändrad tid, storlek, etc.) hämtas från motsvarande fil i arbetskatalog. Efterföljande ändringar i arbetskatalogen kan hittas genom att jämföra dessa attribut. Indexet kan uppdateras med nytt innehåll, och nya incheckningar kan skapas från innehållet som lagras i indexet.</p>
 </div>
 <div class="paragraph">
-<p>Indexet kan också lagra flera poster (kallade "steg") för en given sökväg. Dessa steg används för att lagra de olika osammanslagna versionerna av en fil när en sammanslagning pågår.</p>
+<p>Indexet kan också lagra flera poster (kallade "steg") för en given sökväg. Dessa steg används för att lagra de olika ej sammanslagna versionerna av en fil när en sammanslagning pågår.</p>
 </div>
 </div>
 </div>
@@ -1133,10 +1133,10 @@ git --git-dir=c/a.git --work-tree=c/b status</pre>
 <p>Det är dock inte säkert att köra Git-kommandon i en <span class='synopsis'><code>.git</code></span>-katalog (eller det arbetskatalog som omger den) när själva <span class='synopsis'><code>.git</code></span>-katalogen kommer från en opålitlig källa. Kommandona i dess konfiguration och krokar exekveras på vanligt sätt.</p>
 </div>
 <div class="paragraph">
-<p>Som standard, vägrar Git att köras när förvar ägs av någon annan än användaren som kör kommandot. Se posten för <span class='synopsis'><code>safe.directory</code></span> i <a href='{{< relurl "docs/git-config/sv" >}}'>git-config[1]</a>. Även om detta kan hjälpa till att skydda dig i en miljö med flera användare, observera att du också kan förvärva otillförlitliga förvar som ägs av dig (till exempel om du extraherar en zip-fil eller tarball från en otillförlitlig källa). I sådana fall måste du först "sanera" det otillförlitliga förvar.</p>
+<p>Som standard, vägrar Git att köras när kodförråd ägs av någon annan än användaren som kör kommandot. Se posten för <span class='synopsis'><code>safe.directory</code></span> i <a href='{{< relurl "docs/git-config/sv" >}}'>git-config[1]</a>. Även om detta kan hjälpa till att skydda dig i en miljö med flera användare, observera att du också kan förvärva otillförlitliga kodförråd som ägs av dig (till exempel om du extraherar en zip-fil eller tarball från en otillförlitlig källa). I sådana fall måste du först "sanera" det otillförlitliga kodförråd.</p>
 </div>
 <div class="paragraph">
-<p>Om du har en opålitlig <span class='synopsis'><code>.git</code></span>-katalog bör du först klona den med <span class='synopsis'><code>git</code> <code>clone</code> <code>--no-local</code></span> för att få en ren kopia. Git begränsar uppsättningen alternativ och krokar som kommer att köras av <span class='synopsis'><code>upload-pack</code></span>, som hanterar serversidan av en klon eller hämtning, men var medveten om att ytan för attacker mot <span class='synopsis'><code>upload-pack</code></span> är stor, så detta medför en viss risk. Det säkraste är att hantera förvaret som en oprivilegierad användare (antingen via <a href='{{< relurl "docs/git-daemon/sv" >}}'>git-daemon[1]</a>, ssh eller med hjälp av andra verktyg för att ändra användar-ID). Se diskussionen i avsnittet <span class='synopsis'><em>SÄKERHET</em></span> i <a href='{{< relurl "docs/git-upload-pack/sv" >}}'>git-upload-pack[1]</a>.</p>
+<p>Om du har en opålitlig <span class='synopsis'><code>.git</code></span>-katalog bör du först klona den med <span class='synopsis'><code>git</code> <code>clone</code> <code>--no-local</code></span> för att få en ren kopia. Git begränsar uppsättningen alternativ och krokar som kommer att köras av <span class='synopsis'><code>upload-pack</code></span>, som hanterar serversidan av en klon eller hämtning, men var medveten om att ytan för attacker mot <span class='synopsis'><code>upload-pack</code></span> är stor, så detta medför en viss risk. Det säkraste är att hantera kodförrådet som en oprivilegierad användare (antingen via <a href='{{< relurl "docs/git-daemon/sv" >}}'>git-daemon[1]</a>, ssh eller med hjälp av andra verktyg för att ändra användar-ID). Se diskussionen i avsnittet <span class='synopsis'><em>SÄKERHET</em></span> i <a href='{{< relurl "docs/git-upload-pack/sv" >}}'>git-upload-pack[1]</a>.</p>
 </div>
 </div>
 </div>
@@ -1156,7 +1156,7 @@ git --git-dir=c/a.git --work-tree=c/b status</pre>
 <p>Se även <a href="{{< relurl "docs/howto-index/sv" >}}">howto</a>-dokumenten för några användbara exempel.</p>
 </div>
 <div class="paragraph">
-<p>The internals are documented in the <a href="{{< relurl "docs/api-index/sv" >}}">Git API documentation</a>.</p>
+<p>Interna delar finns dokumenterad i <a href="{{< relurl "docs/api-index/sv" >}}">Git API-dokumentation</a>.</p>
 </div>
 <div class="paragraph">
 <p>Användare som migrerar från CVS kan också vilja läsa <a href='{{< relurl "docs/gitcvs-migration/sv" >}}'>gitcvs-migration[7]</a>.</p>
@@ -1175,10 +1175,10 @@ git --git-dir=c/a.git --work-tree=c/b status</pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_rapportera_buggar"><a class="anchor" href="#_rapportera_buggar"></a>Rapportera buggar</h2>
+<h2 id="_rapportera_programfel"><a class="anchor" href="#_rapportera_programfel"></a>Rapportera programfel</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Rapportera buggar till Git-e-postlistan &lt;<a href="mailto:git@vger.kernel.org">git@vger.kernel.org</a>&gt; där utveckling och underhåll huvudsakligen sker. Du behöver inte prenumerera på listan för att skicka ett meddelande dit. Se listarkivet på <a href="https://lore.kernel.org/git" class="bare">https://lore.kernel.org/git</a> för tidigare buggrapporter och andra diskussioner.</p>
+<p>Rapportera programfel till Git-e-postlistan &lt;<a href="mailto:git@vger.kernel.org">git@vger.kernel.org</a>&gt; där utveckling och underhåll huvudsakligen sker. Du behöver inte prenumerera på listan för att skicka ett meddelande dit. Se listarkivet på <a href="https://lore.kernel.org/git" class="bare">https://lore.kernel.org/git</a> för tidigare buggrapporter och andra diskussioner.</p>
 </div>
 <div class="paragraph">
 <p>Säkerhetsrelevanta frågor bör delas privat till Git Securitys e-postlista &lt;<a href="mailto:git-security@googlegroups.com">git-security@googlegroups.com</a>&gt;.</p>

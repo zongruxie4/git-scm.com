@@ -23,15 +23,15 @@ url: "/book/sv/v2/Distribuerat-Git-Förvalta-ett-projekt.html"
 <p>
 Förutom att veta hur du bidrar effektivt till ett projekt behöver du troligen också veta hur man förvaltar ett.
 Det kan innebära att acceptera och tillämpa ändringspatchar som genererats via <code>format-patch</code> och skickats till dig via e-post, eller att integrera ändringar i fjärrgrenar.
-Oavsett om du förvaltar ett huvudkodförråd eller vill hjälpa till med att granska och godkänna bidrag behöver du veta hur du tar emot arbete på ett sätt som är tydligt för andra och hållbart för dig på sikt.</p>
+Oavsett om du förvaltar ett huvudkodförråd eller vill hjälpa till med att granska och godkänna bidrag behöver du veta hur du tar emot arbete så att det blir tydligt för andra och hållbart för dig på sikt.</p>
 </div>
 <div class="sect3">
 <h3 id="_arbeta_i_ämnesgrenar">Arbeta i ämnesgrenar</h3>
 <div class="paragraph">
 <p>
-När du ska integrera nytt arbete är det i regel en bra idé att prova det i en <em>ämnesgren</em> – en tillfällig gren som skapats för att testa det nya arbetet.
+När du ska integrera nytt arbete brukar det vara bäst att prova det i en <em>ämnesgren</em> – en tillfällig gren som skapats för att testa det nya arbetet.
 Det gör det enkelt att justera en ändringspatch och lämna det om det inte fungerar, tills du har tid att återvända.
-Om du skapar ett enkelt grennamn baserat på temat, till exempel <code>ruby_client</code>, är det lätt att hitta tillbaka senare.
+Om du skapar ett enkelt grennamn utifrån temat, till exempel <code>ruby_client</code>, är det lätt att hitta tillbaka senare.
 Förvaltarna av Git använder ofta en namnrymd också, till exempel <code>sc/ruby_client</code>, där <code>sc</code> är initialerna för den som bidrog.
 Som du minns kan du skapa grenen från <code>master</code> så här:</p>
 </div>
@@ -231,7 +231,7 @@ Apply? [y]es/[n]o/[e]dit/[v]iew patch/[a]ccept all</code></pre>
 <h3 id="_checking_out_remotes">Checka ut fjärrgrenar</h3>
 <div class="paragraph">
 <p>
-Om ett bidrag kommer från en Git‑användare som har växlat till sin egen gren, skickat ett antal ändringar till den och sedan skickat URL:en till sitt kodförråd och namnet på grenen kan du lägga till det som fjärrkodförråd och växla till den lokalt.</p>
+Om ett bidrag kommer från en Git‑användare som har växlat till sin egen gren, skickat flera ändringar till den och sedan skickat URL:en till sitt kodförråd och namnet på grenen kan du lägga till det som fjärrkodförråd och växla till den lokalt.</p>
 </div>
 <div class="paragraph">
 <p>Om Jessica till exempel skickar ett e-postmeddelande och skriver att hon har en bra funktion i <code>ruby-client</code>-grenen i sitt kodförråd, kan du testa den genom att lägga till hennes kodförråd som fjärrkodförråd och växla till grenen lokalt:</p>
@@ -275,7 +275,7 @@ Merge made by the 'recursive' strategy.</code></pre>
 <p>
 Nu har du en ämnesgren som innehåller ett bidrag.
 Du behöver bestämma vad du vill göra med den.
-I det här avsnittet går vi igenom några kommandon som hjälper dig att granska exakt vad som kommer att tillämpas om du sammanfogar grenen med din huvudgren.</p>
+I avsnittet går vi igenom några kommandon som hjälper dig att granska exakt vad som kommer att tillämpas om du sammanfogar grenen med din huvudgren.</p>
 </div>
 <div class="paragraph">
 <p>Det är ofta användbart att få en överblick över alla incheckningar i grenen som inte finns i huvudgrenen.
@@ -428,7 +428,7 @@ När den grenen är stabil och testerna går igenom sammanfogar du den i <code>d
 <p>
 Git‑projektet har fyra långlivade grenar: <code>master</code>, <code>next</code> och <code>pu</code> (föreslagna uppdateringar) för nytt arbete, och <code>maint</code> för underhållsbackportar.
 När nytt arbete introduceras samlas det i ämnesgrenar i förvaltarens kodförråd, likt det vi beskrev (se <a href="{{< relurl "book/sv/v2/ch00/merwf_f" >}}">Hantera en komplex serie med parallella ämnesgrenar</a>).
-Vid det här laget utvärderas ämnena för att avgöra om de är säkra och redo eller om de behöver mer arbete.
+Här utvärderas ämnena för att avgöra om de är säkra och redo eller om de behöver mer arbete.
 Om de är säkra sammanfogas de i <code>next</code>, och den grenen skickas upp så att alla kan prova ämnena tillsammans.</p>
 </div>
 <div id="merwf_f" class="imageblock">
@@ -553,7 +553,7 @@ user: "Scott Chacon &lt;schacon@gmail.com&gt;"
 </div>
 </div>
 <div class="paragraph">
-<p>Om du signerar taggar kan du få problem med att distribuera den publika PGP-nyckeln som används för att signera taggarna.
+<p>Om du signerar taggar kan du få problem med att distribuera den publika PGP-nyckeln du signerar taggarna med.
 Git‑projektets förvaltare löste detta genom att lägga in sin publika nyckel som en blob i kodförrådet och sedan lägga en tagg som pekar direkt på innehållet.
 För att göra detta kan du ta reda på vilken nyckel du vill använda genom att köra <code>gpg --list-keys</code>:</p>
 </div>
@@ -618,9 +618,9 @@ Om du bygger Git från källkoden klonad från Git‑kodförrådet ger <code>git
 Om du beskriver en incheckning som du direkt har taggat ger det dig bara taggnamnet.</p>
 </div>
 <div class="paragraph">
-<p><code>git describe</code> kräver annoterade taggar som standard (taggar som skapats med <code>-a</code> eller <code>-s</code>); om du vill dra nytta av lättviktiga taggar också lägger du till <code>--tags</code>.
+<p><code>git describe</code> kräver annoterade taggar som standard (taggar som skapats med <code>-a</code> eller <code>-s</code>); om du även vill använda lättviktiga taggar lägger du till <code>--tags</code>.
 Du kan också använda strängen som mål för <code>git checkout</code> eller <code>git show</code>, även om det förlitar sig på det förkortade SHA-1-värdet i slutet, vilket kanske inte är giltigt för alltid.
-Till exempel hoppade Linux-kärnan nyligen från 8 till 10 tecken för att säkerställa SHA-1-objektens unicitet, så äldre <code>git describe</code>-utdata ogiltigförklarades.</p>
+Till exempel hoppade Linux-kärnan nyligen från 8 till 10 tecken för att säkerställa att SHA‑1‑objekten förblir unika, så äldre <code>git describe</code>-utdata ogiltigförklarades.</p>
 </div>
 </div>
 <div class="sect3">

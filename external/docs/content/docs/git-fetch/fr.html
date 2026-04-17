@@ -932,22 +932,84 @@ $ git log FETCH_HEAD</pre>
 <div class="paragraph">
 <p>Tout ce qui se trouve en dessous de cette ligne dans cette section est inclus de manière sélective à partir de la documentation <a href='{{< relurl "docs/git-config/fr" >}}'>git-config[1]</a>. Le contenu est le même que celui qui s&#8217;y trouve :</p>
 </div>
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<div class="title">Warning</div>
-</td>
-<td class="content">
+<div class="dlist">
+<dl>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscodefetchrecurseSubmodulescodespan"> <a class="anchor" href="#git-fetch-fetchrecurseSubmodules"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscodefetchrecurseSubmodulescodespan"></a><span class='synopsis'><code>fetch.recurseSubmodules</code></span> </dt>
+<dd>
+<p>Cette option contrôle si <span class='synopsis'><code>git</code> <code>fetch</code></span> (et la récupération sous-jacente dans <span class='synopsis'><code>git</code> <code>pull</code></span>) va se récupérer récursivement dans les sous-modules peuplés. Cette option peut être définie soit à une valeur booléenne, soit à <span class='synopsis'><code>on-demand</code></span>. La régler à une valeur booléenne modifie le comportement de la récupération et de tirage pour aller récursivement dans les sous-modules quand elle est à <span class='synopsis'><code>true</code></span> et à ne pas aller récursivement du tout si elle est à <span class='synopsis'><code>false</code></span>. Lorsqu&#8217;elle est mise à <span class='synopsis'><code>on-demand</code></span>, la récupération et le tirage ne seront traités récursivement dans un sous-module peuplé que lorsque son superprojet récupère un commit qui met à jour la référence du sous-module. Par défaut à <span class='synopsis'><code>on-demand</code></span> ou à la valeur de <span class='synopsis'><code>submodule.recurse</code></span> si elle est renseignée.</p>
+</dd>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscodefetchfsckObjectscodespan"> <a class="anchor" href="#git-fetch-fetchfsckObjects"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscodefetchfsckObjectscodespan"></a><span class='synopsis'><code>fetch.fsckObjects</code></span> </dt>
+<dd>
+<p>Si elle est définie à true, git-fetch-pack vérifiera tous les objets récupérés. Voir <span class='synopsis'><code>transfer.fsckObjects</code></span> pour indiquer ce qui est vérifié. Par défaut à <span class='synopsis'><code>false</code></span>. Si elle n&#8217;est pas définie, la valeur de `transfer.fsckObjects ' est utilisée à la place.</p>
+</dd>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscodefetchfsckcodeemltid-msggtemspan"> <a class="anchor" href="#git-fetch-fetchfsckid-msg"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscodefetchfsckcodeemltid-msggtemspan"></a><span class='synopsis'><code>fetch.fsck.</code><em>&lt;id-msg&gt;</em></span> </dt>
+<dd>
+<p>Agit comme <span class='synopsis'><code>fsck.</code><em>&lt;id-msg&gt;</em></span>, mais est utilisé par <a href='{{< relurl "docs/git-fetch-pack/fr" >}}'>git-fetch-pack[1]</a> au lieu de <a href='{{< relurl "docs/git-fsck/fr" >}}'>git-fsck[1]</a>. Voir la documentation de <span class='synopsis'><code>fsck.</code><em>&lt;id-msg&gt;</em></span> pour les détails.</p>
+</dd>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscodefetchfsckskipListcodespan"> <a class="anchor" href="#git-fetch-fetchfsckskipList"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscodefetchfsckskipListcodespan"></a><span class='synopsis'><code>fetch.fsck.skipList</code></span> </dt>
+<dd>
+<p>Agit comme <span class='synopsis'><code>fsck.skipList</code></span>, mais est utilisé par <a href='{{< relurl "docs/git-fetch-pack/fr" >}}'>git-fetch-pack[1]</a> au lieu de <a href='{{< relurl "docs/git-fsck/fr" >}}'>git-fsck[1]</a>. Voir la documentation de <span class='synopsis'><code>fsck.skipList</code></span> pour les détails.</p>
+</dd>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscodefetchunpackLimitcodespan"> <a class="anchor" href="#git-fetch-fetchunpackLimit"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscodefetchunpackLimitcodespan"></a><span class='synopsis'><code>fetch.unpackLimit</code></span> </dt>
+<dd>
+<p>Si le nombre d&#8217;objets récupérés lors du transfert natif Git est inférieur à cette limite, les objets seront déballés dans des fichiers d&#8217;objets esseulés. Toutefois, si le nombre d&#8217;objets reçus est égal ou supérieur à cette limite, le paquet reçu sera stocké comme un fichier paquet, après avoir ajouté toute base delta manquante. Le stockage du paquet à partir d&#8217;une poussée peut rendre l&#8217;opération de poussée complète plus rapidement, surtout sur les systèmes de fichiers lents. Si elle n&#8217;est pas définie, la valeur de <span class='synopsis'><code>transfer.unpackLimit</code></span> est utilisée à la place.</p>
+</dd>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscodefetchprunecodespan"> <a class="anchor" href="#git-fetch-fetchprune"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscodefetchprunecodespan"></a><span class='synopsis'><code>fetch.prune</code></span> </dt>
+<dd>
+<p>Si true, fetch se comportera automatiquement comme si l&#8217;option <span class='synopsis'><code>--prune</code></span> était donnée sur la ligne de commande. Voir aussi <span class='synopsis'><code>remote.</code><em>&lt;nom&gt;</em><code>.prune</code></span> et la section ÉLAGAGE de <a href='{{< relurl "docs/git-fetch/fr" >}}'>git-fetch[1]</a>.</p>
+</dd>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscodefetchpruneTagscodespan"> <a class="anchor" href="#git-fetch-fetchpruneTags"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscodefetchpruneTagscodespan"></a><span class='synopsis'><code>fetch.pruneTags</code></span> </dt>
+<dd>
+<p>Si la valeur est true, la récupération se comportera automatiquement comme si les spécs de réf <span class='synopsis'><code>refs/tags/*:refs/tags/*</code></span> avaient été fournies lors de l&#8217;élagage, si ce n&#8217;était pas déjà réglé. Cela permet de configurer à la fois cette option et <span class='synopsis'><code>fetch.prune</code></span> pour maintenir une cartographie de 1=1 avec les réfs en amont. Voir aussi <span class='synopsis'><code>remote.</code><em>&lt;nom&gt;</em><code>.pruneTags</code></span> et la section ÉLAGAGE de <a href='{{< relurl "docs/git-fetch/fr" >}}'>git-fetch[1]</a>.</p>
+</dd>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscodefetchallcodespan"> <a class="anchor" href="#git-fetch-fetchall"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscodefetchallcodespan"></a><span class='synopsis'><code>fetch.all</code></span> </dt>
+<dd>
+<p>Si sa valeur est true, fetch tentera de mettre à jour tous les distants disponibles. Ce comportement peut être surchargé en passant <span class='synopsis'><code>--no-all</code></span> ou en spécifiant explicitement un ou plusieurs distants à récupérer. Par défaut à <span class='synopsis'><code>false</code></span>.</p>
+</dd>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscodefetchoutputcodespan"> <a class="anchor" href="#git-fetch-fetchoutput"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscodefetchoutputcodespan"></a><span class='synopsis'><code>fetch.output</code></span> </dt>
+<dd>
+<p>Contrôler comment le statut de mise à jour de ref est affiché. Les valeurs valides sont <span class='synopsis'><code>full</code></span> et <span class='synopsis'><code>compact</code></span> . La valeur par défaut est <span class='synopsis'><code>full</code></span>. Voir la section SORTIE dans <a href='{{< relurl "docs/git-fetch/fr" >}}'>git-fetch[1]</a> pour plus de détails.</p>
+</dd>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscodefetchnegotiationAlgorithmcodespan"> <a class="anchor" href="#git-fetch-fetchnegotiationAlgorithm"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscodefetchnegotiationAlgorithmcodespan"></a><span class='synopsis'><code>fetch.negotiationAlgorithm</code></span> </dt>
+<dd>
+<p>Contrôler comment les informations sur les commits dans le dépôt local sont envoyées lors de la négociation du contenu du fichier paquet à envoyer par le serveur. Définir à <span class='synopsis'><code>consecutive</code></span> pour utiliser un algorithme qui parcourt les commits consécutifs en vérifiant chacun. Réglez-la à <span class='synopsis'><code>skipping</code></span> pour utiliser un algorithme qui saute les commits dans un effort pour converger plus rapidement, mais peut entraîner un paquet plus important que nécessaire ; ou réglez-la à <span class='synopsis'><code>noop</code></span> pour ne pas envoyer d&#8217;informations du tout, ce qui entraînera presque certainement un paquet plus grand que nécessaire, mais sautera l&#8217;étape de négociation. Définissez-la à <span class='synopsis'><code>defaut</code></span> pour surcharger les réglages faits précédemment et utiliser le comportement par défaut. La valeur par défaut est normalement <span class='synopsis'><code>consecutive</code></span>, mais si <span class='synopsis'><code>feature.experimental</code></span> est <span class='synopsis'><code>true</code></span>, alors la valeur par défaut est <span class='synopsis'><code>skipping</code></span>. Les valeurs inconnues causeront une erreur de <span class='synopsis'><code>git</code> <code>fetch</code></span>.</p>
 <div class="paragraph">
-<p>Missing <span class='synopsis'><code>fr/config/fetch.adoc</code></span></p>
+<p>Voir aussi les options <span class='synopsis'><code>--negotiate-only</code></span> et <span class='synopsis'><code>--negotiation-tip</code></span> de <a href='{{< relurl "docs/git-fetch/fr" >}}'>git-fetch[1]</a>.</p>
+</div>
+</dd>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscodefetchshowForcedUpdatescodespan"> <a class="anchor" href="#git-fetch-fetchshowForcedUpdates"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscodefetchshowForcedUpdatescodespan"></a><span class='synopsis'><code>fetch.showForcedUpdates</code></span> </dt>
+<dd>
+<p>Définissez-la à <span class='synopsis'><code>false</code></span> pour activer <span class='synopsis'><code>--no-show-forced-updates</code></span> dans les commandes <a href='{{< relurl "docs/git-fetch/fr" >}}'>git-fetch[1]</a> et <a href='{{< relurl "docs/git-pull/fr" >}}'>git-pull[1]</a>. Par défaut à <span class='synopsis'><code>true</code></span>.</p>
+</dd>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscodefetchparallelcodespan"> <a class="anchor" href="#git-fetch-fetchparallel"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscodefetchparallelcodespan"></a><span class='synopsis'><code>fetch.parallel</code></span> </dt>
+<dd>
+<p>Spécifie le nombre maximal d&#8217;opérations de récupération à exécuter en parallèle à un moment (submodules ou distants lorsque l&#8217;option <span class='synopsis'><code>--multiple</code></span> de <a href='{{< relurl "docs/git-fetch/fr" >}}'>git-fetch[1]</a> est en vigueur).</p>
+<div class="paragraph">
+<p>Une valeur de 0 donnera une certaine valeur par défaut raisonnable. Si non initialisé, elle est par défaut de 1.</p>
 </div>
 <div class="paragraph">
-<p>See original version for this content.</p>
+<p>Pour les sous-modules, ce réglage peut être surchargé par le paramètre de configuration <span class='synopsis'><code>submodule.fetchJobs</code></span>.</p>
 </div>
-</td>
-</tr>
-</table>
+</dd>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscodefetchwriteCommitGraphcodespan"> <a class="anchor" href="#git-fetch-fetchwriteCommitGraph"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscodefetchwriteCommitGraphcodespan"></a><span class='synopsis'><code>fetch.writeCommitGraph</code></span> </dt>
+<dd>
+<p>Réglez-le à <span class='synopsis'><code>true</code></span> pour écrire un graphe de commit après chaque commande <span class='synopsis'><code>git</code> <code>fetch</code></span> qui télécharge un fichier paquet depuis un distant. En utilisant l&#8217;option <span class='synopsis'><code>--split</code></span>, la plupart des exécutions créeront un très petit fichier de graphe de commits sur le ou les fichiers de graphe de commits existants. Parfois, ces fichiers fusionnent et l&#8217;écriture peut prendre plus de temps. Ayant un fichier de graphe de commit mis à jour aide à la performance de nombreuses commandes Git, y compris <span class='synopsis'><code>git</code> <code>merge-base</code></span>, <span class='synopsis'><code>git</code> <code>push</code> <code>-f</code></span>, et <span class='synopsis'><code>git</code> <code>log</code> <code>--graph</code></span>. Par défaut à <span class='synopsis'><code>false</code></span>.</p>
+</dd>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscodefetchbundleURIcodespan"> <a class="anchor" href="#git-fetch-fetchbundleURI"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscodefetchbundleURIcodespan"></a><span class='synopsis'><code>fetch.bundleURI</code></span> </dt>
+<dd>
+<p>Cette valeur stocke une URI pour le téléchargement Git des données d&#8217;objets d&#8217;un URI groupé avant d&#8217;effectuer une récupération incrémentale depuis le serveur Git d&#8217;origine. Cela ressemble à la façon dont l&#8217;option <span class='synopsis'><code>--bundle-uri</code></span> se comporte dans <a href='{{< relurl "docs/git-clone/fr" >}}'>git-clone[1]</a>. <span class='synopsis'><code>git</code> <code>clone</code> <code>--bundle-uri</code></span> va régler la valeur de <span class='synopsis'><code>fetch.bundleURI</code></span> si l&#8217;URI groupé qui est organisé pour les récupérations supplémentaires.</p>
+<div class="paragraph">
+<p>Si vous modifiez cette valeur et que votre dépôt a une valeur pour <span class='synopsis'><code>fetch.bundleCreationToken</code></span>, puis retirez cette valeur <span class='synopsis'><code>fetch.bundleCreationToken</code></span> avant de récupérer depuis la nouvelle URI de colis.</p>
+</div>
+</dd>
+<dt class="hdlist1" id="git-fetch-spanclasssynopsiscodefetchbundleCreationTokencodespan"> <a class="anchor" href="#git-fetch-fetchbundleCreationToken"></a> <a class="anchor" href="#git-fetch-spanclasssynopsiscodefetchbundleCreationTokencodespan"></a><span class='synopsis'><code>fetch.bundleCreationToken</code></span> </dt>
+<dd>
+<p>Lors de l&#8217;utilisation de <span class='synopsis'><code>fetch.bundleURI</code></span> pour récupérer progressivement à partir d&#8217;une liste de colis qui utilise l&#8217;heuristique "<span class='synopsis'><code>creationToken</code></span>", cette valeur de configuration stocke la valeur maximale <span class='synopsis'><code>creationToken</code></span> des paquets téléchargés. Cette valeur est utilisée pour empêcher le téléchargement des colis dans le futur si la &#8216;creationToken&#8217; annoncée n&#8217;est pas strictement plus grande que cette valeur.</p>
+<div class="paragraph">
+<p>Les valeurs de jeton de création sont choisies par le fournisseur qui sert l&#8217;URI de colis spécifique. Si vous modifiez l&#8217;URI à <span class='synopsis'><code>fetch.bundleURI</code>  <code>,</code> <code>alors</code> <code>assurez-vous</code> <code>de</code> <code>supprimer</code> <code>la</code> <code>valeur</code> <code>pour</code> <code>la</code> <code>configuration</code> <code>fetch.bundleCreationToken</code></span> avant de récupérer.</p>
+</div>
+</dd>
+</dl>
 </div>
 </div>
 </div>

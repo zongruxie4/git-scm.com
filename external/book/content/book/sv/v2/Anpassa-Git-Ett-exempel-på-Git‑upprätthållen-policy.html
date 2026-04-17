@@ -21,8 +21,8 @@ url: "/book/sv/v2/Anpassa-Git-Ett-exempel-på-Git‑upprätthållen-policy.html"
 <h2 id="_an_example_git_enforced_policy">Ett exempel på Git‑upprätthållen policy</h2>
 <div class="paragraph">
 <p>
-I det här avsnittet använder du det du lärt dig för att skapa ett Git‑arbetsflöde som kontrollerar ett anpassat format på incheckningsmeddelanden och som bara tillåter vissa användare att ändra vissa underkataloger i ett projekt.
-Du bygger klientskript som hjälper utvecklaren att veta om deras uppskickning kommer att nekas, och serverskript som faktiskt upprätthåller policyn.</p>
+I avsnittet använder du det du lärt dig för att skapa ett Git‑arbetsflöde som kontrollerar ett anpassat format på incheckningsmeddelanden och som bara tillåter vissa användare att ändra vissa underkataloger i ett projekt.
+Du bygger klientskript som hjälper utvecklaren att veta om deras uppskickning kommer att nekas, och serverskript som verkligen upprätthåller policyn.</p>
 </div>
 <div class="paragraph">
 <p>Skripten vi visar är skrivna i Ruby; delvis på grund av vår egen tröghet, men också för att Ruby är lätt att läsa även om du inte nödvändigtvis kan skriva det.
@@ -49,7 +49,7 @@ Kroken <code>update</code> körs en gång per gren som skickas upp och tar tre a
 </div>
 <div class="paragraph">
 <p>Du har också tillgång till användaren som skickar upp om uppskickningen körs över SSH.
-Om du har tillåtit alla att ansluta med en enda användare (som “git”) via publika nycklar kan du behöva ge den användaren ett skalomslag som avgör vilken användare som ansluter baserat på den publika nyckeln, och sätta en miljövariabel därefter.
+Om du har tillåtit alla att ansluta med en enda användare (som “git”) via publika nycklar kan du behöva ge den användaren ett skalomslag som avgör vilken användare som ansluter utifrån den publika nyckeln, och sätta en miljövariabel därefter.
 Här antar vi att anslutande användare ligger i miljövariabeln <code>$USER</code>, så ditt update‑skript börjar med att samla in all information du behöver:</p>
 </div>
 <div class="listingblock">
@@ -288,7 +288,7 @@ error: failed to push some refs to 'git@gitserver:project.git'</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Det finns ett par intressanta saker här.
+<p>Några saker är värda att lägga märke till.
 Först ser du det här när kroken börjar köra.</p>
 </div>
 <div class="listingblock">
@@ -342,7 +342,7 @@ Till exempel, om en dokumentationsförfattare försöker skicka en incheckning s
 <div class="sect3">
 <h3 id="_krokar_på_klientsidan_2">Krokar på klientsidan</h3>
 <div class="paragraph">
-<p>Nackdelen med detta angreppssätt är det gnäll som ofrånkomligen uppstår när användarnas uppskick av incheckningar nekas.
+<p>Nackdelen med detta angreppssätt är det gnäll som ofrånkomligen uppstår när användare nekas att skicka upp sina incheckningar.
 Att få sitt omsorgsfullt skapade arbete nekat i sista stund kan vara extremt frustrerande och förvirrande; dessutom måste de redigera sin historik för att rätta det, vilket inte alltid är för den lättskrämde.</p>
 </div>
 <div class="paragraph">
@@ -462,7 +462,7 @@ I stället för:</p>
 </div>
 <div class="paragraph">
 <p>Men det är de enda två skillnaderna – i övrigt fungerar skriptet på samma sätt.
-En varning är att det förutsätter att du kör lokalt som samma användare som du skickar upp som till fjärrmaskinen.
+Tänk på att det förutsätter att du kör lokalt som samma användare som du skickar upp som till fjärrmaskinen.
 Om det skiljer sig måste du sätta variabeln <code>$user</code> manuellt.</p>
 </div>
 <div class="paragraph">
@@ -470,7 +470,7 @@ Om det skiljer sig måste du sätta variabeln <code>$user</code> manuellt.</p>
 För att få en referens som inte är en snabbspolning måste du antingen ombasera förbi en incheckning du redan har skickat upp eller försöka skicka en annan lokal gren till samma fjärrgren.</p>
 </div>
 <div class="paragraph">
-<p>Förmodligen är servern redan konfigurerad med <code>receive.denyDeletes</code> och <code>receive.denyNonFastForwards</code> för att upprätthålla den policyn, så det enda oavsiktliga du kan försöka fånga är ombasering av incheckningar som redan har skickats upp.</p>
+<p>Förmodligen är servern redan konfigurerad med <code>receive.denyDeletes</code> och <code>receive.denyNonFastForwards</code> för att upprätthålla den policyn, så det enda oavsiktliga du kan försöka fånga är att incheckningar som redan skickats upp ombaseras.</p>
 </div>
 <div class="paragraph">
 <p>Här är ett exempel på ett pre‑ombasering‑skript som kontrollerar det.

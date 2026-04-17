@@ -29,7 +29,7 @@ Det här avsnittet går igenom några av dessa scenarier.</p>
 <p>Ibland kör Git automatiskt ett kommando som kallas “auto gc”.
 För det mesta gör det ingenting.
 Men om det finns för många lösa objekt (objekt som inte ligger i en packfil) eller för många packfiler startar Git ett fullständigt <code>git gc</code>‑kommando.
-“gc” står för skräpinsamling och kommandot gör ett antal saker: det samlar ihop alla lösa objekt och placerar dem i packfiler, det konsoliderar packfiler till en stor packfil, och det tar bort objekt som inte kan nås från någon incheckning och som är några månader gamla.</p>
+“gc” står för skräpinsamling och kommandot gör flera saker: det samlar ihop alla lösa objekt och placerar dem i packfiler, det konsoliderar packfiler till en stor packfil, och det tar bort objekt som inte kan nås från någon incheckning och som är några månader gamla.</p>
 </div>
 <div class="paragraph">
 <p>Du kan köra <code>auto gc</code> manuellt så här:</p>
@@ -119,7 +119,7 @@ fdf4fc3344e67ab068f836878b6c4951e3b15f3d First commit</code></pre>
 <div class="paragraph">
 <p>Du har i praktiken förlorat de två senaste incheckningarna – du har ingen gren från vilken dessa incheckningar är nåbara.
 Du behöver hitta SHA‑1:an för den senaste incheckningen och sedan lägga till en gren som pekar på den.
-Tricket är att hitta den senaste SHA‑1:an – det är inte direkt så att du har den i huvudet, eller hur?</p>
+Utmaningen är att hitta den senaste SHA‑1:an – det är inte direkt så att du har den i huvudet, eller hur?</p>
 </div>
 <div class="paragraph">
 <p>Ofta är det snabbast att använda verktyget <code>git reflog</code>.
@@ -188,7 +188,7 @@ $ rm -Rf .git/logs/</code></pre>
 </div>
 <div class="paragraph">
 <p>Eftersom reflogdata lagras i katalogen <code>.git/logs/</code> har du i praktiken ingen reflogg.
-Hur kan du återställa den incheckningen vid det här laget?
+Hur kan du nu återställa den incheckningen?
 Ett sätt är att använda verktyget <code>git fsck</code>, som kontrollerar din databas för integritet.
 Om du kör det med alternativet <code>--full</code> visar det alla objekt som inte pekas på av ett annat objekt:</p>
 </div>
@@ -222,7 +222,7 @@ Eftersom du inte laddar ner hela historiken i de systemen får sådana tillägg 
 Om du har importerat från ett annat system eller på annat sätt upptäcker att ditt kodförråd är mycket större än det borde vara, så här hittar och tar du bort stora objekt.</p>
 </div>
 <div class="paragraph">
-<p><strong>Varning: den här tekniken är destruktiv för din incheckningshistorik.</strong>
+<p><strong>Varning: tekniken är destruktiv för din incheckningshistorik.</strong>
 Den skriver om varje incheckningsobjekt sedan det tidigaste träd du måste ändra för att ta bort referensen till en stor fil.
 Om du gör detta direkt efter en import, innan någon har börjat basera arbete på incheckningen, är det okej – annars måste du meddela alla bidragsgivare att de måste ombasera sitt arbete på dina nya incheckningar.</p>
 </div>
@@ -285,9 +285,9 @@ size-garbage: 0</code></pre>
 </div>
 <div class="paragraph">
 <p>Posten <code>size-pack</code> är storleken på dina packfiler i kilobyte, så du använder nästan 5 MB.
-Före den senaste incheckningen använde du närmare 2K – det är tydligt att borttagningen av filen i den föregående incheckningen inte tog bort den ur historiken.
+Före den senaste incheckningen använde du närmare 2K – det är tydligt att filen inte försvann ur historiken när du tog bort den i föregående incheckning.
 Varje gång någon klonar detta kodförråd måste de klona hela 5 MB bara för att få detta lilla projekt, eftersom du av misstag lade till en stor fil.
-Låt oss bli av med den.</p>
+Nu blir vi av med den.</p>
 </div>
 <div class="paragraph">
 <p>Först måste du hitta den.
@@ -347,7 +347,7 @@ Ref 'refs/heads/master' was rewritten</code></pre>
 </div>
 <div class="paragraph">
 <p>I stället för att ta bort en specifik fil med något som <code>rm file</code> måste du ta bort den med <code>git rm --cached</code> – du måste ta bort den från indexet, inte från disk.
-Anledningen till att göra det så här är hastighet – eftersom Git inte behöver lägga ut varje revision till disk innan filtret körs kan processen gå mycket, mycket snabbare.
+Det görs så här för att det går snabbare – Git behöver inte lägga ut varje revision till disk innan filtret körs.
 Du kan åstadkomma samma uppgift med <code>--tree-filter</code> om du vill.
 Alternativet <code>--ignore-unmatch</code> till <code>git rm</code> säger åt det att inte ge fel om mönstret du försöker ta bort inte finns där.
 Slutligen ber du <code>filter-branch</code> att skriva om historiken bara från incheckningen <code>7b30847</code> och uppåt, eftersom du vet att det var där problemet började.
@@ -371,7 +371,7 @@ Total 15 (delta 1), reused 12 (delta 0)</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Låt oss se hur mycket utrymme du sparade.</p>
+<p>Vi ser hur mycket utrymme du sparade.</p>
 </div>
 <div class="listingblock">
 <div class="content">

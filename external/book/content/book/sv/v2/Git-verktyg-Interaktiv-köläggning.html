@@ -20,7 +20,7 @@ url: "/book/sv/v2/Git-verktyg-Interaktiv-köläggning.html"
 ---
 <h2 id="_interactive_staging">Interaktiv köläggning</h2>
 <div class="paragraph">
-<p>I det här avsnittet tittar vi på några interaktiva Git-kommandon som kan hjälpa dig att forma dina incheckningar så att de bara innehåller vissa kombinationer och delar av filer.
+<p>I avsnittet tittar vi på några interaktiva Git-kommandon som kan hjälpa dig att forma dina incheckningar så att de bara innehåller vissa kombinationer och delar av filer.
 Dessa verktyg är hjälpsamma om du ändrar många filer i stor utsträckning och sedan bestämmer dig för att du vill dela upp ändringarna i flera fokuserade incheckningar i stället för en stor, rörig incheckning.
 På så sätt kan du se till att dina incheckningar är logiskt separata ändringsmängder och kan granskas enkelt av utvecklarna som arbetar med dig.</p>
 </div>
@@ -97,7 +97,7 @@ What now&gt; s
 </div>
 <div class="paragraph">
 <p>Nu kan du se att filerna <code>TODO</code> och <code>index.html</code> är köade och att filen <code>simplegit.rb</code> fortfarande inte är köad.
-Om du vill avköa filen <code>TODO</code> vid det här laget använder du alternativet <code>r</code> eller <code>3</code> (för återställning):</p>
+Vill du avköa <code>TODO</code> nu använder du alternativet <code>r</code> eller <code>3</code> (för återställning):</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -230,7 +230,7 @@ Om du köar en del av filen och lämnar en annan del ej köad kommer din statusu
 <p>Statusen för filen <code>simplegit.rb</code> är intressant.
 Den visar att några rader är köade och några är ej köade.
 Du har köat den här filen delvis.
-Vid det här laget kan du avsluta det interaktiva köläggningsskriptet och köra <code>git commit</code> för att checka in de delvis köade filerna.</p>
+Nu kan du avsluta det interaktiva köläggningsskriptet och köra <code>git commit</code> för att checka in de delvis köade filerna.</p>
 </div>
 <div class="paragraph">
 <p>Du behöver inte heller vara i interaktivt köläggningsläge för att köa delar av filer — du kan starta samma skript genom att använda <code>git add -p</code> eller <code>git add --patch</code> på kommandoraden.</p>

@@ -76,7 +76,7 @@ $ git commit -m 'Create repo.rb'
 </div>
 </div>
 <div class="paragraph">
-<p>Vid det här laget ändrar du filen lite och ser vad som händer:</p>
+<p>Nu ändrar du filen lite och ser vad som händer:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -111,7 +111,7 @@ $ git commit -am 'Modify repo.rb a bit'
 Vore det inte fint om Git kunde lagra ett av dem helt och hållet men sedan lagra det andra objektet bara som differensen mellan det och det första?</p>
 </div>
 <div class="paragraph">
-<p>Det visar sig att det kan det.
+<p>Det kan det.
 Det ursprungliga formatet som Git sparar objekt på disk i kallas “löst” objektformat.
 Men ibland packar Git ihop flera av dessa objekt till en enda binär fil som kallas en “packfil” för att spara utrymme och bli mer effektivt.
 Git gör detta om du har för många lösa objekt, om du kör kommandot <code>git gc</code> manuellt eller om du skickar till en fjärrserver.
@@ -128,7 +128,7 @@ Total 18 (delta 3), reused 0 (delta 0)</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Om du tittar i katalogen <code>objects</code> ser du att de flesta av dina objekt är borta, och att ett nytt filpar har dykt upp:</p>
+<p>Om du tittar i katalogen <code>objects</code> ser du att de flesta objekt är borta, och att ett nytt filpar har dykt upp:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -189,10 +189,10 @@ chain length = 1: 3 objects
 <div class="paragraph">
 <p>Här är blobben <code>033b4</code>, som om du minns var den första versionen av din <code>repo.rb</code>‑fil, och den refererar till blobben <code>b042a</code>, som var den andra versionen av filen.
 Den tredje kolumnen i utdata är storleken på objektet i packen, så du kan se att <code>b042a</code> tar upp 22K av filen, men att <code>033b4</code> bara tar upp 9 byte.
-Det som också är intressant är att den andra versionen av filen är den som lagras intakt, medan originalversionen lagras som en delta – det beror på att du sannolikt behöver snabbare åtkomst till den senaste versionen av filen.</p>
+Intressant nog lagras den andra versionen av filen intakt, medan originalversionen lagras som en delta – det beror på att du sannolikt behöver snabbare åtkomst till den senaste versionen av filen.</p>
 </div>
 <div class="paragraph">
-<p>Det riktigt trevliga med detta är att det kan packas om när som helst.
+<p>En stor fördel är att allt kan packas om när som helst.
 Git kommer ibland att packa om databasen automatiskt, alltid i försök att spara mer utrymme, men du kan också packa om manuellt när som helst genom att köra <code>git gc</code> för hand.</p>
 </div>
 <div id="nav"><a href="{{< previous-section >}}">prev</a> | <a href="{{< next-section >}}">next</a></div>

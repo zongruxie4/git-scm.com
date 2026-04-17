@@ -21,7 +21,7 @@ title: Git - Ombasering
 <div class="paragraph">
 <p>
 I Git finns två huvudsätt att integrera ändringar från en gren in i en annan: <code>merge</code> och <code>rebase</code>.
-I det här avsnittet lär du dig vad ombasering är, hur man gör det, varför det är ett imponerande verktyg och när du inte ska använda det.</p>
+I avsnittet lär du dig vad ombasering är, hur man gör det, varför det är ett imponerande verktyg och när du inte ska använda det.</p>
 </div>
 <div class="sect3">
 <h3 id="_grundläggande_ombasering">Grundläggande ombasering</h3>
@@ -50,7 +50,7 @@ I Git kallas detta <em>rebase(ombasera)</em>.
 Med <code>rebase</code> kan du ta alla ändringar som checkats in på en gren och spela upp dem på en annan.</p>
 </div>
 <div class="paragraph">
-<p>I det här exemplet växlar du till <code>experiment</code> och flyttar den till <code>master</code> så här:</p>
+<p>I exemplet växlar du till <code>experiment</code> och flyttar den till <code>master</code> så här:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -97,7 +97,7 @@ Då gör du arbetet i en gren och flyttar det till <code>origin/master</code> n�
 På så vis behöver förvaltaren bara snabbspola eller applicera ändringarna rent.</p>
 </div>
 <div class="paragraph">
-<p>Notera att ögonblicksbilden som den sista incheckningen pekar på – oavsett om det är den sista flyttade incheckningen eller den sista sammanslagningsincheckningen – är densamma.
+<p>Observera att ögonblicksbilden som den sista incheckningen pekar på – oavsett om det är den sista flyttade incheckningen eller den sista sammanslagningsincheckningen – är densamma.
 Det är bara historiken som skiljer sig.
 Ombasering spelar upp ändringar i samma ordning som de introducerades, medan sammanslagning tar ändpunkterna och fogar samman dem.</p>
 </div>
@@ -214,7 +214,7 @@ Om inte kommer folk bli irriterade och du får höra det.</p>
 Om du skickar upp incheckningar, andra uppdaterar dem och baserar arbete på dem, och du sedan skriver om historiken med <code>git rebase</code> och skickar upp igen, måste dina medarbetare sammanfoga sitt arbete på nytt och det blir stökigt när du ska dra in deras ändringar.</p>
 </div>
 <div class="paragraph">
-<p>Låt oss se ett exempel på hur det kan gå fel när du skriver om arbete du gjort publikt.
+<p>Här är ett exempel på hur det kan gå fel när du skriver om arbete du gjort publikt.
 Anta att du klonar från en central server och gör lite arbete.
 Historiken ser ut så här:</p>
 </div>
@@ -255,7 +255,7 @@ Om du kör <code>git pull</code> skapar du en sammanslagningsincheckning som inn
 <div class="title">Figur 47. Du sammanfogar samma arbete igen i en ny sammanslagningsincheckning</div>
 </div>
 <div class="paragraph">
-<p>Om du kör <code>git log</code> i det här läget ser du två incheckningar med samma författare, datum och meddelande, vilket är förvirrande.
+<p>Om du kör <code>git log</code> i det läget ser du två incheckningar med samma författare, datum och meddelande, vilket är förvirrande.
 Om du skickar upp den här historiken till servern återinför du dessutom de omskrivna incheckningarna, vilket kan förvirra andra.
 Det är rimligt att anta att den andra utvecklaren inte vill ha <code>C4</code> och <code>C6</code> i historiken; det var därför de flyttade om den från början.</p>
 </div>
@@ -329,7 +329,7 @@ Nu när du har sett ombasering och sammanslagning i praktiken undrar du kanske v
 Innan vi kan svara behöver vi ta ett steg tillbaka och prata om vad historik betyder.</p>
 </div>
 <div class="paragraph">
-<p>Ett perspektiv är att ditt kodförråds incheckningshistorik är <strong>en redogörelse för vad som faktiskt hände</strong>.
+<p>Ett perspektiv är att ditt kodförråds incheckningshistorik är <strong>en redogörelse för vad som verkligen hände</strong>.
 Det är ett historiskt dokument, värdefullt i sig, och ska inte manipuleras.
 Ur det perspektivet är ändring av historiken nästan hädelse; du <em>ljuger</em> om vad som skedde.
 Vad gör det om det finns en stökig serie sammanslagningsincheckningar?

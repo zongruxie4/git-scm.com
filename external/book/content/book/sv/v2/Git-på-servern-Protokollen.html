@@ -99,7 +99,7 @@ Om du och en kollega arbetar i samma projekt och hen vill att du ska titta på n
 Om du vill skicka från din bärbara dator hemma måste du montera nätverksdisken, vilket kan vara både krångligt och långsamt.</p>
 </div>
 <div class="paragraph">
-<p>Det är viktigt att nämna att detta inte nödvändigtvis är det snabbaste alternativet om du använder en delad nätverksdisk.
+<p>Tänk på att detta inte nödvändigtvis är det snabbaste alternativet om du använder en delad nätverksdisk.
 Ett lokalt kodförråd är snabbt bara om du har snabb åtkomst till datan.
 Ett kodförråd på NFS är ofta långsammare än ett kodförråd över SSH på samma server, där Git kan arbeta från lokala diskar på varje system.</p>
 </div>
@@ -142,7 +142,7 @@ Detsamma gäller för läsåtkomst.</p>
 <p>
 Om servern inte svarar med Smart HTTP-tjänst försöker Git-klienten falla tillbaka till <em>Dum HTTP</em>.
 Det dumma protokollet förväntar sig att det bara kodförrådet serveras som vanliga filer från webbservern.
-Det fina med Dum HTTP är enkelheten i att sätta upp det.
+Dum HTTP är enkelt att sätta upp.
 I praktiken behöver du bara lägga ett bart kodförråd under dokumentroten för din HTTP-server och aktivera en särskild <code>post-update</code>-krok, och sedan är du klar (se <a href="{{< relurl "book/sv/v2/ch00/_git_hooks" >}}">Git‑krokar</a>).
 Därefter kan alla som har åtkomst till webbservern klona kodförrådet.
 För att ge läsåtkomst över HTTP kan du göra så här:</p>
@@ -181,7 +181,7 @@ Det är ovanligt att blanda dem.</p>
 <p>Vi fokuserar på Smart HTTP.</p>
 </div>
 <div class="paragraph">
-<p>Enkelheten i att använda en enda URL för all åtkomst, och att servern bara frågar när autentisering behövs, gör det lätt för slutanvändaren.
+<p>Att använda en enda URL för all åtkomst, och att servern bara frågar när autentisering behövs, gör det enkelt för slutanvändaren.
 Att kunna autentisera med användarnamn och lösenord är också en stor fördel jämfört med SSH, eftersom användare inte behöver skapa SSH-nycklar lokalt och ladda upp sin publika nyckel för att kunna arbeta.
 För mindre erfarna användare eller system där SSH är mindre vanligt är detta en tydlig användbarhetsvinst.
 Det är dessutom ett snabbt och effektivt protokoll, i nivå med SSH.</p>
@@ -202,7 +202,7 @@ Utöver det har andra protokoll få fördelar jämfört med Smart HTTP när det 
 <div class="paragraph">
 <p>Om du använder HTTP för autentiserad uppsändning kan det ibland vara mer krångligt att ange inloggningsuppgifter än att använda SSH-nycklar.
 Det finns dock flera verktyg som mellanlagrar uppgifterna, till exempel Nyckelring på macOS och Credential Manager på Windows, vilket brukar göra det smidigt.
-Läs <a href="{{< relurl "book/sv/v2/ch00/_credential_caching" >}}">Lagring av inloggningsuppgifter</a> för hur du sätter upp säker mellanlagring av HTTP‑lösenord.</p>
+Läs <a href="{{< relurl "book/sv/v2/ch00/_credential_caching" >}}">Lagra inloggningsuppgifter</a> för hur du säkert mellanlagrar HTTP‑lösenord.</p>
 </div>
 </div>
 </div>
@@ -257,7 +257,7 @@ Om du vill ha anonym läsåtkomst och samtidigt använda SSH för uppsändning m
 <div class="paragraph">
 <p>
 Till sist har vi Git-protokollet.
-Det är en särskild demon som följer med Git; den lyssnar på en dedikerad port (9418) och tillhandahåller en tjänst liknande SSH, men helt utan autentisering eller kryptering.
+Det är en särskild demon som följer med Git; den lyssnar på en egen port (9418) och tillhandahåller en tjänst liknande SSH, men helt utan autentisering eller kryptering.
 För att ett kodförråd ska kunna erbjudas via Git-protokollet måste du skapa en <code>git-daemon-export-ok</code>-fil – annars serveras det inte – men förutom det finns det ingen säkerhet.
 Antingen är kodförrådet tillgängligt för alla att klona eller inte alls.
 Det innebär att man normalt inte skickar upp via detta protokoll.
@@ -275,7 +275,7 @@ Det använder samma dataöverföring som SSH men utan påslag från kryptering o
 <div class="sect4">
 <h4 id="_nackdelarna_4">Nackdelarna</h4>
 <div class="paragraph">
-<p>På grund av avsaknaden av TLS eller annan kryptering kan kloning över <code>git://</code> leda till godtycklig kodkörning och bör undvikas om du inte vet exakt vad du gör.</p>
+<p>Eftersom TLS och annan kryptering saknas kan kloning över <code>git://</code> leda till godtycklig kodkörning och bör undvikas om du inte vet exakt vad du gör.</p>
 </div>
 <div class="ulist">
 <ul>

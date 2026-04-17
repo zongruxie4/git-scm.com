@@ -75,32 +75,32 @@ headings:
 <p>&lt;начало&gt; и &lt;конец&gt; являются необязательными. <span class='synopsis'><code>-L</code> <em>&lt;начало&gt;</em></span> или <span class='synopsis'><code>-L</code> <em>&lt;начало&gt;</em><code>,</code></span> охватывает диапазон от &lt;начала&gt; до конца файла; <span class='synopsis'><code>-L</code> <code>,</code><em>&lt;конец&gt;</em></span> — от начала до &lt;конца&gt;.</p>
 </div>
 <div class="paragraph">
-<p>аттрибуты <span class='synopsis'><em>&lt;начало&gt;</em></span> и <span class='synopsis'><em>&lt;конец&gt;</em></span> могут принимать одну из следующих форм:</p>
+<p><span class='synopsis'><em>&lt;начало&gt;</em></span> и <span class='synopsis'><em>&lt;конец&gt;</em></span> могут принимать одну из этих форм:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>число</p>
+<p><em>&lt;число&gt;</em></p>
 <div class="paragraph">
-<p>Если <span class='synopsis'><em>&lt;начало&gt;</em></span> или <span class='synopsis'><em>&lt;конец&gt;</em></span> — это число, оно указывает порядковый номер строки (нумерация строк начинается с 1).</p>
+<p>Если <span class='synopsis'><em>&lt;начало&gt;</em></span> или <span class='synopsis'><em>&lt;конец&gt;</em></span> является числом, оно указывает абсолютный номер строки (строки считаются с 1).</p>
 </div>
 </li>
 <li>
-<p><span class='synopsis'><em>/регулярное-выражение/</em></span></p>
+<p><span class='synopsis'><code>/</code><em>&lt;регулярное-выражение&gt;</em><code>/</code></span></p>
 <div class="paragraph">
-<p>Эта форма будет использовать первую строку, сопоставленную заданному регулярному выражению POSIX. Если <span class='synopsis'><em>&lt;начало&gt;</em></span> является регулярным выражением, поиск будет осуществляться с конца предыдущего диапазона, заданного в <span class='synopsis'><code>-L</code></span>, если таковой имеется, в противном случае — с начала файла. Если <span class='synopsis'><em>&lt;начало&gt;</em></span> имеет форму <span class='synopsis'><em>^/регулярное-выражение/</em></span>, поиск всегда будет производиться с начала файла. Если <span class='synopsis'><em>&lt;конец&gt;</em></span> является регулярным выражением, поиск будет начинаться со строки, заданной <span class='synopsis'><em>&lt;началом&gt;</em></span>.</p>
+<p>Эта форма будет использовать первую строку, соответствующую заданному <em>&lt;регулярному-выражению&gt;</em> POSIX. Если <em>&lt;начало&gt;</em> является регулярным выражением, поиск будет производиться с конца предыдущего диапазона <span class='synopsis'><code>-L</code></span>, если таковой имеется, в противном случае — с начала файла. Если <em>&lt;начало&gt;</em> имеет вид <span class='synopsis'><code>^/</code><em>&lt;регулярное-выражение&gt;</em><code>/</code></span>, поиск будет производиться с начала файла. Если <em>&lt;конец&gt;</em> является регулярным выражением, поиск будет начинаться со строки, заданной <em>&lt;началом&gt;</em>.</p>
 </div>
 </li>
 <li>
-<p>+смещение или -смещение</p>
+<p><span class='synopsis'><code>+</code><em>&lt;смещение&gt;</em></span> или <span class='synopsis'><code>-</code><em>&lt;смещение&gt;</em></span></p>
 <div class="paragraph">
-<p>Использование этой формы допустимо только для <span class='synopsis'><em>&lt;конца&gt;</em></span>. Она задаёт количество строк до или после строки, указанной в <span class='synopsis'><em>&lt;начале&gt;</em></span>.</p>
+<p>Это допустимо только для <em>&lt;конца&gt;</em> и указывает количество строк до или после строки, заданной <em>&lt;началом&gt;</em>.</p>
 </div>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p>Если вместо <span class='synopsis'><em>&lt;начало&gt;</em></span> и <span class='synopsis'><em>&lt;конца&gt;</em></span> передано <span class='synopsis'><code>:</code><em>&lt;имя-функции&gt;</em></span>, то это обозначает диапазон от первой строки, которая сопоставляется регулярному выражению <span class='synopsis'><em>&lt;имя-функции&gt;</em></span>, до следующей строки c именем функции. С <span class='synopsis'><code>:</code><em>&lt;имя-функции&gt;</em></span> поиск будет осуществляться с конца предыдущего диапазона, заданного в <span class='synopsis'><code>-L</code></span>, если таковой имеется, в противном случае — с начала файла. С <span class='synopsis'><code>^:</code><em>&lt;имя-функции&gt;</em></span> поиск всегда будет производиться с начала файла. Является ли строка именем функции определяются так же, как <span class='synopsis'><code>git</code> <code>diff</code></span> определяет заголовки блоков патчей (см. раздел «Определение пользовательских заголовков блоков патчей» в <a href='{{< relurl "docs/gitattributes/ru" >}}'>gitattributes[5]</a>).</p>
+<p>Если вместо <em>&lt;начало&gt;</em> и <em>&lt;конца&gt;</em> указано <span class='synopsis'><code>:</code><em>&lt;имя-функции&gt;</em></span>, это регулярное выражение, обозначающее диапазон от первой строки с именем функции, соответствующей <em>&lt;имя-функции&gt;</em>, до следующей строки с именем функции. <span class='synopsis'><code>:</code><em>&lt;имя-функции&gt;</em></span> ищет с конца предыдущего диапазона <span class='synopsis'><code>-L</code></span>, если таковой имеется, в противном случае — с начала файла. <span class='synopsis'><code>^:</code><em>&lt;имя-функции&gt;</em></span> ищет с начала файла. Имена функций определяются так же, как <span class='synopsis'><code>git</code> <code>diff</code></span> определяет заголовки фрагментов патча (см. раздел <em>Определение пользовательского заголовка фрагмента</em> в <a href='{{< relurl "docs/gitattributes/ru" >}}'>gitattributes[5]</a>).</p>
 </div>
 </dd>
 </dl>

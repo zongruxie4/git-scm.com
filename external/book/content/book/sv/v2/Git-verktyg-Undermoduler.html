@@ -42,9 +42,9 @@ Det låter dig klona ett annat kodförråd in i ditt projekt och hålla dina inc
 <p>Vi går igenom utvecklingen av ett enkelt projekt som har delats upp i ett huvudprojekt och några underprojekt.</p>
 </div>
 <div class="paragraph">
-<p>Låt oss börja med att lägga till ett befintligt Git-kodförråd som en undermodul till kodförrådet vi arbetar i.
+<p>Vi börjar med att lägga till ett befintligt Git-kodförråd som en undermodul till kodförrådet vi arbetar i.
 För att lägga till en ny undermodul använder du kommandot <code>git submodule add</code> med den absoluta eller relativa URL:en till projektet du vill börja spåra.
-I det här exemplet lägger vi till ett bibliotek som heter “DbConnector”.</p>
+I exemplet lägger vi till ett bibliotek som heter “DbConnector”.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -62,7 +62,7 @@ Checking connectivity... done.</code></pre>
 Du kan lägga till en annan sökväg i slutet av kommandot om du vill att det ska hamna någon annanstans.</p>
 </div>
 <div class="paragraph">
-<p>Om du kör <code>git status</code> vid det här laget märker du några saker.</p>
+<p>Om du kör <code>git status</code> nu märker du några saker.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -79,7 +79,7 @@ Changes to be committed:
 </div>
 <div class="paragraph">
 <p>Först bör du lägga märke till den nya filen <code>.gitmodules</code>.
-Det är en konfigurationsfil som lagrar kopplingen mellan projektets URL och den lokala underkatalog du drog in det i:</p>
+Det är en konfigurationsfil som kopplar projektets URL till den lokala underkatalog du drog in det i:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -89,8 +89,8 @@ Det är en konfigurationsfil som lagrar kopplingen mellan projektets URL och den
 </div>
 </div>
 <div class="paragraph">
-<p>Om du har flera undermoduler får du flera poster i den här filen.
-Det är viktigt att notera att den här filen är versionshanterad tillsammans med dina övriga filer, som din <code>.gitignore</code>‑fil.
+<p>Om du har flera undermoduler får du flera poster i filen.
+Tänk på att filen är versionshanterad tillsammans med dina övriga filer, som din <code>.gitignore</code>‑fil.
 Den skickas upp och dras tillsammans med resten av projektet.
 Så vet andra som klonar projektet var undermodulsprojekten ska uppdateras ifrån.</p>
 </div>
@@ -263,8 +263,8 @@ För att även initiera, uppdatera och växla till eventuella inbäddade undermo
 <div class="sect4">
 <h4 id="_hämta_uppströmsändringar_från_undermodulens_fjärrkodförråd">Hämta uppströmsändringar från undermodulens fjärrkodförråd</h4>
 <div class="paragraph">
-<p>Den enklaste modellen för att använda undermoduler i ett projekt är när du bara konsumerar ett underprojekt och vill få uppdateringar från det då och då, utan att själv ändra något i din utläggning.
-Låt oss gå igenom ett enkelt exempel.</p>
+<p>Den enklaste modellen för att använda undermoduler i ett projekt är när du bara använder ett underprojekt och vill få uppdateringar från det då och då, utan att själv ändra något i din utläggning.
+Vi går igenom ett enkelt exempel.</p>
 </div>
 <div class="paragraph">
 <p>Om du vill kontrollera om det finns nytt arbete i en undermodul kan du gå in i katalogen och köra <code>git fetch</code> och <code>git merge</code> mot uppströmsgrenen för att uppdatera den lokala koden.</p>
@@ -296,7 +296,7 @@ Submodule DbConnector c3f01dc..d0354fc:
 </div>
 </div>
 <div class="paragraph">
-<p>Om du checkar in vid det här laget kommer du att låsa undermodulen till den nya koden när andra uppdaterar.</p>
+<p>Checkar du in nu låser du undermodulen till den nya koden när andra uppdaterar.</p>
 </div>
 <div class="paragraph">
 <p>Det finns även ett enklare sätt om du föredrar att inte uppdatera och sammanfoga manuellt i underkatalogen.
@@ -318,7 +318,7 @@ Submodule path 'DbConnector': checked out 'd0354fc054692d3906c85c3af05ddce39a1c0
 <p>Det här kommandot antar som standard att du vill uppdatera utläggningen till standardgrenen på fjärrkodförrådet för undermodulen (den som pekas ut av <code>HEAD</code> i fjärrkodförrådet).
 Du kan dock ställa in detta till något annat om du vill.
 Om du till exempel vill att undermodulen <code>DbConnector</code> ska spåra kodförrådets “stable”‑gren kan du ställa in det antingen i <code>.gitmodules</code>‑filen (så att alla andra också spårar det) eller bara i din lokala <code>.git/config</code>‑fil.
-Låt oss ställa in det i <code>.gitmodules</code>‑filen:</p>
+Vi ställer in det i <code>.gitmodules</code>‑filen:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -338,7 +338,7 @@ Submodule path 'DbConnector': checked out 'c87d55d4c6d4b05ee34fbc8cb6f7bf4585ae6
 <p>Om du lämnar bort <code>-f .gitmodules</code> görs ändringen bara lokalt, men det är oftast rimligare att spåra den informationen i kodförrådet så att alla andra gör det också.</p>
 </div>
 <div class="paragraph">
-<p>När vi kör <code>git status</code> vid det här laget visar Git att vi har “new commits” i undermodulen.</p>
+<p>Kör vi <code>git status</code> nu visar Git att vi har “new commits” i undermodulen.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -403,7 +403,7 @@ index 6fc0b3d..fd1cc29 100644
 </div>
 </div>
 <div class="paragraph">
-<p>Det här är rätt kul eftersom vi faktiskt kan se loggen över incheckningarna som vi håller på att checka in i vår undermodul.
+<p>Det här är rätt kul eftersom vi verkligen kan se loggen över incheckningarna som vi håller på att checka in i vår undermodul.
 När det är checkat in kan du se informationen i efterhand också när du kör <code>git log -p</code>.</p>
 </div>
 <div class="listingblock">
@@ -439,7 +439,7 @@ Om du har många kan du vilja skicka namnet på just den undermodul du vill uppd
 <div class="sect4">
 <h4 id="_dra_uppströmsändringar_från_projektets_fjärrkodförråd">Dra uppströmsändringar från projektets fjärrkodförråd</h4>
 <div class="paragraph">
-<p>Låt oss nu kliva in i din kollegas skor, som har sin egen lokala klon av MainProject‑kodförrådet.
+<p>Nu kliver vi in i din kollegas skor, som har sin egen lokala klon av MainProject‑kodförrådet.
 Att bara köra <code>git pull</code> för att få dina nyincheckade ändringar räcker inte:</p>
 </div>
 <div class="listingblock">
@@ -526,7 +526,7 @@ $ git submodule update --init --recursive</code></pre>
 Annars skulle du förmodligen använda ett enklare beroendehanteringssystem (som Maven eller Rubygems).</p>
 </div>
 <div class="paragraph">
-<p>Låt oss nu gå igenom ett exempel där vi gör ändringar i undermodulen samtidigt som huvudprojektet och checkar in och publicerar dessa ändringar samtidigt.</p>
+<p>Nu går vi igenom ett exempel där vi gör ändringar i undermodulen samtidigt som huvudprojektet och checkar in och publicerar dessa ändringar samtidigt.</p>
 </div>
 <div class="paragraph">
 <p>Hittills, när vi kört <code>git submodule update</code> för att uppdatera ändringar från undermodulkodförråden, har Git uppdaterat ändringarna och uppdaterat filerna i underkatalogen men lämnat underkodförrådet i ett så kallat "frikopplat HEAD"‑läge.
@@ -541,7 +541,7 @@ Sedan behöver du tala om för Git vad den ska göra om du har gjort ändringar 
 Alternativen är att du kan sammanfoga dem med ditt lokala arbete, eller försöka ombasera ditt lokala arbete ovanpå de nya ändringarna.</p>
 </div>
 <div class="paragraph">
-<p>Låt oss först gå in i vår undermodulkatalog och växla till en gren.</p>
+<p>Först går vi in i vår undermodulkatalog och växlar till en gren.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -551,7 +551,7 @@ Switched to branch 'stable'</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Låt oss försöka uppdatera vår undermodul med “merge”‑alternativet.
+<p>Vi försöker uppdatera vår undermodul med “merge”‑alternativet.
 För att ange det manuellt kan vi helt enkelt lägga till flaggan <code>--merge</code> till vårt <code>update</code>‑anrop.
 Här ser vi att det fanns en ändring på servern för undermodulen och den sammanfogas in.</p>
 </div>
@@ -574,7 +574,7 @@ Submodule path 'DbConnector': merged in '92c7337b30ef9e0893e758dac2459d07362ab5e
 </div>
 <div class="paragraph">
 <p>Om vi går in i katalogen <code>DbConnector</code> har vi de nya ändringarna redan sammanfogade i vår lokala <code>stable</code>‑gren.
-Låt oss nu se vad som händer när vi gör en egen lokal ändring i biblioteket och någon annan samtidigt skickar upp en annan ändring uppströms.</p>
+Nu ser vi vad som händer när vi gör en egen lokal ändring i biblioteket och någon annan samtidigt skickar upp en annan ändring uppströms.</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -777,7 +777,7 @@ Om vi går in i undermodulkatalogen ska den redan stå på <code>eb41d76</code> 
 Om den av någon anledning inte gör det kan du helt enkelt skapa och växla till en gren som pekar på den.</p>
 </div>
 <div class="paragraph">
-<p>Det viktiga är SHA‑1‑värdet för incheckningen på den andra sidan.
+<p>Viktigt här är SHA‑1‑värdet för incheckningen på den andra sidan.
 Det är det du måste sammanfoga in och lösa.
 Du kan antingen försöka sammanfoga med SHA‑1:an direkt, eller skapa en gren för den och sedan försöka sammanfoga den.
 Vi föreslår det senare, om inte annat för att få ett trevligare sammanslagningsmeddelande.</p>
@@ -910,7 +910,7 @@ $ git commit -am 'Fast forward to a common submodule child'</code></pre>
 <h4 id="_undermodulforeach">Undermodul‑foreach</h4>
 <div class="paragraph">
 <p>Det finns ett <code>foreach</code>‑kommando för undermoduler som kör ett godtyckligt kommando i varje undermodul.
-Det kan vara riktigt användbart om du har flera undermoduler i samma projekt.</p>
+Riktigt användbart om du har flera undermoduler i samma projekt.</p>
 </div>
 <div class="paragraph">
 <p>Till exempel, säg att vi vill starta en ny funktion eller åtgärda ett programfel och att vi har arbete på gång i flera undermoduler.
@@ -986,7 +986,7 @@ Det här är förstås ett förenklat exempel, men förhoppningsvis ger det en b
 <div class="sect4">
 <h4 id="_nyttiga_alias">Nyttiga alias</h4>
 <div class="paragraph">
-<p>Du kanske vill sätta upp alias för några av dessa kommandon eftersom de kan vara ganska långa och du kan inte ställa in konfigurationsalternativ för de flesta av dem för att göra dem till standard.
+<p>Du kanske vill sätta upp alias för några av dessa kommandon eftersom de kan vara ganska långa och du kan inte ställa in konfigurationsalternativ för de flesta för att göra dem till standard.
 Vi tog upp hur man sätter upp Git‑alias i <a href="{{< relurl "book/sv/v2/ch00/_git_aliases" >}}">Git-alias</a>, men här är ett exempel på vad du kan vilja ställa in om du planerar att arbeta mycket med undermoduler i Git.</p>
 </div>
 <div class="listingblock">
@@ -997,7 +997,7 @@ $ git config alias.supdate 'submodule update --remote --merge'</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>På så sätt kan du helt enkelt köra <code>git supdate</code> när du vill uppdatera dina undermoduler, eller <code>git spush</code> för att skicka med kontroll av undermodulsberoenden.</p>
+<p>På så sätt kan du helt enkelt köra <code>git supdate</code> när du vill uppdatera dina undermoduler, eller <code>git spush</code> för att skicka och kontrollera undermodulsberoenden.</p>
 </div>
 </div>
 </div>
@@ -1107,7 +1107,7 @@ När du byter mellan grenar som registrerar undermodulen vid olika incheckningar
 Det beror på att undermodulens läge som standard inte följer med när du byter gren.</p>
 </div>
 <div class="paragraph">
-<p>Det kan vara riktigt förvirrande, så det är en bra idé att alltid köra <code>git checkout --recurse-submodules</code> när ditt projekt har undermoduler.
+<p>Riktigt förvirrande, så kör alltid <code>git checkout --recurse-submodules</code> när ditt projekt har undermoduler.
 För äldre Git‑versioner som saknar flaggan <code>--recurse-submodules</code> kan du efter utcheckning köra <code>git submodule update --init --recursive</code> för att få undermodulerna i rätt läge.</p>
 </div>
 <div class="paragraph">
@@ -1177,7 +1177,7 @@ Du kan behöva gå in i undermodulkatalogen och köra <code>git checkout .</code
 Du kan köra detta i ett <code>submodule foreach</code>‑skript för att göra det på flera undermoduler.</p>
 </div>
 <div class="paragraph">
-<p>Det är viktigt att notera att undermoduler numera håller all sin Git‑data i överprojektets <code>.git</code>‑katalog, så till skillnad från mycket äldre Git‑versioner förlorar du inga incheckningar eller grenar genom att radera en undermodulkatalog.</p>
+<p>Tänk på att undermoduler numera håller all sin Git‑data i överprojektets <code>.git</code>‑katalog, så till skillnad från mycket äldre Git‑versioner förlorar du inga incheckningar eller grenar genom att radera en undermodulkatalog.</p>
 </div>
 <div class="paragraph">
 <p>Med dessa verktyg kan undermoduler vara en ganska enkel och effektiv metod för att utveckla flera relaterade men fortfarande separata projekt samtidigt.</p>

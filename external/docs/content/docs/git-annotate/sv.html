@@ -65,7 +65,7 @@ headings:
 </dd>
 <dt class="hdlist1" id="git-annotate---show-stats"> <a class="anchor" href="#git-annotate---show-stats"></a>--show-stats </dt>
 <dd>
-<p>Include additional statistics at the end of blame output.</p>
+<p>Inkludera ytterligare statistik i slutet av skyldiga utdata.</p>
 </dd>
 <dt class="hdlist1" id="git-annotate--Lltstartgtltslutgt"> <a class="anchor" href="#git-annotate--Lstartslut"></a> <a class="anchor" href="#git-annotate--Lltstartgtltslutgt"></a>-L &lt;start&gt;,&lt;slut&gt; </dt>
 <dt class="hdlist1" id="git-annotate--Lltfunktionsnamngt"> <a class="anchor" href="#git-annotate--Lfunktionsnamn"></a> <a class="anchor" href="#git-annotate--Lltfunktionsnamngt"></a>-L :&lt;funktionsnamn&gt; </dt>
@@ -100,7 +100,7 @@ headings:
 </ul>
 </div>
 <div class="paragraph">
-<p>Om <span class='synopsis'><code>:</code><em>&lt;funktionsnamn&gt;</em></span> anges istället för <em>&lt;start&gt;</em> och <em>&lt;slut&gt;</em>, är det ett reguljärt uttryck som anger intervallet från den första funktionsnamn-raden som matchar <em>&lt;funktionsnamn&gt;</em>, upp till nästa funcname-rad. <span class='synopsis'><code>:</code><em>&lt;funktionsnamn&gt;</em></span> söker från slutet av föregående <span class='synopsis'><code>-L</code></span>-intervall, om något, annars från början av filen. <span class='synopsis'><code>^:</code><em>&lt;funktionsnamn&gt;</em></span> söker från början av filen. Funktionsnamnen bestäms på samma sätt som <span class='synopsis'><code>git</code> <code>diff</code></span> beräknar patch-hunk-headers (se <em>Definiera en anpassad hunk-header</em> i <a href='{{< relurl "docs/gitattributes/sv" >}}'>gitattributes[5]</a>).</p>
+<p>Om <span class='synopsis'><code>:</code><em>&lt;funktionsnamn&gt;</em></span> anges istället för <em>&lt;start&gt;</em> och <em>&lt;slut&gt;</em>, är det ett reguljärt uttryck som anger intervallet från den första funktionsnamn-raden som matchar <em>&lt;funktionsnamn&gt;</em>, upp till nästa funcname-rad. <span class='synopsis'><code>:</code><em>&lt;funktionsnamn&gt;</em></span> söker från slutet av föregående <span class='synopsis'><code>-L</code></span>-intervall, om något, annars från början av filen. <span class='synopsis'><code>^:</code><em>&lt;funktionsnamn&gt;</em></span> söker från början av filen. Funktionsnamnen bestäms på samma sätt som <span class='synopsis'><code>git</code> <code>diff</code></span> beräknar patch-styckes-huvuden (se <em>Definiera en anpassad styckes-huvuden</em> i <a href='{{< relurl "docs/gitattributes/sv" >}}'>gitattributes[5]</a>).</p>
 </div>
 </dd>
 </dl>
@@ -115,7 +115,7 @@ headings:
 <dd>
 <p>Visa rå tidsstämpel (Standard: av).</p>
 </dd>
-<dt class="hdlist1" id="git-annotate--Sltrevs-filegt"> <a class="anchor" href="#git-annotate--Srevs-file"></a> <a class="anchor" href="#git-annotate--Sltrevs-filegt"></a>-S &lt;revs-file&gt; </dt>
+<dt class="hdlist1" id="git-annotate--Sltrevs-filgt"> <a class="anchor" href="#git-annotate--Srevs-fil"></a> <a class="anchor" href="#git-annotate--Sltrevs-filgt"></a>-S &lt;revs-fil&gt; </dt>
 <dd>
 <p>Använd revisioner från revs-filen istället för att anropa <a href='{{< relurl "docs/git-rev-list/sv" >}}'>git-rev-list[1]</a>.</p>
 </dd>
@@ -134,7 +134,7 @@ headings:
 </dd>
 <dt class="hdlist1" id="git-annotate---line-porcelain"> <a class="anchor" href="#git-annotate---line-porcelain"></a>--line-porcelain </dt>
 <dd>
-<p>Visa porslinsformatet, men mata ut incheckning-information för varje rad, inte bara första gången en incheckning refereras. Innebär --porcelain.</p>
+<p>Visa porslins-formatet, men mata ut incheckning-information för varje rad, inte bara första gången en incheckning refereras. Innebär --porcelain.</p>
 </dd>
 <dt class="hdlist1" id="git-annotate---incremental"> <a class="anchor" href="#git-annotate---incremental"></a>--incremental </dt>
 <dd>

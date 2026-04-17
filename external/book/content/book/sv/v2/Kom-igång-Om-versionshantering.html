@@ -62,7 +62,7 @@ Det är lätt att glömma vilken katalog du är i och råka skriva till fel fil 
 <p>
 Nästa stora problem folk stöter på är att de behöver samarbeta med utvecklare på andra system.
 För att hantera detta utvecklades centraliserade versionshanteringssystem (CVCS).
-Dessa system (till exempel CVS, Subversion och Perforce) har en enda server som innehåller alla versionshanterade filer och ett antal klienter som hämtar ut filer från den centrala platsen.
+Dessa system (till exempel CVS, Subversion och Perforce) har en enda server som innehåller alla versionshanterade filer och flera klienter som hämtar ut filer från den centrala platsen.
 Under många år var detta standardmetoden för versionshantering.</p>
 </div>
 <div class="imageblock">
@@ -77,7 +77,7 @@ Till exempel vet alla till viss del vad alla andra i projektet gör.
 Administratörer har detaljerad kontroll över vem som kan göra vad, och det är betydligt enklare att administrera ett centraliserat system än att hantera lokala databaser på varje klient.</p>
 </div>
 <div class="paragraph">
-<p>Men den här modellen har också några allvarliga nackdelar.
+<p>Men modellen har också några allvarliga nackdelar.
 Den mest uppenbara är den enda felpunkt som den centraliserade servern utgör.
 Om den servern går ner i en timme kan ingen under den tiden samarbeta eller spara versionshanterade ändringar i det de jobbar med.
 Om hårddisken där den centrala databasen ligger blir korrupt och man inte har riktiga säkerhetskopior förlorar man allt – hela projektets historik, förutom de enstaka versioner som råkar finnas på folks lokala maskiner.
@@ -88,7 +88,7 @@ Lokala VCS:er lider av samma problem – när hela projektets historik finns på
 <h3 id="_distribuerade_versionshanteringssystem">Distribuerade versionshanteringssystem</h3>
 <div class="paragraph">
 <p>
-Det är här distribuerade versionshanteringssystem (DVCS) kommer in.
+Här kommer distribuerade versionshanteringssystem (DVCS) in.
 I ett sådant system (till exempel Git, Mercurial eller Darcs) hämtar klienterna inte bara den senaste ögonblicksbilden av filerna; de speglar hela kodförrådet, inklusive all historik.
 Om en server dör och systemen samarbetade via den servern kan vilket som helst av klienternas kodförråd kopieras tillbaka till servern för att återställa den.
 Varje klon är i praktiken en fullständig säkerhetskopia av all data.</p>
@@ -101,7 +101,7 @@ Varje klon är i praktiken en fullständig säkerhetskopia av all data.</p>
 </div>
 <div class="paragraph">
 <p>Dessutom hanterar många av dessa system flera fjärrkodförråd ganska väl, så du kan samarbeta med olika grupper av personer på olika sätt samtidigt inom samma projekt.
-Det gör det möjligt att använda flera typer av arbetsflöden som inte är möjliga i centraliserade system, till exempel hierarkiska modeller.</p>
+Därmed kan du använda flera typer av arbetsflöden som inte är möjliga i centraliserade system, till exempel hierarkiska modeller.</p>
 </div>
 </div>
 <div id="nav"><a href="{{< previous-section >}}">prev</a> | <a href="{{< next-section >}}">next</a></div>

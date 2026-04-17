@@ -24,7 +24,7 @@ I många VCS-verktyg är detta en ganska dyr process som ofta kräver att du ska
 Vad är det som är så speciellt?
 Gits sätt att hantera grenar på är extremt lättviktigt, vilket gör att grenåtgärder går nästan omedelbart, och att byta fram och tillbaka mellan grenar ofta går snabbt.
 Till skillnad från många andra VCS:er uppmuntrar Git arbetsflöden där man ofta skapar grenar och slår ihop dem, till och med flera gånger om dagen.
-Att förstå och behärska den här funktionen ger dig ett kraftfullt och unikt verktyg och kan helt förändra hur du utvecklar.</p>
+Att förstå och behärska funktionen ger dig ett kraftfullt och unikt verktyg och kan helt förändra hur du utvecklar.</p>
 <h2 id="_git_branches_overview">Grenar i korthet</h2>
 <div class="paragraph">
 <p>För att verkligen förstå hur Git hanterar grenar behöver vi ta ett steg tillbaka och titta på hur Git lagrar data.</p>
@@ -153,7 +153,7 @@ f30ab (HEAD -&gt; master, testing) Add feature #32 - ability to add new formats 
 <div class="paragraph">
 <p>
 För att byta till en befintlig gren kör du <code>git checkout</code>.
-Låt oss byta till den nya grenen <code>testing</code>:</p>
+Vi byter till den nya grenen <code>testing</code>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -171,7 +171,7 @@ Låt oss byta till den nya grenen <code>testing</code>:</p>
 </div>
 <div class="paragraph">
 <p>Vad betyder det?
-Låt oss göra en incheckning:</p>
+Vi gör en incheckning:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -186,8 +186,8 @@ $ git commit -a -m 'Make a change'</code></pre>
 <div class="title">Figur 15. HEAD-grenen flyttas fram när du checkar in</div>
 </div>
 <div class="paragraph">
-<p>Det intressanta är att din <code>testing</code>-gren har flyttat fram, medan <code>master</code> fortfarande pekar på incheckningen du stod på när du bytte gren.
-Låt oss byta tillbaka till <code>master</code>:</p>
+<p>Din <code>testing</code>-gren har nu flyttat fram, medan <code>master</code> fortfarande pekar på incheckningen du stod på när du bytte gren.
+Vi byter tillbaka till <code>master</code>:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -239,7 +239,7 @@ I praktiken spolar det tillbaka arbetet du gjorde i <code>testing</code> så att
 <td class="content">
 <div class="title">Byta gren ändrar filer i arbetskatalogen</div>
 <div class="paragraph">
-<p>Det är viktigt att veta att när du byter gren i Git ändras filerna i arbetskatalogen.
+<p>Tänk på att när du byter gren i Git ändras filerna i arbetskatalogen.
 Om du byter till en äldre gren återställs arbetskatalogen till hur den såg ut när du senast checkade in på den grenen.
 Om Git inte kan göra detta utan konflikter får du inte byta gren.</p>
 </div>
@@ -248,7 +248,7 @@ Om Git inte kan göra detta utan konflikter får du inte byta gren.</p>
 </table>
 </div>
 <div class="paragraph">
-<p>Låt oss göra några ändringar och checka in igen:</p>
+<p>Vi gör några ändringar och checkar in igen:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -294,7 +294,7 @@ Eftersom vi lagrar föräldrarna till varje incheckning hittar Git automatiskt e
 Detta uppmuntrar utvecklare att skapa och använda grenar ofta.</p>
 </div>
 <div class="paragraph">
-<p>Låt oss se varför.</p>
+<p>Vi ser varför.</p>
 </div>
 <div class="admonitionblock note">
 <table>

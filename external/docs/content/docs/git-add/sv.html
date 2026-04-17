@@ -47,7 +47,7 @@ headings:
 	[<span class='synopsis'><code>--edit</code></span> | <span class='synopsis'><code>-e</code></span>] [<span class='synopsis'><code>--</code></span>[<span class='synopsis'><code>no-</code></span>]<span class='synopsis'><code>all</code></span> | <span class='synopsis'><code>-A</code></span> | <span class='synopsis'><code>--</code></span>[<span class='synopsis'><code>no-</code></span>]<span class='synopsis'><code>ignore-removal</code></span> | [<span class='synopsis'><code>--update</code></span> | <span class='synopsis'><code>-u</code></span>]] [<span class='synopsis'><code>--sparse</code></span>]
 	[<span class='synopsis'><code>--intent-to-add</code></span> | <span class='synopsis'><code>-N</code></span>] [<span class='synopsis'><code>--refresh</code></span>] [<span class='synopsis'><code>--ignore-errors</code></span>] [<span class='synopsis'><code>--ignore-missing</code></span>] [<span class='synopsis'><code>--renormalize</code></span>]
 	[<span class='synopsis'><code>--chmod=</code></span>(<span class='synopsis'><code>+</code></span>|<span class='synopsis'><code>-</code></span>)<span class='synopsis'><code>x</code></span>] [<span class='synopsis'><code>--pathspec-from-file=</code></span><em>&lt;fil&gt;</em> [<span class='synopsis'><code>--pathspec-file-nul</code></span>]]
-	[<span class='synopsis'><code>--</code></span>] [<em><span class="hover-term" data-term="sökvägsspec">&lt;sökvägsspec&gt;</span></em>&#8230;&#8203;]</pre>
+	[<span class='synopsis'><code>--</code></span>] [<em><span class="hover-term" data-term="sökvägsmönster">&lt;sökvägsmönster&gt;</span></em>&#8230;&#8203;]</pre>
 </div>
 </div>
 </div>
@@ -88,11 +88,11 @@ git commit</pre>
 <div class="sectionbody">
 <div class="dlist">
 <dl>
-<dt class="hdlist1" id="git-add-spanclasssynopsisemltskvgsspecgtemspan"> <a class="anchor" href="#git-add-skvgsspec"></a> <a class="anchor" href="#git-add-spanclasssynopsisemltskvgsspecgtemspan"></a><span class='synopsis'><em><span class="hover-term" data-term="sökvägsspec">&lt;sökvägsspec&gt;</span></em>...</span> </dt>
+<dt class="hdlist1" id="git-add-spanclasssynopsisemltskvgsmnstergtemspan"> <a class="anchor" href="#git-add-skvgsmnster"></a> <a class="anchor" href="#git-add-spanclasssynopsisemltskvgsmnstergtemspan"></a><span class='synopsis'><em><span class="hover-term" data-term="sökvägsmönster">&lt;sökvägsmönster&gt;</span></em>...</span> </dt>
 <dd>
 <p>Filer att lägga till innehåll från. Filglobs (t.ex. <span class='synopsis'><code>*.c</code></span>) kan anges för att lägga till alla matchande filer. Ett inledande katalognamn (t.ex. <span class='synopsis'><code>dir</code></span> för att lägga till <span class='synopsis'><code>kat/fil1</code></span> och <span class='synopsis'><code>kat/fil2</code></span>) kan också anges för att uppdatera indexet så att det matchar hela katalogens aktuella tillstånd (t.ex. om du anger <span class='synopsis'><code>kat</code></span> registreras inte bara en fil <span class='synopsis'><code>kat/fil1</code></span> som ändrats i arbetskatalog, en fil <span class='synopsis'><code>kat/fil2</code></span> som lagts till i arbetskatalog, utan även en fil <span class='synopsis'><code>kat/fil3</code></span> som tagits bort från arbetskatalog). Observera att äldre versioner av Git brukade ignorera borttagna filer; använd alternativet <span class='synopsis'><code>--no-all</code></span> om du vill lägga till ändrade eller nya filer men ignorera borttagna.</p>
 <div class="paragraph">
-<p>For more details about the <em>&lt;pathspec&gt;</em> syntax, see the <em>pathspec</em> entry in <a href='{{< relurl "docs/gitglossary/sv" >}}'>gitglossary[7]</a>.</p>
+<p>För mer information om syntaxen <em><span class="hover-term" data-term="sökvägsmönster">&lt;sökvägsmönster&gt;</span></em>, se posten <em>sökvägsmönster</em> i <a href='{{< relurl "docs/gitglossary/sv" >}}'>gitglossary[7]</a>.</p>
 </div>
 </dd>
 <dt class="hdlist1" id="git-add-spanclasssynopsiscode-ncodespan"> <a class="anchor" href="#git-add--n"></a> <a class="anchor" href="#git-add-spanclasssynopsiscode-ncodespan"></a><span class='synopsis'><code>-n</code></span> </dt>
@@ -143,7 +143,7 @@ git commit</pre>
 <dt class="hdlist1" id="git-add-spanclasssynopsiscode-ecodespan"> <a class="anchor" href="#git-add--e"></a> <a class="anchor" href="#git-add-spanclasssynopsiscode-ecodespan"></a><span class='synopsis'><code>-e</code></span> </dt>
 <dt class="hdlist1" id="git-add-spanclasssynopsiscode--editcodespan"> <a class="anchor" href="#git-add---edit"></a> <a class="anchor" href="#git-add-spanclasssynopsiscode--editcodespan"></a><span class='synopsis'><code>--edit</code></span> </dt>
 <dd>
-<p>Öppna skillnaden mellan diffen och indexet i en editor och låt användaren redigera den. När editorn har stängts, justera hunk-rubrikerna och applicera patchen på indexet.</p>
+<p>Öppna skillnaden mellan diffen och indexet i en editor och låt användaren redigera den. När editorn har stängts, justera hunk-huvudena och applicera patchen på indexet.</p>
 <div class="paragraph">
 <p>Avsikten med det här alternativet är att välja och vraka rader i patchen som ska tillämpas, eller till och med att modifiera innehållet i rader som ska köas. Detta kan vara snabbare och mer flexibelt än att använda den interaktiva styckes-väljaren. Det är dock lätt att förvirra sig själv och skapa en patch som inte gäller för indexet. Se REDIGERA PATCHAR nedan.</p>
 </div>
@@ -151,32 +151,32 @@ git commit</pre>
 <dt class="hdlist1" id="git-add-spanclasssynopsiscode-ucodespan"> <a class="anchor" href="#git-add--u"></a> <a class="anchor" href="#git-add-spanclasssynopsiscode-ucodespan"></a><span class='synopsis'><code>-u</code></span> </dt>
 <dt class="hdlist1" id="git-add-spanclasssynopsiscode--updatecodespan"> <a class="anchor" href="#git-add---update"></a> <a class="anchor" href="#git-add-spanclasssynopsiscode--updatecodespan"></a><span class='synopsis'><code>--update</code></span> </dt>
 <dd>
-<p>Uppdatera indexet där det redan har en post som matchar <em><span class="hover-term" data-term="sökvägsspec">&lt;sökvägsspec&gt;</span></em>. Detta tar bort och modifierar indexposter så att de matchar arbetskatalog, men lägger inte till några nya filer.</p>
+<p>Uppdatera indexet där det redan har en post som matchar <em><span class="hover-term" data-term="sökvägsmönster">&lt;sökvägsmönster&gt;</span></em>. Detta tar bort och modifierar indexposter så att de matchar arbetskatalog, men lägger inte till några nya filer.</p>
 <div class="paragraph">
-<p>Om ingen <em><span class="hover-term" data-term="sökvägsspec">&lt;sökvägsspec&gt;</span></em> anges när <span class='synopsis'><code>-u</code></span>-alternativet används, uppdateras alla spårade filer i hela arbetskatalog (gamla versioner av Git användes för att begränsa uppdateringen till den aktuella katalogen och dess underkataloger).</p>
+<p>Om ingen <em><span class="hover-term" data-term="sökvägsmönster">&lt;sökvägsmönster&gt;</span></em> anges när <span class='synopsis'><code>-u</code></span>-alternativet används, uppdateras alla spårade filer i hela arbetskatalog (gamla versioner av Git användes för att begränsa uppdateringen till den aktuella katalogen och dess underkataloger).</p>
 </div>
 </dd>
 <dt class="hdlist1" id="git-add-spanclasssynopsiscode-Acodespan"> <a class="anchor" href="#git-add--A"></a> <a class="anchor" href="#git-add-spanclasssynopsiscode-Acodespan"></a><span class='synopsis'><code>-A</code></span> </dt>
 <dt class="hdlist1" id="git-add-spanclasssynopsiscode--allcodespan"> <a class="anchor" href="#git-add---all"></a> <a class="anchor" href="#git-add-spanclasssynopsiscode--allcodespan"></a><span class='synopsis'><code>--all</code></span> </dt>
 <dt class="hdlist1" id="git-add-spanclasssynopsiscode--no-ignore-removalcodespan"> <a class="anchor" href="#git-add---no-ignore-removal"></a> <a class="anchor" href="#git-add-spanclasssynopsiscode--no-ignore-removalcodespan"></a><span class='synopsis'><code>--no-ignore-removal</code></span> </dt>
 <dd>
-<p>Uppdatera indexet inte bara där arbetskatalog har en fil som matchar <em><span class="hover-term" data-term="sökvägsspec">&lt;sökvägsspec&gt;</span></em> utan även där indexet redan har en post. Detta lägger till, ändrar och tar bort indexposter så att de matchar arbetskatalog.</p>
+<p>Uppdatera indexet inte bara där arbetskatalog har en fil som matchar <em><span class="hover-term" data-term="sökvägsmönster">&lt;sökvägsmönster&gt;</span></em> utan även där indexet redan har en post. Detta lägger till, ändrar och tar bort indexposter så att de matchar arbetskatalog.</p>
 <div class="paragraph">
-<p>Om ingen <em><span class="hover-term" data-term="sökvägsspec">&lt;sökvägsspec&gt;</span></em> anges när <span class='synopsis'><code>-A</code></span>-alternativet används, uppdateras alla filer i hela arbetsträdet (gamla versioner av Git användes för att begränsa uppdateringen till den aktuella katalogen och dess underkataloger).</p>
+<p>Om ingen <em><span class="hover-term" data-term="sökvägsmönster">&lt;sökvägsmönster&gt;</span></em> anges när <span class='synopsis'><code>-A</code></span>-alternativet används, uppdateras alla filer i hela arbetsträdet (gamla versioner av Git användes för att begränsa uppdateringen till den aktuella katalogen och dess underkataloger).</p>
 </div>
 </dd>
 <dt class="hdlist1" id="git-add-spanclasssynopsiscode--no-allcodespan"> <a class="anchor" href="#git-add---no-all"></a> <a class="anchor" href="#git-add-spanclasssynopsiscode--no-allcodespan"></a><span class='synopsis'><code>--no-all</code></span> </dt>
 <dt class="hdlist1" id="git-add-spanclasssynopsiscode--ignore-removalcodespan"> <a class="anchor" href="#git-add---ignore-removal"></a> <a class="anchor" href="#git-add-spanclasssynopsiscode--ignore-removalcodespan"></a><span class='synopsis'><code>--ignore-removal</code></span> </dt>
 <dd>
-<p>Uppdatera indexet genom att lägga till nya filer som är okända för indexet och filer som ändrats i arbetsträdet, men ignorera filer som har tagits bort från arbetskatalogen. Det här alternativet fungerar inte när ingen <em><span class="hover-term" data-term="sökvägsspec">&lt;sökvägsspec&gt;</span></em> används.</p>
+<p>Uppdatera indexet genom att lägga till nya filer som är okända för indexet och filer som ändrats i arbetsträdet, men ignorera filer som har tagits bort från arbetskatalogen. Det här alternativet är verkningslöst när ingen <em><span class="hover-term" data-term="sökvägsmönster">&lt;sökvägsmönster&gt;</span></em> används.</p>
 <div class="paragraph">
-<p>Det här alternativet är främst till för att hjälpa användare som är vana vid äldre versioner av Git, vars <span class='synopsis'><code>git</code> <code>add</code> <em><span class="hover-term" data-term="sökvägsspec">&lt;sökvägsspec&gt;</span></em>...</span> var en synonym för <span class='synopsis'><code>git</code> <code>add</code> <code>--no-all</code> <em><span class="hover-term" data-term="sökvägsspec">&lt;sökvägsspec&gt;</span></em>...</span>, d.v.s. ignorerade borttagna filer.</p>
+<p>Det här alternativet är främst till för att hjälpa användare som är vana vid äldre versioner av Git, vars <span class='synopsis'><code>git</code> <code>add</code> <em><span class="hover-term" data-term="sökvägsmönster">&lt;sökvägsmönster&gt;</span></em>...</span> var en synonym för <span class='synopsis'><code>git</code> <code>add</code> <code>--no-all</code> <em><span class="hover-term" data-term="sökvägsmönster">&lt;sökvägsmönster&gt;</span></em>...</span>, d.v.s. ignorerade borttagna filer.</p>
 </div>
 </dd>
 <dt class="hdlist1" id="git-add-spanclasssynopsiscode-Ncodespan"> <a class="anchor" href="#git-add--N"></a> <a class="anchor" href="#git-add-spanclasssynopsiscode-Ncodespan"></a><span class='synopsis'><code>-N</code></span> </dt>
 <dt class="hdlist1" id="git-add-spanclasssynopsiscode--intent-to-addcodespan"> <a class="anchor" href="#git-add---intent-to-add"></a> <a class="anchor" href="#git-add-spanclasssynopsiscode--intent-to-addcodespan"></a><span class='synopsis'><code>--intent-to-add</code></span> </dt>
 <dd>
-<p>Record only the fact that the path will be added later. An entry for the path is placed in the index with no content. This is useful for, among other things, showing the unstaged content of such files with <span class='synopsis'><code>git</code> <code>diff</code></span> and committing them with <span class='synopsis'><code>git</code> <code>commit</code> <code>-a</code></span>.</p>
+<p>Registrera endast det faktum att sökvägen kommer att läggas till senare. En post för sökvägen placeras i indexet utan innehåll. Detta är användbart för att bland annat visa det ej köat innehåll i sådana filer med <span class='synopsis'><code>git</code> <code>diff</code></span> och incheckning dem med <span class='synopsis'><code>git</code> <code>commit</code> <code>-a</code></span>.</p>
 </dd>
 <dt class="hdlist1" id="git-add-spanclasssynopsiscode--refreshcodespan"> <a class="anchor" href="#git-add---refresh"></a> <a class="anchor" href="#git-add-spanclasssynopsiscode--refreshcodespan"></a><span class='synopsis'><code>--refresh</code></span> </dt>
 <dd>
@@ -192,11 +192,11 @@ git commit</pre>
 </dd>
 <dt class="hdlist1" id="git-add-spanclasssynopsiscode--no-warn-embedded-repocodespan"> <a class="anchor" href="#git-add---no-warn-embedded-repo"></a> <a class="anchor" href="#git-add-spanclasssynopsiscode--no-warn-embedded-repocodespan"></a><span class='synopsis'><code>--no-warn-embedded-repo</code></span> </dt>
 <dd>
-<p>Som standard varnar <span class='synopsis'><code>git</code> <code>add</code></span> när ett inbäddat förvar läggs till i indexet utan att använda <span class='synopsis'><code>git</code> <code>submodule</code> <code>add</code></span> för att skapa en post i <span class='synopsis'><code>.gitmodules</code></span>. Det här alternativet undertrycker varningen (t.ex. om du manuellt utför operationer på undermoduler).</p>
+<p>Som standard varnar <span class='synopsis'><code>git</code> <code>add</code></span> när ett inbäddat kodförråd läggs till i indexet utan att använda <span class='synopsis'><code>git</code> <code>submodule</code> <code>add</code></span> för att skapa en post i <span class='synopsis'><code>.gitmodules</code></span>. Det här alternativet undertrycker varningen (t.ex. om du manuellt utför operationer på undermoduler).</p>
 </dd>
 <dt class="hdlist1" id="git-add-spanclasssynopsiscode--renormalizecodespan"> <a class="anchor" href="#git-add---renormalize"></a> <a class="anchor" href="#git-add-spanclasssynopsiscode--renormalizecodespan"></a><span class='synopsis'><code>--renormalize</code></span> </dt>
 <dd>
-<p>Apply the "clean" process freshly to all tracked files to forcibly add them again to the index. This is useful after changing <span class='synopsis'><code>core.autocrlf</code></span> configuration or the <span class='synopsis'><code>text</code></span> attribute in order to correct files added with wrong <em>CRLF/LF</em> line endings. This option implies <span class='synopsis'><code>-u</code></span>. Lone CR characters are untouched, thus while a <em>CRLF</em> cleans to <em>LF</em>, a <em>CRCRLF</em> sequence is only partially cleaned to <em>CRLF</em>.</p>
+<p>Använd "clean"-processen på nytt på alla spårade filer för att tvångsmässigt lägga till dem i indexet igen. Detta är användbart efter att ha ändrat konfigurationen av <span class='synopsis'><code>core.autocrlf</code></span> eller attributet <span class='synopsis'><code>text</code></span> för att korrigera filer som lagts till med felaktiga <em>CRLF/LF</em>-radslut. Detta alternativ innebär <span class='synopsis'><code>-u</code></span>. Ensamma CR-tecken är orörda, så medan en <em>CRLF</em> rensas till <em>LF</em>, rensas en <em>CRCRLF</em>-sekvens bara delvis till <em>CRLF</em>.</p>
 </dd>
 <dt class="hdlist1" id="git-add-spanclasssynopsiscode--chmodcodecodecodecode-codecodexcodespan"> <a class="anchor" href="#git-add---chmod-x"></a> <a class="anchor" href="#git-add-spanclasssynopsiscode--chmodcodecodecodecode-codecodexcodespan"></a><span class='synopsis'><code>--chmod=</code>(<code>+</code>|<code>-</code>)<code>x</code></span> </dt>
 <dd>
@@ -204,11 +204,11 @@ git commit</pre>
 </dd>
 <dt class="hdlist1" id="git-add-spanclasssynopsiscode--pathspec-from-filecodeemltfilgtemspan"> <a class="anchor" href="#git-add---pathspec-from-filefil"></a> <a class="anchor" href="#git-add-spanclasssynopsiscode--pathspec-from-filecodeemltfilgtemspan"></a><span class='synopsis'><code>--pathspec-from-file=</code><em>&lt;fil&gt;</em></span> </dt>
 <dd>
-<p>Pathspec skickas i <em>&lt;fil&gt;</em> istället för kommandoradsargument. Om <em>&lt;fil&gt;</em> är exakt <span class='synopsis'><code>-</code></span> används standardindata. Pathspec-element separeras med <em>LF</em> eller <em>CR/LF</em>. Pathspec-element kan citeras enligt beskrivningen för konfigurationsvariabeln <span class='synopsis'><code>core.quotePath</code></span> (se <a href='{{< relurl "docs/git-config/sv" >}}'>git-config[1]</a>). Se även <span class='synopsis'><code>--pathspec-file-nul</code></span> och global <span class='synopsis'><code>--literal-pathspecs</code></span>.</p>
+<p>Sökvägsmönster skickas i <em>&lt;fil&gt;</em> istället för kommandoradsargument. Om <em>&lt;fil&gt;</em> är exakt <span class='synopsis'><code>-</code></span> används standardindata. Ssökvägsangiver separeras med <em>LF</em> eller <em>CR/LF</em>. Pathspec-element kan citeras enligt beskrivningen för konfigurationsvariabeln <span class='synopsis'><code>core.quotePath</code></span> (se <a href='{{< relurl "docs/git-config/sv" >}}'>git-config[1]</a>). Se även <span class='synopsis'><code>--pathspec-file-nul</code></span> och global <span class='synopsis'><code>--literal-pathspecs</code></span>.</p>
 </dd>
 <dt class="hdlist1" id="git-add-spanclasssynopsiscode--pathspec-file-nulcodespan"> <a class="anchor" href="#git-add---pathspec-file-nul"></a> <a class="anchor" href="#git-add-spanclasssynopsiscode--pathspec-file-nulcodespan"></a><span class='synopsis'><code>--pathspec-file-nul</code></span> </dt>
 <dd>
-<p>Endast meningsfullt med <span class='synopsis'><code>--pathspec-from-file</code></span>. Pathspec-element separeras med tecknet <em>NUL</em> och alla andra tecken tolkas bokstavligt (inklusive radbrytningar och citattecken).</p>
+<p>Endast meningsfullt med <span class='synopsis'><code>--pathspec-from-file</code></span>. Sökvägsmönsterposter separeras med tecknet <em>NUL</em> och alla andra tecken tolkas bokstavligt (inklusive radbrytningar och citattecken).</p>
 </dd>
 <dt class="hdlist1" id="git-add-spanclasssynopsiscode--codespan"> <a class="anchor" href="#git-add---"></a> <a class="anchor" href="#git-add-spanclasssynopsiscode--codespan"></a><span class='synopsis'><code>--</code></span> </dt>
 <dd>

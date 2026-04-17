@@ -107,7 +107,7 @@ Där visar vi också hur man använder flaggan <code>-a</code> för att hoppa ö
 <p>Vi tittade på hur man signerar incheckningar kryptografiskt med flaggan <code>-S</code> i <a href="{{< relurl "book/sv/v2/ch00/_signing_commits" >}}">Signera incheckningar</a>.</p>
 </div>
 <div class="paragraph">
-<p>Slutligen tittar vi på vad kommandot <code>git commit</code> gör i bakgrunden och hur det faktiskt är implementerat i <a href="{{< relurl "book/sv/v2/ch00/_git_commit_objects" >}}">Incheckningsobjekt</a>.</p>
+<p>Slutligen tittar vi på vad kommandot <code>git commit</code> gör i bakgrunden och hur det egentligen är implementerat i <a href="{{< relurl "book/sv/v2/ch00/_git_commit_objects" >}}">Incheckningsobjekt</a>.</p>
 </div>
 </div>
 <div class="sect3">
@@ -118,7 +118,7 @@ Det flyttar runt <code>HEAD</code>‑pekaren och kan valfritt ändra <code>index
 Det sista alternativet gör att kommandot kan radera ditt arbete om det används fel, så se till att du förstår det innan du använder det.</p>
 </div>
 <div class="paragraph">
-<p>Vi täcker först den enklaste användningen av <code>git reset</code> i <a href="{{< relurl "book/sv/v2/ch00/_unstaging" >}}">Ta bort en köad fil</a>, där vi använder det för att avköa en fil vi hade kört <code>git add</code> på.</p>
+<p>Vi visar först hur <code>git reset</code> enklast används i <a href="{{< relurl "book/sv/v2/ch00/_unstaging" >}}">Ta bort en köad fil</a>, där vi använder det för att avköa en fil vi hade kört <code>git add</code> på.</p>
 </div>
 <div class="paragraph">
 <p>Vi går sedan igenom det i ganska stor detalj i <a href="{{< relurl "book/sv/v2/ch00/_git_reset" >}}">Nollställning förklarad</a>, som helt ägnas åt att förklara kommandot.</p>
@@ -131,7 +131,7 @@ Det sista alternativet gör att kommandot kan radera ditt arbete om det används
 <h3 id="_git_rm">git rm</h3>
 <div class="paragraph">
 <p>Kommandot <code>git rm</code> används för att ta bort filer från köytan och arbetskatalogen i Git.
-Det liknar <code>git add</code> i det att det köar borttagningen av en fil inför nästa incheckning.</p>
+Det liknar <code>git add</code> i det att det köar en fil för borttagning inför nästa incheckning.</p>
 </div>
 <div class="paragraph">
 <p>Vi går igenom kommandot <code>git rm</code> i detalj i <a href="{{< relurl "book/sv/v2/ch00/_removing_files" >}}">Ta bort filer</a>, inklusive att ta bort filer rekursivt och att bara ta bort filer från köytan men lämna dem i arbetskatalogen med <code>--cached</code>.</p>

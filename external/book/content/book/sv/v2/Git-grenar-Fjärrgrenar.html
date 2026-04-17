@@ -36,7 +36,7 @@ Om du till exempel vill se hur <code>master</code> i fjärrkodförrådet <code>o
 Om du arbetar med en kollega som skickat upp en gren <code>iss53</code> kan du ha en egen lokal <code>iss53</code>, men grenen på servern representeras av fjärrspårade <code>origin/iss53</code>.</p>
 </div>
 <div class="paragraph">
-<p>Det här kan vara aningen förvirrande, så låt oss visa ett exempel.
+<p>Det här kan vara aningen förvirrande, så här är ett exempel.
 Anta att du har en Git‑server i ditt nätverk på <code>git.ourcompany.com</code>.
 När du klonar från den namnger Git automatiskt fjärrkodförrådet <code>origin</code>, hämtar all data, skapar en pekare till var dess <code>master</code>-gren ligger och kallar den <code>origin/master</code> lokalt.
 Git ger dig också en lokal <code>master</code>-gren som pekar på samma ställe som fjärrkodförrådets <code>master</code>, så att du kan arbeta vidare.</p>
@@ -156,7 +156,7 @@ Som standard frågar den via terminalen så att servern kan avgöra om du får s
 Det enklaste är att låta datorn hålla det i minnet några minuter, vilket du kan ställa in med <code>git config --global credential.helper cache</code>.</p>
 </div>
 <div class="paragraph">
-<p>Mer information om olika mellanlagringsalternativ finns i <a href="{{< relurl "book/sv/v2/ch00/_credential_caching" >}}">Lagring av inloggningsuppgifter</a>.</p>
+<p>Mer information om olika mellanlagringsalternativ finns i <a href="{{< relurl "book/sv/v2/ch00/_credential_caching" >}}">Lagra inloggningsuppgifter</a>.</p>
 </div>
 </td>
 </tr>
@@ -177,7 +177,7 @@ From https://github.com/schacon/simplegit
 </div>
 </div>
 <div class="paragraph">
-<p>Det är viktigt att notera att när du uppdaterar nya fjärrspårade grenar får du inte automatiskt en lokal, redigerbar kopia av dem.
+<p>Tänk på att när du uppdaterar nya fjärrspårade grenar får du inte automatiskt en lokal, redigerbar kopia av dem.
 I det här fallet har du alltså ingen ny lokal <code>serverfix</code>-gren – bara en <code>origin/serverfix</code>-pekare som du inte kan ändra.</p>
 </div>
 <div class="paragraph">
@@ -285,7 +285,7 @@ Vi ser också att <code>master</code> spårar <code>origin/master</code> och är
 Slutligen ser vi att <code>testing</code> inte spårar någon fjärrgren.</p>
 </div>
 <div class="paragraph">
-<p>Det är viktigt att notera att dessa siffror bara gäller sedan senaste gången du uppdaterade från varje server.
+<p>Tänk på att dessa siffror bara gäller sedan senaste gången du uppdaterade från varje server.
 Kommandot kontaktar inte servrarna utan visar vad som finns i din lokala mellanlagring.
 Vill du ha helt uppdaterade siffror behöver du uppdatera från alla fjärrkodförråd precis innan du kör det, till exempel så här:</p>
 </div>

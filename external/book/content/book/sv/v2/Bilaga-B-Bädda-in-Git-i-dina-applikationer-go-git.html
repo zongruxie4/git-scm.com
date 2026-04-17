@@ -22,8 +22,8 @@ url: "/book/sv/v2/Bilaga-B:-Bädda-in-Git-i-dina-applikationer-go-git.html"
 <div class="paragraph">
 <p>
 Om du vill integrera Git i en tjänst skriven i Go finns det också en ren Go‑biblioteksimplementation.
-Den här implementationen har inga inbyggda beroenden och är därför inte benägen att ge manuella minneshanteringsfel.
-Den är också transparent för standardverktyg i Go för prestandaanalys som CPU‑ och minnesprofilerare, datakapplöpningsdetektor och liknande.</p>
+Den här implementationen har inga inbyggda beroenden och riskerar därför inte manuella minneshanteringsfel.
+Den stöder också Gos standardverktyg för prestandaanalys som CPU‑ och minnesprofilerare, datakapplöpningsdetektor och liknande.</p>
 </div>
 <div class="paragraph">
 <p>go-git fokuserar på utbyggbarhet och kompatibilitet samt stöder de flesta lågnivå‑API:er, vilket dokumenteras på <a href="https://github.com/go-git/go-git/blob/master/COMPATIBILITY.md" class="bare" target="_blank" rel="noopener">https://github.com/go-git/go-git/blob/master/COMPATIBILITY.md</a>.</p>
@@ -42,7 +42,7 @@ r, err := git.PlainClone("/tmp/foo", false, &amp;git.CloneOptions{
 </div>
 </div>
 <div class="paragraph">
-<p>Så snart du har en <code>Repository</code>‑instans kan du hämta information och göra förändringar i den:</p>
+<p>Så snart du har en <code>Repository</code>‑instans kan du hämta information och ändra i den:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -108,7 +108,7 @@ r, err := git.Clone(memory.NewStorage(), nil, &amp;git.CloneOptions{URL: url})</
 <div class="sect3">
 <h3 id="_vidare_läsning_3">Vidare läsning</h3>
 <div class="paragraph">
-<p>En fullständig genomgång av go-gits möjligheter ligger utanför den här bokens omfattning.
+<p>En fullständig genomgång av go-gits möjligheter ligger utanför bokens omfattning.
 Om du vill ha mer information om go-git finns API‑dokumentation på <a href="https://pkg.go.dev/github.com/go-git/go-git/v5" class="bare" target="_blank" rel="noopener">https://pkg.go.dev/github.com/go-git/go-git/v5</a> och en uppsättning användningsexempel på <a href="https://github.com/go-git/go-git/tree/master/_examples" class="bare" target="_blank" rel="noopener">https://github.com/go-git/go-git/tree/master/_examples</a>.</p>
 </div>
 </div>

@@ -43,10 +43,10 @@ headings:
 <h2 id="_概述"><a class="anchor" href="#_概述"></a>概述</h2>
 <div class="sectionbody">
 <div class="verseblock">
-<pre class="content"><span class='synopsis'><code>git</code></span> <span class='synopsis'><code>add'</code></span> [<span class='synopsis'><code>--verbose</code></span> | <span class='synopsis'><code>-v</code></span>] [<span class='synopsis'><code>--dry-run</code></span> | <span class='synopsis'><code>-n</code></span>] [<span class='synopsis'><code>--force</code></span> | <span class='synopsis'><code>-f</code></span>] [<span class='synopsis'><code>--interactive</code></span> | <span class='synopsis'><code>-i</code></span>] [<span class='synopsis'><code>--patch</code></span> | <span class='synopsis'><code>-p</code></span>]
+<pre class="content"><span class='synopsis'><code>git</code></span> <span class='synopsis'><code>add</code></span> [<span class='synopsis'><code>--verbose</code></span> | <span class='synopsis'><code>-v</code></span>] [<span class='synopsis'><code>--dry-run</code></span> | <span class='synopsis'><code>-n</code></span>] [<span class='synopsis'><code>--force</code></span> | <span class='synopsis'><code>-f</code></span>] [<span class='synopsis'><code>--interactive</code></span> | <span class='synopsis'><code>-i</code></span>] [<span class='synopsis'><code>--patch</code></span> | <span class='synopsis'><code>-p</code></span>]
 	[<span class='synopsis'><code>--edit</code></span> | <span class='synopsis'><code>-e</code></span>] [<span class='synopsis'><code>--</code></span>[<span class='synopsis'><code>no-</code></span>]<span class='synopsis'><code>all</code></span> | <span class='synopsis'><code>-A</code></span> | <span class='synopsis'><code>--</code></span>[<span class='synopsis'><code>no-</code></span>]<span class='synopsis'><code>ignore-removal</code></span> | [<span class='synopsis'><code>--update</code></span> | <span class='synopsis'><code>-u</code></span>]] [<span class='synopsis'><code>--sparse</code></span>]
 	[<span class='synopsis'><code>--intent-to-add</code></span> | <span class='synopsis'><code>-N</code></span>] [<span class='synopsis'><code>--refresh</code></span>] [<span class='synopsis'><code>--ignore-errors</code></span>] [<span class='synopsis'><code>--ignore-missing</code></span>] [<span class='synopsis'><code>--renormalize</code></span>]
-	[<span class='synopsis'><code>--chmod=</code></span>(<span class='synopsis'><code>+</code></span>|<span class='synopsis'><code>-</code></span>)<span class='synopsis'><code>x</code></span>] [<span class='synopsis'><code>--pathspec-from-file=</code></span><em>&lt;文件&gt;</em> [<span class='synopsis'><code>--pathspec-file-nul</code></span>]]
+	[<span class='synopsis'><code>--chmod=</code></span>(<span class='synopsis'><code>+</code></span>|<span class='synopsis'><code>-</code></span>)<span class='synopsis'><code>x</code></span>] [<span class='synopsis'><code>--pathspec-from-file=</code></span><em>&lt;file&gt;</em> [<span class='synopsis'><code>--pathspec-file-nul</code></span>]]
 	[<span class='synopsis'><code>--</code></span>] [<em>&lt;路径规范&gt;</em>&#8230;&#8203;]</pre>
 </div>
 </div>
@@ -58,7 +58,7 @@ headings:
 <p>将新的或者变更后的文件内容加入到索引。索引（也称为 “暂存区”）即一个让你为下一个提交准备内容的地方。</p>
 </div>
 <div class="paragraph">
-<p>When you run <span class='synopsis'><code>git</code> <code>commit</code></span> without any other arguments, it will only commit staged changes. For example, if you&#8217;ve edited <span class='synopsis'><code>file.c</code></span> and want to commit your changes to that file, you can run:</p>
+<p>当你运行 <span class='synopsis'><code>git</code> <code>commit</code></span> 且不指定参数，它将只会提交已暂存的修改。例如，你编辑了 <span class='synopsis'><code>file.c</code></span> 并想将它的更改提交，你可以运行：</p>
 </div>
 <div class="literalblock">
 <div class="content">
@@ -76,7 +76,7 @@ git commit</pre>
 <p><span class='synopsis'><code>git</code> <code>status</code></span> 命令可用于获取摘要，说明哪些变化的文件已暂存，准备下一次提交。</p>
 </div>
 <div class="paragraph">
-<p>The <span class='synopsis'><code>git</code> <code>add</code></span> command will not add ignored files by default. You can use the <span class='synopsis'><code>--force</code></span> option to add ignored files. If you specify the exact filename of an ignored file, <span class='synopsis'><code>git</code> <code>add</code></span> will fail with a list of ignored files. Otherwise it will silently ignore the file.</p>
+<p><span class='synopsis'><code>git</code> <code>add</code></span> 命令默认情况下不会添加被忽略的文件。你可以使用 <span class='synopsis'><code>--force</code></span> 选项来添加忽略的文件。如果你为一个忽略的文件指定了确切的路径，<span class='synopsis'><code>git</code> <code>add</code></span> 将失败并列出被忽略的文件，否则它将会静默地忽略文件。</p>
 </div>
 <div class="paragraph">
 <p>请参阅 <a href='{{< relurl "docs/git-commit/zh_HANS-CN" >}}'>git-commit[1]</a> 了解将内容添加到提交的其他替代方法。</p>

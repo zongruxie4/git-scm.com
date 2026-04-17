@@ -169,7 +169,7 @@ headings:
 &lt;Konfliktfylld filinformation&gt;
 &lt;Informationsmeddelanden&gt;
 NUL
-&lt;Sammanfogningsstatus&gt;
+&lt;Sammanslagningsstatus&gt;
 &lt;OID för toppnivåträd&gt;
 NUL</pre>
 </div>
@@ -261,7 +261,7 @@ NUL</pre>
 <p>"KONFLIKT (namnbyte/radera): &lt;gammalfil&gt; namnbytt till &lt;nyttnamn&gt; &#8230;&#8203;, men borttagen i &#8230;&#8203;"</p>
 </li>
 <li>
-<p>"Failed to merge submodule &lt;submodule&gt; (no merge base)"</p>
+<p>"Misslyckades med att sammanfoga undermodulen &lt;undermodul&gt; (ingen sammanslagningsbas)"</p>
 </li>
 <li>
 <p>"Varning: kan inte sammanfoga binära filer: &lt;filnamn&gt;"</p>
@@ -293,14 +293,14 @@ NUL</pre>
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>vi message.txt
+<pre>vi meddelande.txt
 BRANCH1=refs/heads/test
 BRANCH2=main
 NEWTREE=$(git merge-tree --write-tree $BRANCH1 $BRANCH2) || {
-    echo "There were conflicts..." 1&gt;&amp;2
+    echo "Det fanns konflikter..." 1&gt;&amp;2
     exit 1
 }
-NEWCOMMIT=$(git commit-tree $NEWTREE -F message.txt \
+NEWCOMMIT=$(git commit-tree $NEWTREE -F meddelande.txt \
     -p $BRANCH1 -p $BRANCH2)
 git update-ref $BRANCH1 $NEWCOMMIT</pre>
 </div>
@@ -338,7 +338,7 @@ git update-ref $BRANCH1 $NEWCOMMIT</pre>
 </div>
 </div>
 <div class="paragraph">
-<p>Om en rad separeras med <span class='synopsis'><code>--</code></span> används strängen före avgränsaren för att ange en sammanslagings-bas för sammanfogningen och strängen efter avgränsaren beskriver de grenar som ska slås samman.</p>
+<p>Om en rad separeras med <span class='synopsis'><code>--</code></span> används strängen före avgränsaren för att ange en sammanslagings-bas för sammanslagningen och strängen efter avgränsaren beskriver de grenar som ska slås samman.</p>
 </div>
 </div>
 </div>
@@ -358,10 +358,10 @@ git update-ref $BRANCH1 $NEWCOMMIT</pre>
 <p>Anta INTE att varje sökväg från <a href="#CFI">Konflikt filinformation</a> och de logiska konflikterna i <a href="#IM">Informationsmeddelanden</a> har en en-till-en-mappning, inte heller att det finns en en-till-många-mappning eller en många-till-en-mappning. Många-till-många-mappningar finns, vilket innebär att varje sökväg kan ha många logiska konflikttyper i en enda sammanslagning, och varje logisk konflikttyp kan påverka många sökvägar.</p>
 </div>
 <div class="paragraph">
-<p>Anta INTE att alla filnamn som listas i avsnittet <a href="#IM">Informativt meddelande</a> hade konflikter. Meddelanden kan inkluderas för filer som inte har några konflikter, till exempel "Automatisk sammanfogning av &lt;fil&gt;".</p>
+<p>Anta INTE att alla filnamn som listas i avsnittet <a href="#IM">Informativt meddelande</a> hade konflikter. Meddelanden kan inkluderas för filer som inte har några konflikter, till exempel "Automatisk sammanslagning av &lt;fil&gt;".</p>
 </div>
 <div class="paragraph">
-<p>UNDVIK att ta OIDS från <a href="#CFI">Konflikt filinformation</a> och slå ihop dem igen för att presentera konflikterna för användaren. Detta kommer att förlora information. Sök istället upp versionen av filen som finns i <a href="#OIDTLT">OID i toppnivåträdet</a> och visa det istället. I synnerhet kommer det senare att ha konfliktmarkörer kommenterade med den ursprungliga grenen/incheckningen som slås ihop och, om namnändringar var inblandade, det ursprungliga filnamnet. Även om du skulle kunna inkludera den ursprungliga grenen/incheckningen i konfliktmarköranteckningarna vid återsammanfogningen, är det ursprungliga filnamnet inte tillgängligt från <a href="#CFI">Konflikt filinformation</a> och därmed skulle du förlora information som kan hjälpa användaren att lösa konflikten.</p>
+<p>UNDVIK att ta OIDS från <a href="#CFI">Konflikt filinformation</a> och slå ihop dem igen för att presentera konflikterna för användaren. Detta kommer att förlora information. Sök istället upp versionen av filen som finns i <a href="#OIDTLT">OID i toppnivåträdet</a> och visa det istället. I synnerhet kommer det senare att ha konfliktmarkörer kommenterade med den ursprungliga grenen/incheckningen som slås ihop och, om namnändringar var inblandade, det ursprungliga filnamnet. Även om du skulle kunna inkludera den ursprungliga grenen/incheckningen i konfliktmarköranteckningarna vid återsammanslagningen, är det ursprungliga filnamnet inte tillgängligt från <a href="#CFI">Konflikt filinformation</a> och därmed skulle du förlora information som kan hjälpa användaren att lösa konflikten.</p>
 </div>
 </div>
 </div>

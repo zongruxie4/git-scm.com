@@ -20,8 +20,8 @@ url: "/book/sv/v2/Git-bakom-kulisserna-Miljövariabler.html"
 ---
 <h2 id="_miljövariabler">Miljövariabler</h2>
 <div class="paragraph">
-<p>Git kör alltid i ett <code>bash</code>‑skal och använder ett antal miljövariabler i skalet för att avgöra hur det beter sig.
-Ibland är det praktiskt att veta vilka dessa är och hur de kan användas för att få Git att bete sig som du vill.
+<p>Git kör alltid i ett <code>bash</code>‑skal och använder flera miljövariabler i skalet för att avgöra hur det beter sig.
+Ibland är det praktiskt att veta vilka dessa är och hur du kan använda dem för att styra Gits beteende.
 Det här är inte en komplett lista över alla miljövariabler Git uppmärksammar, men vi tar upp de mest användbara.</p>
 </div>
 <div class="sect3">
@@ -42,11 +42,11 @@ Om du vill ha en verkligt portabel Git‑installation med global konfiguration k
 Git letar efter denna fil vid <code>$PREFIX/etc/gitconfig</code>.</p>
 </div>
 <div class="paragraph">
-<p><strong><code>GIT_CONFIG_NOSYSTEM</code></strong> inaktiverar, om den är satt, användningen av den systemomfattande konfigurationsfilen.
+<p><strong><code>GIT_CONFIG_NOSYSTEM</code></strong> hindrar, om den är satt, Git från att läsa den systemomfattande konfigurationsfilen.
 Det är användbart om din systemkonfiguration stör dina kommandon, men du inte har åtkomst att ändra eller ta bort den.</p>
 </div>
 <div class="paragraph">
-<p><strong><code>GIT_PAGER</code></strong> styr programmet som används för att visa flersidiga utdata på kommandoraden.
+<p><strong><code>GIT_PAGER</code></strong> styr programmet som visar flersidiga utdata på kommandoraden.
 Om den är osatt används <code>PAGER</code> som reserv.</p>
 </div>
 <div class="paragraph">
@@ -75,11 +75,11 @@ Om <code>--git-dir</code> eller <code>GIT_DIR</code> anges men inget av <code>--
 <p><strong><code>GIT_INDEX_FILE</code></strong> är sökvägen till indexfilen (endast icke‑bara kodförråd).</p>
 </div>
 <div class="paragraph">
-<p><strong><code>GIT_OBJECT_DIRECTORY</code></strong> kan användas för att ange platsen för katalogen som vanligtvis ligger på <code>.git/objects</code>.</p>
+<p>Med <strong><code>GIT_OBJECT_DIRECTORY</code></strong> anger du platsen för katalogen som vanligtvis ligger på <code>.git/objects</code>.</p>
 </div>
 <div class="paragraph">
 <p><strong><code>GIT_ALTERNATE_OBJECT_DIRECTORIES</code></strong> är en kolon‑separerad lista (formaterad som <code>/dir/one:/dir/two:…</code>) som talar om för Git var det ska leta efter objekt om de inte finns i <code>GIT_OBJECT_DIRECTORY</code>.
-Om du råkar ha många projekt med stora filer som har exakt samma innehåll kan detta användas för att undvika att lagra för många kopior av dem.</p>
+Om du råkar ha många projekt med stora filer som har exakt samma innehåll kan du undvika att lagra för många kopior av dem.</p>
 </div>
 </div>
 <div class="sect3">
@@ -103,7 +103,7 @@ Du kan åsidosätta detta i enskilda fall genom att börja pathspecen med <code>
 <div class="sect3">
 <h3 id="_incheckning">Incheckning</h3>
 <div class="paragraph">
-<p>Det slutliga skapandet av ett Git‑incheckningsobjekt görs vanligtvis av <code>git-commit-tree</code>, som använder dessa miljövariabler som sin primära informationskälla och bara faller tillbaka på konfigurationsvärden om dessa inte finns.</p>
+<p>Git‑incheckningsobjekt skapas slutligen vanligtvis av <code>git-commit-tree</code>, som använder dessa miljövariabler som sin primära informationskälla och bara faller tillbaka på konfigurationsvärden om dessa inte finns.</p>
 </div>
 <div class="paragraph">
 <p><strong><code>GIT_AUTHOR_NAME</code></strong> är det mänskligt läsbara namnet i fältet “author”.</p>
@@ -309,14 +309,14 @@ Kommandot tolkas av skalet, och extra kommandoradsargument kan användas med <co
 </div>
 <div class="paragraph">
 <p><strong><code>GIT_ASKPASS</code></strong> är en åsidosättning av konfigurationsvärdet <code>core.askpass</code>.
-Det är programmet som anropas när Git behöver be användaren om autentiseringsuppgifter, vilket kan förvänta sig en textfråga som kommandoradsargument och ska returnera svaret på <code>stdout</code> (se <a href="{{< relurl "book/sv/v2/ch00/_credential_caching" >}}">Lagring av inloggningsuppgifter</a> för mer om detta delsystem).</p>
+Det är programmet som anropas när Git behöver be användaren om autentiseringsuppgifter, vilket kan förvänta sig en textfråga som kommandoradsargument och ska returnera svaret på <code>stdout</code> (se <a href="{{< relurl "book/sv/v2/ch00/_credential_caching" >}}">Lagra inloggningsuppgifter</a> för mer om detta delsystem).</p>
 </div>
 <div class="paragraph">
 <p><strong><code>GIT_NAMESPACE</code></strong> styr åtkomst till namnrymda refs och är likvärdigt med flaggan <code>--namespace</code>.
 Det är mest användbart på serversidan, där du kan vilja lagra flera namnrymder för ett enda kodförråd i samma kodförråd och hålla refs separerade.</p>
 </div>
 <div class="paragraph">
-<p><strong><code>GIT_FLUSH</code></strong> kan användas för att tvinga Git att använda icke‑buffrad I/O när det skriver inkrementellt till stdout.
+<p>Med <strong><code>GIT_FLUSH</code></strong> kan du tvinga Git att använda icke‑buffrad I/O när det skriver inkrementellt till stdout.
 Ett värde på 1 gör att Git flushar oftare, ett värde på 0 gör att all utdata buffras.
 Standardvärdet (om variabeln inte är satt) är att välja en lämplig buffringsstrategi beroende på aktivitet och utdataläge.</p>
 </div>

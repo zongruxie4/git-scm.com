@@ -39,15 +39,15 @@ headings:
 <h2 id="_обзор"><a class="anchor" href="#_обзор"></a>ОБЗОР</h2>
 <div class="sectionbody">
 <div class="verseblock">
-<pre class="content"><span class='synopsis'><code>git</code></span> <span class='synopsis'><code>clone</code></span> [<span class='synopsis'><code>--template=</code></span><em>&lt;template-directory&gt;</em>]
+<pre class="content"><span class='synopsis'><code>git</code></span> <span class='synopsis'><code>clone'</code></span> [<span class='synopsis'><code>--template=</code></span><em>&lt;каталог-шаблонов&gt;</em>]
 	  [<span class='synopsis'><code>-l</code></span>] [<span class='synopsis'><code>-s</code></span>] [<span class='synopsis'><code>--no-hardlinks</code></span>] [<span class='synopsis'><code>-q</code></span>] [<span class='synopsis'><code>-n</code></span>] [<span class='synopsis'><code>--bare</code></span>] [<span class='synopsis'><code>--mirror</code></span>]
-	  [<span class='synopsis'><code>-o</code></span> <em>&lt;name&gt;</em>] [<span class='synopsis'><code>-b</code></span> <em>&lt;name&gt;</em>] [<span class='synopsis'><code>-u</code></span> <em>&lt;upload-pack&gt;</em>] [<span class='synopsis'><code>--reference</code></span> <em>&lt;repository&gt;</em>]
-	  [<span class='synopsis'><code>--dissociate</code></span>] [<span class='synopsis'><code>--separate-git-dir</code></span> <em>&lt;git-dir&gt;</em>]
-	  [<span class='synopsis'><code>--depth</code></span> <em>&lt;depth&gt;</em>] [<span class='synopsis'><code>--</code></span>[<span class='synopsis'><code>no-</code></span>]<span class='synopsis'><code>single-branch</code></span>] [<span class='synopsis'><code>--</code></span>[<span class='synopsis'><code>no-</code></span>]<span class='synopsis'><code>tags</code></span>]
-	  [<span class='synopsis'><code>--recurse-submodules</code></span>[<span class='synopsis'><code>=</code></span><em>&lt;pathspec&gt;</em>]] [<span class='synopsis'><code>--</code></span>[<span class='synopsis'><code>no-</code></span>]<span class='synopsis'><code>shallow-submodules</code></span>]
+	  [<span class='synopsis'><code>-o</code></span> <em>&lt;имя&gt;</em>] [<span class='synopsis'><code>-b</code></span> <em>&lt;имя&gt;</em>] [<span class='synopsis'><code>-u</code></span> <em>&lt;upload-pack&gt;</em>] [<span class='synopsis'><code>--reference</code></span> <em>&lt;репозиторий&gt;</em>]
+	  [<span class='synopsis'><code>--dissociate</code></span>] [<span class='synopsis'><code>--separate-git-dir</code></span> <em>&lt;каталог-git&gt;</em>]
+	  [<span class='synopsis'><code>--depth</code></span> <em>&lt;глубина&gt;</em>] [<span class='synopsis'><code>--</code></span>[<span class='synopsis'><code>no-</code></span>]<span class='synopsis'><code>single-branch</code></span>] [<span class='synopsis'><code>--</code></span>[<span class='synopsis'><code>no-</code></span>]<span class='synopsis'><code>tags</code></span>]
+	  [<span class='synopsis'><code>--recurse-submodules</code></span>[<span class='synopsis'><code>=</code></span><em>&lt;спецификатор-пути&gt;</em>]] [<span class='synopsis'><code>--</code></span>[<span class='synopsis'><code>no-</code></span>]<span class='synopsis'><code>shallow-submodules</code></span>]
 	  [<span class='synopsis'><code>--</code></span>[<span class='synopsis'><code>no-</code></span>]<span class='synopsis'><code>remote-submodules</code></span>] [<span class='synopsis'><code>--jobs</code></span> <em>&lt;n&gt;</em>] [<span class='synopsis'><code>--sparse</code></span>] [<span class='synopsis'><code>--</code></span>[<span class='synopsis'><code>no-</code></span>]<span class='synopsis'><code>reject-shallow</code></span>]
-	  [<span class='synopsis'><code>--filter=</code></span><em>&lt;filter-spec&gt;</em> [<span class='synopsis'><code>--also-filter-submodules</code></span>]] [<span class='synopsis'><code>--</code></span>] <em>&lt;repository&gt;</em>
-	  [<em>&lt;directory&gt;</em>]</pre>
+	  [<span class='synopsis'><code>--filter=</code></span><em>&lt;спецификатор-фильтра&gt;</em> [<span class='synopsis'><code>--also-filter-submodules</code></span>]] [<span class='synopsis'><code>--</code></span>] <em>&lt;репозиторий&gt;</em>
+	  [<em>&lt;каталог&gt;</em>]</pre>
 </div>
 </div>
 </div>
@@ -105,9 +105,9 @@ headings:
 <p>Если вы хотите избавиться от зависимостей репозитория, клонированного с <span class='synopsis'><code>--shared</code></span>, от его исходного репозитория, вы можете просто запустить <span class='synopsis'><code>git</code> <code>repack</code> <code>-a</code></span>, который скопирует все объекты из исходного репозитория в pack-файлы клонированного.</p>
 </div>
 </dd>
-<dt class="hdlist1" id="git-clone-spanclasssynopsiscode--referencecodecode-if-ablecodeemltgtemspan"> <a class="anchor" href="#git-clone---reference-if-able"></a> <a class="anchor" href="#git-clone-spanclasssynopsiscode--referencecodecode-if-ablecodeemltgtemspan"></a><span class='synopsis'><code>--reference</code>[<code>-if-able</code>] <em><span class="hover-term" data-term="репозиторий">&lt;репозиторий&gt;</span></em></span> </dt>
+<dt class="hdlist1" id="git-clone-spanclasssynopsiscode--referencecodecode-if-ablecodeemltgtemspan"> <a class="anchor" href="#git-clone---reference-if-able"></a> <a class="anchor" href="#git-clone-spanclasssynopsiscode--referencecodecode-if-ablecodeemltgtemspan"></a><span class='synopsis'><code>--reference</code>[<code>-if-able</code>] <em>&lt;репозиторий&gt;</em></span> </dt>
 <dd>
-<p>Если <em><span class="hover-term" data-term="репозиторий">&lt;репозиторий&gt;</span></em> (заданный как аргумент параметра) находится на локальной машине, автоматически настроить <span class='synopsis'><code>.git/objects/info/alternates</code></span> для получения объектов из этого <em>&lt;репозитория&gt;</em>. Использование уже существующего репозиторий как дополнительного потребует копирования меньшего количества объектов из клонируемого репозитория, что уменьшит сетевой трафик и локальные затраты на хранение. С <span class='synopsis'><code>--reference-if-able</code></span>, если каталог <em>&lt;репозитория&gt;</em> не существует, то это вызовет предупреждением, а не ошибку, и клонирование не будет из-за этого прервано.</p>
+<p>Если <em>&lt;репозиторий&gt;</em> (заданный как аргумент параметра) находится на локальной машине, автоматически настроить <span class='synopsis'><code>.git/objects/info/alternates</code></span> для получения объектов из этого <em>&lt;репозитория&gt;</em>. Использование уже существующего репозиторий как дополнительного потребует копирования меньшего количества объектов из клонируемого репозитория, что уменьшит сетевой трафик и локальные затраты на хранение. С <span class='synopsis'><code>--reference-if-able</code></span>, если каталог <em>&lt;репозитория&gt;</em> не существует, то это вызовет предупреждением, а не ошибку, и клонирование не будет из-за этого прервано.</p>
 <div class="paragraph">
 <p><strong>ПРИМЕЧАНИЕ</strong>: см. ПРИМЕЧАНИЕ для параметра <span class='synopsis'><code>--shared</code></span>, а также описание параметра <span class='synopsis'><code>--dissociate</code></span>.</p>
 </div>
@@ -145,7 +145,7 @@ headings:
 </dd>
 <dt class="hdlist1" id="git-clone-spanclasssynopsiscode--barecodespan"> <a class="anchor" href="#git-clone---bare"></a> <a class="anchor" href="#git-clone-spanclasssynopsiscode--barecodespan"></a><span class='synopsis'><code>--bare</code></span> </dt>
 <dd>
-<p>Создать голый («bare») репозиторий Git. То есть вместо создания <em>&lt;каталога&gt;</em> и размещения административных файлов в <span class='synopsis'><em><span class="hover-term" data-term="каталог">&lt;каталог&gt;</span></em><code>/.git</code></span>, использовать сам <em><span class="hover-term" data-term="каталог">&lt;каталог&gt;</span></em> в качестве <span class='synopsis'><code>$GIT_DIR</code></span>. Это, очевидно, подразумевает <span class='synopsis'><code>--no-checkout</code></span>, потому что нет подходящего места для размещения рабочей копии. Кроме того, головы веток внешнего репозитория копируются непосредственно в соответствующие им локальные головы веток, без отображений в <span class='synopsis'><code>refs/remotes/origin/</code></span>. При использовании этого параметра не создаются ни отслеживаемые внешние ветви, ни связанные с ними переменные конфигурации.</p>
+<p>Создать голый («bare») репозиторий Git. То есть вместо создания <em>&lt;каталога&gt;</em> и размещения административных файлов в <span class='synopsis'><em>&lt;каталог&gt;</em><code>/.git</code></span>, использовать сам <em>&lt;каталог&gt;</em> в качестве <span class='synopsis'><code>$GIT_DIR</code></span>. Это, очевидно, подразумевает <span class='synopsis'><code>--no-checkout</code></span>, потому что нет подходящего места для размещения рабочей копии. Кроме того, головы веток внешнего репозитория копируются непосредственно в соответствующие им локальные головы веток, без отображений в <span class='synopsis'><code>refs/remotes/origin/</code></span>. При использовании этого параметра не создаются ни отслеживаемые внешние ветви, ни связанные с ними переменные конфигурации.</p>
 </dd>
 <dt class="hdlist1" id="git-clone-spanclasssynopsiscode--sparsecodespan"> <a class="anchor" href="#git-clone---sparse"></a> <a class="anchor" href="#git-clone-spanclasssynopsiscode--sparsecodespan"></a><span class='synopsis'><code>--sparse</code></span> </dt>
 <dd>
@@ -266,13 +266,13 @@ headings:
 <dd>
 <p>Количество подмодулей, которые будут загружаться одновременно. По умолчанию равно значению переменной конфигурации <span class='synopsis'><code>submodule.fetchJobs</code></span>.</p>
 </dd>
-<dt class="hdlist1" id="git-clone-emltgtem"> <a class="anchor" href="#git-clone-"></a> <a class="anchor" href="#git-clone-emltgtem"></a><em><span class="hover-term" data-term="репозиторий">&lt;репозиторий&gt;</span></em> </dt>
+<dt class="hdlist1" id="git-clone-emltgtem"> <a class="anchor" href="#git-clone-"></a> <a class="anchor" href="#git-clone-emltgtem"></a><em>&lt;репозиторий&gt;</em> </dt>
 <dd>
-<p>(Возможно удалённый) <em><span class="hover-term" data-term="репозиторий">&lt;репозиторий&gt;</span></em>, который должен быть склонирован. См. подробности о том как задавать адрес репозитория в разделе <a href="#URLS">URL-АДРЕСА GIT</a> ниже.</p>
+<p>(Возможно удалённый) <em>&lt;репозиторий&gt;</em>, который должен быть склонирован. См. подробности о том как задавать адрес репозитория в разделе <a href="#URLS">URL-АДРЕСА GIT</a> ниже.</p>
 </dd>
-<dt class="hdlist1" id="git-clone-emltgtem-1"> <a class="anchor" href="#git-clone--1"></a> <a class="anchor" href="#git-clone-emltgtem-1"></a><em><span class="hover-term" data-term="каталог">&lt;каталог&gt;</span></em> </dt>
+<dt class="hdlist1" id="git-clone-emltgtem-1"> <a class="anchor" href="#git-clone--1"></a> <a class="anchor" href="#git-clone-emltgtem-1"></a><em>&lt;каталог&gt;</em> </dt>
 <dd>
-<p>Название нового каталога в который репозиторий должен быть склонирован. Если <em><span class="hover-term" data-term="каталог">&lt;каталог&gt;</span></em> не задан, то используется «человеская» часть ссылки на исходный репозиторий (например, <span class='synopsis'><em>репо</em></span> for <span class='synopsis'><em>/путь/к/репо.git</em></span> и <span class='synopsis'><code>foo</code></span> для <span class='synopsis'><code>host.xz:foo/.git</code></span>). Клонирование в существующий каталог разрешается только, если этот каталог пуст.</p>
+<p>Название нового каталога в который репозиторий должен быть склонирован. Если <em>&lt;каталог&gt;</em> не задан, то используется «человеская» часть ссылки на исходный репозиторий (например, <span class='synopsis'><em>репо</em></span> for <span class='synopsis'><em>/путь/к/репо.git</em></span> и <span class='synopsis'><code>foo</code></span> для <span class='synopsis'><code>host.xz:foo/.git</code></span>). Клонирование в существующий каталог разрешается только, если этот каталог пуст.</p>
 </dd>
 <dt class="hdlist1" id="git-clone-spanclasssynopsiscode--bundle-uricodeemlturigtemspan"> <a class="anchor" href="#git-clone---bundle-uriuri"></a> <a class="anchor" href="#git-clone-spanclasssynopsiscode--bundle-uricodeemlturigtemspan"></a><span class='synopsis'><code>--bundle-uri=</code><em>&lt;uri&gt;</em></span> </dt>
 <dd>
