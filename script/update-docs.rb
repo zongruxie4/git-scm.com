@@ -385,10 +385,11 @@ def index_l10n_doc(filter_tags, doc_list, get_content)
     end
   end
 
-  # Clean up orphaned translated outputs whose upstream source has gone away.
-  # Skipped entirely when no source was iterated (e.g. when the early `next if
-  # !rerun && l10n["committed"] >= ts` short-circuits the whole tag loop) so
-  # that an "everything is up to date" run never deletes anything.
+  # Clean up orphan translated outputs and the matching `data.json` entries
+  # whose upstream source has gone away. Skipped entirely when no source was
+  # iterated (e.g. when the early `next if !rerun && l10n["committed"] >= ts`
+  # short-circuits the whole tag loop) so that an "everything is up to date"
+  # run never deletes anything.
   unless seen_translations.empty?
     Dir.glob("#{SITE_ROOT}external/docs/content/docs/*/*.html").each do |output_path|
       m = output_path.match(%r{/external/docs/content/docs/([^/]+)/([^/]+)\.html\z})
@@ -406,6 +407,22 @@ def index_l10n_doc(filter_tags, doc_list, get_content)
       next if File.read(output_path, 256).include?("\nredirect_to:")
       puts "Removing orphan translation #{output_path}"
       File.delete(output_path)
+    end
+
+    # `layouts/partials/ref/languages.html` iterates
+    # `data.pages.<docname>.languages` on every English manual page to build
+    # the per-page language picker, so a stale entry here generates a dead
+    # link from every variant of every English page (including each
+    # versioned `/docs/<docname>/<version>.html` slice). Prune symmetrically
+    # with the file-deletion loop above.
+    data["pages"].each do |docname, page_data|
+      next unless page_data.is_a?(Hash)
+      langs = page_data["languages"]
+      next unless langs.is_a?(Hash)
+      langs.keys.reject { |lang| seen_translations.include?([docname, lang]) }.each do |lang|
+        puts "Removing orphan language entry data.pages.#{docname}.languages.#{lang}"
+        langs.delete(lang)
+      end
     end
   end
 
