@@ -1,5 +1,5 @@
 ---
-languageCode: en
+locale: en
 title: Git
 disablePathToLower: true
 relativeURLs: true
@@ -35,8 +35,8 @@ module:
   - source: external/docs/content
     target: content
 params:
-  hugo_version: 0.155.3
-  pagefind_version: 1.4.0
+  hugo_version: 0.161.1
+  pagefind_version: 1.5.2
   latest_version: 2.54.0
   latest_relnote_url: https://gitlab.com/git-scm/git/-/blob/HEAD/Documentation/RelNotes/2.54.0.adoc
   latest_release_date: '2026-04-20'

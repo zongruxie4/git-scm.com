@@ -350,7 +350,7 @@ def index_l10n_doc(filter_tags, doc_list, get_content)
         "subsection" => "manual",
         "title" => "Git - #{path} Documentation",
         "docname" => path,
-        "lang" => lang,
+        "params" => { "lang" => lang },
         "aliases" => ["/docs/#{path}/#{lang}/index.html"]
       }
 
