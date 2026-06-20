@@ -53,11 +53,11 @@ headings:
 <div class="sectionbody">
 <div class="verseblock">
 <pre class="content"><span class='synopsis'><code>git</code></span> <span class='synopsis'><code>push</code></span> [<span class='synopsis'><code>--all</code></span> | <span class='synopsis'><code>--branches</code></span> | <span class='synopsis'><code>--mirror</code></span> | <span class='synopsis'><code>--tags</code></span>] [<span class='synopsis'><code>--follow-tags</code></span>] [<span class='synopsis'><code>--atomic</code></span>] [<span class='synopsis'><code>-n</code></span> | <span class='synopsis'><code>--dry-run</code></span>] [<span class='synopsis'><code>--receive-pack=</code></span><em>&lt;пакет-получения-git&gt;</em>]
-	 [<span class='synopsis'><code>--repo=</code></span><em><span class="hover-term" data-term="репозиторий">&lt;репозиторий&gt;</span></em>] [<span class='synopsis'><code>-f</code></span> | <span class='synopsis'><code>--force</code></span>] [<span class='synopsis'><code>-d</code></span> | <span class='synopsis'><code>--delete</code></span>] [<span class='synopsis'><code>--prune</code></span>] [<span class='synopsis'><code>-q</code></span> | <span class='synopsis'><code>--quiet</code></span>] [<span class='synopsis'><code>-v</code></span> | <span class='synopsis'><code>--verbose</code></span>]
+	 [<span class='synopsis'><code>--repo=</code></span><em>&lt;репозиторий&gt;</em>] [<span class='synopsis'><code>-f</code></span> | <span class='synopsis'><code>--force</code></span>] [<span class='synopsis'><code>-d</code></span> | <span class='synopsis'><code>--delete</code></span>] [<span class='synopsis'><code>--prune</code></span>] [<span class='synopsis'><code>-q</code></span> | <span class='synopsis'><code>--quiet</code></span>] [<span class='synopsis'><code>-v</code></span> | <span class='synopsis'><code>--verbose</code></span>]
 	 [<span class='synopsis'><code>-u</code></span> | <span class='synopsis'><code>--set-upstream</code></span>] [<span class='synopsis'><code>-o</code></span> <em>&lt;строка&gt;</em> | <span class='synopsis'><code>--push-option=</code></span><em>&lt;строка&gt;</em>]
 	 [<span class='synopsis'><code>--</code></span>[<span class='synopsis'><code>no-</code></span>]<span class='synopsis'><code>signed</code></span> | <span class='synopsis'><code>--signed=</code></span>(<span class='synopsis'><code>true</code></span>|<span class='synopsis'><code>false</code></span>|<span class='synopsis'><code>if-asked</code></span>)]
 	 [<span class='synopsis'><code>--force-with-lease</code></span>[<span class='synopsis'><code>=</code></span><em>&lt;имя-ссылки&gt;</em>[<span class='synopsis'><code>:</code></span><em>&lt;ожидаемое&gt;</em>]] [<span class='synopsis'><code>--force-if-includes</code></span>]]
-	 [<span class='synopsis'><code>--no-verify</code></span>] [<em><span class="hover-term" data-term="репозиторий">&lt;репозиторий&gt;</span></em> [<em>&lt;спецификатор-ссылки&gt;</em>&#8230;&#8203;]]</pre>
+	 [<span class='synopsis'><code>--no-verify</code></span>] [<em>&lt;репозиторий&gt;</em> [<em>&lt;спецификатор-ссылки&gt;</em>&#8230;&#8203;]]</pre>
 </div>
 </div>
 </div>
@@ -71,7 +71,7 @@ headings:
 <p>Самый простой способ отправить изменения — <span class='synopsis'><code>git</code> <code>push</code> <em>&lt;внешний-репозиторий&gt;</em> <em>&lt;ветка&gt;</em></span>. <span class='synopsis'><code>git</code> <code>push</code> <code>origin</code> <code>main</code></span> отправит локальную ветку <span class='synopsis'><code>main</code></span> в ветку <span class='synopsis'><code>main</code></span> во внешнем репозитории с именем <span class='synopsis'><code>origin</code></span>.</p>
 </div>
 <div class="paragraph">
-<p>Аргумент <span class='synopsis'><em><span class="hover-term" data-term="репозиторий">&lt;репозиторий&gt;</span></em></span> по умолчанию указывает на вышестоящий (upstream) репозиторий для текущей ветки или на <span class='synopsis'><code>origin</code></span>, если вышестоящий репозиторий не настроен.</p>
+<p>Аргумент <span class='synopsis'><em>&lt;репозиторий&gt;</em></span> по умолчанию указывает на вышестоящий (upstream) репозиторий для текущей ветки или на <span class='synopsis'><code>origin</code></span>, если вышестоящий репозиторий не настроен.</p>
 </div>
 <div class="paragraph">
 <p>Чтобы решить, какие ветки, метки или другие ссылки отправлять, Git использует (в порядке приоритета):</p>
@@ -102,7 +102,7 @@ headings:
 <div class="sectionbody">
 <div class="dlist">
 <dl>
-<dt class="hdlist1" id="git-push-emltgtem"> <a class="anchor" href="#git-push-"></a> <a class="anchor" href="#git-push-emltgtem"></a><em><span class="hover-term" data-term="репозиторий">&lt;репозиторий&gt;</span></em> </dt>
+<dt class="hdlist1" id="git-push-emltgtem"> <a class="anchor" href="#git-push-"></a> <a class="anchor" href="#git-push-emltgtem"></a><em>&lt;репозиторий&gt;</em> </dt>
 <dd>
 <p>«Внешний» (remote) репозиторий, являющийся целью операции отправки (push). Этот параметр может быть либо URL-адресом (см. раздел <a href="#URLS">URL-АДРЕСА GIT</a> ниже), либо именем внешнего репозитория (см. раздел <a href="#REMOTES">ВНЕШНИЕ РЕПОЗИТОРИИ</a> ниже).</p>
 </dd>
@@ -127,10 +127,10 @@ headings:
 <div class="ulist">
 <ul>
 <li>
-<p><em>&lt;источник&gt;</em> без <span class='synopsis'><code>:</code><em>&lt;назначение&gt;</em></span> означает обновление той же ссылки, что и <em>&lt;источник&gt;</em>, если только конфигурация <span class='synopsis'><code>remote.</code><em><span class="hover-term" data-term="репозиторий">&lt;репозиторий&gt;</span></em><code>.push</code></span> не указывает другое <em>&lt;назначение&gt;</em>. Например, если <span class='synopsis'><code>main</code></span> — это ветка, то спецификатор ссылки <span class='synopsis'><code>main</code></span> разворачивается в <span class='synopsis'><code>main:refs/heads/main</code></span>.</p>
+<p><em>&lt;источник&gt;</em> без <span class='synopsis'><code>:</code><em>&lt;назначение&gt;</em></span> означает обновление той же ссылки, что и <em>&lt;источник&gt;</em>, если только конфигурация <span class='synopsis'><code>remote.</code><em>&lt;репозиторий&gt;</em><code>.push</code></span> не указывает другое <em>&lt;назначение&gt;</em>. Например, если <span class='synopsis'><code>main</code></span> — это ветка, то спецификатор ссылки <span class='synopsis'><code>main</code></span> разворачивается в <span class='synopsis'><code>main:refs/heads/main</code></span>.</p>
 </li>
 <li>
-<p>Если <em>&lt;назначение&gt;</em> однозначно ссылается на ссылку во внешнем репозитории <span class="hover-term" data-term="репозиторий">&lt;репозиторий&gt;</span>, то развернуть его в эту ссылку. Например, если <span class='synopsis'><code>v1.0</code></span> — это метка во внешнем репозитории, то <span class='synopsis'><code>HEAD:v1.0</code></span> разворачивается в <span class='synopsis'><code>HEAD:refs/tags/v1.0</code></span>.</p>
+<p>Если <em>&lt;назначение&gt;</em> однозначно ссылается на ссылку во внешнем репозитории &lt;репозиторий&gt;, то развернуть его в эту ссылку. Например, если <span class='synopsis'><code>v1.0</code></span> — это метка во внешнем репозитории, то <span class='synopsis'><code>HEAD:v1.0</code></span> разворачивается в <span class='synopsis'><code>HEAD:refs/tags/v1.0</code></span>.</p>
 </li>
 <li>
 <p>Если <em>&lt;источник&gt;</em> преобразуется в ссылку, начинающуюся с <span class='synopsis'><code>refs/heads/</code></span> или <span class='synopsis'><code>refs/tags/</code></span>, то добавить это префикс к &lt;назначение&gt;. Например, если <span class='synopsis'><code>main</code></span> — это ветка, то <span class='synopsis'><code>main:other</code></span> разворачивается в <span class='synopsis'><code>main:refs/heads/other</code></span></p>
@@ -336,7 +336,7 @@ git push --force-with-lease=master:base master:master</pre>
 </dd>
 <dt class="hdlist1" id="git-push-spanclasssynopsiscode--repocodeemltrepositorygtemspan"> <a class="anchor" href="#git-push---reporepository"></a> <a class="anchor" href="#git-push-spanclasssynopsiscode--repocodeemltrepositorygtemspan"></a><span class='synopsis'><code>--repo=</code><em>&lt;repository&gt;</em></span> </dt>
 <dd>
-<p>Этот параметр эквивалентен аргументу <em><span class="hover-term" data-term="репозиторий">&lt;репозиторий&gt;</span></em>. Если указаны оба, аргумент командной строки имеет приоритет.</p>
+<p>Этот параметр эквивалентен аргументу <em>&lt;репозиторий&gt;</em>. Если указаны оба, аргумент командной строки имеет приоритет.</p>
 </dd>
 <dt class="hdlist1" id="git-push-spanclasssynopsiscode-ucodespan"> <a class="anchor" href="#git-push--u"></a> <a class="anchor" href="#git-push-spanclasssynopsiscode-ucodespan"></a><span class='synopsis'><code>-u</code></span> </dt>
 <dt class="hdlist1" id="git-push-spanclasssynopsiscode--set-upstreamcodespan"> <a class="anchor" href="#git-push---set-upstream"></a> <a class="anchor" href="#git-push-spanclasssynopsiscode--set-upstreamcodespan"></a><span class='synopsis'><code>--set-upstream</code></span> </dt>
@@ -546,7 +546,7 @@ git push --force-with-lease=master:base master:master</pre>
 <h2 id="_внешние_репозитории"><a class="anchor" href="#_внешние_репозитории"></a>ВНЕШНИЕ РЕПОЗИТОРИИ<a id="REMOTES"></a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Имя одного из следующих может использоваться вместо URL в качестве аргумента <em><span class="hover-term" data-term="репозиторий">&lt;репозиторий&gt;</span></em>:</p>
+<p>Имя одного из следующих может использоваться вместо URL в качестве аргумента <em>&lt;репозиторий&gt;</em>:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1008,7 +1008,7 @@ git push --force-with-lease=master:base master:master</pre>
 <h2 id="CONFIGURATION"><a class="anchor" href="#CONFIGURATION"></a>КОНФИГУРАЦИЯ</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Дальнейшее содержание этого раздела, повторяет то, что может быть найдено в <a href='{{< relurl "docs/git-config/ru" >}}'>git-config[1]</a>:</p>
+<p>Дальнейшее содержание этого раздела, выборочно повторяет то, что можно найти в документации <a href='{{< relurl "docs/git-config/ru" >}}'>git-config[1]</a>:</p>
 </div>
 <div class="dlist">
 <dl>

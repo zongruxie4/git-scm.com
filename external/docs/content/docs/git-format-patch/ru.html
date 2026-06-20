@@ -48,7 +48,7 @@ headings:
 <h2 id="_обзор"><a class="anchor" href="#_обзор"></a>ОБЗОР</h2>
 <div class="sectionbody">
 <div class="verseblock">
-<pre class="content"><em>git format-patch</em> [-k] [(-o|--output-directory) <span class="hover-term" data-term="каталог">&lt;каталог&gt;</span> | --stdout]
+<pre class="content"><em>git format-patch</em> [-k] [(-o|--output-directory) &lt;каталог&gt; | --stdout]
 		   [--no-thread | --thread[=&lt;стиль&gt;]]
 		   [(--attach|--inline)[=&lt;граница&gt;] | --no-attach]
 		   [-s | --signoff]
@@ -86,7 +86,7 @@ headings:
 <div class="ulist">
 <ul>
 <li>
-<p>Краткий заголовок метаданных, который начинается с <span class='synopsis'><code>From</code> <em><span class="hover-term" data-term="коммит">&lt;коммит&gt;</span></em></span> с фиксированной временной меткой <span class='synopsis'><code>Mon</code> <code>Sep</code> <code>17</code> <code>00:00:00</code> <code>2001</code></span>, чтобы помочь таким программам, как «file(1)», распознать, что файл является выводом этой команды, поля, записывающие личность автора, дату автора и заголовок изменения (взятый из первого абзаца сообщения журнала коммита).</p>
+<p>Краткий заголовок метаданных, который начинается с <span class='synopsis'><code>From</code> <em>&lt;коммит&gt;</em></span> с фиксированной временной меткой <span class='synopsis'><code>Mon</code> <code>Sep</code> <code>17</code> <code>00:00:00</code> <code>2001</code></span>, чтобы помочь таким программам, как «file(1)», распознать, что файл является выводом этой команды, поля, записывающие личность автора, дату автора и заголовок изменения (взятый из первого абзаца сообщения журнала коммита).</p>
 </li>
 <li>
 <p>Второй и последующие абзацы сообщения журнала коммита.</p>
@@ -113,13 +113,13 @@ headings:
 </ol>
 </div>
 <div class="paragraph">
-<p>В случае одиночного &lt;коммита&gt; первое правило имеет приоритет. Чтобы применить второе правило, т.е. отформатировать всё с начала истории до &lt;коммита&gt;, используйте параметр <span class='synopsis'><code>--root</code></span>: <span class='synopsis'><code>git</code> <code>format-patch</code> <code>--root</code> <em><span class="hover-term" data-term="коммит">&lt;коммит&gt;</span></em></span>. Если вы хотите отформатировать только сам <span class="hover-term" data-term="коммит">&lt;коммит&gt;</span>, вы можете сделать это с помощью <span class='synopsis'><code>git</code> <code>format-patch</code> <code>-1</code> <em><span class="hover-term" data-term="коммит">&lt;коммит&gt;</span></em></span>.</p>
+<p>В случае одиночного &lt;коммита&gt; первое правило имеет приоритет. Чтобы применить второе правило, т.е. отформатировать всё с начала истории до &lt;коммита&gt;, используйте параметр <span class='synopsis'><code>--root</code></span>: <span class='synopsis'><code>git</code> <code>format-patch</code> <code>--root</code> <em>&lt;коммит&gt;</em></span>. Если вы хотите отформатировать только сам &lt;коммит&gt;, вы можете сделать это с помощью <span class='synopsis'><code>git</code> <code>format-patch</code> <code>-1</code> <em>&lt;коммит&gt;</em></span>.</p>
 </div>
 <div class="paragraph">
 <p>По умолчанию каждый выходной файл нумеруется последовательно, начиная с 1, и использует первую строку сообщения коммита (обработанную для безопасности имени пути) в качестве имени файла. С параметром <span class='synopsis'><code>--numbered-files</code></span> имена выходных файлов будут только номерами, без добавления первой строки коммита. Имена выходных файлов выводятся в стандартный вывод, если не указан параметр <span class='synopsis'><code>--stdout</code></span>.</p>
 </div>
 <div class="paragraph">
-<p>Если указан <span class='synopsis'><code>-o</code></span>, выходные файлы создаются в <span class="hover-term" data-term="каталог">&lt;каталог&gt;</span>. В противном случае они создаются в текущем рабочем каталоге. Путь по умолчанию можно задать с помощью переменной конфигурации <span class='synopsis'><code>format.outputDirectory</code></span>. Параметр <span class='synopsis'><code>-o</code></span> имеет приоритет над <span class='synopsis'><code>format.outputDirectory</code></span>. Чтобы сохранять патчи в текущем рабочем каталоге, даже если <span class='synopsis'><code>format.outputDirectory</code></span> указывает в другое место, используйте <span class='synopsis'><code>-o</code> <code>.</code></span>. Все компоненты каталога будут созданы.</p>
+<p>Если указан <span class='synopsis'><code>-o</code></span>, выходные файлы создаются в &lt;каталог&gt;. В противном случае они создаются в текущем рабочем каталоге. Путь по умолчанию можно задать с помощью переменной конфигурации <span class='synopsis'><code>format.outputDirectory</code></span>. Параметр <span class='synopsis'><code>-o</code></span> имеет приоритет над <span class='synopsis'><code>format.outputDirectory</code></span>. Чтобы сохранять патчи в текущем рабочем каталоге, даже если <span class='synopsis'><code>format.outputDirectory</code></span> указывает в другое место, используйте <span class='synopsis'><code>-o</code> <code>.</code></span>. Все компоненты каталога будут созданы.</p>
 </div>
 <div class="paragraph">
 <p>По умолчанию тема одного патча — "[PATCH] ", за которым следует объединение строк из сообщения коммита до первой пустой строки (см. раздел ОБСУЖДЕНИЕ в <a href='{{< relurl "docs/git-commit/ru" >}}'>git-commit[1]</a>).</p>
@@ -526,10 +526,10 @@ headings:
 <dd>
 <p>Подготовить патчи из верхних &lt;число&gt; коммитов.</p>
 </dd>
-<dt class="hdlist1" id="git-format-patch--oltgt"> <a class="anchor" href="#git-format-patch--o"></a> <a class="anchor" href="#git-format-patch--oltgt"></a>-o <span class="hover-term" data-term="каталог">&lt;каталог&gt;</span> </dt>
-<dt class="hdlist1" id="git-format-patch---output-directoryltgt"> <a class="anchor" href="#git-format-patch---output-directory"></a> <a class="anchor" href="#git-format-patch---output-directoryltgt"></a>--output-directory <span class="hover-term" data-term="каталог">&lt;каталог&gt;</span> </dt>
+<dt class="hdlist1" id="git-format-patch--oltgt"> <a class="anchor" href="#git-format-patch--o"></a> <a class="anchor" href="#git-format-patch--oltgt"></a>-o &lt;каталог&gt; </dt>
+<dt class="hdlist1" id="git-format-patch---output-directoryltgt"> <a class="anchor" href="#git-format-patch---output-directory"></a> <a class="anchor" href="#git-format-patch---output-directoryltgt"></a>--output-directory &lt;каталог&gt; </dt>
 <dd>
-<p>Использовать <span class="hover-term" data-term="каталог">&lt;каталог&gt;</span> для хранения результирующих файлов вместо текущего рабочего каталога.</p>
+<p>Использовать &lt;каталог&gt; для хранения результирующих файлов вместо текущего рабочего каталога.</p>
 </dd>
 <dt class="hdlist1" id="git-format-patch--n-1"> <a class="anchor" href="#git-format-patch--n-1"></a>-n </dt>
 <dt class="hdlist1" id="git-format-patch---numbered"> <a class="anchor" href="#git-format-patch---numbered"></a>--numbered </dt>
@@ -693,7 +693,7 @@ headings:
 <p>Обратите внимание, что параметры сравнения, переданные команде, влияют на то, как создаётся основной продукт <span class='synopsis'><code>format-patch</code></span>, и они не передаются в механизм <span class='synopsis'><code>range-diff</code></span>, используемый для создания материала сопроводительного письма (это может измениться в будущем).</p>
 </div>
 </dd>
-<dt class="hdlist1" id="git-format-patch---creation-factorltpercentgt"> <a class="anchor" href="#git-format-patch---creation-factorpercent"></a> <a class="anchor" href="#git-format-patch---creation-factorltpercentgt"></a>--creation-factor=&lt;percent&gt; </dt>
+<dt class="hdlist1" id="git-format-patch---creation-factorltgt"> <a class="anchor" href="#git-format-patch---creation-factor"></a> <a class="anchor" href="#git-format-patch---creation-factorltgt"></a>--creation-factor=&lt;процент&gt; </dt>
 <dd>
 <p>Используется с <span class='synopsis'><code>--range-diff</code></span>, настраивает эвристику, которая сопоставляет коммиты между предыдущей и текущей сериями патчей, путём регулировки фактора корректировки стоимости создания/удаления. Подробности см. в <a href='{{< relurl "docs/git-range-diff/ru" >}}'>git-range-diff[1]</a>).</p>
 <div class="paragraph">
@@ -741,9 +741,9 @@ headings:
 <p>Выводить нулевой хеш в заголовке From каждого патча вместо хеша коммита.</p>
 </dd>
 <dt class="hdlist1" id="git-format-patch---no-base"> <a class="anchor" href="#git-format-patch---no-base"></a>--no-base </dt>
-<dt class="hdlist1" id="git-format-patch---baseltgt"> <a class="anchor" href="#git-format-patch---base"></a> <a class="anchor" href="#git-format-patch---baseltgt"></a>--base[=<span class="hover-term" data-term="коммит">&lt;коммит&gt;</span>] </dt>
+<dt class="hdlist1" id="git-format-patch---baseltgt"> <a class="anchor" href="#git-format-patch---base"></a> <a class="anchor" href="#git-format-patch---baseltgt"></a>--base[=&lt;коммит&gt;] </dt>
 <dd>
-<p>Записывает информацию о базовом дереве для идентификации состояния, к которому применяется серия патчей. Подробности см. в разделе ИНФОРМАЦИЯ О БАЗОВОМ ДЕРЕВЕ ниже. Если <span class="hover-term" data-term="коммит">&lt;коммит&gt;</span> — "auto", базовый коммит выбирается автоматически. Параметр <span class='synopsis'><code>--no-base</code></span> переопределяет конфигурацию <span class='synopsis'><code>format.useAutoBase</code></span>.</p>
+<p>Записывает информацию о базовом дереве для идентификации состояния, к которому применяется серия патчей. Подробности см. в разделе ИНФОРМАЦИЯ О БАЗОВОМ ДЕРЕВЕ ниже. Если &lt;коммит&gt; — "auto", базовый коммит выбирается автоматически. Параметр <span class='synopsis'><code>--no-base</code></span> переопределяет конфигурацию <span class='synopsis'><code>format.useAutoBase</code></span>.</p>
 </dd>
 <dt class="hdlist1" id="git-format-patch---root"> <a class="anchor" href="#git-format-patch---root"></a>--root </dt>
 <dd>
@@ -774,7 +774,7 @@ headings:
 	cc = &lt;адрес-электронной-почты&gt;
 	attach [ = строка-границы-mime ]
 	signOff = true
-	outputDirectory = <span class="hover-term" data-term="каталог">&lt;каталог&gt;</span>
+	outputDirectory = &lt;каталог&gt;
 	coverLetter = auto
 	coverFromDescription = auto</pre>
 </div>

@@ -739,7 +739,7 @@ headings:
 </dd>
 <dt class="hdlist1" id="git-diff-tree---stdin"> <a class="anchor" href="#git-diff-tree---stdin"></a>--stdin </dt>
 <dd>
-<p>Когда задан параметр <span class='synopsis'><code>--stdin</code></span>, команда не принимает &lt;указатели-дерева&gt; в качестве аргументов командной строки. Вместо этого она считывает строки, содержащие либо два &lt;дерева&gt;, либо один <span class="hover-term" data-term="коммит">&lt;коммит&gt;</span>, либо список &lt;коммитов&gt; из стандартного ввода. (Используйте один пробел в качестве разделителя.)</p>
+<p>Когда задан параметр <span class='synopsis'><code>--stdin</code></span>, команда не принимает &lt;указатели-дерева&gt; в качестве аргументов командной строки. Вместо этого она считывает строки, содержащие либо два &lt;дерева&gt;, либо один &lt;коммит&gt;, либо список &lt;коммитов&gt; из стандартного ввода. (Используйте один пробел в качестве разделителя.)</p>
 <div class="paragraph">
 <p>Когда заданы два дерева, команда сравнивает первое дерево со вторым. Когда задан один коммит — коммит сравнивается с его родителями. Остальные коммиты, если заданы, используются так, как если бы они были родителями первого коммита.</p>
 </div>
@@ -1406,7 +1406,7 @@ headings:
 <div class="title">Note</div>
 </td>
 <td class="content">
-Некоторые заполнители могут зависеть от других опций, переданных механизму обхода ревизий. Например, опции reflog <span class='synopsis'><code>%g*</code></span> будут вставлять пустую строку, если только мы не обходим записи reflog (например, с помощью <span class='synopsis'><code>git</code> <code>log</code> <code>-g</code></span>). Заполнители <span class='synopsis'><code>%d</code></span> и <span class='synopsis'><code>%D</code></span> будут использовать "short" формат украшения, если <span class='synopsis'><code>--decorate</code></span> не был предоставлен в командной строке.
+Некоторые заполнители могут зависеть от других параметров, переданных механизму обхода ревизий. Например, параметры reflog <span class='synopsis'><code>%g*</code></span> будут вставлять пустую строку, если только мы не обходим записи reflog (например, с помощью <span class='synopsis'><code>git</code> <code>log</code> <code>-g</code></span>). Заполнители <span class='synopsis'><code>%d</code></span> и <span class='synopsis'><code>%D</code></span> будут использовать «short» формат украшения, если <span class='synopsis'><code>--decorate</code></span> не был предоставлен в командной строке.
 </td>
 </tr>
 </table>

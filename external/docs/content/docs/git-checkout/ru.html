@@ -46,7 +46,7 @@ headings:
 <div class="verseblock">
 <pre class="content"><span class='synopsis'><code>git</code></span> <span class='synopsis'><code>checkout</code></span> [<span class='synopsis'><code>-q</code></span>] [<span class='synopsis'><code>-f</code></span>] [<span class='synopsis'><code>-m</code></span>] [<em>&lt;ветка&gt;</em>]
 <span class='synopsis'><code>git</code></span> <span class='synopsis'><code>checkout</code></span> [<span class='synopsis'><code>-q</code></span>] [<span class='synopsis'><code>-f</code></span>] [<span class='synopsis'><code>-m</code></span>] <span class='synopsis'><code>--detach</code></span> [<em>&lt;ветка&gt;</em>]
-<span class='synopsis'><code>git</code></span> <span class='synopsis'><code>checkout</code></span> [<span class='synopsis'><code>-q</code></span>] [<span class='synopsis'><code>-f</code></span>] [<span class='synopsis'><code>-m</code></span>] [<span class='synopsis'><code>--detach</code></span>] <em><span class="hover-term" data-term="коммит">&lt;коммит&gt;</span></em>
+<span class='synopsis'><code>git</code></span> <span class='synopsis'><code>checkout</code></span> [<span class='synopsis'><code>-q</code></span>] [<span class='synopsis'><code>-f</code></span>] [<span class='synopsis'><code>-m</code></span>] [<span class='synopsis'><code>--detach</code></span>] <em>&lt;коммит&gt;</em>
 <span class='synopsis'><code>git</code></span> <span class='synopsis'><code>checkout</code></span> [<span class='synopsis'><code>-q</code></span>] [<span class='synopsis'><code>-f</code></span>] [<span class='synopsis'><code>-m</code></span>] [[<span class='synopsis'><code>-b</code></span>|<span class='synopsis'><code>-B</code></span>|<span class='synopsis'><code>--orphan</code></span>] <em>&lt;новая-ветка&gt;</em>] [<em>&lt;начальная-точка&gt;</em>]
 <span class='synopsis'><code>git</code></span> <span class='synopsis'><code>checkout</code></span> <em>&lt;указатель-дерева&gt;</em> [<span class='synopsis'><code>--</code></span>] <em>&lt;спецификатор-пути&gt;</em>&#8230;&#8203;
 <span class='synopsis'><code>git</code></span> <span class='synopsis'><code>checkout</code></span> <em>&lt;указатель-дерева&gt;</em> <span class='synopsis'><code>--pathspec-from-file=</code></span><em>&lt;файл&gt;</em> [<span class='synopsis'><code>--pathspec-file-nul</code></span>]
@@ -68,7 +68,7 @@ headings:
 <p><strong>Переключение веток</strong> с помощью <span class='synopsis'><code>git</code> <code>checkout</code> <em>&lt;ветка&gt;</em></span></p>
 </li>
 <li>
-<p><strong>Восстановление другой версии файла</strong>, например, с помощью <span class='synopsis'><code>git</code> <code>checkout</code> <em><span class="hover-term" data-term="коммит">&lt;коммит&gt;</span></em> <em>&lt;имя-файла&gt;</em></span> или <span class='synopsis'><code>git</code> <code>checkout</code> <em>&lt;имя-файла&gt;</em></span></p>
+<p><strong>Восстановление другой версии файла</strong>, например, с помощью <span class='synopsis'><code>git</code> <code>checkout</code> <em>&lt;коммит&gt;</em> <em>&lt;имя-файла&gt;</em></span> или <span class='synopsis'><code>git</code> <code>checkout</code> <em>&lt;имя-файла&gt;</em></span></p>
 </li>
 </ol>
 </div>
@@ -104,7 +104,7 @@ headings:
 <p>То же, что и <span class='synopsis'><code>-b</code></span>, за исключением того, что если ветка уже существует, она сбрасывает <em>&lt;ветку&gt;</em> на начальную точку вместо того, чтобы завершаться ошибкой.</p>
 </dd>
 <dt class="hdlist1" id="git-checkout-spanclasssynopsiscodegitcodecodecheckoutcodecode--detachcodeemltgtemspan"> <a class="anchor" href="#git-checkout-gitcheckout--detach"></a> <a class="anchor" href="#git-checkout-spanclasssynopsiscodegitcodecodecheckoutcodecode--detachcodeemltgtemspan"></a><span class='synopsis'><code>git</code> <code>checkout</code> <code>--detach</code> [<em>&lt;ветка&gt;</em>]</span> </dt>
-<dt class="hdlist1" id="git-checkout-spanclasssynopsiscodegitcodecodecheckoutcodecode--detachcodeemltgtemspan-1"> <a class="anchor" href="#git-checkout-gitcheckout--detach-1"></a> <a class="anchor" href="#git-checkout-spanclasssynopsiscodegitcodecodecheckoutcodecode--detachcodeemltgtemspan-1"></a><span class='synopsis'><code>git</code> <code>checkout</code> [<code>--detach</code>] <em><span class="hover-term" data-term="коммит">&lt;коммит&gt;</span></em></span> </dt>
+<dt class="hdlist1" id="git-checkout-spanclasssynopsiscodegitcodecodecheckoutcodecode--detachcodeemltgtemspan-1"> <a class="anchor" href="#git-checkout-gitcheckout--detach-1"></a> <a class="anchor" href="#git-checkout-spanclasssynopsiscodegitcodecodecheckoutcodecode--detachcodeemltgtemspan-1"></a><span class='synopsis'><code>git</code> <code>checkout</code> [<code>--detach</code>] <em>&lt;коммит&gt;</em></span> </dt>
 <dd>
 <p>То же, что и <span class='synopsis'><code>git</code> <code>checkout</code> <em>&lt;ветка&gt;</em></span>, за исключением того, что вместо указания <span class='synopsis'><code>HEAD</code></span> на ветку, он указывает <span class='synopsis'><code>HEAD</code></span> на идентификатор коммита. Подробнее см. раздел "ОТСОЕДИНЁННЫЙ HEAD" ниже.</p>
 <div class="paragraph">
@@ -218,7 +218,7 @@ headings:
 <dt class="hdlist1" id="git-checkout-spanclasssynopsiscode-dcodespan"> <a class="anchor" href="#git-checkout--d"></a> <a class="anchor" href="#git-checkout-spanclasssynopsiscode-dcodespan"></a><span class='synopsis'><code>-d</code></span> </dt>
 <dt class="hdlist1" id="git-checkout-spanclasssynopsiscode--detachcodespan"> <a class="anchor" href="#git-checkout---detach"></a> <a class="anchor" href="#git-checkout-spanclasssynopsiscode--detachcodespan"></a><span class='synopsis'><code>--detach</code></span> </dt>
 <dd>
-<p>Вместо переключения ветки для работы над ней, переключить коммит для осмотра и одноразовых экспериментов. Это поведение по умолчанию для <span class='synopsis'><code>git</code> <code>checkout</code> <em><span class="hover-term" data-term="коммит">&lt;коммит&gt;</span></em></span>, когда <em><span class="hover-term" data-term="коммит">&lt;коммит&gt;</span></em> не является именем ветки. Подробности см. в разделе "ОТСОЕДИНЁННЫЙ HEAD" ниже.</p>
+<p>Вместо переключения ветки для работы над ней, переключить коммит для осмотра и одноразовых экспериментов. Это поведение по умолчанию для <span class='synopsis'><code>git</code> <code>checkout</code> <em>&lt;коммит&gt;</em></span>, когда <em>&lt;коммит&gt;</em> не является именем ветки. Подробности см. в разделе "ОТСОЕДИНЁННЫЙ HEAD" ниже.</p>
 </dd>
 <dt class="hdlist1" id="git-checkout-spanclasssynopsiscode--orphancodeemlt-gtemspan"> <a class="anchor" href="#git-checkout---orphan-"></a> <a class="anchor" href="#git-checkout-spanclasssynopsiscode--orphancodeemlt-gtemspan"></a><span class='synopsis'><code>--orphan</code> <em>&lt;новая-ветка&gt;</em></span> </dt>
 <dd>
@@ -611,7 +611,7 @@ $ git add frotz</pre>
 <h2 id="_конфигурация"><a class="anchor" href="#_конфигурация"></a>КОНФИГУРАЦИЯ</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Дальнейшее содержание этого раздела, повторяет то, что может быть найдено в <a href='{{< relurl "docs/git-config/ru" >}}'>git-config[1]</a>:</p>
+<p>Дальнейшее содержание этого раздела, выборочно повторяет то, что можно найти в документации <a href='{{< relurl "docs/git-config/ru" >}}'>git-config[1]</a>:</p>
 </div>
 <div class="dlist">
 <dl>

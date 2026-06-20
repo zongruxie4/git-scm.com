@@ -340,23 +340,23 @@ $ git log A...B</pre>
 </dd>
 <dt class="hdlist1" id="git-log-spanclasssynopsiscode--allcodespan"> <a class="anchor" href="#git-log---all"></a> <a class="anchor" href="#git-log-spanclasssynopsiscode--allcodespan"></a><span class='synopsis'><code>--all</code></span> </dt>
 <dd>
-<p>Предполагать, как если бы все ссылки в <span class='synopsis'><code>refs/</code></span>, вместе с <span class='synopsis'><code>HEAD</code></span>, были перечислены в командной строке как <em><span class="hover-term" data-term="коммит">&lt;коммит&gt;</span></em>.</p>
+<p>Предполагать, как если бы все ссылки в <span class='synopsis'><code>refs/</code></span>, вместе с <span class='synopsis'><code>HEAD</code></span>, были перечислены в командной строке как <em>&lt;коммит&gt;</em>.</p>
 </dd>
 <dt class="hdlist1" id="git-log-spanclasssynopsiscode--branchescodecodecodeemltgtemspan"> <a class="anchor" href="#git-log---branches"></a> <a class="anchor" href="#git-log-spanclasssynopsiscode--branchescodecodecodeemltgtemspan"></a><span class='synopsis'><code>--branches</code>[<code>=</code><em>&lt;шаблон&gt;</em>]</span> </dt>
 <dd>
-<p>Предполагать, как если бы все ссылки в <span class='synopsis'><code>refs/heads</code></span> были перечислены в командной строке как <em><span class="hover-term" data-term="коммит">&lt;коммит&gt;</span></em>. Если задан <em>&lt;шаблон&gt;</em>, ограничить ветки теми, которые соответствуют заданному glob-шаблону оболочки. Если в <em>&lt;шаблоне&gt;</em> отсутствуют <em>?</em>, <em>*</em> или <em>[</em>, подразумевается <em>/*</em> в конце.</p>
+<p>Предполагать, как если бы все ссылки в <span class='synopsis'><code>refs/heads</code></span> были перечислены в командной строке как <em>&lt;коммит&gt;</em>. Если задан <em>&lt;шаблон&gt;</em>, ограничить ветки теми, которые соответствуют заданному glob-шаблону оболочки. Если в <em>&lt;шаблоне&gt;</em> отсутствуют <em>?</em>, <em>*</em> или <em>[</em>, подразумевается <em>/*</em> в конце.</p>
 </dd>
 <dt class="hdlist1" id="git-log-spanclasssynopsiscode--tagscodecodecodeemltgtemspan"> <a class="anchor" href="#git-log---tags"></a> <a class="anchor" href="#git-log-spanclasssynopsiscode--tagscodecodecodeemltgtemspan"></a><span class='synopsis'><code>--tags</code>[<code>=</code><em>&lt;шаблон&gt;</em>]</span> </dt>
 <dd>
-<p>Предполагать, как если бы все ссылки в <span class='synopsis'><code>refs/tags</code></span> были перечислены в командной строке как <em><span class="hover-term" data-term="коммит">&lt;коммит&gt;</span></em>. Если задан <em>&lt;шаблон&gt;</em>, ограничить метки теми, которые соответствуют заданному glob-шаблону оболочки. Если в шаблоне отсутствуют <em>?</em>, <em>*</em> или <em>[</em>, подразумевается <em>/*</em> в конце.</p>
+<p>Предполагать, как если бы все ссылки в <span class='synopsis'><code>refs/tags</code></span> были перечислены в командной строке как <em>&lt;коммит&gt;</em>. Если задан <em>&lt;шаблон&gt;</em>, ограничить метки теми, которые соответствуют заданному glob-шаблону оболочки. Если в шаблоне отсутствуют <em>?</em>, <em>*</em> или <em>[</em>, подразумевается <em>/*</em> в конце.</p>
 </dd>
 <dt class="hdlist1" id="git-log-spanclasssynopsiscode--remotescodecodecodeemltgtemspan"> <a class="anchor" href="#git-log---remotes"></a> <a class="anchor" href="#git-log-spanclasssynopsiscode--remotescodecodecodeemltgtemspan"></a><span class='synopsis'><code>--remotes</code>[<code>=</code><em>&lt;шаблон&gt;</em>]</span> </dt>
 <dd>
-<p>Предполагать, как если бы все ссылки в <span class='synopsis'><code>refs/remotes</code></span> были перечислены в командной строке как <em><span class="hover-term" data-term="коммит">&lt;коммит&gt;</span></em>. Если задан <em>&lt;шаблон&gt;</em>, ограничить отслеживаемые внешние ветки теми, которые соответствуют заданному glob-шаблону оболочки. Если в шаблоне отсутствуют <em>?</em>, <em>*</em> или <em>[</em>, подразумевается <em>/*</em> в конце.</p>
+<p>Предполагать, как если бы все ссылки в <span class='synopsis'><code>refs/remotes</code></span> были перечислены в командной строке как <em>&lt;коммит&gt;</em>. Если задан <em>&lt;шаблон&gt;</em>, ограничить отслеживаемые внешние ветки теми, которые соответствуют заданному glob-шаблону оболочки. Если в шаблоне отсутствуют <em>?</em>, <em>*</em> или <em>[</em>, подразумевается <em>/*</em> в конце.</p>
 </dd>
 <dt class="hdlist1" id="git-log-spanclasssynopsiscode--globcodeemlt-globgtemspan"> <a class="anchor" href="#git-log---glob-glob"></a> <a class="anchor" href="#git-log-spanclasssynopsiscode--globcodeemlt-globgtemspan"></a><span class='synopsis'><code>--glob=</code><em>&lt;шаблон-glob&gt;</em></span> </dt>
 <dd>
-<p>Предполагать, как если бы все ссылки, соответствующие glob-шаблону оболочки <em>&lt;glob-шаблон&gt;</em>, были перечислены в командной строке как <em><span class="hover-term" data-term="коммит">&lt;коммит&gt;</span></em>. Ведущий <em>refs/</em> автоматически добавляется, если отсутствует. Если в шаблоне отсутствуют <em>?</em>, <em>*</em> или <em>[</em>, подразумевается <em>/*</em> в конце.</p>
+<p>Предполагать, как если бы все ссылки, соответствующие glob-шаблону оболочки <em>&lt;glob-шаблон&gt;</em>, были перечислены в командной строке как <em>&lt;коммит&gt;</em>. Ведущий <em>refs/</em> автоматически добавляется, если отсутствует. Если в шаблоне отсутствуют <em>?</em>, <em>*</em> или <em>[</em>, подразумевается <em>/*</em> в конце.</p>
 </dd>
 <dt class="hdlist1" id="git-log-spanclasssynopsiscode--excludecodeemlt-globgtemspan"> <a class="anchor" href="#git-log---exclude-glob"></a> <a class="anchor" href="#git-log-spanclasssynopsiscode--excludecodeemlt-globgtemspan"></a><span class='synopsis'><code>--exclude=</code><em>&lt;шаблон-glob&gt;</em></span> </dt>
 <dd>
@@ -371,7 +371,7 @@ $ git log A...B</pre>
 </dd>
 <dt class="hdlist1" id="git-log-spanclasssynopsiscode--reflogcodespan"> <a class="anchor" href="#git-log---reflog"></a> <a class="anchor" href="#git-log-spanclasssynopsiscode--reflogcodespan"></a><span class='synopsis'><code>--reflog</code></span> </dt>
 <dd>
-<p>Предполагать, как если бы все объекты, упомянутые в журналах ссылок (reflogs), были перечислены в командной строке как <em><span class="hover-term" data-term="коммит">&lt;коммит&gt;</span></em>.</p>
+<p>Предполагать, как если бы все объекты, упомянутые в журналах ссылок (reflogs), были перечислены в командной строке как <em>&lt;коммит&gt;</em>.</p>
 </dd>
 <dt class="hdlist1" id="git-log-spanclasssynopsiscode--alternate-refscodespan"> <a class="anchor" href="#git-log---alternate-refs"></a> <a class="anchor" href="#git-log-spanclasssynopsiscode--alternate-refscodespan"></a><span class='synopsis'><code>--alternate-refs</code></span> </dt>
 <dd>
@@ -419,7 +419,7 @@ $ git log A...B</pre>
 <dt class="hdlist1" id="git-log-spanclasssynopsiscode-gcodespan"> <a class="anchor" href="#git-log--g"></a> <a class="anchor" href="#git-log-spanclasssynopsiscode-gcodespan"></a><span class='synopsis'><code>-g</code></span> </dt>
 <dt class="hdlist1" id="git-log-spanclasssynopsiscode--walk-reflogscodespan"> <a class="anchor" href="#git-log---walk-reflogs"></a> <a class="anchor" href="#git-log-spanclasssynopsiscode--walk-reflogscodespan"></a><span class='synopsis'><code>--walk-reflogs</code></span> </dt>
 <dd>
-<p>Вместо обхода цепочки предков коммитов обходить записи журнала ссылок (reflog) от самых последних к более старым. При использовании этого параметра вы не можете указывать коммиты для исключения (то есть обозначения <span class='synopsis'><code>^</code><em><span class="hover-term" data-term="коммит">&lt;коммит&gt;</span></em></span>, <span class='synopsis'><em>&lt;коммит1&gt;</em><code>..</code><em>&lt;коммит2&gt;</em></span> и <span class='synopsis'><em>&lt;коммит1&gt;</em><code>...</code><em>&lt;коммит2&gt;</em></span> не могут использоваться).</p>
+<p>Вместо обхода цепочки предков коммитов обходить записи журнала ссылок (reflog) от самых последних к более старым. При использовании этого параметра вы не можете указывать коммиты для исключения (то есть обозначения <span class='synopsis'><code>^</code><em>&lt;коммит&gt;</em></span>, <span class='synopsis'><em>&lt;коммит1&gt;</em><code>..</code><em>&lt;коммит2&gt;</em></span> и <span class='synopsis'><em>&lt;коммит1&gt;</em><code>...</code><em>&lt;коммит2&gt;</em></span> не могут использоваться).</p>
 <div class="paragraph">
 <p>С форматом <span class='synopsis'><code>--pretty</code></span>, отличным от <span class='synopsis'><code>oneline</code></span> и <span class='synopsis'><code>reference</code></span> (по понятным причинам), это приводит к появлению в выводе двух дополнительных строк информации, взятой из журнала ссылок (reflog). Обозначение журнала ссылок в выводе может отображаться как <span class='synopsis'><code>ref@{</code><em>&lt;N-й&gt;</em><code>}</code></span> (где <em>&lt;N-й&gt;</em> — это обратный хронологический индекс в журнале ссылок) или как <span class='synopsis'><code>ref@{</code><em>&lt;временная-метка&gt;</em><code>}</code></span> (с <em>&lt;временной-меткой&gt;</em> для этой записи), в зависимости от нескольких правил:</p>
 </div>
@@ -513,9 +513,9 @@ $ git log A...B</pre>
 <dd>
 <p>Дополнительный параметр к <span class='synopsis'><code>--full-history</code></span> для удаления некоторых ненужных слияний из результирующей истории, поскольку нет выбранных коммитов, вносящих вклад в это слияние.</p>
 </dd>
-<dt class="hdlist1" id="git-log-spanclasssynopsiscode--ancestry-pathcodecodecodeemltgtemspan"> <a class="anchor" href="#git-log---ancestry-path"></a> <a class="anchor" href="#git-log-spanclasssynopsiscode--ancestry-pathcodecodecodeemltgtemspan"></a><span class='synopsis'><code>--ancestry-path</code>[<code>=</code><em><span class="hover-term" data-term="коммит">&lt;коммит&gt;</span></em>]</span> </dt>
+<dt class="hdlist1" id="git-log-spanclasssynopsiscode--ancestry-pathcodecodecodeemltgtemspan"> <a class="anchor" href="#git-log---ancestry-path"></a> <a class="anchor" href="#git-log-spanclasssynopsiscode--ancestry-pathcodecodecodeemltgtemspan"></a><span class='synopsis'><code>--ancestry-path</code>[<code>=</code><em>&lt;коммит&gt;</em>]</span> </dt>
 <dd>
-<p>При задании диапазона коммитов для отображения (например, <span class='synopsis'><em>&lt;коммит1&gt;</em><code>..</code><em>&lt;коммит2&gt;</em></span> или <span class='synopsis'><em>&lt;коммит2&gt;</em> <code>^</code><em>&lt;коммит1&gt;</em></span>) и коммита <em><span class="hover-term" data-term="коммит">&lt;коммит&gt;</span></em> в этом диапазоне, отображать только те коммиты в диапазоне, которые являются предками <em><span class="hover-term" data-term="коммит">&lt;коммит&gt;</span></em>, потомками <em><span class="hover-term" data-term="коммит">&lt;коммит&gt;</span></em> или самим <em><span class="hover-term" data-term="коммит">&lt;коммит&gt;</span></em>. Если коммит не указан, использовать <em>&lt;коммит1&gt;</em> (исключённую часть диапазона) в качестве <em><span class="hover-term" data-term="коммит">&lt;коммит&gt;</span></em>. Может быть передан несколько раз; если да, коммит включается, если он является любым из заданных коммитов или если он является предком или потомком одного из них.</p>
+<p>При задании диапазона коммитов для отображения (например, <span class='synopsis'><em>&lt;коммит1&gt;</em><code>..</code><em>&lt;коммит2&gt;</em></span> или <span class='synopsis'><em>&lt;коммит2&gt;</em> <code>^</code><em>&lt;коммит1&gt;</em></span>) и коммита <em>&lt;коммит&gt;</em> в этом диапазоне, отображать только те коммиты в диапазоне, которые являются предками <em>&lt;коммит&gt;</em>, потомками <em>&lt;коммит&gt;</em> или самим <em>&lt;коммит&gt;</em>. Если коммит не указан, использовать <em>&lt;коммит1&gt;</em> (исключённую часть диапазона) в качестве <em>&lt;коммит&gt;</em>. Может быть передан несколько раз; если да, коммит включается, если он является любым из заданных коммитов или если он является предком или потомком одного из них.</p>
 </dd>
 </dl>
 </div>
@@ -705,9 +705,9 @@ $ git log A...B</pre>
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1" id="git-log-spanclasssynopsiscode--ancestry-pathcodecodecodeemltgtemspan-1"> <a class="anchor" href="#git-log---ancestry-path-1"></a> <a class="anchor" href="#git-log-spanclasssynopsiscode--ancestry-pathcodecodecodeemltgtemspan-1"></a><span class='synopsis'><code>--ancestry-path</code>[<code>=</code><em><span class="hover-term" data-term="коммит">&lt;коммит&gt;</span></em>]</span> </dt>
+<dt class="hdlist1" id="git-log-spanclasssynopsiscode--ancestry-pathcodecodecodeemltgtemspan-1"> <a class="anchor" href="#git-log---ancestry-path-1"></a> <a class="anchor" href="#git-log-spanclasssynopsiscode--ancestry-pathcodecodecodeemltgtemspan-1"></a><span class='synopsis'><code>--ancestry-path</code>[<code>=</code><em>&lt;коммит&gt;</em>]</span> </dt>
 <dd>
-<p>Ограничить отображаемые коммиты теми, которые являются предком <em><span class="hover-term" data-term="коммит">&lt;коммит&gt;</span></em>, или которые являются потомком <em><span class="hover-term" data-term="коммит">&lt;коммит&gt;</span></em>, или самим <em><span class="hover-term" data-term="коммит">&lt;коммит&gt;</span></em>.</p>
+<p>Ограничить отображаемые коммиты теми, которые являются предком <em>&lt;коммит&gt;</em>, или которые являются потомком <em>&lt;коммит&gt;</em>, или самим <em>&lt;коммит&gt;</em>.</p>
 <div class="paragraph">
 <p>В качестве примера рассмотрим следующую историю коммитов:</p>
 </div>
@@ -1665,7 +1665,7 @@ $ git log A...B</pre>
 <div class="title">Note</div>
 </td>
 <td class="content">
-Некоторые заполнители могут зависеть от других опций, переданных механизму обхода ревизий. Например, опции reflog <span class='synopsis'><code>%g*</code></span> будут вставлять пустую строку, если только мы не обходим записи reflog (например, с помощью <span class='synopsis'><code>git</code> <code>log</code> <code>-g</code></span>). Заполнители <span class='synopsis'><code>%d</code></span> и <span class='synopsis'><code>%D</code></span> будут использовать "short" формат украшения, если <span class='synopsis'><code>--decorate</code></span> не был предоставлен в командной строке.
+Некоторые заполнители могут зависеть от других параметров, переданных механизму обхода ревизий. Например, параметры reflog <span class='synopsis'><code>%g*</code></span> будут вставлять пустую строку, если только мы не обходим записи reflog (например, с помощью <span class='synopsis'><code>git</code> <code>log</code> <code>-g</code></span>). Заполнители <span class='synopsis'><code>%d</code></span> и <span class='synopsis'><code>%D</code></span> будут использовать «short» формат украшения, если <span class='synopsis'><code>--decorate</code></span> не был предоставлен в командной строке.
 </td>
 </tr>
 </table>
@@ -2778,7 +2778,7 @@ index fabadb8,cc95eb0..4866510
 </dl>
 </div>
 <div class="paragraph">
-<p>Дальнейшее содержание этого раздела (в отличие от того, что было описано до данной строки), повторяет то, что может быть найдено в <a href='{{< relurl "docs/git-config/ru" >}}'>git-config[1]</a>:</p>
+<p>Дальнейшее содержание этого раздела (в отличие от того, что было описано до данной строки), повторяет то, что можно найти в документации <a href='{{< relurl "docs/git-config/ru" >}}'>git-config[1]</a>:</p>
 </div>
 <div class="dlist">
 <dl>

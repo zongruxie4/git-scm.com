@@ -483,7 +483,7 @@ headings:
 </div>
 <div class="literalblock">
 <div class="content">
-<pre>	'gpgsig' SP &lt;алгоритм-хеша-git&gt; SP &lt;формат-подписи&gt; LF data</pre>
+<pre>	'gpgsig' SP &lt;git-hash-algo&gt; SP &lt;формат-подписи&gt; LF data</pre>
 </div>
 </div>
 <div class="paragraph">
@@ -492,7 +492,7 @@ headings:
 <div class="ulist">
 <ul>
 <li>
-<p><span class='synopsis'><em>&lt;алгоритм-хеша-git&gt;</em></span> указывает, к какому формату объектов Git применяется эта подпись: <span class='synopsis'><code>sha1</code></span> или <span class='synopsis'><code>sha256</code></span>. Это позволяет узнать, какое представление коммита было подписано (версия SHA-1 или SHA-256), что помогает как при проверке подписи, так и при взаимодействии между репозиториями с разными хеш-функциями.</p>
+<p><span class='synopsis'><em>&lt;git-hash-algo&gt;</em></span> указывает, к какому формату объектов Git применяется эта подпись: <span class='synopsis'><code>sha1</code></span> или <span class='synopsis'><code>sha256</code></span>. Это позволяет узнать, какое представление коммита было подписано (версия SHA-1 или SHA-256), что помогает как при проверке подписи, так и при взаимодействии между репозиториями с разными хеш-функциями.</p>
 </li>
 <li>
 <p><span class='synopsis'><em>&lt;формат-подписи&gt;</em></span> указывает тип подписи, например <span class='synopsis'><code>openpgp</code></span>, <span class='synopsis'><code>x509</code></span>, <span class='synopsis'><code>ssh</code></span> или <span class='synopsis'><code>unknown</code></span>. Это удобно для инструментов, обрабатывающих поток, чтобы им не приходилось анализировать ASCII-броню для определения типа подписи.</p>
@@ -1520,7 +1520,7 @@ last pack   :</p>
 <h2 id="_конфигурация"><a class="anchor" href="#_конфигурация"></a>КОНФИГУРАЦИЯ</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Дальнейшее содержание этого раздела, повторяет то, что может быть найдено в <a href='{{< relurl "docs/git-config/ru" >}}'>git-config[1]</a>:</p>
+<p>Дальнейшее содержание этого раздела, выборочно повторяет то, что можно найти в документации <a href='{{< relurl "docs/git-config/ru" >}}'>git-config[1]</a>:</p>
 </div>
 <div class="admonitionblock warning">
 <table>
